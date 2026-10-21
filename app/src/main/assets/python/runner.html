@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowverse Python Engine</title>
+    <script src="skulpt.min.js" type="text/javascript"></script>
+    <script src="skulpt-stdlib.js" type="text/javascript"></script>
+</head>
+<body>
+<script type="text/javascript">
+    var outputBuffer = "";
+    var currentExecId = "";
+
+    function builtinRead(x) {
+        if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined) {
+            throw "Arquivo não encontrado: '" + x + "'";
+        }
+        return Sk.builtinFiles["files"][x];
+    }
+
+    function outf(text) {
+        outputBuffer += text;
+        if (window.AndroidBridge && window.AndroidBridge.onOutputChunk) {
+            window.AndroidBridge.onOutputChunk(currentExecId, text);
+        }
+    }
+
+    function inputfun(promptText) {
+        if (window.AndroidBridge && window.AndroidBridge.requestInput) {
+            return window.AndroidBridge.requestInput(promptText || "");
+        }
+        return "";
+    }
+
+    function runPythonCode(code, execId) {
+        currentExecId = execId;
+        outputBuffer = "";
+
+        try {
+            Sk.configure({
+                output: outf,
+                read: builtinRead,
+                inputfun: inputfun,
+                inputfunTakesPrompt: true,
+                __future__: Sk.python3,
+                execLimit: 8000
+            });
+
+            var startTime = Date.now();
+            var myPromise = Sk.misceval.asyncToPromise(function() {
+                return Sk.importMainWithBody("<stdin>", false, code, true);
+            });
+
+            myPromise.then(function(mod) {
+                var elapsedMs = Date.now() - startTime;
+                if (window.AndroidBridge && window.AndroidBridge.onExecutionSuccess) {
+                    window.AndroidBridge.onExecutionSuccess(execId, outputBuffer, elapsedMs);
+                }
+            }, function(err) {
+                var elapsedMs = Date.now() - startTime;
+                var errStr = err.toString();
+                var lineNum = -1;
+
+                if (typeof err.lineno === "number" && err.lineno > 0) {
+                    lineNum = err.lineno;
+                } else if (err.traceback && err.traceback.length > 0) {
+                    lineNum = err.traceback[0].lineno;
+                } else if (err.args && err.args.v && err.args.v.length >= 2) {
+                    try {
+                        var candidate = err.args.v[1][1];
+                        if (typeof candidate === "number") lineNum = candidate;
+                    } catch(e) {}
+                }
+
+                if (lineNum === -1 || !lineNum) {
+                    var match = errStr.match(/on line (\d+)/i) || errStr.match(/line (\d+)/i);
+                    if (match && match[1]) {
+                        lineNum = parseInt(match[1], 10);
+                    }
+                }
+
+                if (window.AndroidBridge && window.AndroidBridge.onExecutionError) {
+                    window.AndroidBridge.onExecutionError(execId, errStr, lineNum || -1, outputBuffer, elapsedMs);
+                }
+            });
+        } catch (syncErr) {
+            var syncErrStr = syncErr.toString();
+            var syncLine = -1;
+            var matchSync = syncErrStr.match(/line (\d+)/i);
+            if (matchSync && matchSync[1]) syncLine = parseInt(matchSync[1], 10);
+
+            if (window.AndroidBridge && window.AndroidBridge.onExecutionError) {
+                window.AndroidBridge.onExecutionError(execId, syncErrStr, syncLine, outputBuffer, 0);
+            }
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+        if (window.AndroidBridge && window.AndroidBridge.onEngineReady) {
+            window.AndroidBridge.onEngineReady();
+        }
+    });
+</script>
+</body>
+</html>

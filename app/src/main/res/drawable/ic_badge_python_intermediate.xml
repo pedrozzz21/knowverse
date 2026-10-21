@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Octagon / Seal -->
+    <path
+        android:fillColor="#064E3B"
+        android:strokeColor="#10B981"
+        android:strokeWidth="2.5"
+        android:pathData="M24,4 L48,4 L68,24 L68,48 L48,68 L24,68 L4,48 L4,24 Z" />
+    <!-- Inner Octagon -->
+    <path
+        android:fillColor="#065F46"
+        android:pathData="M26,9 L46,9 L63,26 L63,46 L46,63 L26,63 L9,46 L9,26 Z" />
+    <!-- Code Brackets & Lambda Symbol -->
+    <path
+        android:fillColor="#34D399"
+        android:strokeColor="#A7F3D0"
+        android:strokeWidth="1.5"
+        android:pathData="M23,28 L17,36 L23,44 M49,28 L55,36 L49,44" />
+    <!-- Lambda glyph in center -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M31,48 L35,40 L33,24 L39,24 L42,38 L45,48 L39,48 L37,42 L33,48 Z" />
+    <!-- Sparkle diamond -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,15 L38,18 L36,21 L34,18 Z" />
+</vector>

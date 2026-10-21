@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Subdued Hexagon -->
+    <path
+        android:fillColor="#1E293B"
+        android:strokeColor="#475569"
+        android:strokeWidth="2"
+        android:pathData="M36,6 L62,19 L62,47 L36,65 L10,47 L10,19 Z" />
+    <!-- Lock Shackle -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="2.5"
+        android:pathData="M28,34 L28,26 C28,21.5 31.5,18 36,18 C40.5,18 44,21.5 44,26 L44,34" />
+    <!-- Lock Body -->
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M24,34 L48,34 C49.5,34 51,35.5 51,37 L51,50 C51,51.5 49.5,53 48,53 L24,53 C22.5,53 21,51.5 21,50 L21,37 C21,35.5 22.5,34 24,34 Z" />
+    <!-- Keyhole -->
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M36,40 A2,2 0 1,1 35.9,40 Z M35,42 L37,42 L37.5,47 L34.5,47 Z" />
+</vector>

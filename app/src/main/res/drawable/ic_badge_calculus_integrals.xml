@@ -1,0 +1,42 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+
+    <!-- Círculo de Fundo Dourado e Roxo Tecnológico -->
+    <path
+        android:fillColor="#161B22"
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.5"
+        android:pathData="M32,4 A28,28 0 1,1 31.9,4 Z" />
+
+    <path
+        android:fillColor="#221A37"
+        android:pathData="M32,8 A24,24 0 1,1 31.9,8 Z" />
+
+    <!-- Símbolo de Integral Estilizado com Gradiente e dx -->
+    <!-- Símbolo de Integral (S alongado) -->
+    <path
+        android:strokeColor="#A78BFA"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M38,18 C38,18 35,14 30,14 C25,14 25,20 28,26 L36,38 C39,44 39,50 34,50 C29,50 26,46 26,46" />
+
+    <!-- Símbolo dx menor -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M43,38 L43,48 M43,43 C46,43 48,45 48,48 M48,43 L48,48" />
+
+    <!-- Estrelas de Maestria -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M20,18 L21,21 L24,21 L21.5,23 L22.5,26 L20,24 L17.5,26 L18.5,23 L16,21 L19,21 Z" />
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M44,18 L45,21 L48,21 L45.5,23 L46.5,26 L44,24 L41.5,26 L42.5,23 L40,21 L43,21 Z" />
+
+</vector>

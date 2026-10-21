@@ -1,0 +1,62 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="90dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+
+    <!-- Fundo Escuro Técnico -->
+    <path
+        android:fillColor="#0D1117"
+        android:pathData="M0,0h320v180h-320z" />
+
+    <!-- Grade Cartesiana Sutil -->
+    <path
+        android:strokeColor="#21262D"
+        android:strokeWidth="1"
+        android:pathData="M30,30h260 M30,60h260 M30,90h260 M30,120h260 M30,150h260 M70,20v140 M120,20v140 M170,20v140 M220,20v140 M270,20v140" />
+
+    <!-- Área Sombreada sob a Curva da Integral (x = a até x = b) -->
+    <!-- y = 3x^2 de a = 80 até b = 230 -->
+    <path
+        android:fillColor="#337C3AED"
+        android:pathData="M80,150 L80,125 C120,118 160,95 200,60 L230,38 L230,150 Z" />
+
+    <!-- Faixas Verticais de Riemann (Somas de Riemann) -->
+    <path
+        android:strokeColor="#558B5CF6"
+        android:strokeWidth="1"
+        android:pathData="M110,150v-30 M140,150v-45 M170,150v-68 M200,150v-90" />
+
+    <!-- Curva da Função f(x) -->
+    <path
+        android:strokeColor="#A78BFA"
+        android:strokeWidth="3.5"
+        android:pathData="M45,138 C90,130 150,110 200,60 C220,40 240,25 265,15" />
+
+    <!-- Eixos Cartesianos X e Y -->
+    <path
+        android:strokeColor="#F0F6FC"
+        android:strokeWidth="2"
+        android:pathData="M30,150h265 M45,170v-155" />
+
+    <!-- Marcadores dos Limites de Integração a e b -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2"
+        android:pathData="M80,146v8 M230,146v8" />
+
+    <!-- Linhas Tracejadas para os Pontos f(a) e f(b) -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="1.5"
+        android:pathData="M80,150v-25 M230,150v-112" />
+
+    <!-- Ponto em f(a) e f(b) -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M80,125m-3.5,0a3.5,3.5 0 1,0 7,0a3.5,3.5 0 1,0 -7,0" />
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M230,38m-3.5,0a3.5,3.5 0 1,0 7,0a3.5,3.5 0 1,0 -7,0" />
+
+</vector>

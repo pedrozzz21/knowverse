@@ -1,0 +1,79 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="130dp"
+    android:viewportWidth="400"
+    android:viewportHeight="260">
+
+    <!-- Dark Blueprint Background -->
+    <path
+        android:fillColor="#0D1322"
+        android:pathData="M0,0 h400 v260 h-400 z"/>
+
+    <!-- Subtle Grid Lines -->
+    <path
+        android:strokeColor="#1E293B"
+        android:strokeWidth="1"
+        android:pathData="M30,30 h340 M30,80 h340 M30,130 h340 M30,180 h340 M30,230 h340 M50,20 v220 M110,20 v220 M170,20 v220 M230,20 v220 M290,20 v220 M350,20 v220"/>
+
+    <!-- Coordinate Axes -->
+    <path
+        android:strokeColor="#64748B"
+        android:strokeWidth="1.5"
+        android:pathData="M50,20 v220 M30,220 h340"/>
+
+    <!-- Curve: y = f(x) = sqrt(x) in Cyan -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="3.5"
+        android:pathData="M50,220 Q120,130 180,105 T350,60"/>
+
+    <!-- Tangent Line: L(x) in Rose/Red touching at x = a (approx (180, 105)) -->
+    <path
+        android:strokeColor="#F43F5E"
+        android:strokeWidth="2.5"
+        android:pathData="M80,135 L330,60"/>
+
+    <!-- Vertical line at x = a -->
+    <path
+        android:strokeColor="#64748B"
+        android:strokeWidth="1.2"
+        android:pathData="M180,105 v115"/>
+
+    <!-- Vertical line at x = a + dx (e.g. x = 230) -->
+    <path
+        android:strokeColor="#64748B"
+        android:strokeWidth="1.2"
+        android:pathData="M240,90 v130"/>
+
+    <!-- Tangent point P(a, f(a)) in Rose -->
+    <path
+        android:fillColor="#F43F5E"
+        android:pathData="M180,105 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0"/>
+
+    <!-- Evaluation point on tangent L(x) in Amber -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M240,90 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0"/>
+
+    <!-- True point on curve f(x) in Cyan -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M240,88 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0"/>
+
+    <!-- Error/Differential Bracket: showing small distance between curve and line -->
+    <path
+        android:strokeColor="#10B981"
+        android:strokeWidth="1.8"
+        android:pathData="M250,88 h8 M250,90 h8 M254,88 v2"/>
+
+    <!-- Legend Indicators -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M25,24 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0"/>
+    <path
+        android:fillColor="#F43F5E"
+        android:pathData="M25,38 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0"/>
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M25,52 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0"/>
+</vector>

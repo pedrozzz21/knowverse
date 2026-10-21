@@ -1,0 +1,85 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="130dp"
+    android:viewportWidth="400"
+    android:viewportHeight="260">
+
+    <!-- Dark Blueprint Background -->
+    <path
+        android:fillColor="#0D1322"
+        android:pathData="M0,0 h400 v260 h-400 z"/>
+
+    <!-- Subtle Grid Lines -->
+    <path
+        android:strokeColor="#1E293B"
+        android:strokeWidth="1"
+        android:pathData="M30,30 h340 M30,80 h340 M30,130 h340 M30,180 h340 M30,230 h340 M50,20 v220 M110,20 v220 M170,20 v220 M230,20 v220 M290,20 v220 M350,20 v220"/>
+
+    <!-- Coordinate Axes -->
+    <path
+        android:strokeColor="#64748B"
+        android:strokeWidth="1.5"
+        android:pathData="M50,20 v220 M30,140 h340"/>
+
+    <!-- Cubic Function Curve: y = f(x) with Peak, Inflection, Valley -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="3.5"
+        android:pathData="M50,210 C90,190 100,50 140,55 C175,60 215,220 255,215 C295,210 320,100 360,40"/>
+
+    <!-- Tangent at Local Max (Horizontal: f'(x) = 0) -->
+    <path
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2"
+        android:pathData="M95,55 h90"/>
+
+    <!-- Tangent at Local Min (Horizontal: f'(x) = 0) -->
+    <path
+        android:strokeColor="#10B981"
+        android:strokeWidth="2"
+        android:pathData="M210,215 h90"/>
+
+    <!-- Tangent at Inflection Point (Slope through inflection) -->
+    <path
+        android:strokeColor="#A855F7"
+        android:strokeWidth="1.8"
+        android:pathData="M165,85 L235,185"/>
+
+    <!-- Local Maximum Marker (x1, y1) -> Amber Dot -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M140,55 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0"/>
+
+    <!-- Inflection Point Marker (x_inf, y_inf) -> Violet Dot -->
+    <path
+        android:fillColor="#A855F7"
+        android:pathData="M200,135 m-5.5,0 a5.5,5.5 0 1,0 11,0 a5.5,5.5 0 1,0 -11,0"/>
+
+    <!-- Local Minimum Marker (x2, y2) -> Emerald Dot -->
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M255,215 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0"/>
+
+    <!-- Concavity Indicators: Top Left Concave Down Arc -->
+    <path
+        android:strokeColor="#F43F5E"
+        android:strokeWidth="2"
+        android:pathData="M110,85 Q140,65 170,85"/>
+
+    <!-- Concavity Indicators: Bottom Right Concave Up Arc -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="2"
+        android:pathData="M225,185 Q255,205 285,185"/>
+
+    <!-- Legend Dots -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M25,24 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0"/>
+    <path
+        android:fillColor="#A855F7"
+        android:pathData="M25,38 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0"/>
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M25,52 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0"/>
+</vector>

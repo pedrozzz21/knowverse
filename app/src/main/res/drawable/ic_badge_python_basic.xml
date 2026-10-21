@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon -->
+    <path
+        android:fillColor="#1E1B4B"
+        android:strokeColor="#6366F1"
+        android:strokeWidth="2.5"
+        android:pathData="M36,4 L64,18 L64,48 L36,68 L8,48 L8,18 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#312E81"
+        android:pathData="M36,9 L59,21 L59,46 L36,63 L13,46 L13,21 Z" />
+    <!-- Python Snake Abstract Symbol -->
+    <path
+        android:fillColor="#818CF8"
+        android:pathData="M33,20 C27,20 23,23 23,28 L23,32 L36,32 L36,35 L20,35 C16,35 15,38 15,43 C15,48 18,51 24,51 L27,51 L27,47 C27,43 30,40 35,40 L44,40 C47,40 49,38 49,35 L49,27 C49,22 45,20 39,20 Z" />
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M39,52 C45,52 49,49 49,44 L49,40 L36,40 L36,37 L52,37 C56,37 57,34 57,29 C57,24 54,21 48,21 L45,21 L45,25 C45,29 42,32 37,32 L28,32 C25,32 23,34 23,37 L23,45 C23,50 27,52 33,52 Z" />
+    <!-- Center Star of Mastery -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,33 L37.5,36 L41,36.5 L38.5,38.5 L39,42 L36,40 L33,42 L33.5,38.5 L31,36.5 L34.5,36 Z" />
+</vector>

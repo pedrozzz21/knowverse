@@ -1,0 +1,62 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="130dp"
+    android:viewportWidth="400"
+    android:viewportHeight="260">
+
+    <!-- Dark Blueprint Background -->
+    <path
+        android:fillColor="#0D1322"
+        android:pathData="M0,0 h400 v260 h-400 z"/>
+
+    <!-- Subtle Grid Lines -->
+    <path
+        android:strokeColor="#1E293B"
+        android:strokeWidth="1"
+        android:pathData="M40,30 h330 M40,80 h330 M40,130 h330 M40,180 h330 M40,230 h330 M60,20 v220 M120,20 v220 M180,20 v220 M240,20 v220 M300,20 v220 M360,20 v220"/>
+
+    <!-- Coordinate Axes -->
+    <path
+        android:strokeColor="#64748B"
+        android:strokeWidth="1.5"
+        android:pathData="M60,20 v220 M40,210 h330"/>
+
+    <!-- Parabola Curve: f(x) = x^2 (Blue/Cyan Neon) -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="3.5"
+        android:pathData="M45,210 Q100,210 140,170 T240,70 T350,25"/>
+
+    <!-- Tangent Line: Red/Rose (Touches at (140, 170) -> P(1,1)) -->
+    <path
+        android:strokeColor="#F43F5E"
+        android:strokeWidth="2.5"
+        android:pathData="M70,240 L300,20"/>
+
+    <!-- Secant Line: Green (Approaching tangent) -->
+    <path
+        android:strokeColor="#10B981"
+        android:strokeWidth="2"
+        android:pathData="M100,225 L280,30"/>
+
+    <!-- Contact Point P(1, 1): Red Pulsing Dot -->
+    <path
+        android:fillColor="#F43F5E"
+        android:pathData="M140,170 m-6,0 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0"/>
+
+    <!-- Secant Point Q: Green Dot -->
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M230,80 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0"/>
+
+    <!-- Decorative Legend Indicators -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M25,24 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+    <path
+        android:fillColor="#F43F5E"
+        android:pathData="M25,36 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M25,48 m-3,0 a3,3 0 1,0 6,0 a3,3 0 1,0 -6,0"/>
+</vector>

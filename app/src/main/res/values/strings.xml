@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Knowverse</string>
+    
+    <!-- Navigation Tabs -->
+    <string name="nav_home">Início</string>
+    <string name="nav_explore">Explorar</string>
+    <string name="nav_learn">Trilha</string>
+    <string name="nav_ranking">Ranking</string>
+    <string name="nav_profile">Perfil</string>
+    
+    <!-- Home Dashboard -->
+    <string name="greeting_welcome">Olá, Explorador</string>
+    <string name="streak_label">dias seguidos</string>
+    <string name="xp_label">XP total</string>
+    <string name="daily_goal_label">Meta diária</string>
+    <string name="continue_learning">Continuar Aprendendo</string>
+    <string name="recommended_reviews">Revisões Recomendadas</string>
+    <string name="daily_challenges">Desafios Diários</string>
+    <string name="recent_achievements">Conquistas Recentes</string>
+    
+    <!-- Tracks -->
+    <string name="track_python_title">Programação: Python</string>
+    <string name="track_python_desc">Aprenda a sintaxe, lógica, estruturas de dados e crie programas reais.</string>
+    <string name="track_math_title">Matemática e Lógica</string>
+    <string name="track_math_desc">Álgebra, raciocínio lógico e resolução de problemas estruturados.</string>
+    <string name="track_ai_title">Inteligência Artificial</string>
+    <string name="track_ai_desc">Fundamentos de algoritmos, redes neurais e modelos generativos.</string>
+    <string name="track_data_title">Ciência de Dados</string>
+    <string name="track_data_desc">Estatística prática, análise e visualização de grandes dados.</string>
+    <string name="status_coming_soon">Em breve</string>
+    <string name="status_available">Disponível</string>
+    <string name="status_in_progress">Em andamento</string>
+    <string name="status_completed">Concluído</string>
+    
+    <!-- Lesson & Editor -->
+    <string name="btn_run">Executar</string>
+    <string name="btn_running">Executando…</string>
+    <string name="btn_check">Avaliar Código</string>
+    <string name="btn_reset">Restaurar</string>
+    <string name="btn_hint">Ver Dica</string>
+    <string name="btn_next">Próxima Lição</string>
+    <string name="btn_copy">Copiar</string>
+    <string name="tab_instruction">Enunciado</string>
+    <string name="tab_editor">Editor</string>
+    <string name="tab_terminal">Terminal</string>
+    <string name="terminal_title">Saída do Terminal (stdout/stderr)</string>
+    <string name="terminal_empty">Pressione \'Executar\' para ver a saída do programa.</string>
+    <string name="syntax_error_title">Erro de Sintaxe</string>
+    <string name="runtime_error_title">Erro de Execução</string>
+    <string name="solution_success_title">Excelente! Desafio Concluído</string>
+    
+    <!-- Profile & Settings -->
+    <string name="profile_title">Seu Perfil</string>
+    <string name="profile_level">Nível</string>
+    <string name="profile_stats">Estatísticas de Aprendizado</string>
+    <string name="settings_title">Configurações</string>
+    <string name="setting_theme">Tema Escuro</string>
+    <string name="setting_notifications">Notificações de Estudo</string>
+    <string name="setting_sound">Efeitos Sonoros</string>
+    <string name="setting_haptic">Vibração Tátil</string>
+</resources>

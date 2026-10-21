@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /users/{userId} {
+      // Permite que todos os estudantes leiam o ranking em tempo real
+      allow read: if true;
+      // Permite salvar e sincronizar o progresso de cada aluno na nuvem
+      allow write: if true;
+    }
+
+    match /accounts/{email} {
+      // Permite autenticação e recuperação de contas entre versões do aplicativo e dispositivos
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}

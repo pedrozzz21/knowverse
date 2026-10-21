@@ -1,0 +1,6 @@
+{
+  "name": "Knowverse",
+  "description": "Plataforma gamificada de aprendizagem interativa com execução real de Python e trilhas de conhecimento.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,41 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+
+    <!-- Shield / Badge Outer Glow & Border -->
+    <path
+        android:fillColor="#1E1B4B"
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.5"
+        android:pathData="M36,4 L62,16 L62,40 C62,54 51,65 36,68 C21,65 10,54 10,40 L10,16 Z"/>
+
+    <!-- Inner Shield Gradient Background -->
+    <path
+        android:fillColor="#312E81"
+        android:pathData="M36,8 L58,19 L58,39 C58,51 48,61 36,64 C24,61 14,51 14,39 L14,19 Z"/>
+
+    <!-- Mathematical Tangent Symbol (Tangent Line intersecting a curve) -->
+    <!-- Curve in Gold -->
+    <path
+        android:strokeColor="#FBBF24"
+        android:strokeWidth="2.8"
+        android:pathData="M20,48 C26,48 30,38 36,32 C42,26 46,20 52,20"/>
+
+    <!-- Tangent Line in Bright Cyan -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="2.5"
+        android:pathData="M24,46 L48,18"/>
+
+    <!-- Tangency Point in Rose Red -->
+    <path
+        android:fillColor="#F43F5E"
+        android:pathData="M36,32 m-3.5,0 a3.5,3.5 0 1,0 7,0 a3.5,3.5 0 1,0 -7,0"/>
+
+    <!-- Bottom Star / Achievement Ribbon -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M36,47 L38,52 L43,52 L39,55 L40.5,60 L36,57 L31.5,60 L33,55 L29,52 L34,52 Z"/>
+</vector>

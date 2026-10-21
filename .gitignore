@@ -48,6 +48,28 @@ debug.keystore.base64
 # Google Services & secrets
 google-services.json
 .env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets/
+
+# AI Studio and agent internal artifacts
+.aistudio/
+public/assets/aistudio/
+
+# Editor and IDE configurations
+.vscode/
+*.iml
+.idea/
+
+# Root screenshots & capture dumps (keep app/src/main/res intact)
+/*.png
+/*.jpg
+/*.jpeg
+Screen_*.png
+Screenshot_*.png
+Screenshot_*.jpg
 
 # OS-specific files
 .DS_Store
@@ -57,3 +79,4 @@ google-services.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+

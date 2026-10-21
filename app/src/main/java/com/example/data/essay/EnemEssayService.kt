@@ -2,6 +2,7 @@ package com.example.data.essay
 
 import android.util.Log
 import com.example.BuildConfig
+import com.example.data.security.ApiKeyManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaType
@@ -162,9 +163,13 @@ Estruture a resposta com as seguintes seções em Markdown claro:
     }
 
     private fun getApiKey(): String {
+        val activeKey = ApiKeyManager.getActiveApiKey(null)
+        if (activeKey.isNotBlank()) return activeKey
+
         return try {
             val field = BuildConfig::class.java.getField("GEMINI_API_KEY")
-            (field.get(null) as? String) ?: ""
+            val key = (field.get(null) as? String) ?: ""
+            if (key.isNotBlank() && key != "DEFAULT_API_KEY") key.trim() else ""
         } catch (e: Exception) {
             ""
         }

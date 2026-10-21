@@ -121,7 +121,15 @@ fun CalculusLessonScreen(
     }
 
     val nextLesson = remember(lesson.id) {
-        CalculusCurriculum.findNextLesson(lesson.id)
+        if (lesson.id.startsWith("enem_")) {
+            val allEnem = com.example.data.math.EnemMathCurriculum.getAllLessons()
+            val currIdx = allEnem.indexOfFirst { it.id == lesson.id }
+            if (currIdx in 0 until allEnem.size - 1) {
+                allEnem[currIdx + 1].toAppLesson()
+            } else null
+        } else {
+            CalculusCurriculum.findNextLesson(lesson.id)
+        }
     }
 
     val didacticBundle = remember(lesson.id) {
@@ -163,6 +171,7 @@ fun CalculusLessonScreen(
         }
     }
 
+    val isEnemLesson = lesson.id.startsWith("enem_")
     val isBasicMath = lesson.id.startsWith("mb_") || lesson.unitId.contains("basic_math")
     val isIntegralsUnit = lesson.unitId.contains("integral") || 
         lesson.id.startsWith("calc_l19") || lesson.id.startsWith("calc_l20") ||
@@ -177,8 +186,17 @@ fun CalculusLessonScreen(
         lesson.id.startsWith("calc_l15") || lesson.id.startsWith("calc_l16") ||
         lesson.id.startsWith("calc_l17") || lesson.id.startsWith("calc_l18")
 
-    val disciplineTitle = if (isBasicMath) "Matemática Básica" else "Cálculo I"
+    val disciplineTitle = when {
+        isEnemLesson -> "Matemática ENEM"
+        isBasicMath -> "Matemática Básica"
+        else -> "Cálculo I"
+    }
+
     val moduleSubtitle = when {
+        isEnemLesson -> {
+            val mod = com.example.data.math.EnemMathCurriculum.getModule(lesson.unitId)
+            mod?.title ?: "Trilha de Matemática ENEM"
+        }
         isBasicMath -> "Ciclo de Nivelamento & ENEM"
         isIntegralsUnit -> "Módulo 3: Integrais e Teorema Fundamental"
         isDerivativesUnit -> "Módulo 2: Derivadas e Aplicações"

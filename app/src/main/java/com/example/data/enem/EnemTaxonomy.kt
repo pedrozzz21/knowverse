@@ -9,88 +9,85 @@ object EnemTaxonomy {
 
     val TAXONOMIA_MATEMATICA: Map<String, List<String>> = linkedMapOf(
         "Matemática Básica" to listOf(
-            "Operações com números inteiros, fracionários e decimais",
-            "Múltiplos e divisores (MMC e MDC)",
-            "Potenciação e radiciação",
-            "Notação científica e ordem de grandeza",
-            "Sistema métrico decimal e conversão de unidades (comprimento, área, volume, massa, capacidade, tempo)",
-            "Razão e proporção",
-            "Grandezas diretamente e inversamente proporcionais",
-            "Regra de três simples e composta",
-            "Escalas (lineares, de área e volumétricas)",
-            "Porcentagem (aumentos, descontos e variações sucessivas)"
+            "Operações Básicas (Adição, Subtração, Multiplicação, Divisão)",
+            "Frações e Números Decimais",
+            "Múltiplos e Divisores (MMC e MDC)",
+            "Razão e Proporção",
+            "Regra de Três (Simples e Composta)",
+            "Porcentagem"
         ),
         "Matemática Financeira" to listOf(
-            "Juros simples",
-            "Juros compostos",
-            "Interpretação de tabelas de amortização e financiamento"
+            "Juros Simples",
+            "Juros Compostos",
+            "Sistemas de Amortização"
         ),
         "Estatística" to listOf(
-            "Leitura e interpretação de tabelas e gráficos (barras, linhas, setores, pictogramas)",
-            "Média aritmética simples",
-            "Média aritmética ponderada",
-            "Moda",
-            "Mediana",
-            "Medidas de dispersão (variância e desvio padrão)"
+            "Leitura e Interpretação de Gráficos e Tabelas",
+            "Medidas de Tendência Central (Média Aritmética, Ponderada, Moda e Mediana)",
+            "Medidas de Dispersão (Desvio Padrão e Variância)"
         ),
         "Geometria Plana" to listOf(
-            "Conceitos fundamentais (ponto, reta, plano, ângulos)",
-            "Polígonos (soma de ângulos internos e externos, diagonais)",
-            "Triângulos (classificação, condição de existência, pontos notáveis)",
-            "Semelhança e congruência de triângulos",
-            "Teorema de Tales",
-            "Teorema de Pitágoras e relações métricas no triângulo retângulo",
-            "Cálculo de perímetros",
-            "Cálculo de áreas (triângulos, quadriláteros, polígonos regulares)",
-            "Círculo e circunferência (comprimento da circunferência, área do círculo, coroa e setor circular)"
+            "Ângulos e Polígonos",
+            "Relações Métricas no Triângulo Retângulo (Teorema de Pitágoras)",
+            "Semelhança e Congruência de Triângulos",
+            "Áreas de Figuras Planas",
+            "Círculo e Circunferência"
         ),
         "Geometria Espacial" to listOf(
-            "Visão espacial (projeções ortogonais e vistas frontais, laterais e superiores)",
-            "Planificação de sólidos geométricos",
-            "Poliedros e Relação de Euler",
-            "Prismas (elementos, área da superfície e cálculo de volume)",
-            "Cilindros (elementos, área da superfície e cálculo de volume)",
-            "Pirâmides (elementos, área da superfície e cálculo de volume)",
-            "Cones (elementos, área da superfície e cálculo de volume)",
-            "Esferas (área da superfície e cálculo de volume)",
-            "Troncos de pirâmide e de cone"
+            "Características dos Poliedros (Relação de Euler)",
+            "Prismas e Cilindros (Áreas e Volumes)",
+            "Pirâmides e Cones (Áreas e Volumes)",
+            "Esferas (Área e Volume)",
+            "Projeção Ortogonal"
         ),
         "Funções" to listOf(
-            "Plano cartesiano e pares ordenados",
-            "Conceito de função (domínio, contradomínio e imagem)",
-            "Função afim ou de 1º grau (gráficos, raízes, coeficiente angular e linear, taxa de variação)",
-            "Função quadrática ou de 2º grau (parábola, raízes por Bhaskara, vértices para pontos de máximo e mínimo)",
-            "Função exponencial (crescimento e decaimento exponencial)",
-            "Função logarítmica (gráficos e comportamento)"
+            "Conceitos Básicos e Plano Cartesiano",
+            "Função Afim (1º Grau)",
+            "Função Quadrática (2º Grau)",
+            "Interpretação de Gráficos de Funções"
         ),
-        "Álgebra e Equações" to listOf(
-            "Expressões algébricas e valor numérico",
-            "Produtos notáveis e fatoração algébrica",
-            "Equações e inequações do 1º grau",
-            "Equações e inequações do 2º grau",
-            "Sistemas de equações do 1º grau (2x2)"
+        "Álgebra" to listOf(
+            "Expressões Algébricas",
+            "Produtos Notáveis e Fatoração",
+            "Equações e Inequações do 1º e 2º Grau"
         ),
         "Análise Combinatória" to listOf(
-            "Princípio Fundamental da Contagem (PFC) ou Princípio Multiplicativo",
-            "Fatorial",
-            "Permutação simples e permutação com repetição",
-            "Arranjo simples",
-            "Combinação simples"
+            "Princípio Fundamental da Contagem (PFC)",
+            "Permutação (Simples e com Repetição)",
+            "Arranjo",
+            "Combinação"
         ),
         "Probabilidade" to listOf(
-            "Experimento aleatório, espaço amostral e evento",
-            "Definição clássica de probabilidade",
-            "Probabilidade da união de eventos (eventos mutuamente exclusivos)",
-            "Probabilidade da intersecção de eventos (eventos independentes)",
-            "Probabilidade condicional",
-            "Probabilidade de eventos sucessivos"
+            "Conceitos Iniciais (Espaço Amostral e Evento)",
+            "Probabilidade Simples",
+            "Probabilidade Condicional",
+            "Eventos Independentes e Mutuamente Exclusivos"
+        ),
+        "Sequências" to listOf(
+            "Padrões Numéricos",
+            "Progressão Aritmética (PA)",
+            "Progressão Geométrica (PG)"
+        ),
+        "Logaritmos" to listOf(
+            "Conceito de Exponencial",
+            "Definição e Propriedades dos Logaritmos",
+            "Equações Exponenciais e Logarítmicas"
         ),
         "Trigonometria" to listOf(
-            "Trigonometria no triângulo retângulo (seno, cosseno e tangente)",
-            "Ângulos notáveis (30°, 45°, 60°)",
-            "Lei dos senos e lei dos cossenos",
-            "Ciclo trigonométrico e arcos côngruos",
-            "Funções trigonométricas (seno e cosseno)"
+            "Relações Trigonométricas no Triângulo Retângulo (Seno, Cosseno, Tangente)",
+            "Ciclo Trigonométrico",
+            "Funções Trigonométricas",
+            "Lei dos Senos e Lei dos Cossenos"
+        ),
+        "Geometria Analítica" to listOf(
+            "Distância entre Dois Pontos e Ponto Médio",
+            "Estudo da Reta (Equação Geral e Reduzida)",
+            "Estudo da Circunferência"
+        ),
+        "Matrizes e Sistemas Lineares" to listOf(
+            "Definição e Operações com Matrizes",
+            "Determinantes",
+            "Resolução e Discussão de Sistemas Lineares"
         )
     )
 

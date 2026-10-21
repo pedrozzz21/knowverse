@@ -94,19 +94,26 @@ data class EnemTrailLesson(
      * Mapeador de compatibilidade para o sistema de execução de aulas existente.
      */
     fun toAppLesson(): Lesson {
+        val resolvedExercises = if (exercises.isNotEmpty()) exercises else com.example.data.math.EnemDidacticProvider.getExercisesForLesson(id)
+        val didacticBundle = com.example.data.math.EnemDidacticProvider.getDidacticBundle(id)
+        val resolvedTheory = when {
+            theoryMarkdown.isNotBlank() -> theoryMarkdown
+            didacticBundle != null -> didacticBundle.theoryMarkdown
+            else -> "Aula da Trilha Oficial de Matemática para o ENEM.\n\nSubtópico: $subtopic.\n\nExplore a teoria, o quadro de fórmulas e resolva os exercícios de fixação."
+        }
+
         return Lesson(
             id = id,
             unitId = moduleId,
             title = title,
             conceptTitle = subtopic,
-            explanation = if (theoryMarkdown.isNotBlank()) theoryMarkdown
-            else "Aula da Trilha Oficial de Matemática para o ENEM.\n\nSubtópico: $subtopic.\n\nO conteúdo didático detalhado e os exercícios estão sendo integrados nesta aula.",
+            explanation = resolvedTheory,
             lessonType = LessonType.LEARN,
             initialCode = "",
             hints = listOf("Revise os conceitos fundamentais deste subtópico.", "Aplique os métodos matemáticos recomendados para o ENEM."),
             solutionExplanation = "Conceito dominado com sucesso!",
             xpReward = xpReward,
-            mathExercises = exercises
+            mathExercises = resolvedExercises
         )
     }
 }

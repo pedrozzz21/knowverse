@@ -143,7 +143,7 @@ fun MainAppScreen(
 
             activeLesson != null -> {
                 val currentLesson = activeLesson!!
-                if (currentLesson.id.startsWith("calc_") || currentLesson.id.startsWith("mb_") || currentLesson.mathExercises.isNotEmpty()) {
+                if (currentLesson.id.startsWith("enem_") || currentLesson.id.startsWith("calc_") || currentLesson.id.startsWith("mb_") || currentLesson.mathExercises.isNotEmpty()) {
                     CalculusLessonScreen(
                         lesson = currentLesson,
                         progressRepository = progressRepository,

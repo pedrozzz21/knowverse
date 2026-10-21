@@ -109,9 +109,22 @@ fun MainAppScreen(
     var activeLesson by remember { mutableStateOf<Lesson?>(null) }
     var activeKahoot by remember { mutableStateOf<KahootModule?>(null) }
     var showDevDashboard by remember { mutableStateOf(false) }
+    var showEssayLab by remember { mutableStateOf(false) }
+    var isExerciseFocusMode by remember { mutableStateOf(false) }
+
+    LaunchedEffect(currentTab) {
+        isExerciseFocusMode = false
+    }
 
     Box(modifier = Modifier.fillMaxSize()) {
         when {
+            showEssayLab -> {
+                EssayLabScreen(
+                    progressRepository = progressRepository,
+                    onNavigateBack = { showEssayLab = false }
+                )
+            }
+
             showDevDashboard -> {
                 DevDashboardScreen(
                     progressRepository = progressRepository,
@@ -159,8 +172,9 @@ fun MainAppScreen(
                     containerColor = DeepNavy,
                     contentWindowInsets = WindowInsets(0, 0, 0, 0),
                     bottomBar = {
-                        NavigationBar(
-                            containerColor = ObsidianSurface,
+                        if (!isExerciseFocusMode) {
+                            NavigationBar(
+                                containerColor = ObsidianSurface,
                             tonalElevation = 4.dp,
                             windowInsets = NavigationBarDefaults.windowInsets,
                             modifier = Modifier
@@ -319,6 +333,7 @@ fun MainAppScreen(
                             )
                         }
                     }
+                }
                 ) { paddingValues ->
                     Box(
                         modifier = Modifier
@@ -343,6 +358,7 @@ fun MainAppScreen(
                                         onNavigateToTrail = { currentTab = NavigationTab.TRAIL },
                                         onNavigateToRanking = { currentTab = NavigationTab.LEADERBOARD },
                                         onNavigateToExercises = { currentTab = NavigationTab.EXERCISES },
+                                        onNavigateToEssayLab = { showEssayLab = true },
                                         onStartFinalTest = { module -> activeKahoot = module }
                                     )
                                 }
@@ -360,7 +376,10 @@ fun MainAppScreen(
                                 NavigationTab.EXERCISES -> {
                                     ExerciseSolverScreen(
                                         progressRepository = progressRepository,
-                                        userPhotoUrl = currentUser?.photoUrl
+                                        userPhotoUrl = currentUser?.photoUrl,
+                                        onNavigateToEssayLab = { showEssayLab = true },
+                                        isFocusModeActive = isExerciseFocusMode,
+                                        onFocusModeChange = { isExerciseFocusMode = it }
                                     )
                                 }
 

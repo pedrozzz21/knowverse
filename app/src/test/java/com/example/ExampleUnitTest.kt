@@ -107,4 +107,83 @@ class ExampleUnitTest {
             assertTrue("XP reward should be positive for ${ex.id}", ex.xpReward > 0)
         }
     }
+
+    @Test
+    fun testAdaptiveDifficultyProgression() {
+        val allExercises = com.example.data.exercise.UniversalExerciseBank.getAllExercises()
+        val mbExercises = allExercises.filter { it.discipline == com.example.data.exercise.ExerciseDiscipline.BASIC_MATH }
+        val mediumEx = mbExercises.first { it.difficulty == "Mediano" }
+
+        // Test 1: Acerto -> Avança para questão com dificuldade igual ou superior
+        val nextAfterCorrect = com.example.ui.screens.findNextAdaptiveExercise(
+            current = mediumEx,
+            allExercises = allExercises,
+            answeredIds = setOf(mediumEx.id),
+            wasCorrect = true
+        )
+        assertNotNull("Deve encontrar próxima questão adaptativa após acerto", nextAfterCorrect)
+        assertTrue(
+            "Nível após acerto deve ser igual ou superior (atual: ${mediumEx.difficulty}, próximo: ${nextAfterCorrect?.difficulty})",
+            com.example.ui.screens.getDifficultyRank(nextAfterCorrect!!.difficulty) >= com.example.ui.screens.getDifficultyRank(mediumEx.difficulty)
+        )
+
+        // Test 2: Erro -> Avança para questão com dificuldade mais fácil no mesmo tópico
+        val nextAfterWrong = com.example.ui.screens.findNextAdaptiveExercise(
+            current = mediumEx,
+            allExercises = allExercises,
+            answeredIds = setOf(mediumEx.id),
+            wasCorrect = false
+        )
+        assertNotNull("Deve encontrar próxima questão adaptativa após erro", nextAfterWrong)
+        assertTrue(
+            "Nível após erro deve ser mais fácil ou básico (atual: ${mediumEx.difficulty}, próximo: ${nextAfterWrong?.difficulty})",
+            com.example.ui.screens.getDifficultyRank(nextAfterWrong!!.difficulty) <= com.example.ui.screens.getDifficultyRank(mediumEx.difficulty)
+        )
+    }
+
+    @Test
+    fun testEnemMathCurriculumTaxonomy() {
+        val modules = com.example.data.math.EnemMathCurriculum.getAllModules()
+        assertEquals("Deve ter exatamente 14 módulos de Matemática para o ENEM", 14, modules.size)
+
+        val expectedLessonCounts = listOf(
+            10, // Módulo 1: Matemática Básica
+            3,  // Módulo 2: Matemática Financeira
+            6,  // Módulo 3: Estatística
+            9,  // Módulo 4: Geometria Plana
+            9,  // Módulo 5: Geometria Espacial
+            6,  // Módulo 6: Funções
+            5,  // Módulo 7: Álgebra e Equações
+            5,  // Módulo 8: Análise Combinatória
+            6,  // Módulo 9: Probabilidade
+            3,  // Módulo 10: Sequências e Progressões
+            3,  // Módulo 11: Logaritmos
+            5,  // Módulo 12: Trigonometria
+            6,  // Módulo 13: Geometria Analítica
+            3   // Módulo 14: Matrizes e Sistemas Lineares
+        )
+
+        val allLessons = com.example.data.math.EnemMathCurriculum.getAllLessons()
+        val totalExpected = expectedLessonCounts.sum() // 81
+        assertEquals("Total de aulas na trilha deve ser exatamente 81", totalExpected, allLessons.size)
+
+        modules.forEachIndexed { index, module ->
+            assertEquals(index + 1, module.moduleNumber)
+            assertEquals("Módulo ${module.moduleNumber} deve ter o número correto de aulas",
+                expectedLessonCounts[index], module.lessons.size)
+            assertTrue("Título do módulo não pode ser vazio", module.title.isNotBlank())
+            assertTrue("Resumo do módulo não pode ser vazio", module.summary.isNotBlank())
+            assertNotNull("Deve ter simulado final", module.finalSimulado)
+            assertTrue("Simulado deve conter aviso de bloqueio", module.finalSimulado.lockNotice.contains("Bloqueado"))
+
+            module.lessons.forEach { lesson ->
+                assertTrue("ID da aula não pode ser vazio", lesson.id.isNotBlank())
+                assertTrue("Título da aula não pode ser vazio: ${lesson.id}", lesson.title.isNotBlank())
+                assertTrue("Subtópico da aula não pode ser vazio: ${lesson.id}", lesson.subtopic.isNotBlank())
+                assertEquals("Recompensa em XP deve ser 30", 30, lesson.xpReward)
+            }
+        }
+    }
 }
+
+

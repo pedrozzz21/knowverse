@@ -55,10 +55,15 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.data.math.CalculusCurriculum
+import com.example.data.math.EnemMathCurriculum
 import com.example.data.model.DifficultyTier
+import com.example.data.model.EnemTrailLesson
+import com.example.data.model.EnemTrailModule
+import com.example.data.model.EnemTrailSimulado
 import com.example.data.model.KahootModule
 import com.example.data.model.LearningUnit
 import com.example.data.model.Lesson
@@ -78,6 +83,8 @@ import com.example.ui.theme.TextPrimary
 import com.example.ui.theme.TextSecondary
 import com.example.ui.theme.TextTertiary
 
+private val NeonGreen = Color(0xFF00E676)
+
 @Composable
 fun LearnTrailScreen(
     userProgress: UserProgress,
@@ -90,15 +97,16 @@ fun LearnTrailScreen(
     var selectedCategory by remember { mutableStateOf("Todas") }
 
     // Course expansion states
-    var isPythonExpanded by remember { mutableStateOf(true) }
-    var isMathBasicExpanded by remember { mutableStateOf(true) }
-    var isCalculusExpanded by remember { mutableStateOf(true) }
+    var isPythonExpanded by remember { mutableStateOf(false) }
+    var isEnemMathExpanded by remember { mutableStateOf(true) }
+    var expandedEnemModuleId by remember { mutableStateOf<String?>("mod_01_matematica_basica") }
+    var isCalculusExpanded by remember { mutableStateOf(false) }
 
-    // Active sub-module selection inside each course
+    val enemModules = remember { EnemMathCurriculum.getAllModules() }
+
+    // Active sub-module selection inside Python
     var selectedPythonTier by remember { mutableStateOf(initialTier) }
     var expandedPythonModule by remember { mutableStateOf<DifficultyTier?>(initialTier) }
-
-    var isMathBasicLessonsOpen by remember { mutableStateOf(false) }
 
     var selectedCalculusModule by remember { mutableStateOf("Limites") }
     var expandedCalculusModule by remember { mutableStateOf<String?>(null) }
@@ -452,30 +460,31 @@ fun LearnTrailScreen(
             }
 
             // ========================================================
-            // CATEGORIA: MATEMÁTICA -> MATEMÁTICA BÁSICA & CÁLCULO I
+            // CATEGORIA: MATEMÁTICA -> MATEMÁTICA ENEM (14 MÓDULOS) & CÁLCULO I
             // ========================================================
             if (showMath) {
-                // CURSO 1 DE MATEMÁTICA: MATEMÁTICA BÁSICA (ENEM)
+                // CURSO PRINCIPAL: MATEMÁTICA ENEM (14 MÓDULOS TAXONÔMICOS)
                 item {
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
-                        text = "Categoria: Matemática",
+                        text = "Disciplina: Matemática ENEM",
                         style = MaterialTheme.typography.labelSmall.copy(
-                            color = GoldXp,
+                            color = NeonGreen,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 11.sp
+                            fontSize = 11.sp,
+                            letterSpacing = 0.5.sp
                         ),
                         modifier = Modifier.padding(top = 4.dp, bottom = 2.dp)
                     )
 
                     Card(
-                        shape = RoundedCornerShape(8.dp),
+                        shape = RoundedCornerShape(10.dp),
                         colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
-                            .clickable { isMathBasicExpanded = !isMathBasicExpanded }
-                            .testTag("course_card_math_basic")
+                            .border(1.dp, NeonGreen.copy(alpha = 0.5f), RoundedCornerShape(10.dp))
+                            .clickable { isEnemMathExpanded = !isEnemMathExpanded }
+                            .testTag("discipline_card_matematica_enem")
                     ) {
                         Column(modifier = Modifier.padding(14.dp)) {
                             Row(
@@ -489,15 +498,15 @@ fun LearnTrailScreen(
                                 ) {
                                     Box(
                                         modifier = Modifier
-                                            .size(40.dp)
+                                            .size(42.dp)
                                             .clip(CircleShape)
-                                            .background(SuccessEmerald.copy(alpha = 0.2f)),
+                                            .background(NeonGreen.copy(alpha = 0.15f)),
                                         contentAlignment = Alignment.Center
                                     ) {
                                         Icon(
                                             imageVector = Icons.Default.Calculate,
                                             contentDescription = null,
-                                            tint = SuccessEmerald,
+                                            tint = NeonGreen,
                                             modifier = Modifier.size(24.dp)
                                         )
                                     }
@@ -507,7 +516,7 @@ fun LearnTrailScreen(
                                     Column {
                                         Row(verticalAlignment = Alignment.CenterVertically) {
                                             Text(
-                                                text = "Matemática Básica",
+                                                text = "Matemática ENEM",
                                                 style = MaterialTheme.typography.titleMedium.copy(
                                                     fontWeight = FontWeight.Bold,
                                                     color = TextPrimary
@@ -515,13 +524,13 @@ fun LearnTrailScreen(
                                             )
                                             Spacer(modifier = Modifier.width(8.dp))
                                             Surface(
-                                                color = SuccessEmerald.copy(alpha = 0.15f),
+                                                color = NeonGreen.copy(alpha = 0.15f),
                                                 shape = RoundedCornerShape(4.dp)
                                             ) {
                                                 Text(
-                                                    text = "12 Aulas",
+                                                    text = "14 Módulos • 81 Aulas",
                                                     style = MaterialTheme.typography.labelSmall.copy(
-                                                        color = SuccessEmerald,
+                                                        color = NeonGreen,
                                                         fontWeight = FontWeight.Bold,
                                                         fontSize = 10.sp
                                                     ),
@@ -531,29 +540,32 @@ fun LearnTrailScreen(
                                         }
 
                                         Text(
-                                            text = "Ciclo ENEM • Nivelamento Universitário & Pré-Cálculo",
+                                            text = "Trilha oficial: Básica, Financeira, Estatística, Geometria, Funções e Álgebra",
                                             style = MaterialTheme.typography.bodySmall.copy(
                                                 color = TextSecondary,
                                                 fontSize = 11.sp
-                                            )
+                                            ),
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis
                                         )
                                     }
                                 }
 
                                 IconButton(
-                                    onClick = { isMathBasicExpanded = !isMathBasicExpanded },
+                                    onClick = { isEnemMathExpanded = !isEnemMathExpanded },
                                     modifier = Modifier.size(28.dp)
                                 ) {
                                     Icon(
-                                        imageVector = if (isMathBasicExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
-                                        contentDescription = "Expandir Matemática Básica",
+                                        imageVector = if (isEnemMathExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                        contentDescription = "Expandir Matemática ENEM",
                                         tint = TextSecondary
                                     )
                                 }
                             }
 
+                            // Lista dos 14 Módulos com bordas destacadas e caixas expansíveis
                             AnimatedVisibility(
-                                visible = isMathBasicExpanded,
+                                visible = isEnemMathExpanded,
                                 enter = fadeIn() + expandVertically(),
                                 exit = fadeOut() + shrinkVertically()
                             ) {
@@ -563,26 +575,15 @@ fun LearnTrailScreen(
                                 ) {
                                     Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
 
-                                    ExploreModuleCard(
-                                        moduleNumber = 1,
-                                        title = "Fundamentos da Matemática Básica",
-                                        subtitle = "Frações, MMC, Potências, Regra de Três, Porcentagem e Equações",
-                                        description = "Os 12 pilares essenciais: Frações, Decimais, MMC/MDC, Potenciação, Notação Científica, Unidades de Medida, Razão e Proporção, Regra de Três Composta, Porcentagem e Juros, Equações do 1º e 2º Grau, Geometria e Escalas.",
-                                        lessonsCount = "12 Aulas práticas completas",
-                                        isUnlocked = true,
-                                        isExpanded = isMathBasicLessonsOpen,
-                                        accentColor = SuccessEmerald,
-                                        onClick = { isMathBasicLessonsOpen = !isMathBasicLessonsOpen }
-                                    )
-
-                                    if (isMathBasicLessonsOpen) {
-                                        ModuleLessonsInlineView(
-                                            units = CalculusCurriculum.getUnitsForModule("Matemática Básica"),
-                                            finalTest = CalculusCurriculum.basicMathFinalTest,
-                                            isTierUnlocked = true,
+                                    enemModules.forEach { module ->
+                                        EnemMathTrailModuleContainer(
+                                            module = module,
+                                            isExpanded = expandedEnemModuleId == module.id,
                                             userProgress = userProgress,
-                                            onSelectLesson = onSelectLesson,
-                                            onStartFinalTest = onStartFinalTest
+                                            onToggleExpand = {
+                                                expandedEnemModuleId = if (expandedEnemModuleId == module.id) null else module.id
+                                            },
+                                            onSelectLesson = onSelectLesson
                                         )
                                     }
                                 }
@@ -1211,6 +1212,379 @@ private fun TrailLessonNode(
                 style = MaterialTheme.typography.labelSmall.copy(
                     fontWeight = FontWeight.Bold,
                     color = if (isCompleted) TextTertiary else GoldXp
+                )
+            )
+        }
+    }
+}
+
+/**
+ * ========================================================
+ * COMPONENTES DE UI DA TRILHA DE MATEMÁTICA ENEM
+ * - Container do Módulo expansível com borda destacada verde neon
+ * - Lista de aulas em cards escuros com ícone circular e +30 XP dourado
+ * - Simulado final como card especial cinza com cadeado e aviso
+ * ========================================================
+ */
+@Composable
+fun EnemMathTrailModuleContainer(
+    module: EnemTrailModule,
+    isExpanded: Boolean,
+    userProgress: UserProgress,
+    onToggleExpand: () -> Unit,
+    onSelectLesson: (Lesson) -> Unit
+) {
+    val completedCount = module.lessons.count { userProgress.completedLessonIds.contains(it.id) }
+    val totalCount = module.lessons.size
+    val progressLabel = "$completedCount/$totalCount"
+
+    Card(
+        shape = RoundedCornerShape(10.dp),
+        colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+        border = androidx.compose.foundation.BorderStroke(
+            width = if (isExpanded) 1.5.dp else 1.dp,
+            color = if (isExpanded) NeonGreen else NeonGreen.copy(alpha = 0.35f)
+        ),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onToggleExpand)
+            .testTag("enem_module_card_${module.moduleNumber}")
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            // Cabeçalho do Módulo
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.weight(1f)
+                ) {
+                    // Badge "Módulo X"
+                    Surface(
+                        color = NeonGreen.copy(alpha = 0.15f),
+                        shape = RoundedCornerShape(6.dp),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, NeonGreen.copy(alpha = 0.5f))
+                    ) {
+                        Text(
+                            text = "Módulo ${module.moduleNumber}",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = NeonGreen,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 11.sp
+                            ),
+                            modifier = Modifier.padding(horizontal = 7.dp, vertical = 3.dp)
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Text(
+                        text = module.title,
+                        style = MaterialTheme.typography.titleSmall.copy(
+                            fontWeight = FontWeight.Bold,
+                            color = TextPrimary,
+                            fontSize = 14.sp
+                        )
+                    )
+                }
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    // Progresso de aulas completas (Ex: "0/10")
+                    Surface(
+                        color = SurfaceElevated,
+                        shape = RoundedCornerShape(6.dp),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle)
+                    ) {
+                        Text(
+                            text = progressLabel,
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = if (completedCount > 0) NeonGreen else TextSecondary,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 11.sp
+                            ),
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 3.dp)
+                        )
+                    }
+
+                    Icon(
+                        imageVector = if (isExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                        contentDescription = "Expandir Módulo",
+                        tint = if (isExpanded) NeonGreen else TextSecondary,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            // Resumo do Conteúdo
+            Text(
+                text = module.summary,
+                style = MaterialTheme.typography.bodySmall.copy(
+                    color = TextSecondary,
+                    fontSize = 11.5.sp,
+                    lineHeight = 16.sp
+                )
+            )
+
+            // LISTA DE AULAS (Dentro do container expandido em formato de lista)
+            AnimatedVisibility(
+                visible = isExpanded,
+                enter = fadeIn() + expandVertically(),
+                exit = fadeOut() + shrinkVertically()
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 12.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
+
+                    Text(
+                        text = "Aulas Sequenciais ($progressLabel)",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            color = NeonGreen,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 11.sp,
+                            letterSpacing = 0.5.sp
+                        ),
+                        modifier = Modifier.padding(vertical = 4.dp)
+                    )
+
+                    module.lessons.forEachIndexed { index, lesson ->
+                        val isCompleted = userProgress.completedLessonIds.contains(lesson.id)
+                        val isFirstLesson = index == 0
+                        val isPrecedingLessonDone = if (index > 0) {
+                            userProgress.completedLessonIds.contains(module.lessons[index - 1].id)
+                        } else true
+                        val isUnlocked = isFirstLesson || isPrecedingLessonDone || isCompleted
+
+                        EnemLessonCard(
+                            lesson = lesson,
+                            isUnlocked = isUnlocked,
+                            isCompleted = isCompleted,
+                            onClick = {
+                                if (isUnlocked) {
+                                    onSelectLesson(lesson.toAppLesson())
+                                }
+                            }
+                        )
+                    }
+
+                    // SIMULADO FINAL (Último item de todo módulo: card especial cinza com cadeado)
+                    EnemFinalSimuladoCard(
+                        simulado = module.finalSimulado,
+                        moduleTitle = module.title,
+                        completedCount = completedCount,
+                        totalCount = totalCount
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun EnemLessonCard(
+    lesson: EnemTrailLesson,
+    isUnlocked: Boolean,
+    isCompleted: Boolean,
+    onClick: () -> Unit
+) {
+    Card(
+        shape = RoundedCornerShape(8.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = if (isUnlocked) SurfaceCard else DeepNavy.copy(alpha = 0.6f)
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            width = 1.dp,
+            color = when {
+                isCompleted -> SuccessEmerald.copy(alpha = 0.4f)
+                isUnlocked -> BorderSubtle
+                else -> BorderSubtle.copy(alpha = 0.3f)
+            }
+        ),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable(enabled = isUnlocked, onClick = onClick)
+            .testTag("enem_lesson_${lesson.id}")
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.weight(1f)
+            ) {
+                // Ícone circular à esquerda: play se desbloqueada, cadeado se bloqueada
+                Surface(
+                    color = when {
+                        isCompleted -> SuccessEmerald.copy(alpha = 0.2f)
+                        isUnlocked -> NeonGreen.copy(alpha = 0.15f)
+                        else -> SurfaceElevated
+                    },
+                    shape = CircleShape,
+                    modifier = Modifier.size(32.dp)
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Icon(
+                            imageVector = when {
+                                isCompleted -> Icons.Default.Check
+                                isUnlocked -> Icons.Default.PlayArrow
+                                else -> Icons.Default.Lock
+                            },
+                            contentDescription = if (isUnlocked) "Iniciar Aula" else "Aula Bloqueada",
+                            tint = when {
+                                isCompleted -> SuccessEmerald
+                                isUnlocked -> NeonGreen
+                                else -> TextTertiary
+                            },
+                            modifier = Modifier.size(16.dp)
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.width(12.dp))
+
+                Column {
+                    Text(
+                        text = lesson.title,
+                        style = MaterialTheme.typography.bodySmall.copy(
+                            fontWeight = if (isUnlocked) FontWeight.SemiBold else FontWeight.Normal,
+                            color = if (isUnlocked) TextPrimary else TextTertiary,
+                            fontSize = 12.5.sp
+                        )
+                    )
+                    Text(
+                        text = lesson.subtopic,
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            color = if (isUnlocked) TextSecondary else TextTertiary.copy(alpha = 0.7f),
+                            fontSize = 10.5.sp
+                        )
+                    )
+                }
+            }
+
+            // À direita: Recompensa em XP (ex: "+30 XP" em texto dourado)
+            Text(
+                text = "+${lesson.xpReward} XP",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    color = if (isUnlocked) GoldXp else GoldXp.copy(alpha = 0.4f),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 11.5.sp
+                )
+            )
+        }
+    }
+}
+
+@Composable
+fun EnemFinalSimuladoCard(
+    simulado: EnemTrailSimulado,
+    moduleTitle: String,
+    completedCount: Int,
+    totalCount: Int
+) {
+    val areAllLessonsDone = completedCount >= totalCount && totalCount > 0
+
+    // Card especial cinza com ícone de cadeado e aviso
+    Card(
+        shape = RoundedCornerShape(8.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = Color(0xFF1E293B) // Card especial cinza escuro
+        ),
+        border = androidx.compose.foundation.BorderStroke(
+            width = 1.dp,
+            color = if (areAllLessonsDone) GoldXp.copy(alpha = 0.6f) else BorderSubtle
+        ),
+        modifier = Modifier
+            .fillMaxWidth()
+            .testTag("enem_simulado_${simulado.id}")
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.weight(1f)
+            ) {
+                Surface(
+                    color = if (areAllLessonsDone) GoldXp.copy(alpha = 0.2f) else SurfaceElevated,
+                    shape = RoundedCornerShape(6.dp),
+                    modifier = Modifier.size(34.dp)
+                ) {
+                    Box(contentAlignment = Alignment.Center) {
+                        Icon(
+                            imageVector = if (areAllLessonsDone) Icons.Default.WorkspacePremium else Icons.Default.Lock,
+                            contentDescription = "Simulado Final",
+                            tint = if (areAllLessonsDone) GoldXp else TextTertiary,
+                            modifier = Modifier.size(18.dp)
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.width(12.dp))
+
+                Column {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(
+                            text = "${simulado.title}: $moduleTitle",
+                            style = MaterialTheme.typography.bodySmall.copy(
+                                fontWeight = FontWeight.Bold,
+                                color = if (areAllLessonsDone) TextPrimary else TextSecondary,
+                                fontSize = 12.5.sp
+                            )
+                        )
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Surface(
+                            color = Color(0xFF334155),
+                            shape = RoundedCornerShape(4.dp)
+                        ) {
+                            Text(
+                                text = "10 Questões",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    color = TextSecondary,
+                                    fontSize = 9.sp,
+                                    fontWeight = FontWeight.Bold
+                                ),
+                                modifier = Modifier.padding(horizontal = 4.dp, vertical = 1.dp)
+                            )
+                        }
+                    }
+
+                    Text(
+                        text = if (areAllLessonsDone)
+                            "Disponível! Realize o Simulado Final para validar seus conhecimentos no módulo."
+                        else
+                            "Bloqueado: Conclua todas as aulas do módulo para liberar",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            color = if (areAllLessonsDone) GoldXp else TextTertiary,
+                            fontSize = 11.sp
+                        )
+                    )
+                }
+            }
+
+            Text(
+                text = "+${simulado.xpReward} XP",
+                style = MaterialTheme.typography.labelSmall.copy(
+                    color = if (areAllLessonsDone) GoldXp else GoldXp.copy(alpha = 0.5f),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 11.sp
                 )
             )
         }

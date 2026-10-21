@@ -34,7 +34,8 @@ data class MathExercise(
     val options: List<String>,
     val correctIndex: Int,
     val hint: String,
-    val stepByStepSolution: String
+    val stepByStepSolution: String,
+    val geoGebraConfig: com.example.data.math.GeoGebraGraphConfig? = null
 ) {
     /**
      * Gera uma cópia do exercício com as alternativas embaralhadas aleatoriamente,

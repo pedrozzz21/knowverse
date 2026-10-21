@@ -593,6 +593,600 @@ object GeoGebraGeometryExercises {
             pedagogicalAlert = "O segmento que realiza a menor distância forma sempre um ângulo reto (90°) com a reta dada.",
             keyMethod = "d = |3(6) + 4(6) - 12| / √(3² + 4²) = 30 / 5 = 6,0.",
             xpReward = 35
+        ),
+
+        // =========================================================================
+        // 11. CÁLCULO / GEOMETRIA: ÁREA SOB A PARÁBOLA f(x) = 4 - x² E O EIXO X
+        // =========================================================================
+        UniversalExercise(
+            id = "geo_11",
+            discipline = ExerciseDiscipline.CALCULUS,
+            category = "Cálculo I",
+            subtopic = "Geometria com GeoGebra",
+            difficulty = "Mediano",
+            source = "Cálculo Diferencial e Integral / Teorema Fundamental",
+            problemStatement = """Considere a região plana delimitada superiormente pela parábola f(x) = 4 - x² e inferiormente pelo eixo das abscissas (y = 0), entre as suas raízes reais x = -2 e x = 2. Examine o gráfico no GeoGebra e determine a área exata dessa região parabólica utilizando o Teorema Fundamental do Cálculo.""",
+            geoGebraConfig = GeoGebraGraphConfig(
+                title = "Área sob a Parábola: f(x) = 4 - x² de x = -2 a x = 2",
+                functionExpression = "4 - x^2",
+                commands = listOf(
+                    "f(x) = 4 - x^2",
+                    "A = Integral(f, -2, 2)",
+                    "SetColor(A, 139, 92, 246)",
+                    "SetFilling(A, 0.35)",
+                    "V = (0, 4)",
+                    "SetPointSize(V, 5)",
+                    "SetColor(V, 234, 179, 8)",
+                    "R1 = (-2, 0)",
+                    "R2 = (2, 0)",
+                    "SetColor(R1, 56, 189, 248)",
+                    "SetColor(R2, 56, 189, 248)"
+                ),
+                xMin = -3.5,
+                xMax = 3.5,
+                yMin = -1.0,
+                yMax = 5.0,
+                didacticExplanation = "A área sombreada é calculada por ∫₋₂² (4 - x²) dx. Pela simetria par f(-x) = f(x), equivale a 2 × ∫₀² (4 - x²) dx = 2 × [4(2) - (8/3)] = 2 × [8 - 8/3] = 2 × 16/3 = 32/3 u.a. ≈ 10,67 u.a.",
+                mathInsight = "Área = 2 ∫₀² (4 - x²) dx = 2 [4x - x³/3]₀² = 2(8 - 8/3) = 32/3 ≈ 10,67 u.a.",
+                analysisPoints = listOf(
+                    GeoGebraPoint("V", 0.0, 4.0, "Vértice V(0, 4)", colorHex = "#EAB308"),
+                    GeoGebraPoint("R1", -2.0, 0.0, "Raiz R₁(-2, 0)", colorHex = "#38BDF8"),
+                    GeoGebraPoint("R2", 2.0, 0.0, "Raiz R₂(2, 0)", colorHex = "#38BDF8")
+                )
+            ),
+            options = listOf(
+                "16/3 u.a. (aproximadamente 5,33)",
+                "24/3 u.a. (exatamente 8,00)",
+                "32/3 u.a. (aproximadamente 10,67)",
+                "16 u.a.",
+                "40/3 u.a. (aproximadamente 13,33)"
+            ),
+            correctIndex = 2,
+            solutionSteps = listOf(
+                "Passo 1: Identificar as raízes igualando a função a zero: 4 - x² = 0 => x² = 4 => x = -2 ou x = 2.",
+                "Passo 2: Configurar a integral definida para a área: A = ∫₋₂² (4 - x²) dx.",
+                "Passo 3: Como f(x) é uma função par, podemos usar simetria: A = 2 × ∫₀² (4 - x²) dx.",
+                "Passo 4: Integrar termo a termo: ∫ (4 - x²) dx = 4x - (x³ / 3).",
+                "Passo 5: Aplicar os limites de 0 a 2: [4(2) - 2³/3] - [0] = 8 - 8/3 = (24 - 8)/3 = 16/3.",
+                "Passo 6: Multiplicar pelo fator de simetria 2: A = 2 × 16/3 = 32/3 unidades de área (≈ 10,67)."
+            ),
+            pedagogicalAlert = "Arquimedes provou geometricamente no século III a.C. que a área de um segmento parabólico é 4/3 da área do triângulo inscrito de mesma base e altura: 4/3 × (base × altura / 2) = 4/3 × (4 × 4 / 2) = 4/3 × 8 = 32/3!",
+            keyMethod = "A = ∫₋₂² (4 - x²) dx = 32/3 ≈ 10,67 u.a.",
+            xpReward = 40
+        ),
+
+        // =========================================================================
+        // 12. GEOMETRIA ANALÍTICA: ELIPSE CARTESIANA x²/25 + y²/9 = 1
+        // =========================================================================
+        UniversalExercise(
+            id = "geo_12",
+            discipline = ExerciseDiscipline.BASIC_MATH,
+            category = "Matemática Básica",
+            subtopic = "Geometria Analítica & Gráficos",
+            difficulty = "Mediano",
+            source = "ENEM / Cônicas & Órbitas",
+            problemStatement = """A órbita plana de um satélite de pesquisa é modelada pela equação da elipse x²/25 + y²/9 = 1, com medidas em milhares de quilômetros. Utilizando as ferramentas visuais do GeoGebra, determine a distância focal total (distância entre os dois focos F₁ e F₂) e a excentricidade e dessa órbita elíptica.""",
+            geoGebraConfig = GeoGebraGraphConfig(
+                title = "Elipse Centrada na Origem: x²/25 + y²/9 = 1",
+                functionExpression = "3 * sqrt(1 - (x/5)^2)",
+                commands = listOf(
+                    "elip = x^2/25 + y^2/9 = 1",
+                    "SetColor(elip, 59, 130, 246)",
+                    "SetLineThickness(elip, 3)",
+                    "F1 = (-4, 0)",
+                    "F2 = (4, 0)",
+                    "SetPointSize(F1, 6)",
+                    "SetPointSize(F2, 6)",
+                    "SetColor(F1, 239, 68, 68)",
+                    "SetColor(F2, 239, 68, 68)",
+                    "A1 = (-5, 0)",
+                    "A2 = (5, 0)",
+                    "SetColor(A1, 234, 179, 8)",
+                    "SetColor(A2, 234, 179, 8)"
+                ),
+                xMin = -7.0,
+                xMax = 7.0,
+                yMin = -5.0,
+                yMax = 5.0,
+                didacticExplanation = "Para a elipse x²/a² + y²/b² = 1: a² = 25 (semi-eixo maior a = 5) e b² = 9 (semi-eixo menor b = 3). A relação fundamental c² = a² - b² dá c² = 25 - 9 = 16 => c = 4. Distância focal 2c = 8 e excentricidade e = c/a = 4/5 = 0,8.",
+                mathInsight = "c = √(a² - b²) = √(25 - 9) = 4 => Distância focal = 2c = 8; Excentricidade e = c/a = 4/5 = 0,8.",
+                analysisPoints = listOf(
+                    GeoGebraPoint("F1", -4.0, 0.0, "Foco F₁(-4, 0)", colorHex = "#EF4444"),
+                    GeoGebraPoint("F2", 4.0, 0.0, "Foco F₂(4, 0)", colorHex = "#EF4444"),
+                    GeoGebraPoint("A1", -5.0, 0.0, "Vértice A₁(-5, 0)", colorHex = "#EAB308"),
+                    GeoGebraPoint("A2", 5.0, 0.0, "Vértice A₂(5, 0)", colorHex = "#EAB308")
+                )
+            ),
+            options = listOf(
+                "Distância focal de 4 mil km e excentricidade e = 0,60",
+                "Distância focal de 8 mil km e excentricidade e = 0,80",
+                "Distância focal de 6 mil km e excentricidade e = 0,75",
+                "Distância focal de 10 mil km e excentricidade e = 0,80",
+                "Distância focal de 8 mil km e excentricidade e = 0,60"
+            ),
+            correctIndex = 1,
+            solutionSteps = listOf(
+                "Passo 1: Da equação reduzida x²/25 + y²/9 = 1, identificamos a² = 25 e b² = 9.",
+                "Passo 2: O semi-eixo maior é a = √25 = 5 e o semi-eixo menor é b = √9 = 3.",
+                "Passo 3: Aplicar a relação pitagórica das elipses: a² = b² + c² => c² = a² - b² = 25 - 9 = 16.",
+                "Passo 4: A distância focal do centro a cada foco é c = √16 = 4.",
+                "Passo 5: A distância focal total entre os dois focos (F₁ e F₂) é 2c = 2 × 4 = 8 milhares de quilômetros.",
+                "Passo 6: A excentricidade é dada pela razão e = c / a = 4 / 5 = 0,80."
+            ),
+            pedagogicalAlert = "A excentricidade da elipse sempre varia entre 0 (circunferência perfeita) e 1 (alongamento parabólico extremo).",
+            keyMethod = "c = √(a² - b²) = 4 => 2c = 8 e e = c/a = 0,8.",
+            xpReward = 35
+        ),
+
+        // =========================================================================
+        // 13. CÁLCULO / GEOMETRIA: RETA TANGENTE À FUNÇÃO CÚBICA f(x) = x³ - 3x
+        // =========================================================================
+        UniversalExercise(
+            id = "geo_13",
+            discipline = ExerciseDiscipline.CALCULUS,
+            category = "Cálculo I",
+            subtopic = "Geometria com GeoGebra",
+            difficulty = "Mediano",
+            source = "Cálculo I / Derivadas & Retas Tangentes",
+            problemStatement = """Observe a função cúbica f(x) = x³ - 3x representada no GeoGebra. Desejamos encontrar a equação da reta tangente ao gráfico no ponto P(2, f(2)). Calcule a coordenada y do ponto P, o coeficiente angular da reta tangente m = f'(2) e determine a equação geral da reta tangente.""",
+            geoGebraConfig = GeoGebraGraphConfig(
+                title = "Curva Cúbica f(x) = x³ - 3x e Reta Tangente em x = 2",
+                functionExpression = "x^3 - 3*x",
+                commands = listOf(
+                    "f(x) = x^3 - 3*x",
+                    "P = (2, 2)",
+                    "SetPointSize(P, 6)",
+                    "SetColor(P, 239, 68, 68)",
+                    "t: y = 9*x - 16",
+                    "SetColor(t, 16, 185, 129)",
+                    "SetLineThickness(t, 3)",
+                    "Max1 = (-1, 2)",
+                    "Min1 = (1, -2)",
+                    "SetColor(Max1, 234, 179, 8)",
+                    "SetColor(Min1, 234, 179, 8)"
+                ),
+                xMin = -3.0,
+                xMax = 4.0,
+                yMin = -5.0,
+                yMax = 7.0,
+                didacticExplanation = "f(2) = 2³ - 3(2) = 8 - 6 = 2, logo P = (2, 2). A derivada é f'(x) = 3x² - 3. Em x = 2, o coeficiente angular é m = f'(2) = 3(4) - 3 = 9. A equação da reta tangente é y - 2 = 9(x - 2) => y = 9x - 16.",
+                mathInsight = "P(2, 2); m = f'(2) = 3(2)² - 3 = 9 => y - 2 = 9(x - 2) => y = 9x - 16.",
+                analysisPoints = listOf(
+                    GeoGebraPoint("P", 2.0, 2.0, "Ponto de Tangência P(2, 2)", colorHex = "#EF4444"),
+                    GeoGebraPoint("Max1", -1.0, 2.0, "Máximo Local (-1, 2)", colorHex = "#EAB308"),
+                    GeoGebraPoint("Min1", 1.0, -2.0, "Mínimo Local (1, -2)", colorHex = "#EAB308")
+                )
+            ),
+            options = listOf(
+                "P(2, 2), m = 6 e reta y = 6x - 10",
+                "P(2, 2), m = 9 e reta y = 9x - 16",
+                "P(2, 4), m = 9 e reta y = 9x - 14",
+                "P(2, 2), m = 12 e reta y = 12x - 22",
+                "P(2, 0), m = 9 e reta y = 9x - 18"
+            ),
+            correctIndex = 1,
+            solutionSteps = listOf(
+                "Passo 1: Encontrar o ponto de tangência P(2, f(2)): f(2) = 2³ - 3(2) = 8 - 6 = 2. Portanto, P(2, 2).",
+                "Passo 2: Calcular a derivada geral da função f(x): f'(x) = d/dx (x³ - 3x) = 3x² - 3.",
+                "Passo 3: Avaliar a derivada no ponto de tangência x = 2: m = f'(2) = 3(2)² - 3 = 3(4) - 3 = 12 - 3 = 9.",
+                "Passo 4: Aplicar a equação da reta que passa pelo ponto P(x₀, y₀) com inclinação m: y - y₀ = m(x - x₀).",
+                "Passo 5: Substituindo: y - 2 = 9(x - 2) => y - 2 = 9x - 18 => y = 9x - 16."
+            ),
+            pedagogicalAlert = "O coeficiente angular da reta tangente é exatamente a derivada da função no ponto de contato.",
+            keyMethod = "f'(2) = 3(4) - 3 = 9 => y - 2 = 9(x - 2) => y = 9x - 16.",
+            xpReward = 40
+        ),
+
+        // =========================================================================
+        // 14. TRIGONOMETRIA & FUNÇÕES: SENÓIDE f(x) = 2 sen(2x)
+        // =========================================================================
+        UniversalExercise(
+            id = "geo_14",
+            discipline = ExerciseDiscipline.BASIC_MATH,
+            category = "Matemática Básica",
+            subtopic = "Geometria Analítica & Gráficos",
+            difficulty = "Fácil",
+            source = "ENEM / Fenômenos Periódicos",
+            problemStatement = """Um oscilador harmônico gera uma onda senoidal representada no plano cartesiano por f(x) = 2 sen(2x), onde x é o tempo em segundos e f(x) é o deslocamento em centímetros. Analise a forma de onda traçada no GeoGebra e indique corretamente a amplitude A e o período T dessa oscilação.""",
+            geoGebraConfig = GeoGebraGraphConfig(
+                title = "Onda Harmônica Periódica: f(x) = 2 sen(2x)",
+                functionExpression = "2 * sin(2*x)",
+                commands = listOf(
+                    "f(x) = 2 * sin(2*x)",
+                    "SetColor(f, 236, 72, 153)",
+                    "SetLineThickness(f, 3)",
+                    "P1 = (0.785, 2)",
+                    "P2 = (2.356, -2)",
+                    "P3 = (3.1415, 0)",
+                    "SetPointSize(P1, 5)",
+                    "SetPointSize(P2, 5)",
+                    "SetPointSize(P3, 5)",
+                    "SetColor(P1, 234, 179, 8)",
+                    "SetColor(P2, 56, 189, 248)",
+                    "SetColor(P3, 16, 185, 129)"
+                ),
+                xMin = -0.5,
+                xMax = 7.0,
+                yMin = -3.0,
+                yMax = 3.0,
+                didacticExplanation = "Para f(x) = A sen(B x): a amplitude é |A| = 2 cm (cristas em +2 e vales em -2). O período é T = 2π / |B| = 2π / 2 = π segundos (≈ 3,14 s), instante em que a onda completa exatamente um ciclo completo.",
+                mathInsight = "Amplitude = |A| = 2; Período T = 2π/B = 2π/2 = π s.",
+                analysisPoints = listOf(
+                    GeoGebraPoint("P1", 0.785, 2.0, "Crista Máxima (π/4; 2)", colorHex = "#EAB308"),
+                    GeoGebraPoint("P2", 2.356, -2.0, "Vale Mínimo (3π/4; -2)", colorHex = "#38BDF8"),
+                    GeoGebraPoint("P3", 3.142, 0.0, "Fim do 1º Ciclo (π; 0)", colorHex = "#10B981")
+                )
+            ),
+            options = listOf(
+                "Amplitude = 1 cm e Período = 2π segundos",
+                "Amplitude = 2 cm e Período = π segundos",
+                "Amplitude = 2 cm e Período = 2π segundos",
+                "Amplitude = 4 cm e Período = π segundos",
+                "Amplitude = 2 cm e Período = π/2 segundos"
+            ),
+            correctIndex = 1,
+            solutionSteps = listOf(
+                "Passo 1: Na forma padrão de uma função senoidal f(x) = A sen(Bx + C) + D:",
+                "Passo 2: A amplitude é a distância do eixo central até a crista máxima: Amplitude = |A| = |2| = 2 cm.",
+                "Passo 3: A frequência angular é o coeficiente do argumento B = 2.",
+                "Passo 4: A fórmula do período fundamental T é dada por T = 2π / B.",
+                "Passo 5: Calculando: T = 2π / 2 = π segundos (aproximadamente 3,14 segundos).",
+                "Conclusão: A amplitude da oscilação é 2 cm e o período completo de repetição é π segundos."
+            ),
+            pedagogicalAlert = "Multiplicar o argumento x por 2 encolhe o gráfico horizontalmente pela metade, dobrando a frequência e reduzindo o período para π.",
+            keyMethod = "Amplitude = 2 e Período T = 2π/2 = π.",
+            xpReward = 30
+        ),
+
+        // =========================================================================
+        // 15. GEOMETRIA ANALÍTICA: HIPÉRBOLE EQUILÁTERA E ASSÍNTOTAS
+        // =========================================================================
+        UniversalExercise(
+            id = "geo_15",
+            discipline = ExerciseDiscipline.CALCULUS,
+            category = "Cálculo I",
+            subtopic = "Geometria com GeoGebra",
+            difficulty = "Difícil",
+            source = "ENEM / Assíntotas e Comportamento Assintótico",
+            problemStatement = """Observe o gráfico da função racional f(x) = (2x + 1) / (x - 1) no GeoGebra. O gráfico descreve uma hipérbole transladada com duas assíntotas retilíneas: uma vertical e uma horizontal. Determine as equações dessas duas assíntotas calculando os limites pertinentes.""",
+            geoGebraConfig = GeoGebraGraphConfig(
+                title = "Hipérbole Transladada: f(x) = (2x + 1)/(x - 1)",
+                functionExpression = "(2*x + 1)/(x - 1)",
+                commands = listOf(
+                    "f(x) = (2*x + 1)/(x - 1)",
+                    "SetColor(f, 139, 92, 246)",
+                    "av: x = 1",
+                    "SetLineStyle(av, 2)",
+                    "SetColor(av, 239, 68, 68)",
+                    "ah: y = 2",
+                    "SetLineStyle(ah, 2)",
+                    "SetColor(ah, 16, 185, 129)",
+                    "I = (1, 2)",
+                    "SetPointSize(I, 5)",
+                    "SetColor(I, 234, 179, 8)"
+                ),
+                xMin = -5.0,
+                xMax = 7.0,
+                yMin = -6.0,
+                yMax = 10.0,
+                didacticExplanation = "Assíntota vertical ocorre onde o denominador zera sem anular o numerador: x - 1 = 0 => x = 1 (com limites laterais tendendo a ±∞). A assíntota horizontal é dada por lim_{x→±∞} (2x + 1)/(x - 1) = 2 => y = 2.",
+                mathInsight = "Assíntota Vertical: x = 1; Assíntota Horizontal: y = lim (2x+1)/(x-1) = 2.",
+                analysisPoints = listOf(
+                    GeoGebraPoint("I", 1.0, 2.0, "Cruzamento das Assíntotas (1, 2)", colorHex = "#EAB308")
+                )
+            ),
+            options = listOf(
+                "Assíntota vertical x = -1 e horizontal y = 1",
+                "Assíntota vertical x = 1 e horizontal y = 2",
+                "Assíntota vertical x = 2 e horizontal y = 1",
+                "Assíntota vertical x = 1 e horizontal y = 0",
+                "Assíntota vertical x = -1 e horizontal y = 2"
+            ),
+            correctIndex = 1,
+            solutionSteps = listOf(
+                "Passo 1: Assíntota Vertical: O denominador zera em x - 1 = 0 => x = 1.",
+                "Passo 2: Verificamos que o numerador em x = 1 vale 2(1) + 1 = 3 ≠ 0, gerando divergência infinita (lim_{x→1⁺} = +∞ e lim_{x→1⁻} = -∞). Portanto, reta x = 1.",
+                "Passo 3: Assíntota Horizontal: Analisamos o limite para x tendendo a infinito:",
+                "lim_{x→∞} (2x + 1)/(x - 1) = lim_{x→∞} x(2 + 1/x) / [x(1 - 1/x)] = 2 / 1 = 2.",
+                "Passo 4: O mesmo ocorre para x → -∞: o limite vale 2. Logo, a assíntota horizontal é a reta y = 2."
+            ),
+            pedagogicalAlert = "As assíntotas funcionam como linhas-guia infinitesimais que a curva se aproxima indefinidamente sem jamais cruzar na região vertical.",
+            keyMethod = "Assíntota Vertical: x = 1; Assíntota Horizontal: y = 2.",
+            xpReward = 45
+        ),
+
+        // =========================================================================
+        // 16. OTIMIZAÇÃO GEOMÉTRICA: RETÂNGULO DE ÁREA MÁXIMA
+        // =========================================================================
+        UniversalExercise(
+            id = "geo_16",
+            discipline = ExerciseDiscipline.CALCULUS,
+            category = "Cálculo I",
+            subtopic = "Geometria com GeoGebra",
+            difficulty = "Mediano",
+            source = "ENEM / Problemas de Otimização Clássica",
+            problemStatement = """Um fazendeiro possui 80 metros de cerca linear para construir um cercado retangular de plantio aproveitando o plano do terreno. Se x e y são as dimensões dos lados (perímetro 2x + 2y = 80), a área é A(x) = x(40 - x) = 40x - x². Observe a parábola de área no GeoGebra e determine as dimensões x e y que maximizam a área e o valor dessa área máxima.""",
+            geoGebraConfig = GeoGebraGraphConfig(
+                title = "Otimização de Área: A(x) = 40x - x² (Perímetro = 80m)",
+                functionExpression = "40*x - x^2",
+                commands = listOf(
+                    "A(x) = 40*x - x^2",
+                    "SetColor(A, 234, 179, 8)",
+                    "SetLineThickness(A, 3)",
+                    "V = (20, 400)",
+                    "SetPointSize(V, 6)",
+                    "SetColor(V, 16, 185, 129)",
+                    "R1 = (0, 0)",
+                    "R2 = (40, 0)",
+                    "SetColor(R1, 56, 189, 248)",
+                    "SetColor(R2, 56, 189, 248)"
+                ),
+                xMin = -5.0,
+                xMax = 45.0,
+                yMin = -50.0,
+                yMax = 460.0,
+                didacticExplanation = "A derivada A'(x) = 40 - 2x = 0 resulta no ponto crítico x = 20 m. Como y = 40 - x = 20 m, a figura de área máxima com perímetro fixo é sempre o quadrado! A área máxima é 20 × 20 = 400 m².",
+                mathInsight = "A'(x) = 40 - 2x = 0 => x = 20 m => y = 20 m (Quadrado) => A_max = 400 m².",
+                analysisPoints = listOf(
+                    GeoGebraPoint("V", 20.0, 400.0, "Vértice de Máximo (20m, 400m²)", colorHex = "#10B981"),
+                    GeoGebraPoint("R1", 0.0, 0.0, "Início do Domínio (0m, 0m²)", colorHex = "#38BDF8"),
+                    GeoGebraPoint("R2", 40.0, 0.0, "Fim do Domínio (40m, 0m²)", colorHex = "#38BDF8")
+                )
+            ),
+            options = listOf(
+                "Lados 10 m e 30 m; Área máxima = 300 m²",
+                "Lados 20 m e 20 m; Área máxima = 400 m²",
+                "Lados 15 m e 25 m; Área máxima = 375 m²",
+                "Lados 25 m e 25 m; Área máxima = 625 m²",
+                "Lados 18 m e 22 m; Área máxima = 396 m²"
+            ),
+            correctIndex = 1,
+            solutionSteps = listOf(
+                "Passo 1: Da restrição do perímetro: 2x + 2y = 80 => x + y = 40 => y = 40 - x.",
+                "Passo 2: A função objetivo da área em função de x é: A(x) = x · y = x(40 - x) = 40x - x².",
+                "Passo 3: Para maximizar, derivamos e igualamos a zero: A'(x) = 40 - 2x = 0.",
+                "Passo 4: Resolvendo para x: 2x = 40 => x = 20 metros.",
+                "Passo 5: Calculamos a outra dimensão y: y = 40 - 20 = 20 metros.",
+                "Passo 6: Calculamos a área máxima: A(20) = 20 × 20 = 400 m²."
+            ),
+            pedagogicalAlert = "Entre todos os retângulos de mesmo perímetro, o quadrado é sempre aquele que possui a maior área possível.",
+            keyMethod = "A'(x) = 40 - 2x = 0 => x = 20 m, y = 20 m, Área = 400 m².",
+            xpReward = 40
+        ),
+
+        // =========================================================================
+        // 17. PONTO DE INFLEXÃO E CONCAVIDADE: f(x) = x³ - 6x² + 9x + 1
+        // =========================================================================
+        UniversalExercise(
+            id = "geo_17",
+            discipline = ExerciseDiscipline.CALCULUS,
+            category = "Cálculo I",
+            subtopic = "Geometria com GeoGebra",
+            difficulty = "Difícil",
+            source = "Cálculo I / Estudo das Curvas & Derivada Segunda",
+            problemStatement = """Observe o gráfico da função polinomial f(x) = x³ - 6x² + 9x + 1 no GeoGebra. O ponto onde a concavidade do gráfico muda de côncava para baixo para côncava para cima é chamado de Ponto de Inflexão. Determine as coordenadas exatas desse ponto de inflexão calculando a derivada segunda f''(x) = 0.""",
+            geoGebraConfig = GeoGebraGraphConfig(
+                title = "Estudo de Concavidade e Ponto de Inflexão: f(x) = x³ - 6x² + 9x + 1",
+                functionExpression = "x^3 - 6*x^2 + 9*x + 1",
+                commands = listOf(
+                    "f(x) = x^3 - 6*x^2 + 9*x + 1",
+                    "SetColor(f, 59, 130, 246)",
+                    "SetLineThickness(f, 3)",
+                    "I = (2, 3)",
+                    "SetPointSize(I, 6)",
+                    "SetColor(I, 239, 68, 68)",
+                    "Max1 = (1, 5)",
+                    "Min1 = (3, 1)",
+                    "SetColor(Max1, 234, 179, 8)",
+                    "SetColor(Min1, 16, 185, 129)"
+                ),
+                xMin = -0.5,
+                xMax = 4.5,
+                yMin = -1.0,
+                yMax = 7.0,
+                didacticExplanation = "f'(x) = 3x² - 12x + 9 e f''(x) = 6x - 12. Igualando a segunda derivada a zero: 6x - 12 = 0 => x = 2. Para x < 2, f'' < 0 (côncava para baixo); para x > 2, f'' > 0 (côncava para cima). O ponto de inflexão é (2, f(2)) = (2, 3).",
+                mathInsight = "f''(x) = 6x - 12 = 0 => x = 2 => y = f(2) = 2³ - 6(4) + 9(2) + 1 = 8 - 24 + 18 + 1 = 3 => (2, 3).",
+                analysisPoints = listOf(
+                    GeoGebraPoint("I", 2.0, 3.0, "Ponto de Inflexão (2, 3)", colorHex = "#EF4444"),
+                    GeoGebraPoint("Max1", 1.0, 5.0, "Máximo Local (1, 5)", colorHex = "#EAB308"),
+                    GeoGebraPoint("Min1", 3.0, 1.0, "Mínimo Local (3, 1)", colorHex = "#10B981")
+                )
+            ),
+            options = listOf(
+                "Ponto de inflexão em (1, 5)",
+                "Ponto de inflexão em (2, 3)",
+                "Ponto de inflexão em (3, 1)",
+                "Ponto de inflexão em (2, 1)",
+                "Ponto de inflexão em (0, 1)"
+            ),
+            correctIndex = 1,
+            solutionSteps = listOf(
+                "Passo 1: Calcular a primeira derivada da função: f'(x) = 3x² - 12x + 9.",
+                "Passo 2: Calcular a segunda derivada: f''(x) = d/dx (3x² - 12x + 9) = 6x - 12.",
+                "Passo 3: Encontrar os candidatos a ponto de inflexão igualando a segunda derivada a zero: 6x - 12 = 0 => 6x = 12 => x = 2.",
+                "Passo 4: Verificar se há mudança de sinal em f''(x): para x = 1, f''(1) = -6 < 0; para x = 3, f''(3) = +6 > 0. A concavidade de fato se inverte!",
+                "Passo 5: Calcular a ordenada y correspondente: f(2) = 2³ - 6(2)² + 9(2) + 1 = 8 - 24 + 18 + 1 = 3.",
+                "Conclusão: As coordenadas do ponto de inflexão são (2, 3)."
+            ),
+            pedagogicalAlert = "O ponto de inflexão situa-se exatamente a meio caminho entre o ponto de máximo local (1, 5) e o ponto de mínimo local (3, 1) em qualquer polinômio de 3º grau.",
+            keyMethod = "f''(x) = 6x - 12 = 0 => x = 2, f(2) = 3 => Ponto (2, 3).",
+            xpReward = 45
+        ),
+
+        // =========================================================================
+        // 18. INTERSEÇÃO DE RETAS E SISTEMA LINEAR: PONTO DE EQUILÍBRIO
+        // =========================================================================
+        UniversalExercise(
+            id = "geo_18",
+            discipline = ExerciseDiscipline.BASIC_MATH,
+            category = "Matemática Básica",
+            subtopic = "Geometria Analítica & Gráficos",
+            difficulty = "Fácil",
+            source = "ENEM / Economia e Sistemas Lineares",
+            problemStatement = """As curvas de oferta e demanda de um insumo tecnológico no mercado são dadas pelas retas: Demanda D(x): y = -2x + 20 e Oferta S(x): y = 3x + 5, onde x é a quantidade em milhares de peças e y é o preço unitário em reais. Utilizando o cruzamento gráfico no GeoGebra, determine o ponto de equilíbrio de mercado (quantidade e preço).""",
+            geoGebraConfig = GeoGebraGraphConfig(
+                title = "Ponto de Equilíbrio: Retas de Oferta e Demanda",
+                functionExpression = "-2*x + 20",
+                commands = listOf(
+                    "D(x) = -2*x + 20",
+                    "SetColor(D, 239, 68, 68)",
+                    "SetLineThickness(D, 3)",
+                    "S(x) = 3*x + 5",
+                    "SetColor(S, 16, 185, 129)",
+                    "SetLineThickness(S, 3)",
+                    "E = (3, 14)",
+                    "SetPointSize(E, 6)",
+                    "SetColor(E, 234, 179, 8)"
+                ),
+                xMin = -1.0,
+                xMax = 11.0,
+                yMin = 0.0,
+                yMax = 25.0,
+                didacticExplanation = "No ponto de equilíbrio, oferta iguala demanda: -2x + 20 = 3x + 5 => 5x = 15 => x = 3 mil peças. Substituindo na equação: y = -2(3) + 20 = 14 reais.",
+                mathInsight = "-2x + 20 = 3x + 5 => 5x = 15 => x = 3 => y = 14 => E(3, 14).",
+                analysisPoints = listOf(
+                    GeoGebraPoint("E", 3.0, 14.0, "Equilíbrio E(3 mil peças, R$ 14)", colorHex = "#EAB308")
+                )
+            ),
+            options = listOf(
+                "Quantidade = 2 mil peças e Preço = R$ 16",
+                "Quantidade = 3 mil peças e Preço = R$ 14",
+                "Quantidade = 4 mil peças e Preço = R$ 12",
+                "Quantidade = 3 mil peças e Preço = R$ 15",
+                "Quantidade = 5 mil peças e Preço = R$ 10"
+            ),
+            correctIndex = 1,
+            solutionSteps = listOf(
+                "Passo 1: No ponto de equilíbrio de mercado, o preço de demanda se iguala ao preço de oferta: D(x) = S(x).",
+                "Passo 2: Montar a equação: -2x + 20 = 3x + 5.",
+                "Passo 3: Agrupar os termos semelhantes: 20 - 5 = 3x + 2x => 15 = 5x.",
+                "Passo 4: Isolar a quantidade x: x = 15 / 5 = 3 (ou seja, 3 mil unidades).",
+                "Passo 5: Determinar o preço de equilíbrio substituindo x = 3 em qualquer uma das equações:",
+                "y = -2(3) + 20 = -6 + 20 = 14 reais (ou y = 3(3) + 5 = 9 + 5 = 14 reais).",
+                "Conclusão: O equilíbrio de mercado ocorre na quantidade de 3 mil peças ao preço unitário de R$ 14,00."
+            ),
+            pedagogicalAlert = "Geometricamente, o ponto de equilíbrio de um sistema de duas variáveis lineares é a interseção exata das duas retas concorrentes no plano cartesiano.",
+            keyMethod = "-2x + 20 = 3x + 5 => x = 3 e y = 14.",
+            xpReward = 30
+        ),
+
+        // =========================================================================
+        // 19. GEOMETRIA PLANA: POLÍGONO HEXAGONAL REGULAR NO PLANO
+        // =========================================================================
+        UniversalExercise(
+            id = "geo_19",
+            discipline = ExerciseDiscipline.BASIC_MATH,
+            category = "Matemática Básica",
+            subtopic = "Geometria: Áreas e Volumes",
+            difficulty = "Mediano",
+            source = "ENEM / Polígonos Regulares & Pavimentação",
+            problemStatement = """Um mosaico com formato de hexágono regular centrado na origem do plano cartesiano tem raio da circunferência circunscrita igual a R = 4 metros (logo, cada lado mede L = 4 metros). Utilizando o modelo do GeoGebra, determine o comprimento exato do seu apótema a e a área total desse hexágono regular.""",
+            geoGebraConfig = GeoGebraGraphConfig(
+                title = "Hexágono Regular Centrado na Origem (Raio R = 4 m)",
+                functionExpression = "0*x",
+                commands = listOf(
+                    "P1 = (4, 0)",
+                    "P2 = (2, 3.464)",
+                    "P3 = (-2, 3.464)",
+                    "P4 = (-4, 0)",
+                    "P5 = (-2, -3.464)",
+                    "P6 = (2, -3.464)",
+                    "hex = Polygon(P1, P2, P3, P4, P5, P6)",
+                    "SetColor(hex, 16, 185, 129)",
+                    "circ = x^2 + y^2 = 16",
+                    "SetColor(circ, 56, 189, 248)",
+                    "SetLineStyle(circ, 2)",
+                    "apotema = Segment((0, 0), (0, 3.464))",
+                    "SetColor(apotema, 234, 179, 8)",
+                    "SetLineThickness(apotema, 3)"
+                ),
+                xMin = -6.0,
+                xMax = 6.0,
+                yMin = -5.0,
+                yMax = 5.0,
+                didacticExplanation = "O hexágono regular é composto por 6 triângulos equiláteros de lado L = 4. O apótema é a altura de cada triângulo: a = L√3 / 2 = 4√3 / 2 = 2√3 m (≈ 3,46 m). A área total é 6 × (L²√3 / 4) = 6 × (16√3 / 4) = 6 × 4√3 = 24√3 m² (≈ 41,57 m²).",
+                mathInsight = "Apótema a = 2√3 m; Área = 6 × (4²√3 / 4) = 24√3 m² ≈ 41,57 m².",
+                analysisPoints = listOf(
+                    GeoGebraPoint("P1", 4.0, 0.0, "Vértice (4, 0)", colorHex = "#10B981"),
+                    GeoGebraPoint("P2", 2.0, 3.464, "Vértice (2, 2√3)", colorHex = "#10B981")
+                )
+            ),
+            options = listOf(
+                "Apótema = 2 m e Área = 16√3 m²",
+                "Apótema = 2√3 m e Área = 24√3 m²",
+                "Apótema = 4√3 m e Área = 48√3 m²",
+                "Apótema = 2√3 m e Área = 36 m²",
+                "Apótema = 3 m e Área = 24√3 m²"
+            ),
+            correctIndex = 1,
+            solutionSteps = listOf(
+                "Passo 1: Em todo hexágono regular inscrito, o lado do polígono é igual ao raio da circunferência circunscrita: L = R = 4 metros.",
+                "Passo 2: Um hexágono regular se divide em 6 triângulos equiláteros congruentes de lado L = 4 metros.",
+                "Passo 3: O apótema a é a altura de um desses triângulos equiláteros: a = (L × √3) / 2 = (4 × √3) / 2 = 2√3 metros (≈ 3,46 m).",
+                "Passo 4: A área de cada triângulo equilátero é: A_tri = (L² × √3) / 4 = (16 × √3) / 4 = 4√3 m².",
+                "Passo 5: A área total do hexágono é a soma dos 6 triângulos: A_total = 6 × 4√3 = 24√3 m² (≈ 41,57 m²)."
+            ),
+            pedagogicalAlert = "O apótema de um polígono regular é sempre o segmento perpendicular traçado do centro até o ponto médio de qualquer um dos lados.",
+            keyMethod = "a = 2√3 m e Área = 24√3 m².",
+            xpReward = 35
+        ),
+
+        // =========================================================================
+        // 20. CÁLCULO / GEOMETRIA: COMPRIMENTO DE ARCO E TEOREMA FUNDAMENTAL
+        // =========================================================================
+        UniversalExercise(
+            id = "geo_20",
+            discipline = ExerciseDiscipline.CALCULUS,
+            category = "Cálculo I",
+            subtopic = "Geometria com GeoGebra",
+            difficulty = "Difícil",
+            source = "Cálculo Avançado / Geometria Diferencial",
+            problemStatement = """Considere o arco da curva f(x) = (2/3) x^(3/2) no intervalo de x = 0 até x = 3. A fórmula do comprimento de arco de uma curva suave y = f(x) é L = ∫_a^b √(1 + [f'(x)]²) dx. Utilizando o gráfico interativo no GeoGebra, calcule o valor numérico exato do comprimento desse arco de curva.""",
+            geoGebraConfig = GeoGebraGraphConfig(
+                title = "Comprimento de Arco da Curva: f(x) = (2/3) x^(3/2) de 0 a 3",
+                functionExpression = "(2/3) * x^(1.5)",
+                commands = listOf(
+                    "f(x) = (2/3) * x^(1.5)",
+                    "SetColor(f, 234, 179, 8)",
+                    "SetLineThickness(f, 4)",
+                    "P0 = (0, 0)",
+                    "P1 = (3, 3.464)",
+                    "SetPointSize(P0, 5)",
+                    "SetPointSize(P1, 6)",
+                    "SetColor(P0, 56, 189, 248)",
+                    "SetColor(P1, 239, 68, 68)"
+                ),
+                xMin = -0.5,
+                xMax = 4.5,
+                yMin = -0.5,
+                yMax = 4.5,
+                didacticExplanation = "f'(x) = (2/3) × (3/2) x^(1/2) = √x. Logo, 1 + [f'(x)]² = 1 + (√x)² = 1 + x. A integral do comprimento é ∫₀³ √(1 + x) dx = [(2/3)(1 + x)^(3/2)]₀³ = (2/3)[4^(3/2) - 1^(3/2)] = (2/3)[8 - 1] = (2/3) × 7 = 14/3 ≈ 4,67.",
+                mathInsight = "L = ∫₀³ √(1 + x) dx = [(2/3)(1 + x)^(3/2)]₀³ = (2/3)(8 - 1) = 14/3 ≈ 4,67.",
+                analysisPoints = listOf(
+                    GeoGebraPoint("P0", 0.0, 0.0, "Origem (0, 0)", colorHex = "#38BDF8"),
+                    GeoGebraPoint("P1", 3.0, 3.464, "Ponto Final (3; 2√3)", colorHex = "#EF4444")
+                )
+            ),
+            options = listOf(
+                "7/3 unidades (aproximadamente 2,33)",
+                "10/3 unidades (aproximadamente 3,33)",
+                "14/3 unidades (aproximadamente 4,67)",
+                "16/3 unidades (aproximadamente 5,33)",
+                "6 unidades"
+            ),
+            correctIndex = 2,
+            solutionSteps = listOf(
+                "Passo 1: Derivar a função dada f(x) = (2/3) x^(3/2): f'(x) = (2/3) × (3/2) x^(1/2) = √x.",
+                "Passo 2: Elevar a derivada ao quadrado: [f'(x)]² = (√x)² = x.",
+                "Passo 3: Montar o integrando do comprimento de arco: √(1 + [f'(x)]²) = √(1 + x).",
+                "Passo 4: Configurar a integral definida nos limites dados: L = ∫₀³ (1 + x)^(1/2) dx.",
+                "Passo 5: Calcular a antiderivada direta por substituição u = 1 + x: ∫ (1 + x)^(1/2) dx = (2/3) (1 + x)^(3/2).",
+                "Passo 6: Aplicar os limites de 0 a 3: (2/3) [(1 + 3)^(3/2) - (1 + 0)^(3/2)] = (2/3) [4^(3/2) - 1^(3/2)] = (2/3) [8 - 1] = (2/3) × 7 = 14/3.",
+                "Conclusão: O comprimento do arco de curva é exatamente 14/3 unidades (≈ 4,67)."
+            ),
+            pedagogicalAlert = "Note que a linha reta entre (0, 0) e (3, 2√3) tem comprimento d = √(3² + (2√3)²) = √(9 + 12) = √21 ≈ 4,58. O comprimento curvo de 14/3 ≈ 4,67 é ligeiramente superior à distância em linha reta, como esperado!",
+            keyMethod = "L = ∫₀³ √(1 + x) dx = 14/3 ≈ 4,67.",
+            xpReward = 50
         )
     )
 }

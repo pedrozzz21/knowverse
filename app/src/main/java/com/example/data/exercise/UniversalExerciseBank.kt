@@ -7,9 +7,10 @@ import com.example.data.math.GeoGebraGraphConfig
 
 enum class ExerciseDiscipline(val label: String, val tag: String) {
     ALL("Todas as Matérias", "all"),
-    PROGRAMMING("Programação (Python)", "programming"),
+    ENEM("Banco ENEM (Oficial)", "enem"),
+    BASIC_MATH("Matemática Básica", "basic_math"),
     CALCULUS("Cálculo I", "calculus"),
-    BASIC_MATH("Matemática Básica (ENEM)", "basic_math")
+    PROGRAMMING("Programação (Python)", "programming")
 }
 
 data class VisualTable(
@@ -1350,13 +1351,23 @@ print(f"Área do Quadrado: {q.area()} cm²")""",
                 ComprehensiveCalculusExercises.exercises +
                 ComprehensiveBasicMathExercises.exercises +
                 convertedCalculus +
-                convertedBasicMath
+                convertedBasicMath +
+                externalEnemExercises
+    }
+
+    private var externalEnemExercises: List<UniversalExercise> = emptyList()
+
+    /**
+     * Registra exercícios externos (como o banco de dados oficial do ENEM carregado do JSON).
+     */
+    fun registerEnemExercises(exercises: List<UniversalExercise>) {
+        externalEnemExercises = exercises
     }
 
     /**
      * Filtragem flexível multidimensional:
      * - Busca textual (pesquisa por termos no enunciado, código, método, ID)
-     * - Matéria / Disciplina (Todas, Programação, Cálculo, Matemática Básica)
+     * - Matéria / Disciplina (Todas, Programação, Cálculo, Matemática Básica, ENEM)
      * - Tópico específico
      * - Dificuldade (Todas, Fácil, Mediano, Difícil)
      * - Filtro rápido de itens com elementos visuais (gráficos, tabelas, código)
@@ -1373,6 +1384,9 @@ print(f"Área do Quadrado: {q.area()} cm²")""",
         return getAllExercises().filter { item ->
             val matchesDiscipline = when (discipline) {
                 ExerciseDiscipline.ALL -> true
+                ExerciseDiscipline.ENEM -> item.discipline == ExerciseDiscipline.ENEM ||
+                        item.source.contains("ENEM", ignoreCase = true) ||
+                        item.category.contains("ENEM", ignoreCase = true)
                 else -> item.discipline == discipline
             }
 

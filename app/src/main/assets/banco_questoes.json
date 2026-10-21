@@ -1,0 +1,392 @@
+[
+  {
+    "id": "enem_2023_mb_01",
+    "year": 2023,
+    "topic": "Matemática Básica",
+    "subtopic": "Operações com números inteiros, fracionários e decimais",
+    "title": "Uma confeiteira preparou uma receita especial de bolo que exigia 3/4 de xícara de açúcar cristal e 2/5 de xícara de açúcar mascavo. Ao final do preparo, ela decidiu acrescentar mais 0,15 de xícara de mel para adoçar a cobertura. Qual foi a quantidade total, em xícaras de adoçante (açúcares e mel), utilizada nessa receita?",
+    "alternatives": [
+      "1,15 xícaras",
+      "1,20 xícaras",
+      "1,30 xícaras",
+      "1,35 xícaras",
+      "1,45 xícaras"
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": "enem_2022_mb_02",
+    "year": 2022,
+    "topic": "Matemática Básica",
+    "subtopic": "Múltiplos e divisores (MMC e MDC)",
+    "title": "Três linhas de ônibus urbanos (L1, L2 e L3) partem simultaneamente do mesmo terminal central às 6h da manhã. O ônibus L1 parte a cada 12 minutos, o L2 a cada 18 minutos e o L3 a cada 30 minutos. A que horas esses três ônibus partirão juntos novamente pela primeira vez após as 6h?",
+    "alternatives": [
+      "7h30min",
+      "8h00min",
+      "9h00min",
+      "9h30min",
+      "10h00min"
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": "enem_2021_mb_03",
+    "year": 2021,
+    "topic": "Matemática Básica",
+    "subtopic": "Potenciação e radiciação",
+    "title": "A intensidade de um sinal de rádio diminui com a distância conforme a expressão I(d) = I_0 · 2^(-2d). Sabendo que para uma determinada antena I_0 = 1024 watts por metro quadrado, qual será a intensidade do sinal a uma distância d = 3 metros?",
+    "alternatives": [
+      "16 W/m²",
+      "32 W/m²",
+      "64 W/m²",
+      "128 W/m²",
+      "256 W/m²"
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": "enem_2023_mb_04",
+    "year": 2023,
+    "topic": "Matemática Básica",
+    "subtopic": "Notação científica e ordem de grandeza",
+    "title": "A massa estimada de um próton é de aproximadamente 1,67 · 10^(-27) kg, enquanto a massa de um grão de areia fina é cerca de 2,5 · 10^(-8) kg. A ordem de grandeza do número de prótons necessários para igualar a massa desse grão de areia é:",
+    "alternatives": [
+      "10^18",
+      "10^19",
+      "10^20",
+      "10^21",
+      "10^22"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": "enem_2024_mb_05",
+    "year": 2024,
+    "topic": "Matemática Básica",
+    "subtopic": "Sistema métrico decimal e conversão de unidades (comprimento, área, volume, massa, capacidade, tempo)",
+    "title": "Um reservatório paralelepipédico de água possui dimensões internas de 2,5 m de comprimento, 1,6 m de largura e 1,2 m de altura. Se o reservatório está preenchido com 75% de sua capacidade máxima, quantos litros de água ele contém atualmente?",
+    "alternatives": [
+      "3.600 litros",
+      "4.800 litros",
+      "3.200 litros",
+      "2.400 litros",
+      "4.500 litros"
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": "enem_2023_mb_06",
+    "year": 2023,
+    "topic": "Matemática Básica",
+    "subtopic": "Razão e proporção",
+    "title": "A densidade demográfica de uma região é calculada pela razão entre o número de habitantes e a área total ocupada em quilômetros quadrados. Uma cidade A tem 450.000 habitantes distribuídos em 300 km². Uma cidade vizinha B tem área de 500 km² e densidade demográfica 20% maior que a da cidade A. Qual é a população total da cidade B?",
+    "alternatives": [
+      "750.000 habitantes",
+      "800.000 habitantes",
+      "900.000 habitantes",
+      "1.000.000 habitantes",
+      "1.100.000 habitantes"
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": "enem_2022_mb_07",
+    "year": 2022,
+    "topic": "Matemática Básica",
+    "subtopic": "Regra de três simples e composta",
+    "title": "Trabalhando 6 horas por dia, 8 operários constroem um muro de contenção de 120 metros em 15 dias. Quantos dias serão necessários para que 10 operários, com o mesmo ritmo de trabalho, construam um muro de 160 metros trabalhando 8 horas por dia?",
+    "alternatives": [
+      "10 dias",
+      "12 dias",
+      "14 dias",
+      "16 dias",
+      "18 dias"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": "enem_2021_mb_08",
+    "year": 2021,
+    "topic": "Matemática Básica",
+    "subtopic": "Escalas (lineares, de área e volumétricas)",
+    "title": "Em uma planta arquitetônica desenhada na escala 1:50, a sala de estar retangular mede 8 cm de comprimento por 6 cm de largura. O proprietário deseja revestir todo o piso dessa sala com porcelanato. Qual é a área real do piso dessa sala, em metros quadrados?",
+    "alternatives": [
+      "12 m²",
+      "24 m²",
+      "48 m²",
+      "96 m²",
+      "120 m²"
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": "enem_2023_mb_09",
+    "year": 2023,
+    "topic": "Matemática Básica",
+    "subtopic": "Porcentagem (aumentos, descontos e variações sucessivas)",
+    "title": "Uma loja de eletrônicos anunciou uma promoção de Black Friday: um tablet teve seu preço inicial aumentado em 20% uma semana antes do evento e, no dia da promoção, foi aplicado um desconto de 25% sobre o novo valor reajustado. Em relação ao preço inicial original, o comprador teve um:",
+    "alternatives": [
+      "Desconto real de 5%",
+      "Desconto real de 10%",
+      "Aumento real de 5%",
+      "Preço inalterado (0%)",
+      "Desconto real de 15%"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": "enem_2022_fin_01",
+    "year": 2022,
+    "topic": "Matemática Financeira",
+    "subtopic": "Juros simples",
+    "title": "Um investidor aplicou um capital de R$ 8.000,00 no regime de juros simples à taxa de 1,5% ao mês durante um período de 1 ano e 6 meses (18 meses). Ao final desse prazo, qual será o montante total resgatado por esse investidor?",
+    "alternatives": [
+      "R$ 9.840,00",
+      "R$ 10.160,00",
+      "R$ 10.240,00",
+      "R$ 10.480,00",
+      "R$ 11.200,00"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": "enem_2024_fin_02",
+    "year": 2024,
+    "topic": "Matemática Financeira",
+    "subtopic": "Juros compostos",
+    "title": "Uma startup tomou um empréstimo de R$ 50.000,00 sob o regime de juros compostos a uma taxa de 10% ao ano, com pagamento único ao término de 3 anos. Utilizando (1,1)^3 = 1,331, qual o valor total dos juros acumulados pagos pela empresa?",
+    "alternatives": [
+      "R$ 15.000,00",
+      "R$ 16.550,00",
+      "R$ 18.250,00",
+      "R$ 20.000,00",
+      "R$ 66.550,00"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": "enem_2023_est_01",
+    "year": 2023,
+    "topic": "Estatística",
+    "subtopic": "Média aritmética simples",
+    "title": "Em uma turma de pré-vestibular com 30 alunos, a média aritmética das notas na prova de Matemática foi 7,2. Ao incluir as notas de 2 alunos que fizeram a segunda chamada e tiraram 8,5 e 9,5, a nova média da turma passou a ser aproximadamente:",
+    "alternatives": [
+      "7,30",
+      "7,34",
+      "7,42",
+      "7,50",
+      "7,56"
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": "enem_2022_est_02",
+    "year": 2022,
+    "topic": "Estatística",
+    "subtopic": "Mediana",
+    "title": "O tempo de atendimento (em minutos) de 9 clientes em uma agência bancária foi registrado em ordem crescente: 4, 6, 7, 9, 12, 15, 18, 22, 30. Posteriormente, chegou um 10º cliente cujo atendimento durou exatamente 14 minutos. A mediana do tempo de atendimento dos 10 clientes é igual a:",
+    "alternatives": [
+      "12,0 minutos",
+      "13,0 minutos",
+      "13,5 minutos",
+      "14,0 minutos",
+      "14,5 minutos"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": "enem_2021_est_03",
+    "year": 2021,
+    "topic": "Estatística",
+    "subtopic": "Leitura e interpretação de tabelas e gráficos (barras, linhas, setores, pictogramas)",
+    "title": "Em um gráfico de setores representativo do orçamento mensal de uma família, o setor correspondente à alimentação ocupa um ângulo central de 108 graus. Sabendo que a renda total mensal da família é de R$ 5.000,00, qual é o valor destinado exclusivamente à alimentação?",
+    "alternatives": [
+      "R$ 1.250,00",
+      "R$ 1.500,00",
+      "R$ 1.750,00",
+      "R$ 2.000,00",
+      "R$ 2.160,00"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": "enem_2024_gp_01",
+    "year": 2024,
+    "topic": "Geometria Plana",
+    "subtopic": "Teorema de Pitágoras e relações métricas no triângulo retângulo",
+    "title": "Um técnico de telecomunicações precisa fixar um cabo de aço retilíneo do topo de uma antena transmissora vertical de 24 metros de altura até um ponto de ancoragem no solo que se encontra a 7 metros de distância da base da antena. Qual deve ser o comprimento exato desse cabo de aço?",
+    "alternatives": [
+      "25 metros",
+      "26 metros",
+      "27 metros",
+      "28 metros",
+      "31 metros"
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": "enem_2023_gp_02",
+    "year": 2023,
+    "topic": "Geometria Plana",
+    "subtopic": "Cálculo de áreas (triângulos, quadriláteros, polígonos regulares)",
+    "title": "Uma praça em formato de trapézio isósceles possui base maior medindo 60 metros, base menor medindo 40 metros e lados não paralelos medindo 26 metros cada. Para gramar toda a superfície dessa praça, a prefeitura gastará uma quantia proporcional à sua área. Qual é a área total dessa praça?",
+    "alternatives": [
+      "1.000 m²",
+      "1.200 m²",
+      "1.300 m²",
+      "1.440 m²",
+      "1.560 m²"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": "enem_2022_gp_03",
+    "year": 2022,
+    "topic": "Geometria Plana",
+    "subtopic": "Círculo e circunferência (comprimento da circunferência, área do círculo, coroa e setor circular)",
+    "title": "Um canteiro circular de raio 4 metros será circundado por uma pista de caminhada em formato de coroa circular de largura 2 metros. Adotando π = 3,14, qual é a área ocupada exclusivamente por essa pista de caminhada?",
+    "alternatives": [
+      "37,68 m²",
+      "50,24 m²",
+      "62,80 m²",
+      "75,36 m²",
+      "113,04 m²"
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": "enem_2023_ge_01",
+    "year": 2023,
+    "topic": "Geometria Espacial",
+    "subtopic": "Cilindros (elementos, área da superfície e cálculo de volume)",
+    "title": "Um silo metálico para armazenamento de grãos tem o formato de um cilindro circular reto com 6 metros de diâmetro de base e 10 metros de altura. Considerando a aproximação π = 3, qual é a capacidade máxima de armazenamento de grãos desse silo em metros cúbicos?",
+    "alternatives": [
+      "90 m³",
+      "180 m³",
+      "270 m³",
+      "360 m³",
+      "540 m³"
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": "enem_2024_ge_02",
+    "year": 2024,
+    "topic": "Geometria Espacial",
+    "subtopic": "Visão espacial (projeções ortogonais e vistas frontais, laterais e superiores)",
+    "title": "Um objeto metálico em forma de pirâmide regular de base quadrada é iluminado diretamente por raios solares verticais (ao meio-dia astronômico). A projeção ortogonal dessa pirâmide sobre o plano horizontal do solo é:",
+    "alternatives": [
+      "Um triângulo isósceles",
+      "Um quadrado com suas duas diagonais traçadas",
+      "Apenas um quadrado sem linhas internas",
+      "Um losango com um círculo inscrito",
+      "Um segmento de reta vertical"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": "enem_2023_fun_01",
+    "year": 2023,
+    "topic": "Funções",
+    "subtopic": "Função afim ou de 1º grau (gráficos, raízes, coeficiente angular e linear, taxa de variação)",
+    "title": "Uma empresa de transporte por aplicativo cobra uma tarifa composta por uma taxa fixa de bandeirada de R$ 5,50 mais R$ 2,40 por quilômetro rodado. Um passageiro contratou essa viagem e pagou exatamente R$ 41,50. Qual foi a distância percorrida pelo veículo nessa corrida?",
+    "alternatives": [
+      "13 km",
+      "14 km",
+      "15 km",
+      "16 km",
+      "17 km"
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": "enem_2022_fun_02",
+    "year": 2022,
+    "topic": "Funções",
+    "subtopic": "Função quadrática ou de 2º grau (parábola, raízes por Bhaskara, vértices para pontos de máximo e mínimo)",
+    "title": "A trajetória de um projétil lançado a partir do solo é descrita pela função h(t) = -5t² + 40t, onde h é a altura em metros e t é o tempo decorrido em segundos. Qual é a altura máxima atingida pelo projétil e o tempo necessário para alcançá-la?",
+    "alternatives": [
+      "60 m em 3 s",
+      "75 m em 4 s",
+      "80 m em 4 s",
+      "80 m em 8 s",
+      "100 m em 5 s"
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": "enem_2024_alg_01",
+    "year": 2024,
+    "topic": "Álgebra e Equações",
+    "subtopic": "Sistemas de equações do 1º grau (2x2)",
+    "title": "Em um estacionamento há carros e motocicletas, totalizando 48 veículos e 136 rodas em contato com o chão. Quantos carros estão estacionados nesse local?",
+    "alternatives": [
+      "18 carros",
+      "20 carros",
+      "22 carros",
+      "24 carros",
+      "26 carros"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": "enem_2023_comb_01",
+    "year": 2023,
+    "topic": "Análise Combinatória",
+    "subtopic": "Princípio Fundamental da Contagem (PFC) ou Princípio Multiplicativo",
+    "title": "Um restaurante oferece em seu cardápio executivo a escolha de 1 entrada (entre 4 opções), 1 prato principal (entre 5 opções) e 1 sobremesa (entre 3 opções). De quantas maneiras distintas um cliente pode montar sua refeição completa?",
+    "alternatives": [
+      "12 maneiras",
+      "23 maneiras",
+      "40 maneiras",
+      "60 maneiras",
+      "120 maneiras"
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": "enem_2022_comb_02",
+    "year": 2022,
+    "topic": "Análise Combinatória",
+    "subtopic": "Combinação simples",
+    "title": "Uma comissão hospitalar de biossegurança deve ser formada por 3 médicos e 2 enfermeiros. O hospital dispõe de 7 médicos e 5 enfermeiros qualificados. De quantas maneiras diferentes essa comissão pode ser constituída?",
+    "alternatives": [
+      "150 maneiras",
+      "210 maneiras",
+      "350 maneiras",
+      "420 maneiras",
+      "700 maneiras"
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": "enem_2023_prob_01",
+    "year": 2023,
+    "topic": "Probabilidade",
+    "subtopic": "Definição clássica de probabilidade",
+    "title": "Uma urna contém 12 bolas idênticas numeradas de 1 a 12. Uma bola é sorteada aleatoriamente. Qual é a probabilidade de o número da bola sorteada ser um número primo ou um múltiplo de 4?",
+    "alternatives": [
+      "1/2",
+      "2/3",
+      "3/4",
+      "7/12",
+      "5/6"
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": "enem_2024_trig_01",
+    "year": 2024,
+    "topic": "Trigonometria",
+    "subtopic": "Trigonometria no triângulo retângulo (seno, cosseno e tangente)",
+    "title": "Um topógrafo observa o topo de um edifício sob um ângulo de elevação de 30° a partir de um ponto situado a 60 metros da base do prédio, sobre um terreno perfeitamente plano. Sabendo que o teodolito do topógrafo está posicionado a uma altura de 1,60 m do chão e adotando √3 ≈ 1,73, a altura total do edifício é de aproximadamente:",
+    "alternatives": [
+      "34,6 metros",
+      "36,2 metros",
+      "38,4 metros",
+      "40,0 metros",
+      "53,5 metros"
+    ],
+    "correctAnswer": "B"
+  }
+]

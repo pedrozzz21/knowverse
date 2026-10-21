@@ -20,6 +20,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
@@ -773,6 +774,41 @@ fun CalculusLessonScreen(
                         }
                     }
 
+                    // Controles de expandir e recolher todos os exercícios da aula
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 4.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text(
+                            text = "${exercises.size} Exercícios Disponíveis",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = TextSecondary,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        )
+                        Row(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+                            TextButton(
+                                onClick = {
+                                    exercises.indices.forEach { expandedExercises[it] = true }
+                                },
+                                contentPadding = PaddingValues(horizontal = 6.dp, vertical = 2.dp)
+                            ) {
+                                Text("Expandir todos", fontSize = 11.sp, color = PrimaryViolet)
+                            }
+                            TextButton(
+                                onClick = {
+                                    exercises.indices.forEach { expandedExercises[it] = false }
+                                },
+                                contentPadding = PaddingValues(horizontal = 6.dp, vertical = 2.dp)
+                            ) {
+                                Text("Recolher todos", fontSize = 11.sp, color = TextTertiary)
+                            }
+                        }
+                    }
+
                     val optionLetters = listOf("A", "B", "C", "D", "E")
 
                     exercises.forEachIndexed { index, ex ->
@@ -782,6 +818,7 @@ fun CalculusLessonScreen(
                         val isSolutionUnlocked = (isChecked == true) || (wrongCount >= 2) || isLessonCompletedLocal
                         val showHint = showHints[index] == true
                         val showSolution = showSolutions[index] == true && isSolutionUnlocked
+                        val isExpanded = expandedExercises[index] ?: (index == 0)
 
                         Card(
                             shape = RoundedCornerShape(10.dp),
@@ -799,284 +836,395 @@ fun CalculusLessonScreen(
                                 .testTag("calculus_exercise_$index")
                         ) {
                             Column(modifier = Modifier.padding(14.dp)) {
+                                // Cabeçalho clicável para expandir/recolher
                                 Row(
-                                    modifier = Modifier.fillMaxWidth(),
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .clickable { expandedExercises[index] = !isExpanded },
                                     verticalAlignment = Alignment.CenterVertically,
                                     horizontalArrangement = Arrangement.SpaceBetween
                                 ) {
-                                    Text(
-                                        text = "Exercício ${index + 1}: ${ex.title}",
-                                        style = MaterialTheme.typography.titleSmall.copy(
-                                            fontWeight = FontWeight.Bold,
-                                            color = TextPrimary
-                                        )
-                                    )
-
-                                    if (isChecked == true) {
-                                        Surface(
-                                            color = SuccessEmerald.copy(alpha = 0.2f),
-                                            shape = RoundedCornerShape(4.dp)
-                                        ) {
-                                            Row(
-                                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
-                                                verticalAlignment = Alignment.CenterVertically
-                                            ) {
-                                                Icon(
-                                                    imageVector = Icons.Default.CheckCircle,
-                                                    contentDescription = null,
-                                                    tint = SuccessEmerald,
-                                                    modifier = Modifier.size(12.dp)
-                                                )
-                                                Spacer(modifier = Modifier.width(4.dp))
-                                                Text(
-                                                    text = "Correto!",
-                                                    style = MaterialTheme.typography.labelSmall.copy(
-                                                        color = SuccessEmerald,
-                                                        fontWeight = FontWeight.Bold
-                                                    )
-                                                )
-                                            }
-                                        }
-                                    } else if (isChecked == false) {
-                                        Surface(
-                                            color = ErrorRose.copy(alpha = 0.2f),
-                                            shape = RoundedCornerShape(4.dp)
-                                        ) {
-                                            Text(
-                                                text = "Tentativa $wrongCount/2",
-                                                style = MaterialTheme.typography.labelSmall.copy(
-                                                    color = ErrorRose,
-                                                    fontWeight = FontWeight.Bold,
-                                                    fontSize = 11.sp
-                                                ),
-                                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                                            )
-                                        }
-                                    }
-                                }
-
-                                Spacer(modifier = Modifier.height(10.dp))
-
-                                // Enunciado com notação matemática e LaTeX
-                                Surface(
-                                    color = SurfaceElevated,
-                                    shape = RoundedCornerShape(6.dp),
-                                    border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle),
-                                    modifier = Modifier.fillMaxWidth()
-                                ) {
-                                    Column(modifier = Modifier.padding(12.dp)) {
-                                        MathFormattedText(
-                                            text = ex.problemStatement,
-                                            style = MaterialTheme.typography.bodyMedium,
-                                            color = TextPrimary,
-                                            lineHeightSp = 21f
-                                        )
-                                    }
-                                }
-
-                                Spacer(modifier = Modifier.height(12.dp))
-
-                                // 5 Alternativas (A, B, C, D, E) com notação matemática formatada
-                                ex.options.forEachIndexed { optIdx, optText ->
-                                    val isSelected = selectedOpt == optIdx
-                                    val letter = optionLetters.getOrElse(optIdx) { "${optIdx + 1}" }
-
-                                    Surface(
-                                        color = if (isSelected) PrimaryViolet.copy(alpha = 0.15f) else Color.Transparent,
-                                        shape = RoundedCornerShape(6.dp),
-                                        border = androidx.compose.foundation.BorderStroke(
-                                            1.dp,
-                                            if (isSelected) PrimaryViolet else BorderSubtle.copy(alpha = 0.7f)
-                                        ),
-                                        modifier = Modifier
-                                            .fillMaxWidth()
-                                            .padding(vertical = 3.dp)
-                                            .clickable {
-                                                selectedOptions[index] = optIdx
-                                                exerciseResults.remove(index)
-                                            }
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.spacedBy(6.dp),
+                                        modifier = Modifier.weight(1f, fill = false)
                                     ) {
-                                        Row(
-                                            modifier = Modifier
-                                                .fillMaxWidth()
-                                                .padding(horizontal = 10.dp, vertical = 8.dp),
-                                            verticalAlignment = Alignment.CenterVertically
-                                        ) {
+                                        Text(
+                                            text = "Exercício ${index + 1}: ${ex.title}",
+                                            style = MaterialTheme.typography.titleSmall.copy(
+                                                fontWeight = FontWeight.Bold,
+                                                color = TextPrimary
+                                            )
+                                        )
+
+                                        if (ex.geoGebraConfig != null) {
                                             Surface(
-                                                color = if (isSelected) PrimaryViolet else SurfaceElevated,
-                                                shape = CircleShape,
-                                                modifier = Modifier.size(24.dp),
-                                                border = androidx.compose.foundation.BorderStroke(
-                                                    1.dp,
-                                                    if (isSelected) PrimaryViolet else BorderSubtle
-                                                )
+                                                color = Color(0xFF1E3A8A).copy(alpha = 0.35f),
+                                                shape = RoundedCornerShape(4.dp),
+                                                border = androidx.compose.foundation.BorderStroke(0.6.dp, Color(0xFF60A5FA).copy(alpha = 0.6f))
                                             ) {
-                                                Box(contentAlignment = Alignment.Center) {
+                                                Text(
+                                                    text = "GeoGebra",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = Color(0xFF93C5FD),
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 9.sp
+                                                    ),
+                                                    modifier = Modifier.padding(horizontal = 5.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
+                                    }
+
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                                    ) {
+                                        if (isChecked == true) {
+                                            Surface(
+                                                color = SuccessEmerald.copy(alpha = 0.2f),
+                                                shape = RoundedCornerShape(4.dp)
+                                            ) {
+                                                Row(
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
+                                                    verticalAlignment = Alignment.CenterVertically
+                                                ) {
+                                                    Icon(
+                                                        imageVector = Icons.Default.CheckCircle,
+                                                        contentDescription = null,
+                                                        tint = SuccessEmerald,
+                                                        modifier = Modifier.size(12.dp)
+                                                    )
+                                                    Spacer(modifier = Modifier.width(4.dp))
                                                     Text(
-                                                        text = letter,
+                                                        text = "Correto!",
                                                         style = MaterialTheme.typography.labelSmall.copy(
-                                                            fontWeight = FontWeight.Bold,
-                                                            color = if (isSelected) Color.White else TextSecondary,
-                                                            fontSize = 11.sp
+                                                            color = SuccessEmerald,
+                                                            fontWeight = FontWeight.Bold
                                                         )
                                                     )
                                                 }
                                             }
-
-                                            Spacer(modifier = Modifier.width(10.dp))
-
-                                            Column(modifier = Modifier.weight(1f)) {
-                                                MathFormattedText(
-                                                    text = optText,
-                                                    style = MaterialTheme.typography.bodySmall,
-                                                    color = if (isSelected) TextPrimary else TextSecondary,
-                                                    lineHeightSp = 18f
+                                        } else if (isChecked == false) {
+                                            Surface(
+                                                color = ErrorRose.copy(alpha = 0.2f),
+                                                shape = RoundedCornerShape(4.dp)
+                                            ) {
+                                                Text(
+                                                    text = "Tentativa $wrongCount/2",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = ErrorRose,
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 11.sp
+                                                    ),
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                                                 )
                                             }
+                                        }
+
+                                        IconButton(
+                                            onClick = { expandedExercises[index] = !isExpanded },
+                                            modifier = Modifier.size(24.dp)
+                                        ) {
+                                            Icon(
+                                                imageVector = if (isExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                                contentDescription = if (isExpanded) "Recolher exercício" else "Expandir exercício",
+                                                tint = if (isExpanded) PrimaryViolet else TextSecondary,
+                                                modifier = Modifier.size(20.dp)
+                                            )
                                         }
                                     }
                                 }
 
-                                Spacer(modifier = Modifier.height(10.dp))
-
-                                // Botões de Ação (Dica, Solução Comentada e Conferir)
-                                Row(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    horizontalArrangement = Arrangement.spacedBy(6.dp),
-                                    verticalAlignment = Alignment.CenterVertically
+                                AnimatedVisibility(
+                                    visible = isExpanded,
+                                    enter = fadeIn() + expandVertically(),
+                                    exit = fadeOut() + shrinkVertically()
                                 ) {
-                                    // Botão de Dica
-                                    TextButton(
-                                        onClick = { showHints[index] = !showHint },
-                                        shape = RoundedCornerShape(6.dp)
-                                    ) {
-                                        Icon(
-                                            imageVector = Icons.Default.HelpOutline,
-                                            contentDescription = null,
-                                            tint = GoldXp,
-                                            modifier = Modifier.size(16.dp)
-                                        )
-                                        Spacer(modifier = Modifier.width(4.dp))
-                                        Text(
-                                            text = if (showHint) "Ocultar Dica" else "Dica",
-                                            style = MaterialTheme.typography.labelSmall.copy(color = GoldXp)
-                                        )
-                                    }
+                                    Column {
+                                        Spacer(modifier = Modifier.height(10.dp))
 
-                                    // Botão de Solução Comentada (liberada após 2 erros ou acerto)
-                                    if (isSolutionUnlocked) {
-                                        TextButton(
-                                            onClick = { showSolutions[index] = !showSolution },
-                                            shape = RoundedCornerShape(6.dp)
-                                        ) {
-                                            Icon(
-                                                imageVector = if (showSolution) Icons.Default.VisibilityOff else Icons.Default.Visibility,
-                                                contentDescription = null,
-                                                tint = SuccessEmerald,
-                                                modifier = Modifier.size(16.dp)
+                                        // Renderização interativa do GeoGebra se configurado
+                                        if (ex.geoGebraConfig != null) {
+                                            GeoGebraMathGraphView(
+                                                config = ex.geoGebraConfig,
+                                                modifier = Modifier
+                                                    .fillMaxWidth()
+                                                    .height(230.dp)
                                             )
-                                            Spacer(modifier = Modifier.width(4.dp))
-                                            Text(
-                                                text = if (showSolution) "Ocultar Solução" else "Solução Comentada",
-                                                style = MaterialTheme.typography.labelSmall.copy(
-                                                    color = SuccessEmerald,
-                                                    fontWeight = FontWeight.SemiBold
-                                                )
-                                            )
+                                            Spacer(modifier = Modifier.height(10.dp))
                                         }
-                                    } else {
+
+                                        // Enunciado com notação matemática e LaTeX
                                         Surface(
-                                            color = SurfaceElevated.copy(alpha = 0.5f),
+                                            color = SurfaceElevated,
                                             shape = RoundedCornerShape(6.dp),
-                                            border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle.copy(alpha = 0.5f))
+                                            border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle),
+                                            modifier = Modifier.fillMaxWidth()
                                         ) {
-                                            Row(
-                                                modifier = Modifier.padding(horizontal = 8.dp, vertical = 6.dp),
-                                                verticalAlignment = Alignment.CenterVertically
+                                            Column(modifier = Modifier.padding(12.dp)) {
+                                                MathFormattedText(
+                                                    text = ex.problemStatement,
+                                                    style = MaterialTheme.typography.bodyMedium,
+                                                    color = TextPrimary,
+                                                    lineHeightSp = 21f
+                                                )
+                                            }
+                                        }
+
+                                        Spacer(modifier = Modifier.height(12.dp))
+
+                                        // 5 Alternativas (A, B, C, D, E) com notação matemática formatada
+                                        ex.options.forEachIndexed { optIdx, optText ->
+                                            val isSelected = selectedOpt == optIdx
+                                            val letter = optionLetters.getOrElse(optIdx) { "${optIdx + 1}" }
+
+                                            Surface(
+                                                color = if (isSelected) PrimaryViolet.copy(alpha = 0.15f) else Color.Transparent,
+                                                shape = RoundedCornerShape(6.dp),
+                                                border = androidx.compose.foundation.BorderStroke(
+                                                    1.dp,
+                                                    if (isSelected) PrimaryViolet else BorderSubtle.copy(alpha = 0.7f)
+                                                ),
+                                                modifier = Modifier
+                                                    .fillMaxWidth()
+                                                    .padding(vertical = 3.dp)
+                                                    .clickable {
+                                                        selectedOptions[index] = optIdx
+                                                        exerciseResults.remove(index)
+                                                    }
+                                            ) {
+                                                Row(
+                                                    modifier = Modifier
+                                                        .fillMaxWidth()
+                                                        .padding(horizontal = 10.dp, vertical = 8.dp),
+                                                    verticalAlignment = Alignment.CenterVertically
+                                                ) {
+                                                    Surface(
+                                                        color = if (isSelected) PrimaryViolet else SurfaceElevated,
+                                                        shape = CircleShape,
+                                                        modifier = Modifier.size(24.dp),
+                                                        border = androidx.compose.foundation.BorderStroke(
+                                                            1.dp,
+                                                            if (isSelected) PrimaryViolet else BorderSubtle
+                                                        )
+                                                    ) {
+                                                        Box(contentAlignment = Alignment.Center) {
+                                                            Text(
+                                                                text = letter,
+                                                                style = MaterialTheme.typography.labelSmall.copy(
+                                                                    fontWeight = FontWeight.Bold,
+                                                                    color = if (isSelected) Color.White else TextSecondary,
+                                                                    fontSize = 11.sp
+                                                                )
+                                                            )
+                                                        }
+                                                    }
+
+                                                    Spacer(modifier = Modifier.width(10.dp))
+
+                                                    Column(modifier = Modifier.weight(1f)) {
+                                                        MathFormattedText(
+                                                            text = optText,
+                                                            style = MaterialTheme.typography.bodySmall,
+                                                            color = if (isSelected) TextPrimary else TextSecondary,
+                                                            lineHeightSp = 18f
+                                                        )
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        Spacer(modifier = Modifier.height(10.dp))
+
+                                        // Botões de Ação (Dica, Solução Comentada e Conferir)
+                                        Row(
+                                            modifier = Modifier.fillMaxWidth(),
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp),
+                                            verticalAlignment = Alignment.CenterVertically
+                                        ) {
+                                            // Botão de Dica
+                                            TextButton(
+                                                onClick = { showHints[index] = !showHint },
+                                                shape = RoundedCornerShape(6.dp)
                                             ) {
                                                 Icon(
-                                                    imageVector = Icons.Default.Lock,
-                                                    contentDescription = "Bloqueado",
-                                                    tint = TextTertiary,
-                                                    modifier = Modifier.size(13.dp)
+                                                    imageVector = Icons.Default.HelpOutline,
+                                                    contentDescription = null,
+                                                    tint = GoldXp,
+                                                    modifier = Modifier.size(16.dp)
                                                 )
                                                 Spacer(modifier = Modifier.width(4.dp))
                                                 Text(
-                                                    text = if (wrongCount == 1) "Solução (1/2 erros)" else "Solução (bloqueada)",
-                                                    style = MaterialTheme.typography.labelSmall.copy(
-                                                        color = TextTertiary,
-                                                        fontSize = 10.5.sp
-                                                    )
+                                                    text = if (showHint) "Ocultar Dica" else "Dica",
+                                                    style = MaterialTheme.typography.labelSmall.copy(color = GoldXp)
                                                 )
                                             }
-                                        }
-                                    }
 
-                                    Spacer(modifier = Modifier.weight(1f))
-
-                                    // Botão Conferir Resposta
-                                    Button(
-                                        onClick = {
-                                            val choice = selectedOptions[index]
-                                            if (choice != null) {
-                                                val isCorrect = (choice == ex.correctIndex)
-                                                exerciseResults[index] = isCorrect
-                                                if (!isCorrect) {
-                                                    val nextWrong = (wrongAttempts[index] ?: 0) + 1
-                                                    wrongAttempts[index] = nextWrong
-                                                    progressRepository.markLessonForReview(lesson.id)
-                                                    if (nextWrong >= 2) {
-                                                        showSolutions[index] = true
+                                            // Botão de Solução Comentada (liberada após 2 erros ou acerto)
+                                            if (isSolutionUnlocked) {
+                                                TextButton(
+                                                    onClick = { showSolutions[index] = !showSolution },
+                                                    shape = RoundedCornerShape(6.dp)
+                                                ) {
+                                                    Icon(
+                                                        imageVector = if (showSolution) Icons.Default.VisibilityOff else Icons.Default.Visibility,
+                                                        contentDescription = null,
+                                                        tint = SuccessEmerald,
+                                                        modifier = Modifier.size(16.dp)
+                                                    )
+                                                    Spacer(modifier = Modifier.width(4.dp))
+                                                    Text(
+                                                        text = if (showSolution) "Ocultar Solução" else "Solução Comentada",
+                                                        style = MaterialTheme.typography.labelSmall.copy(
+                                                            color = SuccessEmerald,
+                                                            fontWeight = FontWeight.SemiBold
+                                                        )
+                                                    )
+                                                }
+                                            } else {
+                                                Surface(
+                                                    color = SurfaceElevated.copy(alpha = 0.5f),
+                                                    shape = RoundedCornerShape(6.dp),
+                                                    border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle.copy(alpha = 0.5f))
+                                                ) {
+                                                    Row(
+                                                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 6.dp),
+                                                        verticalAlignment = Alignment.CenterVertically
+                                                    ) {
+                                                        Icon(
+                                                            imageVector = Icons.Default.Lock,
+                                                            contentDescription = "Bloqueado",
+                                                            tint = TextTertiary,
+                                                            modifier = Modifier.size(13.dp)
+                                                        )
+                                                        Spacer(modifier = Modifier.width(4.dp))
+                                                        Text(
+                                                            text = if (wrongCount == 1) "Solução (1/2 erros)" else "Solução (bloqueada)",
+                                                            style = MaterialTheme.typography.labelSmall.copy(
+                                                                color = TextTertiary,
+                                                                fontSize = 10.5.sp
+                                                            )
+                                                        )
                                                     }
-                                                } else {
-                                                    showSolutions[index] = true
                                                 }
                                             }
-                                        },
-                                        enabled = selectedOpt != null,
-                                        colors = ButtonDefaults.buttonColors(
-                                            containerColor = PrimaryViolet,
-                                            contentColor = Color.White
-                                        ),
-                                        shape = RoundedCornerShape(6.dp),
-                                        modifier = Modifier.height(36.dp)
-                                    ) {
-                                        Text("Conferir", fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
-                                    }
-                                }
 
-                                // Dica
-                                AnimatedVisibility(visible = showHint, enter = fadeIn(), exit = fadeOut()) {
-                                    Surface(
-                                        color = GoldXp.copy(alpha = 0.12f),
-                                        shape = RoundedCornerShape(6.dp),
-                                        border = androidx.compose.foundation.BorderStroke(1.dp, GoldXp.copy(alpha = 0.3f)),
-                                        modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
-                                    ) {
-                                        Row(modifier = Modifier.padding(10.dp)) {
-                                            Icon(
-                                                imageVector = Icons.Default.Lightbulb,
-                                                contentDescription = null,
-                                                tint = GoldXp,
-                                                modifier = Modifier.size(16.dp)
-                                            )
-                                            Spacer(modifier = Modifier.width(8.dp))
-                                            Column {
-                                                MathFormattedText(
-                                                    text = ex.hint,
-                                                    style = MaterialTheme.typography.bodySmall,
-                                                    color = TextPrimary,
-                                                    lineHeightSp = 18f
-                                                )
+                                            Spacer(modifier = Modifier.weight(1f))
+
+                                            // Botão Conferir Resposta
+                                            Button(
+                                                onClick = {
+                                                    val choice = selectedOptions[index]
+                                                    if (choice != null) {
+                                                        val isCorrect = (choice == ex.correctIndex)
+                                                        exerciseResults[index] = isCorrect
+                                                        if (!isCorrect) {
+                                                            val nextWrong = (wrongAttempts[index] ?: 0) + 1
+                                                            wrongAttempts[index] = nextWrong
+                                                            progressRepository.markLessonForReview(lesson.id)
+                                                            if (nextWrong >= 2) {
+                                                                showSolutions[index] = true
+                                                            }
+                                                        } else {
+                                                            showSolutions[index] = true
+                                                        }
+                                                    }
+                                                },
+                                                enabled = selectedOpt != null,
+                                                colors = ButtonDefaults.buttonColors(
+                                                    containerColor = PrimaryViolet,
+                                                    contentColor = Color.White
+                                                ),
+                                                shape = RoundedCornerShape(6.dp),
+                                                modifier = Modifier.height(36.dp)
+                                            ) {
+                                                Text("Conferir", fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
                                             }
                                         }
-                                    }
-                                }
 
-                                // Solução Comentada com LaTeX e passos didáticos
-                                AnimatedVisibility(visible = showSolution, enter = fadeIn(), exit = fadeOut()) {
-                                    Box(modifier = Modifier.padding(top = 10.dp)) {
-                                        StepByStepSolutionView(solutionText = ex.stepByStepSolution)
+                                        // Dica
+                                        AnimatedVisibility(visible = showHint, enter = fadeIn(), exit = fadeOut()) {
+                                            Surface(
+                                                color = GoldXp.copy(alpha = 0.12f),
+                                                shape = RoundedCornerShape(6.dp),
+                                                border = androidx.compose.foundation.BorderStroke(1.dp, GoldXp.copy(alpha = 0.3f)),
+                                                modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
+                                            ) {
+                                                Row(modifier = Modifier.padding(10.dp)) {
+                                                    Icon(
+                                                        imageVector = Icons.Default.Lightbulb,
+                                                        contentDescription = null,
+                                                        tint = GoldXp,
+                                                        modifier = Modifier.size(16.dp)
+                                                    )
+                                                    Spacer(modifier = Modifier.width(8.dp))
+                                                    Column {
+                                                        MathFormattedText(
+                                                            text = ex.hint,
+                                                            style = MaterialTheme.typography.bodySmall,
+                                                            color = TextPrimary,
+                                                            lineHeightSp = 18f
+                                                        )
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        // Solução Comentada com LaTeX e passos didáticos
+                                        AnimatedVisibility(visible = showSolution, enter = fadeIn(), exit = fadeOut()) {
+                                            Box(modifier = Modifier.padding(top = 10.dp)) {
+                                                StepByStepSolutionView(solutionText = ex.stepByStepSolution)
+                                            }
+                                        }
+
+                                        // BOTÃO PROSSEGUIR PARA O PRÓXIMO EXERCÍCIO AO ACERTAR
+                                        if (isChecked == true) {
+                                            Spacer(modifier = Modifier.height(12.dp))
+                                            Button(
+                                                onClick = {
+                                                    expandedExercises[index] = false
+                                                    if (index + 1 < exercises.size) {
+                                                        expandedExercises[index + 1] = true
+                                                        coroutineScope.launch {
+                                                            scrollState.animateScrollTo(scrollState.value + 400)
+                                                        }
+                                                    }
+                                                },
+                                                colors = ButtonDefaults.buttonColors(
+                                                    containerColor = SuccessEmerald,
+                                                    contentColor = Color.White
+                                                ),
+                                                shape = RoundedCornerShape(8.dp),
+                                                modifier = Modifier
+                                                    .fillMaxWidth()
+                                                    .height(44.dp)
+                                                    .testTag("btn_calculus_next_exercise_$index")
+                                            ) {
+                                                Row(
+                                                    verticalAlignment = Alignment.CenterVertically,
+                                                    horizontalArrangement = Arrangement.Center
+                                                ) {
+                                                    Text(
+                                                        text = if (index + 1 < exercises.size) {
+                                                            "Prosseguir para o Próximo Exercício (${index + 2}/${exercises.size})"
+                                                        } else {
+                                                            "🎉 Todos os Exercícios da Aula Concluídos!"
+                                                        },
+                                                        style = MaterialTheme.typography.labelMedium.copy(
+                                                            fontWeight = FontWeight.Bold,
+                                                            fontSize = 12.5.sp
+                                                        )
+                                                    )
+                                                    Spacer(modifier = Modifier.width(8.dp))
+                                                    Icon(
+                                                        imageVector = if (index + 1 < exercises.size) Icons.AutoMirrored.Filled.ArrowForward else Icons.Default.CheckCircle,
+                                                        contentDescription = null,
+                                                        modifier = Modifier.size(16.dp)
+                                                    )
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }

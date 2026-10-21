@@ -93,7 +93,7 @@ class AuthManager(private val context: Context) {
     }
 
     init {
-        preSeedAdminAccount()
+        cleanClonedDevAccounts()
         _currentUserState.value = loadInitialSession()
         fetchAndCacheFirestoreAccounts()
         auth.addAuthStateListener { firebaseAuth ->
@@ -145,27 +145,39 @@ class AuthManager(private val context: Context) {
         }
     }
 
-    private fun preSeedAdminAccount() {
+    /**
+     * Remove qualquer conta clonada dummy "dev_contatopedro21g" que tenha sido criada em versões antigas,
+     * garantindo que a conta oficial do usuário nunca fique clonada ou com duplicatas.
+     */
+    private fun cleanClonedDevAccounts() {
         try {
-            val existing = findAccountByEmail("contatopedro21g@gmail.com")
-            if (existing == null) {
-                val salt = generateSalt()
-                val passwordHash = hashString("admin123" + salt)
-                val answerHash = hashString("tutor" + salt)
-                val savedAvatar = customProfilePrefs.getString("permanent_avatar_contatopedro21g@gmail.com", null)
-                val adminAccount = RegisteredAccountRecord(
-                    uid = "dev_contatopedro21g",
-                    email = "contatopedro21g@gmail.com",
-                    passwordHash = passwordHash,
-                    salt = salt,
-                    displayName = "Pedro (Dev Admin)",
-                    securityQuestion = SECURITY_QUESTIONS[0],
-                    securityAnswerHash = answerHash,
-                    photoUrl = savedAvatar,
-                    bio = "Engenheiro e Administrador da Plataforma Knowverse",
-                    lastEmailChangeTimestamp = System.currentTimeMillis() - TWO_MONTHS_MILLIS
-                )
-                saveAccountRecord(adminAccount)
+            val all = loadAllAccounts().toMutableList()
+            val removed = all.removeAll { it.uid == "dev_contatopedro21g" }
+            if (removed) {
+                val arr = JSONArray()
+                for (rec in all) {
+                    val obj = JSONObject().apply {
+                        put("uid", rec.uid)
+                        put("email", rec.email)
+                        put("passwordHash", rec.passwordHash)
+                        put("salt", rec.salt)
+                        put("displayName", rec.displayName)
+                        put("securityQuestion", rec.securityQuestion)
+                        put("securityAnswerHash", rec.securityAnswerHash)
+                        put("photoUrl", rec.photoUrl ?: "")
+                        put("bio", rec.bio)
+                        put("lastEmailChangeTimestamp", rec.lastEmailChangeTimestamp)
+                        put("temporaryAccessToken", rec.temporaryAccessToken ?: "")
+                    }
+                    arr.put(obj)
+                }
+                accountsPrefs.edit().putString("registered_accounts_json", arr.toString()).apply()
+            }
+            defaultScope.launch {
+                try {
+                    val db = getFirestoreDb() ?: return@launch
+                    db.collection("users").document("dev_contatopedro21g").delete().await()
+                } catch (_: Exception) {}
             }
         } catch (_: Exception) {}
     }
@@ -254,16 +266,23 @@ class AuthManager(private val context: Context) {
             sessionPrefs.edit().remove("active_app_user").apply()
         } else {
             val cleanEmail = user.email.lowercase().trim()
+            val savedPermanent = customProfilePrefs.getString("permanent_avatar_${cleanEmail}", null)?.takeIf { it.isNotBlank() && it != "mascot_sealion" }
+            val effectivePhoto = if (!user.photoUrl.isNullOrBlank() && user.photoUrl != "mascot_sealion") {
+                user.photoUrl
+            } else {
+                savedPermanent ?: user.photoUrl
+            }
+
             val edit = customProfilePrefs.edit()
                 .putString("${user.uid}_name", user.displayName)
                 .putString("${cleanEmail}_name", user.displayName)
-                .putString("${user.uid}_photo", user.photoUrl ?: "")
-                .putString("${cleanEmail}_photo", user.photoUrl ?: "")
                 .putString("${user.uid}_bio", user.bio)
                 .putString("${cleanEmail}_bio", user.bio)
 
-            if (!user.photoUrl.isNullOrBlank() && user.photoUrl != "mascot_sealion") {
-                edit.putString("permanent_avatar_${cleanEmail}", user.photoUrl)
+            if (!effectivePhoto.isNullOrBlank() && effectivePhoto != "mascot_sealion") {
+                edit.putString("${user.uid}_photo", effectivePhoto)
+                edit.putString("${cleanEmail}_photo", effectivePhoto)
+                edit.putString("permanent_avatar_${cleanEmail}", effectivePhoto)
             }
             edit.apply()
 
@@ -271,7 +290,7 @@ class AuthManager(private val context: Context) {
                 put("uid", user.uid)
                 put("email", user.email)
                 put("displayName", user.displayName)
-                put("photoUrl", user.photoUrl ?: "")
+                put("photoUrl", effectivePhoto ?: "")
                 put("bio", user.bio)
                 put("isDev", user.isDev)
                 put("isGoogleUser", user.isGoogleUser)
@@ -411,11 +430,18 @@ class AuthManager(private val context: Context) {
             val inputHash = hashString(password + localAccount.salt)
             if (inputHash == localAccount.passwordHash) {
                 val isDev = cleanEmail == "contatopedro21g@gmail.com"
+                val savedPermanent = customProfilePrefs.getString("permanent_avatar_${cleanEmail}", null)?.takeIf { it.isNotBlank() && it != "mascot_sealion" }
+                val customPhoto = customProfilePrefs.getString("${localAccount.uid}_photo", null)?.takeIf { it.isNotBlank() && it != "mascot_sealion" }
+                    ?: customProfilePrefs.getString("${cleanEmail}_photo", null)?.takeIf { it.isNotBlank() && it != "mascot_sealion" }
+                    ?: savedPermanent
+                    ?: localAccount.photoUrl?.takeIf { it.isNotBlank() && it != "mascot_sealion" }
+                    ?: localAccount.photoUrl
+
                 val appUser = AppUser(
                     uid = localAccount.uid,
                     email = localAccount.email,
                     displayName = localAccount.displayName,
-                    photoUrl = localAccount.photoUrl,
+                    photoUrl = customPhoto,
                     bio = localAccount.bio,
                     isDev = isDev,
                     isGoogleUser = false,
@@ -458,6 +484,11 @@ class AuthManager(private val context: Context) {
                         val secAns = snap.getString("securityAnswerHash") ?: ""
                         val ts = snap.getLong("lastEmailChangeTimestamp") ?: 0L
 
+                        val savedPermanent = customProfilePrefs.getString("permanent_avatar_${cleanEmail}", null)?.takeIf { it.isNotBlank() && it != "mascot_sealion" }
+                        val effectivePhoto = photo?.takeIf { it.isNotBlank() && it != "mascot_sealion" }
+                            ?: savedPermanent
+                            ?: photo
+
                         val restored = RegisteredAccountRecord(
                             uid = uid,
                             email = cleanEmail,
@@ -466,7 +497,7 @@ class AuthManager(private val context: Context) {
                             displayName = name,
                             securityQuestion = secQ,
                             securityAnswerHash = secAns,
-                            photoUrl = photo,
+                            photoUrl = effectivePhoto,
                             bio = bio,
                             lastEmailChangeTimestamp = ts
                         )
@@ -476,7 +507,7 @@ class AuthManager(private val context: Context) {
                             uid = uid,
                             email = cleanEmail,
                             displayName = name,
-                            photoUrl = photo,
+                            photoUrl = effectivePhoto,
                             bio = bio,
                             isDev = cleanEmail == "contatopedro21g@gmail.com",
                             isGoogleUser = false,
@@ -606,14 +637,19 @@ class AuthManager(private val context: Context) {
             bio = bio.trim()
         )
 
-        customProfilePrefs.edit()
+        val cleanEmail = current.email.lowercase().trim()
+        val prefEdit = customProfilePrefs.edit()
             .putString("${current.uid}_name", updated.displayName)
-            .putString("${current.email.lowercase()}_name", updated.displayName)
-            .putString("${current.uid}_photo", updated.photoUrl ?: "")
-            .putString("${current.email.lowercase()}_photo", updated.photoUrl ?: "")
+            .putString("${cleanEmail}_name", updated.displayName)
             .putString("${current.uid}_bio", updated.bio)
-            .putString("${current.email.lowercase()}_bio", updated.bio)
-            .apply()
+            .putString("${cleanEmail}_bio", updated.bio)
+
+        if (!updated.photoUrl.isNullOrBlank() && updated.photoUrl != "mascot_sealion") {
+            prefEdit.putString("${current.uid}_photo", updated.photoUrl)
+            prefEdit.putString("${cleanEmail}_photo", updated.photoUrl)
+            prefEdit.putString("permanent_avatar_${cleanEmail}", updated.photoUrl)
+        }
+        prefEdit.apply()
 
         val account = findAccountByUid(current.uid) ?: findAccountByEmail(current.email)
         if (account != null) {

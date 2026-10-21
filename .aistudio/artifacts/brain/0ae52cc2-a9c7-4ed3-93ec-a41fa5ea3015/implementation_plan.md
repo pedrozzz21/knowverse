@@ -25,6 +25,14 @@ Plano de implementação revisado para elevar a profundidade do aprendizado de P
 - **Decisão 4 (Autenticação Obrigatória e Desafios Kahoot)**:
   - Acesso mantido como 100% restrito a usuários logados com Conta Google (`CredentialManager` + Firebase Auth).
   - Mini-jogo Kahoot de 30 segundos ao final de cada módulo com 4 alternativas geométricas coloridas, áudio tenso que acelera nos últimos segundos e bônus por agilidade.
+- **Decisão 5 (Trilha Oficial de Matemática ENEM - 14 Módulos & 81 Aulas Sequenciais)**:
+  - Taxonomia rigorosa: Disciplina -> Módulo (Tópico) -> Aula Sequencial (Subtópico) -> Simulado Final.
+  - Modelos de dados e tipagem definidos em `EnemMathTrailModels.kt` e `EnemMathCurriculum.kt` preparados para receber conteúdo didático futuro.
+  - UI da Trilha em `LearnTrailScreen.kt`: Container de módulo expansível com borda destacada em Verde Neon (`#00E676`), progresso (`0/10`), cards escuros de aula com ícone circular (play/lock) e +30 XP dourado, e card especial cinza de Simulado Final bloqueado.
+- **Decisão 6 (Modo Foco em Exercícios: Gabarito Comentado, Dica Sem Spoiler e Próxima Questão)**:
+  - Avanço manual controlado pelo usuário via botão inferior `"Próxima Questão"`.
+  - Acerto: Exibe gabarito comentado completo (`solutionSteps`, `keyMethod`) e avança para questão de dificuldade igual ou superior.
+  - Erro: Não revela a resposta correta de imediato. Exibe dica pedagógica com estímulo à lógica (`pedagogicalAlert`), permite tentar outra alternativa e direciona para questão mais fácil do mesmo tema.
 
 ---
 

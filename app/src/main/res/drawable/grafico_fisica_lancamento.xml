@@ -1,0 +1,33 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="200dp"
+    android:viewportWidth="300"
+    android:viewportHeight="200">
+    <!-- Fundo Escuro Moderno Linear -->
+    <path
+        android:fillColor="#11141B"
+        android:pathData="M0,0h300v200h-300z" />
+    <path
+        android:strokeColor="#232834"
+        android:strokeWidth="1"
+        android:pathData="M0,0h300v200h-300z" />
+    <!-- Eixos Cartesianos -->
+    <path
+        android:strokeColor="#64748B"
+        android:strokeWidth="2"
+        android:pathData="M30,170 L280,170 M30,170 L30,20" />
+    <!-- Trajetória Parabólica do Lançamento Oblíquo -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="3"
+        android:pathData="M30,170 Q150,20 270,170" />
+    <!-- Vetor Velocidade Inicial V0 -->
+    <path
+        android:strokeColor="#10B981"
+        android:strokeWidth="2.5"
+        android:pathData="M30,170 L75,115" />
+    <!-- Ponto no Vértice (Altura Máxima Hmax) -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M150,57.5m-5,0a5,5 0,1 1,10 0a5,5 0,1 1,-10 0" />
+</vector>

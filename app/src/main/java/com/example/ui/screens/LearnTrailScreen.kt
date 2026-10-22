@@ -97,12 +97,17 @@ fun LearnTrailScreen(
     var selectedCategory by remember { mutableStateOf("Todas") }
 
     // Course expansion states
-    var isPythonExpanded by remember { mutableStateOf(false) }
     var isEnemMathExpanded by remember { mutableStateOf(true) }
     var expandedEnemModuleId by remember { mutableStateOf<String?>("mod_01_matematica_basica") }
     var isCalculusExpanded by remember { mutableStateOf(false) }
+    var isPhysicsExpanded by remember { mutableStateOf(false) }
+    var expandedPhysicsModuleId by remember { mutableStateOf<String?>("mod_fis_01_mecanica") }
+    var isBiologyExpanded by remember { mutableStateOf(false) }
+    var expandedBiologyModuleId by remember { mutableStateOf<String?>("mod_bio_01_ecologia") }
 
     val enemModules = remember { EnemMathCurriculum.getAllModules() }
+    val physicsModules = remember { com.example.data.physics.EnemPhysicsCurriculum.getAllModules() }
+    val biologyModules = remember { com.example.data.biology.EnemBiologyCurriculum.getAllModules() }
 
     // Active sub-module selection inside Python
     var selectedPythonTier by remember { mutableStateOf(initialTier) }
@@ -111,9 +116,11 @@ fun LearnTrailScreen(
     var selectedCalculusModule by remember { mutableStateOf("Limites") }
     var expandedCalculusModule by remember { mutableStateOf<String?>(null) }
 
-    val categories = listOf("Todas", "Programação", "Matemática")
+    val categories = listOf("Todas", "Programação", "Matemática", "Física", "Biologia")
     val showProgramming = selectedCategory == "Todas" || selectedCategory == "Programação"
     val showMath = selectedCategory == "Todas" || selectedCategory == "Matemática"
+    val showPhysics = selectedCategory == "Todas" || selectedCategory == "Física"
+    val showBiology = selectedCategory == "Todas" || selectedCategory == "Biologia"
 
     val isIntermediateUnlocked = userProgress.isTierUnlocked(DifficultyTier.INTERMEDIATE)
     val isAdvancedUnlocked = userProgress.isTierUnlocked(DifficultyTier.ADVANCED)
@@ -767,6 +774,262 @@ fun LearnTrailScreen(
                                             userProgress = userProgress,
                                             onSelectLesson = onSelectLesson,
                                             onStartFinalTest = onStartFinalTest
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // =========================================================================
+            // SEÇÃO 3: FÍSICA PARA O ENEM
+            // =========================================================================
+            if (showPhysics) {
+                item {
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Card(
+                        shape = RoundedCornerShape(8.dp),
+                        colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
+                            .clickable { isPhysicsExpanded = !isPhysicsExpanded }
+                            .testTag("course_card_physics")
+                    ) {
+                        Column(modifier = Modifier.padding(14.dp)) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(40.dp)
+                                            .clip(CircleShape)
+                                            .background(Color(0xFF38BDF8).copy(alpha = 0.2f)),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.Functions,
+                                            contentDescription = "Física ENEM",
+                                            tint = Color(0xFF38BDF8),
+                                            modifier = Modifier.size(22.dp)
+                                        )
+                                    }
+
+                                    Spacer(modifier = Modifier.width(12.dp))
+
+                                    Column {
+                                        Row(verticalAlignment = Alignment.CenterVertically) {
+                                            Text(
+                                                text = "Física • ENEM Completo",
+                                                style = MaterialTheme.typography.titleMedium.copy(
+                                                    fontWeight = FontWeight.ExtraBold,
+                                                    color = TextPrimary
+                                                )
+                                            )
+                                            Spacer(modifier = Modifier.width(6.dp))
+                                            Surface(
+                                                color = Color(0xFF38BDF8).copy(alpha = 0.15f),
+                                                shape = RoundedCornerShape(4.dp)
+                                            ) {
+                                                Text(
+                                                    text = "6 Módulos",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = Color(0xFF38BDF8),
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 10.sp
+                                                    ),
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
+
+                                        Spacer(modifier = Modifier.height(2.dp))
+
+                                        Text(
+                                            text = "Mecânica, Eletricidade, Termologia, Ondulatória, Óptica e Física Moderna",
+                                            style = MaterialTheme.typography.bodySmall.copy(
+                                                color = TextSecondary,
+                                                fontSize = 11.sp
+                                            ),
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis
+                                        )
+                                    }
+                                }
+
+                                IconButton(
+                                    onClick = { isPhysicsExpanded = !isPhysicsExpanded },
+                                    modifier = Modifier.size(28.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = if (isPhysicsExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                        contentDescription = "Expandir Física ENEM",
+                                        tint = TextSecondary
+                                    )
+                                }
+                            }
+
+                            AnimatedVisibility(
+                                visible = isPhysicsExpanded,
+                                enter = fadeIn() + expandVertically(),
+                                exit = fadeOut() + shrinkVertically()
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(top = 14.dp),
+                                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                                ) {
+                                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
+
+                                    physicsModules.forEach { module ->
+                                        EnemMathTrailModuleContainer(
+                                            module = module,
+                                            isExpanded = expandedPhysicsModuleId == module.id,
+                                            userProgress = userProgress,
+                                            onToggleExpand = {
+                                                expandedPhysicsModuleId = if (expandedPhysicsModuleId == module.id) null else module.id
+                                            },
+                                            onSelectLesson = onSelectLesson
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ========================================================
+            // CATEGORIA: BIOLOGIA -> BIOLOGIA ENEM
+            // ========================================================
+            if (showBiology) {
+                item {
+                    Text(
+                        text = "Categoria: Ciências da Natureza • Biologia",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            color = SuccessEmerald,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 11.sp
+                        ),
+                        modifier = Modifier.padding(top = 10.dp, bottom = 2.dp)
+                    )
+
+                    Card(
+                        shape = RoundedCornerShape(8.dp),
+                        colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
+                            .clickable { isBiologyExpanded = !isBiologyExpanded }
+                            .testTag("course_card_biology")
+                    ) {
+                        Column(modifier = Modifier.padding(14.dp)) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(40.dp)
+                                            .clip(CircleShape)
+                                            .background(SuccessEmerald.copy(alpha = 0.2f)),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.WorkspacePremium,
+                                            contentDescription = "Biologia ENEM",
+                                            tint = SuccessEmerald,
+                                            modifier = Modifier.size(22.dp)
+                                        )
+                                    }
+
+                                    Spacer(modifier = Modifier.width(12.dp))
+
+                                    Column {
+                                        Row(verticalAlignment = Alignment.CenterVertically) {
+                                            Text(
+                                                text = "Biologia • ENEM",
+                                                style = MaterialTheme.typography.titleMedium.copy(
+                                                    fontWeight = FontWeight.ExtraBold,
+                                                    color = TextPrimary
+                                                )
+                                            )
+                                            Spacer(modifier = Modifier.width(6.dp))
+                                            Surface(
+                                                color = SuccessEmerald.copy(alpha = 0.15f),
+                                                shape = RoundedCornerShape(4.dp)
+                                            ) {
+                                                Text(
+                                                    text = "Tópico 1 • Ecologia",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = SuccessEmerald,
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 10.sp
+                                                    ),
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
+
+                                        Spacer(modifier = Modifier.height(2.dp))
+
+                                        Text(
+                                            text = "Ecologia completa: Biodiversidade, Teias, Relações, Ciclos, Poluição e Sustentabilidade",
+                                            style = MaterialTheme.typography.bodySmall.copy(
+                                                color = TextSecondary,
+                                                fontSize = 11.sp
+                                            ),
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis
+                                        )
+                                    }
+                                }
+
+                                IconButton(
+                                    onClick = { isBiologyExpanded = !isBiologyExpanded },
+                                    modifier = Modifier.size(28.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = if (isBiologyExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                        contentDescription = "Expandir Biologia ENEM",
+                                        tint = TextSecondary
+                                    )
+                                }
+                            }
+
+                            AnimatedVisibility(
+                                visible = isBiologyExpanded,
+                                enter = fadeIn() + expandVertically(),
+                                exit = fadeOut() + shrinkVertically()
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(top = 14.dp),
+                                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                                ) {
+                                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
+
+                                    biologyModules.forEach { module ->
+                                        EnemMathTrailModuleContainer(
+                                            module = module,
+                                            isExpanded = expandedBiologyModuleId == module.id,
+                                            userProgress = userProgress,
+                                            onToggleExpand = {
+                                                expandedBiologyModuleId = if (expandedBiologyModuleId == module.id) null else module.id
+                                            },
+                                            onSelectLesson = onSelectLesson
                                         )
                                     }
                                 }

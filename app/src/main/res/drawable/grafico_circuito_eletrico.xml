@@ -1,0 +1,38 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="200dp"
+    android:viewportWidth="300"
+    android:viewportHeight="200">
+    <!-- Fundo Escuro do Circuito -->
+    <path
+        android:fillColor="#11141B"
+        android:pathData="M0,0h300v200h-300z" />
+    <path
+        android:strokeColor="#232834"
+        android:strokeWidth="1"
+        android:pathData="M0,0h300v200h-300z" />
+    <!-- Fios Condutores do Circuito Fechado -->
+    <path
+        android:strokeColor="#94A3B8"
+        android:strokeWidth="3"
+        android:pathData="M50,100 L50,40 L100,40 M200,40 L250,40 L250,160 L50,160 L50,100" />
+    <!-- Bateria / Gerador (ddp U) à esquerda -->
+    <path
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="4"
+        android:pathData="M35,90 L65,90" />
+    <path
+        android:strokeColor="#EF4444"
+        android:strokeWidth="2"
+        android:pathData="M42,110 L58,110" />
+    <!-- Resistor R (Zigue-zague linear) no ramo superior -->
+    <path
+        android:strokeColor="#EAB308"
+        android:strokeWidth="3.5"
+        android:pathData="M100,40 L110,25 L125,55 L140,25 L155,55 L170,25 L185,55 L195,40 L200,40" />
+    <!-- Sentido da Corrente Elétrica I -->
+    <path
+        android:strokeColor="#10B981"
+        android:strokeWidth="2"
+        android:pathData="M140,150 L160,150" />
+</vector>

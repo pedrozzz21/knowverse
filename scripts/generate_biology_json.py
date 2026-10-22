@@ -1,0 +1,360 @@
+import json
+import os
+
+data = [
+  {
+    "id": "bio_eco_01",
+    "title": "Conceitos de Meio Ambiente e Biodiversidade",
+    "theory_markdown": "# Conceitos de Meio Ambiente e Biodiversidade: O Palco da Vida\n\nA **Ecologia** (do grego *oikos*, casa, e *logos*, estudo) é o ramo da Biologia que estuda as interações recíprocas dos seres vivos entre si e com o ambiente que os cerca. Para o ENEM, dominar esses conceitos fundamentais não é mera memorização vocabular, mas a chave interpretativa para compreender desequilíbrios ecológicos e dinâmicas biológicas complexas.\n\n### 1. Níveis de Organização em Ecologia\n• **Espécie:** Conjunto de indivíduos morfologicamente semelhantes capazes de cruzar entre si em condições naturais e gerar descendentes férteis.\n• **População:** Conjunto de indivíduos da **mesma espécie** que habitam uma mesma área geográfica ao mesmo tempo (ex: a população de capivaras do Parque Ibirapuera).\n• **Comunidade ou Biocenose:** Conjunto de todas as populações de **espécies distintas** que coexistem e interagem em uma determinada área (fatores bióticos: plantas, animais, fungos, protozoários e bactérias).\n• **Ecossistema:** Unidade funcional resultante da interação integrada entre a **Comunidade (fatores bióticos)** e o **meio físico-químico (fatores abióticos)**, tais como luminosidade, temperatura, umidade, pH e nutrientes minerais do solo.\n• **Biosfera:** A fração habitável do planeta Terra, englobando a soma de todos os ecossistemas terrestres e aquáticos.\n\n### 2. O Duelo Clássico do ENEM: Habitat vs. Nicho Ecológico\nUma das analogias mais célebres e cobradas no ENEM diz respeito ao endereço e à profissão ecológica:\n• **Habitat:** É o **endereço** do organismo — o local físico onde a espécie vive habitualmente (ex: o topo da copa das árvores da Mata Atlântica para o mico-leão-dourado).\n• **Nicho Ecológico:** É o papel funcional, a **\"profissão\"** da espécie no ecossistema. Engloba tudo o que a espécie faz para sobreviver: o que come, quando forrageia (hábito diurno ou noturno), como e quando se reproduz, seus predadores naturais e as condições de temperatura em que resiste.\n> **Regra de Gause (Princípio da Exclusão Competitiva):** Duas espécies distintas podem coexistir em perfeito equilíbrio no mesmo habitat, desde que possuam **nichos ecológicos diferentes**. Se duas espécies tentarem explorar exatamente o mesmo nicho ecológico, haverá sobreposição e competição severa: uma espécie prevalecerá, e a outra será expulsa, terá seu nicho alterado por seleção natural ou será extinta localmente.\n\n### 3. Biodiversidade e os Hotspots Mundiais\nA biodiversidade refere-se à variedade de genes, espécies e ecossistemas da biosfera. O ENEM cobra intensamente a preservação dos **Hotspots de Biodiversidade** — áreas biogeográficas que possuem altíssima riqueza biológica e grande número de **espécies endêmicas** (que só existem naquele local), mas que já perderam ao menos 70% de sua vegetação original. No Brasil, dois biomas são classificados como hotspots mundiais: a **Mata Atlântica** e o **Cerrado**.\n\n![Níveis de Organização em Ecologia do Organismo à Biosfera](../../assets/images/ecologia/biodiversidade.png)",
+    "activities": [
+      {
+        "id_question": "bio_eco_01_q1",
+        "text": "(ENEM) Em uma floresta tropical convivem duas espécies de aves frugívoras de tamanho semelhante. A espécie A forrageia exclusivamente nas primeiras horas da manhã na copa das árvores mais altas, enquanto a espécie B alimenta-se ao entardecer nos estratos arbustivos médios e inferiores da floresta. Essa partilha de recursos evita a extinção de uma das espécies e é explicada porque:",
+        "options": [
+          "ambas as espécies compartilham o mesmo nicho ecológico, anulando a competição.",
+          "as duas espécies habitam ecossistemas diferentes dentro do mesmo bioma.",
+          "a partição temporal e espacial dos recursos resulta em nichos ecológicos distintos.",
+          "a seleção natural eliminou completamente a necessidade de alimentação de ambas.",
+          "o habitat diferente impede qualquer tipo de interação ecológica entre elas."
+        ],
+        "correct_answer": 2,
+        "difficulty": 1,
+        "explanation": "As duas espécies dividem o mesmo espaço físico geral (mesmo habitat), mas diferenciam-se no horário de alimentação e na altura do estrato florestal explorado. Essas diferenças caracterizam nichos ecológicos distintos, reduzindo a sobreposição de nichos e impedindo a exclusão competitiva de acordo com o Princípio de Gause."
+      },
+      {
+        "id_question": "bio_eco_01_q2",
+        "text": "(ENEM) O Cerrado brasileiro é considerado um dos hotspots de biodiversidade mundiais. Para receber essa classificação internacional da Conservation International, uma região geográfica necessita obrigatoriamente apresentar:",
+        "options": [
+          "apenas grande extensão territorial contínua sem ocupação humana.",
+          "alto grau de endemismo de espécies e perda crítica de pelo menos 70% da vegetação original.",
+          "ausência total de espécies ameaçadas de extinção em seu inventário biológico.",
+          "clima equatorial úmido com chuvas torrenciais bem distribuídas o ano inteiro.",
+          "exclusividade na presença de grandes mamíferos carnívoros no topo da cadeia trófica."
+        ],
+        "correct_answer": 1,
+        "difficulty": 2,
+        "explanation": "O conceito de hotspot de biodiversidade exige dois critérios biológicos objetivos: abrigar ao menos 1.500 espécies de plantas vasculares endêmicas (mais de 0,5% do total mundial) e ter perdido no mínimo 70% da sua cobertura vegetal primária por ação antrópica, indicando risco iminente de extinção em massa."
+      },
+      {
+        "id_question": "bio_eco_01_q3",
+        "text": "(ENEM) Um pesquisador coletou amostras de solo, água, insetos herbívoros, fungos decompositores e mediu a taxa de insolação e temperatura em uma clareira de mata de galeria. Ao integrar as características dos seres vivos com as variáveis físico-químicas monitoradas, a escala ecológica investigada corresponde a um(a):",
+        "options": [
+          "população biológica.",
+          "comunidade clímax.",
+          "ecossistema.",
+          "biocenose aquática.",
+          "nicho reprodutivo."
+        ],
+        "correct_answer": 2,
+        "difficulty": 2,
+        "explanation": "A integração mútua entre os componentes vivos (fatores bióticos: insetos, fungos, vegetação) e os parâmetros físicos e químicos do ambiente inanimado (fatores abióticos: solo, água, temperatura, insolação) define com precisão o conceito de ecossistema."
+      }
+    ]
+  },
+  {
+    "id": "bio_eco_02",
+    "title": "Cadeias e Teias Alimentares",
+    "theory_markdown": "# Cadeias e Teias Alimentares: O Fluxo de Energia e Matéria\n\nNos ecossistemas, a sobrevivência de qualquer organismo depende da obtenção ininterrupta de **energia** para realizar trabalho biológico e de **matéria** para construir e renovar suas estruturas celulares. Compreender a diferença essencial na dinâmica desses dois fluxos é vital para o ENEM:\n\n• **A Energia é Unidirecional e Decrescente:** O Sol é a fonte primária de quase toda a energia biológica na Terra. A energia entra no ecossistema através dos organismos fotossintetizantes, passa para os herbívoros e carnívoros, e vai se dissipando progressivamente na forma de **calor metabólico** (segunda lei da termodinâmica). A energia **nunca é reciclada**!\n• **A Matéria é Cíclica:** Os átomos de carbono, nitrogênio, fósforo e oxigênio são transferidos pelos níveis tróficos e retornam integralmente ao meio abiótico pela ação dos decompositores, reiniciando o ciclo indefinidamente.\n\n### 1. Níveis Tróficos\n• **Produtores (1º Nível Trófico):** Seres **autótrofos** (plantas, algas e cianobactérias fotossintetizantes; bactérias quimiossintetizantes). Convertem matéria inorgânica ($CO_2$ e $H_2O$) em moléculas orgânicas ricas em energia (glicose), sustentando a pirâmide ecológica.\n• **Consumidores Primários (2º Nível Trófico):** Seres **heterótrofos herbívoros** que se alimentam diretamente dos produtores (ex: gafanhoto, boi, zooplâncton).\n• **Consumidores Secundários, Terciários e Quaternários:** Carnívoros que predam os níveis inferiores (ex: sapo que come gafanhoto, cobra que come sapo, gavião que come cobra).\n• **Decompositores:** Bactérias e fungos sapróbios. Atuam em **todos os níveis tróficos**, degradando cadáveres, fezes e restos orgânicos em compostos minerais simples para que os produtores possam absorvê-los novamente.\n\n### 2. Teias Alimentares: Conectividade Real\nNa natureza, cadeias alimentares lineares são simplificações didáticas. Na realidade, os organismos compõem **teias alimentares**, onde várias cadeias se entrecruzam. Um mesmo organismo pode ocupar diferentes níveis tróficos dependendo do que come (ex: o ser humano ao comer alface é consumidor primário; ao comer carne bovina é consumidor secundário).\n\n### 3. A Grande Pegadinha do ENEM: Magnificação Trófica (Bioacumulação)\nPoluentes não biodegradáveis, persistentes e lipossolúveis (como **metais pesados: mercúrio, chumbo** ou **agrotóxicos organoclorados: DDT**) não são excretados nem metabolizados pelos seres vivos, acumulando-se no tecido adiposo.\n> **Regra de Ouro:** Ao contrário da energia (que diminui ao longo da cadeia), a **concentração de toxinas aumenta drasticamente a cada nível trófico**! O predador de topo da cadeia alimentar consome centenas de presas contaminadas e, portanto, é sempre o **mais intoxicado e prejudicado**.\n\n![Esquema da Pirâmide e Teia Alimentar com Níveis Tróficos](../../assets/images/ecologia/teia_alimentar.png)",
+    "activities": [
+      {
+        "id_question": "bio_eco_02_q1",
+        "text": "(ENEM) Em um ecossistema aquático continental contaminado por resíduos de mercúrio metálico proveniente de garimpo ilegal, foram coletadas amostras de fitoplâncton, zooplâncton, pequenos peixes onívoros, peixes carnívoros de médio porte e aves piscívoras de grande porte que nidificam no topo da margem. Em qual desses grupos de organismos será encontrada a maior concentração de mercúrio por grama de tecido?",
+        "options": [
+          "No fitoplâncton, por absorver a água diretamente.",
+          "No zooplâncton, por ser o primeiro consumidor da cadeia.",
+          "Nos pequenos peixes, devido ao consumo de zooplâncton abundante.",
+          "Nos peixes carnívoros, pela metabolização acelerada.",
+          "Nas aves piscívoras de grande porte, por ocuparem o topo da teia trófica."
+        ],
+        "correct_answer": 4,
+        "difficulty": 1,
+        "explanation": "Metais pesados como o mercúrio sofrem magnificação trófica (biomagnificação). Como o poluente não é degradado e acumula-se nos tecidos corporais ao longo da vida, sua concentração é cumulativa e atinge o valor máximo nos organismos situados no ápice da teia trófica (as aves piscívoras)."
+      },
+      {
+        "id_question": "bio_eco_02_q2",
+        "text": "(ENEM) Ao analisar o fluxo de matéria e energia em uma pradaria nativa, um biólogo afirmou: 'A energia e a matéria circulam de modo idêntico pelas cadeias tróficas, sendo continuamente recicladas pelos fungos e bactérias decompositores'. Do ponto de vista termodinâmico e ecológico, essa afirmação está:",
+        "options": [
+          "correta, pois toda energia perdida em forma de calor é reabsorvida pelos produtores.",
+          "incorreta, pois a matéria é cíclica, mas a energia tem fluxo unidirecional e decrescente.",
+          "correta, já que os decompositores transformam o calor emitido em novas moléculas de ATP.",
+          "incorreta, porque os produtores absorvem matéria orgânica diretamente do ar atmosférico.",
+          "incorreta, pois apenas a energia é conservada nos ecossistemas, enquanto a matéria desaparece."
+        ],
+        "correct_answer": 1,
+        "difficulty": 2,
+        "explanation": "A matéria é cíclica: átomos inorgânicos viram biomoléculas que os decompositores devolvem ao solo e à atmosfera. Já a energia segue fluxo estritamente unidirecional: entra como luz solar, é convertida em energia química e é dissipada progressivamente como calor metabólico nos processos vitais (respiração), não podendo ser reaproveitada pelos produtores."
+      },
+      {
+        "id_question": "bio_eco_02_q3",
+        "text": "(ENEM) Em uma represa de abastecimento, a remoção acidental de uma espécie de peixe carnívoro de topo provocou um aumento descontrolado na população de peixes herbívoros, o que levou a uma redução drástica das macrófitas aquáticas e ao colapso de pequenos invertebrados. Esse efeito em cascata que desestabiliza vários níveis tróficos denomina-se:",
+        "options": [
+          "eutrofização antrópica artificial.",
+          "sucessão ecológica primária acelerada.",
+          "efeito cascata trófico por perda de predador-chave.",
+          "irradiação adaptativa simpatricial.",
+          "exclusão competitiva intraespecífica."
+        ],
+        "correct_answer": 2,
+        "difficulty": 3,
+        "explanation": "A remoção de uma espécie-chave (keystone species), frequentemente um predador de topo, desencadeia uma cascata trófica (top-down regulation), alterando dramaticamente o tamanho populacional dos níveis tróficos subsequentes e modificando toda a estrutura da comunidade biológica."
+      }
+    ]
+  },
+  {
+    "id": "bio_eco_03",
+    "title": "Relações Ecológicas",
+    "theory_markdown": "# Relações Ecológicas: Convivência e Competição na Natureza\n\nNenhum ser vivo habita o planeta de forma isolada. As interações biológicas estabelecidas entre os organismos são essenciais para regular a densidade populacional e moldar a evolução através da seleção natural. O ENEM cobra com enorme frequência a classificação dessas relações quanto ao benefício/prejuízo e quanto às espécies envolvidas:\n\n• **Intraespecíficas:** Ocorrem entre indivíduos da **mesma espécie** (sociedades, colônias, competição intraespecífica).\n• **Interespecíficas:** Ocorrem entre indivíduos de **espécies diferentes** (mutualismo, predação, parasitismo, etc.).\n• **Harmônicas (+/+ ou +/0):** Pelo menos uma espécie se beneficia e **nenhuma sofre prejuízo**.\n• **Desarmônicas (+/- ou -/-):** Pelo menos uma das espécies envolvidas é **prejudicada**.\n\n### 1. Relações Harmônicas em Detalhe\n• **Mutualismo (+/+):** Ambos os indivíduos obtêm vantagens vitais e a relação é **obrigatória** para a sobrevivência em condições naturais. Exemplos: *Líquenes* (associação de fungos que absorvem água e algas que fazem fotossíntese); *Micorrizas* (fungos associados a raízes de árvores); *Bactérias celulolíticas* no rúmen de bovinos.\n• **Protocooperação (+/+):** Ambas as partes se beneficiam, mas a relação é **facultativa** (não obrigatória) — os indivíduos sobrevivem perfeitamente isolados. Exemplos: Pássaro-palito e crocodilo (o pássaro come restos de carne nos dentes do réptil); Caranguejo-eremita e anêmona-do-mar (camuflagem/defesa para o crustáceo e mobilidade/alimento para o celenterado).\n• **Comensalismo (+/0):** Uma espécie é beneficiada com alimento e para a outra a relação é indiferente (neutra). Exemplo clássico: A rêmora (peixe-piolho) fixada por ventosa no ventre do tubarão, alimentando-se dos restos deixados pelo predador.\n• **Inquilinismo e Epifitismo (+/0):** Uma espécie utiliza o corpo de outra como suporte físico ou moradia temporária, sem retirar seiva e sem provocar danos fisiológicos. Exemplos: *Orquídeas e bromélias* vivendo sobre os galhos de grandes árvores da floresta para captar luz solar sem parasitar a árvore.\n\n### 2. Relações Desarmônicas em Detalhe\n• **Competição (-/-):** Disputa direta por recursos limitados do meio (luz, água, nutrientes, território, parceiros sexuais). É considerada **negativa para ambos**, pois mesmo a espécie vencedora despende energia metabólica substancial e sofre estresse fisiológico.\n• **Predação (+/-):** Um organismo predador mata e devora a presa de espécie distinta para nutrição (ex: leão e zebra).\n• **Parasitismo (+/-):** O parasita vive às custas do hospedeiro, extraindo nutrientes de seus tecidos e debilitando-o, mas raramente provocando a morte rápida imediata, pois precisa dele vivo para completar seu ciclo biológico. Exemplos: lombrigas, carrapatos, pulgas e a planta *erva-de-passarinho* (hemiparasita que rouba seiva bruta com seus haustórios).\n• **Amensalismo ou Antibiose (+/-):** Uma espécie secreta substâncias químicas que inibem o desenvolvimento ou provocam a morte de outra espécie. Exemplo histórico: O fungo *Penicillium notatum*, que secreta a penicilina, substância que extermina colônias de bactérias ao seu redor.\n\n![Tabela Comparativa e Exemplos de Relações Ecológicas](../../assets/images/ecologia/relacoes_ecologicas.png)",
+    "activities": [
+      {
+        "id_question": "bio_eco_03_q1",
+        "text": "(ENEM) Em florestas densas, é comum observar orquídeas e bromélias crescendo fixadas nas bifurcações dos galhos de árvores centenárias. Embora utilizem a casca das árvores como suporte mecânico para ter acesso à radiação luminosa do dossel, suas raízes adventícias não penetram os tecidos vasculares e retiram água exclusivamente da umidade do ar e chuvas. Essa relação ecológica é classificada como:",
+        "options": [
+          "parasitismo, pois a presença das plantas sufoca a fotossíntese foliar da árvore hospedeira.",
+          "mutualismo obrigatório, haja vista que a árvore não resistiria sem as bromélias.",
+          "epifitismo, uma modalidade de inquilinismo harmônico sem prejuízo para a árvore suporte.",
+          "amensalismo, decorrente da liberação contínua de aleloquímicos tóxicos na casca.",
+          "predação vegetal, uma vez que há sequestro de nutrientes do xilema e floema da árvore."
+        ],
+        "correct_answer": 2,
+        "difficulty": 1,
+        "explanation": "O epifitismo é um caso clássico de inquilinismo entre vegetais (+/0). A planta epífita ganha sustentação mecânica e acesso à luz solar nas alturas da floresta, sem perfurar os vasos condutores da árvore hospedeira e sem causar prejuízos fisiológicos ao vegetal que lhe serve de suporte."
+      },
+      {
+        "id_question": "bio_eco_03_q2",
+        "text": "(ENEM) Em um estudo agronômico, constatou-se que o cultivo consorciado de milho com certas espécies de leguminosas melhora a produtividade sem uso de fertilizantes químicos. As raízes das leguminosas formam nódulos habitados por bactérias do gênero Rhizobium, que fornecem compostos nitrogenados à planta e recebem carboidratos sintetizados na fotossíntese. Caso sejam separadas em laboratório, a sobrevivência e crescimento de ambas são drasticamente comprometidos. Essa relação representa um:",
+        "options": [
+          "comensalismo trófico facultativo.",
+          "amensalismo interespecífico.",
+          "mutualismo obrigatório (simbiose).",
+          "parasitismo foliar moderado.",
+          "inquilinismo rizomático."
+        ],
+        "correct_answer": 2,
+        "difficulty": 2,
+        "explanation": "A interação entre bactérias do gênero Rhizobium e as raízes de leguminosas é uma associação mutualística obrigatória (+/+). Ambas as espécies são mutuamente beneficiadas (troca de nitrogênio assimilável por açúcares e proteção) e apresentam interdependência metabólica essencial para sua sobrevivência no ambiente natural."
+      },
+      {
+        "id_question": "bio_eco_03_q3",
+        "text": "(ENEM) A maré vermelha é um fenômeno ambiental provocado pela proliferação explosiva de dinoflagelados (algas microscópicas). Esses microrganismos liberam potentes toxinas hidrossolúveis no mar que atingem o sistema nervoso de peixes, crustáceos e mamíferos aquáticos, provocando mortalidade massiva da fauna marinha sem que as algas se alimentem desses animais mortos. A relação biológica entre os dinoflagelados e os peixes asfixiados caracteriza:",
+        "options": [
+          "predação direta carnívora.",
+          "competição intraespecífica por espaço pelágico.",
+          "amensalismo (antibiose).",
+          "mutualismo acidental marinho.",
+          "protocooperação bioquímica."
+        ],
+        "correct_answer": 2,
+        "difficulty": 2,
+        "explanation": "No amensalismo ou antibiose (+/- ou 0/-), uma espécie libera produtos metabólicos ou toxinas que inibem o desenvolvimento ou causam a morte de outras espécies circunvizinhas, sem visar diretamente à predação ou consumo dos organismos prejudicados."
+      }
+    ]
+  },
+  {
+    "id": "bio_eco_04",
+    "title": "Ciclos Biogeoquímicos",
+    "theory_markdown": "# Ciclos Biogeoquímicos: A Reciclagem Perpétua dos Elementos da Vida\n\nA matéria na Terra é estritamente **finita**. Os mesmos átomos de carbono, hidrogênio, oxigênio e nitrogênio que compõem o seu DNA hoje já integraram o corpo de dinossauros há 70 milhões de anos! Os **ciclos biogeoquímicos** garantem a circulação contínua desses elementos entre os reservatórios inorgânicos (atmosfera, hidrosfera e litosfera) e os seres vivos.\n\n### 1. Ciclo da Água (O Motor Solar da Biosfera)\nA energia térmica do Sol evapora a água líquida de oceanos, rios e solos. Os seres vivos participam ativamente desse ciclo através da **transpiração** e da **respiração**: em vegetais terrestres, a perda de vapor de água pelos estômatos foliares combinada à evaporação do solo forma a **evapotranspiração**. Na Amazônia, essa massa colossal de vapor d'água bombeada pelas árvores florestais forma os chamados **\"rios voadores\"**, que irrigam chuvas essenciais para as regiões Centro-Oeste, Sudeste e Sul do Brasil.\n\n### 2. Ciclo do Carbono e o Papel do Oxigênio\nO carbono é o esqueleto químico de todas as moléculas orgânicas vitais:\n• **Fixação de Carbono (Entrada):** A **Fotossíntese** (realizada por plantas, algas e cianobactérias) retira $CO_2$ inorgânico da atmosfera e o fixa em glicose ($C_6H_{12}O_6$).\n• **Liberação de Carbono (Retorno):** A **Respiração Celular** de todos os seres aeróbicos e a decomposição quebram moléculas orgânicas e devolvem $CO_2$ ao ar. A queima antropogênica de **combustíveis fósseis** (carvão mineral, petróleo e gás natural acumulados no subsolo por milhões de anos) injeta bilhões de toneladas extras de $CO_2$ na atmosfera em curtíssimo prazo, rompendo o equilíbrio do ciclo e acelerando as mudanças climáticas.\n\n### 3. Ciclo do Nitrogênio (O Mais Cobrado no ENEM!)\nO gás nitrogênio ($N_2$) compõe cerca de **78% do ar atmosférico**, mas a ligação tripla covalente extremamente estável ($N \\equiv N$) impede que vegetais e animais o absorvam diretamente pela respiração! O nitrogênio precisa ser transformado biologicamente através de 4 etapas conduzidas por bactérias especializadas:\n\n1. **Fixação:** Bactérias fixadoras de vida livre (*Azotobacter*) e simbióticas (*Rhizobium*, que vivem em nódulos radiculares de leguminosas como soja e feijão) captam o $N_2$ do ar e o convertem em **Amônia ($NH_3 / NH_4^+$)**.\n2. **Nitrificação (Composta por 2 fases bacterianas):**\n   - **Nitritação:** Bactérias do gênero *Nitrosomonas* oxidam a amônia em **Nitrito ($NO_2^-$)**, um composto altamente tóxico.\n   - **Nitratação:** Bactérias do gênero *Nitrobacter* oxidam rapidamente o nitrito em **Nitrato ($NO_3^-$)**. O nitrato é a forma química solúvel perfeitamente absorvível pelas raízes das plantas!\n3. **Assimilação:** As plantas absorvem o nitrato do solo para fabricar aminoácidos (proteínas) e nucleotídeos (DNA/RNA). Os animais adquirem esse nitrogênio ao consumir as plantas ou outros animais.\n4. **Desnitrificação:** Em solos encharcados e anóxicos, bactérias desnitrificantes (*Pseudomonas denitrificans*) usam os nitratos em sua respiração anaeróbica e devolvem o nitrogênio na forma de gás $N_2$ para a atmosfera, fechando o ciclo natural.\n\n![Esquema Detalhado das Fases do Ciclo do Nitrogênio](../../assets/images/ecologia/ciclo_nitrogenio.png)",
+    "activities": [
+      {
+        "id_question": "bio_eco_04_q1",
+        "text": "(ENEM) A técnica agrícola da rotação de culturas intercalando o plantio de milho com o cultivo de soja ou feijão permite manter o solo produtivo e fértil, diminuindo drasticamente os custos com a compra de adubos químicos nitrogenados sintéticos. O fator biológico que fundamenta a eficácia dessa prática é a presença de:",
+        "options": [
+          "fungos micorrízicos que transformam nitrato em fósforo assimilável.",
+          "algas unicelulares fixadas nas folhas que realizam fotossíntese de compostos carbonados.",
+          "bactérias fixadoras de nitrogênio alojadas em nódulos radiculares das leguminosas.",
+          "minhocas que oxidam o gás nitrogênio diretamente no lúmen do tubo digestivo.",
+          "vírus bacteriófagos que quebram a amônia em gás nitrogênio livre."
+        ],
+        "correct_answer": 2,
+        "difficulty": 1,
+        "explanation": "As leguminosas (como a soja e o feijão) abrigam em suas raízes bactérias simbióticas do gênero Rhizobium, capazes de converter o N2 da atmosfera em amônia e nitratos (adubação verde), enriquecendo o solo naturalmente para as safras seguintes sem necessidade de fertilizantes industriais."
+      },
+      {
+        "id_question": "bio_eco_04_q2",
+        "text": "(ENEM) Em um lago artificial de uma propriedade rural, o excesso de matéria orgânica nitrogenada passou pelo processo de nitrificação realizado pelas bactérias de solo e sedimentos. Qual é a sequência bioquímica correta das transformações sofridas pelo nitrogênio durante esse processo de oxidação bacteriana até atingir a forma assimilável pela flora aquática?",
+        "options": [
+          "Gás nitrogênio (N2) -> Nitrato (NO3-) -> Amônia (NH3).",
+          "Amônia (NH3) -> Nitrito (NO2-) -> Nitrato (NO3-).",
+          "Nitrato (NO3-) -> Gás nitrogênio (N2) -> Nitrito (NO2-).",
+          "Nitrito (NO2-) -> Amônia (NH3) -> Ureia.",
+          "Ácido úrico -> Gás nitrogênio (N2) -> Aminoácidos."
+        ],
+        "correct_answer": 1,
+        "difficulty": 2,
+        "explanation": "A nitrificação compõe-se de duas reações oxidativas sucessivas realizadas por bactérias quimiossintetizantes: a nitritação (oxidação da amônia NH3 em nitrito NO2- pelas Nitrosomonas) e a nitratação (oxidação do nitrito NO2- em nitrato NO3- pelas Nitrobacter). O nitrato é a forma absorvida pelos vegetais."
+      },
+      {
+        "id_question": "bio_eco_04_q3",
+        "text": "(ENEM) Pesquisadores alertam que a devastação contínua da cobertura vegetal da Bacia Amazônica pode alterar profundamente o regime de precipitação no Sudeste e Sul do Brasil, afetando a geração hidrelétrica e o agronegócio. Isso ocorre porque as árvores da floresta atuam diretamente no ciclo hidrológico por meio do mecanismo biológico de:",
+        "options": [
+          "lixiviação profunda de minerais alcalinos das bacias sedimentares.",
+          "evapotranspiração em grande escala gerando os rios voadores de umidade.",
+          "percolação de águas pluviais subterrâneas que resfriam as placas tectônicas.",
+          "desnitrificação acelerada liberando vapor d'água no lugar de nitrogênio.",
+          "condensação interna de seiva elaborada convertida em geada matinal."
+        ],
+        "correct_answer": 1,
+        "difficulty": 2,
+        "explanation": "A transpiração das copas das árvores da Amazônia, aliada à evaporação das bacias hidrográficas (evapotranspiração), lança na atmosfera trilhões de litros de vapor d'água diariamente. Esse fluxo aéreo ('rios voadores') é conduzido pelos ventos alísios em direção ao centro-sul do país, condicionando as chuvas que abastecem reservatórios e lavouras."
+      }
+    ]
+  },
+  {
+    "id": "bio_eco_05",
+    "title": "Impactos Ambientais e Poluição",
+    "theory_markdown": "# Impactos Ambientais e Poluição: A Pegada Humana no Planeta\n\nCom a expansão urbano-industrial e o avanço da fronteira agropecuária, a biosfera vem sofrendo perturbações antropogênicas sem precedentes. O ENEM possui como tradição abordar a poluição a partir de seus **mecanismos biológicos de causa e efeito**:\n\n### 1. Eutrofização de Corpos Hídricos (O Grande Campeão de Cobrança)\nA eutrofização é o enriquecimento artificial de rios, represas e lagos com excesso de nutrientes minerais (especialmente **fósforo e nitrogênio**), decorrente do lançamento de **esgoto doméstico não tratado** ou do escoamento de **fertilizantes agrícolas** (lixiviação das lavouras pela chuva).\n• **Etapa 1:** O excesso de nutrientes fertiliza a água, desencadeando a multiplicação explosiva de microalgas e cianobactérias na superfície (floração da água).\n• **Etapa 2:** Essa espessa camada verde impede a penetração da radiação solar nos estratos profundos.\n• **Etapa 3:** Sem luz solar, as macrófitas e algas do fundo deixam de realizar fotossíntese e **morrem em massa**.\n• **Etapa 4:** A gigantesca quantidade de matéria orgânica morta estimula a proliferação vertiginosa de **bactérias decompositoras aeróbicas**. Essas bactérias consomem todo o **Oxigênio Dissolvido ($O_2$)** da água na respiração celular.\n• **Etapa 5:** Ocorre a **anóxia** (esgotamento total do $O_2$), levando à morte por asfixia de peixes, crustáceos e demais animais aquáticos. Em seguida, proliferam bactérias anaeróbicas que geram gases fétidos (como gás sulfídrico, $H_2S$).\n\n### 2. Chuva Ácida\nA queima de combustíveis fósseis contendo impurezas por indústrias e veículos automotores lança na atmosfera grandes quantidades de óxidos de enxofre ($SO_2$ e $SO_3$) e de nitrogênio ($NO$ e $NO_2$). Ao reagirem com o vapor d'água nas nuvens, esses gases formam ácidos fortes:\n$$SO_3 + H_2O \\rightarrow H_2SO_4 \\quad (\\text{Ácido Sulfúrico})$$\n$$2\\,NO_2 + H_2O \\rightarrow HNO_3 + HNO_2 \\quad (\\text{Ácido Nítrico})$$\n• **Consequências:** A precipitação com pH inferior a 5,0 acidifica solos e lagos, lixivia nutrientes essenciais, corrói monumentos históricos metálicos ou de mármore e destrói a camada cerosa das folhas das florestas, tornando-as vulneráveis a pragas.\n\n### 3. Inversão Térmica\nÉ um fenômeno **físico e atmosférico natural**, frequente nas manhãs de inverno em cidades cercadas por relevo acidentado (como vales). Em condições normais, o ar quente perto do solo é menos denso e sobe, dispersando os poluentes. Na inversão térmica, o solo resfria muito rápido durante a noite, e uma camada de **ar frio (mais denso e pesado)** fica retida junto à superfície, aprisionada por uma camada de **ar quente superior**.\n• **Efeito Sanitário:** A ausência de convecção impede a dispersão da fumaça e fuligem dos escapamentos e fábricas. A concentração de poluentes no nível respiratório humano dispara, causando crises de asma, bronquite e internações hospitalares.\n\n![Esquema Didático Ilustrando as Etapas da Eutrofização](../../assets/images/ecologia/eutrofizacao.png)",
+    "activities": [
+      {
+        "id_question": "bio_eco_05_q1",
+        "text": "(ENEM) Uma lagoa localizada próxima a áreas agrícolas e residenciais começou a exalar odor fétido e apresentou milhares de peixes mortos flutuando em sua superfície. As análises laboratoriais revelaram alta turbidez superficial, ausência quase total de oxigênio dissolvido nas profundidades e multiplicação massiva de bactérias anaeróbicas. A causa direta primária que desencadeou esse desastre biológico foi:",
+        "options": [
+          "a redução acentuada da temperatura da água decorrente de inversão térmica.",
+          "o aporte excessivo de compostos de nitrogênio e fósforo via esgoto e lixiviação de fertilizantes.",
+          "o derramamento de mercúrio metálico com intoxicação aguda imediata de fitoplâncton.",
+          "a precipitação de chuva ácida com dissolução instantânea das conchas dos moluscos.",
+          "a sobrepesca predatória que extinguiu os decompositores naturais do fundo lacustre."
+        ],
+        "correct_answer": 1,
+        "difficulty": 1,
+        "explanation": "O processo descrito é a eutrofização clássica. Seu estopim primordial é o aporte excessivo de nutrientes minerais (nitrogênio e fósforo) provenientes de fertilizantes ou esgoto in natura, gerando floração de algas superficiais, bloqueio luminoso, decomposição aeróbica exaustiva e anóxia letal aos peixes."
+      },
+      {
+        "id_question": "bio_eco_05_q2",
+        "text": "(ENEM) O tombamento de um caminhão-tanque em uma rodovia serrana provocou o vazamento de grande volume de agrotóxico não biodegradável em um córrego límpido de montanha. Meses após o acidente, os testes ecotoxicológicos demonstraram que a concentração da toxina era de 0,02 ppm na água, 0,5 ppm nas algas filamentosas, 12 ppm nos peixes carnívoros e 45 ppm nas lontras da região. O fenômeno ecológico constatado nos dados amostrais é a:",
+        "options": [
+          "eutrofização artificial ascendente.",
+          "inversão trófica estocástica.",
+          "magnificação trófica (bioacumulação).",
+          "lixiviação orgânica seletiva.",
+          "sucessão secundária regressiva."
+        ],
+        "correct_answer": 2,
+        "difficulty": 2,
+        "explanation": "Substâncias não biodegradáveis e lipossolúveis não são eliminadas pelo metabolismo dos seres vivos e acumulam-se em seus tecidos corporais. Conforme se avança na cadeia trófica (água -> algas -> peixes -> lontras), a concentração do composto tóxico por unidade de biomassa aumenta exponencialmente, configurando a magnificação trófica."
+      },
+      {
+        "id_question": "bio_eco_05_q3",
+        "text": "(ENEM) Em grandes centros urbanos localizados em bacias orográficas durante o inverno, secretarias de saúde reportam picos acentuados de atendimentos pediátricos e geriátricos por afecções respiratórias associados à formação de uma névoa acinzentada densa (smog) que não se dissipa até o meio-dia. A dinâmica atmosférica responsável por reter essa névoa tóxica nas camadas respiráveis da cidade é explicada:",
+        "options": [
+          "pela formação de correntes ascendentes turbulentas geradas pelo asfalto aquecido.",
+          "pelo aprisionamento de uma camada de ar frio superficial e denso sob uma camada de ar quente superior.",
+          "pela liberação repentina de gás ozônio proveniente de descontinuidades na estratosfera polar.",
+          "pelo deslocamento horizontal de cinzas vulcânicas ricas em sulfetos de hidrogênio.",
+          "pela condensação de vapor de água marinha ionizada por radiação ultravioleta B."
+        ],
+        "correct_answer": 1,
+        "difficulty": 2,
+        "explanation": "Na inversão térmica de inverno, o resfriamento célere do solo durante a noite esfria o ar adjacente. Como o ar frio é mais denso, ele não sobe e fica bloqueado por uma camada de ar mais quente acima dele, impedindo os movimentos normais de convecção térmica e mantendo os poluentes urbanos aprisionados no nível do solo."
+      }
+    ]
+  },
+  {
+    "id": "bio_eco_06",
+    "title": "Efeito Estufa e Aquecimento Global",
+    "theory_markdown": "# Efeito Estufa e Aquecimento Global: O Escudo Térmico e a Crise Climática\n\nUma das distinções conceituais mais cobradas pela banca do ENEM é não confundir o **Efeito Estufa Natural** com a sua **Intensificação Antropogênica (o Aquecimento Global)**:\n\n### 1. O Efeito Estufa é um Fenômeno Natural e Vital!\nSem o efeito estufa natural, **a vida na Terra como conhecemos seria inviável**. A temperatura média global do planeta seria de aproximadamente **$-18^\\circ\\text{C}$**, transformando a Terra em um deserto polar coberto de gelo.\n• **Como Funciona:** A radiação solar (de alta frequência e comprimento de onda curto) atravessa a atmosfera transparente e aquece a superfície continental e oceânica. A superfície reemite essa energia na forma de **radiação infravermelha (calor)**, de maior comprimento de onda. Os Gases do Efeito Estufa (GEE) absorvem parte dessa radiação térmica e a refratam de volta ao solo, retendo o calor na baixa atmosfera e mantendo uma agradável média planetária de cerca de **$+15^\\circ\\text{C}$**.\n\n### 2. Os Principais Gases do Efeito Estufa (GEE)\n• **Dióxido de Carbono ($CO_2$):** Principal responsável em volume total de emissões humanas. Provém da queima de combustíveis fósseis (termoelétricas a carvão, derivados de petróleo no transporte) e do **desmatamento e queimadas** (as florestas armazenam carbono orgânico que, ao serem queimadas, liberam $CO_2$ instantaneamente).\n• **Metano ($CH_4$):** Tem um poder de retenção de calor cerca de **28 a 30 vezes maior que o $CO_2$**! É emitido pela decomposição anaeróbica em **lixões e aterros sanitários**, pela fermentação entérica na **pecuária bovina (arrotos do gado)**, por plantações inundadas de arroz e pelo derretimento do *permafrost* no Ártico.\n• **Óxido Nitroso ($N_2O$):** Potencial estufa altíssimo, derivado do uso massivo de **fertilizantes agrícolas nitrogenados** e processos industriais.\n• **Vapor de Água ($H_2O$):** Principal gás estufa natural em abundância atmosférica.\n\n### 3. Impactos Ecológicos do Aquecimento Global\n• **Acidificação e Aquecimento dos Oceanos:** Os mares absorvem cerca de 30% do excesso de $CO_2$ da atmosfera. Esse gás reage com a água formando ácido carbônico ($H_2CO_3$), liberando íons $H^+$ que diminuem o pH e esgotam os íons carbonato ($CO_3^{2-}$). Isso impede que corais, moluscos e crustáceos sintetizem suas conchas e carapaças de carbonato de cálcio ($CaCO_3$).\n• **Branqueamento de Corais:** O aumento de apenas $1^\\circ\\text{C}$ na temperatura oceânica causa estresse fisiológico nos corais, que expulsam suas algas simbióticas (*zooxantelas*). Sem as algas (que lhes davam cor e realizavam fotossíntese nutritiva), o coral fica esbranquiçado e morre por inanição.\n• **Elevação do Nível do Mar:** Provocada pela **expansão térmica da água aquecida** e pelo **derretimento de geleiras continentais** (na Groenlândia e Antártica). *Atenção:* O derretimento do gelo marítimo (banquisas do Ártico) não altera significativamente o volume do mar pelo princípio de Arquimedes, mas a perda de geleiras sobre a terra firme sim!\n\n![Esquema da Radiação Solar e Radiação Infravermelha Retida na Terra](../../assets/images/ecologia/efeito_estufa.png)",
+    "activities": [
+      {
+        "id_question": "bio_eco_06_q1",
+        "text": "(ENEM) Cientistas apontam que a pecuária extensiva de corte e o descarte inadequado de resíduos sólidos urbanos em lixões a céu aberto contribuem de modo significativo para o agravamento do aquecimento global. O principal gás do efeito estufa gerado no trato digestivo dos ruminantes e na decomposição anaeróbica desses resíduos é o:",
+        "options": [
+          "dióxido de enxofre (SO2).",
+          "gás metano (CH4).",
+          "óxido nitroso (N2O).",
+          "clorofluorcarboneto (CFC).",
+          "gás oxigênio diatômico (O2)."
+        ],
+        "correct_answer": 1,
+        "difficulty": 1,
+        "explanation": "A digestão de celulose por microrganismos anaeróbicos no rúmen dos bovinos (fermentação entérica eliminada por eructação) e a decomposição de matéria orgânica sob condições anóxicas em lixões e aterros produzem grandes volumes de gás metano (CH4), gás cujo potencial de aquecimento global é aproximadamente 28 vezes superior ao do CO2."
+      },
+      {
+        "id_question": "bio_eco_06_q2",
+        "text": "(ENEM) O branqueamento dos recifes de corais tem se tornado recorrente em diversas regiões dos oceanos tropicais. O estresse térmico provocado pela elevação da temperatura média das águas induz os pólipos dos cnidários a expelirem suas microalgas mutualistas (zooxantelas). Como consequência biológica imediata da perda dessa associação mutualística, os corais:",
+        "options": [
+          "perdem a capacidade de digestão extracelular por falta de enzimas ácidas.",
+          "passam a secretar carbonato de cálcio em velocidade quatro vezes superior à basal.",
+          "sofrem severo déficit nutricional decorrente da ausência de matéria orgânica fotoautotrófica.",
+          "migram ativamente em direção aos polos em busca de águas com maior teor de oxigênio.",
+          "transformam-se em organismos autótrofos quimiossintetizantes de grande profundidade."
+        ],
+        "correct_answer": 2,
+        "difficulty": 2,
+        "explanation": "A relação entre os corais e as zooxantelas é um mutualismo vital: as microalgas residem nos tecidos dos pólipos e fornecem até 90% das moléculas orgânicas nutritivas produzidas via fotossíntese. Ao expulsarem as algas sob estresse térmico, os corais perdem sua principal fonte de nutrição, enfraquecem e morrem de inanição."
+      },
+      {
+        "id_question": "bio_eco_06_q3",
+        "text": "(ENEM) A dissolução de elevadas concentrações de dióxido de carbono (CO2) emitido por atividades antrópicas nas águas oceânicas tem provocado a acidificação dos mares. Esse processo químico compromete drasticamente os ecossistemas marinhos porque:",
+        "options": [
+          "aumenta o pH da água salgada, precipitando íons sódio e cloreto em forma de sal gema.",
+          "reduz a concentração de íons carbonato (CO3²⁻), dificultando a calcificação de conchas e esqueletos.",
+          "bloqueia a radiação infravermelha, impedindo a reprodução dos grandes cetáceos.",
+          "provoca a decomposição imediata de todo o oxigênio molecular livre dissolvido.",
+          "converte os sedimentos marinhos profundos em hidrocarbonetos aromáticos altamente tóxicos."
+        ],
+        "correct_answer": 1,
+        "difficulty": 3,
+        "explanation": "Ao se dissolver na água do mar, o CO2 forma ácido carbônico (H2CO3), que se dissocia liberando íons H+. O excesso de H+ reage com os íons carbonato livres (CO3²⁻), formando bicarbonato (HCO3⁻). Isso diminui a disponibilidade de carbonato no meio aquático, elemento fundamental para que corais, bivalves e equinodermos construam suas estruturas esqueléticas de carbonato de cálcio (CaCO3)."
+      }
+    ]
+  },
+  {
+    "id": "bio_eco_07",
+    "title": "Sustentabilidade",
+    "theory_markdown": "# Sustentabilidade e Transição Ecológica: O Equilíbrio para o Futuro\n\nO conceito de **Desenvolvimento Sustentável** — consagrado internacionalmente pelo Relatório Brundtland (1987) — define o modelo civilizatório capaz de **suprir as necessidades da geração presente sem comprometer a capacidade das gerações futuras de suprirem suas próprias necessidades**. Na prova de Ciências da Natureza do ENEM, esse tema converge frequentemente com soluções biotecnológicas e energéticas limpas:\n\n### 1. Fontes de Energia Limpas e Renováveis\nA transição da matriz fóssil para uma matriz energética de baixo carbono é a principal urgência global:\n• **Energia Solar Fotovoltaica e Eólica:** Fontes inesgotáveis que não emitem GEE durante a operação. O Brasil destaca-se pelo imenso potencial eólico na Região Nordeste.\n• **Biocombustíveis de Primeira e Segunda Geração:** O etanol da cana-de-açúcar e o biodiesel de oleaginosas (soja, dendê). O $CO_2$ emitido na combustão dos veículos já foi previamente absorvido pelas plantas na fotossíntese durante o crescimento da safra (**ciclo neutro de carbono**). O etanol de segunda geração (2G) utiliza a palha e o bagaço da cana, aproveitando a celulose residual sem exigir aumento de área plantada.\n• **Biogás e Biometano:** Captura do gás metano ($CH_4$) produzido por bactérias anaeróbicas na biodigestão de esterco suíno/bovino ou no chorume de aterros sanitários. Em vez de ser liberado na atmosfera como poluente de alto impacto, o metano é queimado para gerar eletricidade limpa.\n\n### 2. Biorremediação: A Vida Despoluindo o Ambiente\nA biorremediação consiste na utilização de **seres vivos — sobretudo microrganismos (bactérias e fungos) ou plantas (fitorremediação)** — para neutralizar, degradar ou transformar poluentes químicos perigosos em substâncias inócuas em solos ou águas contaminadas.\n• **Exemplo Típico de Prova:** Em vazamentos de petróleo no oceano, são pulverizadas bactérias geneticamente aprimoradas ou nativas (*Pseudomonas*) juntamente com nutrientes (nitrogênio e fósforo para estimular a colônia). As bactérias usam os hidrocarbonetos do petróleo como substrato energético, decompondo o óleo em água e gás carbônico.\n\n### 3. Controle Biológico de Pragas\nEm substituição ao uso indiscriminado de agrotóxicos sintéticos (que poluem lençóis freáticos e causam seleção de pragas resistentes), o controle biológico emprega **inimigos naturais específicos** (parasitoides, predadores ou patógenos):\n• **Predação Direta:** Joaninhas introduzidas em plantações para devorar pulgões.\n• **Parasitoidismo:** Vespas minúsculas (*Trichogramma*) que depositam seus ovos no interior dos ovos de lagartas que atacam lavouras de milho e soja, matando a praga antes de ela eclodir.\n• **Controle Microbiológico:** Uso da bactéria de solo *Bacillus thuringiensis* (Bt), cujas toxinas proteicas naturais perfuram as células intestinais de lagartas sem qualquer efeito tóxico para vertebrados e seres humanos.\n\n### 4. Economia Circular, Reciclagem e Logística Reversa\nSuperação do modelo linear tradicional (\"extrair, produzir, consumir e descartar\"). Na **Economia Circular**, os materiais descartados são reinseridos na cadeia produtiva. A **Logística Reversa** (instituída no Brasil pela Política Nacional de Resíduos Sólidos) obriga fabricantes, importadores e distribuidores a estruturarem sistemas de coleta e destinação final ambientalmente adequada de produtos pós-consumo, como baterias, pneus, pilhas, eletrônicos e embalagens plásticas.\n\n![Pilares da Sustentabilidade Biorremediação e Controle Biológico](../../assets/images/ecologia/sustentabilidade.png)",
+    "activities": [
+      {
+        "id_question": "bio_eco_07_q1",
+        "text": "(ENEM) Um polo agropecuário produtor de suínos enfrentava graves problemas de autuação ambiental devido ao acúmulo de dejetos orgânicos líquidos nos mananciais vizinhos. Para solucionar o passivo ambiental, a cooperativa instalou biodigestores vedados onde colônias bacterianas anaeróbicas transformam a biomassa em biofertilizante rico e um gás inflamável. Esse gás combustível obtido é o:",
+        "options": [
+          "dióxido de carbono purificado.",
+          "metano (CH4), aproveitado para gerar eletricidade no complexo.",
+          "gás ozônio (O3), utilizado para desinfecção química do ar.",
+          "monóxido de carbono (CO), empregado em reações de polimerização.",
+          "hélio gasoso (He), estocado para refrigeração de equipamentos."
+        ],
+        "correct_answer": 1,
+        "difficulty": 1,
+        "explanation": "A fermentação anaeróbica de dejetos orgânicos em biodigestores gera biogás, composto majoritariamente por gás metano (CH4, cerca de 60 a 70%) e CO2. O metano possui alto poder calorífico e pode ser queimado diretamente em motores e turbinas para produzir calor e eletricidade, além de evitar a emissão direta de CH4 para a atmosfera."
+      },
+      {
+        "id_question": "bio_eco_07_q2",
+        "text": "(ENEM) Uma grande empresa química provocou contaminação acidental do solo de um distrito industrial com solventes aromáticos clorados. Em vez de remover e incinerar milhares de toneladas de terra contaminada, a equipe técnica contratada optou por inocular no subsolo espécies selecionadas de fungos e bactérias decompositoras tolerantes, fornecendo aeração forçada e fertilização mineral para acelerar a biodegradação dos poluentes. Essa abordagem biotecnológica sustentável é denominada:",
+        "options": [
+          "magnificação trófica direcionada.",
+          "eutrofização corretiva.",
+          "biorremediação.",
+          "transgenia xenobiótica induzida.",
+          "lixiviação química quelante."
+        ],
+        "correct_answer": 2,
+        "difficulty": 2,
+        "explanation": "A biorremediação é a biotecnologia ambiental que emprega organismos vivos (especialmente bactérias, fungos filamentosos ou plantas) para transformar, degradar ou imobilizar contaminantes e compostos tóxicos em solos, sedimentos e aquíferos, convertendo-os em substâncias de baixa ou nula toxicidade."
+      },
+      {
+        "id_question": "bio_eco_07_q3",
+        "text": "(ENEM) Um produtor de hortaliças orgânicas decidiu abandonar totalmente os inseticidas químicos para conter o ataque de lagartas desfolhadoras. Ele passou a liberar periodicamente em sua estufa microvespas que põem seus ovos dentro dos ovos das lagartas invasoras, além de pulverizar uma calda contendo esporos da bactéria entomopatogênica Bacillus thuringiensis. As técnicas adotadas pelo agricultor representam uma aplicação prática de:",
+        "options": [
+          "controle químico de choque com defensivos de amplo espectro.",
+          "controle biológico de pragas utilizando parasitoides e bioinseticida microbiológico.",
+          "adubação verde combinada com seleção artificial de predadores vertebrados.",
+          "mutagênese radioativa em vegetais de estufa para induzir autodefesa.",
+          "sucessão ecológica primária acelerada por bioestimulação radicular."
+        ],
+        "correct_answer": 1,
+        "difficulty": 2,
+        "explanation": "O uso de predadores ou parasitoides naturais (como as microvespas que parasitam os ovos da praga) e de bioinseticidas biológicos (como a bactéria Bacillus thuringiensis, que ataca exclusivamente o trato intestinal das lagartas sem intoxicar humanos ou abelhas) constitui o Controle Biológico de pragas, pilar central da agricultura sustentável."
+      }
+    ]
+  }
+]
+
+# Write JSON to Web public and Android assets
+paths = [
+    r"c:\Users\phcco\OneDrive\Área de Trabalho\knowverse-web\public\biologia_ecologia.json",
+    r"c:\Users\phcco\OneDrive\Área de Trabalho\knowverse\app\src\main\assets\biologia_ecologia.json"
+]
+
+for p in paths:
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    print(f"Successfully wrote {p}")

@@ -1,0 +1,345 @@
+[
+  {
+    "id": "fis_mec_01",
+    "title": "Cinemática: A Arte de Descrever o Movimento",
+    "theory_markdown": "# Cinemática: A Arte de Descrever o Movimento\n\nA Cinemática estuda o movimento dos corpos sem se preocupar com as causas que o geraram. No ENEM, isso aparece com frequência extrema em situações do cotidiano: tráfego em rodovias, frenagem preventiva, radares de velocidade média e desempenho esportivo.\n\n### 1. Referencial e a Relatividade do Movimento\nO movimento e o repouso são **relativos**! Dependem exclusivamente do referencial adotado. Você está em repouso em relação à sua cadeira, mas desloca-se a mais de 107.000 km/h em relação ao centro do Sol devido ao movimento de translação da Terra.\n\n### 2. Movimento Retilíneo Uniforme (MRU)\nNo MRU, a velocidade escalar instantânea permanece estritamente constante ($v = \\text{constante} \\neq 0$). A aceleração escalar é nula ($a = 0$).\n• Função Horária da Posição:\n$$S = S_0 + v \\cdot t$$\n\n### 3. Movimento Retilíneo Uniformemente Variado (MRUV)\nAqui a velocidade muda de forma linear devido a uma aceleração escalar constante e não-nula ($a = \\text{constante} \\neq 0$):\n• Função Horária da Velocidade: $$v = v_0 + a \\cdot t$$\n• Função Horária da Posição: $$S = S_0 + v_0 \\cdot t + \\frac{1}{2} a \\cdot t^2$$\n• **Equação de Torricelli** (fundamental quando o tempo não foi informado): $$v^2 = v_0^2 + 2 \\cdot a \\cdot \\Delta S$$\n\n### 4. Lançamentos e Queda Livre\nDesprezando a resistência do ar, todos os corpos caem com a **mesma aceleração da gravidade** ($g \\approx 10\\text{ m/s}^2$), independentemente de sua massa! Uma pena e um martelo caem rigorosamente juntos no vácuo.\n\n![Comparação dos gráficos de Velocidade x Tempo no MRU e MRUV](../../assets/images/fisica/cinematica.png)",
+    "activities": [
+      {
+        "id_question": "fis_mec_01_q1",
+        "text": "(ENEM) Dois veículos, A e B, trafegam em uma rodovia retilínea no mesmo sentido. O veículo A move-se com velocidade constante de 72 km/h. O veículo B, inicialmente a 200 metros atrás de A, desloca-se com velocidade constante de 108 km/h. Em quantos segundos o veículo B alcançará o veículo A?",
+        "options": [
+          "10 segundos",
+          "20 segundos",
+          "30 segundos",
+          "40 segundos",
+          "50 segundos"
+        ],
+        "correct_answer": 1,
+        "difficulty": 1,
+        "explanation": "Primeiro, convertemos as velocidades para m/s dividindo por 3,6: vA = 72 / 3,6 = 20 m/s e vB = 108 / 3,6 = 30 m/s. A velocidade relativa de aproximação é v_rel = vB - vA = 30 - 20 = 10 m/s. O tempo para cobrir a distância inicial de 200 m é: Δt = ΔS / v_rel = 200 / 10 = 20 segundos."
+      },
+      {
+        "id_question": "fis_mec_01_q2",
+        "text": "(ENEM) Um motorista trafega a 90 km/h (25 m/s) quando avista um obstáculo e aciona os freios, provocando uma desaceleração constante de módulo 5,0 m/s² até a parada total. Desprezando o tempo de reação, a distância percorrida pelo veículo durante a frenagem é igual a:",
+        "options": [
+          "50,0 m",
+          "62,5 m",
+          "75,0 m",
+          "80,0 m",
+          "100,0 m"
+        ],
+        "correct_answer": 1,
+        "difficulty": 2,
+        "explanation": "Como o tempo não foi fornecido e deseja-se a distância, aplicamos a Equação de Torricelli: v² = v₀² + 2·a·ΔS. Com parada total (v = 0), v₀ = 25 m/s e desaceleração a = -5,0 m/s²: 0 = 25² + 2(-5)·ΔS => 0 = 625 - 10·ΔS => 10·ΔS = 625 => ΔS = 62,5 metros."
+      },
+      {
+        "id_question": "fis_mec_01_q3",
+        "text": "(ENEM) Em uma pista de testes, um carro parte do repouso e seu movimento é registrado em um gráfico de Velocidade versus Tempo (v × t). Nos primeiros 10 segundos, a velocidade cresce linearmente de 0 até 30 m/s. Nos 10 segundos seguintes, a velocidade se mantém constante em 30 m/s. Qual foi a distância total percorrida pelo automóvel nesses 20 segundos?",
+        "options": [
+          "300 m",
+          "400 m",
+          "450 m",
+          "500 m",
+          "600 m"
+        ],
+        "correct_answer": 2,
+        "difficulty": 2,
+        "explanation": "No gráfico v × t, a distância percorrida é numericamente igual à área sob a curva (área de um trapézio). Base maior B = 20 s, base menor b = 10 s (dos 10 s aos 20 s) e altura h = 30 m/s. Área = [(B + b) · h] / 2 = [(20 + 10) · 30] / 2 = [30 · 30] / 2 = 900 / 2 = 450 metros."
+      }
+    ]
+  },
+  {
+    "id": "fis_mec_02",
+    "title": "Dinâmica: Por que as Coisas se Movem?",
+    "theory_markdown": "# Dinâmica: Por que as Coisas se Movem?\n\nSe a Cinemática apenas descreve o movimento, a Dinâmica estuda a causa do movimento: as **Forças**. O fundamento de toda a mecânica clássica repousa nas Três Leis de Newton:\n\n### 1. Primeira Lei de Newton (Lei da Inércia)\nTodo corpo em repouso tende a permanecer em repouso, e todo corpo em movimento tende a permanecer em Movimento Retilíneo Uniforme (MRU), a menos que uma força resultante externa atue sobre ele. Por essa razão, usamos o cinto de segurança: quando o automóvel freia bruscamente, o corpo dos passageiros tende a continuar se movendo em linha reta na mesma velocidade.\n\n### 2. Segunda Lei de Newton (Princípio Fundamental da Dinâmica)\nA força resultante aplicada a um corpo é igual ao produto de sua massa pela aceleração adquirida:\n$$\\vec{F}_R = m \\cdot \\vec{a}$$\n\n### 3. Terceira Lei de Newton (Ação e Reação)\nPara toda força de ação exercida por um corpo A sobre um corpo B, existe uma força de reação de mesma intensidade, mesma direção e sentido oposto aplicada pelo corpo B sobre o corpo A.\n> **Atenção ENEM:** Forças de ação e reação **NUNCA se anulam**, pois atuam em corpos diferentes!\n\n### 4. Forças Notáveis no Plano Inclinado\n• **Força Peso ($P = m \\cdot g$):** Atração gravitacional sempre vertical e voltada para o centro da Terra.\n• **Força Normal ($N = P_y = P \\cdot \\cos\\theta$):** Força de contato perpendicular à superfície.\n• **Componente Tangencial ($P_x = P \\cdot \\sin\\theta$):** Responsável por acelerar o corpo rampa abaixo.\n• **Força de Atrito ($F_{at} = \\mu \\cdot N$):** Opõe-se à tendência de escorregamento entre as superfícies.\n\n![Diagrama de forças mostrando Peso, Normal, Tração e Atrito em um plano inclinado](../../assets/images/fisica/dinamica.png)",
+    "activities": [
+      {
+        "id_question": "fis_mec_02_q1",
+        "text": "(ENEM) Um bloco de massa m = 10 kg repousa sobre uma superfície horizontal com coeficiente de atrito estático μe = 0,4 e cinético μc = 0,3. Uma força horizontal F = 35 N é aplicada sobre o bloco. Considerando g = 10 m/s², qual é o valor da força de atrito que atua sobre o bloco?",
+        "options": [
+          "0 N",
+          "30 N",
+          "35 N",
+          "40 N",
+          "70 N"
+        ],
+        "correct_answer": 2,
+        "difficulty": 2,
+        "explanation": "A força Normal é N = P = m·g = 10·10 = 100 N. A força de atrito estático máxima (destaque) necessária para iniciar o movimento é Fat_max = μe · N = 0,4 · 100 = 40 N. Como a força aplicada (F = 35 N) é menor que 40 N, o bloco NÃO se move. Em equilíbrio estático, a força de atrito estático ajusta-se exatamente ao valor da força motora: Fat = F = 35 N."
+      },
+      {
+        "id_question": "fis_mec_02_q2",
+        "text": "(ENEM) Uma pessoa de massa 70 kg encontra-se em pé sobre uma balança graduada em Newtons dentro de um elevador. Em determinado momento, o elevador desce freando com uma desaceleração de módulo 2,0 m/s². Adotando g = 10 m/s², a indicação da balança durante esse intervalo é de:",
+        "options": [
+          "560 N",
+          "700 N",
+          "840 N",
+          "980 N",
+          "140 N"
+        ],
+        "correct_answer": 2,
+        "difficulty": 2,
+        "explanation": "Quando um elevador desce freando, a velocidade é para baixo, mas o vetor aceleração aponta para CIMA (pois freia). A balança marca a Força Normal N. Aplicando a 2ª Lei de Newton: N - P = m·a => N = P + m·a = m(g + a) = 70·(10 + 2) = 70·12 = 840 N."
+      },
+      {
+        "id_question": "fis_mec_02_q3",
+        "text": "(ENEM) Ao disparar um projétil de arma de fogo, o atirador sente um recuo (tranco) no ombro. De acordo com os princípios da mecânica newtoniana, esse fenômeno é justificado porque:",
+        "options": [
+          "A massa do projétil é multiplicada pela velocidade na saída do cano.",
+          "A força exercida pelos gases sobre o projétil gera uma reação de mesma intensidade e direção, mas sentido oposto sobre a arma.",
+          "A energia cinética do projétil anula o atrito com o ar.",
+          "A aceleração da gravidade atua horizontalmente durante o disparo.",
+          "O peso da arma torna-se nulo momentaneamente durante a combustão da pólvora."
+        ],
+        "correct_answer": 1,
+        "difficulty": 1,
+        "explanation": "Pela 3ª Lei de Newton (Ação e Reação), a força de expansão dos gases que empurra o projétil para a frente exerce simultaneamente sobre a culatra da arma uma força de idêntica intensidade e direção, porém em sentido oposto (para trás), provocando o recuo sentindo no ombro do atirador."
+      }
+    ]
+  },
+  {
+    "id": "fis_mec_03",
+    "title": "Trabalho, Energia e Potência: A Moeda de Troca do Universo",
+    "theory_markdown": "# Trabalho, Energia e Potência: A Moeda de Troca do Universo\n\nTudo no universo opera através da conversão e transferência contínua de energia. No ENEM, este é o tema com maior número de conexões interdisciplinares (energia hidrelétrica, eficiência de motores, biomassa e transporte sustentável).\n\n### 1. Trabalho de uma Força ($W$ ou $\\tau$)\nO trabalho é a medida da energia transferida pela ação de uma força ao longo de um deslocamento:\n$$\\tau = F \\cdot d \\cdot \\cos\\theta$$\n\n### 2. Formas Fundamentais de Energia Mecânica\n• **Energia Cinética ($E_c$):** Associada à velocidade do corpo:\n$$E_c = \\frac{m \\cdot v^2}{2}$$\n*Atenção:* Como a velocidade está elevada ao quadrado, dobrar a velocidade de um automóvel **quadruplica** sua energia cinética e a violência de um impacto!\n• **Energia Potencial Gravitacional ($E_p$):** Energia acumulada pela posição vertical relativa:\n$$E_p = m \\cdot g \\cdot h$$\n\n### 3. Conservação da Energia Mecânica\nEm um sistema mecânico conservativo (livre de forças dissipativas como atrito e resistência do ar), a Energia Mecânica Total ($E_m$) permanece rigorosamente constante em qualquer ponto da trajetória:\n$$E_m = E_c + E_p = \\text{Constante}$$\nO exemplo arquetípico do ENEM é a **montanha-russa**: no ponto mais alto, a energia potencial é máxima e a velocidade é mínima; na descida, toda a energia potencial se converte em energia cinética, atingindo a velocidade máxima no ponto mais baixo!\n\n### 4. Potência Mecânica ($P$)\nA potência mede a rapidez com que a energia é transformada ou o trabalho é realizado por unidade de tempo:\n$$P = \\frac{\\tau}{\\Delta t} = \\frac{\\Delta E}{\\Delta t}$$\nA unidade no Sistema Internacional é o Watt ($1\\text{ W} = 1\\text{ J/s}$). Motores são frequentemente classificados em quilowatts ($1\\text{ kW} = 1000\\text{ W}$) ou cavalos-vapor ($1\\text{ cv} \\approx 735\\text{ W}$).\n\n![Transformação de Energia na Montanha Russa](../../assets/images/fisica/energia.png)",
+    "activities": [
+      {
+        "id_question": "fis_mec_03_q1",
+        "text": "(ENEM) Em um parque de diversões, um carrinho de montanha-russa com massa total de 400 kg parte do repouso do ponto mais alto da pista, a uma altura h = 20 m em relação ao solo. Desprezando todas as forças dissipativas e considerando g = 10 m/s², qual é a velocidade do carrinho ao atingir o ponto mais baixo da pista (ao nível do solo)?",
+        "options": [
+          "10 m/s",
+          "15 m/s",
+          "20 m/s",
+          "25 m/s",
+          "40 m/s"
+        ],
+        "correct_answer": 2,
+        "difficulty": 2,
+        "explanation": "Pelo Princípio da Conservação da Energia Mecânica: Emec(topo) = Emec(base) => Ep = Ec => m·g·h = (m·v²)/2. Simplificando a massa m de ambos os lados: v² = 2·g·h => v = √(2 · 10 · 20) = √400 = 20 m/s."
+      },
+      {
+        "id_question": "fis_mec_03_q2",
+        "text": "(ENEM) Uma usina hidrelétrica opera com uma queda d'água de 50 metros e uma vazão de 20.000 litros de água por segundo (20.000 kg/s). Considerando g = 10 m/s² e que o conjunto turbina-gerador possui um rendimento de 80%, a potência elétrica útil gerada por essa unidade é de:",
+        "options": [
+          "8,0 MW",
+          "10,0 MW",
+          "12,5 MW",
+          "16,0 MW",
+          "20,0 MW"
+        ],
+        "correct_answer": 0,
+        "difficulty": 3,
+        "explanation": "A potência total da queda d'água é P_total = (m·g·h) / Δt = (vazão mássica) · g · h = 20.000 kg/s · 10 m/s² · 50 m = 10.000.000 W = 10 MW. Com rendimento de 80%: P_util = 0,80 · 10 MW = 8,0 MW."
+      },
+      {
+        "id_question": "fis_mec_03_q3",
+        "text": "(ENEM) Dois veículos de mesma massa trafegam em uma avenida plana. O motorista do carro A conduz a 40 km/h, enquanto o motorista do carro B conduz a 80 km/h. A relação entre as energias cinéticas do veículo B e do veículo A (EcB / EcA) é igual a:",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "8"
+        ],
+        "correct_answer": 3,
+        "difficulty": 1,
+        "explanation": "A energia cinética é proporcional ao quadrado da velocidade: Ec = (m·v²)/2. Como a velocidade do carro B é o dobro da velocidade do carro A (vB = 2·vA), temos: EcB / EcA = (vB / vA)² = (80 / 40)² = 2² = 4."
+      }
+    ]
+  },
+  {
+    "id": "fis_mec_04",
+    "title": "Impulso e Quantidade de Movimento: Colisões e Impactos",
+    "theory_markdown": "# Impulso e Quantidade de Movimento: Colisões e Impactos\n\nEste é o conteúdo clássico e prioritário do ENEM para explicar a física da segurança veicular: **airbags**, para-choques deformáveis, capacetes de motociclistas e luvas de boxe.\n\n### 1. Quantidade de Movimento ou Momento Linear ($\\vec{Q}$)\nRepresenta a 'inércia em movimento' de um corpo. É o produto da massa pela velocidade:\n$$\\vec{Q} = m \\cdot \\vec{v}$$\n\n### 2. Impulso de uma Força ($\\vec{I}$)\nMensura o efeito de uma força constante aplicada durante determinado intervalo de tempo:\n$$\\vec{I} = \\vec{F} \\cdot \\Delta t$$\n\n### 3. Teorema do Impulso\nO impulso da força resultante que atua sobre um corpo é igual à variação de sua quantidade de movimento:\n$$\\vec{I} = \\Delta \\vec{Q} = m \\cdot \\vec{v}_f - m \\cdot \\vec{v}_0$$\n\n### 4. A Física do Airbag e a Redução de Força\nEm uma colisão veicular, a variação da quantidade de movimento ($\\Delta Q$) do passageiro é sempre a mesma (ele precisa desacelerar de sua velocidade de tráfego até o repouso). Pelo Teorema do Impulso:\n$$F_{\\text{média}} = \\frac{\\Delta Q}{\\Delta t}$$\nO **airbag** aumenta significativamente o tempo de contato ($\\Delta t$) entre o corpo e a estrutura do veículo. Como o tempo está no denominador, **aumentar o tempo reduz drasticamente a Força de impacto exercida sobre os órgãos vitais do motorista**, salvando vidas!\n\n![Representação do aumento de tempo de impacto e redução de força em batidas automotivas](../../assets/images/fisica/colisoes.png)",
+    "activities": [
+      {
+        "id_question": "fis_mec_04_q1",
+        "text": "(ENEM) O uso do airbag em automóveis tem como objetivo diminuir a gravidade das lesões sofridas pelos ocupantes em colisões. Fisicamente, esse dispositivo atua promovendo:",
+        "options": [
+          "A redução da variação da quantidade de movimento do ocupante.",
+          "O aumento do tempo de desaceleração, reduzindo a intensidade da força média sobre o ocupante.",
+          "A anulação da energia mecânica antes do contato.",
+          "A redução da massa inercial do passageiro durante o impacto.",
+          "O aumento da aceleração instantânea na desaceleração."
+        ],
+        "correct_answer": 1,
+        "difficulty": 1,
+        "explanation": "Pelo Teorema do Impulso (I = F_média · Δt = ΔQ), para uma mesma variação da quantidade de movimento ΔQ, ao inflar e amortecer o impacto, o airbag aumenta o intervalo de tempo Δt da colisão. Com isso, a força média F_média diminui na mesma proporção, evitando fraturas graves."
+      },
+      {
+        "id_question": "fis_mec_04_q2",
+        "text": "(ENEM) Um jogador de futebol chuta uma bola de massa 0,4 kg que estava inicialmente em repouso. A bola sai do pé do jogador com velocidade de 30 m/s. Se o tempo de contato do pé com a bola foi de 0,02 s, a força média aplicada pelo atleta sobre a bola foi de:",
+        "options": [
+          "240 N",
+          "300 N",
+          "480 N",
+          "600 N",
+          "1200 N"
+        ],
+        "correct_answer": 3,
+        "difficulty": 2,
+        "explanation": "A variação da quantidade de movimento da bola é ΔQ = m · (v_f - v_0) = 0,4 · (30 - 0) = 12 kg·m/s. Pelo Teorema do Impulso, I = F_média · Δt = ΔQ => F_média · 0,02 = 12 => F_média = 12 / 0,02 = 600 N."
+      },
+      {
+        "id_question": "fis_mec_04_q3",
+        "text": "(ENEM) Em uma ferrovia plana, um vagão de carga de massa 20 toneladas desloca-se a 3,0 m/s e colide com outro vagão de massa 10 toneladas que estava parado. Após o impacto, os dois vagões acoplam-se e passam a se mover juntos. A velocidade final do conjunto após o engate é de:",
+        "options": [
+          "1,0 m/s",
+          "1,5 m/s",
+          "2,0 m/s",
+          "2,5 m/s",
+          "3,0 m/s"
+        ],
+        "correct_answer": 2,
+        "difficulty": 2,
+        "explanation": "Trata-se de uma colisão perfeitamente inelástica em sistema isolado. A quantidade de movimento total se conserva: Q_inicial = Q_final => m1·v1 + m2·v2 = (m1 + m2)·V_conjunto => 20·3 + 10·0 = (20 + 10)·V => 60 = 30·V => V = 2,0 m/s."
+      }
+    ]
+  },
+  {
+    "id": "fis_mec_05",
+    "title": "Estática: A Física do Equilíbrio e das Alavancas",
+    "theory_markdown": "# Estática: A Física do Equilíbrio e das Alavancas\n\nA Estática estuda as condições necessárias para que um sistema mecânico permaneça em equilíbrio, seja ele o esqueleto humano, pontes estaiadas, guindastes de obras ou simples ferramentas manuais.\n\n### 1. Equilíbrio do Ponto Material\nPara que um corpo pontual (sem dimensões relevantes) esteja em equilíbrio, a resultante de todas as forças aplicadas deve ser rigorosamente nula:\n$$\\sum \\vec{F} = \\vec{0}$$\n\n### 2. Equilíbrio do Corpo Extenso e Momento de uma Força (Torque)\nEm corpos extensos, a força resultante nula não é suficiente: o corpo não pode girar! A capacidade de uma força gerar rotação em torno de um ponto fixo (polo) é chamada de **Torque ou Momento da Força ($M$)**:\n$$M = F \\cdot d \\cdot \\sin\\theta$$\nonde $d$ é a distância perpendicular entre a linha de ação da força e o eixo de rotação (o **braço da alavanca**).\n\n### 3. A Maçaneta e a Chave de Roda\nPor que a maçaneta da porta fica na borda extrema oposta à dobradiça? Porque, quanto maior a distância ($d$) até o polo de giro, **menor é a força ($F$) necessária para produzir o mesmo torque e abrir a porta**! O mesmo princípio se aplica às chaves de roda de mecânicos e tesouras de poda.\n\n![Esquema mostrando os tipos de alavancas e o Torque](../../assets/images/fisica/estatica.png)",
+    "activities": [
+      {
+        "id_question": "fis_mec_05_q1",
+        "text": "(ENEM) Um operário necessita soltar uma porca emperrada de um caminhão. Para isso, utiliza uma chave de boca convencional de 25 cm de comprimento, mas sua força muscular máxima não é suficiente. Com base nos princípios da estática, o procedimento correto e seguro para aumentar o torque sem alterar sua força é:",
+        "options": [
+          "Diminuir o ângulo entre o braço da chave e a força aplicada.",
+          "Utilizar um prolongador cilíndrico de metal sobre a chave, aumentando o braço de alavanca.",
+          "Aplicar a força no meio do cabo da chave.",
+          "Lubrificar a empunhadura da ferramenta para diminuir o atrito manual.",
+          "Aquecer a chave com água fria para contrair o metal."
+        ],
+        "correct_answer": 1,
+        "difficulty": 1,
+        "explanation": "O torque é dado por M = F · d. Mantendo a mesma força muscular máxima F, a única forma mecânica de amplificar o torque exercido sobre a porca é aumentar a distância d (o braço da alavanca), o que é comumente realizado através do encaixe de um cano prolongador."
+      },
+      {
+        "id_question": "fis_mec_05_q2",
+        "text": "(ENEM) Uma barra homogênea de 4 metros de comprimento e peso 100 N está apoiada horizontalmente em um suporte situado a 1 metro de sua extremidade esquerda. Qual deve ser o peso de um contrapeso pendurado na extremidade esquerda para que a barra permaneça em equilíbrio horizontal?",
+        "options": [
+          "50 N",
+          "100 N",
+          "150 N",
+          "200 N",
+          "250 N"
+        ],
+        "correct_answer": 1,
+        "difficulty": 2,
+        "explanation": "O centro de gravidade da barra homogênea de 4 m fica no meio (a 2 m da ponta esquerda). Como o apoio está a 1 m da ponta esquerda, a distância do centro de gravidade ao apoio é d_peso = 2 - 1 = 1 m. O contrapeso está na ponta esquerda, a d_contra = 1 m do apoio. Para o equilíbrio dos momentos: M_anti-horário = M_horário => P_contra · 1 m = P_barra · 1 m => P_contra · 1 = 100 · 1 => P_contra = 100 N."
+      },
+      {
+        "id_question": "fis_mec_05_q3",
+        "text": "(ENEM) As alavancas biológicas no corpo humano utilizam ossos como hastes rígidas, articulações como fulcros e músculos como fontes de força potente. No movimento de elevação do calcanhar na ponta dos pés, a articulação do tornozelo atua como uma alavanca classificada como:",
+        "options": [
+          "Interfixa, pois o ponto de apoio situa-se entre as forças potente e resistente.",
+          "Inter-resistente, pois a resistência (peso do corpo) atua entre o apoio e a força potente do tendão de Aquiles.",
+          "Interpotente, pois a força muscular atua no ponto médio.",
+          "Indiferente, pois não há rotação óssea.",
+          "Hidráulica, pois opera por pressão de fluidos sinoviais."
+        ],
+        "correct_answer": 1,
+        "difficulty": 3,
+        "explanation": "Na ponta dos pés, o apoio são as articulações dos dedos no solo. A força potente é exercida para cima pelos músculos da panturrilha através do tendão de Aquiles no calcanhar. O peso do corpo (resistência) cai no meio do pé através da tíbia. Como a resistência está entre o apoio e a força potente, trata-se de uma alavanca inter-resistente."
+      }
+    ]
+  },
+  {
+    "id": "fis_mec_06",
+    "title": "Hidrostática: A Física dos Fluidos e Empuxo",
+    "theory_markdown": "# Hidrostática: A Física dos Fluidos e Empuxo\n\nA Hidrostática estuda o comportamento dos líquidos e gases em equilíbrio estático. Tem presença garantida no ENEM com temas sobre mergulho submarino, macacos hidráulicos e flutuação de navios.\n\n### 1. Pressão Hidrostática e Teorema de Stevin\nA pressão exercida por uma coluna de líquido homogêneo depende exclusivamente de sua densidade ($d$), da gravidade local ($g$) e da profundidade ($h$):\n$$P = P_{\\text{atm}} + d \\cdot g \\cdot h$$\n*Aplicação:* A cada 10 metros de profundidade em água doce, a pressão aumenta em aproximadamente 1 atm (100.000 Pa)!\n\n### 2. Princípio de Pascal e a Prensa Hidráulica\nO acréscimo de pressão exercido em um ponto qualquer de um fluido em repouso transmite-se integralmente a todos os pontos do fluido e às paredes do recipiente:\n$$\\frac{F_1}{A_1} = \\frac{F_2}{A_2}$$\n*Multiplicação de Força:* Se a área do pistão maior ($A_2$) for 50 vezes maior que a área do pistão menor ($A_1$), uma força humana moderada aplicada em $A_1$ é multiplicada por 50, sendo capaz de erguer um automóvel de 1,5 tonelada!\n\n### 3. Princípio de Arquimedes (Empuxo)\nTodo corpo imerso total ou parcialmente em um fluido sofre a ação de uma força vertical orientada para cima, denominada **Empuxo ($E$)**, cuja intensidade é igual ao peso do volume de fluido deslocado:\n$$E = d_{\\text{fluido}} \\cdot V_{\\text{submerso}} \\cdot g$$\n• Se $P > E$: O corpo **afunda** até o fundo.\n• Se $P = E$: O corpo **flutua** em equilíbrio estável.\n\n![Prensa Hidráulica e Empuxo](../../assets/images/fisica/hidrostatica.png)",
+    "activities": [
+      {
+        "id_question": "fis_mec_06_q1",
+        "text": "(ENEM) Um mergulhador atinge uma profundidade de 30 metros em um lago de águas calmas. Considerando a densidade da água d = 1000 kg/m³, a aceleração da gravidade g = 10 m/s² e a pressão atmosférica na superfície Patm = 1,0 · 10⁵ Pa, a pressão absoluta total suportada pelo mergulhador nessa profundidade é de:",
+        "options": [
+          "2,0 · 10⁵ Pa",
+          "3,0 · 10⁵ Pa",
+          "4,0 · 10⁵ Pa",
+          "5,0 · 10⁵ Pa",
+          "6,0 · 10⁵ Pa"
+        ],
+        "correct_answer": 2,
+        "difficulty": 2,
+        "explanation": "Pelo Teorema de Stevin: P_total = Patm + d·g·h. Substituindo os dados: P_total = 1,0·10⁵ + (1000 · 10 · 30) = 1,0·10⁵ + 300.000 Pa = 1,0·10⁵ + 3,0·10⁵ = 4,0 · 10⁵ Pa (equivalente a 4 atm)."
+      },
+      {
+        "id_question": "fis_mec_06_q2",
+        "text": "(ENEM) Em um elevador hidráulico de uma oficina mecânica, os êmbolos possuem seções circulares de áreas A1 = 20 cm² e A2 = 1000 cm². Para erguer um veículo de 1500 kg apoiado sobre o êmbolo 2, qual a força mínima que deve ser aplicada sobre o êmbolo 1? (Considere g = 10 m/s²).",
+        "options": [
+          "150 N",
+          "300 N",
+          "450 N",
+          "600 N",
+          "750 N"
+        ],
+        "correct_answer": 1,
+        "difficulty": 2,
+        "explanation": "A força peso do carro é F2 = m·g = 1500 · 10 = 15.000 N. Pelo Princípio de Pascal: F1 / A1 = F2 / A2 => F1 / 20 = 15.000 / 1000 => F1 / 20 = 15 => F1 = 15 · 20 = 300 N."
+      },
+      {
+        "id_question": "fis_mec_06_q3",
+        "text": "(ENEM) Um iceberg flutua no oceano com parte do seu volume submerso. Sabendo que a densidade do gelo é de 0,92 g/cm³ e a densidade da água do mar é de 1,03 g/cm³, a porcentagem aproximada do volume do iceberg que fica submersa sob a água é de:",
+        "options": [
+          "50%",
+          "75%",
+          "80%",
+          "89%",
+          "98%"
+        ],
+        "correct_answer": 3,
+        "difficulty": 2,
+        "explanation": "Em flutuação estável: Peso = Empuxo => d_gelo · V_total · g = d_água · V_submerso · g => V_submerso / V_total = d_gelo / d_água = 0,92 / 1,03 ≈ 0,893 = 89,3% (cerca de 89% fica escondido sob as águas)."
+      }
+    ]
+  },
+  {
+    "id": "fis_mec_07",
+    "title": "Gravitação: O Relógio Cósmico e Leis de Kepler",
+    "theory_markdown": "# Gravitação: O Relógio Cósmico e Leis de Kepler\n\nA Gravitação Universal é o ápice da mecânica clássica, unificando a queda de uma maçã na Terra ao movimento orbital da Lua e dos planetas no Sistema Solar.\n\n### 1. As Três Leis de Kepler\n• **1ª Lei (Lei das Órbitas):** Todos os planetas orbitam em trajetórias **elípticas**, com o Sol ocupando um dos focos da elipse (e não o centro geométrico).\n• **2ª Lei (Lei das Áreas):** O vetor-posição que liga o planeta ao Sol varre áreas iguais em intervalos de tempo iguais.\n> **Consequência ENEM:** O movimento planetário não possui velocidade constante! No **Periélio** (ponto mais próximo do Sol), o planeta move-se com **velocidade máxima**. No **Afélio** (ponto mais afastado), move-se com **velocidade mínima**.\n• **3ª Lei (Lei dos Períodos):** O quadrado do período orbital ($T^2$) é proporcional ao cubo do raio médio da órbita ($R^3$):\n$$\\frac{T^2}{R^3} = \\text{Constante}$$\nQuanto mais distante um planeta está do Sol, mais demorado é o seu 'ano'!\n\n### 2. Lei da Gravitação Universal de Newton\nDois corpos atraem-se mutuamente com forças proporcionais ao produto de suas massas e inversamente proporcionais ao quadrado da distância ($d$) que os separa:\n$$F = G \\cdot \\frac{M \\cdot m}{d^2}$$\n*Atenção à Proporcionalidade Quadrática:* Se a distância entre dois astros for multiplicada por 2, a força de atração gravitacional é dividida por 4!\n\n![Órbitas Elípticas e Leis de Kepler](../../assets/images/fisica/gravitacao.png)",
+    "activities": [
+      {
+        "id_question": "fis_mec_07_q1",
+        "text": "(ENEM) De acordo com a 2ª Lei de Kepler (Lei das Áreas), a velocidade orbital da Terra em torno do Sol não é uniforme. A respeito dessa variação de velocidade, é correto afirmar que:",
+        "options": [
+          "A Terra move-se mais rápido no Afélio, pois está sob menor atração gravitacional.",
+          "A Terra move-se mais rápido no Periélio, pois a atração gravitacional solar é mais intensa na menor distância.",
+          "A velocidade orbital atinge o valor zero durante os equinócios.",
+          "A velocidade angular é perfeitamente constante durante todas as estações do ano.",
+          "A Terra desacelera continuamente ao se aproximar do Sol."
+        ],
+        "correct_answer": 1,
+        "difficulty": 1,
+        "explanation": "No Periélio, a Terra atinge a menor distância em relação ao Sol. Pela Lei das Áreas de Kepler (e pela conservação do momento angular), o planeta atinge sua velocidade orbital máxima nas proximidades do Periélio."
+      },
+      {
+        "id_question": "fis_mec_07_q2",
+        "text": "(ENEM) Dois corpos celestes atraem-se gravitacionalmente com uma força de intensidade F = 100 N. Se a distância entre seus centros de massa for triplicada, a nova força de atração gravitacional entre eles passará a ser de:",
+        "options": [
+          "11,1 N",
+          "33,3 N",
+          "50,0 N",
+          "100 N",
+          "900 N"
+        ],
+        "correct_answer": 0,
+        "difficulty": 2,
+        "explanation": "Pela Lei de Newton, a força gravitacional é inversamente proporcional ao quadrado da distância: F ∝ 1/d². Se a distância é multiplicada por 3, a nova força será dividida por 3² = 9. Portanto: F_nova = 100 / 9 ≈ 11,1 N."
+      },
+      {
+        "id_question": "fis_mec_07_q3",
+        "text": "(ENEM) Um satélite geoestacionário de telecomunicações orbita a Terra de modo a permanecer sempre sobre o mesmo ponto da linha do equador. Para que essa condição ocorra, o período orbital desse satélite deve ser de:",
+        "options": [
+          "12 horas",
+          "24 horas",
+          "28 dias",
+          "365 dias",
+          "90 minutos"
+        ],
+        "correct_answer": 1,
+        "difficulty": 1,
+        "explanation": "Para que um satélite seja geoestacionário (aparente estar imóvel no céu para uma antena fixa na Terra), seu período orbital de revolução deve coincidir rigorosamente com o período de rotação da Terra em torno do seu próprio eixo, ou seja, 24 horas."
+      }
+    ]
+  }
+]

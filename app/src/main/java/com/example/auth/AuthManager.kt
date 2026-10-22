@@ -810,7 +810,7 @@ class AuthManager(private val context: Context) {
 
         scope.launch {
             try {
-                val serverClientId = context.getString(R.string.default_web_client_id)
+                val serverClientId = runCatching { context.getString(R.string.default_web_client_id) }.getOrDefault("placeholder_client_id.apps.googleusercontent.com")
                 val googleIdOption = GetSignInWithGoogleOption.Builder(serverClientId)
                     .build()
 

@@ -94,12 +94,21 @@ data class EnemTrailLesson(
      * Mapeador de compatibilidade para o sistema de execução de aulas existente.
      */
     fun toAppLesson(): Lesson {
-        val resolvedExercises = if (exercises.isNotEmpty()) exercises else com.example.data.math.EnemDidacticProvider.getExercisesForLesson(id)
-        val didacticBundle = com.example.data.math.EnemDidacticProvider.getDidacticBundle(id)
+        val resolvedExercises = when {
+            exercises.isNotEmpty() -> exercises
+            id.startsWith("bio_") -> com.example.data.biology.EnemBiologyDidacticProvider.getExercisesForLesson(id)
+            id.startsWith("fis_") -> com.example.data.physics.EnemPhysicsDidacticProvider.getExercisesForLesson(id)
+            else -> com.example.data.math.EnemDidacticProvider.getExercisesForLesson(id)
+        }
+        val didacticBundle = when {
+            id.startsWith("bio_") -> com.example.data.biology.EnemBiologyDidacticProvider.getDidacticBundle(id)
+            id.startsWith("fis_") -> com.example.data.physics.EnemPhysicsDidacticProvider.getDidacticBundle(id)
+            else -> com.example.data.math.EnemDidacticProvider.getDidacticBundle(id)
+        }
         val resolvedTheory = when {
             theoryMarkdown.isNotBlank() -> theoryMarkdown
             didacticBundle != null -> didacticBundle.theoryMarkdown
-            else -> "Aula da Trilha Oficial de Matemática para o ENEM.\n\nSubtópico: $subtopic.\n\nExplore a teoria, o quadro de fórmulas e resolva os exercícios de fixação."
+            else -> "Aula da Trilha Oficial de Ciências da Natureza para o ENEM.\n\nSubtópico: $subtopic.\n\nExplore a teoria, o quadro de fórmulas e resolva os exercícios de fixação."
         }
 
         return Lesson(

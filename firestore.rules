@@ -14,5 +14,17 @@ service cloud.firestore {
       allow read: if true;
       allow write: if true;
     }
+
+    match /curriculum/{moduleId} {
+      // Módulos e aulas dinâmicas sincronizadas entre Web e Mobile
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /questions/{questionId} {
+      // Banco de exercícios em nuvem para ambas as plataformas
+      allow read: if true;
+      allow write: if true;
+    }
   }
 }

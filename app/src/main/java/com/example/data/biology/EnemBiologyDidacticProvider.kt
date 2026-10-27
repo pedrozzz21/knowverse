@@ -401,8 +401,8 @@ A **Ecologia** estuda as interações dos seres vivos entre si e com o ambiente 
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Coexistência de Aves no Mesmo Bioma",
-                        scenario = "Duas espécies de gaviões habitam a mesma serra: uma caça roedores no chão ao meio-dia, a outra caça morcegos no crepúsculo.",
-                        stepByStep = "Mesmo habitat (serra), mas nichos ecológicos temporais e alimentares distintos. Não ocorre sobreposição prejudicial de nichos."
+                        codeOrFormula = "Duas espécies de gaviões habitam a mesma serra: uma caça roedores no chão ao meio-dia, a outra caça morcegos no crepúsculo.",
+                        explanation = "Mesmo habitat (serra), mas nichos ecológicos temporais e alimentares distintos. Não ocorre sobreposição prejudicial de nichos."
                     )
                 ),
                 goldTip = "No ENEM: Se a questão falar em 'o que come e quando caça', a resposta é NICHO ECOLÓGICO. Se falar em 'onde vive e constrói ninho', é HABITAT!"
@@ -435,8 +435,8 @@ Metais pesados (mercúrio, chumbo) e pesticidas organoclorados (DDT) não são m
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Contaminação por Mercúrio no Garimpo",
-                        scenario = "Em um rio poluído com mercúrio: Algas têm 0,01 ppm, peixes têm 2,5 ppm e a lontra de topo tem 35 ppm.",
-                        stepByStep = "Como o mercúrio não é excretado, a lontra consome centenas de peixes ao longo da vida e acumula a concentração máxima."
+                        codeOrFormula = "Em um rio poluído com mercúrio: Algas têm 0,01 ppm, peixes têm 2,5 ppm e a lontra de topo tem 35 ppm.",
+                        explanation = "Como o mercúrio não é excretado, a lontra consome centenas de peixes ao longo da vida e acumula a concentração máxima."
                     )
                 ),
                 goldTip = "Cuidado com pegadinhas: Energia diminui ao longo da cadeia, mas a concentração de metais pesados AUMENTA!"
@@ -468,8 +468,8 @@ Classificação das interações biológicas cobradas com rigor no ENEM:
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Diferença entre Mutualismo e Protocooperação",
-                        scenario = "A alga e o fungo formam um líquen e morrem se isolados. O pássaro-palito limpa o dente do crocodilo, mas ambos vivem sem isso.",
-                        stepByStep = "Líquen = Mutualismo (+/+ obrigatório). Pássaro e crocodilo = Protocooperação (+/+ facultativo)."
+                        codeOrFormula = "A alga e o fungo formam um líquen e morrem se isolados. O pássaro-palito limpa o dente do crocodilo, mas ambos vivem sem isso.",
+                        explanation = "Líquen = Mutualismo (+/+ obrigatório). Pássaro e crocodilo = Protocooperação (+/+ facultativo)."
                     )
                 ),
                 goldTip = "Epifitismo NÃO É PARASITISMO! A orquídea só quer pegar sol no alto da árvore; ela não bebe a seiva da árvore hospedeira."
@@ -502,8 +502,8 @@ A evapotranspiração da Floresta Amazônica lança trilhões de litros de vapor
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Adubação Verde e Rotação de Culturas",
-                        scenario = "Intercalar milho com soja reduz a necessidade de fertilizantes químicos.",
-                        stepByStep = "A soja é leguminosa; suas raízes têm Rhizobium que fixam N2 no solo em forma de nitrato, enriquecendo o terreno naturalmente."
+                        codeOrFormula = "Intercalar milho com soja reduz a necessidade de fertilizantes químicos.",
+                        explanation = "A soja é leguminosa; suas raízes têm Rhizobium que fixam N2 no solo em forma de nitrato, enriquecendo o terreno naturalmente."
                     )
                 ),
                 goldTip = "Grave a ordem das bactérias da nitrificação: Primeiro Nitrosomonas (faz nitrito), depois Nitrobacter (faz nitrato)!"
@@ -538,8 +538,8 @@ No inverno, o ar frio (mais denso) fica preso perto do chão sob uma camada de a
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Morte de Peixes em Lago com Esgoto",
-                        scenario = "Um lago fica verde e dias depois milhares de tilápias morrem na praia.",
-                        stepByStep = "A causa mortis direta não é o veneno do esgoto, mas sim a anóxia (falta de O2) causada pela decomposição bacteriana aeróbica."
+                        codeOrFormula = "Um lago fica verde e dias depois milhares de tilápias morrem na praia.",
+                        explanation = "A causa mortis direta não é o veneno do esgoto, mas sim a anóxia (falta de O2) causada pela decomposição bacteriana aeróbica."
                     )
                 ),
                 goldTip = "Na Eutrofização, os peixes morrem por FALTA DE OXIGÊNIO (anóxia consumida por bactérias aeróbicas), e não por excesso de algas!"
@@ -573,8 +573,8 @@ A superfície da Terra absorve radiação solar e reemite radiação infravermel
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Por que o Gado Aumenta o Efeito Estufa?",
-                        scenario = "A pecuária extensiva é alvo de debates ecológicos sobre mudanças climáticas.",
-                        stepByStep = "A digestão de celulose no rúmen produz metano (CH4), liberado por eructação. O metano é um GEE de altíssimo poder de retenção de calor."
+                        codeOrFormula = "A pecuária extensiva é alvo de debates ecológicos sobre mudanças climáticas.",
+                        explanation = "A digestão de celulose no rúmen produz metano (CH4), liberado por eructação. O metano é um GEE de altíssimo poder de retenção de calor."
                     )
                 ),
                 goldTip = "O Efeito Estufa NÃO é ruim por natureza; o problema é a sua INTENSIFICAÇÃO antrópica acelerada pela queima de combustíveis fósseis."
@@ -611,8 +611,8 @@ Reinserção de materiais descartados no ciclo produtivo, com fabricantes respon
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Uso de Biodigestores em Granja de Porcos",
-                        scenario = "Tratar dejetos suínos e gerar energia elétrica para a propriedade.",
-                        stepByStep = "Bactérias anaeróbicas convertem esterco em metano (biogás combustível) e biofertilizante, zerando o passivo ambiental de poluição da água."
+                        codeOrFormula = "Tratar dejetos suínos e gerar energia elétrica para a propriedade.",
+                        explanation = "Bactérias anaeróbicas convertem esterco em metano (biogás combustível) e biofertilizante, zerando o passivo ambiental de poluição da água."
                     )
                 ),
                 goldTip = "No ENEM: Se a questão falar em 'usar bactérias ou fungos para limpar óleo ou solo tóxico', a resposta é BIORREMEDIAÇÃO!"

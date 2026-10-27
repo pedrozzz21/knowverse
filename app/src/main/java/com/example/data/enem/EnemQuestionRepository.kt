@@ -34,19 +34,34 @@ class EnemQuestionRepository private constructor(private val context: Context) {
     private fun loadQuestionsSync() {
         if (isLoaded && _questions.value.isNotEmpty()) return
 
+        val allParsed = mutableListOf<EnemQuestion>()
+
+        // 1. Carrega banco_questoes.json (Matemática e geral)
         try {
             val jsonString = context.assets.open("banco_questoes.json").use { inputStream ->
                 BufferedReader(InputStreamReader(inputStream)).use { it.readText() }
             }
-
             val parsed = parseJsonQuestions(jsonString)
-            _questions.value = parsed
-            isLoaded = true
-            Log.d(TAG, "Carregadas com sucesso ${parsed.size} questões do ENEM do banco_questoes.json")
+            allParsed.addAll(parsed)
+            Log.d(TAG, "Carregadas com sucesso ${parsed.size} questões do ENEM de banco_questoes.json")
         } catch (e: Exception) {
             Log.e(TAG, "Erro ao carregar banco_questoes.json: ${e.message}", e)
-            _questions.value = emptyList()
         }
+
+        // 2. Carrega questoes_enem_natureza.json (Física e Biologia oficiais da API ENEM)
+        try {
+            val jsonNatureza = context.assets.open("questoes_enem_natureza.json").use { inputStream ->
+                BufferedReader(InputStreamReader(inputStream)).use { it.readText() }
+            }
+            val parsedNatureza = parseJsonQuestions(jsonNatureza)
+            allParsed.addAll(parsedNatureza)
+            Log.d(TAG, "Carregadas com sucesso ${parsedNatureza.size} questões de Natureza do ENEM (Física e Biologia)")
+        } catch (e: Exception) {
+            Log.e(TAG, "Erro ao carregar questoes_enem_natureza.json: ${e.message}", e)
+        }
+
+        _questions.value = allParsed
+        isLoaded = true
     }
 
     /**
@@ -68,18 +83,40 @@ class EnemQuestionRepository private constructor(private val context: Context) {
             val obj = jsonArray.getJSONObject(i)
             val id = obj.optString("id", "enem_${i}")
             val year = obj.optInt("year", 2023)
-            val topic = obj.optString("topic", "Matemática Básica")
-            val subtopic = obj.optString("subtopic", "")
-            val title = obj.optString("title", "")
-            val correctAnswer = obj.optString("correctAnswer", "A")
+            val topic = when {
+                obj.has("disciplina") -> obj.optString("disciplina", "Ciências da Natureza")
+                obj.has("topic") -> obj.optString("topic", "Matemática Básica")
+                else -> "Ciências da Natureza"
+            }
+            val subtopic = obj.optString("subtopic", topic)
+            val title = when {
+                obj.has("statement") -> obj.optString("statement")
+                obj.has("title") -> obj.optString("title")
+                obj.has("problemStatement") -> obj.optString("problemStatement")
+                else -> ""
+            }
 
-            val altArray = obj.optJSONArray("alternatives")
+            val altArray = obj.optJSONArray("options") ?: obj.optJSONArray("alternatives")
             val alternatives = mutableListOf<String>()
             if (altArray != null) {
                 for (j in 0 until altArray.length()) {
                     alternatives.add(altArray.getString(j))
                 }
             }
+
+            val correctAnswer = when {
+                obj.has("correctLetter") -> obj.optString("correctLetter", "A")
+                obj.has("correctAnswer") -> obj.optString("correctAnswer", "A")
+                obj.has("correctIndex") -> {
+                    val idx = obj.optInt("correctIndex", 0)
+                    ('A' + idx).toString()
+                }
+                else -> "A"
+            }
+
+            val explanation = obj.optString("explanation", "")
+            val moduleId = obj.optString("moduleId", "")
+            val moduleTitle = obj.optString("moduleTitle", "")
 
             list.add(
                 EnemQuestion(
@@ -89,7 +126,10 @@ class EnemQuestionRepository private constructor(private val context: Context) {
                     subtopic = subtopic,
                     title = title,
                     alternatives = alternatives,
-                    correctAnswer = correctAnswer
+                    correctAnswer = correctAnswer,
+                    explanation = explanation,
+                    moduleId = moduleId,
+                    moduleTitle = moduleTitle
                 )
             )
         }

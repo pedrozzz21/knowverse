@@ -40,7 +40,8 @@ object CalculusDidacticContent {
     )
 
     fun getContentForLesson(lessonId: String): CalculusDidacticBundle {
-        val bundle = com.example.data.physics.EnemPhysicsDidacticProvider.getDidacticBundle(lessonId)
+        val bundle = com.example.data.biology.EnemBiologyDidacticProvider.getDidacticBundle(lessonId)
+            ?: com.example.data.physics.EnemPhysicsDidacticProvider.getDidacticBundle(lessonId)
             ?: EnemDidacticProvider.getDidacticBundle(lessonId)
             ?: BasicMathDidactic.get(lessonId)
             ?: CalculusLimitsDidactic.get(lessonId)

@@ -344,6 +344,23 @@ fun ExerciseSolverScreen(
                 "Otimização" to "Otimização",
                 "Integrais & TFC" to "Integrais e TFC"
             )
+            ExerciseDiscipline.PHYSICS -> listOf(
+                "all" to "Todos os Módulos",
+                "Mecânica" to "Módulo 1: Mecânica",
+                "Eletricidade" to "Módulo 2: Eletricidade",
+                "Termologia" to "Módulo 3: Termologia",
+                "Ondulatória" to "Módulo 4: Ondulatória",
+                "Óptica" to "Módulo 5: Óptica",
+                "Física Moderna" to "Módulo 6: Física Moderna"
+            )
+            ExerciseDiscipline.BIOLOGY -> listOf(
+                "all" to "Todos os Módulos",
+                "Ecologia" to "Módulo 1: Ecologia",
+                "Fisiologia" to "Módulo 2: Fisiologia",
+                "Genética" to "Módulo 3: Genética",
+                "Citologia" to "Módulo 4: Citologia",
+                "Evolução" to "Módulo 5: Evolução"
+            )
             ExerciseDiscipline.ALL -> listOf(
                 "all" to "Todos os Tópicos",
                 "Matemática Básica" to "ENEM: Mat. Básica",
@@ -556,6 +573,8 @@ fun ExerciseSolverScreen(
                         options = listOf(
                             ExerciseDiscipline.ALL.name to "Todas as Matérias",
                             ExerciseDiscipline.ENEM.name to "Banco ENEM Oficial",
+                            ExerciseDiscipline.PHYSICS.name to "Física ENEM",
+                            ExerciseDiscipline.BIOLOGY.name to "Biologia ENEM",
                             ExerciseDiscipline.BASIC_MATH.name to "Matemática Básica",
                             ExerciseDiscipline.CALCULUS.name to "Cálculo I",
                             ExerciseDiscipline.PROGRAMMING.name to "Python (Lógica)"
@@ -916,6 +935,8 @@ private fun ExerciseListItemCard(
         ExerciseDiscipline.BASIC_MATH -> SuccessEmerald
         ExerciseDiscipline.CALCULUS -> GoldXp
         ExerciseDiscipline.ENEM -> Color(0xFFF59E0B)
+        ExerciseDiscipline.PHYSICS -> Color(0xFF38BDF8)
+        ExerciseDiscipline.BIOLOGY -> Color(0xFF10B981)
         ExerciseDiscipline.ALL -> PrimaryViolet
     }
 

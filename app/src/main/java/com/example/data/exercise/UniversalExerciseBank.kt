@@ -8,6 +8,8 @@ import com.example.data.math.GeoGebraGraphConfig
 enum class ExerciseDiscipline(val label: String, val tag: String) {
     ALL("Todas as Matérias", "all"),
     ENEM("Banco ENEM (Oficial)", "enem"),
+    PHYSICS("Física ENEM", "physics"),
+    BIOLOGY("Biologia ENEM", "biology"),
     BASIC_MATH("Matemática Básica", "basic_math"),
     CALCULUS("Cálculo I", "calculus"),
     PROGRAMMING("Programação (Python)", "programming")

@@ -97,6 +97,7 @@ fun LearnTrailScreen(
     var selectedCategory by remember { mutableStateOf("Todas") }
 
     // Course expansion states
+    var isPythonExpanded by remember { mutableStateOf(false) }
     var isEnemMathExpanded by remember { mutableStateOf(true) }
     var expandedEnemModuleId by remember { mutableStateOf<String?>("mod_01_matematica_basica") }
     var isCalculusExpanded by remember { mutableStateOf(false) }

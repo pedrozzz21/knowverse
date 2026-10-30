@@ -42,6 +42,7 @@ import androidx.compose.material.icons.filled.CloudUpload
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.Email
+import androidx.compose.material.icons.filled.SystemUpdate
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
@@ -129,6 +130,7 @@ fun ProfileScreen(
     userProgress: UserProgress,
     authManager: AuthManager,
     onOpenDevDashboard: () -> Unit,
+    onOpenNotifications: () -> Unit = {},
     progressRepository: com.example.data.local.UserProgressRepository? = null,
     modifier: Modifier = Modifier
 ) {
@@ -823,15 +825,20 @@ fun ProfileScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text("Sequência de Foco:", color = TextSecondary, style = MaterialTheme.typography.bodySmall)
+                        val isStreakIgnited = userProgress.hasStudiedToday() && userProgress.currentStreak > 0
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(
-                                imageVector = KnowverseIcons.StreakFire,
+                                imageVector = if (isStreakIgnited) KnowverseIcons.StreakFire else KnowverseIcons.FlameInactive,
                                 contentDescription = null,
-                                tint = StreakFire,
+                                tint = if (isStreakIgnited) StreakFire else TextTertiary,
                                 modifier = Modifier.size(14.dp)
                             )
                             Spacer(modifier = Modifier.width(4.dp))
-                            Text("${userProgress.currentStreak} dias", color = StreakFire, fontWeight = FontWeight.SemiBold)
+                            Text(
+                                text = "${userProgress.currentStreak} dias",
+                                color = if (isStreakIgnited) StreakFire else TextSecondary,
+                                fontWeight = if (isStreakIgnited) FontWeight.SemiBold else FontWeight.Normal
+                            )
                         }
                     }
                     Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
@@ -1275,43 +1282,77 @@ fun ProfileScreen(
                     .fillMaxWidth()
                     .testTag("app_version_footer_card")
             ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 14.dp, vertical = 10.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Column {
-                        Text(
-                            text = "Knowverse App",
-                            style = MaterialTheme.typography.labelMedium.copy(
-                                fontWeight = FontWeight.Bold,
-                                color = TextPrimary
+                Column(modifier = Modifier.padding(14.dp)) {
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column {
+                            Text(
+                                text = "Knowverse App",
+                                style = MaterialTheme.typography.labelMedium.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    color = TextPrimary
+                                )
                             )
-                        )
-                        Text(
-                            text = "Base ENEM: 273 Questões • 14 Módulos Ativos",
-                            style = MaterialTheme.typography.labelSmall.copy(
-                                color = TextSecondary,
-                                fontSize = 10.5.sp
+                            Text(
+                                text = "Base ENEM: 273 Questões • 14 Módulos Ativos",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    color = TextSecondary,
+                                    fontSize = 10.5.sp
+                                )
                             )
-                        )
+                        }
+
+                        Surface(
+                            color = PrimaryViolet.copy(alpha = 0.15f),
+                            shape = RoundedCornerShape(4.dp)
+                        ) {
+                            Text(
+                                text = "v1.6.0",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    color = PrimaryViolet,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 11.sp
+                                ),
+                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                            )
+                        }
                     }
 
-                    Surface(
-                        color = PrimaryViolet.copy(alpha = 0.15f),
-                        shape = RoundedCornerShape(4.dp)
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(
-                            text = "v1.6.0",
-                            style = MaterialTheme.typography.labelSmall.copy(
-                                color = PrimaryViolet,
-                                fontWeight = FontWeight.Bold,
-                                fontSize = 11.sp
-                            ),
-                            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                            text = "Novas versões e downloads de .APK",
+                            style = MaterialTheme.typography.labelSmall.copy(color = TextTertiary, fontSize = 11.sp)
                         )
+                        Button(
+                            onClick = onOpenNotifications,
+                            colors = ButtonDefaults.buttonColors(containerColor = PrimaryViolet),
+                            shape = RoundedCornerShape(6.dp),
+                            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 12.dp, vertical = 4.dp),
+                            modifier = Modifier.height(30.dp).testTag("check_app_updates_profile_btn")
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.SystemUpdate,
+                                contentDescription = null,
+                                modifier = Modifier.size(13.dp)
+                            )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(
+                                text = "Verificar Atualizações",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontWeight = FontWeight.SemiBold,
+                                    fontSize = 11.sp
+                                )
+                            )
+                        }
                     }
                 }
             }

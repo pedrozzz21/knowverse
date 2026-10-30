@@ -14,18 +14,30 @@ import com.example.data.model.MathExercise
 object EnemPhysicsDidacticProvider {
 
     fun getDidacticBundle(lessonId: String): CalculusDidacticBundle? {
-        val entry = didacticMap[lessonId] ?: return null
-        return CalculusDidacticBundle(
-            theoryMarkdown = entry.theoryMarkdown,
-            formulas = entry.formulas,
-            solvedExamples = entry.solvedExamples,
-            imageResId = entry.imageResId,
-            goldTip = entry.goldTip
-        )
+        val entry = didacticMap[lessonId]
+        if (entry != null) {
+            return CalculusDidacticBundle(
+                theoryMarkdown = entry.theoryMarkdown,
+                formulas = entry.formulas,
+                solvedExamples = entry.solvedExamples,
+                imageResId = entry.imageResId,
+                goldTip = entry.goldTip,
+                assetImagePath = entry.assetImagePath
+            )
+        }
+        val lesson = EnemPhysicsCurriculum.findLesson(lessonId) ?: return null
+        return PhysicsModuleGenerator.buildBundle(lesson)
     }
 
     fun getExercisesForLesson(lessonId: String): List<MathExercise> {
-        return exercisesMap[lessonId] ?: emptyList()
+        val staticList = exercisesMap[lessonId]
+        val exercises = if (!staticList.isNullOrEmpty()) {
+            staticList
+        } else {
+            val lesson = EnemPhysicsCurriculum.findLesson(lessonId) ?: return emptyList()
+            PhysicsModuleGenerator.buildExercises(lesson)
+        }
+        return exercises.map { it.randomized() }
     }
 
     private val exercisesMap: Map<String, List<MathExercise>> by lazy {
@@ -87,7 +99,8 @@ object EnemPhysicsDidacticProvider {
         val formulas: List<FormulaOrSyntaxItem>,
         val solvedExamples: List<LessonExample>,
         val imageResId: Int? = null,
-        val goldTip: String
+        val goldTip: String,
+        val assetImagePath: String? = null
     )
 
     private val didacticMap: Map<String, PhysicsDidacticEntry> by lazy {
@@ -138,7 +151,8 @@ object EnemPhysicsDidacticProvider {
                     )
                 ),
                 imageResId = R.drawable.grafico_fisica_lancamento,
-                goldTip = "Sempre converta km/h para m/s dividindo por 3,6 antes de aplicar qualquer fórmula no ENEM!"
+                goldTip = "Sempre converta km/h para m/s dividindo por 3,6 antes de aplicar qualquer fórmula no ENEM!",
+                assetImagePath = "images/fisica/cinematica.png"
             ),
 
             "fis_m1_a2" to PhysicsDidacticEntry(

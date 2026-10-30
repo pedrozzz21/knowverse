@@ -190,6 +190,156 @@ class TrailCacheRepository(
             }
         }
 
+        // 3. Linguagens e Códigos ENEM (5 Módulos e 23 Lições)
+        val languagesModules = com.example.data.languages.EnemLanguagesCurriculum.getAllModules()
+        val totalLingLessons = languagesModules.sumOf { it.lessons.size }
+        val lingTrailId = "trail_enem_linguagens"
+
+        trailsToInsert.add(
+            CachedTrailEntity(
+                id = lingTrailId,
+                title = "Linguagens, Códigos e suas Tecnologias ENEM",
+                description = "Trilha oficial com Interpretação, Linguística, Literatura Brasileira, Gramática em Contexto e Artes/Expressão Corporal.",
+                category = "Linguagens",
+                subject = "Linguagens e Códigos",
+                tierOrModule = "ENEM",
+                totalLessons = totalLingLessons,
+                estimatedHours = "${totalLingLessons * 25 / 60}h",
+                isAvailable = true
+            )
+        )
+
+        for (module in languagesModules) {
+            val unitId = module.id
+            val unitEntity = CachedUnitEntity(
+                id = unitId,
+                trailId = lingTrailId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                tier = "BASIC",
+                category = "Linguagens",
+                subject = "Linguagens e Códigos",
+                lessonCount = module.lessons.size
+            )
+            unitsToInsert.add(unitEntity)
+
+            val unitModel = LearningUnit(
+                id = unitId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                lessons = emptyList(),
+                category = "Linguagens",
+                subject = "Linguagens e Códigos"
+            )
+
+            for (enemLesson in module.lessons) {
+                val appLesson = enemLesson.toAppLesson()
+                lessonsToInsert.add(mapLessonToEntity(appLesson, lingTrailId, unitModel))
+            }
+        }
+
+        // 4. História e Ciências Humanas ENEM (6 Módulos e 26 Lições)
+        val historyModules = com.example.data.history.EnemHistoryCurriculum.getAllModules()
+        val totalHistLessons = historyModules.sumOf { it.lessons.size }
+        val histTrailId = "trail_enem_historia"
+
+        trailsToInsert.add(
+            CachedTrailEntity(
+                id = histTrailId,
+                title = "História • Ciências Humanas ENEM",
+                description = "Trilha oficial com Brasil Colônia, Império, República, Antiguidade/Medievo, Idade Moderna e Contemporânea.",
+                category = "História",
+                subject = "Ciências Humanas",
+                tierOrModule = "ENEM",
+                totalLessons = totalHistLessons,
+                estimatedHours = "${totalHistLessons * 25 / 60}h",
+                isAvailable = true
+            )
+        )
+
+        for (module in historyModules) {
+            val unitId = module.id
+            val unitEntity = CachedUnitEntity(
+                id = unitId,
+                trailId = histTrailId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                tier = "BASIC",
+                category = "História",
+                subject = "Ciências Humanas",
+                lessonCount = module.lessons.size
+            )
+            unitsToInsert.add(unitEntity)
+
+            val unitModel = LearningUnit(
+                id = unitId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                lessons = emptyList(),
+                category = "História",
+                subject = "Ciências Humanas"
+            )
+
+            for (enemLesson in module.lessons) {
+                val appLesson = enemLesson.toAppLesson()
+                lessonsToInsert.add(mapLessonToEntity(appLesson, histTrailId, unitModel))
+            }
+        }
+
+        // 5. Geografia • Ciências Humanas ENEM (5 Módulos e 21 Aulas)
+        val geoModules = com.example.data.geography.EnemGeographyCurriculum.getAllModules()
+        val totalGeoLessons = geoModules.sumOf { it.lessons.size }
+        val geoTrailId = "trail_enem_geografia"
+
+        trailsToInsert.add(
+            CachedTrailEntity(
+                id = geoTrailId,
+                title = "Geografia • Ciências Humanas ENEM",
+                description = "Trilha oficial com Geografia Física, Meio Ambiente, Agrária, Urbana/Demografia, Econômica e Geopolítica.",
+                category = "Geografia",
+                subject = "Ciências Humanas",
+                tierOrModule = "ENEM",
+                totalLessons = totalGeoLessons,
+                estimatedHours = "${totalGeoLessons * 25 / 60}h",
+                isAvailable = true
+            )
+        )
+
+        for (module in geoModules) {
+            val unitId = module.id
+            val unitEntity = CachedUnitEntity(
+                id = unitId,
+                trailId = geoTrailId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                tier = "BASIC",
+                category = "Geografia",
+                subject = "Ciências Humanas",
+                lessonCount = module.lessons.size
+            )
+            unitsToInsert.add(unitEntity)
+
+            val unitModel = LearningUnit(
+                id = unitId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                lessons = emptyList(),
+                category = "Geografia",
+                subject = "Ciências Humanas"
+            )
+
+            for (enemLesson in module.lessons) {
+                val appLesson = enemLesson.toAppLesson()
+                lessonsToInsert.add(mapLessonToEntity(appLesson, geoTrailId, unitModel))
+            }
+        }
+
         dao.insertTrails(trailsToInsert)
         dao.insertUnits(unitsToInsert)
         dao.insertLessons(lessonsToInsert)

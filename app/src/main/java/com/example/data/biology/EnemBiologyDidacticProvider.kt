@@ -12,18 +12,42 @@ import com.example.data.model.MathExercise
 object EnemBiologyDidacticProvider {
 
     fun getDidacticBundle(lessonId: String): CalculusDidacticBundle? {
-        val entry = didacticMap[lessonId] ?: return null
-        return CalculusDidacticBundle(
-            theoryMarkdown = entry.theoryMarkdown,
-            formulas = entry.formulas,
-            solvedExamples = entry.solvedExamples,
-            imageResId = entry.imageResId,
-            goldTip = entry.goldTip
-        )
+        val entry = didacticMap[lessonId]
+        if (entry != null) {
+            return CalculusDidacticBundle(
+                theoryMarkdown = entry.theoryMarkdown,
+                formulas = entry.formulas,
+                solvedExamples = entry.solvedExamples,
+                imageResId = entry.imageResId,
+                goldTip = entry.goldTip,
+                assetImagePath = entry.assetImagePath
+            )
+        }
+        val lesson = EnemBiologyCurriculum.findLesson(lessonId) ?: return null
+        return BiologyModuleGenerator.buildBundle(lesson)
     }
 
     fun getExercisesForLesson(lessonId: String): List<MathExercise> {
-        return exercisesMap[lessonId] ?: emptyList()
+        val staticList = exercisesMap[lessonId]
+        val exercises = if (!staticList.isNullOrEmpty()) {
+            staticList.map { ex ->
+                if (!ex.stepByStepSolution.contains("Análise dos Distratores") && !ex.stepByStepSolution.contains("Alternativa")) {
+                    val enrichedSolution = BiologyAlternativeAnalyzer.generateFormattedSolutionString(
+                        statement = ex.problemStatement,
+                        options = ex.options,
+                        correctIndex = ex.correctIndex,
+                        subtopic = ex.title
+                    )
+                    ex.copy(stepByStepSolution = enrichedSolution)
+                } else {
+                    ex
+                }
+            }
+        } else {
+            val lesson = EnemBiologyCurriculum.findLesson(lessonId) ?: return emptyList()
+            BiologyModuleGenerator.buildExercises(lesson)
+        }
+        return exercises.map { it.randomized() }
     }
 
     private val exercisesMap: Map<String, List<MathExercise>> by lazy {
@@ -365,7 +389,8 @@ object EnemBiologyDidacticProvider {
         val formulas: List<FormulaOrSyntaxItem>,
         val solvedExamples: List<LessonExample>,
         val imageResId: Int? = null,
-        val goldTip: String
+        val goldTip: String,
+        val assetImagePath: String? = null
     )
 
     private val didacticMap: Map<String, DidacticEntry> by lazy {
@@ -405,7 +430,8 @@ A **Ecologia** estuda as interações dos seres vivos entre si e com o ambiente 
                         explanation = "Mesmo habitat (serra), mas nichos ecológicos temporais e alimentares distintos. Não ocorre sobreposição prejudicial de nichos."
                     )
                 ),
-                goldTip = "No ENEM: Se a questão falar em 'o que come e quando caça', a resposta é NICHO ECOLÓGICO. Se falar em 'onde vive e constrói ninho', é HABITAT!"
+                goldTip = "No ENEM: Se a questão falar em 'o que come e quando caça', a resposta é NICHO ECOLÓGICO. Se falar em 'onde vive e constrói ninho', é HABITAT!",
+                assetImagePath = "images/ecologia/biodiversidade.png"
             ),
             "bio_eco_02" to DidacticEntry(
                 theoryMarkdown = """
@@ -439,7 +465,8 @@ Metais pesados (mercúrio, chumbo) e pesticidas organoclorados (DDT) não são m
                         explanation = "Como o mercúrio não é excretado, a lontra consome centenas de peixes ao longo da vida e acumula a concentração máxima."
                     )
                 ),
-                goldTip = "Cuidado com pegadinhas: Energia diminui ao longo da cadeia, mas a concentração de metais pesados AUMENTA!"
+                goldTip = "Cuidado com pegadinhas: Energia diminui ao longo da cadeia, mas a concentração de metais pesados AUMENTA!",
+                assetImagePath = "images/ecologia/teia_alimentar.png"
             ),
             "bio_eco_03" to DidacticEntry(
                 theoryMarkdown = """
@@ -472,7 +499,8 @@ Classificação das interações biológicas cobradas com rigor no ENEM:
                         explanation = "Líquen = Mutualismo (+/+ obrigatório). Pássaro e crocodilo = Protocooperação (+/+ facultativo)."
                     )
                 ),
-                goldTip = "Epifitismo NÃO É PARASITISMO! A orquídea só quer pegar sol no alto da árvore; ela não bebe a seiva da árvore hospedeira."
+                goldTip = "Epifitismo NÃO É PARASITISMO! A orquídea só quer pegar sol no alto da árvore; ela não bebe a seiva da árvore hospedeira.",
+                assetImagePath = "images/ecologia/relacoes_ecologicas.png"
             ),
             "bio_eco_04" to DidacticEntry(
                 theoryMarkdown = """
@@ -506,7 +534,8 @@ A evapotranspiração da Floresta Amazônica lança trilhões de litros de vapor
                         explanation = "A soja é leguminosa; suas raízes têm Rhizobium que fixam N2 no solo em forma de nitrato, enriquecendo o terreno naturalmente."
                     )
                 ),
-                goldTip = "Grave a ordem das bactérias da nitrificação: Primeiro Nitrosomonas (faz nitrito), depois Nitrobacter (faz nitrato)!"
+                goldTip = "Grave a ordem das bactérias da nitrificação: Primeiro Nitrosomonas (faz nitrito), depois Nitrobacter (faz nitrato)!",
+                assetImagePath = "images/ecologia/ciclo_nitrogenio.png"
             ),
             "bio_eco_05" to DidacticEntry(
                 theoryMarkdown = """
@@ -542,7 +571,8 @@ No inverno, o ar frio (mais denso) fica preso perto do chão sob uma camada de a
                         explanation = "A causa mortis direta não é o veneno do esgoto, mas sim a anóxia (falta de O2) causada pela decomposição bacteriana aeróbica."
                     )
                 ),
-                goldTip = "Na Eutrofização, os peixes morrem por FALTA DE OXIGÊNIO (anóxia consumida por bactérias aeróbicas), e não por excesso de algas!"
+                goldTip = "Na Eutrofização, os peixes morrem por FALTA DE OXIGÊNIO (anóxia consumida por bactérias aeróbicas), e não por excesso de algas!",
+                assetImagePath = "images/ecologia/eutrofizacao.png"
             ),
             "bio_eco_06" to DidacticEntry(
                 theoryMarkdown = """
@@ -577,7 +607,8 @@ A superfície da Terra absorve radiação solar e reemite radiação infravermel
                         explanation = "A digestão de celulose no rúmen produz metano (CH4), liberado por eructação. O metano é um GEE de altíssimo poder de retenção de calor."
                     )
                 ),
-                goldTip = "O Efeito Estufa NÃO é ruim por natureza; o problema é a sua INTENSIFICAÇÃO antrópica acelerada pela queima de combustíveis fósseis."
+                goldTip = "O Efeito Estufa NÃO é ruim por natureza; o problema é a sua INTENSIFICAÇÃO antrópica acelerada pela queima de combustíveis fósseis.",
+                assetImagePath = "images/ecologia/efeito_estufa.png"
             ),
             "bio_eco_07" to DidacticEntry(
                 theoryMarkdown = """
@@ -615,7 +646,8 @@ Reinserção de materiais descartados no ciclo produtivo, com fabricantes respon
                         explanation = "Bactérias anaeróbicas convertem esterco em metano (biogás combustível) e biofertilizante, zerando o passivo ambiental de poluição da água."
                     )
                 ),
-                goldTip = "No ENEM: Se a questão falar em 'usar bactérias ou fungos para limpar óleo ou solo tóxico', a resposta é BIORREMEDIAÇÃO!"
+                goldTip = "No ENEM: Se a questão falar em 'usar bactérias ou fungos para limpar óleo ou solo tóxico', a resposta é BIORREMEDIAÇÃO!",
+                assetImagePath = "images/ecologia/sustentabilidade.png"
             )
         )
     }

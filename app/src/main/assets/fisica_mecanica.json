@@ -15,7 +15,7 @@
           "50 segundos"
         ],
         "correct_answer": 1,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "Primeiro, convertemos as velocidades para m/s dividindo por 3,6: vA = 72 / 3,6 = 20 m/s e vB = 108 / 3,6 = 30 m/s. A velocidade relativa de aproximação é v_rel = vB - vA = 30 - 20 = 10 m/s. O tempo para cobrir a distância inicial de 200 m é: Δt = ΔS / v_rel = 200 / 10 = 20 segundos."
       },
       {
@@ -29,7 +29,7 @@
           "100,0 m"
         ],
         "correct_answer": 1,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "Como o tempo não foi fornecido e deseja-se a distância, aplicamos a Equação de Torricelli: v² = v₀² + 2·a·ΔS. Com parada total (v = 0), v₀ = 25 m/s e desaceleração a = -5,0 m/s²: 0 = 25² + 2(-5)·ΔS => 0 = 625 - 10·ΔS => 10·ΔS = 625 => ΔS = 62,5 metros."
       },
       {
@@ -43,7 +43,7 @@
           "600 m"
         ],
         "correct_answer": 2,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "No gráfico v × t, a distância percorrida é numericamente igual à área sob a curva (área de um trapézio). Base maior B = 20 s, base menor b = 10 s (dos 10 s aos 20 s) e altura h = 30 m/s. Área = [(B + b) · h] / 2 = [(20 + 10) · 30] / 2 = [30 · 30] / 2 = 900 / 2 = 450 metros."
       }
     ]
@@ -64,7 +64,7 @@
           "70 N"
         ],
         "correct_answer": 2,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "A força Normal é N = P = m·g = 10·10 = 100 N. A força de atrito estático máxima (destaque) necessária para iniciar o movimento é Fat_max = μe · N = 0,4 · 100 = 40 N. Como a força aplicada (F = 35 N) é menor que 40 N, o bloco NÃO se move. Em equilíbrio estático, a força de atrito estático ajusta-se exatamente ao valor da força motora: Fat = F = 35 N."
       },
       {
@@ -78,7 +78,7 @@
           "140 N"
         ],
         "correct_answer": 2,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "Quando um elevador desce freando, a velocidade é para baixo, mas o vetor aceleração aponta para CIMA (pois freia). A balança marca a Força Normal N. Aplicando a 2ª Lei de Newton: N - P = m·a => N = P + m·a = m(g + a) = 70·(10 + 2) = 70·12 = 840 N."
       },
       {
@@ -92,7 +92,7 @@
           "O peso da arma torna-se nulo momentaneamente durante a combustão da pólvora."
         ],
         "correct_answer": 1,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "Pela 3ª Lei de Newton (Ação e Reação), a força de expansão dos gases que empurra o projétil para a frente exerce simultaneamente sobre a culatra da arma uma força de idêntica intensidade e direção, porém em sentido oposto (para trás), provocando o recuo sentindo no ombro do atirador."
       }
     ]
@@ -113,7 +113,7 @@
           "40 m/s"
         ],
         "correct_answer": 2,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "Pelo Princípio da Conservação da Energia Mecânica: Emec(topo) = Emec(base) => Ep = Ec => m·g·h = (m·v²)/2. Simplificando a massa m de ambos os lados: v² = 2·g·h => v = √(2 · 10 · 20) = √400 = 20 m/s."
       },
       {
@@ -127,7 +127,7 @@
           "20,0 MW"
         ],
         "correct_answer": 0,
-        "difficulty": 3,
+        "difficulty": "Difícil",
         "explanation": "A potência total da queda d'água é P_total = (m·g·h) / Δt = (vazão mássica) · g · h = 20.000 kg/s · 10 m/s² · 50 m = 10.000.000 W = 10 MW. Com rendimento de 80%: P_util = 0,80 · 10 MW = 8,0 MW."
       },
       {
@@ -141,7 +141,7 @@
           "8"
         ],
         "correct_answer": 3,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "A energia cinética é proporcional ao quadrado da velocidade: Ec = (m·v²)/2. Como a velocidade do carro B é o dobro da velocidade do carro A (vB = 2·vA), temos: EcB / EcA = (vB / vA)² = (80 / 40)² = 2² = 4."
       }
     ]
@@ -162,7 +162,7 @@
           "O aumento da aceleração instantânea na desaceleração."
         ],
         "correct_answer": 1,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "Pelo Teorema do Impulso (I = F_média · Δt = ΔQ), para uma mesma variação da quantidade de movimento ΔQ, ao inflar e amortecer o impacto, o airbag aumenta o intervalo de tempo Δt da colisão. Com isso, a força média F_média diminui na mesma proporção, evitando fraturas graves."
       },
       {
@@ -176,7 +176,7 @@
           "1200 N"
         ],
         "correct_answer": 3,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "A variação da quantidade de movimento da bola é ΔQ = m · (v_f - v_0) = 0,4 · (30 - 0) = 12 kg·m/s. Pelo Teorema do Impulso, I = F_média · Δt = ΔQ => F_média · 0,02 = 12 => F_média = 12 / 0,02 = 600 N."
       },
       {
@@ -190,7 +190,7 @@
           "3,0 m/s"
         ],
         "correct_answer": 2,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "Trata-se de uma colisão perfeitamente inelástica em sistema isolado. A quantidade de movimento total se conserva: Q_inicial = Q_final => m1·v1 + m2·v2 = (m1 + m2)·V_conjunto => 20·3 + 10·0 = (20 + 10)·V => 60 = 30·V => V = 2,0 m/s."
       }
     ]
@@ -211,7 +211,7 @@
           "Aquecer a chave com água fria para contrair o metal."
         ],
         "correct_answer": 1,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "O torque é dado por M = F · d. Mantendo a mesma força muscular máxima F, a única forma mecânica de amplificar o torque exercido sobre a porca é aumentar a distância d (o braço da alavanca), o que é comumente realizado através do encaixe de um cano prolongador."
       },
       {
@@ -225,7 +225,7 @@
           "250 N"
         ],
         "correct_answer": 1,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "O centro de gravidade da barra homogênea de 4 m fica no meio (a 2 m da ponta esquerda). Como o apoio está a 1 m da ponta esquerda, a distância do centro de gravidade ao apoio é d_peso = 2 - 1 = 1 m. O contrapeso está na ponta esquerda, a d_contra = 1 m do apoio. Para o equilíbrio dos momentos: M_anti-horário = M_horário => P_contra · 1 m = P_barra · 1 m => P_contra · 1 = 100 · 1 => P_contra = 100 N."
       },
       {
@@ -239,7 +239,7 @@
           "Hidráulica, pois opera por pressão de fluidos sinoviais."
         ],
         "correct_answer": 1,
-        "difficulty": 3,
+        "difficulty": "Difícil",
         "explanation": "Na ponta dos pés, o apoio são as articulações dos dedos no solo. A força potente é exercida para cima pelos músculos da panturrilha através do tendão de Aquiles no calcanhar. O peso do corpo (resistência) cai no meio do pé através da tíbia. Como a resistência está entre o apoio e a força potente, trata-se de uma alavanca inter-resistente."
       }
     ]
@@ -260,7 +260,7 @@
           "6,0 · 10⁵ Pa"
         ],
         "correct_answer": 2,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "Pelo Teorema de Stevin: P_total = Patm + d·g·h. Substituindo os dados: P_total = 1,0·10⁵ + (1000 · 10 · 30) = 1,0·10⁵ + 300.000 Pa = 1,0·10⁵ + 3,0·10⁵ = 4,0 · 10⁵ Pa (equivalente a 4 atm)."
       },
       {
@@ -274,7 +274,7 @@
           "750 N"
         ],
         "correct_answer": 1,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "A força peso do carro é F2 = m·g = 1500 · 10 = 15.000 N. Pelo Princípio de Pascal: F1 / A1 = F2 / A2 => F1 / 20 = 15.000 / 1000 => F1 / 20 = 15 => F1 = 15 · 20 = 300 N."
       },
       {
@@ -288,7 +288,7 @@
           "98%"
         ],
         "correct_answer": 3,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "Em flutuação estável: Peso = Empuxo => d_gelo · V_total · g = d_água · V_submerso · g => V_submerso / V_total = d_gelo / d_água = 0,92 / 1,03 ≈ 0,893 = 89,3% (cerca de 89% fica escondido sob as águas)."
       }
     ]
@@ -309,7 +309,7 @@
           "A Terra desacelera continuamente ao se aproximar do Sol."
         ],
         "correct_answer": 1,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "No Periélio, a Terra atinge a menor distância em relação ao Sol. Pela Lei das Áreas de Kepler (e pela conservação do momento angular), o planeta atinge sua velocidade orbital máxima nas proximidades do Periélio."
       },
       {
@@ -323,7 +323,7 @@
           "900 N"
         ],
         "correct_answer": 0,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "Pela Lei de Newton, a força gravitacional é inversamente proporcional ao quadrado da distância: F ∝ 1/d². Se a distância é multiplicada por 3, a nova força será dividida por 3² = 9. Portanto: F_nova = 100 / 9 ≈ 11,1 N."
       },
       {
@@ -337,7 +337,7 @@
           "90 minutos"
         ],
         "correct_answer": 1,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "Para que um satélite seja geoestacionário (aparente estar imóvel no céu para uma antena fixa na Terra), seu período orbital de revolução deve coincidir rigorosamente com o período de rotação da Terra em torno do seu próprio eixo, ou seja, 24 horas."
       }
     ]

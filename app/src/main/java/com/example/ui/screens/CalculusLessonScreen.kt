@@ -49,6 +49,7 @@ import com.example.ui.components.MathFormulaCard
 import com.example.ui.components.StepByStepSolutionView
 import com.example.ui.components.CalculusTheoryRenderer
 import com.example.ui.components.GeoGebraMathGraphView
+import com.example.ui.components.DidacticImageView
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -87,6 +88,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.data.local.UserProgressRepository
 import com.example.data.math.CalculusCurriculum
+import com.example.data.math.CalculusDidacticBundle
 import com.example.data.math.CalculusDidacticContent
 import com.example.data.model.Lesson
 import com.example.ui.theme.BorderSubtle
@@ -121,19 +123,64 @@ fun CalculusLessonScreen(
     }
 
     val nextLesson = remember(lesson.id) {
-        if (lesson.id.startsWith("enem_")) {
-            val allEnem = com.example.data.math.EnemMathCurriculum.getAllLessons()
-            val currIdx = allEnem.indexOfFirst { it.id == lesson.id }
-            if (currIdx in 0 until allEnem.size - 1) {
-                allEnem[currIdx + 1].toAppLesson()
-            } else null
-        } else {
-            CalculusCurriculum.findNextLesson(lesson.id)
+        when {
+            lesson.id.startsWith("geo_") -> {
+                val allGeo = com.example.data.geography.EnemGeographyCurriculum.getAllModules().flatMap { it.lessons }
+                val currIdx = allGeo.indexOfFirst { it.id == lesson.id }
+                if (currIdx in 0 until allGeo.size - 1) {
+                    allGeo[currIdx + 1].toAppLesson()
+                } else null
+            }
+            lesson.id.startsWith("hist_") -> {
+                val allHist = com.example.data.history.EnemHistoryCurriculum.getAllModules().flatMap { it.lessons }
+                val currIdx = allHist.indexOfFirst { it.id == lesson.id }
+                if (currIdx in 0 until allHist.size - 1) {
+                    allHist[currIdx + 1].toAppLesson()
+                } else null
+            }
+            lesson.id.startsWith("ling_") -> {
+                val allLing = com.example.data.languages.EnemLanguagesCurriculum.getAllModules().flatMap { it.lessons }
+                val currIdx = allLing.indexOfFirst { it.id == lesson.id }
+                if (currIdx in 0 until allLing.size - 1) {
+                    allLing[currIdx + 1].toAppLesson()
+                } else null
+            }
+            lesson.id.startsWith("bio_") -> {
+                val allBio = com.example.data.biology.EnemBiologyCurriculum.discipline.modules.flatMap { it.lessons }
+                val currIdx = allBio.indexOfFirst { it.id == lesson.id }
+                if (currIdx in 0 until allBio.size - 1) {
+                    allBio[currIdx + 1].toAppLesson()
+                } else null
+            }
+            lesson.id.startsWith("fis_") -> {
+                val allPhysics = com.example.data.physics.EnemPhysicsCurriculum.getAllModules().flatMap { it.lessons }
+                val currIdx = allPhysics.indexOfFirst { it.id == lesson.id }
+                if (currIdx in 0 until allPhysics.size - 1) {
+                    allPhysics[currIdx + 1].toAppLesson()
+                } else null
+            }
+            lesson.id.startsWith("enem_") -> {
+                val allEnem = com.example.data.math.EnemMathCurriculum.getAllLessons()
+                val currIdx = allEnem.indexOfFirst { it.id == lesson.id }
+                if (currIdx in 0 until allEnem.size - 1) {
+                    allEnem[currIdx + 1].toAppLesson()
+                } else null
+            }
+            else -> CalculusCurriculum.findNextLesson(lesson.id)
         }
     }
 
-    val didacticBundle = remember(lesson.id) {
-        CalculusDidacticContent.getContentForLesson(lesson.id)
+    val didacticBundle: CalculusDidacticBundle = remember(lesson.id) {
+        val bundle = when {
+            lesson.id.startsWith("geo_") -> com.example.data.geography.EnemGeographyDidacticProvider.getBundleForLesson(lesson.id)
+            lesson.id.startsWith("hist_") -> com.example.data.history.EnemHistoryDidacticProvider.getDidacticBundle(lesson.id)
+            lesson.id.startsWith("ling_") -> com.example.data.languages.EnemLanguagesDidacticProvider.getDidacticBundle(lesson.id)
+            lesson.id.startsWith("bio_") -> com.example.data.biology.EnemBiologyDidacticProvider.getDidacticBundle(lesson.id)
+            lesson.id.startsWith("fis_") -> com.example.data.physics.EnemPhysicsDidacticProvider.getDidacticBundle(lesson.id)
+            lesson.id.startsWith("enem_") -> com.example.data.math.EnemDidacticProvider.getDidacticBundle(lesson.id)
+            else -> CalculusDidacticContent.getContentForLesson(lesson.id)
+        }
+        bundle ?: CalculusDidacticContent.getContentForLesson(lesson.id)
     }
 
     var currentStage by remember(lesson.id) { mutableStateOf(CalculusStage.THEORY) }
@@ -171,6 +218,11 @@ fun CalculusLessonScreen(
         }
     }
 
+    val isGeographyLesson = lesson.id.startsWith("geo_")
+    val isHistoryLesson = lesson.id.startsWith("hist_")
+    val isLanguagesLesson = lesson.id.startsWith("ling_")
+    val isBiologyLesson = lesson.id.startsWith("bio_")
+    val isPhysicsLesson = lesson.id.startsWith("fis_")
     val isEnemLesson = lesson.id.startsWith("enem_")
     val isBasicMath = lesson.id.startsWith("mb_") || lesson.unitId.contains("basic_math")
     val isIntegralsUnit = lesson.unitId.contains("integral") || 
@@ -187,12 +239,47 @@ fun CalculusLessonScreen(
         lesson.id.startsWith("calc_l17") || lesson.id.startsWith("calc_l18")
 
     val disciplineTitle = when {
+        isGeographyLesson -> "Geografia • Humanas ENEM"
+        isHistoryLesson -> "História • Humanas ENEM"
+        isLanguagesLesson -> "Linguagens e Códigos"
+        isBiologyLesson -> "Biologia ENEM"
+        isPhysicsLesson -> "Física ENEM"
         isEnemLesson -> "Matemática ENEM"
         isBasicMath -> "Matemática Básica"
         else -> "Cálculo I"
     }
 
+    val subjectAccentColor = when {
+        isGeographyLesson -> Color(0xFF2A9D8F)
+        isHistoryLesson -> Color(0xFFE07A5F)
+        isLanguagesLesson -> Color(0xFFFB923C)
+        isBiologyLesson -> SuccessEmerald
+        isPhysicsLesson -> Color(0xFF38BDF8)
+        isEnemLesson -> Color(0xFF00E676)
+        else -> GoldXp
+    }
+
     val moduleSubtitle = when {
+        isGeographyLesson -> {
+            val mod = com.example.data.geography.EnemGeographyCurriculum.getAllModules().firstOrNull { it.id == lesson.unitId }
+            mod?.title ?: "Geografia do Brasil e Geral"
+        }
+        isHistoryLesson -> {
+            val mod = com.example.data.history.EnemHistoryCurriculum.getAllModules().firstOrNull { it.id == lesson.unitId }
+            mod?.title ?: "História do Brasil ENEM"
+        }
+        isLanguagesLesson -> {
+            val mod = com.example.data.languages.EnemLanguagesCurriculum.getAllModules().firstOrNull { it.id == lesson.unitId }
+            mod?.title ?: "Trilha de Linguagens ENEM"
+        }
+        isBiologyLesson -> {
+            val mod = com.example.data.biology.EnemBiologyCurriculum.discipline.modules.firstOrNull { it.id == lesson.unitId }
+            mod?.title ?: "Trilha de Biologia ENEM"
+        }
+        isPhysicsLesson -> {
+            val mod = com.example.data.physics.EnemPhysicsCurriculum.getAllModules().firstOrNull { it.id == lesson.unitId }
+            mod?.title ?: "Trilha de Física ENEM"
+        }
         isEnemLesson -> {
             val mod = com.example.data.math.EnemMathCurriculum.getModule(lesson.unitId)
             mod?.title ?: "Trilha de Matemática ENEM"
@@ -240,7 +327,7 @@ fun CalculusLessonScreen(
                                 Text(
                                     text = "$disciplineTitle • $moduleSubtitle",
                                     style = MaterialTheme.typography.labelSmall.copy(
-                                        color = GoldXp,
+                                        color = subjectAccentColor,
                                         fontWeight = FontWeight.SemiBold
                                     )
                                 )
@@ -257,9 +344,9 @@ fun CalculusLessonScreen(
 
                         // XP Badge
                         Surface(
-                            color = GoldXp.copy(alpha = 0.15f),
+                            color = subjectAccentColor.copy(alpha = 0.15f),
                             shape = RoundedCornerShape(12.dp),
-                            border = androidx.compose.foundation.BorderStroke(1.dp, GoldXp.copy(alpha = 0.4f))
+                            border = androidx.compose.foundation.BorderStroke(1.dp, subjectAccentColor.copy(alpha = 0.4f))
                         ) {
                             Row(
                                 modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
@@ -268,14 +355,14 @@ fun CalculusLessonScreen(
                                 Icon(
                                     imageVector = Icons.Default.Star,
                                     contentDescription = null,
-                                    tint = GoldXp,
+                                    tint = subjectAccentColor,
                                     modifier = Modifier.size(13.dp)
                                 )
                                 Spacer(modifier = Modifier.width(4.dp))
                                 Text(
                                     text = if (isLessonCompletedLocal) "Concluída" else "+${lesson.xpReward} XP",
                                     style = MaterialTheme.typography.labelSmall.copy(
-                                        color = GoldXp,
+                                        color = subjectAccentColor,
                                         fontWeight = FontWeight.Bold
                                     )
                                 )
@@ -313,7 +400,7 @@ fun CalculusLessonScreen(
                                     )
                                     Spacer(modifier = Modifier.width(4.dp))
                                     Text(
-                                        text = stage.label,
+                                        text = if (stage == CalculusStage.FORMULAS && (isLanguagesLesson || isBiologyLesson || isHistoryLesson || isGeographyLesson)) "2. Conceitos" else stage.label,
                                         style = MaterialTheme.typography.labelSmall.copy(
                                             color = if (isSelected) Color.White else TextSecondary,
                                             fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
@@ -533,54 +620,23 @@ fun CalculusLessonScreen(
                             config = geoConfig,
                             modifier = Modifier.fillMaxWidth()
                         )
-                    } else {
-                        val imgRes = didacticBundle.imageResId ?: lesson.imageResId
-                        if (imgRes != null) {
-                            Card(
-                                colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
-                                shape = RoundedCornerShape(10.dp),
-                                border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle),
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Column(modifier = Modifier.padding(12.dp)) {
-                                    Row(
-                                        verticalAlignment = Alignment.CenterVertically,
-                                        modifier = Modifier.padding(bottom = 8.dp)
-                                    ) {
-                                        Icon(
-                                            imageVector = Icons.Default.Calculate,
-                                            contentDescription = null,
-                                            tint = GoldXp,
-                                            modifier = Modifier.size(16.dp)
-                                        )
-                                        Spacer(modifier = Modifier.width(6.dp))
-                                        Text(
-                                            text = "Gráfico Diagnóstico em Alta Resolução",
-                                            style = MaterialTheme.typography.labelMedium.copy(
-                                                color = GoldXp,
-                                                fontWeight = FontWeight.Bold
-                                            )
-                                        )
-                                    }
+                    }
 
-                                    Box(
-                                        modifier = Modifier
-                                            .fillMaxWidth()
-                                            .height(230.dp)
-                                            .clip(RoundedCornerShape(8.dp))
-                                            .background(Color(0xFF0D1322)),
-                                        contentAlignment = Alignment.Center
-                                    ) {
-                                        Image(
-                                            painter = painterResource(id = imgRes),
-                                            contentDescription = "Gráfico Explicativo",
-                                            modifier = Modifier.fillMaxSize(),
-                                            contentScale = ContentScale.Fit
-                                        )
-                                    }
-                                }
-                            }
-                        }
+                    // Imagem Didática ou Gráfico Diagnóstico em Alta Resolução
+                    val assetImg = didacticBundle.assetImagePath
+                    val imgRes = didacticBundle.imageResId ?: lesson.imageResId
+                    if (assetImg != null) {
+                        DidacticImageView(
+                            imagePath = assetImg,
+                            caption = "Gráfico Diagnóstico: ${lesson.title}",
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    } else if (imgRes != null) {
+                        DidacticImageView(
+                            drawableResId = imgRes,
+                            caption = "Gráfico Diagnóstico em Alta Resolução",
+                            modifier = Modifier.fillMaxWidth()
+                        )
                     }
 
                     // Gold Tip Card

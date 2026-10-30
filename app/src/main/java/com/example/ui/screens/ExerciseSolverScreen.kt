@@ -100,8 +100,10 @@ import com.example.data.exercise.UniversalExerciseBank
 import com.example.data.exercise.VisualTable
 import com.example.data.local.UserProgressRepository
 import com.example.ui.components.GeoGebraMathGraphView
+import com.example.ui.components.DidacticImageView
 import com.example.ui.components.KnowverseIcons
 import com.example.ui.components.MathFormattedText
+import com.example.ui.components.MathNotationHelper
 import com.example.ui.components.TopUserStatsBar
 import com.example.ui.theme.BorderSubtle
 import com.example.ui.theme.CodeTextStyle
@@ -124,9 +126,9 @@ import kotlinx.coroutines.launch
  */
 fun getDifficultyRank(diff: String): Int {
     return when (diff.lowercase().trim()) {
-        "fácil", "facil", "básico", "basico", "iniciante" -> 1
-        "médio", "medio", "mediano", "intermediário", "intermediario" -> 2
-        "difícil", "dificil", "avançado", "avancado", "expert" -> 3
+        "fácil", "facil", "básico", "basico", "iniciante", "1" -> 1
+        "médio", "medio", "média", "media", "mediano", "intermediário", "intermediario", "2" -> 2
+        "difícil", "dificil", "desafiador", "avançado", "avancado", "expert", "3" -> 3
         else -> 2
     }
 }
@@ -294,17 +296,55 @@ fun ExerciseSolverScreen(
     val subtopicOptions = remember(selectedDiscipline) {
         when (selectedDiscipline) {
             ExerciseDiscipline.ENEM -> listOf(
-                "all" to "Todos os Tópicos ENEM",
-                "Matemática Básica" to "Matemática Básica",
-                "Matemática Financeira" to "Mat. Financeira",
-                "Estatística" to "Estatística",
-                "Geometria Plana" to "Geometria Plana",
-                "Geometria Espacial" to "Geometria Espacial",
-                "Funções" to "Funções",
-                "Álgebra e Equações" to "Álgebra e Equações",
-                "Análise Combinatória" to "Combinatória",
-                "Probabilidade" to "Probabilidade",
-                "Trigonometria" to "Trigonometria"
+                "all" to "Todos os Módulos ENEM",
+                "Geografia" to "Ciências Humanas • Geografia",
+                "História" to "Ciências Humanas • História",
+                "Linguagens" to "Linguagens e Códigos",
+                "Física" to "Ciências da Natureza • Física",
+                "Biologia" to "Ciências da Natureza • Biologia",
+                "Matemática" to "Matemática e Tecnologias"
+            )
+            ExerciseDiscipline.GEOGRAPHY -> listOf(
+                "all" to "Todos os Módulos",
+                "Física" to "Módulo 1: Geografia Física e Meio Ambiente",
+                "Agrária" to "Módulo 2: Geografia Agrária",
+                "Urbana" to "Módulo 3: Geografia Urbana e Demografia",
+                "Econômica" to "Módulo 4: Geografia Econômica e Globalização",
+                "Geopolítica" to "Módulo 5: Geopolítica e Ordem Mundial"
+            )
+            ExerciseDiscipline.HISTORY -> listOf(
+                "all" to "Todos os Módulos",
+                "Colônia" to "Módulo 1: Brasil Colônia",
+                "Império" to "Módulo 2: Brasil Império",
+                "República" to "Módulo 3: Brasil República",
+                "Antiguidade" to "Módulo 4: Antiguidade e Medieval",
+                "Moderna" to "Módulo 5: Idade Moderna",
+                "Contemporânea" to "Módulo 6: Idade Contemporânea"
+            )
+            ExerciseDiscipline.LANGUAGES -> listOf(
+                "all" to "Todos os Módulos",
+                "Interpretação" to "Módulo 1: Interpretação e Semântica",
+                "Linguística" to "Módulo 2: Linguística e Comunicação",
+                "Literatura" to "Módulo 3: Literatura Brasileira",
+                "Gramática" to "Módulo 4: Gramática no Texto",
+                "Artes" to "Módulo 5: Artes e Expressão Corporal"
+            )
+            ExerciseDiscipline.PHYSICS -> listOf(
+                "all" to "Todos os Módulos",
+                "Mecânica" to "Módulo 1: Mecânica",
+                "Eletricidade" to "Módulo 2: Eletricidade e Magnetismo",
+                "Termologia" to "Módulo 3: Termologia",
+                "Ondulatória" to "Módulo 4: Ondulatória",
+                "Óptica" to "Módulo 5: Óptica Geométrica",
+                "Moderna" to "Módulo 6: Física Moderna"
+            )
+            ExerciseDiscipline.BIOLOGY -> listOf(
+                "all" to "Todos os Módulos",
+                "Ecologia" to "Módulo 1: Ecologia",
+                "Fisiologia" to "Módulo 2: Fisiologia Humana",
+                "Genética" to "Módulo 3: Genética e Biotecnologia",
+                "Citologia" to "Módulo 4: Citologia e Bioquímica",
+                "Evolução" to "Módulo 5: Evolução"
             )
             ExerciseDiscipline.PROGRAMMING -> listOf(
                 "all" to "Todos os Tópicos",
@@ -344,40 +384,22 @@ fun ExerciseSolverScreen(
                 "Otimização" to "Otimização",
                 "Integrais & TFC" to "Integrais e TFC"
             )
-            ExerciseDiscipline.PHYSICS -> listOf(
-                "all" to "Todos os Módulos",
-                "Mecânica" to "Módulo 1: Mecânica",
-                "Eletricidade" to "Módulo 2: Eletricidade",
-                "Termologia" to "Módulo 3: Termologia",
-                "Ondulatória" to "Módulo 4: Ondulatória",
-                "Óptica" to "Módulo 5: Óptica",
-                "Física Moderna" to "Módulo 6: Física Moderna"
-            )
-            ExerciseDiscipline.BIOLOGY -> listOf(
-                "all" to "Todos os Módulos",
-                "Ecologia" to "Módulo 1: Ecologia",
-                "Fisiologia" to "Módulo 2: Fisiologia",
-                "Genética" to "Módulo 3: Genética",
-                "Citologia" to "Módulo 4: Citologia",
-                "Evolução" to "Módulo 5: Evolução"
-            )
             ExerciseDiscipline.ALL -> listOf(
                 "all" to "Todos os Tópicos",
+                "História" to "ENEM: História",
+                "Linguagens" to "ENEM: Linguagens",
+                "Física" to "ENEM: Física",
+                "Biologia" to "ENEM: Biologia",
                 "Matemática Básica" to "ENEM: Mat. Básica",
                 "Estatística" to "ENEM: Estatística",
                 "Geometria Plana" to "ENEM: Geometria",
-                "Geometria Analítica & Gráficos" to "GeoGebra & Gráficos",
                 "if e else (Condicionais)" to "Python: if/else",
-                "for & while (Laços)" to "Python: Loops",
-                "Classes & POO" to "Python: POO",
-                "Limites & Continuidade" to "Cálculo: Limites",
-                "Derivadas & Retas Tangentes" to "Cálculo: Derivadas",
-                "Integrais & TFC" to "Cálculo: Integrais"
+                "Limites & Continuidade" to "Cálculo: Limites"
             )
         }
     }
 
-    val allExercises = remember(enemExercises) { UniversalExerciseBank.getAllExercises() }
+    val allExercises = remember(enemExercises) { UniversalExerciseBank.getAllExercises().map { it.randomized() } }
 
     val filteredList = remember(
         searchQuery,
@@ -386,15 +408,50 @@ fun ExerciseSolverScreen(
         selectedDifficulty,
         selectedYear,
         onlyVisuals,
-        enemExercises
+        allExercises
     ) {
-        val baseList = UniversalExerciseBank.filter(
-            discipline = selectedDiscipline,
-            subtopic = selectedSubtopic,
-            difficulty = selectedDifficulty,
-            query = searchQuery,
-            onlyWithVisuals = onlyVisuals
-        )
+        val q = searchQuery.trim().lowercase()
+        val baseList = allExercises.filter { item ->
+            val matchesDiscipline = when (selectedDiscipline) {
+                ExerciseDiscipline.ALL -> true
+                ExerciseDiscipline.ENEM -> item.discipline == ExerciseDiscipline.ENEM ||
+                        item.source.contains("ENEM", ignoreCase = true) ||
+                        item.category.contains("ENEM", ignoreCase = true)
+                else -> item.discipline == selectedDiscipline
+            }
+            val matchesSubtopic = when (selectedSubtopic) {
+                "all" -> true
+                else -> item.subtopic.equals(selectedSubtopic, ignoreCase = true) ||
+                        item.subtopic.contains(selectedSubtopic, ignoreCase = true) ||
+                        item.category.contains(selectedSubtopic, ignoreCase = true)
+            }
+            val matchesDifficulty = when (selectedDifficulty) {
+                "all" -> true
+                else -> getDifficultyRank(item.difficulty) == getDifficultyRank(selectedDifficulty)
+            }
+            val hasVisuals = item.visualDrawableRes != null ||
+                    item.assetImagePath != null ||
+                    item.geoGebraConfig != null ||
+                    item.visualTable != null ||
+                    item.codeSnippet != null ||
+                    item.terminalOutput != null
+            val matchesVisuals = !onlyVisuals || hasVisuals
+
+            val matchesQuery = if (q.isBlank()) {
+                true
+            } else {
+                item.id.lowercase().contains(q) ||
+                item.problemStatement.lowercase().contains(q) ||
+                item.category.lowercase().contains(q) ||
+                item.subtopic.lowercase().contains(q) ||
+                item.keyMethod.lowercase().contains(q) ||
+                item.source.lowercase().contains(q) ||
+                (item.codeSnippet?.lowercase()?.contains(q) == true) ||
+                item.options.any { it.lowercase().contains(q) }
+            }
+            matchesDiscipline && matchesSubtopic && matchesDifficulty && matchesVisuals && matchesQuery
+        }
+
         if (selectedYear != null && selectedYear != 0) {
             baseList.filter {
                 it.category.contains(selectedYear.toString()) ||
@@ -573,6 +630,9 @@ fun ExerciseSolverScreen(
                         options = listOf(
                             ExerciseDiscipline.ALL.name to "Todas as Matérias",
                             ExerciseDiscipline.ENEM.name to "Banco ENEM Oficial",
+                            ExerciseDiscipline.GEOGRAPHY.name to "Geografia • Humanas",
+                            ExerciseDiscipline.HISTORY.name to "História • Humanas",
+                            ExerciseDiscipline.LANGUAGES.name to "Linguagens e Códigos",
                             ExerciseDiscipline.PHYSICS.name to "Física ENEM",
                             ExerciseDiscipline.BIOLOGY.name to "Biologia ENEM",
                             ExerciseDiscipline.BASIC_MATH.name to "Matemática Básica",
@@ -586,10 +646,10 @@ fun ExerciseSolverScreen(
                         modifier = Modifier.weight(1f)
                     )
 
-                    // Dropdown Tópico
-                    val currentTopicLabel = subtopicOptions.find { it.first == selectedSubtopic }?.second ?: "Todos os Tópicos"
+                    // Dropdown Tópico / Módulo
+                    val currentTopicLabel = subtopicOptions.find { it.first == selectedSubtopic }?.second ?: "Todos os Módulos"
                     MinimalDropdown(
-                        label = "Tópico",
+                        label = "Tópico / Módulo",
                         selectedValue = currentTopicLabel,
                         options = subtopicOptions,
                         onSelect = { key -> selectedSubtopic = key },
@@ -664,7 +724,7 @@ fun ExerciseSolverScreen(
                             // Dificuldade
                             val diffLabel = when (selectedDifficulty) {
                                 "Fácil" -> "Fácil"
-                                "Mediano" -> "Médio"
+                                "Média", "Médio", "Mediano" -> "Média"
                                 "Difícil" -> "Difícil"
                                 else -> "Todas as Dificuldades"
                             }
@@ -674,7 +734,7 @@ fun ExerciseSolverScreen(
                                 options = listOf(
                                     "all" to "Todas as Dificuldades",
                                     "Fácil" to "Fácil",
-                                    "Mediano" to "Médio",
+                                    "Média" to "Média",
                                     "Difícil" to "Difícil"
                                 ),
                                 onSelect = { selectedDifficulty = it },
@@ -923,11 +983,16 @@ private fun ExerciseListItemCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val diffColor = when (item.difficulty) {
-        "Fácil" -> SuccessEmerald
-        "Mediano" -> GoldXp
-        "Difícil" -> ErrorRose
-        else -> TextSecondary
+    val diffColor = when {
+        item.difficulty.equals("Fácil", ignoreCase = true) -> SuccessEmerald
+        item.difficulty.equals("Média", ignoreCase = true) || item.difficulty.equals("Mediano", ignoreCase = true) || item.difficulty.equals("Médio", ignoreCase = true) -> GoldXp
+        item.difficulty.equals("Difícil", ignoreCase = true) || item.difficulty.equals("Desafiador", ignoreCase = true) -> ErrorRose
+        else -> when (getDifficultyRank(item.difficulty)) {
+            1 -> SuccessEmerald
+            2 -> GoldXp
+            3 -> ErrorRose
+            else -> TextSecondary
+        }
     }
 
     val disciplineBadgeColor = when (item.discipline) {
@@ -935,6 +1000,9 @@ private fun ExerciseListItemCard(
         ExerciseDiscipline.BASIC_MATH -> SuccessEmerald
         ExerciseDiscipline.CALCULUS -> GoldXp
         ExerciseDiscipline.ENEM -> Color(0xFFF59E0B)
+        ExerciseDiscipline.GEOGRAPHY -> Color(0xFF2A9D8F)
+        ExerciseDiscipline.HISTORY -> Color(0xFFE07A5F)
+        ExerciseDiscipline.LANGUAGES -> Color(0xFFFB923C)
         ExerciseDiscipline.PHYSICS -> Color(0xFF38BDF8)
         ExerciseDiscipline.BIOLOGY -> Color(0xFF10B981)
         ExerciseDiscipline.ALL -> PrimaryViolet
@@ -1055,9 +1123,19 @@ private fun ExerciseListItemCard(
 
             Spacer(modifier = Modifier.height(4.dp))
 
-            // Trecho do Enunciado
+            // Trecho do Enunciado formatado para notação matemática legível
+            val formattedSnippet = remember(item.problemStatement) {
+                MathNotationHelper.formatInlineMath(
+                    item.problemStatement
+                        .replace("\\[", "")
+                        .replace("\\]", "")
+                        .replace("$$", "")
+                        .replace(Regex("""^["'`]+|["'`]+$"""), "")
+                        .trim()
+                )
+            }
             Text(
-                text = item.problemStatement,
+                text = formattedSnippet,
                 style = MaterialTheme.typography.bodySmall.copy(
                     color = TextSecondary,
                     fontSize = 11.5.sp,
@@ -1125,11 +1203,16 @@ fun FocusModeExerciseScreen(
     var sessionSelectedIndex by remember(exercise.id) { mutableStateOf<Int?>(null) }
     var showFullSolutionOverride by remember(exercise.id) { mutableStateOf(false) }
 
-    val diffColor = when (exercise.difficulty) {
-        "Fácil" -> SuccessEmerald
-        "Mediano" -> GoldXp
-        "Difícil" -> ErrorRose
-        else -> TextSecondary
+    val diffColor = when {
+        exercise.difficulty.equals("Fácil", ignoreCase = true) -> SuccessEmerald
+        exercise.difficulty.equals("Média", ignoreCase = true) || exercise.difficulty.equals("Mediano", ignoreCase = true) || exercise.difficulty.equals("Médio", ignoreCase = true) -> GoldXp
+        exercise.difficulty.equals("Difícil", ignoreCase = true) || exercise.difficulty.equals("Desafiador", ignoreCase = true) -> ErrorRose
+        else -> when (getDifficultyRank(exercise.difficulty)) {
+            1 -> SuccessEmerald
+            2 -> GoldXp
+            3 -> ErrorRose
+            else -> TextSecondary
+        }
     }
 
     val hasAnswered = sessionSelectedIndex != null
@@ -1388,7 +1471,13 @@ fun FocusModeExerciseScreen(
             }
 
             // Imagem Visual se houver
-            if (exercise.visualDrawableRes != null) {
+            if (exercise.assetImagePath != null) {
+                DidacticImageView(
+                    imagePath = exercise.assetImagePath,
+                    caption = "Figura da questão",
+                    modifier = Modifier.fillMaxWidth()
+                )
+            } else if (exercise.visualDrawableRes != null) {
                 Surface(
                     color = SurfaceElevated,
                     shape = RoundedCornerShape(8.dp),

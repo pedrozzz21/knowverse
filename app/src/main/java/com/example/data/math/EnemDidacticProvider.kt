@@ -15,18 +15,29 @@ import com.example.data.model.MathExercise
 object EnemDidacticProvider {
 
     fun getDidacticBundle(lessonId: String): CalculusDidacticBundle? {
-        val content = didacticRegistry[lessonId] ?: return null
-        return CalculusDidacticBundle(
-            theoryMarkdown = content.theoryMarkdown,
-            formulas = content.formulas,
-            solvedExamples = content.solvedExamples,
-            imageResId = null,
-            goldTip = content.goldTip
-        )
+        val content = didacticRegistry[lessonId]
+        if (content != null) {
+            return CalculusDidacticBundle(
+                theoryMarkdown = content.theoryMarkdown,
+                formulas = content.formulas,
+                solvedExamples = content.solvedExamples,
+                imageResId = null,
+                goldTip = content.goldTip
+            )
+        }
+        val lesson = EnemMathCurriculum.findLesson(lessonId) ?: return null
+        return MathModuleGenerator.buildBundle(lesson)
     }
 
     fun getExercisesForLesson(lessonId: String): List<MathExercise> {
-        return exerciseRegistry[lessonId] ?: emptyList()
+        val staticList = exerciseRegistry[lessonId]
+        val exercises = if (!staticList.isNullOrEmpty()) {
+            staticList
+        } else {
+            val lesson = EnemMathCurriculum.findLesson(lessonId) ?: return emptyList()
+            MathModuleGenerator.buildExercises(lesson)
+        }
+        return exercises.map { it.randomized() }
     }
 
     data class LessonDidacticEntry(

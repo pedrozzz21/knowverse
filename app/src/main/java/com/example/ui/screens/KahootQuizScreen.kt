@@ -100,7 +100,7 @@ fun KahootQuizScreen(
         onNavigateBack()
     }
 
-    val shuffledQuestions = remember(module.id) { module.questions.shuffled() }
+    val shuffledQuestions = remember(module.id) { module.questions.map { it.randomized() }.shuffled() }
 
     var currentQuestionIndex by remember { mutableIntStateOf(0) }
     var selectedOptionIndex by remember { mutableStateOf<Int?>(null) }

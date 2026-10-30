@@ -86,53 +86,59 @@ class UserProgressRepository(context: Context) {
         startGlobalLeaderboardListener()
     }
 
-    private fun getTodayDateString(): String {
-        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-        return sdf.format(Date())
+    fun getTodayDateString(): String {
+        return com.example.data.time.NetworkTimeProvider.getTodayGmt3()
     }
 
-    private fun getYesterdayDateString(): String {
-        val cal = Calendar.getInstance()
-        cal.add(Calendar.DAY_OF_YEAR, -1)
-        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-        return sdf.format(cal.time)
+    fun getYesterdayDateString(): String {
+        return com.example.data.time.NetworkTimeProvider.getYesterdayGmt3()
     }
 
     private fun getDateDaysAgoString(daysAgo: Int): String {
-        val cal = Calendar.getInstance()
+        val cal = Calendar.getInstance(java.util.TimeZone.getTimeZone("America/Sao_Paulo"))
         cal.add(Calendar.DAY_OF_YEAR, -daysAgo)
         val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        sdf.timeZone = java.util.TimeZone.getTimeZone("America/Sao_Paulo")
         return sdf.format(cal.time)
     }
 
-    private fun checkAndUpdateDailyStreak() {
+    /**
+     * Verifica a expiração do streak de acordo com a virada das 00h00 GMT-3 (TimeAPI.world):
+     * Se o usuário não realizou nenhuma aula em 'Trilhas' ou exercício antes da meia-noite (00h00)
+     * do dia anterior, o contador zera imediatamente para 0d.
+     */
+    fun checkStreakExpiration(): Boolean {
         val today = getTodayDateString()
         val yesterday = getYesterdayDateString()
         val current = _progressState.value
-        val lastDate = current.lastActiveDate
+        val lastQualifying = current.lastQualifyingStudyDate
 
-        if (lastDate.isEmpty() || lastDate == today) {
-            return
+        val hasLostStreak = current.currentStreak > 0 &&
+                (lastQualifying.isBlank() || (lastQualifying != today && lastQualifying != yesterday))
+
+        if (hasLostStreak) {
+            Log.i("UserProgressRepo", "Streak zerado para 0d: virada das 00h00 GMT-3 sem atividade qualificadora (última: '$lastQualifying', hoje: '$today').")
+            val updated = current.copy(
+                currentStreak = 0,
+                lastActiveDate = today,
+                dailyXp = if (current.lastActiveDate != today) 0 else current.dailyXp
+            )
+            saveProgress(updated, pushToRemote = false)
+            updateAchievements(updated)
+            return true
+        } else if (current.lastActiveDate != today && current.dailyXp > 0) {
+            // Virou o dia (00h00): reseta o XP diário
+            val updated = current.copy(
+                lastActiveDate = today,
+                dailyXp = 0
+            )
+            saveProgress(updated, pushToRemote = false)
         }
+        return false
+    }
 
-        val preservedDates = current.activeStudyDates.toMutableSet()
-        if (lastDate.isNotBlank() && lastDate != today) {
-            preservedDates.add(lastDate)
-        }
-
-        val preservedStreak = if (lastDate == yesterday || preservedDates.contains(yesterday)) {
-            current.currentStreak
-        } else {
-            maxOf(1, current.currentStreak)
-        }
-
-        val updated = current.copy(
-            lastActiveDate = today,
-            activeStudyDates = preservedDates,
-            currentStreak = preservedStreak,
-            dailyXp = 0
-        )
-        saveProgress(updated, pushToRemote = false)
+    private fun checkAndUpdateDailyStreak() {
+        checkStreakExpiration()
     }
 
     fun syncUserAccount(userId: String, email: String?, displayName: String?, photoUrl: String? = null) {
@@ -719,10 +725,6 @@ class UserProgressRepository(context: Context) {
     }
 
     fun completeLesson(lessonId: String, xpEarned: Int): Int {
-        // Automatically perform daily check-in if not done yet today (without double-adding XP on top of the lesson reward)
-        if (!_progressState.value.hasCheckedInToday()) {
-            recordCheckIn(awardBonusXp = false)
-        }
         val current = _progressState.value
         val today = getTodayDateString()
         val isFirstTime = !current.completedLessonIds.contains(lessonId)
@@ -743,53 +745,67 @@ class UserProgressRepository(context: Context) {
             totalSolvedExercises = if (isFirstTime) current.totalSolvedExercises + 1 else current.totalSolvedExercises
         )
         saveProgress(updated)
-        updateAchievements(updated)
+
+        // REGRA ESTRITA: Fazer uma aula em 'Trilhas' avança a sequência (streak) em 1 dia
+        recordQualifyingStudyActivity(source = "Trilha: $lessonId", xpEarned = actualXp)
+
+        updateAchievements(_progressState.value)
         return actualXp
     }
 
-    fun recordCheckIn(awardBonusXp: Boolean = true): CheckInResult {
+    /**
+     * REGRA ESTRITA DE STREAK:
+     * SE E SOMENTE SE o usuário fizer uma aula em 'Trilhas' ou um exercício, a sequência sobe 1 dia.
+     * Caso o usuário não faça nada disso até as 00h00 GMT-3 do dia, o streak zera (0d).
+     */
+    fun recordQualifyingStudyActivity(source: String, xpEarned: Int = 0): Int {
+        checkStreakExpiration()
         val current = _progressState.value
         val today = getTodayDateString()
         val yesterday = getYesterdayDateString()
-        val isNewToday = current.verifiedCheckInDate != today
-        val hadPreviousActivity = current.activeStudyDates.any { it != today } ||
-                (current.lastActiveDate.isNotBlank() && current.lastActiveDate != today) ||
-                (current.lastCheckInDate.isNotBlank() && current.lastCheckInDate != today) ||
-                current.completedLessonIds.isNotEmpty() ||
-                current.totalXp > 0 ||
-                current.totalSolvedExercises > 0 ||
-                current.completedKahootScores.isNotEmpty()
+        val lastQualifying = current.lastQualifyingStudyDate
 
-        val newDates = current.activeStudyDates.toMutableSet()
-        if (hadPreviousActivity && newDates.none { it != today }) {
-            newDates.add(yesterday)
-        }
-        newDates.add(today)
-
-        val newStreak = if (isNewToday) {
-            if (hadPreviousActivity) {
-                maxOf(current.currentStreak + 1, newDates.size)
-            } else {
-                maxOf(1, current.currentStreak, newDates.size)
+        val newStreak = when {
+            lastQualifying == today -> {
+                // Já qualificou hoje: mantém a sequência atual (não incrementa duas vezes no mesmo dia)
+                current.currentStreak
             }
-        } else {
-            maxOf(1, current.currentStreak, newDates.size)
-        }
-
-        if (newDates.size < newStreak) {
-            for (d in 0 until newStreak) {
-                newDates.add(getDateDaysAgoString(d))
+            lastQualifying == yesterday && current.currentStreak > 0 -> {
+                // Consecutivo perfeito: avança exatamente 1 dia de sequência!
+                current.currentStreak + 1
+            }
+            else -> {
+                // Começando uma nova sequência ou após expiração/0d
+                1
             }
         }
-
-        val xpBonus = if (isNewToday && awardBonusXp) 20 else 0
 
         val updated = current.copy(
-            activeStudyDates = newDates,
+            currentStreak = newStreak,
+            lastQualifyingStudyDate = today,
+            lastActiveDate = today,
+            lastCheckInDate = today,
+            verifiedCheckInDate = today,
+            activeStudyDates = current.activeStudyDates + today
+        )
+        saveProgress(updated)
+        updateAchievements(updated)
+
+        Log.i("UserProgressRepo", "Atividade qualificadora ($source): streak atualizado para $newStreak d (hoje: $today GMT-3)")
+        return newStreak
+    }
+
+    fun recordCheckIn(awardBonusXp: Boolean = true): CheckInResult {
+        checkStreakExpiration()
+        val current = _progressState.value
+        val today = getTodayDateString()
+        val isNewToday = current.verifiedCheckInDate != today
+        val xpBonus = if (isNewToday && awardBonusXp) 10 else 0
+
+        val updated = current.copy(
             lastCheckInDate = today,
             verifiedCheckInDate = today,
             lastActiveDate = today,
-            currentStreak = newStreak,
             totalXp = current.totalXp + xpBonus,
             dailyXp = current.dailyXp + xpBonus
         )
@@ -808,9 +824,9 @@ class UserProgressRepository(context: Context) {
     }
 
     fun recordKahootScore(moduleId: String, score: Int, xpEarned: Int, isPerfectScore: Boolean = false) {
-        if (!_progressState.value.hasCheckedInToday()) {
-            recordCheckIn()
-        }
+        // REGRA ESTRITA: Finalizar teste/quiz de módulo avança o streak!
+        recordQualifyingStudyActivity(source = "Teste: $moduleId", xpEarned = xpEarned)
+
         val current = _progressState.value
         val updatedScores = current.completedKahootScores.toMutableMap()
         val previous = updatedScores[moduleId] ?: 0
@@ -850,7 +866,7 @@ class UserProgressRepository(context: Context) {
             }
         } else 0
 
-        val updatedBadges = if (isNewBadge && badgeToAward != null) current.unlockedBadges + badgeToAward else current.unlockedBadges
+        val updatedBadges = if (isNewBadge) current.unlockedBadges + badgeToAward!! else current.unlockedBadges
         val totalXpToAdd = xpEarned + badgeXpBonus
 
         val updated = current.copy(
@@ -862,8 +878,8 @@ class UserProgressRepository(context: Context) {
         )
         saveProgress(updated)
 
-        if (isNewBadge && badgeToAward != null) {
-            val badgeObj = TrackBadgesCatalog.findBadge(badgeToAward)
+        if (isNewBadge) {
+            val badgeObj = TrackBadgesCatalog.findBadge(badgeToAward!!)
             AchievementAlertManager.postAlert(
                 InAppAchievementAlert(
                     title = badgeObj?.title ?: "Emblema Conquistado!",
@@ -898,7 +914,7 @@ class UserProgressRepository(context: Context) {
         }
     }
 
-    fun addBonusXp(xp: Int) {
+    fun addBonusXp(xp: Int, source: String = "Exercício") {
         val current = _progressState.value
         val updated = current.copy(
             totalXp = current.totalXp + xp,
@@ -906,7 +922,15 @@ class UserProgressRepository(context: Context) {
             totalSolvedExercises = current.totalSolvedExercises + 1
         )
         saveProgress(updated)
-        updateAchievements(updated)
+
+        // REGRA ESTRITA: Resolver exercício avança a sequência (streak) em 1 dia
+        recordQualifyingStudyActivity(source = source, xpEarned = xp)
+
+        updateAchievements(_progressState.value)
+    }
+
+    fun recordSolvedExercise(exerciseId: String, xpEarned: Int) {
+        addBonusXp(xpEarned, "Exercício: $exerciseId")
     }
 
     fun markLessonForReview(lessonId: String) {
@@ -1007,6 +1031,7 @@ class UserProgressRepository(context: Context) {
             put("activeStudyDates", activeDatesArr)
             put("lastCheckInDate", progress.lastCheckInDate)
             put("verifiedCheckInDate", progress.verifiedCheckInDate)
+            put("lastQualifyingStudyDate", progress.lastQualifyingStudyDate)
 
             val perfectArr = JSONArray()
             progress.perfectTestModules.forEach { perfectArr.put(it) }
@@ -1037,10 +1062,17 @@ class UserProgressRepository(context: Context) {
                 }
             }
 
-            val savedStreak = maxOf(1, json.optInt("currentStreak", 1))
+            val rawStreak = json.optInt("currentStreak", 0)
             val savedLastActive = json.optString("lastActiveDate", "")
             val savedLastCheckIn = json.optString("lastCheckInDate", "")
             val savedVerifiedCheckIn = json.optString("verifiedCheckInDate", "")
+            val savedLastQualifying = json.optString("lastQualifyingStudyDate", "")
+
+            val todayGmt3 = com.example.data.time.NetworkTimeProvider.getTodayGmt3()
+            val yesterdayGmt3 = com.example.data.time.NetworkTimeProvider.getYesterdayGmt3()
+            val isStreakExpired = rawStreak > 0 &&
+                    (savedLastQualifying.isBlank() || (savedLastQualifying != todayGmt3 && savedLastQualifying != yesterdayGmt3))
+            val savedStreak = if (isStreakExpired) 0 else rawStreak
 
             val activeDates = mutableSetOf<String>()
             val activeDatesArr = json.optJSONArray("activeStudyDates")
@@ -1131,11 +1163,12 @@ class UserProgressRepository(context: Context) {
 
             UserProgress(
                 totalXp = json.optInt("totalXp", 0),
-                currentStreak = maxOf(savedStreak, activeDates.size),
+                currentStreak = savedStreak,
                 lastActiveDate = savedLastActive.ifBlank { getTodayDateString() },
                 activeStudyDates = activeDates,
                 lastCheckInDate = savedLastCheckIn,
                 verifiedCheckInDate = savedVerifiedCheckIn,
+                lastQualifyingStudyDate = savedLastQualifying,
                 dailyXp = json.optInt("dailyXp", 0),
                 dailyGoalXp = json.optInt("dailyGoalXp", 50),
                 totalExecutions = json.optInt("totalExecutions", 0),

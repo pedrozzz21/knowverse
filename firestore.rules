@@ -26,5 +26,17 @@ service cloud.firestore {
       allow read: if true;
       allow write: if true;
     }
+
+    match /broadcast_notifications/{notificationId} {
+      // Notificações e avisos transmitidos pelo desenvolvedor para todos os alunos
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /app_updates/{updateId} {
+      // Metadados de versão e download do .apk mais recente
+      allow read: if true;
+      allow write: if true;
+    }
   }
 }

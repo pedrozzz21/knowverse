@@ -31,6 +31,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        KnowverseApp.ensureFirebase(applicationContext)
 
         val db = KnowverseDatabase.getInstance(applicationContext)
         trailCacheRepository = TrailCacheRepository(db.trailCacheDao(), applicationContext)
@@ -57,6 +58,14 @@ class MainActivity : ComponentActivity() {
                     )
                 }
             }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        com.example.data.time.NetworkTimeProvider.syncTimeAsync()
+        if (::progressRepository.isInitialized) {
+            progressRepository.checkStreakExpiration()
         }
     }
 

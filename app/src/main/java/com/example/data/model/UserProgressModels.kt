@@ -4,11 +4,12 @@ import com.example.R
 
 data class UserProgress(
     val totalXp: Int = 0,
-    val currentStreak: Int = 1,
+    val currentStreak: Int = 0,
     val lastActiveDate: String = "",
     val activeStudyDates: Set<String> = emptySet(),
     val lastCheckInDate: String = "",
     val verifiedCheckInDate: String = "",
+    val lastQualifyingStudyDate: String = "",
     val completedLessonIds: Set<String> = emptySet(),
     val completedKahootScores: Map<String, Int> = emptyMap(),
     val perfectTestModules: Set<String> = emptySet(),
@@ -31,19 +32,19 @@ data class UserProgress(
         get() = 100 - (totalXp % 100)
 
     val activeStudyDaysCount: Int
-        get() = maxOf(1, currentStreak, activeStudyDates.size)
+        get() = maxOf(0, currentStreak, activeStudyDates.size)
 
     val completedTestScores: Map<String, Int>
         get() = completedKahootScores
 
     fun hasCheckedInToday(): Boolean {
-        val today = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault()).format(java.util.Date())
-        return verifiedCheckInDate == today
+        val today = com.example.data.time.NetworkTimeProvider.getTodayGmt3()
+        return lastQualifyingStudyDate == today
     }
 
     fun hasStudiedToday(): Boolean {
-        val today = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault()).format(java.util.Date())
-        return verifiedCheckInDate == today
+        val today = com.example.data.time.NetworkTimeProvider.getTodayGmt3()
+        return lastQualifyingStudyDate == today
     }
 
     /**

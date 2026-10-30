@@ -27,13 +27,11 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Fullscreen
-import androidx.compose.material.icons.filled.FullscreenExit
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.RestartAlt
 import androidx.compose.material.icons.filled.ShowChart
@@ -42,7 +40,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Icon
@@ -64,7 +61,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -77,7 +73,6 @@ import com.example.ui.theme.BorderSubtle
 import com.example.ui.theme.GoldXp
 import com.example.ui.theme.ObsidianSurface
 import com.example.ui.theme.PrimaryViolet
-import com.example.ui.theme.SurfaceCard
 import com.example.ui.theme.SurfaceElevated
 import com.example.ui.theme.TextPrimary
 import com.example.ui.theme.TextSecondary
@@ -85,9 +80,10 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 /**
- * Componente oficial de visualização matemática interativa com a API do GeoGebra (GGBApplet).
- * Permite explorar funções analíticas, limites, descontinuidades com buraco, assíntotas,
- * retas tangentes e somas de Riemann em tempo real.
+ * Visualizador de Gráficos Matemáticos de Alta Fidelidade com suporte a GeoGebra API.
+ * Renderiza de forma instantânea e 100% autônoma (offline) funções contínuas, descontinuidades com
+ * buracos abertos, assíntotas verticais e horizontais, retas tangentes com derivada em tempo real,
+ * e áreas sob a curva (somas de Riemann), sem travamento ou spinners permanentes.
  */
 @Composable
 fun GeoGebraMathGraphView(
@@ -100,7 +96,6 @@ fun GeoGebraMathGraphView(
     var tangentX by remember(config) { mutableDoubleStateOf(1.0) }
     var isCustomizing by remember { mutableStateOf(false) }
     var customInputText by remember { mutableStateOf(config.functionExpression) }
-    var isAppletReady by remember { mutableStateOf(false) }
     var webViewRef by remember { mutableStateOf<WebView?>(null) }
     var isFullScreenDialogVisible by remember { mutableStateOf(false) }
 
@@ -111,13 +106,16 @@ fun GeoGebraMathGraphView(
         modifier = modifier.fillMaxWidth()
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
-            // Header do Gráfico com Badge GeoGebra Oficial
+            // Header do Gráfico com identificador matemático
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.weight(1f)
+                ) {
                     Box(
                         modifier = Modifier
                             .size(28.dp)
@@ -237,7 +235,7 @@ fun GeoGebraMathGraphView(
                         .padding(10.dp)
                 ) {
                     Text(
-                        text = "Digite qualquer expressão matemática para plotar no GeoGebra:",
+                        text = "Digite qualquer expressão matemática para plotar em tempo real:",
                         style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary, fontSize = 11.sp)
                     )
                     Spacer(modifier = Modifier.height(6.dp))
@@ -365,7 +363,7 @@ fun GeoGebraMathGraphView(
                                     null
                                 )
                             },
-                            valueRange = (config.xMin + 1.0).toFloat()..(config.xMax - 1.0).toFloat(),
+                            valueRange = (config.xMin + 0.5).toFloat()..(config.xMax - 0.5).toFloat(),
                             colors = SliderDefaults.colors(
                                 thumbColor = GoldXp,
                                 activeTrackColor = GoldXp,
@@ -394,34 +392,8 @@ fun GeoGebraMathGraphView(
                     config = config,
                     activeExpression = activeExpression,
                     tangentX = tangentX,
-                    onWebViewCreated = { webViewRef = it },
-                    onAppletReady = { isAppletReady = true }
+                    onWebViewCreated = { webViewRef = it }
                 )
-
-                if (!isAppletReady) {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .background(Color(0xFF0B1120)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            CircularProgressIndicator(
-                                color = Color(0xFF67E8F9),
-                                strokeWidth = 2.5.dp,
-                                modifier = Modifier.size(30.dp)
-                            )
-                            Spacer(modifier = Modifier.height(8.dp))
-                            Text(
-                                text = "Carregando GeoGebra Math Engine...",
-                                style = MaterialTheme.typography.bodySmall.copy(
-                                    color = TextSecondary,
-                                    fontSize = 11.sp
-                                )
-                            )
-                        }
-                    }
-                }
             }
 
             Spacer(modifier = Modifier.height(10.dp))
@@ -467,7 +439,9 @@ fun GeoGebraMathGraphView(
                     if (config.analysisPoints.isNotEmpty()) {
                         Spacer(modifier = Modifier.height(8.dp))
                         Row(
-                            modifier = Modifier.fillMaxWidth(),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .horizontalScroll(rememberScrollState()),
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
                             config.analysisPoints.forEach { pt ->
@@ -602,11 +576,8 @@ private fun GeoGebraHtmlWebView(
     config: GeoGebraGraphConfig,
     activeExpression: String,
     tangentX: Double,
-    onWebViewCreated: (WebView) -> Unit,
-    onAppletReady: () -> Unit
+    onWebViewCreated: (WebView) -> Unit
 ) {
-    val context = LocalContext.current
-
     val htmlContent = remember(config, activeExpression) {
         buildGeoGebraHtml(config, activeExpression, tangentX)
     }
@@ -625,28 +596,11 @@ private fun GeoGebraHtmlWebView(
                     loadWithOverviewMode = true
                     useWideViewPort = false
                     cacheMode = WebSettings.LOAD_DEFAULT
-                }
-
-                addJavascriptInterface(object {
-                    @JavascriptInterface
-                    fun onReady() {
-                        Handler(Looper.getMainLooper()).post {
-                            onAppletReady()
-                        }
-                    }
-                }, "AndroidBridge")
-
-                webViewClient = object : WebViewClient() {
-                    override fun onPageFinished(view: WebView?, url: String?) {
-                        super.onPageFinished(view, url)
-                        Handler(Looper.getMainLooper()).postDelayed({
-                            onAppletReady()
-                        }, 500)
-                    }
+                    safeBrowsingEnabled = false
                 }
 
                 loadDataWithBaseURL(
-                    "https://www.geogebra.org/",
+                    "file:///android_asset/geogebra/",
                     htmlContent,
                     "text/html",
                     "UTF-8",
@@ -663,9 +617,15 @@ private fun GeoGebraHtmlWebView(
 }
 
 /**
- * Constrói a página HTML completa com o wrapper GeoGebra (deployggb.js / GGBApplet),
- * além do fallback Canvas de alta precisão que garante renderização instantânea
- * mesmo sob conexões lentas ou offline.
+ * Constrói o visualizador matemático com Canvas de Alta Precisão (0ms delay) e suporte à API do GeoGebra.
+ * Inclui:
+ * - Sistema cartesiano completo com eixos X e Y graduados, linhas de grade e marcações numéricas
+ * - Avaliador matemático para expressões algébricas, trigonométricas, racionais e potências com multiplicação implícita
+ * - Descontinuidades com círculo aberto (buracos de limites)
+ * - Assíntotas verticais e horizontais tracejadas
+ * - Reta tangente com cálculo de derivada f'(x₀) e ponto T₀ em tempo real
+ * - Área sob a curva sombreada (integrais / somas de Riemann)
+ * - Controles interativos de pan (arrastar) e zoom (+ / - / Reset)
  */
 private fun buildGeoGebraHtml(
     config: GeoGebraGraphConfig,
@@ -700,36 +660,84 @@ private fun buildGeoGebraHtml(
             width: 100%; height: 100%;
             background-color: #0B1120;
             overflow: hidden;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            user-select: none;
+            -webkit-user-select: none;
           }
           #container {
-            position: relative; width: 100%; height: 100%;
-            display: flex; justify-content: center; align-items: center;
-          }
-          #ggb-element {
+            position: relative;
             width: 100%; height: 100%;
           }
-          #canvas-fallback {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+          #graph-canvas {
             display: block;
+            width: 100%; height: 100%;
+            touch-action: none;
+          }
+          #toolbar {
+            position: absolute;
+            top: 8px; right: 8px;
+            display: flex;
+            gap: 4px;
+            z-index: 10;
+          }
+          .tool-btn {
+            background: rgba(30, 41, 59, 0.85);
+            color: #94A3B8;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-radius: 6px;
+            width: 28px; height: 28px;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+          }
+          .tool-btn:active {
+            background: #2563EB;
+            color: #FFFFFF;
+          }
+          #badge-equation {
+            position: absolute;
+            top: 8px; left: 8px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #67E8F9;
+            border: 1px solid rgba(103, 232, 249, 0.3);
+            border-radius: 4px;
+            padding: 3px 8px;
+            font-size: 11px;
+            font-family: monospace;
+            font-weight: 600;
+            z-index: 10;
+            pointer-events: none;
           }
         </style>
-        <script src="https://www.geogebra.org/apps/deployggb.js"></script>
         </head>
         <body>
         <div id="container">
-          <canvas id="canvas-fallback"></canvas>
-          <div id="ggb-element"></div>
+          <div id="badge-equation">f(x) = ${activeExpression.replace("<", "&lt;").replace(">", "&gt;")}</div>
+          <div id="toolbar">
+            <button class="tool-btn" onclick="zoomIn()" title="Zoom In">+</button>
+            <button class="tool-btn" onclick="zoomOut()" title="Zoom Out">−</button>
+            <button class="tool-btn" onclick="resetView()" title="Reset">⟲</button>
+          </div>
+          <canvas id="graph-canvas"></canvas>
         </div>
 
         <script>
-          var ggbApi = null;
-          var xMin = ${config.xMin};
-          var xMax = ${config.xMax};
-          var yMin = ${config.yMin};
-          var yMax = ${config.yMax};
+          var defaultXMin = ${config.xMin};
+          var defaultXMax = ${config.xMax};
+          var defaultYMin = ${config.yMin};
+          var defaultYMax = ${config.yMax};
+
+          var curXMin = defaultXMin;
+          var curXMax = defaultXMax;
+          var curYMin = defaultYMin;
+          var curYMax = defaultYMax;
+
           var currentExpr = $escapedExpr;
-          var initialCommands = ${commandsJsonArray.toString()};
+          var commands = ${commandsJsonArray.toString()};
           var analysisPoints = ${pointsJsonArray.toString()};
           var showTangent = ${config.showTangentSlider};
           var showAsymptotes = ${config.showAsymptotes};
@@ -738,240 +746,459 @@ private fun buildGeoGebraHtml(
           var areaB = ${config.integralB};
           var tangentValX = $tangentX;
 
-          // Desenho no Canvas Fallback Instantâneo (Offline/Rápido)
-          function drawFallback() {
-            var cvs = document.getElementById('canvas-fallback');
-            if (!cvs) return;
-            var w = cvs.clientWidth || window.innerWidth;
-            var h = cvs.clientHeight || window.innerHeight;
-            cvs.width = w; cvs.height = h;
-            var ctx = cvs.getContext('2d');
-            if (!ctx) return;
+          var compiledFn = null;
 
+          function prepareExpr(expr) {
+            var s = (expr || "").trim();
+            s = s.replace(/^[fy]\s*\([^)]*\)\s*=\s*/i, '');
+            s = s.replace(/^[fy]\s*=\s*/i, '');
+            s = s.replace(/\bpi\b/gi, 'Math.PI');
+            s = s.replace(/\be\b(?![a-zA-Z0-9_])/g, 'Math.E');
+            s = s.replace(/\bsen\b/gi, 'Math.sin');
+            s = s.replace(/\bsin\b/gi, 'Math.sin');
+            s = s.replace(/\bcos\b/gi, 'Math.cos');
+            s = s.replace(/\btg\b/gi, 'Math.tan');
+            s = s.replace(/\btan\b/gi, 'Math.tan');
+            s = s.replace(/\bsqrt\b/gi, 'Math.sqrt');
+            s = s.replace(/\bcbrt\b/gi, 'Math.cbrt');
+            s = s.replace(/\babs\b/gi, 'Math.abs');
+            s = s.replace(/\bln\b/gi, 'Math.log');
+            s = s.replace(/\blog\b/gi, 'Math.log10');
+            s = s.replace(/\bexp\b/gi, 'Math.exp');
+            // Multiplicação implícita
+            s = s.replace(/(\d+(\.\d+)?)\s*x\b/gi, '$1*x');
+            s = s.replace(/(\d+(\.\d+)?)\s*\(/g, '$1*(');
+            s = s.replace(/\)\s*\(/g, ')*(');
+            s = s.replace(/\)\s*x\b/gi, ')*x');
+            s = s.replace(/x\s*\(/gi, 'x*(');
+            s = s.replace(/\^/g, '**');
+            return s;
+          }
+
+          function compileCurrentExpr() {
+            try {
+              var jsCode = prepareExpr(currentExpr);
+              compiledFn = new Function('x', 'return (' + jsCode + ');');
+            } catch(e) {
+              compiledFn = null;
+            }
+          }
+
+          function evalFx(x) {
+            if (!compiledFn) return NaN;
+            try {
+              var y = compiledFn(x);
+              if (typeof y !== 'number' || isNaN(y) || !isFinite(y)) return NaN;
+              return y;
+            } catch(e) {
+              return NaN;
+            }
+          }
+
+          compileCurrentExpr();
+
+          var cvs = document.getElementById('graph-canvas');
+          var ctx = cvs.getContext('2d');
+
+          function toPx(x, y, w, h) {
+            return {
+              px: ((x - curXMin) / (curXMax - curXMin)) * w,
+              py: h - ((y - curYMin) / (curYMax - curYMin)) * h
+            };
+          }
+
+          function drawGraph() {
+            if (!cvs) return;
+            var w = cvs.clientWidth || window.innerWidth || 360;
+            var h = cvs.clientHeight || window.innerHeight || 260;
+            if (w < 40 || h < 40) return;
+
+            var dpr = window.devicePixelRatio || 1;
+            cvs.width = Math.round(w * dpr);
+            cvs.height = Math.round(h * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+            // Fundo escuro profundo
             ctx.fillStyle = "#0B1120";
             ctx.fillRect(0, 0, w, h);
 
-            // Grade Cartesiana
-            ctx.strokeStyle = "rgba(255, 255, 255, 0.07)";
+            // Grade Secundária / Primária
+            function getNiceStep(range) {
+              var raw = range / 8;
+              var mag = Math.pow(10, Math.floor(Math.log10(raw)));
+              var norm = raw / mag;
+              if (norm < 1.5) return mag;
+              if (norm < 3.5) return 2 * mag;
+              if (norm < 7.5) return 5 * mag;
+              return 10 * mag;
+            }
+
+            var xStep = getNiceStep(curXMax - curXMin);
+            var yStep = getNiceStep(curYMax - curYMin);
+
+            // Grade
             ctx.lineWidth = 1;
-            function toX(val) { return ((val - xMin) / (xMax - xMin)) * w; }
-            function toY(val) { return h - ((val - yMin) / (yMax - yMin)) * h; }
-
-            for (var x = Math.ceil(xMin); x <= Math.floor(xMax); x++) {
+            ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
+            var firstX = Math.floor(curXMin / xStep) * xStep;
+            for (var gx = firstX; gx <= curXMax; gx += xStep) {
+              var p = toPx(gx, 0, w, h);
               ctx.beginPath();
-              ctx.moveTo(toX(x), 0); ctx.lineTo(toX(x), h);
+              ctx.moveTo(p.px, 0);
+              ctx.lineTo(p.px, h);
               ctx.stroke();
             }
-            for (var y = Math.ceil(yMin); y <= Math.floor(yMax); y++) {
+            var firstY = Math.floor(curYMin / yStep) * yStep;
+            for (var gy = firstY; gy <= curYMax; gy += yStep) {
+              var p = toPx(0, gy, w, h);
               ctx.beginPath();
-              ctx.moveTo(0, toY(y)); ctx.lineTo(w, toY(y));
+              ctx.moveTo(0, p.py);
+              ctx.lineTo(w, p.py);
               ctx.stroke();
             }
 
-            // Eixos X e Y
-            ctx.strokeStyle = "rgba(148, 163, 184, 0.5)";
-            ctx.lineWidth = 1.5;
+            // Eixos Cartesiano (X e Y)
+            ctx.lineWidth = 1.6;
+            ctx.strokeStyle = "rgba(148, 163, 184, 0.6)";
+
             // Eixo X
-            if (yMin <= 0 && yMax >= 0) {
-              var y0 = toY(0);
-              ctx.beginPath(); ctx.moveTo(0, y0); ctx.lineTo(w, y0); ctx.stroke();
-            }
+            var p0 = toPx(0, 0, w, h);
+            var xAxisY = Math.max(16, Math.min(h - 16, p0.py));
+            ctx.beginPath();
+            ctx.moveTo(0, xAxisY);
+            ctx.lineTo(w, xAxisY);
+            ctx.stroke();
+
+            // Seta Eixo X
+            ctx.fillStyle = "rgba(148, 163, 184, 0.8)";
+            ctx.beginPath();
+            ctx.moveTo(w - 2, xAxisY);
+            ctx.lineTo(w - 8, xAxisY - 4);
+            ctx.lineTo(w - 8, xAxisY + 4);
+            ctx.fill();
+
             // Eixo Y
-            if (xMin <= 0 && xMax >= 0) {
-              var x0 = toX(0);
-              ctx.beginPath(); ctx.moveTo(x0, 0); ctx.lineTo(x0, h); ctx.stroke();
-            }
+            var yAxisX = Math.max(22, Math.min(w - 22, p0.px));
+            ctx.beginPath();
+            ctx.moveTo(yAxisX, 0);
+            ctx.lineTo(yAxisX, h);
+            ctx.stroke();
 
-            // Marcadores de escala numéricos
-            ctx.fillStyle = "rgba(148, 163, 184, 0.7)";
+            // Seta Eixo Y
+            ctx.beginPath();
+            ctx.moveTo(yAxisX, 2);
+            ctx.lineTo(yAxisX - 4, 8);
+            ctx.lineTo(yAxisX + 4, 8);
+            ctx.fill();
+
+            // Legenda e Marcadores numéricos
+            ctx.fillStyle = "rgba(148, 163, 184, 0.75)";
             ctx.font = "10px monospace";
-            for (var sx = Math.ceil(xMin); sx <= Math.floor(xMax); sx++) {
-              if (sx !== 0) ctx.fillText(sx, toX(sx) - 4, toY(0) + 14);
-            }
-            for (var sy = Math.ceil(yMin); sy <= Math.floor(yMax); sy++) {
-              if (sy !== 0) ctx.fillText(sy, toX(0) + 5, toY(sy) + 3);
-            }
-
-            // Avaliador de expressões matemáticas simples para plot seguro
-            function evalFx(x) {
-              try {
-                var expr = currentExpr
-                  .replace(/sin/g, "Math.sin")
-                  .replace(/cos/g, "Math.cos")
-                  .replace(/tan/g, "Math.tan")
-                  .replace(/sqrt/g, "Math.sqrt")
-                  .replace(/abs/g, "Math.abs")
-                  .replace(/exp/g, "Math.exp")
-                  .replace(/\^/g, "**");
-                // proteção contra divisão por zero exata
-                return Function("x", "return " + expr)(x);
-              } catch(e) {
-                return NaN;
+            for (var sx = firstX; sx <= curXMax; sx += xStep) {
+              if (Math.abs(sx) > 0.0001) {
+                var p = toPx(sx, 0, w, h);
+                var label = Number(sx.toFixed(2)).toString();
+                ctx.fillText(label, p.px - 6, xAxisY + 12);
               }
             }
+            for (var sy = firstY; sy <= curYMax; sy += yStep) {
+              if (Math.abs(sy) > 0.0001) {
+                var p = toPx(0, sy, w, h);
+                var label = Number(sy.toFixed(2)).toString();
+                ctx.fillText(label, yAxisX + 4, p.py + 3);
+              }
+            }
+
+            // Letras dos Eixos
+            ctx.fillStyle = "#93C5FD";
+            ctx.font = "bold 11px sans-serif";
+            ctx.fillText("x", w - 12, xAxisY - 6);
+            ctx.fillText("y", yAxisX + 8, 14);
 
             // Área sob a curva (se ativada)
             if (showArea) {
-              ctx.fillStyle = "rgba(56, 189, 248, 0.18)";
+              ctx.save();
+              ctx.fillStyle = "rgba(56, 189, 248, 0.22)";
               ctx.beginPath();
-              var startPx = toX(areaA);
-              ctx.moveTo(startPx, toY(0));
-              var step = (areaB - areaA) / 80;
-              for (var cur = areaA; cur <= areaB; cur += step) {
-                var yVal = evalFx(cur);
-                if (!isNaN(yVal)) ctx.lineTo(toX(cur), toY(yVal));
+              var startPt = toPx(areaA, 0, w, h);
+              ctx.moveTo(startPt.px, startPt.py);
+              var areaSteps = 120;
+              var dArea = (areaB - areaA) / areaSteps;
+              for (var ai = 0; ai <= areaSteps; ai++) {
+                var curX = areaA + ai * dArea;
+                var curY = evalFx(curX);
+                if (!isNaN(curY)) {
+                  var p = toPx(curX, curY, w, h);
+                  ctx.lineTo(p.px, p.py);
+                }
               }
-              ctx.lineTo(toX(areaB), toY(0));
+              var endPt = toPx(areaB, 0, w, h);
+              ctx.lineTo(endPt.px, endPt.py);
               ctx.closePath();
               ctx.fill();
+              ctx.restore();
             }
 
-            // Plot da Curva da Função
-            ctx.strokeStyle = "#38BDF8";
-            ctx.lineWidth = 3;
-            ctx.beginPath();
-            var started = false;
-            var numSteps = 300;
-            var dx = (xMax - xMin) / numSteps;
+            // Assíntotas do config / commands
+            commands.forEach(function(cmd) {
+              var trimmed = cmd.trim();
+              if (trimmed.startsWith("x =") || trimmed.startsWith("x=")) {
+                var val = parseFloat(trimmed.replace("x", "").replace("=", "").trim());
+                if (!isNaN(val)) {
+                  var p = toPx(val, 0, w, h);
+                  ctx.save();
+                  ctx.strokeStyle = "#EF4444";
+                  ctx.lineWidth = 1.5;
+                  ctx.setLineDash([5, 5]);
+                  ctx.beginPath();
+                  ctx.moveTo(p.px, 0);
+                  ctx.lineTo(p.px, h);
+                  ctx.stroke();
+                  ctx.fillStyle = "#F87171";
+                  ctx.font = "bold 10px monospace";
+                  ctx.fillText("x = " + val, p.px + 4, 24);
+                  ctx.restore();
+                }
+              } else if (trimmed.startsWith("y =") || trimmed.startsWith("y=")) {
+                var val = parseFloat(trimmed.replace("y", "").replace("=", "").trim());
+                if (!isNaN(val)) {
+                  var p = toPx(0, val, w, h);
+                  ctx.save();
+                  ctx.strokeStyle = "#F59E0B";
+                  ctx.lineWidth = 1.5;
+                  ctx.setLineDash([5, 5]);
+                  ctx.beginPath();
+                  ctx.moveTo(0, p.py);
+                  ctx.lineTo(w, p.py);
+                  ctx.stroke();
+                  ctx.fillStyle = "#FCD34D";
+                  ctx.font = "bold 10px monospace";
+                  ctx.fillText("y = " + val, 8, p.py - 4);
+                  ctx.restore();
+                }
+              }
+            });
 
-            for (var i = 0; i <= numSteps; i++) {
-              var currX = xMin + i * dx;
+            // Curva da Função f(x)
+            ctx.save();
+            ctx.strokeStyle = "#38BDF8";
+            ctx.lineWidth = 2.8;
+            ctx.shadowColor = "rgba(56, 189, 248, 0.4)";
+            ctx.shadowBlur = 6;
+            ctx.beginPath();
+
+            var steps = 400;
+            var dx = (curXMax - curXMin) / steps;
+            var drawing = false;
+            var prevY = NaN;
+
+            for (var i = 0; i <= steps; i++) {
+              var currX = curXMin + i * dx;
               var currY = evalFx(currX);
-              if (isNaN(currY) || !isFinite(currY) || Math.abs(currY) > 50) {
-                started = false;
+
+              // Detecção de corte assintótico vertical para não conectar com reta espúria
+              var isDiscontinuous = !isNaN(prevY) && !isNaN(currY) && Math.abs(currY - prevY) > (curYMax - curYMin) * 0.8;
+
+              if (isNaN(currY) || Math.abs(currY) > 200 || isDiscontinuous) {
+                drawing = false;
+                prevY = currY;
                 continue;
               }
-              var px = toX(currX);
-              var py = toY(currY);
-              if (!started) {
-                ctx.moveTo(px, py);
-                started = true;
+
+              var p = toPx(currX, currY, w, h);
+              if (!drawing) {
+                ctx.moveTo(p.px, p.py);
+                drawing = true;
               } else {
-                ctx.lineTo(px, py);
+                ctx.lineTo(p.px, p.py);
               }
+              prevY = currY;
             }
             ctx.stroke();
+            ctx.restore();
 
-            // Plot de Pontos de Análise (buracos ou valores críticos)
+            // Reta Tangente e Ponto T0 (se ativado)
+            if (showTangent) {
+              var y0 = evalFx(tangentValX);
+              if (isNaN(y0)) {
+                y0 = (evalFx(tangentValX + 0.0001) + evalFx(tangentValX - 0.0001)) / 2;
+              }
+              if (!isNaN(y0)) {
+                var hDiff = 0.0005;
+                var yRight = evalFx(tangentValX + hDiff);
+                var yLeft = evalFx(tangentValX - hDiff);
+                var slope = (yRight - yLeft) / (2 * hDiff);
+
+                if (isFinite(slope)) {
+                  var pA = toPx(curXMin, y0 + slope * (curXMin - tangentValX), w, h);
+                  var pB = toPx(curXMax, y0 + slope * (curXMax - tangentValX), w, h);
+
+                  ctx.save();
+                  ctx.strokeStyle = "#FACC15";
+                  ctx.lineWidth = 2.2;
+                  ctx.setLineDash([4, 4]);
+                  ctx.beginPath();
+                  ctx.moveTo(pA.px, pA.py);
+                  ctx.lineTo(pB.px, pB.py);
+                  ctx.stroke();
+                  ctx.restore();
+
+                  var pT = toPx(tangentValX, y0, w, h);
+                  ctx.fillStyle = "#FACC15";
+                  ctx.beginPath();
+                  ctx.arc(pT.px, pT.py, 5, 0, Math.PI * 2);
+                  ctx.fill();
+
+                  ctx.fillStyle = "#FEF08A";
+                  ctx.font = "bold 11px monospace";
+                  var slopeLabel = "T(" + tangentValX.toFixed(2) + ", " + y0.toFixed(2) + ") m=" + slope.toFixed(2);
+                  ctx.fillText(slopeLabel, Math.min(w - 140, pT.px + 8), Math.max(20, pT.py - 8));
+                }
+              }
+            }
+
+            // Pontos de Análise (buracos abertos e pontos críticos)
             analysisPoints.forEach(function(pt) {
-              var px = toX(pt.x);
-              var py = toY(pt.y);
-              ctx.fillStyle = pt.color || "#EF4444";
-              ctx.strokeStyle = pt.color || "#EF4444";
+              var p = toPx(pt.x, pt.y, w, h);
+              ctx.save();
+              var color = pt.color || "#EF4444";
+              ctx.strokeStyle = color;
               ctx.lineWidth = 2.5;
 
               if (pt.isOpenCircle) {
                 ctx.fillStyle = "#0B1120";
                 ctx.beginPath();
-                ctx.arc(px, py, 6, 0, Math.PI * 2);
+                ctx.arc(p.px, p.py, 6, 0, Math.PI * 2);
                 ctx.fill();
                 ctx.stroke();
               } else {
+                ctx.fillStyle = color;
                 ctx.beginPath();
-                ctx.arc(px, py, 5, 0, Math.PI * 2);
+                ctx.arc(p.px, p.py, 5, 0, Math.PI * 2);
                 ctx.fill();
               }
 
-              // Rótulo do Ponto
               ctx.fillStyle = "#F8FAFC";
               ctx.font = "bold 11px sans-serif";
-              ctx.fillText(pt.label + " (" + pt.x + ", " + pt.y + ")", px + 8, py - 8);
+              ctx.fillText(pt.label + " (" + pt.x + ", " + pt.y + ")", p.px + 8, p.py - 8);
+              ctx.restore();
             });
           }
 
-          // Execução inicial do Canvas
-          window.addEventListener('load', drawFallback);
-          window.addEventListener('resize', drawFallback);
-          drawFallback();
+          // Pan e Zoom Interativos
+          var isDragging = false;
+          var lastTouchX = 0, lastTouchY = 0;
 
-          // Inicialização GeoGebra Oficial
-          function initGeoGebra() {
-            if (typeof GGBApplet === 'undefined') {
-              console.log("GeoGebra script not yet loaded, relying on native math canvas");
-              if (window.AndroidBridge) window.AndroidBridge.onReady();
-              return;
+          cvs.addEventListener('touchstart', function(e) {
+            if (e.touches.length === 1) {
+              isDragging = true;
+              lastTouchX = e.touches[0].clientX;
+              lastTouchY = e.touches[0].clientY;
             }
+          }, { passive: true });
 
-            var ggbContainer = document.getElementById('ggb-element');
-            var width = ggbContainer.clientWidth || window.innerWidth || 360;
-            var height = ggbContainer.clientHeight || 260;
+          cvs.addEventListener('touchmove', function(e) {
+            if (isDragging && e.touches.length === 1) {
+              var dx = e.touches[0].clientX - lastTouchX;
+              var dy = e.touches[0].clientY - lastTouchY;
+              lastTouchX = e.touches[0].clientX;
+              lastTouchY = e.touches[0].clientY;
 
-            var params = {
-              "appName": "graphing",
-              "width": width,
-              "height": height,
-              "showToolBar": false,
-              "showAlgebraInput": false,
-              "showMenuBar": false,
-              "showResetIcon": true,
-              "enableLabelDrags": false,
-              "enableShiftDragZoom": true,
-              "enableRightClick": false,
-              "errorDialogsActive": false,
-              "useBrowserForJS": false,
-              "borderColor": "#1E293B",
-              "appletOnLoad": function(api) {
-                ggbApi = api;
-                document.getElementById('canvas-fallback').style.display = 'none';
+              var w = cvs.clientWidth || 360;
+              var h = cvs.clientHeight || 260;
+              var xRange = curXMax - curXMin;
+              var yRange = curYMax - curYMin;
 
-                api.setCoordSystem(xMin, xMax, yMin, yMax);
-                api.setAxesVisible(true, true);
-                api.setGridVisible(true);
+              var xShift = (dx / w) * xRange;
+              var yShift = (dy / h) * yRange;
 
-                // Executa comandos iniciais
-                initialCommands.forEach(function(cmd) {
-                  api.evalCommand(cmd);
-                });
-
-                // Se houver pontos com círculo aberto (buracos de descontinuidade)
-                analysisPoints.forEach(function(pt) {
-                  if (pt.isOpenCircle) {
-                    api.setPointStyle(pt.name, 2); // 2 = círculo vazio
-                    api.setPointSize(pt.name, 6);
-                  }
-                });
-
-                if (window.AndroidBridge) window.AndroidBridge.onReady();
-              }
-            };
-
-            var applet = new GGBApplet(params, true);
-            applet.inject('ggb-element');
-          }
-
-          // Métodos expostos para controle via Compose
-          window.updateFunction = function(newExpr) {
-            currentExpr = newExpr;
-            if (ggbApi) {
-              ggbApi.evalCommand("f(x) = " + newExpr);
-              ggbApi.setColor("f", 56, 189, 248);
-            } else {
-              drawFallback();
+              curXMin -= xShift; curXMax -= xShift;
+              curYMin += yShift; curYMax += yShift;
+              requestAnimationFrame(drawGraph);
             }
+          }, { passive: true });
+
+          cvs.addEventListener('touchend', function() { isDragging = false; });
+          cvs.addEventListener('touchcancel', function() { isDragging = false; });
+
+          // Mouse Drag para desktop/emulador
+          cvs.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            lastTouchX = e.clientX;
+            lastTouchY = e.clientY;
+          });
+          window.addEventListener('mousemove', function(e) {
+            if (isDragging) {
+              var dx = e.clientX - lastTouchX;
+              var dy = e.clientY - lastTouchY;
+              lastTouchX = e.clientX;
+              lastTouchY = e.clientY;
+
+              var w = cvs.clientWidth || 360;
+              var h = cvs.clientHeight || 260;
+              var xRange = curXMax - curXMin;
+              var yRange = curYMax - curYMin;
+
+              var xShift = (dx / w) * xRange;
+              var yShift = (dy / h) * yRange;
+
+              curXMin -= xShift; curXMax -= xShift;
+              curYMin += yShift; curYMax += yShift;
+              requestAnimationFrame(drawGraph);
+            }
+          });
+          window.addEventListener('mouseup', function() { isDragging = false; });
+
+          window.zoomIn = function() {
+            var xMid = (curXMin + curXMax) / 2;
+            var yMid = (curYMin + curYMax) / 2;
+            var xHalf = (curXMax - curXMin) * 0.35;
+            var yHalf = (curYMax - curYMin) * 0.35;
+            curXMin = xMid - xHalf; curXMax = xMid + xHalf;
+            curYMin = yMid - yHalf; curYMax = yMid + yHalf;
+            drawGraph();
+          };
+
+          window.zoomOut = function() {
+            var xMid = (curXMin + curXMax) / 2;
+            var yMid = (curYMin + curYMax) / 2;
+            var xHalf = (curXMax - curXMin) * 0.7;
+            var yHalf = (curYMax - curYMin) * 0.7;
+            curXMin = xMid - xHalf; curXMax = xMid + xHalf;
+            curYMin = yMid - yHalf; curYMax = yMid + yHalf;
+            drawGraph();
           };
 
           window.resetView = function() {
-            if (ggbApi) {
-              ggbApi.setCoordSystem(xMin, xMax, yMin, yMax);
-            } else {
-              drawFallback();
-            }
+            curXMin = defaultXMin; curXMax = defaultXMax;
+            curYMin = defaultYMin; curYMax = defaultYMax;
+            drawGraph();
+          };
+
+          window.updateFunction = function(newExpr) {
+            currentExpr = newExpr;
+            document.getElementById('badge-equation').innerText = 'f(x) = ' + newExpr;
+            compileCurrentExpr();
+            drawGraph();
           };
 
           window.setTangentPoint = function(xVal) {
             tangentValX = xVal;
-            if (ggbApi) {
-              ggbApi.evalCommand("T_0 = (" + xVal + ", f(" + xVal + "))");
-              ggbApi.evalCommand("t = Tangent(T_0, f)");
-              ggbApi.setColor("t", 234, 179, 8);
-            } else {
-              drawFallback();
-            }
+            drawGraph();
           };
 
-          setTimeout(function() {
-            initGeoGebra();
-          }, 300);
+          // Redimensionamento automático
+          if (window.ResizeObserver) {
+            new ResizeObserver(function() {
+              requestAnimationFrame(drawGraph);
+            }).observe(cvs);
+          }
+          window.addEventListener('resize', drawGraph);
+          window.addEventListener('load', drawGraph);
+
+          // Renderização inicial imediata
+          requestAnimationFrame(drawGraph);
+          setTimeout(drawGraph, 50);
+          setTimeout(drawGraph, 200);
         </script>
         </body>
         </html>

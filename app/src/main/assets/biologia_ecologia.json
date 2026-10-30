@@ -15,7 +15,7 @@
           "o habitat diferente impede qualquer tipo de interação ecológica entre elas."
         ],
         "correct_answer": 2,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "As duas espécies dividem o mesmo espaço físico geral (mesmo habitat), mas diferenciam-se no horário de alimentação e na altura do estrato florestal explorado. Essas diferenças caracterizam nichos ecológicos distintos, reduzindo a sobreposição de nichos e impedindo a exclusão competitiva de acordo com o Princípio de Gause."
       },
       {
@@ -29,7 +29,7 @@
           "exclusividade na presença de grandes mamíferos carnívoros no topo da cadeia trófica."
         ],
         "correct_answer": 1,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "O conceito de hotspot de biodiversidade exige dois critérios biológicos objetivos: abrigar ao menos 1.500 espécies de plantas vasculares endêmicas (mais de 0,5% do total mundial) e ter perdido no mínimo 70% da sua cobertura vegetal primária por ação antrópica, indicando risco iminente de extinção em massa."
       },
       {
@@ -43,7 +43,7 @@
           "nicho reprodutivo."
         ],
         "correct_answer": 2,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "A integração mútua entre os componentes vivos (fatores bióticos: insetos, fungos, vegetação) e os parâmetros físicos e químicos do ambiente inanimado (fatores abióticos: solo, água, temperatura, insolação) define com precisão o conceito de ecossistema."
       }
     ]
@@ -64,7 +64,7 @@
           "Nas aves piscívoras de grande porte, por ocuparem o topo da teia trófica."
         ],
         "correct_answer": 4,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "Metais pesados como o mercúrio sofrem magnificação trófica (biomagnificação). Como o poluente não é degradado e acumula-se nos tecidos corporais ao longo da vida, sua concentração é cumulativa e atinge o valor máximo nos organismos situados no ápice da teia trófica (as aves piscívoras)."
       },
       {
@@ -78,7 +78,7 @@
           "incorreta, pois apenas a energia é conservada nos ecossistemas, enquanto a matéria desaparece."
         ],
         "correct_answer": 1,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "A matéria é cíclica: átomos inorgânicos viram biomoléculas que os decompositores devolvem ao solo e à atmosfera. Já a energia segue fluxo estritamente unidirecional: entra como luz solar, é convertida em energia química e é dissipada progressivamente como calor metabólico nos processos vitais (respiração), não podendo ser reaproveitada pelos produtores."
       },
       {
@@ -92,7 +92,7 @@
           "exclusão competitiva intraespecífica."
         ],
         "correct_answer": 2,
-        "difficulty": 3,
+        "difficulty": "Difícil",
         "explanation": "A remoção de uma espécie-chave (keystone species), frequentemente um predador de topo, desencadeia uma cascata trófica (top-down regulation), alterando dramaticamente o tamanho populacional dos níveis tróficos subsequentes e modificando toda a estrutura da comunidade biológica."
       }
     ]
@@ -113,7 +113,7 @@
           "predação vegetal, uma vez que há sequestro de nutrientes do xilema e floema da árvore."
         ],
         "correct_answer": 2,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "O epifitismo é um caso clássico de inquilinismo entre vegetais (+/0). A planta epífita ganha sustentação mecânica e acesso à luz solar nas alturas da floresta, sem perfurar os vasos condutores da árvore hospedeira e sem causar prejuízos fisiológicos ao vegetal que lhe serve de suporte."
       },
       {
@@ -127,7 +127,7 @@
           "inquilinismo rizomático."
         ],
         "correct_answer": 2,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "A interação entre bactérias do gênero Rhizobium e as raízes de leguminosas é uma associação mutualística obrigatória (+/+). Ambas as espécies são mutuamente beneficiadas (troca de nitrogênio assimilável por açúcares e proteção) e apresentam interdependência metabólica essencial para sua sobrevivência no ambiente natural."
       },
       {
@@ -141,7 +141,7 @@
           "protocooperação bioquímica."
         ],
         "correct_answer": 2,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "No amensalismo ou antibiose (+/- ou 0/-), uma espécie libera produtos metabólicos ou toxinas que inibem o desenvolvimento ou causam a morte de outras espécies circunvizinhas, sem visar diretamente à predação ou consumo dos organismos prejudicados."
       }
     ]
@@ -162,7 +162,7 @@
           "vírus bacteriófagos que quebram a amônia em gás nitrogênio livre."
         ],
         "correct_answer": 2,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "As leguminosas (como a soja e o feijão) abrigam em suas raízes bactérias simbióticas do gênero Rhizobium, capazes de converter o N2 da atmosfera em amônia e nitratos (adubação verde), enriquecendo o solo naturalmente para as safras seguintes sem necessidade de fertilizantes industriais."
       },
       {
@@ -176,7 +176,7 @@
           "Ácido úrico -> Gás nitrogênio (N2) -> Aminoácidos."
         ],
         "correct_answer": 1,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "A nitrificação compõe-se de duas reações oxidativas sucessivas realizadas por bactérias quimiossintetizantes: a nitritação (oxidação da amônia NH3 em nitrito NO2- pelas Nitrosomonas) e a nitratação (oxidação do nitrito NO2- em nitrato NO3- pelas Nitrobacter). O nitrato é a forma absorvida pelos vegetais."
       },
       {
@@ -190,7 +190,7 @@
           "condensação interna de seiva elaborada convertida em geada matinal."
         ],
         "correct_answer": 1,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "A transpiração das copas das árvores da Amazônia, aliada à evaporação das bacias hidrográficas (evapotranspiração), lança na atmosfera trilhões de litros de vapor d'água diariamente. Esse fluxo aéreo ('rios voadores') é conduzido pelos ventos alísios em direção ao centro-sul do país, condicionando as chuvas que abastecem reservatórios e lavouras."
       }
     ]
@@ -211,7 +211,7 @@
           "a sobrepesca predatória que extinguiu os decompositores naturais do fundo lacustre."
         ],
         "correct_answer": 1,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "O processo descrito é a eutrofização clássica. Seu estopim primordial é o aporte excessivo de nutrientes minerais (nitrogênio e fósforo) provenientes de fertilizantes ou esgoto in natura, gerando floração de algas superficiais, bloqueio luminoso, decomposição aeróbica exaustiva e anóxia letal aos peixes."
       },
       {
@@ -225,7 +225,7 @@
           "sucessão secundária regressiva."
         ],
         "correct_answer": 2,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "Substâncias não biodegradáveis e lipossolúveis não são eliminadas pelo metabolismo dos seres vivos e acumulam-se em seus tecidos corporais. Conforme se avança na cadeia trófica (água -> algas -> peixes -> lontras), a concentração do composto tóxico por unidade de biomassa aumenta exponencialmente, configurando a magnificação trófica."
       },
       {
@@ -239,7 +239,7 @@
           "pela condensação de vapor de água marinha ionizada por radiação ultravioleta B."
         ],
         "correct_answer": 1,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "Na inversão térmica de inverno, o resfriamento célere do solo durante a noite esfria o ar adjacente. Como o ar frio é mais denso, ele não sobe e fica bloqueado por uma camada de ar mais quente acima dele, impedindo os movimentos normais de convecção térmica e mantendo os poluentes urbanos aprisionados no nível do solo."
       }
     ]
@@ -260,7 +260,7 @@
           "gás oxigênio diatômico (O2)."
         ],
         "correct_answer": 1,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "A digestão de celulose por microrganismos anaeróbicos no rúmen dos bovinos (fermentação entérica eliminada por eructação) e a decomposição de matéria orgânica sob condições anóxicas em lixões e aterros produzem grandes volumes de gás metano (CH4), gás cujo potencial de aquecimento global é aproximadamente 28 vezes superior ao do CO2."
       },
       {
@@ -274,7 +274,7 @@
           "transformam-se em organismos autótrofos quimiossintetizantes de grande profundidade."
         ],
         "correct_answer": 2,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "A relação entre os corais e as zooxantelas é um mutualismo vital: as microalgas residem nos tecidos dos pólipos e fornecem até 90% das moléculas orgânicas nutritivas produzidas via fotossíntese. Ao expulsarem as algas sob estresse térmico, os corais perdem sua principal fonte de nutrição, enfraquecem e morrem de inanição."
       },
       {
@@ -288,7 +288,7 @@
           "converte os sedimentos marinhos profundos em hidrocarbonetos aromáticos altamente tóxicos."
         ],
         "correct_answer": 1,
-        "difficulty": 3,
+        "difficulty": "Difícil",
         "explanation": "Ao se dissolver na água do mar, o CO2 forma ácido carbônico (H2CO3), que se dissocia liberando íons H+. O excesso de H+ reage com os íons carbonato livres (CO3²⁻), formando bicarbonato (HCO3⁻). Isso diminui a disponibilidade de carbonato no meio aquático, elemento fundamental para que corais, bivalves e equinodermos construam suas estruturas esqueléticas de carbonato de cálcio (CaCO3)."
       }
     ]
@@ -309,7 +309,7 @@
           "hélio gasoso (He), estocado para refrigeração de equipamentos."
         ],
         "correct_answer": 1,
-        "difficulty": 1,
+        "difficulty": "Fácil",
         "explanation": "A fermentação anaeróbica de dejetos orgânicos em biodigestores gera biogás, composto majoritariamente por gás metano (CH4, cerca de 60 a 70%) e CO2. O metano possui alto poder calorífico e pode ser queimado diretamente em motores e turbinas para produzir calor e eletricidade, além de evitar a emissão direta de CH4 para a atmosfera."
       },
       {
@@ -323,7 +323,7 @@
           "lixiviação química quelante."
         ],
         "correct_answer": 2,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "A biorremediação é a biotecnologia ambiental que emprega organismos vivos (especialmente bactérias, fungos filamentosos ou plantas) para transformar, degradar ou imobilizar contaminantes e compostos tóxicos em solos, sedimentos e aquíferos, convertendo-os em substâncias de baixa ou nula toxicidade."
       },
       {
@@ -337,7 +337,7 @@
           "sucessão ecológica primária acelerada por bioestimulação radicular."
         ],
         "correct_answer": 1,
-        "difficulty": 2,
+        "difficulty": "Média",
         "explanation": "O uso de predadores ou parasitoides naturais (como as microvespas que parasitam os ovos da praga) e de bioinseticidas biológicos (como a bactéria Bacillus thuringiensis, que ataca exclusivamente o trato intestinal das lagartas sem intoxicar humanos ou abelhas) constitui o Controle Biológico de pragas, pilar central da agricultura sustentável."
       }
     ]

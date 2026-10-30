@@ -56,6 +56,8 @@ sealed class MarkdownBlock {
     data class NumberedItem(val number: String, val text: String) : MarkdownBlock()
     data class Table(val rows: List<List<String>>) : MarkdownBlock()
     data class Paragraph(val text: String) : MarkdownBlock()
+    data class Image(val alt: String, val url: String) : MarkdownBlock()
+    data class Formula(val formula: String) : MarkdownBlock()
 }
 
 /**
@@ -82,6 +84,8 @@ fun StructuredMarkdownRenderer(
                 is MarkdownBlock.NumberedItem -> MarkdownNumberedItem(number = block.number, text = block.text)
                 is MarkdownBlock.Table -> MarkdownTable(rows = block.rows)
                 is MarkdownBlock.Paragraph -> MarkdownParagraph(text = block.text)
+                is MarkdownBlock.Image -> DidacticImageView(imagePathOrRes = block.url, altText = block.alt)
+                is MarkdownBlock.Formula -> MathFormulaCard(formula = block.formula, label = "Fórmula / Resolução")
             }
         }
     }
@@ -119,6 +123,21 @@ private fun parseMarkdown(text: String): List<MarkdownBlock> {
         if (trimmed.isEmpty()) continue
 
         when {
+            // Bloco de equação matemática em display ($$, \[, \\[ ou ```latex)
+            (trimmed.startsWith("$$") && trimmed.endsWith("$$") && trimmed.length > 4) ||
+            (trimmed.startsWith("\\[") && trimmed.endsWith("\\]") && trimmed.length > 4) ||
+            (trimmed.startsWith("\\\\[") && trimmed.endsWith("\\\\]") && trimmed.length > 6) ||
+            trimmed.startsWith("```math") || trimmed.startsWith("```latex") -> {
+                val cleanFormula = trimmed
+                    .removePrefix("```math").removePrefix("```latex").removeSuffix("```")
+                    .removePrefix("$$").removeSuffix("$$")
+                    .removePrefix("\\[").removeSuffix("\\]")
+                    .removePrefix("\\\\[").removeSuffix("\\\\]")
+                    .trim()
+                if (cleanFormula.isNotBlank()) {
+                    blocks.add(MarkdownBlock.Formula(cleanFormula))
+                }
+            }
             trimmed.startsWith("# ") -> {
                 blocks.add(MarkdownBlock.Heading1(trimmed.removePrefix("# ").trim()))
             }
@@ -133,6 +152,11 @@ private fun parseMarkdown(text: String): List<MarkdownBlock> {
             }
             trimmed.startsWith("- ") || trimmed.startsWith("* ") -> {
                 blocks.add(MarkdownBlock.ListItem(trimmed.substring(2).trim()))
+            }
+            trimmed.startsWith("![") && trimmed.contains("](") && trimmed.endsWith(")") -> {
+                val alt = trimmed.substringAfter("![").substringBefore("]")
+                val url = trimmed.substringAfter("](").substringBefore(")")
+                blocks.add(MarkdownBlock.Image(alt, url))
             }
             trimmed.matches(Regex("^\\d+\\.\\s+.*")) -> {
                 val number = trimmed.substringBefore(".")
@@ -263,11 +287,11 @@ private fun MarkdownBlockQuote(text: String) {
                     .height(28.dp)
                     .background(GoldXp, RoundedCornerShape(2.dp))
             )
-            Text(
-                text = renderFormattedText(text),
+            MathFormattedText(
+                text = text,
                 style = MaterialTheme.typography.bodyMedium,
                 color = TextSecondary,
-                lineHeight = 20.sp
+                lineHeightSp = 20f
             )
         }
     }
@@ -289,11 +313,11 @@ private fun MarkdownListItem(text: String) {
                 .clip(CircleShape)
                 .background(PrimaryViolet)
         )
-        Text(
-            text = renderFormattedText(text),
+        MathFormattedText(
+            text = text,
             style = MaterialTheme.typography.bodyMedium,
             color = TextPrimary,
-            lineHeight = 20.sp
+            lineHeightSp = 20f
         )
     }
 }
@@ -320,24 +344,39 @@ private fun MarkdownNumberedItem(number: String, text: String) {
                 modifier = Modifier.padding(horizontal = 5.dp, vertical = 1.dp)
             )
         }
-        Text(
-            text = renderFormattedText(text),
+        MathFormattedText(
+            text = text,
             style = MaterialTheme.typography.bodyMedium,
             color = TextPrimary,
-            lineHeight = 20.sp
+            lineHeightSp = 20f
         )
     }
 }
 
 @Composable
 private fun MarkdownParagraph(text: String) {
-    Text(
-        text = renderFormattedText(text),
-        style = MaterialTheme.typography.bodyMedium,
-        color = TextPrimary,
-        lineHeight = 22.sp,
-        modifier = Modifier.padding(horizontal = 2.dp)
-    )
+    val trimmed = text.trim()
+    val unquoted = if ((trimmed.startsWith("\"") && trimmed.endsWith("\"") && trimmed.length >= 2) ||
+        (trimmed.startsWith("'") && trimmed.endsWith("'") && trimmed.length >= 2) ||
+        (trimmed.startsWith("`") && trimmed.endsWith("`") && trimmed.length >= 2)
+    ) {
+        trimmed.substring(1, trimmed.length - 1).trim()
+    } else trimmed
+
+    // Se o parágrafo for estritamente uma fórmula isolada como \frac{...}{...} sem frases explicativas longas
+    if ((unquoted.startsWith("\\frac") || unquoted.startsWith("\\lim") || unquoted.startsWith("\\int")) &&
+        !unquoted.contains(" ") && !unquoted.contains("para") && !unquoted.contains("se")
+    ) {
+        MathFormulaCard(formula = unquoted, label = "Fórmula / Resolução")
+    } else {
+        MathFormattedText(
+            text = text,
+            style = MaterialTheme.typography.bodyMedium,
+            color = TextPrimary,
+            lineHeightSp = 22f,
+            modifier = Modifier.padding(horizontal = 2.dp)
+        )
+    }
 }
 
 @Composable

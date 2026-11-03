@@ -26,18 +26,40 @@ object EnemDidacticProvider {
             )
         }
         val lesson = EnemMathCurriculum.findLesson(lessonId) ?: return null
+        if (lessonId.startsWith("enem_m4_") || lessonId.startsWith("enem_m5_")) {
+            return MathGeometryDidactic.buildBundle(lesson)
+        }
+        if (lessonId.startsWith("enem_m6_") || lessonId.startsWith("enem_m7_") || lessonId.startsWith("enem_m11_")) {
+            return MathFunctionsDidactic.buildBundle(lesson)
+        }
+        if (lessonId.startsWith("enem_m3_") || lessonId.startsWith("enem_m8_") || lessonId.startsWith("enem_m9_")) {
+            return MathCombinatoricsDidactic.buildBundle(lesson)
+        }
+        MathAdvancedCurriculumDidactic.getDidacticBundle(lessonId)?.let { return it }
+
         return MathModuleGenerator.buildBundle(lesson)
     }
 
     fun getExercisesForLesson(lessonId: String): List<MathExercise> {
         val staticList = exerciseRegistry[lessonId]
-        val exercises = if (!staticList.isNullOrEmpty()) {
-            staticList
-        } else {
-            val lesson = EnemMathCurriculum.findLesson(lessonId) ?: return emptyList()
-            MathModuleGenerator.buildExercises(lesson)
+        if (!staticList.isNullOrEmpty()) {
+            return staticList.map { it.randomized() }
         }
-        return exercises.map { it.randomized() }
+        val lesson = EnemMathCurriculum.findLesson(lessonId) ?: return emptyList()
+        if (lessonId.startsWith("enem_m4_") || lessonId.startsWith("enem_m5_")) {
+            return MathGeometryDidactic.buildExercises(lesson).map { it.randomized() }
+        }
+        if (lessonId.startsWith("enem_m6_") || lessonId.startsWith("enem_m7_") || lessonId.startsWith("enem_m11_")) {
+            return MathFunctionsDidactic.buildExercises(lesson).map { it.randomized() }
+        }
+        if (lessonId.startsWith("enem_m3_") || lessonId.startsWith("enem_m8_") || lessonId.startsWith("enem_m9_")) {
+            return MathCombinatoricsDidactic.buildExercises(lesson).map { it.randomized() }
+        }
+        MathAdvancedCurriculumDidactic.getExercisesForLesson(lessonId)?.takeIf { it.isNotEmpty() }?.let {
+            return it.map { ex -> ex.randomized() }
+        }
+
+        return MathModuleGenerator.buildExercises(lesson).map { it.randomized() }
     }
 
     data class LessonDidacticEntry(

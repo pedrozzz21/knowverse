@@ -17,8 +17,8 @@ import com.example.data.model.MathExercise
 object BiologyModuleGenerator {
 
     fun buildBundle(lesson: EnemTrailLesson): CalculusDidacticBundle {
-        val title = lesson.title
-        val subtopic = lesson.subtopic
+        BiologyPhysiologyGeneticsDidactic.buildBundle(lesson)?.let { return it }
+        BiologyCytologyEvolutionDidactic.buildBundle(lesson)?.let { return it }
 
         return when {
             lesson.moduleId == "mod_bio_02_fisiologia" -> buildPhysiologyBundle(lesson)
@@ -30,6 +30,9 @@ object BiologyModuleGenerator {
     }
 
     fun buildExercises(lesson: EnemTrailLesson): List<MathExercise> {
+        BiologyPhysiologyGeneticsDidactic.buildExercises(lesson)?.takeIf { it.isNotEmpty() }?.let { return it }
+        BiologyCytologyEvolutionDidactic.buildExercises(lesson)?.takeIf { it.isNotEmpty() }?.let { return it }
+
         return when {
             lesson.moduleId == "mod_bio_02_fisiologia" -> buildPhysiologyExercises(lesson)
             lesson.moduleId == "mod_bio_03_genetica" -> buildGeneticsExercises(lesson)

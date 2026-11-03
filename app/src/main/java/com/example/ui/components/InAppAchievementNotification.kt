@@ -49,6 +49,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import com.example.R
+import com.example.ui.theme.BorderGlow
 import com.example.ui.theme.BorderSubtle
 import com.example.ui.theme.GoldXp
 import com.example.ui.theme.ObsidianSurface
@@ -130,17 +131,11 @@ fun InAppAchievementNotificationBanner(
                     colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .shadow(16.dp, RoundedCornerShape(14.dp), ambientColor = GoldXp, spotColor = GoldXp)
+                        .shadow(8.dp, RoundedCornerShape(12.dp), ambientColor = Color.Black, spotColor = Color.Black)
                         .border(
-                            1.5.dp,
-                            Brush.linearGradient(
-                                listOf(
-                                    GoldXp,
-                                    PrimaryViolet.copy(alpha = 0.8f),
-                                    GoldXp
-                                )
-                            ),
-                            RoundedCornerShape(14.dp)
+                            1.dp,
+                            BorderGlow,
+                            RoundedCornerShape(12.dp)
                         )
                         .clickable { AchievementAlertManager.dismiss() }
                 ) {
@@ -179,9 +174,18 @@ fun InAppAchievementNotificationBanner(
                         Spacer(modifier = Modifier.width(12.dp))
 
                         Column(modifier = Modifier.weight(1f)) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(4.dp)
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.EmojiEvents,
+                                    contentDescription = null,
+                                    tint = GoldXp,
+                                    modifier = Modifier.size(12.dp)
+                                )
                                 Text(
-                                    text = "✨ ${item.category} ✨",
+                                    text = item.category.uppercase(),
                                     style = MaterialTheme.typography.labelSmall.copy(
                                         color = GoldXp,
                                         fontWeight = FontWeight.Bold,

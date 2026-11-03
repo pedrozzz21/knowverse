@@ -291,14 +291,25 @@ fun ActionBentoGrid(
                         )
                     }
 
-                    Text(
-                        text = "Feedback IA ➔",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            color = TextSecondary,
-                            fontWeight = FontWeight.Medium,
-                            fontSize = 10.sp
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Text(
+                            text = "Feedback IA",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = TextSecondary,
+                                fontWeight = FontWeight.Medium,
+                                fontSize = 10.sp
+                            )
                         )
-                    )
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                            contentDescription = null,
+                            tint = TextSecondary,
+                            modifier = Modifier.size(11.dp)
+                        )
+                    }
                 }
             }
         }
@@ -475,14 +486,25 @@ fun ActionBentoGrid(
                         )
                     }
 
-                    Text(
-                        text = "Ver Ranking ➔",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            color = TextTertiary,
-                            fontWeight = FontWeight.Medium,
-                            fontSize = 10.sp
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Text(
+                            text = "Ver Ranking",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = TextTertiary,
+                                fontWeight = FontWeight.Medium,
+                                fontSize = 10.sp
+                            )
                         )
-                    )
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                            contentDescription = null,
+                            tint = TextTertiary,
+                            modifier = Modifier.size(11.dp)
+                        )
+                    }
                 }
             }
         }

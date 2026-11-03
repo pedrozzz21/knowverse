@@ -284,7 +284,7 @@ fun MainAppScreen(
                                 onClick = { currentTab = NavigationTab.LEADERBOARD },
                                 icon = {
                                     Icon(
-                                        imageVector = if (currentTab == NavigationTab.LEADERBOARD) Icons.Filled.EmojiEvents else Icons.Outlined.EmojiEvents,
+                                        imageVector = KnowverseIcons.Trophy,
                                         contentDescription = "Ranking",
                                         modifier = Modifier.size(24.dp)
                                     )

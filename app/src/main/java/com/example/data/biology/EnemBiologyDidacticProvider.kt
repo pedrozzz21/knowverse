@@ -29,23 +29,24 @@ object EnemBiologyDidacticProvider {
 
     fun getExercisesForLesson(lessonId: String): List<MathExercise> {
         val staticList = exercisesMap[lessonId]
-        val exercises = if (!staticList.isNullOrEmpty()) {
-            staticList.map { ex ->
-                if (!ex.stepByStepSolution.contains("Análise dos Distratores") && !ex.stepByStepSolution.contains("Alternativa")) {
-                    val enrichedSolution = BiologyAlternativeAnalyzer.generateFormattedSolutionString(
-                        statement = ex.problemStatement,
-                        options = ex.options,
-                        correctIndex = ex.correctIndex,
-                        subtopic = ex.title
-                    )
-                    ex.copy(stepByStepSolution = enrichedSolution)
-                } else {
-                    ex
-                }
-            }
+        val rawExercises = if (!staticList.isNullOrEmpty()) {
+            staticList
         } else {
             val lesson = EnemBiologyCurriculum.findLesson(lessonId) ?: return emptyList()
             BiologyModuleGenerator.buildExercises(lesson)
+        }
+        val exercises = rawExercises.map { ex ->
+            if (!ex.stepByStepSolution.contains("Alternativa") && !ex.stepByStepSolution.contains("Distratores")) {
+                val enrichedSolution = BiologyAlternativeAnalyzer.generateFormattedSolutionString(
+                    statement = ex.problemStatement,
+                    options = ex.options,
+                    correctIndex = ex.correctIndex,
+                    subtopic = ex.title
+                )
+                ex.copy(stepByStepSolution = enrichedSolution)
+            } else {
+                ex
+            }
         }
         return exercises.map { it.randomized() }
     }

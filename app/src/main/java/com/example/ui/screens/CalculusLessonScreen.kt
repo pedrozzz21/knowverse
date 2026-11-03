@@ -1474,7 +1474,7 @@ fun CalculusLessonScreen(
                                                         text = if (index + 1 < exercises.size) {
                                                             "Prosseguir para o Próximo Exercício (${index + 2}/${exercises.size})"
                                                         } else {
-                                                            "🎉 Todos os Exercícios da Aula Concluídos!"
+                                                            "Todos os Exercícios da Aula Concluídos!"
                                                         },
                                                         style = MaterialTheme.typography.labelMedium.copy(
                                                             fontWeight = FontWeight.Bold,

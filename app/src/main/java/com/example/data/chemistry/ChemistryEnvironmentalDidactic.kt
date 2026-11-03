@@ -330,6 +330,21 @@ object ChemistryEnvironmentalDidactic {
                     correctIndex = 0,
                     hint = "Reação que troca a cadeia alcóxi de um éster (glicerídeo) por outra cadeia alcóxi (metila ou etila) = Transesterificação.",
                     stepByStepSolution = "A alternativa A está correta. A transesterificação (ou alcoólise de ésteres) é a reação entre um éster existente (os triglicerídeos do óleo vegetal) e um álcool (metanol ou etanol) catalisada por base (NaOH/KOH). As três ligações éster do triglicerídeo são clivadas, gerando três ésteres alquílicos de ácidos graxos (que constituem o biodiesel pronto para queima) e liberando o glicerol (glicerina) como subproduto de alto valor agregado."
+                ),
+                MathExercise(
+                    id = "quim_ex_amb_03_b",
+                    title = "ENEM: Etanol de Segunda Geração (2G) e Biomassa Lignocelulósica",
+                    problemStatement = "O etanol de primeira geração é obtido no Brasil pela fermentação alcoólica da sacarose do caldo de cana por leveduras. Para aumentar a produtividade energética sem expandir a área plantada, desenvolveu-se o etanol de segunda geração (2G), que utiliza o bagaço e a palha da cana-de-açúcar. A etapa química crucial para viabilizar a produção do etanol 2G a partir do bagaço consiste na:",
+                    options = listOf(
+                        "Hidrólise enzimática ou ácida da celulose e hemicelulose, quebrando esses polissacarídeos em monômeros de glicose fermentáveis.",
+                        "Combustão completa do bagaço em fornalhas a vácuo para sintetizar gás oxigênio puro.",
+                        "Esterificação da lignina com ácido sulfúrico concentrado para produzir ésteres de alta octanagem.",
+                        "Polimerização por adição dos resíduos vegetais gerando plásticos biodegradáveis de cana.",
+                        "Filtração mecânica do bagaço para extrair diretamente etanol puro contido nas fibras."
+                    ),
+                    correctIndex = 0,
+                    hint = "A celulose é um polímero de glicose. Para as leveduras fermentarem, a celulose precisa primeiro ser quebrada (hidrolisada) em moléculas de glicose simples.",
+                    stepByStepSolution = "A alternativa A está correta. A biomassa lignocelulósica (bagaço e palha) é rica em celulose, que é um polissacarídeo estrutural de cadeia longa. Como as leveduras Saccharomyces cerevisiae não conseguem fermentar diretamente a celulose intacta, é necessária a prévia quebra das ligações glicosídicas beta-1,4 através de hidrólise enzimática ou ácida, liberando as moléculas de glicose livres, as quais entram na via da fermentação alcoólica para gerar etanol (C2H5OH)."
                 )
             )
 
@@ -348,6 +363,21 @@ object ChemistryEnvironmentalDidactic {
                     correctIndex = 0,
                     hint = "Cátions Ca2+ e Mg2+ precipitam com os sais de ácidos graxos, formando sabões de cálcio insolúveis em água.",
                     stepByStepSolution = "A alternativa A está correta. O sabão comum é composto por sais solúveis de sódio ou potássio de ácidos graxos (R-COO⁻ Na⁺). Na presença de cátions bivalentes como Ca²⁺ e Mg²⁺, ocorre uma reação de dupla troca formando sais de cálcio e magnésio [(R-COO)2Ca], que são insolúveis em água e precipitam como uma borra insolúvel ('sabão de cálcio'). Essa precipitação neutraliza a capacidade anfifílica do produto, impedindo a formação de micelas e espuma até que todos os íons metálicos tenham sido precipitados."
+                ),
+                MathExercise(
+                    id = "quim_ex_amb_04_b",
+                    title = "ENEM: Biodegradabilidade de Detergentes e Estrutura da Cadeia Carbônica",
+                    problemStatement = "Nas décadas de 1960 e 1970, rios urbanos sofriam com espumas persistentes gigantescas que cobriam as águas devido ao descarte de detergentes sintéticos derivados do petróleo. A legislação brasileira passou a exigir que todos os detergentes fossem biodegradáveis. Do ponto de vista da química orgânica estrutural, um detergente é considerado biodegradável pelas bactérias decompositoras quando sua cadeia carbônica apolar hidrofóbica é:",
+                    options = listOf(
+                        "Linear (reta e sem ramificações), o que permite o encaixe das enzimas bacterianas para oxidação biológica.",
+                        "Altamente ramificada com múltiplos carbonos quaternários que impedem a degradação.",
+                        "Formada exclusivamente por anéis aromáticos condensados com pontes de chumbo.",
+                        "Composta por átomos alternados de silício e flúor altamente resistentes.",
+                        "Cíclica saturada contendo halogênios tóxicos aos microrganismos aquáticos."
+                    ),
+                    correctIndex = 0,
+                    hint = "Cadeias lineares facilitam o ataque enzimático das bactérias (biodegradáveis); cadeias ramificadas causam impedimento estérico (não biodegradáveis).",
+                    stepByStepSolution = "A alternativa A está correta. As enzimas digestivas das bactérias decompositoras aeróbias reconhecem e clivam eficientemente as extremidades de cadeias carbônicas alifáticas lineares (lineares alquilbenzenossulfonatos - LAS). Quando a cadeia é ramificada com carbonos terciários e quaternários, ocorre grande impedimento estérico, impedindo a ação enzimática microbiana e tornando o detergente não biodegradável e persistente no meio ambiente."
                 )
             )
 
@@ -366,6 +396,21 @@ object ChemistryEnvironmentalDidactic {
                     correctIndex = 0,
                     hint = "Termoplásticos fundem porque só têm atrações intermoleculares fracas entre cadeias; Termofixos possuem ligações cruzadas covalentes permanentes.",
                     stepByStepSolution = "A alternativa A está correta. Os termoplásticos (como o PET e o polietileno) são constituídos por cadeias lineares ou ramificadas mantidas unidas por forças intermoleculares. Ao serem aquecidos, a energia térmica supera essas atrações fracas e as cadeias deslizam umas sobre as outras, fundindo o plástico para nova moldagem mecânica. Já os termofixos (como a borracha vulcanizada com enxofre e a baquelite) contêm ligações cruzadas covalentes permanentes entre as cadeias, formando uma rede molecular tridimensional única que não funde com o calor, carbonizando se superaquecida."
+                ),
+                MathExercise(
+                    id = "quim_ex_amb_05_b",
+                    title = "ENEM: Bioplásticos Biodegradáveis e Poliésteres Naturais (PLA)",
+                    problemStatement = "Como alternativa ao acúmulo de plásticos convencionais derivados do petróleo que levam séculos para se decompor nos oceanos, pesquisadores sintetizaram o poliácido lático (PLA) a partir da fermentação do amido de milho e cana. O PLA é um polímero biodegradável e compostável utilizado em copos descartáveis e fios de sutura cirúrgica absorvíveis. A degradação ambiental do PLA ocorre porque suas ligações éster são clivadas por:",
+                    options = listOf(
+                        "Hidrólise provocada por umidade e microrganismos do solo, liberando ácido lático atóxico que é metabolizado em CO2 e água.",
+                        "Sublimação instantânea do plástico na presença de radiação solar direta.",
+                        "Combustão espontânea anaeróbia quando enterrado em aterros sanitários.",
+                        "Reação com o gás nitrogênio da atmosfera convertendo-se em diamantes microscópicos.",
+                        "Dissolução em solventes clorados artificiais presentes na chuva ácida."
+                    ),
+                    correctIndex = 0,
+                    hint = "Poliésteres contêm grupos éster (-COO-) que sofrem hidrólise na presença de água e enzimas microbianas.",
+                    stepByStepSolution = "A alternativa A está correta. O PLA é um poliéster alifático cujas ligações éster sofrem quebra hidrolítica (hidrólise) catalisada por enzimas bacterianas e fúngicas na compostagem. Esse processo fragmenta as macromoléculas em monômeros de ácido lático (CH3-CH(OH)-COOH), uma substância atóxica natural presente no metabolismo biológico que é posteriormente oxidada a dióxido de carbono e água, completando o ciclo biogeoquímico sem gerar resíduos sintéticos persistentes."
                 )
             )
 

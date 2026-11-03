@@ -200,7 +200,7 @@ fun DevBroadcastTab(
                             shape = RoundedCornerShape(4.dp),
                             border = BorderStroke(1.dp, BorderSubtle),
                             modifier = Modifier.clickable {
-                                broadcastTitle = "🔥 Não perca sua sequência hoje!"
+                                broadcastTitle = "Não perca sua sequência hoje!"
                                 broadcastMessage = "Falta pouco para meia-noite! Faça uma aula ou resolva um exercício para manter seu streak ativo."
                                 broadcastType = BroadcastNotification.TYPE_STUDY_REMINDER
                             }

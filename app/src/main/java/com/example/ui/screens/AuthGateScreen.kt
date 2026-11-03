@@ -21,6 +21,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -127,59 +128,84 @@ fun AuthGateScreen(
             .background(DeepNavy)
             .statusBarsPadding()
             .navigationBarsPadding(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.TopCenter
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
+                .widthIn(max = 480.dp)
                 .verticalScroll(scrollState)
-                .padding(horizontal = 20.dp, vertical = 20.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+                .padding(horizontal = 20.dp, vertical = 24.dp)
         ) {
-            // SaaS Brand Icon with Otter Mascot
-            Box(
-                modifier = Modifier
-                    .size(84.dp)
-                    .clip(RoundedCornerShape(20.dp))
-                    .background(Color(0xFF0C439A))
-                    .border(2.dp, PrimaryViolet.copy(alpha = 0.6f), RoundedCornerShape(20.dp)),
-                contentAlignment = Alignment.Center
+            // Asymmetric Modern Editorial Header with Mascot and Typographic Contrast
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(14.dp)
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.img_mascot_otter_boy),
-                    contentDescription = "Mascote Knowverse",
-                    contentScale = ContentScale.Crop,
+                Box(
                     modifier = Modifier
-                        .size(84.dp)
-                        .clip(RoundedCornerShape(20.dp))
-                )
+                        .size(64.dp)
+                        .clip(RoundedCornerShape(14.dp))
+                        .background(SurfaceElevated)
+                        .border(1.5.dp, PrimaryViolet.copy(alpha = 0.5f), RoundedCornerShape(14.dp)),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.img_mascot_otter_boy),
+                        contentDescription = "Mascote Knowverse",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .size(64.dp)
+                            .clip(RoundedCornerShape(14.dp))
+                    )
+                }
+
+                Column(modifier = Modifier.weight(1f)) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Text(
+                            text = "Knowverse",
+                            style = MaterialTheme.typography.headlineMedium.copy(
+                                fontWeight = FontWeight.Bold,
+                                color = TextPrimary,
+                                letterSpacing = (-0.5).sp
+                            )
+                        )
+
+                        Surface(
+                            color = PrimaryViolet.copy(alpha = 0.15f),
+                            shape = RoundedCornerShape(4.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, PrimaryViolet.copy(alpha = 0.3f))
+                        ) {
+                            Text(
+                                text = "STUDY HUB",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    color = PrimaryViolet,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 9.sp,
+                                    letterSpacing = 0.6.sp
+                                ),
+                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                            )
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(3.dp))
+
+                    Text(
+                        text = "Aprenda Programação e Matemática com didática visual, terminal interativo e avaliação contínua.",
+                        style = MaterialTheme.typography.bodySmall.copy(
+                            color = TextSecondary,
+                            lineHeight = 16.sp
+                        )
+                    )
+                }
             }
 
-            Spacer(modifier = Modifier.height(10.dp))
-
-            Text(
-                text = "Knowverse",
-                style = MaterialTheme.typography.titleLarge.copy(
-                    fontWeight = FontWeight.SemiBold,
-                    color = TextPrimary,
-                    letterSpacing = (-0.5).sp
-                )
-            )
-
-            Spacer(modifier = Modifier.height(4.dp))
-
-            Text(
-                text = "Aprenda Programação e Matemática com didática visual, terminal interativo e Teste Final.",
-                style = MaterialTheme.typography.bodySmall.copy(
-                    color = TextSecondary,
-                    textAlign = TextAlign.Center,
-                    lineHeight = 16.sp
-                ),
-                modifier = Modifier.padding(horizontal = 12.dp)
-            )
-
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(20.dp))
 
             // Switcher Tabs: Entrar / Cadastrar
             Row(
@@ -356,7 +382,7 @@ fun AuthGateScreen(
                             onClick = {
                                 localErrorMessage = null
                                 authManager.signInWithEmail(
-                                    email = loginEmail,
+                                    email = loginEmail.trim(),
                                     password = loginPassword,
                                     onSuccess = {},
                                     onError = { localErrorMessage = it }
@@ -622,11 +648,11 @@ fun AuthGateScreen(
                             onClick = {
                                 localErrorMessage = null
                                 authManager.signUpWithEmail(
-                                    email = registerEmail,
+                                    email = registerEmail.trim(),
                                     password = registerPassword,
-                                    displayName = registerName,
+                                    displayName = registerName.trim(),
                                     securityQuestion = AuthManager.SECURITY_QUESTIONS[selectedQuestionIndex],
-                                    securityAnswer = registerAnswer,
+                                    securityAnswer = registerAnswer.trim(),
                                     onSuccess = {},
                                     onError = { localErrorMessage = it }
                                 )

@@ -1264,21 +1264,29 @@ private fun ExerciseListItemCard(
                     )
                 )
 
-                Row(verticalAlignment = Alignment.CenterVertically) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(4.dp)
+                ) {
                     Icon(
                         imageVector = Icons.Default.Fullscreen,
                         contentDescription = null,
                         tint = PrimaryViolet,
                         modifier = Modifier.size(14.dp)
                     )
-                    Spacer(modifier = Modifier.width(4.dp))
                     Text(
-                        text = "Resolver no Modo Foco ➔",
+                        text = "Resolver no Modo Foco",
                         style = MaterialTheme.typography.labelSmall.copy(
                             color = PrimaryViolet,
                             fontWeight = FontWeight.Bold,
                             fontSize = 11.sp
                         )
+                    )
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                        contentDescription = null,
+                        tint = PrimaryViolet,
+                        modifier = Modifier.size(12.dp)
                     )
                 }
             }

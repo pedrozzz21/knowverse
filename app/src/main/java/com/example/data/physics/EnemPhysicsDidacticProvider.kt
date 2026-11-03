@@ -25,19 +25,27 @@ object EnemPhysicsDidacticProvider {
                 assetImagePath = entry.assetImagePath
             )
         }
+        PhysicsMechanicsElectricityDidactic.getDidacticBundle(lessonId)?.let { return it }
+        PhysicsThermalWavesOpticsModernDidactic.getDidacticBundle(lessonId)?.let { return it }
+
         val lesson = EnemPhysicsCurriculum.findLesson(lessonId) ?: return null
         return PhysicsModuleGenerator.buildBundle(lesson)
     }
 
     fun getExercisesForLesson(lessonId: String): List<MathExercise> {
         val staticList = exercisesMap[lessonId]
-        val exercises = if (!staticList.isNullOrEmpty()) {
-            staticList
-        } else {
-            val lesson = EnemPhysicsCurriculum.findLesson(lessonId) ?: return emptyList()
-            PhysicsModuleGenerator.buildExercises(lesson)
+        if (!staticList.isNullOrEmpty()) {
+            return staticList.map { it.randomized() }
         }
-        return exercises.map { it.randomized() }
+        PhysicsMechanicsElectricityDidactic.getExercisesForLesson(lessonId)?.takeIf { it.isNotEmpty() }?.let {
+            return it.map { ex -> ex.randomized() }
+        }
+        PhysicsThermalWavesOpticsModernDidactic.getExercisesForLesson(lessonId)?.takeIf { it.isNotEmpty() }?.let {
+            return it.map { ex -> ex.randomized() }
+        }
+
+        val lesson = EnemPhysicsCurriculum.findLesson(lessonId) ?: return emptyList()
+        return PhysicsModuleGenerator.buildExercises(lesson).map { it.randomized() }
     }
 
     private val exercisesMap: Map<String, List<MathExercise>> by lazy {

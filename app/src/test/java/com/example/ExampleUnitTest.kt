@@ -463,6 +463,142 @@ class ExampleUnitTest {
             }
         }
     }
+
+    @Test
+    fun testEnemEssayEvaluationHeuristicQualitySpectrum() {
+        val topic = "Desafios para a valorização de comunidades e povos tradicionais no Brasil"
+
+        // 1. Texto Fraco / Insuficiente (< 40 palavras): Deve ser sumariamente anulado (Nota 0)
+        val weakEssay = """
+            Eu acho que os povos tradicionais são muito importantes pra gente. 
+            O governo tem que ver isso aí pq tá difícil pra todo mundo no Brasil.
+        """.trimIndent()
+
+        val weakResult = com.example.data.essay.EnemEssayService.evaluateHeuristicPedagogical(topic, weakEssay)
+        assertEquals("Texto com menos de 7 linhas/40 palavras deve receber nota zero sumária", 0, weakResult.totalScore)
+        assertTrue("Competências devem estar zeradas", weakResult.competencies.all { it.score == 0 })
+        assertTrue("Diagnóstico deve sinalizar extensão insuficiente", weakResult.generalDiagnosis.contains("insuficiente"))
+
+        // 2. Texto Mediano (Estrutura regular, sem repertório legitimado sólido, proposta incompleta)
+        val mediumEssay = """
+            A questão dos povos tradicionais no Brasil representa um obstáculo grave que precisa ser debatido pela sociedade. Historicamente, essas populações enfrentam dificuldades para manter suas terras e costumes.
+
+            Em primeiro lugar, nota-se que a falta de informação contribui para o preconceito contra indígenas e quilombolas. A sociedade muitas vezes desconhece a riqueza cultural dessas comunidades, o que gera exclusão e desigualdade.
+
+            Além disso, os conflitos fundiários continuam a ameaçar a segurança desses grupos. Sem a demarcação adequada de suas terras, eles ficam vulneráveis a invasões e à destruição de seus modos de vida.
+
+            Portanto, medidas são urgentes para resolver esse problema. O governo deve criar políticas públicas para proteger essas populações no território nacional.
+        """.trimIndent()
+
+        val mediumResult = com.example.data.essay.EnemEssayService.evaluateHeuristicPedagogical(topic, mediumEssay)
+        assertTrue("Texto mediano sem repertório aprofundado não pode receber nota inflada (> 800)", mediumResult.totalScore in 400..720)
+        // C5 tem agente (governo) e ação (deve criar), mas falta modo/meio detalhado e efeito explícito
+        val c5Medium = mediumResult.competencies.first { it.number == 5 }
+        assertTrue("C5 em texto mediano deve pontuar de acordo com os elementos (80 a 120)", c5Medium.score in 80..120)
+
+        // 3. Texto Bom / Consistente (Divisão canônica de 4 parágrafos, repertório legitimado, conectivos interparágrafos e 5 elementos na C5)
+        val strongEssay = """
+            A Constituição Federal de 1988 assegura a todos os cidadãos o direito à dignidade e à preservação de sua identidade cultural. Contudo, na contemporaneidade brasileira, os desafios para a valorização de comunidades e povos tradicionais revelam um abismo entre o texto legal e a realidade vivida por indígenas, ribeirinhos e quilombolas, perpetuando um cenário de invisibilidade social.
+
+            Nesse contexto, cabe pontuar que a desinformação histórica atua como forte entrave para o reconhecimento dessas coletividades. De acordo com o sociólogo Zygmunt Bauman, a modernidade líquida tende a fragilizar os laços comunitários e a marginalizar modos de vida que não atendem à lógica predatória do consumo. Dessa forma, a ausência de conteúdos escolares consistentes sobre a cosmologia desses povos consolida estigmas e preconceitos na sociedade civil.
+
+            Ademais, a lentidão nos processos demarcatórios intensifica os conflitos territoriais no campo. Diante desse cenário de vulnerabilidade jurídica, grileiros e madeireiros ilegais avançam sobre florestas protegidas, dizimando a sociobiodiversidade preservada há séculos por essas populações tradicionais. Torna-se imperioso, portanto, que o Estado brasileiro exerça seu papel regulador e fiscalizatório com rigor.
+
+            Infere-se, portanto, a urgência de medidas mitigadoras para reverter esse quadro de exclusão. Para tanto, cabe ao Ministério dos Povos Indígenas, em parceria com o Poder Legislativo e a sociedade civil, implementar um Plano Nacional de Proteção Territorial e Cultural, por meio de investimentos robustos na Funai e fiscalização contínua com drones e equipes de campo, como por exemplo nas bacias hidrográficas amazônicas, a fim de garantir a segurança jurídica das terras ancestrais e consolidar a cidadania plena dessas populações.
+        """.trimIndent()
+
+        val strongResult = com.example.data.essay.EnemEssayService.evaluateHeuristicPedagogical(topic, strongEssay)
+        assertTrue("Texto consistente com repertório e intervenção completa deve pontuar na faixa alta (>= 760)", strongResult.totalScore >= 760)
+        val c5Strong = strongResult.competencies.first { it.number == 5 }
+        assertEquals("C5 com 5 elementos identificados deve atingir a nota máxima de 200", 200, c5Strong.score)
+        assertTrue("Todas as notas devem ser múltiplos oficiais de 40", strongResult.competencies.all { it.score % 40 == 0 })
+    }
+
+    @Test
+    fun testCurricularCompletenessAcrossAllDisciplines() {
+        // 1. MATEMÁTICA ENEM (79 aulas)
+        val mathModules = com.example.data.math.EnemMathCurriculum.getAllModules()
+        var mathLessonCount = 0
+        mathModules.forEach { module ->
+            module.lessons.forEach { lesson ->
+                mathLessonCount++
+                val bundle = com.example.data.math.EnemDidacticProvider.getDidacticBundle(lesson.id)
+                assertNotNull("Aula de Matemática ${lesson.id} deve ter bundle didático", bundle)
+                assertTrue("Aula de Matemática ${lesson.id} deve ter teoria", bundle!!.theoryMarkdown.isNotBlank())
+                assertTrue("Aula de Matemática ${lesson.id} deve ter fórmulas", bundle.formulas.isNotEmpty())
+                assertTrue("Aula de Matemática ${lesson.id} deve ter exemplos resolvidos", bundle.solvedExamples.isNotEmpty())
+
+                val exercises = com.example.data.math.EnemDidacticProvider.getExercisesForLesson(lesson.id)
+                assertTrue("Aula de Matemática ${lesson.id} deve ter exercícios", exercises.isNotEmpty())
+                exercises.forEach { ex ->
+                    assertEquals(5, ex.options.size)
+                    assertTrue(ex.correctIndex in 0..4)
+                    assertTrue("Exercício ${ex.id} deve ter resolução passo a passo", ex.stepByStepSolution.isNotBlank())
+                }
+            }
+        }
+        assertEquals("Matemática ENEM deve ter exatamente 79 aulas", 79, mathLessonCount)
+
+        // 2. FÍSICA ENEM (34 aulas)
+        val physicsModules = com.example.data.physics.EnemPhysicsCurriculum.getAllModules()
+        var physicsLessonCount = 0
+        physicsModules.forEach { module ->
+            module.lessons.forEach { lesson ->
+                physicsLessonCount++
+                val bundle = com.example.data.physics.EnemPhysicsDidacticProvider.getDidacticBundle(lesson.id)
+                assertNotNull("Aula de Física ${lesson.id} deve ter bundle didático", bundle)
+                assertTrue("Aula de Física ${lesson.id} deve ter teoria", bundle!!.theoryMarkdown.isNotBlank())
+                assertTrue("Aula de Física ${lesson.id} deve ter fórmulas", bundle.formulas.isNotEmpty())
+                assertTrue("Aula de Física ${lesson.id} deve ter exemplos", bundle.solvedExamples.isNotEmpty())
+
+                val exercises = com.example.data.physics.EnemPhysicsDidacticProvider.getExercisesForLesson(lesson.id)
+                assertTrue("Aula de Física ${lesson.id} deve ter exercícios específicos", exercises.isNotEmpty())
+                exercises.forEach { ex ->
+                    assertEquals(5, ex.options.size)
+                    assertTrue(ex.correctIndex in 0..4)
+                    assertTrue("Exercício de física ${ex.id} deve ter resolução passo a passo", ex.stepByStepSolution.isNotBlank())
+                }
+            }
+        }
+        assertEquals("Física ENEM deve ter exatamente 34 aulas", 34, physicsLessonCount)
+
+        // 3. BIOLOGIA ENEM (25 aulas)
+        val biologyModules = com.example.data.biology.EnemBiologyCurriculum.getAllModules()
+        var bioLessonCount = 0
+        biologyModules.forEach { module ->
+            module.lessons.forEach { lesson ->
+                bioLessonCount++
+                val bundle = com.example.data.biology.EnemBiologyDidacticProvider.getDidacticBundle(lesson.id)
+                assertNotNull("Aula de Biologia ${lesson.id} deve ter bundle", bundle)
+                assertTrue(bundle!!.theoryMarkdown.isNotBlank())
+
+                val exercises = com.example.data.biology.EnemBiologyDidacticProvider.getExercisesForLesson(lesson.id)
+                assertTrue("Aula de Biologia ${lesson.id} deve ter exercícios", exercises.isNotEmpty())
+                exercises.forEach { ex ->
+                    assertEquals(5, ex.options.size)
+                    assertTrue(ex.correctIndex in 0..4)
+                    assertTrue("Exercício de biologia ${ex.id} deve ter resolução", ex.stepByStepSolution.isNotBlank())
+                }
+            }
+        }
+        assertEquals("Biologia ENEM deve ter exatamente 25 aulas", 25, bioLessonCount)
+
+        // 4. QUÍMICA ENEM (21 aulas)
+        val chemistryModules = com.example.data.chemistry.EnemChemistryCurriculum.getAllModules()
+        var chemLessonCount = 0
+        chemistryModules.forEach { module ->
+            module.lessons.forEach { lesson ->
+                chemLessonCount++
+                val bundle = com.example.data.chemistry.EnemChemistryDidacticProvider.getDidacticBundle(lesson.id)
+                assertNotNull("Aula de Química ${lesson.id} deve ter bundle", bundle)
+                assertTrue(bundle!!.theoryMarkdown.isNotBlank())
+
+                val exercises = com.example.data.chemistry.EnemChemistryDidacticProvider.getExercisesForLesson(lesson.id)
+                assertTrue("Aula de Química ${lesson.id} deve ter exercícios", exercises.isNotEmpty())
+            }
+        }
+        assertEquals("Química ENEM deve ter exatamente 21 aulas", 21, chemLessonCount)
+    }
 }
 
 

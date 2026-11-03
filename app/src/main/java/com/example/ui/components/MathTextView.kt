@@ -23,8 +23,10 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Calculate
+import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Functions
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Lightbulb
 import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.SquareFoot
@@ -1356,37 +1358,50 @@ fun StepByStepSolutionView(
                         Spacer(modifier = Modifier.height(6.dp))
                     } else if (isSuccessHeader || isErrorHeader || isConceptHeader || isTipHeader) {
                         Spacer(modifier = Modifier.height(6.dp))
+                        val calloutColor = when {
+                            isSuccessHeader -> SuccessEmerald
+                            isErrorHeader -> ErrorRose
+                            isTipHeader -> GoldXp
+                            else -> PrimaryViolet
+                        }
+                        val calloutIcon = when {
+                            isSuccessHeader -> Icons.Default.CheckCircle
+                            isErrorHeader -> Icons.Default.Cancel
+                            isTipHeader -> Icons.Default.Lightbulb
+                            else -> Icons.Default.Info
+                        }
+                        val cleanCalloutText = line
+                            .removePrefix("✅").removePrefix("❌").removePrefix("🧠").removePrefix("🎯")
+                            .removePrefix("### ").removePrefix("# ").trim()
+
                         Surface(
-                            color = when {
-                                isSuccessHeader -> SuccessEmerald.copy(alpha = 0.12f)
-                                isErrorHeader -> ErrorRose.copy(alpha = 0.12f)
-                                isTipHeader -> GoldXp.copy(alpha = 0.12f)
-                                else -> PrimaryViolet.copy(alpha = 0.12f)
-                            },
+                            color = calloutColor.copy(alpha = 0.12f),
                             shape = RoundedCornerShape(6.dp),
                             border = androidx.compose.foundation.BorderStroke(
                                 1.dp,
-                                when {
-                                    isSuccessHeader -> SuccessEmerald.copy(alpha = 0.35f)
-                                    isErrorHeader -> ErrorRose.copy(alpha = 0.35f)
-                                    isTipHeader -> GoldXp.copy(alpha = 0.35f)
-                                    else -> PrimaryViolet.copy(alpha = 0.35f)
-                                }
+                                calloutColor.copy(alpha = 0.35f)
                             ),
                             modifier = Modifier.fillMaxWidth().padding(vertical = 2.dp)
                         ) {
-                            Column(modifier = Modifier.padding(10.dp)) {
-                                MathFormattedText(
-                                    text = line.removePrefix("### ").removePrefix("# "),
-                                    style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
-                                    color = when {
-                                        isSuccessHeader -> SuccessEmerald
-                                        isErrorHeader -> ErrorRose
-                                        isTipHeader -> GoldXp
-                                        else -> TextPrimary
-                                    },
-                                    lineHeightSp = 19f
+                            Row(
+                                modifier = Modifier.padding(10.dp),
+                                verticalAlignment = Alignment.Top,
+                                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                Icon(
+                                    imageVector = calloutIcon,
+                                    contentDescription = null,
+                                    tint = calloutColor,
+                                    modifier = Modifier.size(16.dp).padding(top = 2.dp)
                                 )
+                                Column(modifier = Modifier.weight(1f)) {
+                                    MathFormattedText(
+                                        text = cleanCalloutText,
+                                        style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
+                                        color = calloutColor,
+                                        lineHeightSp = 19f
+                                    )
+                                }
                             }
                         }
                     } else if (line.startsWith("•") || line.startsWith("-")) {

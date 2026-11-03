@@ -436,6 +436,33 @@ class ExampleUnitTest {
         assertEquals(2, release.versionCode)
         assertEquals(devEmail, release.publishedBy)
     }
+
+    @Test
+    fun testAllTrailLessonsAndDidactics() {
+        val allCurricula = listOf(
+            "Math" to com.example.data.math.EnemMathCurriculum.getAllModules(),
+            "Physics" to com.example.data.physics.EnemPhysicsCurriculum.getAllModules(),
+            "Biology" to com.example.data.biology.EnemBiologyCurriculum.getAllModules(),
+            "Chemistry" to com.example.data.chemistry.EnemChemistryCurriculum.getAllModules(),
+            "Languages" to com.example.data.languages.EnemLanguagesCurriculum.getAllModules(),
+            "History" to com.example.data.history.EnemHistoryCurriculum.getAllModules(),
+            "Geography" to com.example.data.geography.EnemGeographyCurriculum.getAllModules()
+        )
+
+        for ((name, modules) in allCurricula) {
+            assertTrue("$name should have modules", modules.isNotEmpty())
+            for (module in modules) {
+                assertTrue("${module.title} should have lessons", module.lessons.isNotEmpty())
+                for (lesson in module.lessons) {
+                    val appLesson = lesson.toAppLesson()
+                    assertNotNull("appLesson should not be null for ${lesson.id}", appLesson)
+                    assertTrue("Title not blank for ${lesson.id}", appLesson.title.isNotBlank())
+                    val bundle = com.example.data.math.CalculusDidacticContent.getContentForLesson(lesson.id)
+                    assertNotNull("bundle not null for ${lesson.id}", bundle)
+                }
+            }
+        }
+    }
 }
 
 

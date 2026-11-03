@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon in Celestial Cyan & Diamond White -->
+    <path
+        android:fillColor="#042F2E"
+        android:strokeColor="#2DD4BF"
+        android:strokeWidth="3.2"
+        android:pathData="M36,3 L65,17 L65,49 L36,69 L7,49 L7,17 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#134E4A"
+        android:pathData="M36,8 L60,20 L60,47 L36,64 L12,47 L12,20 Z" />
+    <!-- Infinity Knot / Universal Halo of Mastery -->
+    <path
+        android:fillColor="#5EEAD4"
+        android:pathData="M29,32 C26,32 24,34 24,36 C24,38 26,40 29,40 C32,40 34,38 36,36 C34,34 32,32 29,32 Z M43,32 C40,32 38,34 36,36 C38,38 40,40 43,40 C46,40 48,38 48,36 C48,34 46,32 43,32 Z M29,30 C33,30 36,32 38,34 C40,32 43,30 47,30 C52,30 56,34 56,39 C56,44 52,48 47,48 C43,48 40,46 38,44 C36,46 33,48 29,48 C24,48 20,44 20,39 C20,34 24,30 29,30 Z" />
+    <!-- Radiating Cosmic Star -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,18 L38,24 L44,26 L38,28 L36,34 L34,28 L28,26 L34,24 Z" />
+    <path
+        android:fillColor="#FDE047"
+        android:pathData="M36,24 A2,2 0 1,1 35.9,24 Z" />
+</vector>

@@ -46,6 +46,11 @@ data class EnemQuestion(
      */
     fun toUniversalExercise(): UniversalExercise {
         val resolvedDiscipline = when {
+            moduleId.startsWith("mod_geo_") || topic.contains("Geografia", ignoreCase = true) ||
+                subtopic.contains("Geografia", ignoreCase = true) || moduleTitle.contains("Geografia", ignoreCase = true) ||
+                moduleTitle.contains("Agrária", ignoreCase = true) || moduleTitle.contains("Urbana", ignoreCase = true) ||
+                moduleTitle.contains("Geopolítica", ignoreCase = true) -> ExerciseDiscipline.GEOGRAPHY
+
             moduleId.startsWith("mod_hist_") || topic.contains("História", ignoreCase = true) ||
                 subtopic.contains("História", ignoreCase = true) || moduleTitle.contains("História", ignoreCase = true) ||
                 topic.contains("Humanas", ignoreCase = true) || moduleTitle.contains("Colônia", ignoreCase = true) ||
@@ -56,6 +61,11 @@ data class EnemQuestion(
                 moduleTitle.contains("Interpretação", ignoreCase = true) || moduleTitle.contains("Linguística", ignoreCase = true) ||
                 moduleTitle.contains("Literatura", ignoreCase = true) || moduleTitle.contains("Gramática", ignoreCase = true) ||
                 moduleTitle.contains("Artes", ignoreCase = true) -> ExerciseDiscipline.LANGUAGES
+
+            moduleId.startsWith("mod_quim_") || topic.contains("Química", ignoreCase = true) ||
+                subtopic.contains("Química", ignoreCase = true) || moduleTitle.contains("Química", ignoreCase = true) ||
+                moduleTitle.contains("Físico-Química", ignoreCase = true) || moduleTitle.contains("Orgânica", ignoreCase = true) ||
+                moduleTitle.contains("Ambiental", ignoreCase = true) -> ExerciseDiscipline.CHEMISTRY
 
             moduleId.startsWith("mod_fis_") || topic.contains("Física", ignoreCase = true) ||
                 subtopic.contains("Física", ignoreCase = true) || moduleTitle.contains("Física", ignoreCase = true) ||
@@ -71,15 +81,20 @@ data class EnemQuestion(
 
             topic.contains("Natureza", ignoreCase = true) -> {
                 val text = (title + " " + alternatives.joinToString(" ")).lowercase()
-                if (text.contains("força") || text.contains("velocidade") || text.contains("aceleração") ||
-                    text.contains("energia") || text.contains("calor") || text.contains("onda") ||
-                    text.contains("circuito") || text.contains("corrente") || text.contains("potência") ||
-                    text.contains("tensão") || text.contains("óptica") || text.contains("cinemática") ||
-                    text.contains("elétrica") || text.contains("gravitacional")
-                ) {
-                    ExerciseDiscipline.PHYSICS
-                } else {
-                    ExerciseDiscipline.BIOLOGY
+                when {
+                    text.contains("reação") || text.contains("reacao") || text.contains("ácido") || text.contains("acido") ||
+                        text.contains("base ") || text.contains("mol ") || text.contains("molar") || text.contains("estequiometr") ||
+                        text.contains("oxidação") || text.contains("redução") || text.contains("pilha") || text.contains("eletrólise") ||
+                        text.contains("isomeria") || text.contains("hidrocarboneto") || text.contains("solução") || text.contains("solucao") ||
+                        text.contains("entalpia") || text.contains("catalisador") || text.contains("ph ") || text.contains("poh ") -> ExerciseDiscipline.CHEMISTRY
+
+                    text.contains("força") || text.contains("velocidade") || text.contains("aceleração") ||
+                        text.contains("energia") || text.contains("calor") || text.contains("onda") ||
+                        text.contains("circuito") || text.contains("corrente") || text.contains("potência") ||
+                        text.contains("tensão") || text.contains("óptica") || text.contains("cinemática") ||
+                        text.contains("elétrica") || text.contains("gravitacional") -> ExerciseDiscipline.PHYSICS
+
+                    else -> ExerciseDiscipline.BIOLOGY
                 }
             }
             else -> ExerciseDiscipline.BASIC_MATH

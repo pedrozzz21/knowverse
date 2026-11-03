@@ -16,8 +16,15 @@ import com.example.data.model.MathExercise
 object EnemHistoryDidacticProvider {
 
     fun getDidacticBundle(lessonId: String): CalculusDidacticBundle? {
+        if (!lessonId.startsWith("hist_")) return null
         val lesson = EnemHistoryCurriculum.findLesson(lessonId)
-            ?: com.example.data.model.EnemTrailLesson(id = lessonId, moduleId = "", lessonIndex = 1, title = "Aula de História")
+            ?: com.example.data.model.EnemTrailLesson(
+                id = lessonId,
+                moduleId = "mod_hist_01_colonia",
+                lessonIndex = 1,
+                title = "Aula de História",
+                subtopic = "História Geral e do Brasil"
+            )
         return when {
             lessonId.startsWith("hist_col_") -> HistoryColonialDidactic.buildBundle(lesson)
             lessonId.startsWith("hist_imp_") -> HistoryEmpireDidactic.buildBundle(lesson)
@@ -30,8 +37,15 @@ object EnemHistoryDidacticProvider {
     }
 
     fun getExercisesForLesson(lessonId: String): List<MathExercise> {
+        if (!lessonId.startsWith("hist_")) return emptyList()
         val lesson = EnemHistoryCurriculum.findLesson(lessonId)
-            ?: com.example.data.model.EnemTrailLesson(id = lessonId, moduleId = "", lessonIndex = 1, title = "Aula de História")
+            ?: com.example.data.model.EnemTrailLesson(
+                id = lessonId,
+                moduleId = "mod_hist_01_colonia",
+                lessonIndex = 1,
+                title = "Aula de História",
+                subtopic = "História Geral e do Brasil"
+            )
         val exercises = when {
             lessonId.startsWith("hist_col_") -> HistoryColonialDidactic.buildExercises(lesson)
             lessonId.startsWith("hist_imp_") -> HistoryEmpireDidactic.buildExercises(lesson)

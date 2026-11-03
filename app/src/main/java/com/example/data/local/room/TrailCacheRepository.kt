@@ -16,6 +16,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -32,9 +33,9 @@ class TrailCacheRepository(
 ) {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
-    val allCachedTrails: Flow<List<CachedTrailEntity>> = dao.getAllTrails()
-    val allCachedLessons: Flow<List<CachedLessonEntity>> = dao.getAllLessons()
-    val cachedLessonCount: Flow<Int> = dao.getCachedLessonCountFlow()
+    val allCachedTrails: Flow<List<CachedTrailEntity>> = dao.getAllTrails().catch { emit(emptyList()) }
+    val allCachedLessons: Flow<List<CachedLessonEntity>> = dao.getAllLessons().catch { emit(emptyList()) }
+    val cachedLessonCount: Flow<Int> = dao.getCachedLessonCountFlow().catch { emit(0) }
 
     init {
         // Automatically pre-populate cache on first launch so all tracks are immediately offline-ready
@@ -46,7 +47,7 @@ class TrailCacheRepository(
     suspend fun prepopulateCacheIfNeeded() = withContext(Dispatchers.IO) {
         try {
             val count = dao.getCachedLessonCount()
-            if (count == 0) {
+            if (count < 150) {
                 cacheAllCurricula()
             }
         } catch (_: Exception) {}
@@ -337,6 +338,156 @@ class TrailCacheRepository(
             for (enemLesson in module.lessons) {
                 val appLesson = enemLesson.toAppLesson()
                 lessonsToInsert.add(mapLessonToEntity(appLesson, geoTrailId, unitModel))
+            }
+        }
+
+        // 8. Química ENEM Trail
+        val quimTrailId = "trail_enem_quimica"
+        val quimModules = com.example.data.chemistry.EnemChemistryCurriculum.getAllModules()
+        val totalQuimLessons = quimModules.sumOf { it.lessons.size }
+
+        trailsToInsert.add(
+            CachedTrailEntity(
+                id = quimTrailId,
+                title = "Química: Ciências da Natureza ENEM",
+                description = "Trilha completa de Química com 4 módulos: Geral e Matéria, Físico-Química, Química Orgânica e Química Ambiental.",
+                category = "Química",
+                subject = "Ciências da Natureza",
+                tierOrModule = "ENEM",
+                totalLessons = totalQuimLessons,
+                estimatedHours = "${totalQuimLessons * 25 / 60}h",
+                isAvailable = true
+            )
+        )
+
+        for (module in quimModules) {
+            val unitId = "unit_${module.id}"
+            val unitEntity = CachedUnitEntity(
+                id = unitId,
+                trailId = quimTrailId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                tier = "BASIC",
+                category = "Química",
+                subject = "Ciências da Natureza",
+                lessonCount = module.lessons.size
+            )
+            unitsToInsert.add(unitEntity)
+
+            val unitModel = LearningUnit(
+                id = unitId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                lessons = emptyList(),
+                category = "Química",
+                subject = "Ciências da Natureza"
+            )
+
+            for (enemLesson in module.lessons) {
+                val appLesson = enemLesson.toAppLesson()
+                lessonsToInsert.add(mapLessonToEntity(appLesson, quimTrailId, unitModel))
+            }
+        }
+
+        // 9. Física ENEM Trail
+        val fisTrailId = "trail_enem_fisica"
+        val fisModules = com.example.data.physics.EnemPhysicsCurriculum.getAllModules()
+        val totalFisLessons = fisModules.sumOf { it.lessons.size }
+
+        trailsToInsert.add(
+            CachedTrailEntity(
+                id = fisTrailId,
+                title = "Física: Ciências da Natureza ENEM",
+                description = "Trilha oficial com Mecânica, Eletricidade, Termologia, Ondulatória, Óptica e Física Moderna.",
+                category = "Física",
+                subject = "Ciências da Natureza",
+                tierOrModule = "ENEM",
+                totalLessons = totalFisLessons,
+                estimatedHours = "${totalFisLessons * 25 / 60}h",
+                isAvailable = true
+            )
+        )
+
+        for (module in fisModules) {
+            val unitId = "unit_${module.id}"
+            val unitEntity = CachedUnitEntity(
+                id = unitId,
+                trailId = fisTrailId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                tier = "BASIC",
+                category = "Física",
+                subject = "Ciências da Natureza",
+                lessonCount = module.lessons.size
+            )
+            unitsToInsert.add(unitEntity)
+
+            val unitModel = LearningUnit(
+                id = unitId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                lessons = emptyList(),
+                category = "Física",
+                subject = "Ciências da Natureza"
+            )
+
+            for (enemLesson in module.lessons) {
+                val appLesson = enemLesson.toAppLesson()
+                lessonsToInsert.add(mapLessonToEntity(appLesson, fisTrailId, unitModel))
+            }
+        }
+
+        // 10. Biologia ENEM Trail
+        val bioTrailId = "trail_enem_biologia"
+        val bioModules = com.example.data.biology.EnemBiologyCurriculum.getAllModules()
+        val totalBioLessons = bioModules.sumOf { it.lessons.size }
+
+        trailsToInsert.add(
+            CachedTrailEntity(
+                id = bioTrailId,
+                title = "Biologia: Ciências da Natureza ENEM",
+                description = "Trilha oficial com Ecologia, Fisiologia Humana, Genética, Citologia e Evolução.",
+                category = "Biologia",
+                subject = "Ciências da Natureza",
+                tierOrModule = "ENEM",
+                totalLessons = totalBioLessons,
+                estimatedHours = "${totalBioLessons * 25 / 60}h",
+                isAvailable = true
+            )
+        )
+
+        for (module in bioModules) {
+            val unitId = "unit_${module.id}"
+            val unitEntity = CachedUnitEntity(
+                id = unitId,
+                trailId = bioTrailId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                tier = "BASIC",
+                category = "Biologia",
+                subject = "Ciências da Natureza",
+                lessonCount = module.lessons.size
+            )
+            unitsToInsert.add(unitEntity)
+
+            val unitModel = LearningUnit(
+                id = unitId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                lessons = emptyList(),
+                category = "Biologia",
+                subject = "Ciências da Natureza"
+            )
+
+            for (enemLesson in module.lessons) {
+                val appLesson = enemLesson.toAppLesson()
+                lessonsToInsert.add(mapLessonToEntity(appLesson, bioTrailId, unitModel))
             }
         }
 

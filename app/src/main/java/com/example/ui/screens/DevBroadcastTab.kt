@@ -93,7 +93,7 @@ fun DevBroadcastTab(
         mutableStateOf("Nova versão do Knowverse disponível! Baixe agora diretamente pelo app para ter as últimas lições e correções.")
     }
     var broadcastType by remember { mutableStateOf(BroadcastNotification.TYPE_APP_UPDATE) }
-    var apkVersion by remember { mutableStateOf("1.1.0") }
+    var apkVersion by remember { mutableStateOf("1.8.0") }
     var apkDownloadUrl by remember { mutableStateOf(BroadcastNotificationRepository.DEFAULT_APK_DOWNLOAD_URL) }
 
     var isSending by remember { mutableStateOf(false) }

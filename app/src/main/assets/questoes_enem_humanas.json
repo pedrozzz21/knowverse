@@ -5098,5 +5098,2245 @@
     "correctLetter": "A",
     "explanation": "Resolução comentada ENEM 2019 (Questão 95): Problematização contextualizada do tema em Módulo 1: Brasil Colônia. O gabarito oficial é a alternativa A.",
     "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q45",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Carta aberta à população brasileira\nPrezados Cidadãos e Cidadãs, O envelhecimento populacional é um fenômeno mundial. Infelizmente, nosso país ainda não está preparado para atender às demandas dessa população.\nEste é o retrato da saúde pública no Brasil, que, apesar dos indiscutíveis avanços, apresenta um cenário de deficiências e falta de integração em todos os níveis de atenção à saúde: primária (atendimento deficiente nas unidades de saúde da atenção básica), secundária (carência de centros de referência com atendimento por especialistas) e terciária (atendimento hospitalar com abordagem ao idoso centrada na doença), ou seja, não há, na prática, uma rede de atenção à saúde do idoso.\nDiante desse cenário, a Sociedade Brasileira de Geriatria e Gerontologia (SBGG) vem a público manifestar suas preocupações com o presente e o futuro dos idosos no Brasil. É preciso garantir a saúde como direito universal.\nEsperamos que tanto nossos atuais quanto os futuros governantes e legisladores reflitam sobre a necessidade de investir na saúde e na qualidade de vida associada ao envelhecimento.\nDignidade à saúde do idoso!\nRio de Janeiro, 15 de setembro de 2014.\nDisponível em: www.sbgg.org.br. Acesso em: 20 out. 2021 (adaptado).\nO objetivo desse texto é",
+    "options": [
+      "A) A sensibilizar o idoso a respeito dos cuidados com a saude.",
+      "B) Alertar os governantes sobre os cuidados requeridos pelo idoso.",
+      "C) Divulgar o trabalho da Sociedade Brasileira de Geriatria e Gerontologia.",
+      "D) Informar o setor público sobre o retrocesso da legislação destinada à população idosa.",
+      "E) Chamar a atenção da população sobre a qualidade dos serviços de saúde pública para o idoso."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 45): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q46",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "![](https://enem.dev/2023/questions/46/4eac436b-15be-438c-8219-f2043ab21946.png)\n\nFotografia da avó bordada\nSCARELI. G. A máquina de costura e os fios da memória Revista Brasileira de Pesquisa (Auto) Biográfica, n. 18 maio-ago, 2021\nA definição de Sertão descrita no bordado associa esse recorte espacial a",
+    "options": [
+      "A) Percursos e roteiros turísticos.",
+      "B) Trajetos e movimentos holísticos.",
+      "C) Vivências e itinerários socioafetivos.",
+      "D) Fronteiras e demarcações territoriais.",
+      "E) Profissões e interesses econômicos."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 46): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q47",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Felizes tempos eram esses! As moças iam à missa de madrugada. De dia ninguém as via e se alguma, em dia de festa, queria passear com a avó ou a tia, havia de ir de cadeirinhas. Bem razão têm os nossos velhos de chorar por esses tempos, em que as filhas não sabiam escrever, e por isso não mandavam nem recebiam bilhetinhos.\n \nNovo correio de Modas, 1853, apud DONEGÁ, A. L.\nPublicar ficção em meado do século XIX,: um estudo de revistas femininas editadas pelos irmãos Laemmert. Campinas, unicamp, 2013 (adaptado)\nNa perspectiva do autor,  as tradições e os costumes sociofamiliares sofreram alterações no século XIX, decorrentes de quais fatores?",
+    "options": [
+      "A) Hábitos de leitura e mobilidade regional.",
+      "B) Circulação de impressos e trânsito religioso.",
+      "C) Valorização da lingua e imigração estrangeira.",
+      "D) Práticas de letramento e transformação cultural.",
+      "E) Flexibilização do ensino e reformismo pedagógico."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 47): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q50",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Moderna",
+    "subtopic": "Renascimento e Reformas Religiosas",
+    "moduleId": "mod_hist_05_moderna",
+    "moduleTitle": "Módulo 5: Idade Moderna",
+    "statement": "Superar a história da escravidão como principal marca da trajetória do negro no país tem sido uma tônica daqueles que se dedicam a pesquisar as heranças de origem afro à cultura brasileira. A esse esforço de reconstrução da própria história do país, alia-se agora a criação da plataforma digital Ancestralidades. “A história do negro no Brasil vai continuar sendo contada, e cada passo que a gente dá para trás é um passo que a gente avança”, diz Márcio Black, idealizador da plataforma, sobre o estudo de figuras ainda encobertas pela perspectiva histórica imposta pelos colonizadores da América.\nFIORATI, G. Projeto joga luz sobre negros e revê perspectiva histórica Disponivel em: www1.folha.uol.com.br. Acesso em: 10 nov. 2021 (adaptado)\nEm relação ao conhecimento sobre a formação cultural brasileira, iniciativas como a descrita no texto favorecem o(a)",
+    "options": [
+      "A) Recuperação do tradicionalismo.",
+      "B) Estímulo ao antropocentrismo.",
+      "C) Reforço do etnocentrismo.",
+      "D) Resgate do teocentrismo.",
+      "E) Crítica ao eurocentrismo."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 50): Contextualização histórica e cidadania em Módulo 5: Idade Moderna. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q51",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Escrito durante a Primeira Guerra Mundial, o seguinte trecho faz parte da carta enviada pelo secretário do exterior britânico, Sir Arthur James Balfour, ao banqueiro Lord Rotschild, presidente da Liga Sionista, em 2 de novembro de 1917, a carta ficou conhecida como Declaração Balfour:\n“O governo de Sua Majestade vê com aprovação o estabelecimento na Palestina de um lar nacional para o povo judeu, e fará todos os esforços para facilitar tal objetivo. Nada será feito que possa prejudicar os direitos civis e religiosos das comunidades não judaicas na Palestina.”\nGATTAZ, A. A Guerra da Palestina. São Paulo: Usina do Livro, 2002 (adaptado).\nA análise do resultado do processo em questão revela que o governo inglês foi incapaz de garantir seu objetivo de",
+    "options": [
+      "A) Promover o bem-estar social.",
+      "B) Negociar o apoio muçulmano.",
+      "C) Mediar os conflitos territoriais.",
+      "D) Estimular a cooperação regional.",
+      "E) Combater os governos autocráticos."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 51): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q52",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "TEXTO I\nComo presença consciente no mundo não posso escapar à responsabilidade ética no meu mover-me no mundo. Se sou puro produto da determinação genética ou cultural ou de classe, sou irresponsável pelo que faço no meu mover-me no mundo e, se careço de responsabilidade, não posso falar em ética.\nFREIRE, P. Pedagogia da autonomia: saberes necessários à prática educativa. São Paulo: Paz e Terra, 1996\nТЕХТО II\nPaulo Freire construiu uma pedagogia da esperança. Na sua concepção, a história não é algo pronto e acabado. As estruturas de opressão e as desigualdades, apesar de serem naturalizadas, são sócio e historicamente construídas. Daí a importância de os educandos tomarem consciência da sua realidade para, assim, transformá-la.\nDEMARCHI, J. L. Paulo Freire. Disponivel em: https://diplomatique.org.br. Acesso em: 6 out. 2021 (adaptado).\nCom base no conceito de ética pedagógica presente nos textos, os educandos tornam-se responsáveis pela",
+    "options": [
+      "A) Participação sociopolítica.",
+      "B) Definição estético-cultural.",
+      "C) Competição econômica local.",
+      "D) Manutenção do sistema escolar.",
+      "E) Capacitação de mobilidade individual."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 52): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q53",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "A cordilheira do Himalaia tem mais de 50 milhões de anos., sendo classificada como a maior cordilheira do planeta. Originário da língua sânscrito, comum na região, seu nome quer dizer “morada da neve”. É possível encontrar nessa cordilheira as quinze maiores montanhas do mundo. Ao todo, existem mais de cem picos, que contam com altitudes bem maiores que 7 000 m. O Everest, considerado o ponto mais alto da Terra, tem nada menos que 8 848 m de altitude, e continua crescendo, aproximadamente, 0,8 mm a cada ano.\n\nDisponível em: https://meioambiente.culturamix.com. Acesso em: 12 nov. 2021 (adaptado).\n\nQual dinâmica natural é responsável pelo fenômeno apresentado?",
+    "options": [
+      "A) Derrame de lava vulcânica.",
+      "B) Encontro de placas tectônicas.",
+      "C) Ação do intemperismo químico.",
+      "D) Sedimentação de erosão eólica.",
+      "E) Derretimento de geleiras glaciais."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 53): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q54",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Eu poderia concluir que a raiva é um pensamento, que estar com raiva é pensar que alguém é detestável, e que esse pensamento, como todos os outros — assim como Descartes o mostrou —, não poderia residir em nenhum fragmento de matéria. A raiva seria, portanto, espírito. Porém, quando me volto para minha própria experiência da raiva, devo confessar que ela não estava fora do meu corpo, mas inexplicavelmente nele.\nMERLEAU-PONTY, M. Quinta conversa: o homem visto de fora. São Paulo: Martins Fontes, 1948 (adaptado).\nNo que se refere ao problema do corpo, a filosofia cartesiana apresenta-se como contraponto ao entendimento expresso no texto por",
+    "options": [
+      "A) Apresentar uma visão dualista.",
+      "B) Confirmar uma tese naturalista.",
+      "C) Demonstrar uma premissa relativa.",
+      "D) Sustentar um argumento idealista.",
+      "E) Defender uma posição intencionalista."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 54): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q56",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "![](https://enem.dev/broken-image.svg)\n\nLAERTE. Disponível em: www.laerte.art.br. Acesso em: 23 nov. 2021 (adaptado)\n\nA charge ilustra um anseio presente na sociedade contemporânea, que se caracteriza pela",
+    "options": [
+      "A) Situação de revolta individual.",
+      "B) Satisfação de desejos pessoais.",
+      "C) Participação em ações decisórias.",
+      "D) Permanência em passividade social.",
+      "E) Conivência em interesses partidários."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 56): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q57",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Quem se mete pelo caminho do pedido de perdão deve estar pronto a escutar uma palavra de recusa. Entrar na atmosfera do perdão é aceitar medir-se com a possibilidade sempre aberta do imperdoável. Perdão pedido não é perdão a que se tem direito [devido]. É com o preço destas reservas que a grandeza do perdão se manifesta.\nRICOEUR, P. O perdão pode curar. Disponível em: www.lusosofia.net. Acesso em: 14 out 2019.\nA reflexão sobre o perdão apresentada no texto encontra fundamento na(s)",
+    "options": [
+      "A) Rejeição particular amparada pelo desejo de poder.",
+      "B) Decisão subjetiva determinada pela vontade divina.",
+      "C) Liberdade mitigada pela predestinação do espírito.",
+      "D) Escolhas humanas definidas pelo conhecimento empírico.",
+      "E) Relações interpessoais medidas pela autonomia dos indivíduos."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 57): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q59",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Do século XVI em diante, pelo menos nas classes mais altas, o garfo passou a ser usado como utensílio para comer, chegando através da Itália primeiramente à França e, em seguida, à Inglaterra e à Alemanha, depois de ter servido, durante algum tempo, apenas para retirar alimentos sólidos da travessa. Henrique III introduziu-o na França, trazendo-o provavelmente de Veneza. Seus cortesãos não foram pouco ridicularizados por essa maneira “afetada” de comer e, no princípio, não eram muito hábeis no uso do utensílio: pelo menos se dizia que metade da comida cala do garfo no caminho do prato à boca. Em data tão recente como o século XVII, o garfo era ainda basicamente artigo de luxo, geralmente feito de prata ou ouro.\n\nELIAS. N. **O processo civilizador**: uma história dos costumes. Rio de Janeiro: Zahar, 1994.\n\nO processo social relatado indica a formação de uma etiqueta que tem como principio a",
+    "options": [
+      "A) Distinção das classes sociais.",
+      "B) Valorização de habitos de higiene.",
+      "C) Exaltação da cultura mediterrânea.",
+      "D) Consagração de tradições medievais.",
+      "E) Disseminação de produtos manufaturados."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 59): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q60",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Negar o pedido por dinheiro indispensável para necessidades pessoais ou comprar bens usando o nome da pessoa sem o consentimento dela. Ameaçar o corte de recursos dependendo de atitudes pessoais, esconder documentos ou trocar senhas do banco sem avisar. Ou, ainda, proibir a pessoa de trabalhar ou destruir seus pertences. As histórias são comuns, mas às vezes não são reconhecidas como abuso. Mas é uma das cinco formas de conduta contra a mulher previstas na Lei Maria da Penha.\n\nLEWGOY. J. **Conduta quase invisível destrói a vida de mulheres**. Disponível em: https://valorinveste.globo.com. Acesso em: 23 out. 2021 (adaptado).\n\nO texto apresenta tipos de conduta sujeitos a punição, conforme previsto na Lei Maria da Penha, porque consistem em formas de",
+    "options": [
+      "A) Ação difamatória.",
+      "B) Desvio comportamental.",
+      "C) Expressão preconceituosa.",
+      "D) Violência patrimonial.",
+      "E) Desentendimento matrimonial."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 60): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q63",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História do Brasil: Colônia",
+    "subtopic": "Brasil Colonial e Resistência",
+    "moduleId": "mod_hist_01_colonia",
+    "moduleTitle": "Módulo 1: Brasil Colônia",
+    "statement": "Seda, madeiras aromáticas e têxteis, obras de arte, lã, cristais e muitas, muitas peças de porcelana chegaram ao Brasil ao longo dos séculos XVII e XVIII. A opulência proporcionada pelo ouro fez com que esses itens fossem ainda mais presentes em cidades mineiras como Ouro Preto, Mariana e Sabará. Esses objetos inspiraram a criação das chinesices, termo que designa um tipo de arte que evoca motivos chineses, presentes em várias igrejas barrocas de Minas Gerais. No Brasil, é bem provável que a inspiração para as pinturas nas igrejas barrocas com pássaros, elefantes, tigres, mandarins e pagodes tenha sido tirada de gravuras, tecidos, móveis e, principalmente, das porcelanas chinesas que circulavam livremente em uma sociedade enriquecida pelo comércio do ouro e pedras preciosas.\n\nMARIUZZO, P. **Estudos interdisciplinares ampliam conhecimento sobre chinesice no barroco mineiro**. Disponível em: http://cienciaecultura.bvs.br. Acesso em: 23 nov. 2021 (adaptado).\n\nO desenvolvimento do processo artístico descrito no texto foi possível pelo(a)",
+    "options": [
+      "A) Representação arquitetônica.",
+      "B) Intercâmbio transcontinental.",
+      "C) Dependência econômica.",
+      "D) Intervenção estatal.",
+      "E) Padrão estético."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 63): Contextualização histórica e cidadania em Módulo 1: Brasil Colônia. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q64",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "**Txai Suruí, liderança da Juventude Indígena, profere seu discurso na abertura da COP-26**\n\n“O clima está esquentando, os animais estão desaparecendo, os rios estão morrendo e nossas plantações não florescem como no passado. A Terra está falando: ela nos diz que não temos mais tempo.”\n\nVICK, M. **Quais são as conquistas do movimento indígena na COP-26**. Disponível em: www.nexojornal.com.br. Acesso em: 10 nov. 2021 (adaptado).\n\nO discurso da líder indígena explicita um problema global relacionado ao(à)",
+    "options": [
+      "A) Manejo tradicional.",
+      "B) Reciclagem residual.",
+      "C) Consumo consciente.",
+      "D) Exploração predatória.",
+      "E) Reaproveitamento energético."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 64): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q65",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "![](https://enem.dev/broken-image.svg)\n\nNas reportagens publicadas sobre a inauguração de Museu de Arte de São Paulo, em 1947, quando ele ainda ocupava um edifício na rua Sete de Abril, Lina Bo Bardi não foi mencionada nenhuma vez. A arquiteta era responsável pelo projeto do museu que mudaria para sempre a posição de São Paulo no circuito mundial das artes. Mas não houve nenhum registro disso. O louvor se concentrou em seu marido e parceiro profissional, o respeitado crítico de arte Pietro Maria Bardi. Passados 75 anos, a mulher então ignorada recebeu um Leão de Ouro póstumo, a maior homenagem da Bienal de Arquitetura de Veneza, e tem agora sua história contada em duas biografias de peso, que procuram destrinchar uma carreira marcada pela ousadia e pela contradição.\n\nPORTO, W. L**ina Bo Bardi tem sua arquitetura contraditória destrinchada em biografias**. Disponível em: www1.folha.uol.com.br. Acesso em: 10 nov. 2021 (adaptado).\n\nAs transformações pelas quais passaram as sociedades ocidentais e que possibilitaram o reconhecimento recente do trabalho da arquiteta mencionada no texto foram resultado das mobilizações sociais pela",
+    "options": [
+      "A) Equidade de genêro.",
+      "B) Liberdade de expressão.",
+      "C) Admissibilidade de voto.",
+      "D) Igualdade de oportunidade.",
+      "E) Reciprocidade de tratamento."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 65): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q66",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Antiguidade e Idade Média",
+    "subtopic": "Grécia, Roma e Idade Média",
+    "moduleId": "mod_hist_04_antiguidade_medieval",
+    "moduleTitle": "Módulo 4: Antiguidade e Medieval",
+    "statement": "**ТЕХТО I**\n\nComo é horrível ver um filho comer e perguntar: “Tem mais?” Esta palavra “tem mais” fica oscilando dentro do cérebro de uma mãe que olha as panela e não tem mais.\n\nJESUS, C. M. Quarto de despejo: diário de uma favelada. São Paulo: Ática. 2014.\n\n**ТЕХТО ІІ**\n\nA experiência de ver os filhos com fome na década de 1950, descrita por Carolina, é vivida no Brasil de 2021 por uma moradora de Petrolândia, em Pernambuco. “Eu trabalhava de ajudante de cabeleireira, mas a moça que tinha o salão fechou. Eu vinha me sustentando com o auxílio que tinha, mas agora eu não fui contemplada. Às vezes as pessoas me ajudam com alimentos para os meus filhos. De vez em quando, eu acho algum bico para fazer, mas é muito raro. Tem dias que não tenho nem o leite da minha bebê.”\n\nCARRANÇA, T. “Até o feijão nos esqueceu”: o livro de 1960 que poderia ter sido escritonas favelas de 2021.\n\nDisponível em: www.bbc.com. Acesso em: 6 out. 2021 (adaptado).\n\nConsiderando a realidade brasileira, os textos se aproximam ao apresentarem uma reflexão sobre o(a)",
+    "options": [
+      "A) Recorrência da miséria.",
+      "B) Planejamento da saúde.",
+      "C) Superação da escassez.",
+      "D) Constância da economia.",
+      "E) Romantização da carência."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 66): Contextualização histórica e cidadania em Módulo 4: Antiguidade e Medieval. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q67",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "No sul da Bahia, desde o século XVIII, tem-se registros de um tipo de sistema agroflorestal. Até hoje, esse sistema é característica marcante da paisagem da região, conhecido como cabruca, que consiste no cultivo do cacau à sombra do dossel da floresta nativa. Esse sistema de cultivo do cacau (graças à tolerância da espécie à sombra) é considerado amigável para a vida silvestre, pois apresenta superioridade em termos de conservação da biodiversidade quando comparado com outras plantações tropicais (monoculturas de dendê, seringa ou café), agricultura ou pastagens.\nSOLLBERG, I.; SCHIAVETTI, A. MORAES M. E. B. Manejo agrícola no Refúgio de Vida Silvestre de Una: agroflorestas como uma perspectiva de conservação. Revista Árvore. n. 2, 2014 (adaptado)\nA prática produtiva apresentada é um exemplo de",
+    "options": [
+      "A) Difusão comercial de lavouras temporárias.",
+      "B) Utilização sustentável dos recursos naturais.",
+      "C) Ampliação tecnológica da pecuária intensiva.",
+      "D) Padronização alimentar dos povos tradicionais.",
+      "E) Modernização logística de plantios convencionais."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 67): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q68",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "O masseiro, a mulher, e quatro filhos, dormindo numa tapera de quatro paredes de caixão, coberta de zinco. A água do mangue, na maré cheia, ia dentro de casa. Os maruins de noite encalombavam o corpo dos meninos. O mangue tinha ocasião que fedia, e os urubus faziam ponto por ali atrás dos petiscos. Perto da rua lavavam couro de boi, pele de bode para o curtume de um espanhol. Morria peixe envenenado e quando a maré secava os urubus enchiam o papo, ciscavam a lama, passeando banzeiros pelas biqueiras dos mocambos no Recife.\nRÊGO. J. L. O moleque Ricardo. Rio de Janeiro. J. Olympio, 1966 (adaptado).\nA aglomeração urbana representada no texto resulta em",
+    "options": [
+      "A) Conservação do meio rural.",
+      "B) Crescimento da vegetação ciliar.",
+      "C) Interferência do espaço geográfico.",
+      "D) Equilíbrio do ambiente das cidades.",
+      "E) Controle da proliferação dos animais."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 68): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q69",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Elas foram as pioneiras dos direitos das mulheres no Afeganistão. Defensoras ferrenhas da lei, buscaram justiça para os mais marginalizados. Mas, agora, mais de 220 juízas afegãs estão escondidas por medo de retaliação sob o regime do Talibã. Uma delas condenou centenas de homens por violência contra as mulheres, incluindo estupro, assassinato e tortura. Mas poucos dias depois que o Talibã assumiu o controle de sua cidade e milhares de criminosos condenados foram libertados da prisão, as ameaças de morte começaram. O país sempre foi considerado um dos lugares mais difíceis e perigosos do mundo para as mulheres. De acordo com estudos de organizações não governamentais, cerca de 87% das mulheres e meninas serão vítimas de abuso durante a vida.\n\nDisponível em: https://g1.globo.com. Acesso em: 12 out. 2021 (adaptado).\n\nO texto evidencia situação representativa de",
+    "options": [
+      "A) Afronta às estruturas sociais.",
+      "B) Desprezo aos valores religiosos.",
+      "C) Transgressão às normas morais.",
+      "D) Desrespeito à dignidade humana.",
+      "E) Oposição aos princípios hierárquicos."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 69): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q70",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "No cemitério, a sociedade religiosa encarregada do funeral, aterrorizada, apressou a cerimônia de tal forma que a mãe de Herzog perdeu o momento em que o caixão do filho começou a ser coberto pela terra. Quatro jornalistas que estavam presos no DOI chegaram para assistir ao sepultamento. Um se afastara, chorando. Dizia: Eles matam, eles matam! Não pergunte nada. Não podemos dizer nada. Eles matam mesmo. Falava-se baixo. Ouviram-se dois curtos discursos. O primeiro, da atriz Ruth Escobar: Até quando vamos suportar tanta violência? Até quando vamos continuar enterrando nossos mortos em silêncio? No segundo, Audálio Dantas recitou o Navio negreiro, de Castro Alves: _Senhor Deus dos desgraçados / Dizei-me Vós, Senhor Deus / Se é mentira, se é verdade, / Tanto horror perante os céus._\n\nGASPARI, E. A ditadura encurralada. São Paulo: Cia. das Letras, 2004.\n\nO acontecimento descrito no texto, ocorrido em meados dos anos 1970, atesta a seguinte característica do regime político-institucional vigente:",
+    "options": [
+      "A) Incorporação da estética popular para justificar o ideal de integração nacional.",
+      "B) Afirmação da estratégia psicossocial para favorecer o objetivo de propaganda cívica.",
+      "C) Institucionalização de mecanismos repressivos para eliminar os focos de resistência.",
+      "D) Adoção de cerimoniais públicos para controlar as manifestações de grupos opositores.",
+      "E) Estatização de meios de comunicação para selecionar a divulgação de atos governamentais."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 70): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q72",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "**TEXTO I**\n\nPor hora, apenas os mais abastados poderão sonhar em viajar ao espaço, seja por um foguete ou por um avião híbrido, mas toda a população global poderá sentir os efeitos dessas viagens e avanços tecnológicos. Para uma aventura dessas, as empresas tiveram que criar novas tecnologias, materiais e softwares, o que podem, em algum momento, voltar para a sociedade. A câmera fotográfica, hoje comum no mundo, antes foi uma invenção para ser usada em telescópios e o titânio, usado até na medicina, foi desenvolvido para a construção de foguetes.\n\nORLANDO, G. **Corrida espacial dos bilionários pode trazer vantagens para todos**. Disponível em: https://noticias.r7.com/. Acesso em: 5 nov. 2021 (adaptado).\n\n**TEXTO II**\n\n![](https://enem.dev/2023/questions/72/19b09a90-8898-4d03-b11a-eedae69b1e1d.png)\n\nCAZO. Disponível em: www.humorpolitico.com.br. Acesso em: 5 nov. 2021.\n\nOs textos apresentam perspectivas da nova corrida espacial que revelam, respectivamente:",
+    "options": [
+      "A) Dependência e progresso.",
+      "B) Expectativa e desconfiança.",
+      "C) Angústia e adaptação.",
+      "D) Pioneirismo e retrocesso.",
+      "E) Receio e civilidade."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 72): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q73",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Moderna",
+    "subtopic": "Renascimento e Reformas Religiosas",
+    "moduleId": "mod_hist_05_moderna",
+    "moduleTitle": "Módulo 5: Idade Moderna",
+    "statement": "Os séculos XV e XVI, quando se vão desmoronando as estruturas socioeconômicas da Idade Média perante os novos imperativos da Época moderna, constituem um momento-chave na história florestal de toda a Europa Ocidental. Abre-se, genericamente, um longo período de “crise florestal”, que se manifesta com acuidade nos países onde mais se desenvolvem as atividades industriais e comerciais. As necessidades em produtos lenhosos aumentam drasticamente com o crescimento do consumo nos mercados urbanos e nas regiões onde progridem a metalurgia e a construção naval, além da sua utilização na vida quotidiana de toda a população.\n\nDEVY-VARETA, N. Para uma geografia histórica da floresta portuguesa. **Revista da Faculdade de Letras – Geografia,** n. 1, 1986 (adaptado).\n\nQual acontecimento do período contribuiu diretamente para o agravamento da situação descrita?",
+    "options": [
+      "A) O processo de expansão marítima.",
+      "B) A eclosão do renascimento cultural.",
+      "C) A concretização da centralização política.",
+      "D) O movimento de reformas religiosas.",
+      "E) A manutenção do sistema feudal."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 73): Contextualização histórica e cidadania em Módulo 5: Idade Moderna. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q74",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Tahuantinsuyu — nome do Império Inca em quéchua — era dividido em quatro partes ou suyus: Chinchaysuyu (noroeste do Peru e Equador), Antisuyu (parte amazônica do império), Collasuyu (atual Bolívia) e Condesuyu (costa do Oceano Pacífico) e tinha Cuzco, no atual Peru, como sua capital imperial. Oficialmente, todas as etnias dominadas pelos incas deveriam adotar a língua quéchua, adorar o Sapa Inca e o Sol e pagar taxas em forma de horas de trabalhos periódicos. No entanto, pode-se dizer que o Império Inca era como um mosaico cultural em que vários e diferentes grupos étnicos adoravam o Sapa Inca e o Sol mas, simultaneamente, continuavam a adorar seus deuses locais e também a falar em suas línguas nativas.\n\nMARTINS, C. **Os incas e os tahuantinsuyu**: apresentação. Disponível em: http://antigo.anphlac.org. Acesso em: 6 out. 2021 (adaptado).\n\nAo comparar, no texto, a vertente da dominação territorial com os aspectos culturais, os incas tinham uma postura",
+    "options": [
+      "A) Aceitável no que alude aos direitos humanos.",
+      "B) Admissível no que remete às crenças coloniais.",
+      "C) Tolerável no que se refere aos regimes tributários.",
+      "D) Flexível no que diz respeito aos costumes religiosos.",
+      "E) Compreensível no que concerne às normas laborais."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 74): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q75",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História do Brasil: Colônia",
+    "subtopic": "Brasil Colonial e Resistência",
+    "moduleId": "mod_hist_01_colonia",
+    "moduleTitle": "Módulo 1: Brasil Colônia",
+    "statement": "A torcida do Fluminense inicia um movimento para mudar a letra de uma das músicas mais populares das arquibancadas tricolores. Grupos pedem a remoção do termo “mulambo imundo”, em uma provocação direta ao Flamengo. Mulambo é um termo que surgiu em Angola, na época da escravatura, e eles eram chamados de mulambos pelos senhores de engenho, os patrões das fazendas.\n\nDisponível em: https://oglobo.globo.com. Acesso em: 23 nov. 2021.\n\nQual mudança no comportamento social a proposta reportada no texto reflete?",
+    "options": [
+      "A) A Rejeição de costumes elitistas.",
+      "B) Repulsão de condutas misóginas.",
+      "C) Condenação do preconceito racial.",
+      "D) Criminalização de práticas homofóbicas",
+      "E) Contestação do comportamento machista."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 75): Contextualização histórica e cidadania em Módulo 1: Brasil Colônia. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q76",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "![](https://enem.dev/2023/questions/76/4b3eb253-249e-4bc3-bb08-5d48b44c53c1.jpg)\n\nDisponível em: www.insper.edu.br. Acesso em: 27 set. 2021 (adaptado).\n\nQual fator foi determinante para a mudança do indicador apresentado no gráfico?",
+    "options": [
+      "A) Flexibilização legal da prática de aborto.",
+      "B) Envelhecimento da população brasileira.",
+      "C) Crescimento dos casos de gravidez precoce.",
+      "D) Participação feminina no mercado de trabalho.",
+      "E) Diminuição dos benefícios na licença-maternidade."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 76): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q77",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Havia já muito tempo que a Europa desfrutava os benefícios da vacina e arrancava à morte milhares de inocentes, condenados a serem vítimas do terrível flagelo das bexigas, e o governo de Portugal nunca se lembrara de transmitir ao Brasil a mais útil das descobertas humanas, quando aliás nenhum país mais do que ele carecia deste salutar invento ou se atendesse às vantagens da população ou ao perdimento de imensas somas na mortandade contínua de escravos, que este flagelo devorava. O certo é que mais ocupado de seu ouro que de seus habitantes, Portugal, como em outros muitos casos, esperou que o Brasil por seu próprio impulso remediasse a este mal.\nPEREIRA, J. C. 12 jan. 1828 apud LOPES, M. B.; POLITO, R. Para uma história da vacina no Brasil: um manuscrito inédito de Norberto e Macedo. História, Ciências, Saúde – Manguinhos, n. 2, abr. -jun. 2007 (adaptado).\nEscrito em 1828, o texto expressa a seguinte ideia de origem iluminista:",
+    "options": [
+      "A) As leis observáveis regem o mundo material.",
+      "B) O monarca racional promove a sociedade justa.",
+      "C) O direito natural justifica a liberdade dos homens.",
+      "D) A produção da terra garante a riqueza das nações.",
+      "E) A responsabilidade dos governantes assegura a saúde dos povos."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 77): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q79",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "**TEXTO I**\n\nGerineldo dorme porque já está conformado com o seu mundo. Porque já sabe tudo o que lhe pode acontecer após haver submetido todos os objetos que o rodeiam a um minucioso inventário de possibilidades. Seu apartamento, mais que um apartamento, é uma teoria de sorte e de azar. Melhor que ninguém, Gerineldo conhece o coeficiente da dilatação de suas janelas e mantém marcado no termômetro, com uma linha vermelha, o ponto em que se quebrarão os vidros, despedaçados em estilhaços de morte. Sabe que os arquitetos e os engenheiros já previram tudo, menos o que nunca já aconteceu.\n\nMARQUEZ, G. G. O pessimista. In: Textos do Caribe. Rio de Janeiro: Record, 1981.\n\n**ТЕХТО II**\n\nA situação é o sujeito inteiro (ele não é nada a não ser a sua situação) e é também a coisa inteira (nunca há mais nada senão as coisas). É o sujeito a elucidar as coisas pela sua própria superação, se assim quisermos; ou são as coisas a reenviar ao sujeito a imagem dele. É a total facticidade, a contingência absoluta do mundo, do meu nascimento, do meu lugar, do meu passado, dos meus redores — e é a minha liberdade sem limites que faz com que haja para mim uma facticidade.\n\nSARTRE, J.-P. O ser e o nada: ensaio de ontologia fenomenológica. Petrópolis: Vozes, 1997 (adaptado).\n\nA postura determinista adotada pelo personagem Gerineldo contrasta com a ideia existencialista contida no pensamento filosófico de Sartre porque",
+    "options": [
+      "A) Evidencia a manifestação do inconsciente.",
+      "B) Nega a possibilidade de transcendência.",
+      "C) Contraria o conhecimento difuso.",
+      "D) Sustenta a fugacidade da vida.",
+      "E) Refuta a evolução biológica."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 79): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q80",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Antiguidade e Idade Média",
+    "subtopic": "Grécia, Roma e Idade Média",
+    "moduleId": "mod_hist_04_antiguidade_medieval",
+    "moduleTitle": "Módulo 4: Antiguidade e Medieval",
+    "statement": "O Golpe Militar de 1964 foi implacável no combate ao que restava das Ligas Camponesas, generalizadas na década anterior. No entanto, em relação aos sindicatos, sua atitude foi ambígua. Por meio de acordos com os Estados Unidos, foram concebidos centros sindicais e cursos de liderança com base em princípios conservadores e ministrados por membros da Igreja Católica.\n\nDEL PRIORE, M.; VENÂNCIO, R. Uma história da vida rural no Brasil. Rio de Janeiro: Ediouro, 2006 (adaptado).\n\nOs sindicatos rurais foram tratados da forma descrita no texto porque o governo pretendia utiliza-los para",
+    "options": [
+      "A) Controlar as tensões políticas.",
+      "B) Limitar a legislação trabalhista.",
+      "C) Divulgar o programa populista.",
+      "D) Regularizar a propriedade da terra.",
+      "E) Estimular a oferta de mão de obra."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 80): Contextualização histórica e cidadania em Módulo 4: Antiguidade e Medieval. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q81",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "A economia das ilegalidades se reestruturou com o desenvolvimento da sociedade capitalista. A ilegalidade dos bens foi separada da ilegalidade dos direitos. Divisão que corresponde a uma oposição de classes, pois, de um lado, a ilegalidade mais acessível às classes populares será a dos bens — transferência violenta das propriedades; de outro, à burguesia, então, se reservará a ilegalidade dos direitos: a possibilidade de desviar seus próprios regulamentos e suas próprias leis; e essa grande redistribuição das ilegalidades se traduzirá até por uma especialização dos circuitos judiciários; para as ilegalidades de bens — para o roubo — os tribunais ordinários e os castigos; para as ilegalidades de direitos — fraudes, evasões fiscais, operações comerciais irregulares — jurisdições especiais com transações, acomodações, multas atenuadas etc.\n FOUCAULT, M. Vigiar e punir: nascimento da prisão. Petropolis: Vozes, 1987 \nO texto apresenta uma relação de cálculo politico-econômico que caracteriza o poder punitivo por meio da • gestão das ilicitudes pelo sistema judicial. aplicação das sanções pelo modelo equânime. supressão dos crimes pela penalização severa. regulamentação dos privilégios pela justiça social. repartição de vantagens pela hierarquização cultural",
+    "options": [
+      "A) Gestão das ilicitudes pelo sistema judicial.",
+      "B) Aplicação das sanções pelo modelo equânime.",
+      "C) Supressão dos crimes pela penalização severa.",
+      "D) Regulamentação dos privilégios pela justiça social.",
+      "E) Repartição de vantagens pela hierarquização cultural."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 81): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q84",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "A partir da década de 1930, começam a ser discutidos no Brasil os princípios de racionalização do trabalho. As preocupações com a cozinha e o trabalho doméstico foram introduzidas com a medicina sanitária e a oferta de gás e eletricidade para uso doméstico no início do século XX. A organização da cozinha visava atingir uma simplificação das tarefas, com a economia de movimentos, e o barateamento dos equipamentos, a partir da produção em grande escala. A padronização e racionalização da habitação e seus componentes visava uma radical transformação da casa, em especial da cozinha, e apoiava-se tanto no desenvolvimento de novos equipamentos quanto nos estudos de racionalização do trabalho doméstico. A principal preocupação era o desenvolvimento de um novo tipo de habitação, que deveria induzir um novo comportamento social.\n\nSILVA, J. L. M. Transformações no espaço doméstico: o fogão a gás e a cozinha paulistana, 1870-1930. Anais do Museu Paulista, n. 2. jul-dez 2007 (adaptado).\n\nNo contexto descrito, as mudanças mencionadas proporcionavam às mulheres o(a)",
+    "options": [
+      "A) Controle do orçamento familiar.",
+      "B) Libertação das tradições religiosas.",
+      "C) Exercício da representatividade política.",
+      "D) Ampliação dos momentos de socialização.",
+      "E) Afastamento das atividades especializadas."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 84): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q85",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Produtores rurais europeus são antigos opositores de um grande acordo com o Mercosul. Na visão deles, existe um nítido risco de concorrência desleal, pois, na Europa, é preciso seguir regras mais rígidas de produção, o que encarece o processo. Assim, eles não conseguiriam competir com os preços, por exemplo, da carne brasileira e teriam seus negócios ameaçados. Por outro lado, o setor industrial europeu se mobiliza a favor do acordo, uma vez que as reduções de tarifas no comércio internacional dariam maior acesso ao mercado sul-americano. Um exemplo é o setor automotivo europeu, que prevê maior participação e concorrência nos países do Mercosul caso o acordo siga em frente.\n\nROUBICEK, M. Como o risco ambiental afeta o acordo entre Mercosul e União Europeia.  \nDisponível em: www.nexojornal.com.br. Acesso em: 25 out. 2021.\n\nNo contexto do acordo citado, os dois grupos econômicos europeus defendem, respectivamente, a",
+    "options": [
+      "A) Restrição dos fluxos migratórios e a maior atuação de sindicatos.",
+      "B) Ampliação das leis trabalhistas e a plena importação de manufaturados.",
+      "C) Proteção das florestas nacionais e a ampla transferência de tecnologias.",
+      "D) Manutenção das barreiras fitossanitárias e a livre circulação de mercadorias.",
+      "E) Remoção dos entraves alfandegários e a melhor remuneração de empregados."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 85): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q86",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Durante a Revolução Francesa, um certo padre Niollant escondeu-se no pequeno castelo de L’Escarbas. Pagou amplamente a hospitalidade do velho fidalgo ocupando-se da educação de sua filha, Anaïs. A presença da mãe em nada modificou essa educação masculina dada a uma jovem criatura já muito inclinada à independência em virtude da vida no campo. O padre transmitiu à aluna sua intrepidez de opiniões e sua facilidade de julgamento, sem pensar que essas qualidades, tão necessárias num homem, se tornam defeitos numa mulher destinada aos humildes afazeres de mãe de família. Embora o padre recomendasse continuamente à aluna ser tanto mais graciosa e modesta quanto seu saber era mais extenso, a senhorita de Nègrepelisse ficou com excelente opinião de si mesma.\n\nBALZAC. H. Ilusões perdidas. São Paulo: Penguin Classics:  \nCia. das Letras, 2011 (adaptado).\n\nO comportamento desenvolvido pela personagem evidencia uma postura de",
+    "options": [
+      "A) Abandono de laços afetivos.",
+      "B) Negação da ideia de subjetividade.",
+      "C) Aceitação da hierarquia de gênero.",
+      "D) Consolidação da estratificação social.",
+      "E) Ruptura de valores institucionalizados."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 86): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q87",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "**TEXTO I**\n\nOriunda da Romênia, Genny Gleizer aportou no Brasil em 1932. Assim como milhares de judeus do Leste Europeu, sua vinda para o Brasil ocorreu em um momento de ascensão do antissemitismo na Europa que tornava precárias suas vidas. O Brasil se colocava como uma possibilidade na busca por condições de sobrevivência e desenvolvimento.\n\nANTÃO, A. C. C. B. Gênero, imigração e política: o caso da judia comunista Genny Gleizer no Governo Vargas (1932-1935). Rio de Janeiro: Casa de Oswaldo Cruz, 2017 (adaptado).\n\n**ТЕХТО II**\n\nA presença judaica no Brasil foi criando aos poucos certas desconfianças que se refletiram em órgãos da imprensa e em círculos intelectuais e políticos. Em parte, essa imagem negativa adviria da onda nacionalista surgida no final dos anos 1910, que concebia imigrantes como concorrentes dos trabalhadores brasileiros, ou como seres improdutivos, exploradores da mão de obra e da riqueza autóctone. Além disso, as elites políticas da época acreditavam que os estrangeiros eram portadores das doutrinas anarquista e comunista, estranhas à “indole do povo brasileiro”. Esses “indesejáveis” seriam um mal externo que corromperia a nação.\n\nMAIO, M. C.: CALAÇA, C. E. Um balanço da bibliografia sobre o antissemitismo  \nno Brasil. In: GRINBERG, K. (Org.). Os judeus no Brasil. Rio de Janeiro: Civilização Brasileira, 2005 (adaptado).\n\nConforme descrito nos textos, o tratamento dispensado aos grupos mencionados se fundamentava em",
+    "options": [
+      "A) Preceitos teológicos e religiosos.",
+      "B) Aspectos socioeconômicos e ideológicos.",
+      "C) Regulamentações territoriais e alfandegárias.",
+      "D) Orientações constitucionais e estatutárias.",
+      "E) Decretos legislativos e internacionais."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 87): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q88",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Concorrer e competir não são a mesma coisa. A concorrência pode até ser saudável sempre que a batalha entre agentes, para melhor empreender uma tarefa e obter melhores resultados finais, exige o respeito a certas regras de convivência preestabelecidas ou não. Já a competitividade se funda na invenção de novas armas de luta, num exercício em que a única regra é a conquista da melhor posição. A competitividade é uma espécie de guerra em que tudo vale e, desse modo, sua prática provoca um afrouxamento dos valores morais e um convite ao exercício de violência.\n\nSANTOS, M. **Por uma outra globalização**: do pensamento único à consciência universal. Rio de Janeiro: Record, 2006.\n\nDe acordo com a diferenciação feita pelo autor, que prática econômica é considerada moralmente condenável?",
+    "options": [
+      "A) Adoção do dumping comercial.",
+      "B) Fusão da função administrativa.",
+      "C) Criação de holding empresarial.",
+      "D) Limitação do mercado monopolista.",
+      "E) Modernização da produção industrial."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 88): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2023_q89",
+    "year": 2023,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "![](https://enem.dev/2023/questions/89/9bf9cf75-4df7-495a-8f99-bb6bac2abe2e.PNG)\n\nQual medida é capaz de minimizar as mudanças apresentadas nas simulações?",
+    "options": [
+      "A) Expandir o transporte marítimo.",
+      "B) Incentivar os fluxos migratórios.",
+      "C) Monitorar as atividades vulcânicas.",
+      "D) Controlar as emissões de carbono.",
+      "E) Priorizar a utilização de termoelétricas."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2023 (Questão 89): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q45",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "O Recife fervilhava no começo da década de 1990, e os artistas trabalhavam para resgatar o prestígio da cultura pernambucana. Era preciso se inspirar, literalmente, nas raízes sobre as quais a cidade se construiu. Foi aí que, em 1992, com a publicação de um manifesto escrito pelo músico e jornalista Fred Zero Quatro, da banda Mundo Livre S/A, nasceu o manguebeat. O nome vem de “mangue”, vegetação típica da região, e “beat”, para representar as batidas e as influências musicais que o movimento abraçaria a partir dali. Era a hora e a vez de os caranguejos – aos quais os músicos recifenses gostavam de se comparar – mostrarem as caras: o maracatu e suas alfaias se misturaram com as batidas do hip-hop, as guitarras do rock, elementos eletrônicos e o sotaque recifense de Chico Science. A busca pelo novo rendeu uma perspectiva diferente do Brasil ao olhar para o Recife. A cidade deixou de ser o lugar apenas do frevo e do carnaval, transformando-se na ebulição musical que continua a acontecer mesmo após os 25 anos do lançamento do primeiro disco da Nação Zumbi, Da lama ao caos.\n\nFORCIONI, G. et al. O mangue está de volta. **Revista Esquinas**, n. 87, set 2019 (adaptado).\n\nChico Science foi fundamental para a renovação da música pernambucana, fato que se deu pela",
+    "options": [
+      "A) Utilização de aparelhos musicais eletrônicos em lugar dos instrumentos tradicionais.",
+      "B) Ocupação de espaços da natureza local para a produção de eventos musicais memoráveis.",
+      "C) Substituição de antigas práticas musicais, como o frevo, por melodias e harmonias inovadoras.",
+      "D) Recuperação de composições tradicionais folclóricas e sua apresentação em grandes festivais.",
+      "E) Integração de referenciais culturais de diferentes origens, criando uma nova combinação estética."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 45): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q47",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Sempre que a relevância do discurso entra em jogo, a questão torna-se política por definição, pois é o discurso que faz do homem um ser político. E tudo que os homens fazem, sabem ou experimentam só tem sentido na medida em que pode ser discutido. Haverá, talvez, verdades que ficam além da linguagem e que podem ser de grande relevância para o homem no singular, isto é, para o homem que, seja o que for, não é um ser político. Mas homens no plural, isto é, os homens que vivem e se movem e agem neste mundo, só podem experimentar o significado das coisas por poderem falar e ser inteligíveis entre si e consigo mesmos.\n\nARENDT, H. **A condição humana**. Rio de Janeiro: Forense Universitária, 2004.\n\nNo trecho, a filósofa Hannah Arendt mostra a importância da linguagem no processo de",
+    "options": [
+      "A) Entendimento da cultura.",
+      "B) Aumento da criatividade.",
+      "C) Percepção da individualidade.",
+      "D) Melhoria da técnica.",
+      "E) Construção da sociabilidade."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 47): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q48",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História do Brasil: República",
+    "subtopic": "Era Vargas e Ditadura Civil-Militar",
+    "moduleId": "mod_hist_03_republica",
+    "moduleTitle": "Módulo 3: Brasil República",
+    "statement": "Eu estava pagando o sapateiro e conversando com um preto que estava lendo um jornal. Ele estava revoltado com um guarda civil que espancou um preto e amarrou numa árvore. O guarda civil é branco. E há certos brancos que transforma o preto em bode expiatório. Quem sabe se guarda civil ignora que já foi extinta a escravidão e ainda estamos em regime de chibata?\n\nJESUS, C. M. **Quarto de despejo: diário de uma favelada**. São Paulo: Ática, 2014.\n\nO texto que guarda a grafia original da autora, expõe uma característica da sociedade brasileira, que é o(a):",
+    "options": [
+      "A) Racismo estrutural.",
+      "B) Desemprego latente.",
+      "C) Concentração de renda.",
+      "D) Exclusão informacional.",
+      "E) Precariedade da educação."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 48): Contextualização histórica e cidadania em Módulo 3: Brasil República. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q49",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "![](https://enem.dev/2022/questions/49/ba3420e0-0e8e-42b0-bf25-a995abbb85d2.png)\n\n**PAZ, A. D. Disponível em: www.ct.ufpb.br. Acesso em: 15 out. 2021. (adaptado.)**\n\nA intensificação da ocupação urbana demonstrada afeta de forma imediata o(a)",
+    "options": [
+      "A) Nível altimétrico.",
+      "B) Ciclo hidrológico.",
+      "C) Padrão climático.",
+      "D) Tectônica das placas.",
+      "E) Estrutura das rochas."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 49): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q50",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Na construção da ferrovia Madeira-Marmoré, o que dizer dos doentes, eternos moribundos a vagar entre delírios fabris, doses de quinino e corredores da morte? O Hospital da Candelária era santuário e túmulo, monumento ao progresso científico e preâmbulo da escuridão. Foi ali, com suas instalações moderníssimas, que médicos e sanitaristas dirigiram seu combate aos males tropicais. As maiores vitimas, contudo, permaneceriam na sombra a margem do palco, cobaias sem consolo, credores sem nome de uma sociedade que  não lhes concedera tempo algum para ser decifrada.\n\nFOOT HARDWAN, F. Trem fantasma: modernidade na selva\n\nSão Paulo: Cia das letras,1968 adaptado\n\nNo texto, há uma crítica ao modo de ocupação do espaço amazônico pautada na",
+    "options": [
+      "A) Discrepância entre engenharia ambiental e equilíbrio da fauna",
+      "B) Incoerência entre maquinaria estrangeira e controle da floresta",
+      "C) Incompatibilidade entre investimento estatal e proteção aos nativos",
+      "D) Competição entre farmacologia internacional e produtos de fitoterapia",
+      "E) Contradição entre desenvolvimento nacional e respeito aos trabalhadores"
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 50): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q51",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Uma nova economia surgiu em escala global no último quartel do século XX. Chamo-a de informacional, para identificar suas características global e em rede funda – mentais e diferenciadas e enfatizar sua interligação. É informacional porque depende basicamente de sua capa – cidade de gerar, processar e aplicar de forma eficiente a informação baseada em conhecimentos. É global porque seus componentes estão organizados em escala global, diretamente ou mediante uma rede de conexões entre agentes econômicos. É rede porque é feita em uma rede  \nglobal de interação entre redes empresariais.\n\nCASTELLS, M. A sociedade em rede – a era da informação:  \neconomia, sociedade e cultura. São Paulo: Paz e Terra, 1999  \n(adaptado).\n\nQual mudança estrutural é resultado da forma de organização econômica descrita no texto?",
+    "options": [
+      "A) Fabricação em série.",
+      "B) Ampliação de estoques.",
+      "C) Fragilização dos cartéis.",
+      "D) Padronização de mercadorias.",
+      "E) Desterritorialização da produção."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 51): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q52",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Olhar O Brasil e não ver o sertão  \nÉ como negar o queijo com a faca na mão  \nEsse gigante em movimento  \nMovido a tijolo e cimento  \nPrecisa de arroz com feijão  \nQue tenha comida na mesa  \nQue agradeça sempre a grandeza  \nDe cada pedaço de pão  \nAgradeça a Clemente  \nQue leva a semente  \nEm seu embornal  \nZezé e o penoso balé  \nDe pisar no cacau  \nMaria que amanhece o dia  \nLá no milharal\n\n**VANDER LEE. Do Brasil, In: Pensei que fosse o céu: ao vivo. Rio de Janeiro: Indie Records, 2006 (fragmento).**\n\nA letra da canção valoriza uma dimensão do espaço rural brasileiro em sua relação com a cidade ao ressaltar sua função de",
+    "options": [
+      "A) Fornecer a mão de obra qualificada.",
+      "B) Incorporar a inovação tecnológica.",
+      "C) Preservar a diversidade biológica.",
+      "D) Promover a produção alimentar.",
+      "E) Garantir a moradia básica."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 52): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q53",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História do Brasil: Império",
+    "subtopic": "Primeiro e Segundo Reinado",
+    "moduleId": "mod_hist_02_imperio",
+    "moduleTitle": "Módulo 2: Brasil Império",
+    "statement": "O número cada vez maior de mulheres letradas e interessadas pela literatura e pelas novelas, muitas divulgadas em capítulos, seções, classificadas comumente como folhetim, alçou a um gênero de ficção corrente já em 1840, fazendo parte do florescimento da literatura nacional brasileira, instigando a formação e a ampliação de um público leitor feminino, ávido por novidades, pelo apelo dos folhetins e “narrativas modernas” que encenavam “os dramas e os conflitos de uma mulher em processo de transformação patriarcal e provinciana que, progressivamente, começava a se abrir para modernizar seus costumes”. No Segundo Reinado, as mulheres foram se tornando público determinante na construção da literatura e da imprensa nacional. E não apenas público, porquanto crescerá o número de escritoras que colaboram para isso e emergirá uma imprensa feminina, editada, escrita e dirigida por e para mulheres.\n\n**ABRANTES, A. Do álbum de família à vitrine impressa: trajetos de retratos (PB, 1920), Revista Temas em Educação, n. 24, 2015 (adaptado).**\n\nO registro das atividades descritas associa a inserção da figura feminina nos espaços de leitura e escrita do Segundo Reinado ao(à)",
+    "options": [
+      "A) Surgimento de novas práticas culturais.",
+      "B) Contestação de antigos hábitos masculinos.",
+      "C) Valorização de recentes publicações juvenis.",
+      "D) Circulação de variados manuais pedagógicos.",
+      "E) Aparecimento de diversas editoras comerciais."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 53): Contextualização histórica e cidadania em Módulo 2: Brasil Império. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q54",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Os caixeiros do comércio a retalho do Rio de Janeiro estiveram entre as primeiras categorias de trabalhadores a se organizar em associações e a exigir a intervenção dos poderes públicos na mediação de suas lutas por direitos. Na década de 1880, os caixeiros participaram da arena política e ganharam as ruas com vários outros, como os republicanos e os abolicionistas.\n\n**POPINIGIS, F. “Todas as liberdades são irmãs: os caixeiros e as lutas dos trabalhadores por  direitos entre o Império e a República. Estudos Históricos, n. 59, set-dez. 2018 (adaptado)**\n\nA atuação dos trabalhadores mencionados no texto representou, na capital do Império, um momento de",
+    "options": [
+      "A) Manutenção das regras patronais.",
+      "B) Desprendimento das ideias liberais.",
+      "C) Fortalecimento dos contratos laborais.",
+      "D) Consolidação das estruturas sindicais.",
+      "E) Contestação dos princípios monárquicos."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 54): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q56",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "![](https://enem.dev/2022/questions/56/0a4f1ebf-a011-4562-9d7d-c09766683612.png)\n\n**CAZO. Disponível em: www.humorpolitico.com.br. Acesso em: 21 nov. 2021 (adaptado).**\n\n**TEXTO II**  \nÉ como se os problemas fossem criados pela pandemia quando, em verdade, isso só demonstra o quanto eles sofrem uma tentativa de serem naturalizados. Eles estavam lá, empurrados para debaixo de vários tapetes. Diversos levantamentos realizados indicam que parcela significativa dos estudantes não têm acesso à internet em suas casas, não têm computadores; têm celulares, mas com pacotes baratos que não permitem assistir a todas as aulas. E, caso tenham celulares e dados, pergunta-se: É possível elaborar um texto no celular? É possível interagir na aula remota pelo celular?\n\n**ASSIS. A. E. S. Q. Educação e pandemia. Educação em Revista, n. 37, 2021 (adaptado).**\n\nA crítica contida no texto e na figura evidencia o seguinte aspecto da sociedade contemporárea:",
+    "options": [
+      "A) Exclusão social.",
+      "B) Expansão digital.",
+      "C) Manifestação cultural.",
+      "D) Organização espacial.",
+      "E) Valorização intelectual."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 56): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q57",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "O leproso é visto dentro de uma prática de rejeição, ao exílio-cerca; deixa-se que se perca lá dentro como numa massa que não têm muita importância diferenciar; os pestilentos são considerados num policiamento tático meticuloso onde as diferenciações individuais são os efeitos limitantes de um poder que se multiplica, se articula e se subdivide. O grande fechamento por um lado; o bom treinamento por outro. A lepra e a sua divisão; a peste e seus recortes. Uma é marcada; a outra, analisada e repartida. O exílio do leproso e a prisão da peste não trazem consigo o mesmo sonho político.\n\n**FOUCAULT, M. Vigiar e punir: nascimento da prisão. Petrópolis: Vozes, 1987.**\n\nOs modelos autoritários descritos no texto apontam para um sistema de controle que se baseia no(a):",
+    "options": [
+      "A) Formação de sociedade disciplinar.",
+      "B) Flexibilização do regramento social.",
+      "C) Banimento da autoridade repressora.",
+      "D) Condenação da degradação humana.",
+      "E) Hierarquização da burocracia estatal."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 57): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q58",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Antiguidade e Idade Média",
+    "subtopic": "Grécia, Roma e Idade Média",
+    "moduleId": "mod_hist_04_antiguidade_medieval",
+    "moduleTitle": "Módulo 4: Antiguidade e Medieval",
+    "statement": "**TEXTO I**  \nEm março de 1889, quando apareceram as primeiras romarias atraídas pelos milagres da beata Maria de Araújo, Juazeiro inseriu-se no rol da fundação do espaço religioso. Construía-se mais um centro, como Aparecida do Norte, Canindé ou Lourdes.\n\n**RAMOS, F. R. L. O meio do mundo: território sagrado em Juazeiro do Padre Cícero. Fortaleza: Imprensa Universitária, 2014.**\n\n**TEXTO II**  \nNão sabemos ao certo quantas pessoas estavam presentes na capela no momento em que a hóstia sangrou na boca de Maria de Araújo. O Padre Cícero nos conta que o fato surpreendeu não só aos presentes, mas o fenômeno continuou acontecendo todas as quartas e sextas na Capela de Nossa Senhora das Dores a partir daquele dia. Os paninhos manchados do sangue que escorria da hóstia e da boca da beata, a princípio ficaram sob a guarda do Padre Cícero, mas logo foram expostos à visitação pública e, além disso, o sangramento foi proclamado como milagre sem o conhecimento e sem a autorização do bispo diocesano.\n\n**NOBRE, E. Incêndios da alma. Rio de Janeiro. Multifoco. 2016 (Adaptado).**\n\nAs práticas religiosas mencionadas nos textos estão associadas, respectivamente, à:",
+    "options": [
+      "A) Delimitação de paisagens urbanas e abandono de componentes espiritualistas.",
+      "B) Demarcação de patrimônios afetivos e apropriação de elementos judaizantes.",
+      "C) Expansão de fronteiras regionais e subjetivação do cristianismo medieval.",
+      "D) Circunscrição de bens simbólicos e admissão de cerimônias ecumênicas.",
+      "E) Criação de lugares místicos e experiências do catolicismo popular."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 58): Contextualização histórica e cidadania em Módulo 4: Antiguidade e Medieval. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q59",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História do Brasil: Colônia",
+    "subtopic": "Brasil Colonial e Resistência",
+    "moduleId": "mod_hist_01_colonia",
+    "moduleTitle": "Módulo 1: Brasil Colônia",
+    "statement": "Em 2003, teve início o Programa de Aquisição de Alimentos e, com ele, várias mudanças na perspectiva dos mercados institucionais. Trata-se do primeiro programa de compras públicas com uma orientação exclusiva para a agricultura familiar, articulando-a explicitamente com a segurança alimentar e nutricional. O Programa é destinado à aquisição de produtos agropecuários  \nproduzidos por agricultores enquadrados no Programa Nacional de Fortalecimento da Agricultura Familiar (Pronaf), incluídas aqui as categorias: assentados da reforma agrária, trabalhadores rurais sem terra, acampados, quilombolas, agroextrativistas, famílias atingidas por barragens e comunidades indígenas.\n\n**GRISA, C.; ISOPO, S. P. Dez anos de PAA: As contribuições e os desafios para o desenvolvimento rural. In: GRISA, C.; SCHNEIDER, S. (Org.). Políticas públicas de desenvolvimento rural no Brasil. Porto Alegre: UFRGS, 2015.**\n\nA ação governamental descrita constitui-se uma importante conquista para os pequenos produtores em virtude da:",
+    "options": [
+      "A) Inovação tecnológica.",
+      "B) Reestruturação fundiária.",
+      "C) Comercialização garantida.",
+      "D) Eliminação no custo do frete.",
+      "E) Negociação na bolsa de valores."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 59): Contextualização histórica e cidadania em Módulo 1: Brasil Colônia. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q60",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Um experimento denominado FunFit foi desenvolvido com o objetivo de fazer com que os membros de uma comunidade local se tornassem mais ativos fisicamente. Todos os participantes do estudo foram vinculados a dois outros membros da comunidade que receberiam pequenos incentivos em dinheiro para serem estimulados a aumentar a sua atividade física, que era medida por acelerômetros nos celulares fornecidos pelo estado. Assim, se a pessoa andasse mais do que o habitual, seus conhecidos receberiam o dinheiro. Os resultados foram assombrosos: o esquema mostrou-se de quatro a oito vezes mais eficaz do que o método de oferecer incentivos individuais.\n\n**MOROZOV, E. Big Tech: a ascensão dos dados e a morte da politica. São Paulo: Ubu, 2018 (adaptado).**\n\nContrariando a visão prevalente sobre o impacto tecnológico nas relações humanas, o texto revela que os celulares podem desempenhar uma função",
+    "options": [
+      "A) Recreativa, promovendo o lazer em redes integradas.",
+      "B) Social, estimulando a reciprocidade por meios digitais.",
+      "C) Laboral, convertendo o desenvolvedor em usuário final.",
+      "D) Comercial, direcionando a escolha por produtos industrializados.",
+      "E) Cognitiva, favorecendo ferramentas virtuais."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 60): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q61",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "A dublagem é o novo campo a ser explorado pela inteligência artificial, e há empresas dedicadas a fazer com que as vozes originais de atores sejam transpostas para outros idiomas. A novidade reforça a tendência da automação de postos de trabalho nas mais diversas áreas. Tem potencial para facilitar a vida de estúdios e produtoras e, ao mesmo tempo, tornar mais escassas as oportunidades para dubladores e atores que trabalham com isso.\n\n**GAGLIONI, C. Disponível em: www.nexojornal.com.br. Acesso em: 25 ou. 2021.**\n\nA consequência da mudança tecnológica apresentada no texto é a",
+    "options": [
+      "A) Proteção da economia nacional.",
+      "B) Valorização da cultura tradicional.",
+      "C) Diminuição da formação acadêmica.",
+      "D) Estagnação da manifestação artística.",
+      "E) Ampliação do desemprego estrutural."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 61): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q62",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História do Brasil: República",
+    "subtopic": "Era Vargas e Ditadura Civil-Militar",
+    "moduleId": "mod_hist_03_republica",
+    "moduleTitle": "Módulo 3: Brasil República",
+    "statement": "Brasil e Argentina chegaram a um acordo para a redução em 10% da Tarifa Externa Comum (TEC) do Mercosul. O consenso foi alcançado durante negociação entre o ministro das Relações Exteriores do Brasil e o seu equivalente argentino, no Palácio do Itamaraty, em Brasília, no início do mês de outubro de 2021. A redução da TEC é um antigo desejo do Brasil, que pretende abrir mais sua economia e, com isso, ajudar a controlar a inflação. Já a Argentina temia que a medida pudesse afetar sua produção industrial. O acordo vai abranger uma ampla gama de produtos e ainda será apresentado ao Paraguai e Uruguai, para que seja formalizado.\n\n**Brasil e Argentina fecham acordo para corte de 10% na tarifa do Mercosul. Disponível em: https://oglobo.globo.com. Acesso em: 8 out. 2021 (adaptado).**\n\nA necessidade de negociação diplomática para viabilizar o acordo tarifário mencionado é explicada pela seguinte característica do Mercosul:",
+    "options": [
+      "A) Limitação da circulação financeira.",
+      "B) Padronização da política monetária.",
+      "C) Funcionamento da união aduaneira.",
+      "D) Dependência da exportação agrícola.",
+      "E) Equivalência da legislação trabalhista."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 62): Contextualização histórica e cidadania em Módulo 3: Brasil República. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q63",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Ainda que a fome ocorrida na Itália em 536 tenha origem nos eventos climáticos, suas implicações são tanto políticas quanto econômicas. Nos primeiros séculos da Idade Média, o auxílio aos famintos se inscreve no domínio da gestão pública, mesmo quando a ação de seus agentes é apresentada sob o ângulo da piedade e da caridade individuais, como é o caso da Gália merovíngia. Assim, o fato de que as respostas à fome são mostradas, na Gália, como o fruto de iniciativas pessoais fundadas no imperativo da caridade deriva da natureza das fontes do século VI.\n\n**SILVA, M.C. Os agentes públicos e a fome nos primeiros séculos da Idade Média. Varia Historia, n. 60, set-dez. 2016 (Adaptado).**\n\nNa conjuntura histórica destacada no texto, o dever de agir em face da situação de crise apresentada pertencia à jurisdição",
+    "options": [
+      "A) Da nobreza, proveniente da obrigação de proteção ao campenisnato livre.",
+      "B) Da realeza, decorrente do conceito de governo subjacente à monarquia cristã.",
+      "C) Dos mosteiros, resultante do caráter fraternal afirmado nas regras monásticas.",
+      "D) Dos bispados, consequente da participação dos clérigos nos assuntos comunitários.",
+      "E) Das corporações, procedente do padrão assistencialista previsto nas normas estatutárias."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 63): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q65",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "![](https://enem.dev/2022/questions/65/976097b0-d433-498d-946f-1770a46340fb.png)\n\n**Disponível em:https://hdmais.com.br. Acesso em: 8 out. 2021.**\n\nO ápice da ilustração se traduz por uma conduta social caracterizada pela",
+    "options": [
+      "A) Cultura do cancelamento.",
+      "B) Prática do feminicídio.",
+      "C) Postura negacionista.",
+      "D) Ação involuntária.",
+      "E) Defesa da honra."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 65): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q66",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "**TEXTO I**\n\nA primeira grande lei educacional do Brasil, de 1827, determinava que, nas “escolas de primeiras letras” do Império, meninos e meninas estudassem separados e tivessem currículos diferentes. No Senado, o Visconde de Cayru foi um dos defensores de que o currículo de matemática das garotas fosse o mais enxuto possível. Nas palavras dele, o “belo sexo” não tinha capacidade intelectual para ir muito longe: – Sobre as contas, são bastantes \\[para as meninas\\] as quatro espécies, que não estão fora do seu alcance e lhes podem ser de constante uso na vida.\n\n**TEXTO II**\n\nNo Senado, o único a defender publicamente que as meninas tivessem, em matemática, um currículo idêntico ao dos meninos foi o Marquês de Santo Amaro (RJ). Ele argumentou: – Não me parece confome, às luzes do tempo em que vivemos, deixarmos de facilitar às brasileiras a aquisição desses conhecimentos \\[mais aprofundados de matemática\\]. A oposição que se manifesta não pode nascer senão do arraigado e péssimo costume em que estavam os antigos, os quais nem queriam que suas filhas aprendessem a ler.\n\nWESTIN, R. Senado Notícias. Disponível em: www12.senado.leg.br. Acesso em: 20 out. 2021 (adaptado).\n\nOs discursos expressam pontos de vista divergentes respectivemerte pela oposição entre",
+    "options": [
+      "A) Liberdade de gênero e controle social.",
+      "B) Equidade de escolha e imposição cultural.",
+      "C) Dominação de corpos e igualdade humana.",
+      "D) Geração de oportunidade e restrição profissional.",
+      "E) Exclusão de competências e participação política."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 66): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q67",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Após sete anos da ocupação de um terreno abandonado em Santo André, no ABC paulista, os condomínios Novo Pinheirinho e Santos Dias foram inaugurados, com a presença de representantes dos governos federal, estadual e municipal. A ocupação começou em 2012 e, desde então, o movimento vinha reivindicando o direito de usufruir do espaço para a construção de casas. A Cartas Magna, em seu art. 6°, garante a todos os brasileiros o direito à moradia.\n\nPUTTI, A. Disponível em: www.cartacapital.com.br.  \nAcesso em: 13 nov. 2021 (adaptado).\n\nO texto apresenta uma estratégia usada pelo movimento social para",
+    "options": [
+      "A) Fragilizar o poder público.",
+      "B) Fomentar a economia solidária.",
+      "C) Controlar a propriedade estatal.",
+      "D) Garantir o preceito constitucional.",
+      "E) Incentivar a especulação imobiliária."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 67): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q68",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "**TEXTO I**  \nA Marinha identifica, na voz de Thomas Barnett, uma ampla região potencialmente insubmissa ou simplesmente irredutível às normas gerais de funcionamento promovidas pelos Estados Unidos e sancionadas pelo Fundo Monetário Internacional, pela Organização Mundial do Comércio e pelo Banco Mundial. E não necessariamente por sua consciência rebelde, mas sim, em muitos casos, pela insubstancialidade de suas instituições estatais.\n\n**TEXTO II**\n\n![](https://enem.dev/2022/questions/68/f472fda8-7fa2-43b7-bcc3-72db46b0d92d.png)\n\nCECEÑA. A. E. Hegemonias e emancipações no século XXI.  \nBuenos Aires: Clacso. 2005.\n\nAs preocupações do governo estadunidense expressas no texto e no mapa evidenciam uma estratégia para",
+    "options": [
+      "A) Compartilhamento de inovações tecnológicas.",
+      "B) Promoção de independência financeira.",
+      "C) Incremento de intercâmbios culturais.",
+      "D) Ampliação de influência econômica.",
+      "E) Preservação de recursos naturais."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 68): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q69",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Colegas, na mente e no coração do povo, a Crimeia sempre foi uma porção inseparável da Rússia. Essa firme convicção se baseia na verdade e na justiça e foi passada de geração em geração, ao longo do tempo, sob quaisquer circunstâncias, apesar de todas as drásticas mudanças que nosso país atravessou durante todo o século XX.\n\nDisponível em: http://g1.globo.com. Acesso em: 28 jul. 2014.\n\nConsiderando a dinâmica geopolítica subjacente ao texto, a justificativa utilizada por Vladimir Putin, em 2014, para anexação dessa península apela para o argumento de que",
+    "options": [
+      "A) As populações com idioma comum devem estar submetidas à mesma autoridade estatal.",
+      "B) O imperialismo soviético havia se acomodado às pretensões das potências vizinhas.",
+      "C) Os organismos transnacionais são incapazes de solucionar disputas territoriais.",
+      "D) A integração regional supõe a livre circulação de pessoas e mercadorias.",
+      "E) Expulsão das forças navais ocidentais garantiria a soberania nacional."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 69): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q70",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "**TEXTO I**\n\n**Interseccionalidade:** intercruzamento de desigualdades que gera padrões complexos de discriminação\n\n![](https://enem.dev/2022/questions/70/1539c835-a8b9-444d-949c-51d59d8d33fe.png)\n\n**Disponível em: www.agenciadenoticias.ibge.gov.br. Acesso em: 2 dez. 2018.**\n\nConsiderando o conceito apresentando no Texto I e os dados apresentados no Texto II, no Brasil, são fatores que intensificam o fenômeno da discriminação:",
+    "options": [
+      "A) Raça e gênero.",
+      "B) Etnia e habitação.",
+      "C) Idade e nupcialidade.",
+      "D) Profissão e sexualidade.",
+      "E) Escolaridade e fecundidade."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 70): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q71",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "O princípio básico do Estado de direito é o da eliminação do arbítrio no exercício dos poderes  públicos, com a consequente garantia de direitos dos indivíduos perante esses poderes. Estado de direito significa que nenhum indivíduo, presidente ou cidadão comum está acima da lei. Os governos democráticos exercem a autoridade por meio da lei e estão eles próprios sujeitos as constrangimentos impostos pela lei.\n\n**CANOTILHO, J. J. G. Estado de direito, Lisboa: Gradiva, 1999 (adaptado).**\n\nNas sociedades contemporâneas, consiste em violação do princípio básico enunciado no texto:",
+    "options": [
+      "A) Supressão de eleições de representantes políticos.",
+      "B) Intervenção em áreas de vulnerabilidade pela Igreja.",
+      "C) Disseminação de projetos sociais em universidades.",
+      "D) Ampliação dos processos de concentração de renda.",
+      "E) Regulamentação das relações de trabalho pelo Legislativo."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 71): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q72",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "**Brasileiros levam mais tempo de casa para o trabalho**\n\nPesquisa do IBGE aponta que a situação é maio grave no Sudeste: 13% das pessoas levam mais de um hora para chegar ao trabalho. Nas regiões metropolitanas de São Paulo e do Rio, o IBGE registrou os maiores percentuais de trabalhadores que levam mais de uma hora no trajeto até o emprego. Quem vê o Marcelo chegar ao trabalho nem imagina a maratona que ele enfrenta todos os dias antes das 5 h. “Acordo 4 h 30, saio de casa 5 h, pego trem 5 h 20, chego na Central umas 6 h 50, pego ônibus e chego no trabalho mais ou menos 7 h 10”, conta. Segundo especialista, são os mais pobres os que moram mais longe do emprego.\n\n**Disponivel em: www.portaldotransito.com.br. Acesso em: 23 nov 2021 (adaptado)**\n\nA pesquisa desenvolvida retrata a seguinte dinâmica populacional:",
+    "options": [
+      "A) Fluxo de retorno.",
+      "B) Migração interna.",
+      "C) Mudança sazonal.",
+      "D) Movimento pendular.",
+      "E) Deslocamento forçado."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 72): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q73",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "A história do Primeiro de Maio de 1890 — na França e na Europa, o primeiro de todos os Primeiros de Maio – é, sob vários aspectos, exemplar. Resultante de um ato político deliberado, essa manifestação ilustra o lado voluntário da construção de uma classe — a classe operária — à qual os socialistas tentam dar uma unidade política e cultural através daquela pedagogia da festa cujo princípio, eficácia e limites há muito tempo tinham sido experimentados pela Revolução Francesa.\n\n**PERROT, M. Os excluídos da história: operários, mulheres e prisioneiros. Rio de Janeiro: Paz e Terra, 1988.**\n\nCom base no texto, a fixação dessa data comemorativa tinha por objetivo",
+    "options": [
+      "A) Valorizar um sentimento burguês.",
+      "B) Afirmar uma identidade coletiva.",
+      "C) Edificar uma memória nacional.",
+      "D) Criar uma comunidade cívica.",
+      "E) Definir uma tradição popular."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 73): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q75",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "O povo Kambeba é o povo da águas. Os mais velhos costumam contar que o povo nasceu de uma gota-d’água que caiu do céu em uma grande chuva. Nessa gota estavam duas gotículas: o homem e a mulher. “Por essa narrativa e cosmologia indígena de que nós somos o povo das águas é que o rio nos tem fundamental importância”, diz Márcia Wayna Kambeba, mestre em Geografia e escritora. Todos os dias, ela ia com o pai observar o rio. Ia em silêncio e, antes que tomasse para si a palavra, era interrompida. “Ouço o rio”, o pai dizia. Depois de cerca de duas horas a ouvir as águas do Solimões, ela mergulhava. “Confie no rio e aprenda com ele”. “Fui entender mais tarde, com meus estudos e vivências, que meu pai estava me apresentando à sabedoria milenar do rio”.\n\n**Rios amazônicos influenciam no agro e em reservatórios do Sudeste. Disponível em:  www.uol.com.br. Acesso em: 14 out. 2021.**\n\nPelo descrito no texto, o povo Kambeba tem o rio como um(a)",
+    "options": [
+      "A) Objeto tombado e museográfico.",
+      "B) Herança religiosa e sacralizada.",
+      "C) Cenário bucólico e paisagístico",
+      "D) Riqueza individual e efêmera",
+      "E) Patrimônio cultural e afetivo."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 75): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q76",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História do Brasil: República",
+    "subtopic": "Era Vargas e Ditadura Civil-Militar",
+    "moduleId": "mod_hist_03_republica",
+    "moduleTitle": "Módulo 3: Brasil República",
+    "statement": "Lá embaixo está o açude Itans, com seu formigueiro a cavar a terra. É mesmo impressionante o esforço daquele formigar de homens ao sol, lavados em suor, que não param em longas filas pacientes acompanhando centenas de burricos que sobem e descem, numa ciranda comovente e silenciosa, cada burrico com duas caixas de terra no lombo. É o labor organizado para a salvação da terra e do homem. Depois do semideserto que tanto nos acabrunhou o espírito por falta de chuvas, o esforço destes milhares de sertanejos, todos vestidos de brim mescla e calçando alpercatas, no combate consciente à esterilidade da natureza, com famílias alojadas em pequeninas casas de taipas e telha – embrião de futura cidade – impressionava-nos profundamente.\n\n**VALLE, F. M. História do Açude Itans, município de Caicó (RN). Brasília, 1994 (adaptado)**\n\nNa construção do empreendimento descrito, destaca-se a presença de",
+    "options": [
+      "A) Engenheiros na execução de canais fluviais.",
+      "B) Coronéis na ampliação de antigas fazendas.",
+      "C) Operários na distribuição dos recursos hídricos.",
+      "D) Trabalhadores na formação de novos espaços.",
+      "E) Negociantes na organização de redes comerciais."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 76): Contextualização histórica e cidadania em Módulo 3: Brasil República. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q78",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "![](https://enem.dev/2022/questions/78/1032a7bb-17e5-4711-ad16-aa16988017fa.png)\n\n**Disponível em: http://imguol.com. Acesso em: 30 mar. 2014 (adaptado).**\n\nConsiderando-se que a distância entre o local onde os destroços do avião foram avistados e a cidade de Perth é de 2 cm, a escala aproximada dessa representação cartográfica é:",
+    "options": [
+      "A) 1 : 12 500.",
+      "B) 1 : 125 000.",
+      "C) 1 : 1 250 000.",
+      "D) 1 : 12 500 000.",
+      "E) 1 : 125 000 000."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 78): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q79",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Hoje sou um ser inanimado, mas já tive vida pulsante em seivas vegetais, ful um ser vivo; é bem verdade que do reino vegetal, mas isso não me tirou a percepção de vida vivida como tamborete. Guardo apreço pelos meus criadores, as mãos que me fizeram, me venderam, 6 pelas mulheres que me usaram para suas vendas e de tantas outras maneiras. Essas pessoas, sim, tiveram suas subjetividades, singularidades e pluralidades, que estão incorporadas a mim. É preciso considerar que a nossa história, de móveis de museus, está para além da mera vinculação aos estilos e à patrimonialização que recebemos como bem material vinculado ao patrimônio imaterial. A nossa história está ligada aos dons individuais das pessoas e suas práticas sociais. Alguns indivíduos consagravam-se por terem determinados requisitos, tais como o conhecimento de modelos clássicos ou destreza nos desenhos.\n\n**FREITAS, J. M.; OLIVEIRA, L. R. Memórias de um tamborete de baiana: as muitas vozes em um objeto de museu. Revista Brasileira de Pesquisa (Auto)Blográfica, n. 14, maio-ago. 2020 (Adaptado).**\n\nAo descrever-se como patrimônio museológico, o objeto abordado no texto associa a sua história às",
+    "options": [
+      "A) Habilidades artísticas e culturais dos sujeitos.",
+      "B) Vocações religiosas e pedagógicas dos mestres.",
+      "C) Naturezas antropológica e etnográfica dos expositores.",
+      "D) Preservações arquitetônica e visual dos conservatórios.",
+      "E) Competências econômica e financeira dos comerciantes."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 79): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q80",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Advento da _Polis_, nascimento da filosofia: entre as duas ordens de fenômenos, os vínculos são demasiado estreitos para que o pensamento racional não apareça, em suas origens, solidário das estruturas sociais e mentais próprias da cidade grega. Assim recolocada na história, a filosofia despoja-se desse caráter de revelação absoluta que às vezes lhe foi atribuído, saudando, na jovem ciência dos jônios, a razão intemporal que veio encarnar-se no Tempo. A escola de Mileto não viu nascer a Razão; ela construiu uma Razão, uma primeira forma de racionalidade. Essa razão grega não é a razão experimental da ciência contemporânea.\n\n**VERNANT, J. P. Origens do pensamento grego. Rio de Janeiro: Difel, 2002.**\n\nOs vínculos entre os fenômenos indicados no trecho foram fortalecidos pelo surgimento de uma categoria de pensadores, a saber:",
+    "options": [
+      "A) Os epicuristas, envolvidos com o ideal de vida feliz.",
+      "B) Os estoicos, dedicados à superação dos infortúnios.",
+      "C) Os sofistas, comprometidos com o ensino da retórica.",
+      "D) Os peripatéticos, empenhados na dinâmica do ensino.",
+      "E) Os poetas rapsodos, responsáveis pela narrativa do mito."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 80): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q81",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "**Decreto-Lei n. 1 949, de 27/17/1937**\n\nArt. 1.o Fica criado o Departamento de Imprensa e Propaganda (DIP), diretamente  subordinado ao presidente da República.  \nArt. 2.o O DIP tem por fim:  \n**h)** coordenar e incentivar as relações da imprensa com os poderes públicos no sentido de maior aproximação da mesma com os fatos que se ligam aos interesses nacionais;\n\n**n)** autorizar mensalmente a devolução dos depósitos efetuados pelas empresas jornalísticas para importação de papel para imprensa , uma vez demonstrada, a seu juízo, a eficiência e a utilidade pública dos jornais ou periódicos por elas administrados ou dirigidos.\n\n**BRASIL apud CARONE, E. A Terceira República. (1937-1945). São Paulo: Difel, 1982. (Adaptado).**\n\nCom base nos trechos do decreto, as finalidades do órgão criado permitiram ao governo promover o(a)",
+    "options": [
+      "A) Diversificação da opinião pública.",
+      "B) Mercantilização da cultura popular.",
+      "C) Controle das organizações sindicais.",
+      "D) Cerceamento da liberdade de expressão.",
+      "E) Privatização dos meios de comunicação"
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 81): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q82",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "![](https://enem.dev/2022/questions/82/9d037d23-4819-4184-9aab-bb87c3b40c73.png)\n\n**Geoestatísticas de recursos naturais da Amazônia Legal. Rio de Janeiro: IBGE, 2011 (adaptado).**\n\nO mapa espacializa um recurso natural com alto potencial para ocorrência de:",
+    "options": [
+      "A) Abalos sísmicos periódicos.",
+      "B) Jazidas de minerais metálicos.",
+      "C) Reservas de combustíveis fósseis.",
+      "D) Aquíferos sedimentares profundos.",
+      "E) Estruturas geológicas metamórficas."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 82): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q83",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Nascidas o Líbano, as duas irmãs não puderam ser registradas no país, porque lá é exigido que os nascidos sejam filhos de pais e mães libaneses. Seus pais, de nacionalidade síria, também não puderam registrá-las no país de origem. Na Síria, crianças só são registradas por pais oficialmente casados, o que não era o caso deles.\n\n**Disponível em: https://agenciabrasi.ebc.com.br. Acesso em: 7 nov. 2021.**\n\nEm situações como a apresentada no texto, as pessoas ao nascerem já se encontram na condição sociopolítica de",
+    "options": [
+      "A) Exiladas.",
+      "B) Apátridas.",
+      "C) Foragidas.",
+      "D) Refugiadas.",
+      "E) Clandestinas."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 83): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q84",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "**TEXTO I**  \nUma filosofia da percepção que queira reaprender a ver o mundo restituirá à pintura e às artes em geral seu lugar verdadeiro.\n\n**MERLEAU-PONTY, M. Conversas: 1948. São Paulo: Martins Fontes, 2004.**\n\nTEXTO II  \nOs grandes autores de cinema nos pareceram confrontáveis não apenas com pintores, arquitetos, músicos, mas também com pensadores. Eles pensam com imagens, em vez de conceitos.\n\n**DELEUZE, G. Cinema 1: a imagem-movimento. São Paulo: Brasiliense, 1983 (adaptado).**\n\nDe que modo os textos sustentam a existência de um saber ancorado na sensibilidade?",
+    "options": [
+      "A) Admitindo o belo como fenômeno transcendental.",
+      "B) Reafirmando a vivência estética como juízo de gosto.",
+      "C) Considerando o olhar como experiência de conhecimento.",
+      "D) Apontando as formas de expressão como auxiliares da razão.",
+      "E) Estabelecendo a inteligência como implicação das representações."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 84): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q85",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Moderna",
+    "subtopic": "Renascimento e Reformas Religiosas",
+    "moduleId": "mod_hist_05_moderna",
+    "moduleTitle": "Módulo 5: Idade Moderna",
+    "statement": "**TEXTO I**  \nManda o Santo Ofício da Inquisição que ninguém, seja qual for seu estado, idade ou condição, pare com carroça, caleça ou montaria nem atrapalhe com mesas ou cadeiras o centro das ruas, que vão da Inquisição a São Domingos, nem atravesse a procissão em ponto algum da ida ou da volta, amanhã, 19 do corrente, em que se celebrará auto de fé. E também que nem nesse dia nem nos dos açoites ouse alguém atirar  nos réus maçãs, pedras, laranjas nem outra coisa qualquer.\n\n**PALMA, R. Anais da Inquisição de Lima. São Paulo: Edusp; Giordano, 1992 (adaptado).**\n\n**TEXTO II**  \nComo acontece em todos os ritos, o sentido do auto da fé é conferido pela sequência dos atos que o compõem. Os lugares, as posturas, os gestos, as palavras são fixados previamente em toda a sua complexidade. Por isso, o auto da fé apresenta momentos fortes – durante a preparação, a encenação, o ato e a recepção – que convém seguir em seus pormenores.\n\n**BETHENCOURT, F. História das Inquisições: Portugal, Espanha e Itália – séculos XV-XIX. São Paulo: Cia. das Letras, 2000**\n\nO rito mencionado nos textos demonstra a capacidade da Igreja em",
+    "options": [
+      "A) Abrandar cerimônias de punição.",
+      "B) Favorecer anseios de violência.",
+      "C) Criticar políticas de disciplina.",
+      "D) Produzir padrões de conduta.",
+      "E) Ordenar cultos de heresia."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 85): Contextualização histórica e cidadania em Módulo 5: Idade Moderna. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q86",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Empédocles estabelece quatro elementos corporais – fogo, ar, água e terra –, que são eternos e que mudam aumentando e diminuindo mediante mistura e  separação; mas os princípios propriamente ditos, pelos quais são movidos, são o Amor e o Ódio. Pois é preciso que os elementos permaneçam alternadamente em movimento, sendo ora misturados pelo Amor, ora separados pelo Ódio.\n\nSIMPLÍCIO. Física, 25, 21. In: **Os pré-socráticos**. São Paulo: Nova Cultural, 1996.\n\nO texto propõe uma reflexão sobre o entendimento de Empédocles acerca da arché, uma preocupação típica do pensamento pré-socrático, porque",
+    "options": [
+      "A) Exalta a investigação filosófica.",
+      "B) Transcende ao mundo sensível.",
+      "C) Evoca a discussão cosmogônica.",
+      "D) Fundamenta as paixões humanas.",
+      "E) Corresponde à explicação mitológica."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 86): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q88",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Entretanto, nosso amigo Basso tem o ânimo alegre. Isso resulta da filosofia: estar alegre diante da morte, forte e contente qualquer que seja o estado do corpo, sem desfalecer, ainda que desfaleça.\n\n**Sêneca, L. Cartas morais. Lisboa: Calouste Gulbenkian, 1990.**\n\nO excerto refere-se a uma carta de Sêneca na qual se apresenta como um bem fundamental da filosofia promover a",
+    "options": [
+      "A) Valorização de disputas dialógicas",
+      "B) Rejeição das convenções sociais",
+      "C) Inspiração de natureza religiosa",
+      "D) Exaltação do sofrimento",
+      "E) Moderação das paixões"
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 88): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2022_q89",
+    "year": 2022,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Quando os espanhóis chegaram à América, estava em seu apogeu o império teocrático dos Incas, que estendia seu poder sobre o que hoje chamamos Peru, Bolívia e Equador, abarcava parte da Colômbia e do Chile e alcançava até o norte argentino e a selva brasileira; a confederação dos Astecas tinha conquistado um alto nível de eficiência no vale do México, e no Yucután, na América Central, a esplêndida civilização dos Maias persistia nos povos herdeiros, organizados para o trabalho e para a guerra. Os Maias tinham sido grandes astrônomos, mediram o tempo e o espaço com assombrosa precisão, e tinham descoberto o valor do número zero antes de qualquer povo da história. No museu de Lima, podem ser vistos centenas de crânios que receberam placas de ouro e prata por parte dos cirurgiões Incas.\n\nGALEANO, E. **As veias abertas da América Latina.** Porto Alegre: L&PM, 2012.\n\nAs sociedades mencionadas deixaram como legado uma diversidade de",
+    "options": [
+      "A) Bens religiosos inspirados na matriz cristã.",
+      "B) Materiais bélicos pilhados em batalhas coloniais.",
+      "C) Heranças culturais constituídas de saberes próprios.",
+      "D) Costumes laborais moldados em estilos estrangeiros.",
+      "E) Práticas medicinais alicerçadas no conhecimento científico."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2022 (Questão 89): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q45",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Antiguidade e Idade Média",
+    "subtopic": "Grécia, Roma e Idade Média",
+    "moduleId": "mod_hist_04_antiguidade_medieval",
+    "moduleTitle": "Módulo 4: Antiguidade e Medieval",
+    "statement": "No ano em que o maior clarinetista que o Brasil conheceu, Abel Ferreira, faria 100 anos, o choro dá mostras de vivacidade. É quase um paradoxo que essa riquíssima manifestação da genuína alma brasileira seja forte o suficiente para driblar a falta de incentivos oficiais, a insensibilidade dos meios de comunicação e a amnésia generalizada. “Ele trazia a alma brasileira derramada em sua sonoridade ímpar. Artur da Távola, seguramente seu maior admirador, foi quem melhor o definiu, ‘alma sertaneja, toque mozarteano'”.  O acervo do músico autodidata nascido na mineira Coromandel, autor de 50 músicas, entre as quais _Chorando baixinho_ (1942), que o consagrou, amigo e parceiro de Pixinguinha, com quem gravou _Ingênuo_ (1958), permanece com os herdeiros à espera de compilação adequada. O Museu da Imagem e do Som do Rio de Janeiro tem a guarda do saz e do clarinete, doados em 1995.  \nNa avaliação de Leonor Bianchi, editora da _Revista do Choro_, “a música instrumental fica apartada do que é popular porque não vai à sala de concerto. O público em geral tem interesse em samba, pagode e axé”. Ela atribui essa situação à falta de conhecimento e à pouca divulgação do gênero nas escolas.\n\nFERRAZ, A. Disponível em: www.cartacapital.com.br. Acesso em: 22 abr. 2015 (adaptado).\n\nConsiderando-se o contexto, o gênero e o público-alvo, os argumentos trazidos pela autora do texto buscam",
+    "options": [
+      "A) Atribuir o desconhecimento da obra de Aberl Ferreira ao ensino de música nas escolas.",
+      "B) Reivindicar mais investimentos estatais para a preservação do acervo musical nacional.",
+      "C) Destacar a relevância histórica e a riqueza estética do choro no cenário musical brasileiro",
+      "D) Apresentar ao leitor dados biográficos pouco conhecidos sobre a trajetória de Abel Ferreira.",
+      "E) Constatar a impopularidade do choro diante da preferência do público por músicas populares."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 45): Contextualização histórica e cidadania em Módulo 4: Antiguidade e Medieval. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q46",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Seu turno de trabalho acabou, você já está em casa e é hora do jantar da família. Mas, em vez de relaxar, você começa a pensar na possibilidade de ter recebido alguma mensagem importante no e-mail profissional ou no grupo de WhatsApp da empresa. Imediatamente, você fica distante. Momentos depois, com alguns toques na tela do celular, você está de volta ao ambiente de trabalho. O jantar e a família ficaram em segundo plano.\n\nA simples vontade de checar mensagens do trabalho pós-expediente prejudica sua saúde -e a de sua família. Disponível em: www.bbc.com. Acesso em: 4 dez. 2018.\n\nO texto indica práticas as relações cotidianas do trabalho que causam para o indivíduo a",
+    "options": [
+      "A) Proteção da vida privada.",
+      "B) Ampliação de atividades extras.",
+      "C) Elevação de tapas burocráticas.",
+      "D) Diversificação do lazer recreativo.",
+      "E) Desobrigação de afazeres domésticos."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 46): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q47",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Quando a taxa de remuneração do capital excede  \nsubstancialmente a taxa de crescimento da economia,  \npela lógica, a riqueza herdada aumenta mais rápido do  \nque a renda e a produção. Então, basta aos herdeiros  \npoupar uma parte limitada da renda de seu capital para  \nque ele cresça mais rápido do que a economia como  \num todo. Sob essas condições, é quase inevitável que  \na riqueza herdada supere a riqueza constituída durante  \numa vida de trabalho, e que a concentração do capital  \natinja níveis muito altos.\n\nPIKETTY, T. O capital no século XXI. Rio de Janeiro: Intrínseca, 2014 (adaptado).\n\nConsiderando os princípios que legitimam as democracias liberais, a lógica econômica descrita no\ntexto enfraquece o(a)",
+    "options": [
+      "A) Ideologia do mérito.",
+      "B) Direito de nascimento.",
+      "C) Eficácia da legislação",
+      "D) Ganho das financeiras.",
+      "E) Eficiência dos mercados."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 47): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q48",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Atualmente, o Programa de Melhoramento “Uvas do Brasil” utiliza métodos clássicos de melhoramento, como seleção massal, seleção clonal e hibridações. Ações de ajuste de manejo de seleções avançadas vêm sendo desenvolvidas paralelamente a Programa de Melhoramento, no sentido de viabilização desses materiais. Ao longo dos seus 40 anos, uma grande equipe técnica trabalhou para executar projetos de pesquisa para atender às necessidades e às demandas de diferentes atores da vitivinicultura nacional, incluindo produtores de uvas de mesa para exportação do semiárido nordestino, viticultores interessados em produzir sucos em regiões tropicais ou pequenos produtores familiares da região da Serra Gaúcha, interessados em melhorar a qualidade do vinho artesanal que produzem.\n\nPrograma de Melhoramento Genético “Uvas do Brasil”. Disponível em: www.embrapa.br.  \nAcesso em: 24 nov. 2018 (adaptado).\n\nPara melhorar a produção agrícola nas regiões mencionadas, as técnicas referidas no texto buscaram\nadaptar o cultivo aos(às)",
+    "options": [
+      "A) Espécies nativas ameaçadas.",
+      "B) Cadeias econômicas autônomas.",
+      "C) Estruturas fundiárias tradicionais.",
+      "D) Elementos ambientais singulares.",
+      "E) Mercados consumidores internos."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 48): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q52",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História do Brasil: República",
+    "subtopic": "Era Vargas e Ditadura Civil-Militar",
+    "moduleId": "mod_hist_03_republica",
+    "moduleTitle": "Módulo 3: Brasil República",
+    "statement": "Durante os anos de 1854-55, o governo brasileiro – por meio de sua representação diplomática em Londres – e os livre-cambistas ingleses  \n– nas colunas do Daily News e na Câmara dos Comuns – aumentaram a pressão pela revogação da Lei Aberdeen. O governo britânico, entretanto, ainda receava que, sem um tratado anglo-brasileiro satisfatório para substituí-la, não haveria nada que impedisse os brasileiros de um dia voltarem aos seus velhos hábitos.\n\nBETHELL, L. A abolição do comércio brasileiro de escravos.  \nBrasília: Senado Federal, 2002 (adaptado).\n\nAs tensões diplomáticas expressas no texto indicam o interesse britânico em",
+    "options": [
+      "A) Estabelecer jurisdição conciliadora.",
+      "B) Compartilhar negócios marítimos.",
+      "C) Fomentar políticas higienistas.",
+      "D) Manter a proibição comercial.",
+      "E) Promover o negócio familiar."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 52): Contextualização histórica e cidadania em Módulo 3: Brasil República. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q53",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Famoso por ser o encantador de viúvas da cidade de Cabaceiras, na Paraíba, Zé de Sila é um contador de histórias parecido com o personagem Chicó, do Auto da Compadecida. Ele defende veementemente que a oração da avó sustentava mais a chuva. “Quando era pequeno e  \nchovia por aqui, ajudava minha avó colocando os pratos emborcados no terreiro para diminuir o vento. Ela fazia isso e rezava para a chuva durar mais”, diz Zé de Sila.\n\nGALDINO, V.; BARBOSA, R. C. **Artistas por um dia**?  \nJoão Pessoa: Editora Universitária, 2009.\n\nA destacar expressões e vivências populares do\ncotidiano, o texto mobiliza os seguintes aspectos da\ndiversidade regional:",
+    "options": [
+      "A) Alianças afetivas conectadas a ritual matrimonial. B Práticas místicas associadas a patrimônio cultural. © Manifestações teatrais atreladas a imaginário político. d Narrativas filmicas relacionadas às intempéries climáticas. © Argumentações literárias interligadas às catástrofes ambientais.",
+      "B) Práticas místicas associadas a patrimônio cultural. Manifestações teatrais atreladas a imaginário político. d Narrativas filmicas relacionadas às intempéries climáticas. © Argumentações literárias interligadas às catástrofes ambientais.",
+      "C) Manifestações teatrais atreladas a imaginário político.",
+      "D) Narrativas filmicas relacionadas às intempéries climáticas.",
+      "E) Argumentações literárias interligadas às catástrofes ambientais."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 53): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q54",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "O uso de novas tecnologias envolve a assimilação de uma cultura empresarial na qual haja a integração entre as propostas de modernização tecnológica e a racionalização. Nem sempre o uso de novas tecnologias é  \napenas um processo técnico na medida em que pressupõe uma nova orientação no controle do capital, no processo produtivo e na qualificação da mão de obra. Dos diversos efeitos que derivaram dessa orientação, a terceirização, a precarização e a flexibilização aparecem  \ncom constância como características do paradigma flexível, em substituição a modelo taylorista-fordista.\n\nHERÉDIA, V. Novas tecnologias nos processos de trabalho: efeitos da  \nreestruturação produtiva. Scripta Nova, n. 170, ago. 2004 (adaptado).\n\nO uso de novas tecnologias relacionado a controle empresarial é criticado no texto em razão da",
+    "options": [
+      "A) Operacionalização da tarefa laboral.",
+      "B) Capacitação de profissionais liberais.",
+      "C) Fragilização das relações de trabalho.",
+      "D) Hierarquização dos cargos executivos.",
+      "E) Aplicação dos conhecimentos da ciência."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 54): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q55",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "A categoria de refugiado carrega em si as noções de transitoriedade, provisoriedade e temporalidade. Os refugiados situam-se entre o país de origem e o país de destino. A transitarem entre os dois universos,  \nocupam posição marginal, tanto em termos identitários – assentada na falta de pertencimento pleno enquanto membros da comunidade receptora e nos vínculos introjetados por códigos partilhados com a comunidade de quanto em termos jurídicos, a deixarem de exercitar, a menos em caráter temporário, o status de cidadãos no país de origem e portar o status de  \nrefugiados no país receptor.\n\nMOREIRA, J. B. Refugiados no Brasil: reflexes acerca do processo de integração local.  \nREMHU, n. 43, jul.-dez. 2014 (adaptado).\n\nA condição de transitoriedade dos refugiados no Brasil, conforme abordada no texto, é provocada pela associação entre",
+    "options": [
+      "A) A ascensão social e burocracia estatal.",
+      "B) Miscigenação étnica e limites fronteiriços.",
+      "C) Desqualificação profissional e ação policial.",
+      "D) Instabilidade financeira e crises econômicas.",
+      "E) Desenraizamento cultural e insegurança legal."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 55): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q56",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Mulheres naturalistas raramente figuraram a corrida por conhecer terras exóticas. No século XIX, mulheres como Lady Charlotte Canning eventualmente coletavam espécimes botânicos, mas quase sempre no papel de esposas coloniais, viajando para locais onde seus maridos as levavam e não em busca de seus próprios projetos científicos.\n\nSOMBRIO, M. M. O. Em busca pelo campo – Mulheres em expedições cientificas  \nno Brasil em meados do século XX. Cadernos Pagu, n. 48, 2016.\n\nNo contexto do século XIX, a relação das mulheres com o campo cientifico, descrita no texto, é representativa da",
+    "options": [
+      "A) Afirmação da igualdade de gênero.",
+      "B) Transformação dos espaços de lazer.",
+      "C) Superação do pensamento patriarcal.",
+      "D) Incorporação das estratificações sociais.",
+      "E) Substituição das atividades domésticas."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 56): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q57",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Nos setores mais altamente desenvolvidos da sociedade contemporânea, o transplante de necessidades sociais para individuais é de tal modo eficaz que a diferença entre elas parece puramente teórica. As criaturas se reconhecem em suas mercadorias; encontram sua alma em seu automóvel, casa em patamares, utensílios de cozinha.\n\nMARCUSE, H. A ideologia da sociedade industrial: o homem unidimensional.  \nRio de Janeiro: Zahar, 1979.\n\nO texto indica que, no capitalismo, a satisfação dos desejos pessoais é influenciada por",
+    "options": [
+      "A) Políticas estatais de divulgação.",
+      "B) Incentivos controlados de consumo.",
+      "C) Prescrições coletivas de organização.",
+      "D) Mecanismos subjetivos de identificação.",
+      "E) Repressões racionalizadas do narcisismo."
+    ],
+    "correctLetter": "D",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 57): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: D.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q58",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "A vida das pessoas se modifica com a mesma rapidez com que se reproduz a cidade. O lugar da festa, do encontro quase desaparecem; o número de brincadeiras infantis nas ruas diminui – as crianças quase não são vistas; os pedaços da cidade são vendidos, no mercado, como mercadorias; árvores são destruídas, praças transformadas em concreto. Por outro lado, os habitantes parecem perder na cidade suas próprias referências. A imagem de uma grande cidade hoje é tão mutante que se assemelha à de  \num grande guindaste, aliás, a presença maciça destes, das britadeiras, das betoneiras nos dão o limite do processo de transformação diária ao qual está submetida a cidade.\n\nCARLOS, A. F. A. A cidade. São Paulo: Contexto, 2011 (adaptado).\n\nNo contexto das grandes cidades brasileiras, a situação apresentada no texto vem ocorrendo como consequência da",
+    "options": [
+      "A) Manutenção dos modos de convívio social.",
+      "B) Preservação da essência do espaço público.",
+      "C) Ampliação das normas de controle ambiental",
+      "D) Flexibilização das regras de participação política.",
+      "E) Alteração da organização da paisagem geográfica."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 58): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q59",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "No semiárido brasileiro, o sertanejo desenvolveu uma acuidade detalhada para a observação dos fenômenos, a longo dos tempos, presenciados na natureza, em especial para a previsão do tempo e do clima, utilizando  \ncomo referência a posição dos astros, constelação e nuvens. Conforme os sertanejos, a estação vai ser chuvosa quando a primeira lua cheia de janeiro “sair vermelha, por detrás de uma barra de nuvens”, mas “se surgir prateada, é sinal de seca”\n\nMAIA, D.; MAIA, A. C. A utilização dos ditos populares e da observação do tempo para a climatologia escolar no ensino fundamental I1. GeoTextos, n. 1, jul. 2010 (adaptado).\n\nO texto expõe a produção de um conhecimento que se constitui pela",
+    "options": [
+      "A) Técnica científica.",
+      "B) Experiência perceptiva.",
+      "C) Negação das tradições.",
+      "D) Padronização das culturas.",
+      "E) Uniformização das informações."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 59): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q60",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Vocês que fazem parte dessa massa  \nQue passa nos projetos do futuro  \nE duro tanto ter que caminhar  \nE dar muito mais do que receber  \nE, ô, ô, vida de gado  \nPovo marcado  \nE, povo feliz!\n\nZÉ RAMALHO. A peleja do diabo com o dono do céu.  \nRio de Janeiro: Sony, 1979 (fragmento).\n\nQual comportamento coletivo é criticado no trecho da letra da canção lançada em 1979?",
+    "options": [
+      "A) Militância política.",
+      "B) Passividade social.",
+      "C) Altruísmo religioso.",
+      "D) Autocontrole moral.",
+      "E) Inconformismo eleitoral."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 60): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q61",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Desde 2009, a área portuária carioca vem sofrendo grandes transformações realizadas no escopo da operação urbana consorciada conhecida como Porto Maravilha. Parte importante na tentativa de tomar o Rio de Janeiro um polo de serviços internacional, a “revitalização” urbana deveria deixar para trás uma paisagem geográfica que ainda recordava a cidade do início do século passado para abrir espaço, em seu lugar, à instalação de modernas torres comerciais, espaços de consumo e lazer inéditos e cerca de cem mil novos moradores, uma nova configuração socioespacial capaz de alçar a área portuária do Rio de Janeiro ao patamar dos _waterfronts_ de Baltimore, Barcelona e Buenos Aires.\n\nLACERDA, L; WERNECK. M; RIBEIRO, N. Cortiços de hoje na cidade do amanhã. **E-metropolis**, n. 30, set; 2017.\n\nAs intervenções urbanas descritas derivam de um processo socioespacial que busca a",
+    "options": [
+      "A) Intensificação da participação na competividade global.",
+      "B) Contenção da especulação no mercado imobiliário.",
+      "C) Democratização da habitação popular.",
+      "D) Valorização das funções tradicionais.",
+      "E) Priorização da gestão participativa."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 61): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q63",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História do Brasil: Colônia",
+    "subtopic": "Brasil Colonial e Resistência",
+    "moduleId": "mod_hist_01_colonia",
+    "moduleTitle": "Módulo 1: Brasil Colônia",
+    "statement": "As atividades mineradores têm criado conflitos com extrativistas, quilombolas, pequenos agricultores, ribeirinhos, pescadores artesanais e povos indígenas. Em geral, estes sujeitos têm encontrado grande dificuldade de reproduzi suas dinâmicas territoriais depois da instalação da atividade mineradora , nem sempre com reconhecimento do impacto ao seu território pelo Estado e pela empresa, ficando sem qualquer tipo de compensação econômica. Em outros casos, nem a compensação econômica tem sido capaz de evitar esgarçamento das relações sociais destes grupos que sofrem com a reconstrução abrupta das suas identidades e de suas dinâmicas territoriais.\n\nPALHETA, J. M. et al. Conflitos pelo uso do território na Amazônica mineral. **Mercator**, n. 16. 2017.\n\nO texto apresenta uma relação entre atividade econômica e organização social marcada pelo(a)",
+    "options": [
+      "A) Escassez de incentivo cultural.",
+      "B) Rompimento de vínculos locais.",
+      "C) Carência de investimento financeiro.",
+      "D) Estabelecimento de práticas agroecológicas.",
+      "E) Enriquecimento das comunidades autóctones."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 63): Contextualização histórica e cidadania em Módulo 1: Brasil Colônia. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q64",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Por maioria, nós não entendemos uma quantidade relativa maior, mas a determinação de uma estado ou de um padrão em relação ao qual tanto as quantidades maiores quanto as menores serão ditas minoritárias. Maioria supõe um estado de dominação. É nesse sentido que as mulheres, as crianças e também os animais são minoritários.\n\nDELEUXE, G.; GUATTARI, F. **Mil platô**s. São Paulo: Editora 34, 2012 (adaptado).\n\nNo texto, a caracterização de uma minoria decorre da existência de",
+    "options": [
+      "A) Ameaças de extinção social.",
+      "B) Políticas de incentivos estatais.",
+      "C) Relações de natureza arbitrária.",
+      "D) Valorações de conexões simétricas.",
+      "E) Hierarquizações de origem biológica."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 64): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q65",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Ao mesmo tempo, graças às amplas possibilidades que tive de observar a classe média, vossa adversária, rapidamente concluí que vós tendes razão, inteira razão, em não esperar dele qualquer ajuda. Seus interesses são diametralmente opostos aos vossos, mesmo que ela procure incessantemente afirmar o contrário e vos queira persuadir que sente a maior simpatia por vossa sorte. Mas seus atos desmentem suas palavras.\n\nENGELS, F. **A situação da classe trabalhadora na Inglaterra.** São Paulo: Boitempo, 2010.\n\nNo texto, o autor apresenta delineamentos éticos que correspondem ao (s)",
+    "options": [
+      "A) Conceito de luta de classes.",
+      "B) Alicerce da ideia de mais-valia.",
+      "C) Fundamentos do método científico.",
+      "D) Paradigmas do processo indagativo.",
+      "E) Domínios do fetichismo da mercadoria."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 65): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q66",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História do Brasil: República",
+    "subtopic": "Era Vargas e Ditadura Civil-Militar",
+    "moduleId": "mod_hist_03_republica",
+    "moduleTitle": "Módulo 3: Brasil República",
+    "statement": "Houve crescimento de 74% da população brasileira encarcerada entre 2005 e 2012. As análises possibilitaram identificar o perfil da população que está nas prisões do país: homens, jovens (abaixo de 29 anos), negros, com ensino fundamental incompleto, acusados de crimes patrimoniais e, no caso dos presos adultos, condenados e cumprindo regime fechado e, majoritariamente, com penas de quatro até oito anos.\n\nBRASIL. Mapa do encarceramento: os jovens do Brasil.  \nBrasília: Presidência da República, 2015.\n\nNesse contexto, as políticas públicas para minimizar a problemática descrita devem privilegiar a",
+    "options": [
+      "A) Flexibilização do Código Civil.",
+      "B) Promoção da inclusão social.",
+      "C) Redução da maioridade penal.",
+      "D) Contenção da corrupção política.",
+      "E) Expansão do período de reclusão."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 66): Contextualização histórica e cidadania em Módulo 3: Brasil República. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q67",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Nem guerras, nem revoltas. Os incêndios eram o mais frequente tormento da vida urbana no Regnum Italicum. Entre 880 e 1080, as cidades estiveram constantemente entregues ao apetite das chamas. A certa altura, a documentação parece vencer pela insistência do vocabulário, levando até o leitor mais crítico a cogitar que os medievais tinham razão ao tratar aqueles acontecimentos como castigos que antecediam o julgamento final. Como um quinto cavaleiro apocalíptico, o incêndio agia ao feitio da peste ou da fome: vagando mundo afora, retornava de tempos em tempos e expurgava justos e pecadores num tormento derradeiro, como insistiam os textos do século X. O impacto acarretado sobre as relações sociais era imediato e prolongava-se para além da destruição material. As medidas proclamadas pelas autoridades faziam mais do que reparar os danos e reconstruir a paisagem: elas convertiam a devastação em ocasião para alterar e expandir não só a topografia urbana, mas as práticas sociais até então vigentes.\n\nRUST, L. D. Uma calamidade insaciável. Rev. Bras. Hist., n. 72, maio-ago. 2016 (adaptado).\n\nDe acordo com o texto, a catástrofe descrita impactava as sociedades medievais por proporcionar a",
+    "options": [
+      "A) Correção dos métodos preventivos e das regras sanitárias.",
+      "B) Revelação do descaso público e das degradações ambientais.",
+      "C) Transformação do imaginário popular e das crenças religiosas.",
+      "D) Remodelação dos sistemas políticos e das administrações locais.",
+      "E) Reconfiguração dos espaços ocupados e das dinâmicas comunitárias."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 67): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q68",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "O protagonismo indígena vem optando por uma estratégia de “des-invisibilização”, valendo-se da dinâmica das novas tecnologias. Em outubro de 2012, após receberem uma liminar lhes negando o direito a permanecer em suas terras, os Guarani de Pyelito Kue divulgaram uma carta na qual se dispunham a morrer, mas não a sair de suas terras. Essse fato foi amplamente divulgado, gerando uma grande mobilização na internet, que levou milhares de pessoas a escolherem seu lado, divulgando a hashtag “#somostodosGuarani-Kaiowá” ou acrescentando o sobrenome Guarani-Kaiowá a seus nomes nos perfis das principais redes sociais.\n\nCAPIBERIBE, A.; BONILLA, O. A ocupação do Congresso: contra o que lutam os índios? Estudos Avançados, n. 83, 2015 (adaptado).\n\nA estratégia comunicativa adotada pelos indígenas, no contexto em pauta, teve por efeito",
+    "options": [
+      "A) Enfraquecer as formas de militância política.",
+      "B) Abalar a identidade de povos tradicionais.",
+      "C) Inserir as comunidades no mercado global.",
+      "D) Distanciar os grupos de culturas locais.",
+      "E) Angariar o apoio de segmentos étnicos externos."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 68): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q71",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Desde os primórdios da formação da crosta terrestre até os dias de hoje, as rochas formadas vêm sendo continuamente destruídas. Os produtos resultantes da destruição das rochas são transportados pela água, vento e gelo a toda superfície terrestre, acionados pelo calor e pela gravidade. Cessada a energia transportadora, são depositados nas regiões mais baixas da crosta, podendo formar pacotes rochosos.\n\nLEINZ, V. Geologia geral. São Paulo: Editora Nacional, 1989.\n\nAs transformações na superfície terrestre, conforme descritas no texto, compõem o seguinte processo geomorfológico:",
+    "options": [
+      "A) Ciclo sedimentar.",
+      "B) Instabilidade sísmica.",
+      "C) Intemperismo biológico.",
+      "D) Derramamento basáltico.",
+      "E) Compactação superficial."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 71): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q72",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História do Brasil: República",
+    "subtopic": "Era Vargas e Ditadura Civil-Militar",
+    "moduleId": "mod_hist_03_republica",
+    "moduleTitle": "Módulo 3: Brasil República",
+    "statement": "A participação social no planejamento e na gestão urbanos ganhou impulso a partir do Estatuto da Cidade (Lei n. 10.257/2001), que estabeleceu condições para elaboração de planos diretores participativos, instrumentos esses indutores da expansão urbana e do ordenamento territorial que, a princípio, devem buscar representar os interesses dos diversos segmentos da sociedade.  \nNo entanto, é notório o limite à representação dos interesses das camadas sociais menos favorecidas nesse processo. Este rumo deve ser corrigido e deve-se continuar buscando mecanismos de inclusão dos interesses de toda a sociedade.\n\nCaderno Objetivos de Desenvolvimento Sustentável – ODS n. 11: tornar  \nas cidades e os assentamentos humanos inclusivos, seguros, resilientes  \ne sustentáveis. Brasília: Ipea, 2019.\n\nQual media promove a participação social descrita no texto?",
+    "options": [
+      "A) Redução dos impostos municipais.",
+      "B) Privatização dos espaços públicos.",
+      "C) Adensamento das áreas de comércio.",
+      "D) Valorização dos condomínios fechados.",
+      "E) Fortalecimento das associações de bairro."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 72): Contextualização histórica e cidadania em Módulo 3: Brasil República. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q73",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Quando Getúlio Vargas se suicidou, em agosto de 1954, o país parecia à beira do caos. Acuado por uma grave crise política, o velho líder preferiu uma bala no peito à humilhação de aceitar uma nova deposição, como a que sofrera em outubro de 1945. Entretanto, ao contrário do que imaginavam os inimigos, ao ruído do estampido não se seguiu o silêncio que cerca a derrota.\n\nREIS FILHO, D. A. O Estado à sombra de Vargas.  \nRevista Nossa História, n. 7, maio 2004.\n\nO evento analisado no texto teve como repercussão imediata na politica nacional a",
+    "options": [
+      "A) Reação popular.",
+      "B) Intervenção militar.",
+      "C) Abertura democrática.",
+      "D) Campanha anticomunista.",
+      "E) Radicalização oposicionista."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 73): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q74",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Eu, Dom João, pela graça de Deus, faço saber a V. Mercê que me aprouve banir para essa cidade vários ciganos – homens, mulheres e crianças –  \ndevido ao seu escandaloso procedimento neste reino. Tiveram ordem de seguir em diversos navios destinados a esse porto, e, tendo eu proibido, por lei recente, o uso da sua língua habitual, ordeno a V. Mercê que cumpra essa lei sob ameaça de penalidades, não permitindo que ensinem dita língua a seus filhos, de maneira que daqui por diante o seu uso desapareça.\n\nTEIXEIRA, R. C. História dos ciganos no Brasil.  \nRecife: Núcleo de Estudos Ciganos, 2008.\n\nA ordem emanada da Coroa portuguesa para sua colônia americana, em 1718, apresentava um tratamento da identidade cultural pautado em",
+    "options": [
+      "A) Converter grupos infiéis à religião oficial.",
+      "B) Suprimir formas divergentes de interação social.",
+      "C) Evitar envolvimento estrangeiro a economia local.",
+      "D) Reprimir indivíduos engajados em revoltas nativistas.",
+      "E) Controlar manifestações artísticas de comunidades autóctones."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 74): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q75",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "De um lado, ancorados pela prática médica europeia, por outro, pela terapêutica indígena, com seu amplo uso da flora nativa, os jesuítas foram os reais iniciadores do exercício de uma medicina híbrida que se tornou marca do Brasil colonial. Alguns religiosos vinham de Portugal já versados nas artes de curar, mas a maioria aprendeu na prática diária as funções que deveriam ser atribuídas a um físico, cirurgião, barbeiro ou boticário.\n\nGurgel, C. **Doenças e curas**: o Brasil nos primeiros séculos.  \nSão Paulo: Contexto, 2010 (adaptado).\n\nConforme o texto, o que caracteriza a construção da prática medicinal descrita é a",
+    "options": [
+      "A) Adoção de rituais místicos.",
+      "B) Rejeição dos dogmas cristãos.",
+      "C) Superação da tradição popular.",
+      "D) Imposição da farmacologia nativa.",
+      "E) Conjugação de saberes empíricos."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 75): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q76",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Antiguidade e Idade Média",
+    "subtopic": "Grécia, Roma e Idade Média",
+    "moduleId": "mod_hist_04_antiguidade_medieval",
+    "moduleTitle": "Módulo 4: Antiguidade e Medieval",
+    "statement": "Desde o século XII que a cristandade ocidental era agitada pelo desafio lançado pela cultura profana – a dos romances de cavalaria, mas também a cultura folclórica dos camponeses e igualmente a dos citadinos, de caráter mais jurídicos – à cultura eclesiástica, cujo veículo era o latim. Francisco de Assis veio alterar a situação, propondo aos seus ouvintes uma mensagem acessível a todos e, simultaneamente, enobrecendo a língua vulgar através do seu uso na religião\n\nVAUCHEZ, A. **A espiritualidade da Idade Média Ocidental, séc. VIII-XIII.**\n\nLisboa: Estampa, 1995.\n\nO comportamento desse religioso demonstra uma preocupação com as características assumidas pela Igreja e com as desigualdades sociais compartilhada no seu tempo pelos(as)",
+    "options": [
+      "A) Senhores feudais.",
+      "B) Movimentos heréticos.",
+      "C) Integrantes das Cruzadas.",
+      "D) Corporações de ofícios.",
+      "E) Universidades medievais."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 76): Contextualização histórica e cidadania em Módulo 4: Antiguidade e Medieval. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q77",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "**Por que o Brasil continuou um só enquanto a América espanhola se dividiu em vários países?** \n\nPara o historiados brasileiro José Murilo de Carvalho, no Brasil, parte da sociedade era muito mais coesa ideologicamente do que a espanhola. Carvalho argumenta que isso se deveu à tradição burocrática portuguesa. “Portugal nunca permitiu a criação de universidade em sua colônia”. Por outro lado, na América espanhola, entre 1772 e 1872, 150 mil estudantes se formaram em universidades locais. Para o historiador mexicano Alfredo Ávila Rueda, as universidade na América espanhola eram, em sua maioria, reacionárias. Nesse sentido, o historiados mexicano diz acreditar que a livre circulação de impressos (jornais, livros e panfletos) na América espanhola, que não era permitida na América portuguesa (a proibição só foi revertida em 1808), teve função muito mais importante na construção de regionalismos do que propriamente as universidades.\n\nBARRUCHO, L. Disponível em: wwww.bbc.com. Acesso em: 8 set. 2019 (adaptado).\n\nOs pontos de vista dos historiadores referidos no texto são divergentes em relação ao",
+    "options": [
+      "A) Papel desempenhado pelas instituições de ensino na criação das múltiplas identidades.",
+      "B) Controle exercido pelos grupos de imprensa na centralização das esferas administrativas.",
+      "C) Abandono sofrido pelas comunidades de docentes na concepção de coletividades políticas.",
+      "D) Lugar ocupado pelas associações de acadêmicos no fortalecimento das agremiações estudantis.",
+      "E) Protagonismo assumido pelos meios de comunicação no desenvolvimento das nações alfabetizadas."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 77): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q79",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "As grandes empresas seriam, certamente, representação de um exercício de poder, ante o grau de autonomia de ação de que dispõem. O que se pretende salientar é a ideia de enclave: plantas industriais que estabelecem relações escassas com o entorno, mas exercem grande influência na economia extralocal.\n\nDAVIDOVICH. F. Estado do Rio de Janeiro: o urbano metropolitano. Hipóteses e questões. **GeoUERJ**, n.21, 2010.\n\nQue tipo de ação tomada por empresas reflete a forma de territorialização da produção industrial apresentada no texto?",
+    "options": [
+      "A) Criação de vilas operárias.",
+      "B) Promoção de eventos comunitários.",
+      "C) Recuperação de áreas degradas.",
+      "D) Incorporação de saberes tradicionais.",
+      "E) Importação de mão de obra qualificada."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 79): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q80",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Numa sociedade em transição, a marcha da mudança, em diferentes graus, está impressa em todos os aspectos da ordem social, especialmente no jogo político, que nessas sociedades sempre apresenta padrões característicos de ambivalência, cujas raízes sociais se encontram na coexistência de dois padrões de estrutura social: o padrão tradicional, em declínio, e o novo, emergente, em expansão. Em tais situações, é possível encontrar, simultaneamente, apoio para uma orientação política ou para outra que seja exatamente o oposto. O padrão ambivalente do processo político, nas sociedades em desenvolvimento, é o que explica um dos seus trações mais salientes, e que consiste na tendência ao adiamento das grandes decisões. Resulta dai que a inércia política ou a convulsão política pode se suceder uma à outra em períodos surpreendentemente curtos.\n\nPINTO, L, A. C. **Sociologia e desenvolvimento.** Rio de Janeiro: Civilização Brasileira. 1975 (adaptado).\n\nDe acordo com a perspectiva apresentada, central no pensamento social brasileiro dos anos 1950 e 1960, o desenvolvimento do país foi marcado por",
+    "options": [
+      "A) Radicalidade nas agendas de reforma das elites dirigentes.",
+      "B) Anomalias na execução dos planos econômicos ortodoxos.",
+      "C) Descompassos na construção de quadros institucionais modernos.",
+      "D) Ilegitimidade na atuação dos movimentos de representação classista.",
+      "E) Vagarosidade na dinâmica de aperfeiçoamento dos programas partidários."
+    ],
+    "correctLetter": "C",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 80): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: C.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q81",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "**Manifesto dos Pioneiros da Educação Nova – 1932**\n\nA Educação Nova, alargando a sua finalidade para além dos limites das classes, assume, com uma feição mais humana, a sua verdadeira função social, preparando-se para formar “a hierarquia democrática” pela “hierarquia das capacidades”, recrutadas em todos os grupos sociais, a que se abrem as mesmas oportunidades de educação. Ela tem, por objeto, organizar e desenvolver os meios de ação durável com o fim de “dirigir os desenvolvimentos natural e integral do ser humano em cada uma das etapas de seu crescimento”, de acordo com uma certa concepção do mundo.\n\nDisponível em: www.histedbr.fe.unicamp.br. Acesso em: 7 out. 2015.\n\nOs autores do manifesto citado procuravam contrapor-se ao caráter oligárquico da sociedade brasileira. Nesse sentido, o trecho propõe uma relação necessária entre",
+    "options": [
+      "A) Ensino técnico e mercado de trabalho.",
+      "B) Acesso à escola e valorização do mérito.",
+      "C) Ampliação de vagas e formação de gestores.",
+      "D) Disponibilidade de financiamento e pesquisa avançada.",
+      "E) Remuneração de professores e extinção do analfabetismo."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 81): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q82",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Sócrates: “Quem não sabe o que uma coisa é, como poderia saber de que tipo de coisa ela é? Ou te parece ser possível alguém que não conhece absolutamente quem é Mênon, esse alguém saber se ele é belo, se é rico e ainda se é nobre? Parece-te ser isso possível? Assim, Mênon, que coisa afirmas ser a virtude?”.\n\nPLATÃO. Mênon. Rio de Janeiro: PUC-RIO; São Paulo: Loyola, 2001 (adaptado).\n\nA atitude apresentada na interlocução do filósofo com Mênon é um exemplo da utilização do(a)",
+    "options": [
+      "A) Escrita epistolar",
+      "B) Método dialético",
+      "C) Linguagem trágica",
+      "D) Explicação fisicalista",
+      "E) Suspensão judicativa"
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 82): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q83",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "No seio de diversos povos africanos, nomeadamente no antigo Reino do Congo, existem testemunhos gráficos de que a escrita tomava várias formas. Exemplo disso são as tampas de panela esculpidas em baixo-relevo do povo Woyo (região de Cabinda), com cenas e provérbios do cotidianos, desenhos na terra ou areia, imagens gravadas ou inscritas nos bastões de chefe ou em pedras sagradas , mas, sobretudo, movimentos do corpo humano inscritos num gestual familiar. Entre Woyo existia o costume de os pais oferecerem aos filhos testos ou tampas de panelas entalhados, transmitindo uma espécie de recado, com signos codificados que traduziam orientações para conseguir uma boa relação conjugal, ter sensatez na escolha do cônjuge e estar alerta para as dificuldades do casamento.\n\nRODRIGUES, M. R. A. M; TAVARES, A. C. P; Singularidades museológicas de uma tábua com esculturas em diálogo: do alambamento ao casamento em Cabinda (Angola). **Anais do Museu Paulista**, n.2, maio-ago. 2017 (adaptado).\n\nPara o povo Woyo, os artefatos culturais mencionados no texto cumprem a função de uma",
+    "options": [
+      "A) Pedagogia dos costumes sociais.",
+      "B) Imposição das formas de comunicação.",
+      "C) Desvalorização dos comportamentos da juventude.",
+      "D) Destituição dos valores do matrimônio.",
+      "E) Etnografia das celebrações religiosas."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 83): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q84",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "O torém dependia de organização familiar, sendo brincado por pessoas com vínculos de parentesco e afinidade que viviam no local. Era visto como uma brincadeira, um entretenimento feito para os próprios participantes e seus conhecidos. O tempo do caju era o pretexto para sua realização, sendo chamadas várias pessoas da região a fim de tomar mocororó, bebida fermentada do caju.\n\nVALLE, C. G. O. Torém/Toré: tradições e invenção no quadro de multiplicidade  \nétnica do Ceará contemporâneo. In: GRUNEWALD, R. A. (Org.). Toré: regime  \nencantado dos índios do Nordeste. Recife: Fundaj-Massangana, 2005.\n\nO ritual mencionado no texto atribui à manifestação cultural de grupos indígenas do Nordeste brasileiro a função de",
+    "options": [
+      "A) Celebrar a história oficial.",
+      "B) Estimular a coesão social.",
+      "C) Superar a atividade artesanal.",
+      "D) Manipular a memória individual.",
+      "E) Modernizar o comércio tradicional."
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 84): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: B.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q85",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História do Brasil: Colônia",
+    "subtopic": "Brasil Colonial e Resistência",
+    "moduleId": "mod_hist_01_colonia",
+    "moduleTitle": "Módulo 1: Brasil Colônia",
+    "statement": "![](https://enem.dev/2021/questions/85/c53f5bbe-8ad7-418f-aaf9-93f3234d36d5.png)\n\nNo anúncio publicado na segunda metade do século XIX, qual a estratégia de resistência escrava apresentada?",
+    "options": [
+      "A) Criação de relações de trabalho.",
+      "B) Fundação de territórios quilombolas.",
+      "C) Suavização da aplicação de normas.",
+      "D) Regularização das funções da remuneradas.",
+      "E) Constituição de economia de subsistência."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 85): Contextualização histórica e cidadania em Módulo 1: Brasil Colônia. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q86",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "A filosofia é como uma árvore, cujas raízes são a metafísica; o tronco, a física, e os ramos que saem do tronco são todas as outras ciências, que se reduzem a três principais: a medicina, a mecânica e a moral,  \nentendendo por moral a mais elevada e a mais perfeita porque pressupõe um saber integral das outras ciências, e é o último grau da sabedoria.\n\nDESCARTES, R. Princípios da filosofia. Lisboa: Edições 70, 1997 (adaptado).\n\nEssa construção alegórica de Descartes, acerca da condição epistemológica da filosofia, tem como\n objetivo",
+    "options": [
+      "A) Sustentar a unidade essencial do conhecimento.",
+      "B) Refutar o elemento fundamental das crenças.",
+      "C) Impulsionar o pensamento especulativo.",
+      "D) Recepcionar o método experimental.",
+      "E) Incentivar a suspensão dos juízos."
+    ],
+    "correctLetter": "A",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 86): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: A.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q87",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "Minha fórmula para o que há de grande no individuo é amor fati: nada desejar além daquilo que é, nem diante de si, nem atrás de si, nem nos séculos dos séculos. Não se contentar em suportar o inelutável, e ainda menos dissimula-lo, mas amá-lo.\n\nNIETZSCHE apud FERRY, L. Aprender a viver: filosofia para os novos tempos.  \nRio de Janeiro: Objetiva, 2010 (adaptado).\n\nEssa fórmula indicada por Nietzsche consiste em uma crítica à tradição cristã que",
+    "options": [
+      "A) Combate as práticas sociais de cunho afetivo.",
+      "B) Impede o avanço científico no contexto moderno.",
+      "C) Associa os cultos pagãos à sacralização da natureza.",
+      "D) Condena os modelos filosóficos da Antiguidade Clássica.",
+      "E) Consagra a realização humana ao campo transcendental."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 87): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q88",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História Geral: Idade Contemporânea",
+    "subtopic": "Iluminismo, Revoluções e Guerras",
+    "moduleId": "mod_hist_06_contemporanea",
+    "moduleTitle": "Módulo 6: Idade Contemporânea",
+    "statement": "É preciso usar de violência e rebater varonilmente os apetites dos sentidos sem atender ao que a carne quer ou não quer, mas trabalhando por sujeitá-la ao espírito, ainda que se revolte. Cumpre castigá-la e curvá-la à sujeição, a tal ponto que esteja disposta para tudo, sabendo  \ncontentar-se com pouco e deleitar-se com a simplicidade, sem resmungar por qualquer incômodo.\n\nKEMPIS, T. Imitação de Cristo. Petrópolis: Vozes, 2015\n\nQual característica do ascetismo medieval é destacada no texto?",
+    "options": [
+      "A) Exaltação do ritualismo litúrgico.",
+      "B) Afirmação do pensamento racional.",
+      "C) Desqualificação da atividade laboral.",
+      "D) Condenação da alimentação impura.",
+      "E) Desvalorização da materialidade corpórea."
+    ],
+    "correctLetter": "E",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 88): Contextualização histórica e cidadania em Módulo 6: Idade Contemporânea. Alternativa correta: E.",
+    "difficulty": "Média"
+  },
+  {
+    "id": "enem_api_2021_q89",
+    "year": 2021,
+    "disciplina": "História",
+    "topic": "História do Brasil: República",
+    "subtopic": "Era Vargas e Ditadura Civil-Militar",
+    "moduleId": "mod_hist_03_republica",
+    "moduleTitle": "Módulo 3: Brasil República",
+    "statement": "![](https://enem.dev/2021/questions/89/e99742b0-7668-451c-8ee6-7f98be4183a4.jpg)\n\nConsiderando as informações apresentadas, o prédio do Congresso Nacional, em Brasília, no dia 21 de junho, às 12 horas, projetará sua sombra para a direção",
+    "options": [
+      "A) Norte",
+      "B) Sul",
+      "C) Leste",
+      "D) Oeste",
+      "E) Nordeste"
+    ],
+    "correctLetter": "B",
+    "explanation": "Resolução comentada ENEM 2021 (Questão 89): Contextualização histórica e cidadania em Módulo 3: Brasil República. Alternativa correta: B.",
+    "difficulty": "Média"
   }
 ]

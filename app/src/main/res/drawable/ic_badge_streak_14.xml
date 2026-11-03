@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon in Royal Purple & Flame Gold -->
+    <path
+        android:fillColor="#3B0764"
+        android:strokeColor="#A855F7"
+        android:strokeWidth="2.5"
+        android:pathData="M36,4 L64,18 L64,48 L36,68 L8,48 L8,18 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#581C87"
+        android:pathData="M36,9 L59,21 L59,46 L36,63 L13,46 L13,21 Z" />
+    <!-- Mythic Fire Torch / Discipline Wings -->
+    <path
+        android:fillColor="#C084FC"
+        android:pathData="M34,42 L38,42 L37,53 L35,53 Z" />
+    <path
+        android:fillColor="#F97316"
+        android:pathData="M36,17 C41,23 47,27 47,35 C47,42 41,45 36,45 C31,45 25,42 25,35 C25,27 31,23 36,17 Z" />
+    <path
+        android:fillColor="#FDE047"
+        android:pathData="M36,27 C38,30 41,33 41,37 C41,41 38,43 36,43 C34,43 31,41 31,37 C31,33 34,30 36,27 Z" />
+    <!-- Star of 14 Days -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,12 L37.5,15 L41,15.5 L38.5,17.5 L39,21 L36,19 L33,21 L33.5,17.5 L31,15.5 L34.5,15 Z" />
+</vector>

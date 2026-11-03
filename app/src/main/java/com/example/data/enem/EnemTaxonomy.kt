@@ -313,6 +313,41 @@ object EnemTaxonomy {
         )
     )
 
+    // =========================================================================
+    // 7. QUÍMICA (CIÊNCIAS DA NATUREZA) ENEM
+    // =========================================================================
+    val TAXONOMIA_QUIMICA: Map<String, List<String>> = linkedMapOf(
+        "Química Geral e Estrutura da Matéria" to listOf(
+            "Substâncias e Misturas (Gráficos e Separação)",
+            "Modelos Atômicos e Distribuição Eletrônica",
+            "Tabela Periódica e Propriedades Periódicas",
+            "Ligações Químicas e Geometria Molecular",
+            "Polaridade e Forças Intermoleculares"
+        ),
+        "Físico-Química" to listOf(
+            "Estequiometria e Cálculos com Rendimento/Pureza",
+            "Soluções, Concentrações e Diluição",
+            "Termoquímica (Entalpia e Lei de Hess)",
+            "Cinética Química e Catalisadores",
+            "Equilíbrio Químico e Cálculo de pH",
+            "Eletroquímica (Pilhas e Eletrólise)"
+        ),
+        "Química Orgânica" to listOf(
+            "Cadeias Carbônicas e Hibridização",
+            "Reconhecimento de Funções Orgânicas",
+            "Nomenclatura Orgânica IUPAC",
+            "Isomeria Plana e Espacial (Cis-Trans e Óptica)",
+            "Reações Orgânicas (Esterificação, Saponificação, Polímeros)"
+        ),
+        "Química Ambiental e do Cotidiano" to listOf(
+            "Química da Água e Saneamento (ETA)",
+            "Química Atmosférica (Chuva Ácida, Ozônio, Efeito Estufa)",
+            "Combustíveis e Matrizes Energéticas",
+            "Ação de Sabões e Detergentes",
+            "Polímeros e Reciclagem"
+        )
+    )
+
     /**
      * Módulos estruturantes do ENEM com identificadores únicos para mapeamento de dados.
      */
@@ -337,6 +372,12 @@ object EnemTaxonomy {
         EnemTaxonomyModule("mod_bio_03_genetica", "Módulo 3: Genética e Biotecnologia", "Biologia", TAXONOMIA_BIOLOGIA["Genética e Biotecnologia"] ?: emptyList()),
         EnemTaxonomyModule("mod_bio_04_citologia", "Módulo 4: Citologia e Bioquímica", "Biologia", TAXONOMIA_BIOLOGIA["Citologia e Bioquímica Celular"] ?: emptyList()),
         EnemTaxonomyModule("mod_bio_05_evolucao", "Módulo 5: Evolução Biológica", "Biologia", TAXONOMIA_BIOLOGIA["Evolução"] ?: emptyList()),
+
+        // Química
+        EnemTaxonomyModule("mod_quim_01_geral", "Módulo 1: Química Geral e Estrutura da Matéria", "Química", TAXONOMIA_QUIMICA["Química Geral e Estrutura da Matéria"] ?: emptyList()),
+        EnemTaxonomyModule("mod_quim_02_fisico", "Módulo 2: Físico-Química", "Química", TAXONOMIA_QUIMICA["Físico-Química"] ?: emptyList()),
+        EnemTaxonomyModule("mod_quim_03_organica", "Módulo 3: Química Orgânica", "Química", TAXONOMIA_QUIMICA["Química Orgânica"] ?: emptyList()),
+        EnemTaxonomyModule("mod_quim_04_ambiental", "Módulo 4: Química Ambiental e do Cotidiano", "Química", TAXONOMIA_QUIMICA["Química Ambiental e do Cotidiano"] ?: emptyList()),
 
         // Linguagens
         EnemTaxonomyModule("mod_ling_01_interpretacao", "Módulo 1: Interpretação e Semântica", "Linguagens", TAXONOMIA_LINGUAGENS["Interpretação de Texto e Semântica"] ?: emptyList()),
@@ -365,6 +406,7 @@ object EnemTaxonomy {
         "Matemática",
         "Física",
         "Biologia",
+        "Química",
         "Linguagens",
         "História",
         "Geografia"
@@ -374,7 +416,7 @@ object EnemTaxonomy {
         val d = discipline.lowercase()
         return MODULES_REGISTRY.filter {
             it.discipline.lowercase().contains(d) ||
-            (d.contains("natureza") && (it.discipline == "Física" || it.discipline == "Biologia")) ||
+            (d.contains("natureza") && (it.discipline == "Física" || it.discipline == "Biologia" || it.discipline == "Química")) ||
             (d.contains("humanas") && (it.discipline == "História" || it.discipline == "Geografia"))
         }
     }
@@ -387,6 +429,7 @@ object EnemTaxonomy {
         TAXONOMIA_MATEMATICA.keys.toList() +
         TAXONOMIA_FISICA.keys.toList() +
         TAXONOMIA_BIOLOGIA.keys.toList() +
+        TAXONOMIA_QUIMICA.keys.toList() +
         TAXONOMIA_LINGUAGENS.keys.toList() +
         TAXONOMIA_HISTORIA.keys.toList() +
         TAXONOMIA_GEOGRAFIA.keys.toList()
@@ -395,6 +438,7 @@ object EnemTaxonomy {
         TAXONOMIA_MATEMATICA[topic] ?:
         TAXONOMIA_FISICA[topic] ?:
         TAXONOMIA_BIOLOGIA[topic] ?:
+        TAXONOMIA_QUIMICA[topic] ?:
         TAXONOMIA_LINGUAGENS[topic] ?:
         TAXONOMIA_HISTORIA[topic] ?:
         TAXONOMIA_GEOGRAFIA[topic] ?:

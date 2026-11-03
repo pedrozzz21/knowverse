@@ -36,13 +36,14 @@ class EnemQuestionRepository private constructor(private val context: Context) {
         if (isLoaded && _questions.value.isNotEmpty()) return
 
         val allParsed = mutableListOf<EnemQuestion>()
+        val seenIds = mutableSetOf<String>()
 
         // 1. Carrega banco_questoes.json (Matemática e geral)
         try {
             val jsonString = context.assets.open("banco_questoes.json").use { inputStream ->
                 BufferedReader(InputStreamReader(inputStream)).use { it.readText() }
             }
-            val parsed = parseJsonQuestions(jsonString)
+            val parsed = parseJsonQuestions(jsonString, "mat", seenIds)
             allParsed.addAll(parsed)
             Log.d(TAG, "Carregadas com sucesso ${parsed.size} questões do ENEM de banco_questoes.json")
         } catch (e: Exception) {
@@ -54,7 +55,7 @@ class EnemQuestionRepository private constructor(private val context: Context) {
             val jsonNatureza = context.assets.open("questoes_enem_natureza.json").use { inputStream ->
                 BufferedReader(InputStreamReader(inputStream)).use { it.readText() }
             }
-            val parsedNatureza = parseJsonQuestions(jsonNatureza)
+            val parsedNatureza = parseJsonQuestions(jsonNatureza, "nat", seenIds)
             allParsed.addAll(parsedNatureza)
             Log.d(TAG, "Carregadas com sucesso ${parsedNatureza.size} questões de Natureza do ENEM (Física e Biologia)")
         } catch (e: Exception) {
@@ -66,7 +67,7 @@ class EnemQuestionRepository private constructor(private val context: Context) {
             val jsonHumanas = context.assets.open("questoes_enem_humanas.json").use { inputStream ->
                 BufferedReader(InputStreamReader(inputStream)).use { it.readText() }
             }
-            val parsedHumanas = parseJsonQuestions(jsonHumanas)
+            val parsedHumanas = parseJsonQuestions(jsonHumanas, "hum", seenIds)
             allParsed.addAll(parsedHumanas)
             Log.d(TAG, "Carregadas com sucesso ${parsedHumanas.size} questões de Humanas/História do ENEM")
         } catch (e: Exception) {
@@ -78,7 +79,7 @@ class EnemQuestionRepository private constructor(private val context: Context) {
             val jsonLinguagens = context.assets.open("questoes_enem_linguagens.json").use { inputStream ->
                 BufferedReader(InputStreamReader(inputStream)).use { it.readText() }
             }
-            val parsedLinguagens = parseJsonQuestions(jsonLinguagens)
+            val parsedLinguagens = parseJsonQuestions(jsonLinguagens, "ling", seenIds)
             allParsed.addAll(parsedLinguagens)
             Log.d(TAG, "Carregadas com sucesso ${parsedLinguagens.size} questões de Linguagens do ENEM")
         } catch (e: Exception) {
@@ -90,11 +91,23 @@ class EnemQuestionRepository private constructor(private val context: Context) {
             val jsonGeografia = context.assets.open("questoes_enem_geografia.json").use { inputStream ->
                 BufferedReader(InputStreamReader(inputStream)).use { it.readText() }
             }
-            val parsedGeografia = parseJsonQuestions(jsonGeografia)
+            val parsedGeografia = parseJsonQuestions(jsonGeografia, "geo", seenIds)
             allParsed.addAll(parsedGeografia)
             Log.d(TAG, "Carregadas com sucesso ${parsedGeografia.size} questões de Geografia do ENEM")
         } catch (e: Exception) {
             Log.e(TAG, "Erro ao carregar questoes_enem_geografia.json: ${e.message}", e)
+        }
+
+        // 6. Carrega questoes_enem_quimica.json (Química e Ciências da Natureza)
+        try {
+            val jsonQuimica = context.assets.open("questoes_enem_quimica.json").use { inputStream ->
+                BufferedReader(InputStreamReader(inputStream)).use { it.readText() }
+            }
+            val parsedQuimica = parseJsonQuestions(jsonQuimica, "quim", seenIds)
+            allParsed.addAll(parsedQuimica)
+            Log.d(TAG, "Carregadas com sucesso ${parsedQuimica.size} questões de Química do ENEM")
+        } catch (e: Exception) {
+            Log.e(TAG, "Erro ao carregar questoes_enem_quimica.json: ${e.message}", e)
         }
 
         _questions.value = allParsed
@@ -112,13 +125,28 @@ class EnemQuestionRepository private constructor(private val context: Context) {
     /**
      * Faz o parse seguro do array JSON com tratamento para possíveis variações de tipos.
      */
-    private fun parseJsonQuestions(jsonString: String): List<EnemQuestion> {
+    private fun parseJsonQuestions(
+        jsonString: String,
+        sourceTag: String = "enem",
+        seenIds: MutableSet<String> = mutableSetOf()
+    ): List<EnemQuestion> {
         val list = mutableListOf<EnemQuestion>()
         val jsonArray = JSONArray(jsonString)
 
         for (i in 0 until jsonArray.length()) {
             val obj = jsonArray.getJSONObject(i)
-            val id = obj.optString("id", "enem_${i}")
+            val rawId = obj.optString("id", "${sourceTag}_$i")
+            val id = if (seenIds.add(rawId)) {
+                rawId
+            } else {
+                var attempt = 2
+                var candidate = "${rawId}_${sourceTag}_$attempt"
+                while (!seenIds.add(candidate)) {
+                    attempt++
+                    candidate = "${rawId}_${sourceTag}_$attempt"
+                }
+                candidate
+            }
             val year = obj.optInt("year", 2023)
             val topic = when {
                 obj.has("disciplina") -> obj.optString("disciplina", "Ciências do ENEM")

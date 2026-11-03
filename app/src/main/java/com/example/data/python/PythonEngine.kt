@@ -64,7 +64,9 @@ class PythonEngine(private val context: Context) {
                     allowFileAccess = true
                     allowContentAccess = true
                     cacheMode = WebSettings.LOAD_NO_CACHE
-                    safeBrowsingEnabled = false
+                    try {
+                        safeBrowsingEnabled = false
+                    } catch (_: Throwable) {}
                 }
                 addJavascriptInterface(AndroidBridge(), "AndroidBridge")
                 webViewClient = object : WebViewClient() {
@@ -75,7 +77,7 @@ class PythonEngine(private val context: Context) {
             }
             webView = wv
             wv.loadUrl("file:///android_asset/python/runner.html")
-        } catch (e: Exception) {
+        } catch (e: Throwable) {
             android.util.Log.w("PythonEngine", "WebView initialization: ${e.message}")
             isReady = true
         }

@@ -98,25 +98,28 @@ fun LearnTrailScreen(
 ) {
     var selectedCategory by remember { mutableStateOf("Todas") }
 
-    // Course expansion states
+    // Course expansion states - all start closed by default as requested
     var isPythonExpanded by remember { mutableStateOf(false) }
-    var isEnemMathExpanded by remember { mutableStateOf(true) }
-    var expandedEnemModuleId by remember { mutableStateOf<String?>("mod_01_matematica_basica") }
+    var isEnemMathExpanded by remember { mutableStateOf(false) }
+    var expandedEnemModuleId by remember { mutableStateOf<String?>(null) }
     var isCalculusExpanded by remember { mutableStateOf(false) }
     var isPhysicsExpanded by remember { mutableStateOf(false) }
-    var expandedPhysicsModuleId by remember { mutableStateOf<String?>("mod_fis_01_mecanica") }
+    var expandedPhysicsModuleId by remember { mutableStateOf<String?>(null) }
     var isBiologyExpanded by remember { mutableStateOf(false) }
-    var expandedBiologyModuleId by remember { mutableStateOf<String?>("mod_bio_01_ecologia") }
+    var expandedBiologyModuleId by remember { mutableStateOf<String?>(null) }
+    var isChemistryExpanded by remember { mutableStateOf(false) }
+    var expandedChemistryModuleId by remember { mutableStateOf<String?>(null) }
     var isLanguagesExpanded by remember { mutableStateOf(false) }
-    var expandedLanguagesModuleId by remember { mutableStateOf<String?>("mod_ling_01_interpretacao") }
+    var expandedLanguagesModuleId by remember { mutableStateOf<String?>(null) }
     var isHistoryExpanded by remember { mutableStateOf(false) }
-    var expandedHistoryModuleId by remember { mutableStateOf<String?>("mod_hist_01_colonia") }
+    var expandedHistoryModuleId by remember { mutableStateOf<String?>(null) }
     var isGeographyExpanded by remember { mutableStateOf(false) }
-    var expandedGeographyModuleId by remember { mutableStateOf<String?>("mod_geo_01_fisica") }
+    var expandedGeographyModuleId by remember { mutableStateOf<String?>(null) }
 
     val enemModules = remember { EnemMathCurriculum.getAllModules() }
     val physicsModules = remember { com.example.data.physics.EnemPhysicsCurriculum.getAllModules() }
     val biologyModules = remember { com.example.data.biology.EnemBiologyCurriculum.getAllModules() }
+    val chemistryModules = remember { com.example.data.chemistry.EnemChemistryCurriculum.getAllModules() }
     val languagesModules = remember { com.example.data.languages.EnemLanguagesCurriculum.getAllModules() }
     val historyModules = remember { com.example.data.history.EnemHistoryCurriculum.getAllModules() }
     val geographyModules = remember { com.example.data.geography.EnemGeographyCurriculum.getAllModules() }
@@ -128,11 +131,28 @@ fun LearnTrailScreen(
     var selectedCalculusModule by remember { mutableStateOf("Limites") }
     var expandedCalculusModule by remember { mutableStateOf<String?>(null) }
 
-    val categories = listOf("Todas", "Geografia", "História", "Linguagens", "Matemática", "Física", "Biologia", "Programação")
+    var activeFollowTrail by remember(userProgress.favoriteAreaId, userProgress.currentLessonId) {
+        val initial = when {
+            userProgress.currentLessonId.startsWith("mat_") || userProgress.currentLessonId.startsWith("enem_") -> "matematica_enem"
+            userProgress.currentLessonId.startsWith("calc_") -> "calculus"
+            userProgress.currentLessonId.startsWith("fis_") -> "fisica"
+            userProgress.currentLessonId.startsWith("bio_") -> "biologia"
+            userProgress.currentLessonId.startsWith("quim_") -> "quimica"
+            userProgress.currentLessonId.startsWith("ling_") -> "linguagens"
+            userProgress.currentLessonId.startsWith("hist_") -> "historia"
+            userProgress.currentLessonId.startsWith("geo_") -> "geografia"
+            userProgress.favoriteAreaId.isNotBlank() && userProgress.favoriteAreaId != "py_b1" -> userProgress.favoriteAreaId
+            else -> "python"
+        }
+        mutableStateOf(initial)
+    }
+
+    val categories = listOf("Todas", "Química", "Geografia", "História", "Linguagens", "Matemática", "Física", "Biologia", "Programação")
     val showProgramming = selectedCategory == "Todas" || selectedCategory == "Programação"
     val showMath = selectedCategory == "Todas" || selectedCategory == "Matemática"
     val showPhysics = selectedCategory == "Todas" || selectedCategory == "Física"
     val showBiology = selectedCategory == "Todas" || selectedCategory == "Biologia"
+    val showChemistry = selectedCategory == "Todas" || selectedCategory == "Química"
     val showLanguages = selectedCategory == "Todas" || selectedCategory == "Linguagens"
     val showHistory = selectedCategory == "Todas" || selectedCategory == "História"
     val showGeography = selectedCategory == "Todas" || selectedCategory == "Geografia"
@@ -292,13 +312,21 @@ fun LearnTrailScreen(
                         modifier = Modifier.padding(top = 4.dp, bottom = 2.dp)
                     )
 
+                    val isPythonActive = activeFollowTrail == "python"
                     Card(
                         shape = RoundedCornerShape(8.dp),
                         colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
-                            .clickable { isPythonExpanded = !isPythonExpanded }
+                            .border(
+                                if (isPythonActive) 1.5.dp else 1.dp,
+                                if (isPythonActive) PrimaryViolet else BorderSubtle,
+                                RoundedCornerShape(8.dp)
+                            )
+                            .clickable {
+                                isPythonExpanded = !isPythonExpanded
+                                activeFollowTrail = "python"
+                            }
                             .testTag("course_card_python")
                     ) {
                         Column(modifier = Modifier.padding(14.dp)) {
@@ -487,11 +515,12 @@ fun LearnTrailScreen(
             if (showMath) {
                 // CURSO PRINCIPAL: MATEMÁTICA ENEM (14 MÓDULOS TAXONÔMICOS)
                 item {
+                    val isEnemMathActive = activeFollowTrail == "matematica_enem"
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
                         text = "Disciplina: Matemática ENEM",
                         style = MaterialTheme.typography.labelSmall.copy(
-                            color = NeonGreen,
+                            color = if (isEnemMathActive) NeonGreen else TextTertiary,
                             fontWeight = FontWeight.Bold,
                             fontSize = 11.sp,
                             letterSpacing = 0.5.sp
@@ -500,12 +529,19 @@ fun LearnTrailScreen(
                     )
 
                     Card(
-                        shape = RoundedCornerShape(10.dp),
+                        shape = RoundedCornerShape(8.dp),
                         colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .border(1.dp, NeonGreen.copy(alpha = 0.5f), RoundedCornerShape(10.dp))
-                            .clickable { isEnemMathExpanded = !isEnemMathExpanded }
+                            .border(
+                                if (isEnemMathActive) 1.5.dp else 1.dp,
+                                if (isEnemMathActive) NeonGreen else BorderSubtle,
+                                RoundedCornerShape(8.dp)
+                            )
+                            .clickable {
+                                isEnemMathExpanded = !isEnemMathExpanded
+                                activeFollowTrail = "matematica_enem"
+                            }
                             .testTag("discipline_card_matematica_enem")
                     ) {
                         Column(modifier = Modifier.padding(14.dp)) {
@@ -535,29 +571,56 @@ fun LearnTrailScreen(
 
                                     Spacer(modifier = Modifier.width(12.dp))
 
-                                    Column {
-                                        Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                        ) {
                                             Text(
                                                 text = "Matemática ENEM",
                                                 style = MaterialTheme.typography.titleMedium.copy(
                                                     fontWeight = FontWeight.Bold,
                                                     color = TextPrimary
-                                                )
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
                                             )
-                                            Spacer(modifier = Modifier.width(8.dp))
-                                            Surface(
-                                                color = NeonGreen.copy(alpha = 0.15f),
-                                                shape = RoundedCornerShape(4.dp)
-                                            ) {
-                                                Text(
-                                                    text = "14 Módulos • 81 Aulas",
-                                                    style = MaterialTheme.typography.labelSmall.copy(
-                                                        color = NeonGreen,
-                                                        fontWeight = FontWeight.Bold,
-                                                        fontSize = 10.sp
-                                                    ),
-                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                                                )
+                                            if (isEnemMathActive) {
+                                                Surface(
+                                                    color = NeonGreen.copy(alpha = 0.15f),
+                                                    shape = RoundedCornerShape(4.dp)
+                                                ) {
+                                                    Text(
+                                                        text = "Trilha Selecionada",
+                                                        style = MaterialTheme.typography.labelSmall.copy(
+                                                            color = NeonGreen,
+                                                            fontWeight = FontWeight.Bold,
+                                                            fontSize = 10.sp
+                                                        ),
+                                                        maxLines = 1,
+                                                        softWrap = false,
+                                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                    )
+                                                }
+                                            } else {
+                                                Surface(
+                                                    color = SurfaceElevated,
+                                                    shape = RoundedCornerShape(4.dp),
+                                                    border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle)
+                                                ) {
+                                                    Text(
+                                                        text = "14 Módulos • 81 Aulas",
+                                                        style = MaterialTheme.typography.labelSmall.copy(
+                                                            color = TextSecondary,
+                                                            fontWeight = FontWeight.Medium,
+                                                            fontSize = 10.sp
+                                                        ),
+                                                        maxLines = 1,
+                                                        softWrap = false,
+                                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                    )
+                                                }
                                             }
                                         }
 
@@ -616,13 +679,21 @@ fun LearnTrailScreen(
                     Spacer(modifier = Modifier.height(10.dp))
 
                     // CURSO 2 DE MATEMÁTICA: CÁLCULO I
+                    val isCalculusActive = activeFollowTrail == "calculus"
                     Card(
                         shape = RoundedCornerShape(8.dp),
                         colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
-                            .clickable { isCalculusExpanded = !isCalculusExpanded }
+                            .border(
+                                if (isCalculusActive) 1.5.dp else 1.dp,
+                                if (isCalculusActive) GoldXp else BorderSubtle,
+                                RoundedCornerShape(8.dp)
+                            )
+                            .clickable {
+                                isCalculusExpanded = !isCalculusExpanded
+                                activeFollowTrail = "calculus"
+                            }
                             .testTag("course_card_calculus")
                     ) {
                         Column(modifier = Modifier.padding(14.dp)) {
@@ -805,13 +876,21 @@ fun LearnTrailScreen(
                 item {
                     Spacer(modifier = Modifier.height(10.dp))
 
+                    val isPhysicsActive = activeFollowTrail == "fisica"
                     Card(
                         shape = RoundedCornerShape(8.dp),
                         colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
-                            .clickable { isPhysicsExpanded = !isPhysicsExpanded }
+                            .border(
+                                if (isPhysicsActive) 1.5.dp else 1.dp,
+                                if (isPhysicsActive) Color(0xFF38BDF8) else BorderSubtle,
+                                RoundedCornerShape(8.dp)
+                            )
+                            .clickable {
+                                isPhysicsExpanded = !isPhysicsExpanded
+                                activeFollowTrail = "fisica"
+                            }
                             .testTag("course_card_physics")
                     ) {
                         Column(modifier = Modifier.padding(14.dp)) {
@@ -841,16 +920,21 @@ fun LearnTrailScreen(
 
                                     Spacer(modifier = Modifier.width(12.dp))
 
-                                    Column {
-                                        Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                        ) {
                                             Text(
                                                 text = "Física • ENEM Completo",
                                                 style = MaterialTheme.typography.titleMedium.copy(
                                                     fontWeight = FontWeight.ExtraBold,
                                                     color = TextPrimary
-                                                )
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
                                             )
-                                            Spacer(modifier = Modifier.width(6.dp))
                                             Surface(
                                                 color = Color(0xFF38BDF8).copy(alpha = 0.15f),
                                                 shape = RoundedCornerShape(4.dp)
@@ -862,6 +946,8 @@ fun LearnTrailScreen(
                                                         fontWeight = FontWeight.Bold,
                                                         fontSize = 10.sp
                                                     ),
+                                                    maxLines = 1,
+                                                    softWrap = false,
                                                     modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                                                 )
                                             }
@@ -973,16 +1059,21 @@ fun LearnTrailScreen(
 
                                     Spacer(modifier = Modifier.width(12.dp))
 
-                                    Column {
-                                        Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                        ) {
                                             Text(
                                                 text = "Biologia • ENEM",
                                                 style = MaterialTheme.typography.titleMedium.copy(
                                                     fontWeight = FontWeight.ExtraBold,
                                                     color = TextPrimary
-                                                )
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
                                             )
-                                            Spacer(modifier = Modifier.width(6.dp))
                                             Surface(
                                                 color = SuccessEmerald.copy(alpha = 0.15f),
                                                 shape = RoundedCornerShape(4.dp)
@@ -994,6 +1085,8 @@ fun LearnTrailScreen(
                                                         fontWeight = FontWeight.Bold,
                                                         fontSize = 10.sp
                                                     ),
+                                                    maxLines = 1,
+                                                    softWrap = false,
                                                     modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                                                 )
                                             }
@@ -1043,6 +1136,145 @@ fun LearnTrailScreen(
                                             userProgress = userProgress,
                                             onToggleExpand = {
                                                 expandedBiologyModuleId = if (expandedBiologyModuleId == module.id) null else module.id
+                                            },
+                                            onSelectLesson = onSelectLesson
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ========================================================
+            // CATEGORIA: CIÊNCIAS DA NATUREZA -> QUÍMICA ENEM
+            // ========================================================
+            if (showChemistry) {
+                item {
+                    Text(
+                        text = "Categoria: Ciências da Natureza • Química",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            color = Color(0xFF06B6D4),
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 11.sp
+                        ),
+                        modifier = Modifier.padding(top = 10.dp, bottom = 2.dp)
+                    )
+
+                    Card(
+                        shape = RoundedCornerShape(8.dp),
+                        colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
+                            .clickable { isChemistryExpanded = !isChemistryExpanded }
+                            .testTag("course_card_chemistry")
+                    ) {
+                        Column(modifier = Modifier.padding(14.dp)) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(40.dp)
+                                            .clip(CircleShape)
+                                            .background(Color(0xFF06B6D4).copy(alpha = 0.2f)),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = KnowverseIcons.ChemistryFlask,
+                                            contentDescription = "Química ENEM",
+                                            tint = Color(0xFF06B6D4),
+                                            modifier = Modifier.size(22.dp)
+                                        )
+                                    }
+
+                                    Spacer(modifier = Modifier.width(12.dp))
+
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                        ) {
+                                            Text(
+                                                text = "Química • ENEM",
+                                                style = MaterialTheme.typography.titleMedium.copy(
+                                                    fontWeight = FontWeight.ExtraBold,
+                                                    color = TextPrimary
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
+                                            )
+                                            Surface(
+                                                color = Color(0xFF06B6D4).copy(alpha = 0.15f),
+                                                shape = RoundedCornerShape(4.dp)
+                                            ) {
+                                                Text(
+                                                    text = "4 Módulos • 21 Aulas",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = Color(0xFF06B6D4),
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 10.sp
+                                                    ),
+                                                    maxLines = 1,
+                                                    softWrap = false,
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
+
+                                        Spacer(modifier = Modifier.height(2.dp))
+
+                                        Text(
+                                            text = "Geral e Matéria, Físico-Química, Química Orgânica e Meio Ambiente",
+                                            style = MaterialTheme.typography.bodySmall.copy(
+                                                color = TextSecondary,
+                                                fontSize = 11.sp
+                                            ),
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis
+                                        )
+                                    }
+                                }
+
+                                IconButton(
+                                    onClick = { isChemistryExpanded = !isChemistryExpanded },
+                                    modifier = Modifier.size(28.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = if (isChemistryExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                        contentDescription = "Expandir Química ENEM",
+                                        tint = TextSecondary
+                                    )
+                                }
+                            }
+
+                            AnimatedVisibility(
+                                visible = isChemistryExpanded,
+                                enter = fadeIn() + expandVertically(),
+                                exit = fadeOut() + shrinkVertically()
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(top = 14.dp),
+                                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                                ) {
+                                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
+
+                                    chemistryModules.forEach { module ->
+                                        EnemMathTrailModuleContainer(
+                                            module = module,
+                                            isExpanded = expandedChemistryModuleId == module.id,
+                                            userProgress = userProgress,
+                                            onToggleExpand = {
+                                                expandedChemistryModuleId = if (expandedChemistryModuleId == module.id) null else module.id
                                             },
                                             onSelectLesson = onSelectLesson
                                         )
@@ -1105,16 +1337,21 @@ fun LearnTrailScreen(
 
                                     Spacer(modifier = Modifier.width(12.dp))
 
-                                    Column {
-                                        Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                        ) {
                                             Text(
-                                                text = "Linguagens e Códigos • ENEM",
+                                                text = "Linguagens • ENEM",
                                                 style = MaterialTheme.typography.titleMedium.copy(
                                                     fontWeight = FontWeight.ExtraBold,
                                                     color = TextPrimary
-                                                )
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
                                             )
-                                            Spacer(modifier = Modifier.width(6.dp))
                                             Surface(
                                                 color = Color(0xFFFB923C).copy(alpha = 0.15f),
                                                 shape = RoundedCornerShape(4.dp)
@@ -1126,6 +1363,8 @@ fun LearnTrailScreen(
                                                         fontWeight = FontWeight.Bold,
                                                         fontSize = 10.sp
                                                     ),
+                                                    maxLines = 1,
+                                                    softWrap = false,
                                                     modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                                                 )
                                             }

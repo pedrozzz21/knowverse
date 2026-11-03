@@ -52,6 +52,7 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -79,7 +80,9 @@ object MathNotationHelper {
      * para renderização de alta fidelidade idêntica ao Gemini e livros universitários.
      */
     fun toStandardLatex(raw: String): String {
-        var s = raw.trim()
+        if (raw.isEmpty()) return raw
+        return try {
+            var s = raw.trim()
 
         // Remove aspas externas (duplas, simples ou crases) que causem erros de sintaxe no KaTeX
         s = s.replace(Regex("""^["'`]+|["'`]+$"""), "").trim()
@@ -174,7 +177,10 @@ object MathNotationHelper {
             s = convertAsciiFractions(s)
         }
 
-        return s.trim()
+            s.trim()
+        } catch (_: Throwable) {
+            raw.trim()
+        }
     }
 
     private fun convertAsciiFractions(input: String): String {
@@ -347,28 +353,47 @@ object MathNotationHelper {
         return s
     }
 
+    private val STRIP_QUOTED_MATH_DOUBLE = Regex("\"([^\"\\n]*\\\\[a-zA-Z]+[^\"\\n]*)\"")
+    private val STRIP_QUOTED_MATH_SINGLE = Regex("'([^'\\n]*\\\\[a-zA-Z]+[^'\\n]*)'")
+    private val STRIP_QUOTED_MATH_BACKTICK = Regex("`([^`\\n]*\\\\[a-zA-Z]+[^`\\n]*)`")
+    private val DOUBLE_BACKSLASH = Regex("""\\\\+([a-zA-Z]+)""")
+
     /**
      * Limpeza e enriquecimento de expressões matemáticas para exibição inline autêntica.
      */
     fun formatInlineMath(raw: String): String {
-        var s = raw.trim()
+        if (raw.isEmpty()) return raw
+        return try {
+            // Se a string não contiver nenhum caractere ou comando matemático especial, retorne-a diretamente
+            // Isso evita overhead e qualquer falha em textos puros de Linguagens, História e Filosofia
+            if (!raw.contains('\\') && !raw.contains('^') && !raw.contains('_') && 
+                !raw.contains("$$") && !raw.contains("\\[") && !raw.contains("\\(") &&
+                !raw.contains("lim") && !raw.contains("->") && !raw.contains("√") && 
+                !raw.contains("∫") && !raw.contains("∑") && !raw.contains("≠") && 
+                !raw.contains("≤") && !raw.contains("≥") && !raw.contains("±") &&
+                !raw.contains("frac") && !raw.contains("sqrt")
+            ) {
+                return raw
+            }
 
-        // Remove aspas ou crases envolventes em termos com comandos LaTeX
-        s = s.replace(Regex("""\"([^\"]*\\+[a-zA-Z]+[^\"]*)\""""), "$1")
-        s = s.replace(Regex("""'([^'*\\+[a-zA-Z]+[^']*)'"""), "$1")
-        s = s.replace(Regex("""`([^`*\\+[a-zA-Z]+[^`]*)`"""), "$1")
+            var s = raw.trim()
 
-        // Normalização de contra-barras duplicadas
-        s = s.replace(Regex("""\\\\+([a-zA-Z]+)"""), """\\$1""")
+            // Remove aspas ou crases envolventes em termos com comandos LaTeX
+            s = STRIP_QUOTED_MATH_DOUBLE.replace(s, "$1")
+            s = STRIP_QUOTED_MATH_SINGLE.replace(s, "$1")
+            s = STRIP_QUOTED_MATH_BACKTICK.replace(s, "$1")
 
-        // Passo 1: Frações completas com suporte a chaves aninhadas
-        s = formatFractions(s)
+            // Normalização de contra-barras duplicadas
+            s = DOUBLE_BACKSLASH.replace(s, """\\$1""")
 
-        // Passo 2: Raízes quadradas e enésimas
-        s = formatRadicals(s)
+            // Passo 1: Frações completas com suporte a chaves aninhadas
+            s = formatFractions(s)
 
-        // Passo 3: Operadores e símbolos matemáticos comuns
-        s = s.replace("\\times", "×")
+            // Passo 2: Raízes quadradas e enésimas
+            s = formatRadicals(s)
+
+            // Passo 3: Operadores e símbolos matemáticos comuns
+            s = s.replace("\\times", "×")
         s = s.replace("\\div", "÷")
         s = s.replace("\\cdot", "·")
         s = s.replace("\\approx", "≈")
@@ -496,12 +521,13 @@ object MathNotationHelper {
             }
         }
         s = s.replace("\\", "")
-
-        // Remove aspas órfãs residuais no início ou fim
         s = s.trim().removePrefix("\"").removeSuffix("\"").removePrefix("'").removeSuffix("'")
 
-        return s.trim()
+        s.trim()
+    } catch (_: Throwable) {
+        raw
     }
+}
 }
 
 /**
@@ -509,7 +535,6 @@ object MathNotationHelper {
  * Produz limites com subscrito alinhado diretamente abaixo do termo `lim`, frações verticais com barra
  * horizontal, parênteses escaláveis e tipografia matemática com serifa itálica idêntica ao Gemini.
  */
-@SuppressLint("SetJavaScriptEnabled")
 @Composable
 fun KaTeXFormulaView(
     formula: String,
@@ -518,72 +543,43 @@ fun KaTeXFormulaView(
     fontSizeEm: Float = 1.25f,
     accentColorHex: String = "#67E8F9"
 ) {
-    val context = LocalContext.current
-    val density = LocalDensity.current
-
     val normalizedFormula = remember(formula) {
         MathNotationHelper.toStandardLatex(formula)
     }
 
-    var contentHeightDp by remember(normalizedFormula) {
-        mutableStateOf(if (isDisplayMode) 76.dp else 48.dp)
+    val formattedMath = remember(normalizedFormula) {
+        try {
+            MathNotationHelper.formatInlineMath(normalizedFormula)
+        } catch (_: Throwable) {
+            normalizedFormula
+        }
     }
 
-    val html = remember(normalizedFormula, isDisplayMode, fontSizeEm, accentColorHex) {
-        buildKaTeXHtml(normalizedFormula, isDisplayMode, fontSizeEm, accentColorHex)
+    val formulaColor = remember(accentColorHex) {
+        try {
+            Color(android.graphics.Color.parseColor(accentColorHex))
+        } catch (_: Throwable) {
+            Color(0xFF67E8F9)
+        }
     }
 
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .heightIn(min = if (isDisplayMode) 64.dp else 44.dp, max = 360.dp)
-            .height(contentHeightDp),
+            .padding(horizontal = 8.dp, vertical = if (isDisplayMode) 8.dp else 4.dp),
         contentAlignment = Alignment.Center
     ) {
-        AndroidView(
-            factory = { ctx ->
-                WebView(ctx).apply {
-                    setBackgroundColor(0) // 100% transparente
-                    isVerticalScrollBarEnabled = false
-                    isHorizontalScrollBarEnabled = true
-                    settings.javaScriptEnabled = true
-                    settings.allowFileAccess = true
-                    settings.domStorageEnabled = true
-                    settings.loadWithOverviewMode = true
-                    settings.useWideViewPort = false
-                    settings.safeBrowsingEnabled = false
-
-                    addJavascriptInterface(object {
-                        @JavascriptInterface
-                        fun onHeight(heightPx: Int) {
-                            if (heightPx > 0) {
-                                Handler(Looper.getMainLooper()).post {
-                                    val dpVal = (heightPx / ctx.resources.displayMetrics.density).dp
-                                    contentHeightDp = maxOf(if (isDisplayMode) 76.dp else 48.dp, dpVal + 24.dp)
-                                }
-                            }
-                        }
-                    }, "AndroidInterface")
-
-                    loadDataWithBaseURL(
-                        "file:///android_asset/katex/",
-                        html,
-                        "text/html",
-                        "UTF-8",
-                        null
-                    )
-                }
-            },
-            update = { webView ->
-                webView.loadDataWithBaseURL(
-                    "file:///android_asset/katex/",
-                    html,
-                    "text/html",
-                    "UTF-8",
-                    null
-                )
-            },
-            modifier = Modifier.fillMaxWidth()
+        Text(
+            text = formattedMath,
+            style = (if (isDisplayMode) MaterialTheme.typography.titleMedium else MaterialTheme.typography.bodyMedium).copy(
+                fontFamily = FontFamily.Serif,
+                fontWeight = FontWeight.SemiBold,
+                fontSize = if (isDisplayMode) 17.5.sp else 15.sp,
+                color = formulaColor,
+                letterSpacing = 0.5.sp,
+                lineHeight = if (isDisplayMode) 26.sp else 22.sp
+            ),
+            textAlign = TextAlign.Center
         )
     }
 }
@@ -862,6 +858,16 @@ fun MathFormattedText(
     }
 }
 
+private val INLINE_MATH_TOKEN_REGEX = Regex(
+    """(\*\*[^*]+\*\*)|""" +
+    """(\"[^"\n]*\\[a-zA-Z]+[^"\n]*\")|""" +
+    """('[^'\n]*\\[a-zA-Z]+[^'\n]*')|""" +
+    """(`[^`\n]*\\[a-zA-Z]+[^`\n]*`)|""" +
+    """(\\\([\s\S]*?\\\))|""" +
+    """(\$[^\$]+\$)|""" +
+    """(\\[a-zA-Z]+(?:\{[^{}]*\}|_[a-zA-Z0-9^{}]+|\^[a-zA-Z0-9^{}]+)+)"""
+)
+
 @Composable
 private fun MarkdownInlineMathText(
     text: String,
@@ -871,113 +877,115 @@ private fun MarkdownInlineMathText(
     lineHeightSp: Float = 21f,
     mathColor: Color = Color(0xFF67E8F9)
 ) {
+    val needsParsing = text.contains("**") || text.contains('\\') || text.contains('$') || 
+                       text.contains('"') || text.contains('\'') || text.contains('`')
+
+    if (!needsParsing) {
+        Text(
+            text = text,
+            style = style.copy(lineHeight = lineHeightSp.sp, color = color),
+            modifier = modifier
+        )
+        return
+    }
+
     val annotated = remember(text, color, mathColor) {
-        buildAnnotatedString {
-            // Tokenização abrangente:
-            // 1) Markdown Bold (**...**)
-            // 2) Expressões LaTeX entre aspas ou crases ("\frac{...}" ou '\frac{...}' ou `\frac{...}`)
-            // 3) Delimitadores explícitos \(...\) ou $...$
-            // 4) Frações ou comandos LaTeX explícitos isolados (\frac{...}{...}, \lim_{...}, etc.)
-            val tokenRegex = Regex(
-                """(\*\*[^*]+\*\*)|""" +
-                """(\"[^"\n]*\\[a-zA-Z]+[^"\n]*\")|""" +
-                """('[^'\n]*\\[a-zA-Z]+[^'\n]*')|""" +
-                """(`[^`\n]*\\[a-zA-Z]+[^`\n]*`)|""" +
-                """(\\\([\s\S]*?\\\))|""" +
-                """(\$[^\$]+\$)|""" +
-                """(\\[a-zA-Z]+(?:\{[^{}]*\}|_[a-zA-Z0-9^{}]+|\^[a-zA-Z0-9^{}]+)+)"""
-            )
-            var lastIndex = 0
+        try {
+            buildAnnotatedString {
+                var lastIndex = 0
 
-            for (match in tokenRegex.findAll(text)) {
-                // Texto anterior ao match
-                if (match.range.first > lastIndex) {
-                    val rawSlice = text.substring(lastIndex, match.range.first)
-                    append(MathNotationHelper.formatInlineMath(rawSlice))
+                for (match in INLINE_MATH_TOKEN_REGEX.findAll(text)) {
+                    // Texto anterior ao match
+                    if (match.range.first > lastIndex) {
+                        val rawSlice = text.substring(lastIndex, match.range.first)
+                        append(MathNotationHelper.formatInlineMath(rawSlice))
+                    }
+
+                    val matchedString = match.value
+                    when {
+                        // 1. Negrito do Markdown (**Texto**)
+                        matchedString.startsWith("**") && matchedString.endsWith("**") && matchedString.length >= 4 -> {
+                            val innerBold = matchedString.removePrefix("**").removeSuffix("**")
+                            withStyle(
+                                SpanStyle(
+                                    fontWeight = FontWeight.Bold,
+                                    color = TextPrimary
+                                )
+                            ) {
+                                append(MathNotationHelper.formatInlineMath(innerBold))
+                            }
+                        }
+
+                        // 2. Termo LaTeX entre aspas ("\frac{...}" ou '\frac{...}' ou `\frac{...}`)
+                        (matchedString.startsWith("\"") && matchedString.endsWith("\"") && matchedString.length >= 2) ||
+                        (matchedString.startsWith("'") && matchedString.endsWith("'") && matchedString.length >= 2) ||
+                        (matchedString.startsWith("`") && matchedString.endsWith("`") && matchedString.length >= 2) -> {
+                            val inner = matchedString.substring(1, matchedString.length - 1).trim()
+                            val cleanInline = MathNotationHelper.formatInlineMath(inner)
+                            withStyle(
+                                SpanStyle(
+                                    color = mathColor,
+                                    fontFamily = FontFamily.Serif,
+                                    fontStyle = FontStyle.Italic,
+                                    fontWeight = FontWeight.SemiBold
+                                )
+                            ) {
+                                append(" $cleanInline ")
+                            }
+                        }
+
+                        // 3. Notação Matemática Inline \( ... \) ou $ ... $
+                        (matchedString.startsWith("\\(") && matchedString.endsWith("\\)")) ||
+                        (matchedString.startsWith("$") && matchedString.endsWith("$")) -> {
+                            val innerMath = if (matchedString.startsWith("\\(")) {
+                                matchedString.removePrefix("\\(").removeSuffix("\\)")
+                            } else {
+                                matchedString.removePrefix("$").removeSuffix("$")
+                            }
+                            val cleanInline = MathNotationHelper.formatInlineMath(innerMath.trim())
+                            withStyle(
+                                SpanStyle(
+                                    color = mathColor,
+                                    fontFamily = FontFamily.Serif,
+                                    fontStyle = FontStyle.Italic,
+                                    fontWeight = FontWeight.SemiBold
+                                )
+                            ) {
+                                append(" $cleanInline ")
+                            }
+                        }
+
+                        // 4. Comandos LaTeX explícitos (\frac{...}{...}, \lim_{...}, etc.)
+                        matchedString.startsWith("\\") -> {
+                            val cleanInline = MathNotationHelper.formatInlineMath(matchedString)
+                            withStyle(
+                                SpanStyle(
+                                    color = mathColor,
+                                    fontFamily = FontFamily.Serif,
+                                    fontStyle = FontStyle.Italic,
+                                    fontWeight = FontWeight.SemiBold
+                                )
+                            ) {
+                                append(" $cleanInline ")
+                            }
+                        }
+
+                        else -> {
+                            append(MathNotationHelper.formatInlineMath(matchedString))
+                        }
+                    }
+
+                    lastIndex = match.range.last + 1
                 }
 
-                val matchedString = match.value
-                when {
-                    // 1. Negrito do Markdown (**Texto**)
-                    matchedString.startsWith("**") && matchedString.endsWith("**") && matchedString.length >= 4 -> {
-                        val innerBold = matchedString.removePrefix("**").removeSuffix("**")
-                        withStyle(
-                            SpanStyle(
-                                fontWeight = FontWeight.Bold,
-                                color = TextPrimary
-                            )
-                        ) {
-                            append(MathNotationHelper.formatInlineMath(innerBold))
-                        }
-                    }
-
-                    // 2. Termo LaTeX entre aspas ("\frac{...}" ou '\frac{...}' ou `\frac{...}`)
-                    (matchedString.startsWith("\"") && matchedString.endsWith("\"") && matchedString.length >= 2) ||
-                    (matchedString.startsWith("'") && matchedString.endsWith("'") && matchedString.length >= 2) ||
-                    (matchedString.startsWith("`") && matchedString.endsWith("`") && matchedString.length >= 2) -> {
-                        val inner = matchedString.substring(1, matchedString.length - 1).trim()
-                        val cleanInline = MathNotationHelper.formatInlineMath(inner)
-                        withStyle(
-                            SpanStyle(
-                                color = mathColor,
-                                fontFamily = FontFamily.Serif,
-                                fontStyle = FontStyle.Italic,
-                                fontWeight = FontWeight.SemiBold
-                            )
-                        ) {
-                            append(" $cleanInline ")
-                        }
-                    }
-
-                    // 3. Notação Matemática Inline \( ... \) ou $ ... $
-                    (matchedString.startsWith("\\(") && matchedString.endsWith("\\)")) ||
-                    (matchedString.startsWith("$") && matchedString.endsWith("$")) -> {
-                        val innerMath = if (matchedString.startsWith("\\(")) {
-                            matchedString.removePrefix("\\(").removeSuffix("\\)")
-                        } else {
-                            matchedString.removePrefix("$").removeSuffix("$")
-                        }
-                        val cleanInline = MathNotationHelper.formatInlineMath(innerMath.trim())
-                        withStyle(
-                            SpanStyle(
-                                color = mathColor,
-                                fontFamily = FontFamily.Serif,
-                                fontStyle = FontStyle.Italic,
-                                fontWeight = FontWeight.SemiBold
-                            )
-                        ) {
-                            append(" $cleanInline ")
-                        }
-                    }
-
-                    // 4. Comandos LaTeX explícitos (\frac{...}{...}, \lim_{...}, etc.)
-                    matchedString.startsWith("\\") -> {
-                        val cleanInline = MathNotationHelper.formatInlineMath(matchedString)
-                        withStyle(
-                            SpanStyle(
-                                color = mathColor,
-                                fontFamily = FontFamily.Serif,
-                                fontStyle = FontStyle.Italic,
-                                fontWeight = FontWeight.SemiBold
-                            )
-                        ) {
-                            append(" $cleanInline ")
-                        }
-                    }
-
-                    else -> {
-                        append(MathNotationHelper.formatInlineMath(matchedString))
-                    }
+                // Resto do texto após o último match
+                if (lastIndex < text.length) {
+                    val remaining = text.substring(lastIndex)
+                    append(MathNotationHelper.formatInlineMath(remaining))
                 }
-
-                lastIndex = match.range.last + 1
             }
-
-            // Resto do texto após o último match
-            if (lastIndex < text.length) {
-                val remaining = text.substring(lastIndex)
-                append(MathNotationHelper.formatInlineMath(remaining))
-            }
+        } catch (_: Throwable) {
+            androidx.compose.ui.text.AnnotatedString(text)
         }
     }
 

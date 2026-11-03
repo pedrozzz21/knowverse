@@ -45,8 +45,9 @@ object NetworkTimeProvider {
         .readTimeout(3, TimeUnit.SECONDS)
         .build()
 
-    // Endpoints do timeapi.world para GMT-3
-    private const val PRIMARY_URL = "https://gateway.timeapi.world/timezone/America/Sao_Paulo"
+    // Endpoints para GMT-3 (America/Sao_Paulo - Horário de Brasília)
+    private const val PRIMARY_URL = "https://timeapi.io/api/time/current/zone?timeZone=America/Sao_Paulo"
+    private const val SECONDARY_URL = "https://gateway.timeapi.world/timezone/America/Sao_Paulo"
     private const val FALLBACK_URL = "https://timeapi.world/timezone/America/Sao_Paulo"
 
     private var prefs: SharedPreferences? = null
@@ -74,16 +75,16 @@ object NetworkTimeProvider {
     }
 
     /**
-     * Sincroniza o horário do app com a API oficial timeapi.world (GMT-3).
+     * Sincroniza o horário do app com a API oficial timeapi.io / timeapi.world (GMT-3).
      */
     fun syncTimeAsync(scope: CoroutineScope = CoroutineScope(Dispatchers.IO), onComplete: (() -> Unit)? = null) {
         scope.launch {
-            val success = fetchFromTimeApi(PRIMARY_URL) || fetchFromTimeApi(FALLBACK_URL)
+            val success = fetchFromTimeApi(PRIMARY_URL) || fetchFromTimeApi(SECONDARY_URL) || fetchFromTimeApi(FALLBACK_URL)
             if (success) {
                 _isSyncedWithTimeApi.value = true
-                Log.i(TAG, "Horário sincronizado com sucesso com TimeAPI.world (GMT-3): ${getTodayGmt3()}")
+                Log.i(TAG, "Horário sincronizado com sucesso com TimeAPI (GMT-3): ${getTodayGmt3()}")
             } else {
-                Log.w(TAG, "TimeAPI.world offline/inacessível. Utilizando horário local calibrado em GMT-3: ${getTodayGmt3()}")
+                Log.w(TAG, "TimeAPI offline/inacessível. Utilizando horário local calibrado em GMT-3: ${getTodayGmt3()}")
             }
             onComplete?.invoke()
         }
@@ -94,7 +95,7 @@ object NetworkTimeProvider {
             val request = Request.Builder()
                 .url(url)
                 .header("Accept", "application/json")
-                .header("User-Agent", "Knowverse-Android-Streak/1.7.0")
+                .header("User-Agent", "Knowverse-Android-Streak/2.0.0")
                 .build()
 
             httpClient.newCall(request).execute().use { response ->
@@ -102,16 +103,44 @@ object NetworkTimeProvider {
                 val body = response.body?.string() ?: return false
                 val json = JSONObject(body)
 
-                // Extrai o datetime ISO-8601 (ex: "2026-10-27T14:23:40.837-03:00") ou unixtime
-                val dateTimeStr = json.optString("datetime", "")
+                // Suporta formato timeapi.io ("dateTime": "2026-10-31T02:15:30.123", "year", "month", "day"...)
+                // e timeapi.world ("datetime": "2026-10-31T02:15:30.123-03:00", "unixtime": 1730331330)
+                val dateTimeStr = json.optString("dateTime", "").ifBlank { json.optString("datetime", "") }
                 val unixtimeSec = json.optLong("unixtime", 0L)
 
-                val serverMs = if (unixtimeSec > 0L) {
-                    unixtimeSec * 1000L
-                } else if (dateTimeStr.isNotBlank()) {
-                    ZonedDateTime.parse(dateTimeStr).toInstant().toEpochMilli()
-                } else {
-                    return false
+                val serverMs = when {
+                    unixtimeSec > 0L -> unixtimeSec * 1000L
+                    dateTimeStr.isNotBlank() -> {
+                        try {
+                            if (dateTimeStr.contains("+") || (dateTimeStr.length > 10 && dateTimeStr.indexOf('-', startIndex = 10) >= 0) || dateTimeStr.endsWith("Z")) {
+                                ZonedDateTime.parse(dateTimeStr).toInstant().toEpochMilli()
+                            } else {
+                                java.time.LocalDateTime.parse(dateTimeStr).atZone(ZONE_GMT_MINUS_3).toInstant().toEpochMilli()
+                            }
+                        } catch (_: Exception) {
+                            if (json.has("year") && json.has("month") && json.has("day")) {
+                                val y = json.getInt("year")
+                                val m = json.getInt("month")
+                                val d = json.getInt("day")
+                                val h = json.optInt("hour", 0)
+                                val min = json.optInt("minute", 0)
+                                val sec = json.optInt("seconds", 0)
+                                ZonedDateTime.of(y, m, d, h, min, sec, 0, ZONE_GMT_MINUS_3).toInstant().toEpochMilli()
+                            } else {
+                                return false
+                            }
+                        }
+                    }
+                    json.has("year") && json.has("month") && json.has("day") -> {
+                        val y = json.getInt("year")
+                        val m = json.getInt("month")
+                        val d = json.getInt("day")
+                        val h = json.optInt("hour", 0)
+                        val min = json.optInt("minute", 0)
+                        val sec = json.optInt("seconds", 0)
+                        ZonedDateTime.of(y, m, d, h, min, sec, 0, ZONE_GMT_MINUS_3).toInstant().toEpochMilli()
+                    }
+                    else -> return false
                 }
 
                 val currentElapsed = SystemClock.elapsedRealtime()

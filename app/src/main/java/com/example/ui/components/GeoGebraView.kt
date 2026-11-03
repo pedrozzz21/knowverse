@@ -3,14 +3,17 @@ package com.example.ui.components
 import android.annotation.SuppressLint
 import android.os.Handler
 import android.os.Looper
+import android.view.View
 import android.webkit.JavascriptInterface
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,6 +26,16 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.PathEffect
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
+import androidx.compose.ui.graphics.nativeCanvas
+import androidx.compose.ui.input.pointer.pointerInput
+import kotlin.math.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -377,7 +390,7 @@ fun GeoGebraMathGraphView(
 
             Spacer(modifier = Modifier.height(6.dp))
 
-            // Container do Visualizador GeoGebra
+            // Container do Visualizador Matemático Nativo
             val graphHeight = if (isFullScreenMode) 480.dp else 260.dp
             Box(
                 modifier = Modifier
@@ -388,11 +401,11 @@ fun GeoGebraMathGraphView(
                     .border(1.dp, BorderSubtle.copy(alpha = 0.8f), RoundedCornerShape(8.dp)),
                 contentAlignment = Alignment.Center
             ) {
-                GeoGebraHtmlWebView(
+                NativeMathGraphCanvas(
                     config = config,
                     activeExpression = activeExpression,
                     tangentX = tangentX,
-                    onWebViewCreated = { webViewRef = it }
+                    modifier = Modifier.fillMaxSize()
                 )
             }
 
@@ -570,637 +583,427 @@ private fun GeoGebraCustomInputField(
     )
 }
 
-@SuppressLint("SetJavaScriptEnabled")
 @Composable
-private fun GeoGebraHtmlWebView(
+fun NativeMathGraphCanvas(
     config: GeoGebraGraphConfig,
     activeExpression: String,
     tangentX: Double,
-    onWebViewCreated: (WebView) -> Unit
+    modifier: Modifier = Modifier
 ) {
-    val htmlContent = remember(config, activeExpression) {
-        buildGeoGebraHtml(config, activeExpression, tangentX)
-    }
+    var curXMin by remember(config.title, activeExpression) { mutableDoubleStateOf(config.xMin) }
+    var curXMax by remember(config.title, activeExpression) { mutableDoubleStateOf(config.xMax) }
+    var curYMin by remember(config.title, activeExpression) { mutableDoubleStateOf(config.yMin) }
+    var curYMax by remember(config.title, activeExpression) { mutableDoubleStateOf(config.yMax) }
 
-    AndroidView(
-        factory = { ctx ->
-            WebView(ctx).apply {
-                setBackgroundColor(0x00000000)
-                isVerticalScrollBarEnabled = false
-                isHorizontalScrollBarEnabled = false
-                settings.apply {
-                    javaScriptEnabled = true
-                    domStorageEnabled = true
-                    allowFileAccess = true
-                    databaseEnabled = true
-                    loadWithOverviewMode = true
-                    useWideViewPort = false
-                    cacheMode = WebSettings.LOAD_DEFAULT
-                    safeBrowsingEnabled = false
+    Box(modifier = modifier) {
+        Canvas(
+            modifier = Modifier
+                .fillMaxSize()
+                .pointerInput(curXMin, curXMax, curYMin, curYMax) {
+                    detectDragGestures { change, dragAmount ->
+                        change.consume()
+                        val w = size.width
+                        val h = size.height
+                        if (w > 0 && h > 0) {
+                            val xSpan = curXMax - curXMin
+                            val ySpan = curYMax - curYMin
+                            val dx = (dragAmount.x / w) * xSpan
+                            val dy = (dragAmount.y / h) * ySpan
+                            curXMin -= dx
+                            curXMax -= dx
+                            curYMin += dy
+                            curYMax += dy
+                        }
+                    }
                 }
+        ) {
+            val w = size.width
+            val h = size.height
+            if (w <= 0f || h <= 0f) return@Canvas
 
-                loadDataWithBaseURL(
-                    "file:///android_asset/geogebra/",
-                    htmlContent,
-                    "text/html",
-                    "UTF-8",
-                    null
-                )
-                onWebViewCreated(this)
-            }
-        },
-        update = { webView ->
-            onWebViewCreated(webView)
-        },
-        modifier = Modifier.fillMaxSize()
-    )
-}
-
-/**
- * Constrói o visualizador matemático com Canvas de Alta Precisão (0ms delay) e suporte à API do GeoGebra.
- * Inclui:
- * - Sistema cartesiano completo com eixos X e Y graduados, linhas de grade e marcações numéricas
- * - Avaliador matemático para expressões algébricas, trigonométricas, racionais e potências com multiplicação implícita
- * - Descontinuidades com círculo aberto (buracos de limites)
- * - Assíntotas verticais e horizontais tracejadas
- * - Reta tangente com cálculo de derivada f'(x₀) e ponto T₀ em tempo real
- * - Área sob a curva sombreada (integrais / somas de Riemann)
- * - Controles interativos de pan (arrastar) e zoom (+ / - / Reset)
- */
-private fun buildGeoGebraHtml(
-    config: GeoGebraGraphConfig,
-    activeExpression: String,
-    tangentX: Double
-): String {
-    val escapedExpr = JSONObject.quote(activeExpression)
-    val commandsJsonArray = JSONArray()
-    config.commands.forEach { cmd ->
-        commandsJsonArray.put(cmd)
-    }
-    val pointsJsonArray = JSONArray()
-    config.analysisPoints.forEach { pt ->
-        val obj = JSONObject()
-        obj.put("name", pt.name)
-        obj.put("x", pt.x)
-        obj.put("y", pt.y)
-        obj.put("label", pt.label)
-        obj.put("isOpenCircle", pt.isOpenCircle)
-        obj.put("color", pt.colorHex)
-        pointsJsonArray.put(obj)
-    }
-
-    return """
-        <!DOCTYPE html>
-        <html>
-        <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <style>
-          * { box-sizing: border-box; margin: 0; padding: 0; }
-          html, body {
-            width: 100%; height: 100%;
-            background-color: #0B1120;
-            overflow: hidden;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-            user-select: none;
-            -webkit-user-select: none;
-          }
-          #container {
-            position: relative;
-            width: 100%; height: 100%;
-          }
-          #graph-canvas {
-            display: block;
-            width: 100%; height: 100%;
-            touch-action: none;
-          }
-          #toolbar {
-            position: absolute;
-            top: 8px; right: 8px;
-            display: flex;
-            gap: 4px;
-            z-index: 10;
-          }
-          .tool-btn {
-            background: rgba(30, 41, 59, 0.85);
-            color: #94A3B8;
-            border: 1px solid rgba(148, 163, 184, 0.25);
-            border-radius: 6px;
-            width: 28px; height: 28px;
-            font-size: 14px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-          }
-          .tool-btn:active {
-            background: #2563EB;
-            color: #FFFFFF;
-          }
-          #badge-equation {
-            position: absolute;
-            top: 8px; left: 8px;
-            background: rgba(15, 23, 42, 0.85);
-            color: #67E8F9;
-            border: 1px solid rgba(103, 232, 249, 0.3);
-            border-radius: 4px;
-            padding: 3px 8px;
-            font-size: 11px;
-            font-family: monospace;
-            font-weight: 600;
-            z-index: 10;
-            pointer-events: none;
-          }
-        </style>
-        </head>
-        <body>
-        <div id="container">
-          <div id="badge-equation">f(x) = ${activeExpression.replace("<", "&lt;").replace(">", "&gt;")}</div>
-          <div id="toolbar">
-            <button class="tool-btn" onclick="zoomIn()" title="Zoom In">+</button>
-            <button class="tool-btn" onclick="zoomOut()" title="Zoom Out">−</button>
-            <button class="tool-btn" onclick="resetView()" title="Reset">⟲</button>
-          </div>
-          <canvas id="graph-canvas"></canvas>
-        </div>
-
-        <script>
-          var defaultXMin = ${config.xMin};
-          var defaultXMax = ${config.xMax};
-          var defaultYMin = ${config.yMin};
-          var defaultYMax = ${config.yMax};
-
-          var curXMin = defaultXMin;
-          var curXMax = defaultXMax;
-          var curYMin = defaultYMin;
-          var curYMax = defaultYMax;
-
-          var currentExpr = $escapedExpr;
-          var commands = ${commandsJsonArray.toString()};
-          var analysisPoints = ${pointsJsonArray.toString()};
-          var showTangent = ${config.showTangentSlider};
-          var showAsymptotes = ${config.showAsymptotes};
-          var showArea = ${config.showAreaUnderCurve};
-          var areaA = ${config.integralA};
-          var areaB = ${config.integralB};
-          var tangentValX = $tangentX;
-
-          var compiledFn = null;
-
-          function prepareExpr(expr) {
-            var s = (expr || "").trim();
-            s = s.replace(/^[fy]\s*\([^)]*\)\s*=\s*/i, '');
-            s = s.replace(/^[fy]\s*=\s*/i, '');
-            s = s.replace(/\bpi\b/gi, 'Math.PI');
-            s = s.replace(/\be\b(?![a-zA-Z0-9_])/g, 'Math.E');
-            s = s.replace(/\bsen\b/gi, 'Math.sin');
-            s = s.replace(/\bsin\b/gi, 'Math.sin');
-            s = s.replace(/\bcos\b/gi, 'Math.cos');
-            s = s.replace(/\btg\b/gi, 'Math.tan');
-            s = s.replace(/\btan\b/gi, 'Math.tan');
-            s = s.replace(/\bsqrt\b/gi, 'Math.sqrt');
-            s = s.replace(/\bcbrt\b/gi, 'Math.cbrt');
-            s = s.replace(/\babs\b/gi, 'Math.abs');
-            s = s.replace(/\bln\b/gi, 'Math.log');
-            s = s.replace(/\blog\b/gi, 'Math.log10');
-            s = s.replace(/\bexp\b/gi, 'Math.exp');
-            // Multiplicação implícita
-            s = s.replace(/(\d+(\.\d+)?)\s*x\b/gi, '$1*x');
-            s = s.replace(/(\d+(\.\d+)?)\s*\(/g, '$1*(');
-            s = s.replace(/\)\s*\(/g, ')*(');
-            s = s.replace(/\)\s*x\b/gi, ')*x');
-            s = s.replace(/x\s*\(/gi, 'x*(');
-            s = s.replace(/\^/g, '**');
-            return s;
-          }
-
-          function compileCurrentExpr() {
-            try {
-              var jsCode = prepareExpr(currentExpr);
-              compiledFn = new Function('x', 'return (' + jsCode + ');');
-            } catch(e) {
-              compiledFn = null;
-            }
-          }
-
-          function evalFx(x) {
-            if (!compiledFn) return NaN;
-            try {
-              var y = compiledFn(x);
-              if (typeof y !== 'number' || isNaN(y) || !isFinite(y)) return NaN;
-              return y;
-            } catch(e) {
-              return NaN;
-            }
-          }
-
-          compileCurrentExpr();
-
-          var cvs = document.getElementById('graph-canvas');
-          var ctx = cvs.getContext('2d');
-
-          function toPx(x, y, w, h) {
-            return {
-              px: ((x - curXMin) / (curXMax - curXMin)) * w,
-              py: h - ((y - curYMin) / (curYMax - curYMin)) * h
-            };
-          }
-
-          function drawGraph() {
-            if (!cvs) return;
-            var w = cvs.clientWidth || window.innerWidth || 360;
-            var h = cvs.clientHeight || window.innerHeight || 260;
-            if (w < 40 || h < 40) return;
-
-            var dpr = window.devicePixelRatio || 1;
-            cvs.width = Math.round(w * dpr);
-            cvs.height = Math.round(h * dpr);
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            fun toPxX(x: Double): Float = (((x - curXMin) / (curXMax - curXMin)) * w).toFloat()
+            fun toPxY(y: Double): Float = (h - ((y - curYMin) / (curYMax - curYMin)) * h).toFloat()
 
             // Fundo escuro profundo
-            ctx.fillStyle = "#0B1120";
-            ctx.fillRect(0, 0, w, h);
+            drawRect(Color(0xFF0B1120))
 
-            // Grade Secundária / Primária
-            function getNiceStep(range) {
-              var raw = range / 8;
-              var mag = Math.pow(10, Math.floor(Math.log10(raw)));
-              var norm = raw / mag;
-              if (norm < 1.5) return mag;
-              if (norm < 3.5) return 2 * mag;
-              if (norm < 7.5) return 5 * mag;
-              return 10 * mag;
+            // Passo de grade inteligente
+            val xSpan = maxOf(0.1, curXMax - curXMin)
+            val ySpan = maxOf(0.1, curYMax - curYMin)
+            fun getNiceStep(range: Double): Double {
+                val raw = range / 8.0
+                val mag = 10.0.pow(floor(log10(maxOf(1e-6, raw))))
+                val norm = raw / mag
+                return when {
+                    norm < 1.5 -> mag
+                    norm < 3.5 -> 2.0 * mag
+                    norm < 7.5 -> 5.0 * mag
+                    else -> 10.0 * mag
+                }
+            }
+            val xStep = getNiceStep(xSpan)
+            val yStep = getNiceStep(ySpan)
+
+            // Linhas de Grade
+            val gridColor = Color(0x18FFFFFF)
+            var gx = floor(curXMin / xStep) * xStep
+            while (gx <= curXMax) {
+                val px = toPxX(gx)
+                drawLine(
+                    color = gridColor,
+                    start = Offset(px, 0f),
+                    end = Offset(px, h),
+                    strokeWidth = 1f
+                )
+                gx += xStep
             }
 
-            var xStep = getNiceStep(curXMax - curXMin);
-            var yStep = getNiceStep(curYMax - curYMin);
-
-            // Grade
-            ctx.lineWidth = 1;
-            ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
-            var firstX = Math.floor(curXMin / xStep) * xStep;
-            for (var gx = firstX; gx <= curXMax; gx += xStep) {
-              var p = toPx(gx, 0, w, h);
-              ctx.beginPath();
-              ctx.moveTo(p.px, 0);
-              ctx.lineTo(p.px, h);
-              ctx.stroke();
-            }
-            var firstY = Math.floor(curYMin / yStep) * yStep;
-            for (var gy = firstY; gy <= curYMax; gy += yStep) {
-              var p = toPx(0, gy, w, h);
-              ctx.beginPath();
-              ctx.moveTo(0, p.py);
-              ctx.lineTo(w, p.py);
-              ctx.stroke();
+            var gy = floor(curYMin / yStep) * yStep
+            while (gy <= curYMax) {
+                val py = toPxY(gy)
+                drawLine(
+                    color = gridColor,
+                    start = Offset(0f, py),
+                    end = Offset(w, py),
+                    strokeWidth = 1f
+                )
+                gy += yStep
             }
 
             // Eixos Cartesiano (X e Y)
-            ctx.lineWidth = 1.6;
-            ctx.strokeStyle = "rgba(148, 163, 184, 0.6)";
+            val axisColor = Color(0xAA94A3B8)
+            val p0X = toPxX(0.0)
+            val p0Y = toPxY(0.0)
+            val xAxisY = p0Y.coerceIn(16f, h - 16f)
+            val yAxisX = p0X.coerceIn(22f, w - 22f)
 
             // Eixo X
-            var p0 = toPx(0, 0, w, h);
-            var xAxisY = Math.max(16, Math.min(h - 16, p0.py));
-            ctx.beginPath();
-            ctx.moveTo(0, xAxisY);
-            ctx.lineTo(w, xAxisY);
-            ctx.stroke();
-
-            // Seta Eixo X
-            ctx.fillStyle = "rgba(148, 163, 184, 0.8)";
-            ctx.beginPath();
-            ctx.moveTo(w - 2, xAxisY);
-            ctx.lineTo(w - 8, xAxisY - 4);
-            ctx.lineTo(w - 8, xAxisY + 4);
-            ctx.fill();
+            drawLine(
+                color = axisColor,
+                start = Offset(0f, xAxisY),
+                end = Offset(w, xAxisY),
+                strokeWidth = 1.8f
+            )
+            // Seta X
+            val arrowPathX = Path().apply {
+                moveTo(w - 2f, xAxisY)
+                lineTo(w - 10f, xAxisY - 4f)
+                lineTo(w - 10f, xAxisY + 4f)
+                close()
+            }
+            drawPath(arrowPathX, axisColor)
 
             // Eixo Y
-            var yAxisX = Math.max(22, Math.min(w - 22, p0.px));
-            ctx.beginPath();
-            ctx.moveTo(yAxisX, 0);
-            ctx.lineTo(yAxisX, h);
-            ctx.stroke();
-
-            // Seta Eixo Y
-            ctx.beginPath();
-            ctx.moveTo(yAxisX, 2);
-            ctx.lineTo(yAxisX - 4, 8);
-            ctx.lineTo(yAxisX + 4, 8);
-            ctx.fill();
-
-            // Legenda e Marcadores numéricos
-            ctx.fillStyle = "rgba(148, 163, 184, 0.75)";
-            ctx.font = "10px monospace";
-            for (var sx = firstX; sx <= curXMax; sx += xStep) {
-              if (Math.abs(sx) > 0.0001) {
-                var p = toPx(sx, 0, w, h);
-                var label = Number(sx.toFixed(2)).toString();
-                ctx.fillText(label, p.px - 6, xAxisY + 12);
-              }
+            drawLine(
+                color = axisColor,
+                start = Offset(yAxisX, 0f),
+                end = Offset(yAxisX, h),
+                strokeWidth = 1.8f
+            )
+            // Seta Y
+            val arrowPathY = Path().apply {
+                moveTo(yAxisX, 2f)
+                lineTo(yAxisX - 4f, 10f)
+                lineTo(yAxisX + 4f, 10f)
+                close()
             }
-            for (var sy = firstY; sy <= curYMax; sy += yStep) {
-              if (Math.abs(sy) > 0.0001) {
-                var p = toPx(0, sy, w, h);
-                var label = Number(sy.toFixed(2)).toString();
-                ctx.fillText(label, yAxisX + 4, p.py + 3);
-              }
-            }
+            drawPath(arrowPathY, axisColor)
 
-            // Letras dos Eixos
-            ctx.fillStyle = "#93C5FD";
-            ctx.font = "bold 11px sans-serif";
-            ctx.fillText("x", w - 12, xAxisY - 6);
-            ctx.fillText("y", yAxisX + 8, 14);
-
-            // Área sob a curva (se ativada)
-            if (showArea) {
-              ctx.save();
-              ctx.fillStyle = "rgba(56, 189, 248, 0.22)";
-              ctx.beginPath();
-              var startPt = toPx(areaA, 0, w, h);
-              ctx.moveTo(startPt.px, startPt.py);
-              var areaSteps = 120;
-              var dArea = (areaB - areaA) / areaSteps;
-              for (var ai = 0; ai <= areaSteps; ai++) {
-                var curX = areaA + ai * dArea;
-                var curY = evalFx(curX);
-                if (!isNaN(curY)) {
-                  var p = toPx(curX, curY, w, h);
-                  ctx.lineTo(p.px, p.py);
+            // Rótulos numéricos nos eixos
+            drawIntoCanvas { canvas ->
+                val paint = android.graphics.Paint().apply {
+                    color = 0xAA94A3B8.toInt()
+                    textSize = 24f
+                    typeface = android.graphics.Typeface.MONOSPACE
+                    isAntiAlias = true
                 }
-              }
-              var endPt = toPx(areaB, 0, w, h);
-              ctx.lineTo(endPt.px, endPt.py);
-              ctx.closePath();
-              ctx.fill();
-              ctx.restore();
+
+                // X labels
+                var lx = floor(curXMin / xStep) * xStep
+                while (lx <= curXMax) {
+                    if (abs(lx) > 0.001) {
+                        val px = toPxX(lx)
+                        val text = if (abs(lx - round(lx)) < 0.001) lx.toInt().toString() else "%.1f".format(lx)
+                        canvas.nativeCanvas.drawText(text, px - 12f, xAxisY + 22f, paint)
+                    }
+                    lx += xStep
+                }
+
+                // Y labels
+                var ly = floor(curYMin / yStep) * yStep
+                while (ly <= curYMax) {
+                    if (abs(ly) > 0.001) {
+                        val py = toPxY(ly)
+                        val text = if (abs(ly - round(ly)) < 0.001) ly.toInt().toString() else "%.1f".format(ly)
+                        canvas.nativeCanvas.drawText(text, yAxisX + 6f, py + 8f, paint)
+                    }
+                    ly += yStep
+                }
+
+                // Labels dos eixos 'x' e 'y'
+                val axisLabelPaint = android.graphics.Paint().apply {
+                    color = 0xFF93C5FD.toInt()
+                    textSize = 28f
+                    typeface = android.graphics.Typeface.DEFAULT_BOLD
+                    isAntiAlias = true
+                }
+                canvas.nativeCanvas.drawText("x", w - 24f, xAxisY - 8f, axisLabelPaint)
+                canvas.nativeCanvas.drawText("y", yAxisX + 12f, 28f, axisLabelPaint)
             }
 
-            // Assíntotas do config / commands
-            commands.forEach(function(cmd) {
-              var trimmed = cmd.trim();
-              if (trimmed.startsWith("x =") || trimmed.startsWith("x=")) {
-                var val = parseFloat(trimmed.replace("x", "").replace("=", "").trim());
-                if (!isNaN(val)) {
-                  var p = toPx(val, 0, w, h);
-                  ctx.save();
-                  ctx.strokeStyle = "#EF4444";
-                  ctx.lineWidth = 1.5;
-                  ctx.setLineDash([5, 5]);
-                  ctx.beginPath();
-                  ctx.moveTo(p.px, 0);
-                  ctx.lineTo(p.px, h);
-                  ctx.stroke();
-                  ctx.fillStyle = "#F87171";
-                  ctx.font = "bold 10px monospace";
-                  ctx.fillText("x = " + val, p.px + 4, 24);
-                  ctx.restore();
+            // Área sob a curva (se ativada, ex: integrais)
+            if (config.showAreaUnderCurve) {
+                val areaPath = Path()
+                val a = config.integralA
+                val b = config.integralB
+                val areaSteps = 100
+                val dArea = (b - a) / areaSteps
+                var started = false
+                val startPx = toPxX(a)
+                val basePy = toPxY(0.0)
+                areaPath.moveTo(startPx, basePy)
+                for (ai in 0..areaSteps) {
+                    val cx = a + ai * dArea
+                    val cy = MathExpressionEvaluator.evaluate(activeExpression, cx)
+                    if (!cy.isNaN()) {
+                        areaPath.lineTo(toPxX(cx), toPxY(cy))
+                        started = true
+                    }
                 }
-              } else if (trimmed.startsWith("y =") || trimmed.startsWith("y=")) {
-                var val = parseFloat(trimmed.replace("y", "").replace("=", "").trim());
-                if (!isNaN(val)) {
-                  var p = toPx(0, val, w, h);
-                  ctx.save();
-                  ctx.strokeStyle = "#F59E0B";
-                  ctx.lineWidth = 1.5;
-                  ctx.setLineDash([5, 5]);
-                  ctx.beginPath();
-                  ctx.moveTo(0, p.py);
-                  ctx.lineTo(w, p.py);
-                  ctx.stroke();
-                  ctx.fillStyle = "#FCD34D";
-                  ctx.font = "bold 10px monospace";
-                  ctx.fillText("y = " + val, 8, p.py - 4);
-                  ctx.restore();
+                if (started) {
+                    areaPath.lineTo(toPxX(b), basePy)
+                    areaPath.close()
+                    drawPath(areaPath, Color(0x3838BDF8))
                 }
-              }
-            });
+            }
+
+            // Assíntotas do config / commands (x = c ou y = c)
+            config.commands.forEach { cmd ->
+                val trimmed = cmd.trim()
+                if (trimmed.startsWith("x =") || trimmed.startsWith("x=")) {
+                    val cVal = trimmed.replace("x", "").replace("=", "").trim().toDoubleOrNull()
+                    if (cVal != null) {
+                        val px = toPxX(cVal)
+                        drawLine(
+                            color = Color(0xFFEF4444),
+                            start = Offset(px, 0f),
+                            end = Offset(px, h),
+                            strokeWidth = 2f,
+                            pathEffect = PathEffect.dashPathEffect(floatArrayOf(12f, 10f), 0f)
+                        )
+                    }
+                } else if (trimmed.startsWith("y =") || trimmed.startsWith("y=")) {
+                    val cVal = trimmed.replace("y", "").replace("=", "").trim().toDoubleOrNull()
+                    if (cVal != null) {
+                        val py = toPxY(cVal)
+                        drawLine(
+                            color = Color(0xFFF59E0B),
+                            start = Offset(0f, py),
+                            end = Offset(w, py),
+                            strokeWidth = 2f,
+                            pathEffect = PathEffect.dashPathEffect(floatArrayOf(12f, 10f), 0f)
+                        )
+                    }
+                }
+            }
 
             // Curva da Função f(x)
-            ctx.save();
-            ctx.strokeStyle = "#38BDF8";
-            ctx.lineWidth = 2.8;
-            ctx.shadowColor = "rgba(56, 189, 248, 0.4)";
-            ctx.shadowBlur = 6;
-            ctx.beginPath();
+            val curvePath = Path()
+            val steps = 350
+            val dx = xSpan / steps
+            var drawing = false
+            var prevY = Double.NaN
 
-            var steps = 400;
-            var dx = (curXMax - curXMin) / steps;
-            var drawing = false;
-            var prevY = NaN;
+            for (si in 0..steps) {
+                val cx = curXMin + si * dx
+                val cy = MathExpressionEvaluator.evaluate(activeExpression, cx)
 
-            for (var i = 0; i <= steps; i++) {
-              var currX = curXMin + i * dx;
-              var currY = evalFx(currX);
-
-              // Detecção de corte assintótico vertical para não conectar com reta espúria
-              var isDiscontinuous = !isNaN(prevY) && !isNaN(currY) && Math.abs(currY - prevY) > (curYMax - curYMin) * 0.8;
-
-              if (isNaN(currY) || Math.abs(currY) > 200 || isDiscontinuous) {
-                drawing = false;
-                prevY = currY;
-                continue;
-              }
-
-              var p = toPx(currX, currY, w, h);
-              if (!drawing) {
-                ctx.moveTo(p.px, p.py);
-                drawing = true;
-              } else {
-                ctx.lineTo(p.px, p.py);
-              }
-              prevY = currY;
-            }
-            ctx.stroke();
-            ctx.restore();
-
-            // Reta Tangente e Ponto T0 (se ativado)
-            if (showTangent) {
-              var y0 = evalFx(tangentValX);
-              if (isNaN(y0)) {
-                y0 = (evalFx(tangentValX + 0.0001) + evalFx(tangentValX - 0.0001)) / 2;
-              }
-              if (!isNaN(y0)) {
-                var hDiff = 0.0005;
-                var yRight = evalFx(tangentValX + hDiff);
-                var yLeft = evalFx(tangentValX - hDiff);
-                var slope = (yRight - yLeft) / (2 * hDiff);
-
-                if (isFinite(slope)) {
-                  var pA = toPx(curXMin, y0 + slope * (curXMin - tangentValX), w, h);
-                  var pB = toPx(curXMax, y0 + slope * (curXMax - tangentValX), w, h);
-
-                  ctx.save();
-                  ctx.strokeStyle = "#FACC15";
-                  ctx.lineWidth = 2.2;
-                  ctx.setLineDash([4, 4]);
-                  ctx.beginPath();
-                  ctx.moveTo(pA.px, pA.py);
-                  ctx.lineTo(pB.px, pB.py);
-                  ctx.stroke();
-                  ctx.restore();
-
-                  var pT = toPx(tangentValX, y0, w, h);
-                  ctx.fillStyle = "#FACC15";
-                  ctx.beginPath();
-                  ctx.arc(pT.px, pT.py, 5, 0, Math.PI * 2);
-                  ctx.fill();
-
-                  ctx.fillStyle = "#FEF08A";
-                  ctx.font = "bold 11px monospace";
-                  var slopeLabel = "T(" + tangentValX.toFixed(2) + ", " + y0.toFixed(2) + ") m=" + slope.toFixed(2);
-                  ctx.fillText(slopeLabel, Math.min(w - 140, pT.px + 8), Math.max(20, pT.py - 8));
+                // Detecção de descontinuidade vertical assintótica
+                val isDiscontinuous = !prevY.isNaN() && !cy.isNaN() && abs(cy - prevY) > ySpan * 0.8
+                if (cy.isNaN() || abs(cy) > 250 || isDiscontinuous) {
+                    drawing = false
+                    prevY = cy
+                    continue
                 }
-              }
+
+                val px = toPxX(cx)
+                val py = toPxY(cy)
+
+                if (!drawing) {
+                    curvePath.moveTo(px, py)
+                    drawing = true
+                } else {
+                    curvePath.lineTo(px, py)
+                }
+                prevY = cy
             }
 
-            // Pontos de Análise (buracos abertos e pontos críticos)
-            analysisPoints.forEach(function(pt) {
-              var p = toPx(pt.x, pt.y, w, h);
-              ctx.save();
-              var color = pt.color || "#EF4444";
-              ctx.strokeStyle = color;
-              ctx.lineWidth = 2.5;
+            drawPath(
+                path = curvePath,
+                color = Color(0xFF38BDF8),
+                style = Stroke(
+                    width = 3.2.dp.toPx(),
+                    cap = StrokeCap.Round,
+                    join = StrokeJoin.Round
+                )
+            )
 
-              if (pt.isOpenCircle) {
-                ctx.fillStyle = "#0B1120";
-                ctx.beginPath();
-                ctx.arc(p.px, p.py, 6, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.stroke();
-              } else {
-                ctx.fillStyle = color;
-                ctx.beginPath();
-                ctx.arc(p.px, p.py, 5, 0, Math.PI * 2);
-                ctx.fill();
-              }
-
-              ctx.fillStyle = "#F8FAFC";
-              ctx.font = "bold 11px sans-serif";
-              ctx.fillText(pt.label + " (" + pt.x + ", " + pt.y + ")", p.px + 8, p.py - 8);
-              ctx.restore();
-            });
-          }
-
-          // Pan e Zoom Interativos
-          var isDragging = false;
-          var lastTouchX = 0, lastTouchY = 0;
-
-          cvs.addEventListener('touchstart', function(e) {
-            if (e.touches.length === 1) {
-              isDragging = true;
-              lastTouchX = e.touches[0].clientX;
-              lastTouchY = e.touches[0].clientY;
+            // Reta Tangente (se ativado)
+            if (config.showTangentSlider) {
+                var y0 = MathExpressionEvaluator.evaluate(activeExpression, tangentX)
+                if (y0.isNaN()) {
+                    y0 = (MathExpressionEvaluator.evaluate(activeExpression, tangentX + 0.001) +
+                          MathExpressionEvaluator.evaluate(activeExpression, tangentX - 0.001)) / 2.0
+                }
+                if (!y0.isNaN()) {
+                    val slope = MathExpressionEvaluator.derivative(activeExpression, tangentX)
+                    if (!slope.isNaN() && !slope.isInfinite()) {
+                        val yA = y0 + slope * (curXMin - tangentX)
+                        val yB = y0 + slope * (curXMax - tangentX)
+                        drawLine(
+                            color = Color(0xFFFACC15),
+                            start = Offset(toPxX(curXMin), toPxY(yA)),
+                            end = Offset(toPxX(curXMax), toPxY(yB)),
+                            strokeWidth = 2.2f,
+                            pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 8f), 0f)
+                        )
+                        // Ponto T0
+                        drawCircle(
+                            color = Color(0xFFFACC15),
+                            radius = 6.dp.toPx(),
+                            center = Offset(toPxX(tangentX), toPxY(y0))
+                        )
+                    }
+                }
             }
-          }, { passive: true });
 
-          cvs.addEventListener('touchmove', function(e) {
-            if (isDragging && e.touches.length === 1) {
-              var dx = e.touches[0].clientX - lastTouchX;
-              var dy = e.touches[0].clientY - lastTouchY;
-              lastTouchX = e.touches[0].clientX;
-              lastTouchY = e.touches[0].clientY;
+            // Pontos de Análise (raízes, buracos abertos, assíntotas)
+            config.analysisPoints.forEach { pt ->
+                val pX = toPxX(pt.x)
+                val pY = toPxY(pt.y)
+                val ptColor = try {
+                    Color(android.graphics.Color.parseColor(pt.colorHex))
+                } catch (_: Throwable) {
+                    Color(0xFFEF4444)
+                }
 
-              var w = cvs.clientWidth || 360;
-              var h = cvs.clientHeight || 260;
-              var xRange = curXMax - curXMin;
-              var yRange = curYMax - curYMin;
+                if (pt.isOpenCircle) {
+                    // Buraco aberto de descontinuidade
+                    drawCircle(
+                        color = Color(0xFF0B1120),
+                        radius = 6.dp.toPx(),
+                        center = Offset(pX, pY)
+                    )
+                    drawCircle(
+                        color = ptColor,
+                        radius = 6.dp.toPx(),
+                        center = Offset(pX, pY),
+                        style = Stroke(width = 2.5.dp.toPx())
+                    )
+                } else {
+                    drawCircle(
+                        color = ptColor,
+                        radius = 5.dp.toPx(),
+                        center = Offset(pX, pY)
+                    )
+                }
 
-              var xShift = (dx / w) * xRange;
-              var yShift = (dy / h) * yRange;
-
-              curXMin -= xShift; curXMax -= xShift;
-              curYMin += yShift; curYMax += yShift;
-              requestAnimationFrame(drawGraph);
+                drawIntoCanvas { canvas ->
+                    val ptPaint = android.graphics.Paint().apply {
+                        color = 0xFFF8FAFC.toInt()
+                        textSize = 24f
+                        typeface = android.graphics.Typeface.DEFAULT_BOLD
+                        isAntiAlias = true
+                    }
+                    val label = "${pt.label} (${pt.x}, ${pt.y})"
+                    canvas.nativeCanvas.drawText(label, pX + 12f, pY - 8f, ptPaint)
+                }
             }
-          }, { passive: true });
+        }
 
-          cvs.addEventListener('touchend', function() { isDragging = false; });
-          cvs.addEventListener('touchcancel', function() { isDragging = false; });
+        // Overlay: Badge da Equação (Top Left)
+        Surface(
+            color = Color(0xDD0F172A),
+            shape = RoundedCornerShape(4.dp),
+            border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x4D67E8F9)),
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .padding(8.dp)
+        ) {
+            Text(
+                text = "f(x) = $activeExpression",
+                color = Color(0xFF67E8F9),
+                fontFamily = FontFamily.Monospace,
+                fontWeight = FontWeight.SemiBold,
+                fontSize = 11.sp,
+                modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+            )
+        }
 
-          // Mouse Drag para desktop/emulador
-          cvs.addEventListener('mousedown', function(e) {
-            isDragging = true;
-            lastTouchX = e.clientX;
-            lastTouchY = e.clientY;
-          });
-          window.addEventListener('mousemove', function(e) {
-            if (isDragging) {
-              var dx = e.clientX - lastTouchX;
-              var dy = e.clientY - lastTouchY;
-              lastTouchX = e.clientX;
-              lastTouchY = e.clientY;
-
-              var w = cvs.clientWidth || 360;
-              var h = cvs.clientHeight || 260;
-              var xRange = curXMax - curXMin;
-              var yRange = curYMax - curYMin;
-
-              var xShift = (dx / w) * xRange;
-              var yShift = (dy / h) * yRange;
-
-              curXMin -= xShift; curXMax -= xShift;
-              curYMin += yShift; curYMax += yShift;
-              requestAnimationFrame(drawGraph);
+        // Overlay: Toolbar de Zoom e Reset (Top Right)
+        Row(
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(8.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            Surface(
+                color = Color(0xD91E293B),
+                shape = RoundedCornerShape(6.dp),
+                border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x3394A3B8)),
+                modifier = Modifier
+                    .size(28.dp)
+                    .clickable {
+                        val xSpan = curXMax - curXMin
+                        val ySpan = curYMax - curYMin
+                        curXMin += xSpan * 0.15
+                        curXMax -= xSpan * 0.15
+                        curYMin += ySpan * 0.15
+                        curYMax -= ySpan * 0.15
+                    }
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Text("+", color = Color(0xFF94A3B8), fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                }
             }
-          });
-          window.addEventListener('mouseup', function() { isDragging = false; });
 
-          window.zoomIn = function() {
-            var xMid = (curXMin + curXMax) / 2;
-            var yMid = (curYMin + curYMax) / 2;
-            var xHalf = (curXMax - curXMin) * 0.35;
-            var yHalf = (curYMax - curYMin) * 0.35;
-            curXMin = xMid - xHalf; curXMax = xMid + xHalf;
-            curYMin = yMid - yHalf; curYMax = yMid + yHalf;
-            drawGraph();
-          };
+            Surface(
+                color = Color(0xD91E293B),
+                shape = RoundedCornerShape(6.dp),
+                border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x3394A3B8)),
+                modifier = Modifier
+                    .size(28.dp)
+                    .clickable {
+                        val xSpan = curXMax - curXMin
+                        val ySpan = curYMax - curYMin
+                        curXMin -= xSpan * 0.2
+                        curXMax += xSpan * 0.2
+                        curYMin -= ySpan * 0.2
+                        curYMax += ySpan * 0.2
+                    }
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Text("−", color = Color(0xFF94A3B8), fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                }
+            }
 
-          window.zoomOut = function() {
-            var xMid = (curXMin + curXMax) / 2;
-            var yMid = (curYMin + curYMax) / 2;
-            var xHalf = (curXMax - curXMin) * 0.7;
-            var yHalf = (curYMax - curYMin) * 0.7;
-            curXMin = xMid - xHalf; curXMax = xMid + xHalf;
-            curYMin = yMid - yHalf; curYMax = yMid + yHalf;
-            drawGraph();
-          };
-
-          window.resetView = function() {
-            curXMin = defaultXMin; curXMax = defaultXMax;
-            curYMin = defaultYMin; curYMax = defaultYMax;
-            drawGraph();
-          };
-
-          window.updateFunction = function(newExpr) {
-            currentExpr = newExpr;
-            document.getElementById('badge-equation').innerText = 'f(x) = ' + newExpr;
-            compileCurrentExpr();
-            drawGraph();
-          };
-
-          window.setTangentPoint = function(xVal) {
-            tangentValX = xVal;
-            drawGraph();
-          };
-
-          // Redimensionamento automático
-          if (window.ResizeObserver) {
-            new ResizeObserver(function() {
-              requestAnimationFrame(drawGraph);
-            }).observe(cvs);
-          }
-          window.addEventListener('resize', drawGraph);
-          window.addEventListener('load', drawGraph);
-
-          // Renderização inicial imediata
-          requestAnimationFrame(drawGraph);
-          setTimeout(drawGraph, 50);
-          setTimeout(drawGraph, 200);
-        </script>
-        </body>
-        </html>
-    """.trimIndent()
+            Surface(
+                color = Color(0xD91E293B),
+                shape = RoundedCornerShape(6.dp),
+                border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x3394A3B8)),
+                modifier = Modifier
+                    .size(28.dp)
+                    .clickable {
+                        curXMin = config.xMin
+                        curXMax = config.xMax
+                        curYMin = config.yMin
+                        curYMax = config.yMax
+                    }
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Text("⟲", color = Color(0xFF94A3B8), fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                }
+            }
+        }
+    }
 }

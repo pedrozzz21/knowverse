@@ -13,6 +13,7 @@ enum class ExerciseDiscipline(val label: String, val tag: String) {
     LANGUAGES("Linguagens e Códigos", "languages"),
     PHYSICS("Física ENEM", "physics"),
     BIOLOGY("Biologia ENEM", "biology"),
+    CHEMISTRY("Química • Natureza ENEM", "chemistry"),
     BASIC_MATH("Matemática Básica", "basic_math"),
     CALCULUS("Cálculo I", "calculus"),
     PROGRAMMING("Programação (Python)", "programming")
@@ -1450,7 +1451,7 @@ print(f"Área do Quadrado: {q.area()} cm²")""",
             }
         }
 
-        return curatedExercises +
+        val combined = curatedExercises +
                 GeoGebraGeometryExercises.exercises +
                 ExtendedExerciseCollection.additionalExercises +
                 ExpandedExerciseVariants.variantExercises +
@@ -1463,6 +1464,8 @@ print(f"Área do Quadrado: {q.area()} cm²")""",
                 convertedHistory +
                 convertedGeography +
                 externalEnemExercises
+
+        return combined.distinctBy { it.id }
     }
 
     private var externalEnemExercises: List<UniversalExercise> = emptyList()

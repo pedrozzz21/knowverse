@@ -195,9 +195,10 @@ fun ActionBentoGrid(
                             style = MaterialTheme.typography.titleSmall.copy(
                                 fontWeight = FontWeight.Bold,
                                 color = TextPrimary,
-                                fontSize = 14.sp
+                                fontSize = 13.5.sp,
+                                lineHeight = 17.sp
                             ),
-                            maxLines = 1,
+                            maxLines = 2,
                             overflow = TextOverflow.Ellipsis
                         )
                         Spacer(modifier = Modifier.height(2.dp))
@@ -392,9 +393,10 @@ fun ActionBentoGrid(
                             text = "Treino prático de sintaxe e raciocínio lógico",
                             style = MaterialTheme.typography.bodySmall.copy(
                                 color = TextSecondary,
-                                fontSize = 11.sp
+                                fontSize = 10.5.sp,
+                                lineHeight = 14.sp
                             ),
-                            maxLines = 1,
+                            maxLines = 2,
                             overflow = TextOverflow.Ellipsis
                         )
                     }

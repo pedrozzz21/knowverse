@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon -->
+    <path
+        android:fillColor="#2E1065"
+        android:strokeColor="#8B5CF6"
+        android:strokeWidth="2.5"
+        android:pathData="M36,4 L64,18 L64,48 L36,68 L8,48 L8,18 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#4C1D95"
+        android:pathData="M36,9 L59,21 L59,46 L36,63 L13,46 L13,21 Z" />
+    <!-- Math Function / Sigma / Integral / Square Root Motif -->
+    <path
+        android:fillColor="#C4B5FD"
+        android:pathData="M23,26 L47,26 L38,36 L47,46 L23,46 L32,36 Z" />
+    <!-- Center Star of Mastery -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,17 L37.5,20 L41,20.5 L38.5,22.5 L39,26 L36,24 L33,26 L33.5,22.5 L31,20.5 L34.5,20 Z" />
+</vector>

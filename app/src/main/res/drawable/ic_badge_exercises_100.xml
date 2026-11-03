@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon in Gold Tech -->
+    <path
+        android:fillColor="#1C1917"
+        android:strokeColor="#F59E0B"
+        android:strokeWidth="2.8"
+        android:pathData="M36,4 L64,18 L64,48 L36,68 L8,48 L8,18 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#78350F"
+        android:pathData="M36,9 L59,21 L59,46 L36,63 L13,46 L13,21 Z" />
+    <!-- 100 Centurion Laurel & Target -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M36,22 C28.27,22 22,28.27 22,36 C22,43.73 28.27,50 36,50 C43.73,50 50,43.73 50,36 C50,28.27 43.73,22 36,22 Z M36,45 C31,45 27,41 27,36 C27,31 31,27 36,27 C41,27 45,31 45,36 C45,41 41,45 36,45 Z" />
+    <!-- Roman 'C' / Laurel Motif -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,31 L38,31 L38,33 L34,33 Z M34,39 L38,39 L38,41 L34,41 Z M33,33 L35,33 L35,39 L33,39 Z" />
+    <!-- Three Mastery Gems -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M27,24 L29,22 L31,24 L29,26 Z M41,24 L43,22 L45,24 L43,26 Z M36,14 L38,12 L40,14 L38,16 Z" />
+</vector>

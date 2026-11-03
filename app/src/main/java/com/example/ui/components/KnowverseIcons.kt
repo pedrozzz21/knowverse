@@ -461,4 +461,42 @@ object KnowverseIcons {
             }
         }.build()
     }
+
+    val ChemistryFlask: ImageVector by lazy {
+        ImageVector.Builder(
+            name = "ChemistryFlaskIcon",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f
+        ).apply {
+            path(fill = SolidColor(Color(0xFF06B6D4))) {
+                // Erlenmeyer Flask
+                moveTo(9f, 2f)
+                horizontalLineTo(15f)
+                curveTo(15.55f, 2f, 16f, 2.45f, 16f, 3f)
+                curveTo(16f, 3.55f, 15.55f, 4f, 15f, 4f)
+                horizontalLineTo(14f)
+                verticalLineTo(9f)
+                lineTo(19.55f, 18.25f)
+                curveTo(20.3f, 19.5f, 19.4f, 21f, 17.95f, 21f)
+                horizontalLineTo(6.05f)
+                curveTo(4.6f, 21f, 3.7f, 19.5f, 4.45f, 18.25f)
+                lineTo(10f, 9f)
+                verticalLineTo(4f)
+                horizontalLineTo(9f)
+                curveTo(8.45f, 4f, 8f, 3.55f, 8f, 3f)
+                curveTo(8.45f, 2.45f, 8.45f, 2f, 9f, 2f)
+                close()
+                // Liquid inside flask
+                moveTo(8.5f, 14f)
+                lineTo(6.5f, 19f)
+                horizontalLineTo(17.5f)
+                lineTo(15.5f, 14f)
+                horizontalLineTo(8.5f)
+                close()
+            }
+        }.build()
+    }
 }
+

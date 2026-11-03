@@ -168,10 +168,11 @@ fun AchievementsScreen(
                         modifier = Modifier.padding(14.dp),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
+                        val isStreakIgnited = userProgress.hasStudiedToday() && userProgress.currentStreak > 0
                         Icon(
-                            imageVector = KnowverseIcons.StreakFire,
-                            contentDescription = null,
-                            tint = StreakFire,
+                            imageVector = if (isStreakIgnited) KnowverseIcons.StreakFire else KnowverseIcons.FlameInactive,
+                            contentDescription = if (isStreakIgnited) "Sequência ativa" else "Sequência inativa",
+                            tint = if (isStreakIgnited) StreakFire else TextTertiary,
                             modifier = Modifier.size(28.dp)
                         )
                         Spacer(modifier = Modifier.height(6.dp))
@@ -179,7 +180,7 @@ fun AchievementsScreen(
                             text = "${userProgress.currentStreak} dias",
                             style = MaterialTheme.typography.titleMedium.copy(
                                 fontWeight = FontWeight.Bold,
-                                color = TextPrimary
+                                color = if (isStreakIgnited) StreakFire else TextPrimary
                             )
                         )
                         Text(
@@ -316,7 +317,7 @@ fun AchievementsScreen(
         items(achievements) { ach ->
             val iconVec = when (ach.iconKey) {
                 "CODE" -> KnowverseIcons.CodeTerminal
-                "FIRE" -> KnowverseIcons.StreakFire
+                "FIRE", "STREAK" -> KnowverseIcons.StreakFire
                 "PYTHON" -> KnowverseIcons.Python
                 "TROPHY" -> KnowverseIcons.Trophy
                 "GEM" -> KnowverseIcons.XpGem

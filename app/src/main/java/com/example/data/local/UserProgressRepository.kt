@@ -103,15 +103,31 @@ class UserProgressRepository(context: Context) {
     }
 
     /**
-     * Verifica a expiração do streak de acordo com a virada das 00h00 GMT-3 (TimeAPI.world):
-     * Se o usuário não realizou nenhuma aula em 'Trilhas' ou exercício antes da meia-noite (00h00)
-     * do dia anterior, o contador zera imediatamente para 0d.
+     * Verifica a expiração do streak de acordo com a virada das 00h00 GMT-3 (Horário de Brasília):
+     * - Se o usuário realizou estudo HOJE: streak mantido e aceso.
+     * - Se o usuário realizou estudo ONTEM: streak mantido (ex: 1d, 2d), porém apagado até estudar hoje.
+     * - Se o usuário NÃO realizou estudo nem hoje nem ontem: streak zera para 0d.
+     * - Se o usuário é novo / sem XP / sem atividades concluídas: streak permanece em 0d.
      */
     fun checkStreakExpiration(): Boolean {
         val today = getTodayDateString()
         val yesterday = getYesterdayDateString()
         val current = _progressState.value
         val lastQualifying = current.lastQualifyingStudyDate
+
+        // Correção de reset para novos usuários ou usuários sem atividade
+        if (current.totalXp == 0 && current.completedLessonIds.isEmpty() && current.totalSolvedExercises == 0) {
+            if (current.currentStreak > 0 || current.activeStudyDates.isNotEmpty() || current.lastQualifyingStudyDate.isNotBlank()) {
+                val updated = current.copy(
+                    currentStreak = 0,
+                    lastQualifyingStudyDate = "",
+                    activeStudyDates = emptySet()
+                )
+                saveProgress(updated, pushToRemote = true)
+                updateAchievements(updated)
+                return true
+            }
+        }
 
         val hasLostStreak = current.currentStreak > 0 &&
                 (lastQualifying.isBlank() || (lastQualifying != today && lastQualifying != yesterday))
@@ -123,16 +139,16 @@ class UserProgressRepository(context: Context) {
                 lastActiveDate = today,
                 dailyXp = if (current.lastActiveDate != today) 0 else current.dailyXp
             )
-            saveProgress(updated, pushToRemote = false)
+            saveProgress(updated, pushToRemote = true)
             updateAchievements(updated)
             return true
         } else if (current.lastActiveDate != today && current.dailyXp > 0) {
-            // Virou o dia (00h00): reseta o XP diário
+            // Virou o dia (00h00 GMT-3): reseta o XP diário
             val updated = current.copy(
                 lastActiveDate = today,
                 dailyXp = 0
             )
-            saveProgress(updated, pushToRemote = false)
+            saveProgress(updated, pushToRemote = true)
         }
         return false
     }
@@ -184,8 +200,8 @@ class UserProgressRepository(context: Context) {
 
                 if (snapshot != null && snapshot.exists()) {
                     val remoteXp = snapshot.getLong("totalXp")?.toInt() ?: 0
-                    val remoteStreak = snapshot.getLong("currentStreak")?.toInt() ?: 1
-                    val remoteActiveDays = snapshot.getLong("activeDays")?.toInt() ?: 1
+                    val remoteStreak = snapshot.getLong("currentStreak")?.toInt() ?: 0
+                    val remoteActiveDays = snapshot.getLong("activeDays")?.toInt() ?: 0
                     val remoteLessons = (snapshot.get("completedLessonIds") as? List<*>)
                         ?.filterIsInstance<String>()?.toSet() ?: emptySet()
 
@@ -204,6 +220,7 @@ class UserProgressRepository(context: Context) {
 
                     val remoteLastCheckIn = snapshot.getString("lastCheckInDate") ?: ""
                     val remoteVerifiedCheckIn = snapshot.getString("verifiedCheckInDate") ?: ""
+                    val remoteLastQualifying = snapshot.getString("lastQualifyingStudyDate") ?: ""
 
                     val remotePhoto = snapshot.getString("photoUrl")?.takeIf { it.isNotBlank() && it != "mascot_sealion" }
                     if (remotePhoto != null) {
@@ -214,37 +231,59 @@ class UserProgressRepository(context: Context) {
 
                     val current = _progressState.value
                     val unionDates = (current.activeStudyDates + remoteDates).toMutableSet()
-                    val bestStreak = maxOf(current.currentStreak, remoteStreak, remoteActiveDays)
-                    if (unionDates.size < bestStreak) {
-                        for (d in 1..bestStreak) {
-                            unionDates.add(getDateDaysAgoString(d))
-                        }
+                    val today = getTodayDateString()
+                    val yesterday = getYesterdayDateString()
+
+                    val mergedLastQualifying = when {
+                        current.lastQualifyingStudyDate == today || remoteLastQualifying == today -> today
+                        current.lastQualifyingStudyDate == yesterday || remoteLastQualifying == yesterday -> yesterday
+                        current.lastQualifyingStudyDate.isNotBlank() -> current.lastQualifyingStudyDate
+                        else -> remoteLastQualifying
                     }
 
-                    val mergedCheckIn = if (current.lastCheckInDate == getTodayDateString() || remoteLastCheckIn == getTodayDateString()) {
-                        getTodayDateString()
+                    val rawBestStreak = maxOf(current.currentStreak, remoteStreak)
+                    val validatedStreak = if (mergedLastQualifying == today || mergedLastQualifying == yesterday) {
+                        rawBestStreak
+                    } else {
+                        0
+                    }
+
+                    val mergedCheckIn = if (current.lastCheckInDate == today || remoteLastCheckIn == today) {
+                        today
                     } else {
                         current.lastCheckInDate.ifBlank { remoteLastCheckIn }
                     }
 
-                    val mergedVerifiedCheckIn = if (current.verifiedCheckInDate == getTodayDateString() || remoteVerifiedCheckIn == getTodayDateString()) {
-                        getTodayDateString()
+                    val mergedVerifiedCheckIn = if (current.verifiedCheckInDate == today || remoteVerifiedCheckIn == today) {
+                        today
                     } else {
                         current.verifiedCheckInDate.ifBlank { remoteVerifiedCheckIn }
                     }
 
+                    val isZeroActivityUser = maxOf(current.totalXp, remoteXp) == 0 &&
+                            (current.completedLessonIds + remoteLessons).isEmpty() &&
+                            current.totalSolvedExercises == 0
+
+                    val finalStreak = if (isZeroActivityUser) 0 else validatedStreak
+                    val finalDates = if (isZeroActivityUser) emptySet() else unionDates
+                    val finalLastQualifying = if (isZeroActivityUser) "" else mergedLastQualifying
+                    val finalCheckIn = if (isZeroActivityUser) "" else mergedCheckIn
+                    val finalVerifiedCheckIn = if (isZeroActivityUser) "" else mergedVerifiedCheckIn
+
                     val merged = current.copy(
                         totalXp = maxOf(current.totalXp, remoteXp),
-                        currentStreak = bestStreak,
-                        activeStudyDates = unionDates,
-                        lastCheckInDate = mergedCheckIn,
-                        verifiedCheckInDate = mergedVerifiedCheckIn,
+                        currentStreak = finalStreak,
+                        activeStudyDates = finalDates,
+                        lastCheckInDate = finalCheckIn,
+                        verifiedCheckInDate = finalVerifiedCheckIn,
+                        lastQualifyingStudyDate = finalLastQualifying,
                         completedLessonIds = current.completedLessonIds + remoteLessons,
                         completedKahootScores = current.completedKahootScores + remoteKahoot,
                         perfectTestModules = current.perfectTestModules + remotePerfect,
                         unlockedBadges = current.unlockedBadges + remoteBadges
                     )
-                    saveProgress(merged, pushToRemote = false)
+                    val needsRemoteCorrection = isZeroActivityUser && (remoteStreak > 0 || remoteActiveDays > 0)
+                    saveProgress(merged, pushToRemote = needsRemoteCorrection)
                     // Trigger asynchronous cleanup of any cloned/duplicate documents
                     cleanupDuplicateUserDocuments(userId, cleanEmail)
                 } else {
@@ -254,8 +293,8 @@ class UserProgressRepository(context: Context) {
                             .get()
                             .addOnSuccessListener { querySnap ->
                                 var highestRemoteXp = 0
-                                var highestRemoteStreak = 1
-                                var highestRemoteActiveDays = 1
+                                var highestRemoteStreak = 0
+                                var highestRemoteActiveDays = 0
                                 val allRemoteLessons = mutableSetOf<String>()
                                 val allRemoteBadges = mutableSetOf<String>()
                                 val allRemotePerfect = mutableSetOf<String>()
@@ -263,14 +302,15 @@ class UserProgressRepository(context: Context) {
                                 var bestRemotePhoto: String? = null
                                 var remoteLastCheckIn = ""
                                 var remoteVerifiedCheckIn = ""
+                                var remoteLastQualifying = ""
                                 val duplicateDocsToDelete = mutableListOf<String>()
 
                                 for (doc in querySnap.documents) {
                                     val rx = doc.getLong("totalXp")?.toInt() ?: 0
                                     if (rx > highestRemoteXp) highestRemoteXp = rx
-                                    val rs = doc.getLong("currentStreak")?.toInt() ?: 1
+                                    val rs = doc.getLong("currentStreak")?.toInt() ?: 0
                                     if (rs > highestRemoteStreak) highestRemoteStreak = rs
-                                    val rad = doc.getLong("activeDays")?.toInt() ?: 1
+                                    val rad = doc.getLong("activeDays")?.toInt() ?: 0
                                     if (rad > highestRemoteActiveDays) highestRemoteActiveDays = rad
 
                                     (doc.get("completedLessonIds") as? List<*>)?.filterIsInstance<String>()?.let { allRemoteLessons.addAll(it) }
@@ -286,6 +326,8 @@ class UserProgressRepository(context: Context) {
                                     if (lc.isNotBlank()) remoteLastCheckIn = lc
                                     val vc = doc.getString("verifiedCheckInDate") ?: ""
                                     if (vc.isNotBlank()) remoteVerifiedCheckIn = vc
+                                    val lq = doc.getString("lastQualifyingStudyDate") ?: ""
+                                    if (lq.isNotBlank()) remoteLastQualifying = lq
 
                                     if (doc.id != userId) {
                                         duplicateDocsToDelete.add(doc.id)
@@ -299,32 +341,54 @@ class UserProgressRepository(context: Context) {
                                 }
 
                                 val current = _progressState.value
-                                val bestStreak = maxOf(current.currentStreak, highestRemoteStreak, highestRemoteActiveDays)
-                                val unionDates = (current.activeStudyDates + allRemoteDates).toMutableSet()
-                                if (unionDates.size < bestStreak) {
-                                    for (d in 1..bestStreak) {
-                                        unionDates.add(getDateDaysAgoString(d))
-                                    }
+                                val today = getTodayDateString()
+                                val yesterday = getYesterdayDateString()
+
+                                val mergedLastQualifying = when {
+                                    current.lastQualifyingStudyDate == today || remoteLastQualifying == today -> today
+                                    current.lastQualifyingStudyDate == yesterday || remoteLastQualifying == yesterday -> yesterday
+                                    current.lastQualifyingStudyDate.isNotBlank() -> current.lastQualifyingStudyDate
+                                    else -> remoteLastQualifying
                                 }
 
-                                val mergedCheckIn = if (current.lastCheckInDate == getTodayDateString() || remoteLastCheckIn == getTodayDateString()) {
-                                    getTodayDateString()
+                                val rawBestStreak = maxOf(current.currentStreak, highestRemoteStreak)
+                                val validatedStreak = if (mergedLastQualifying == today || mergedLastQualifying == yesterday) {
+                                    rawBestStreak
+                                } else {
+                                    0
+                                }
+
+                                val unionDates = (current.activeStudyDates + allRemoteDates).toMutableSet()
+
+                                val mergedCheckIn = if (current.lastCheckInDate == today || remoteLastCheckIn == today) {
+                                    today
                                 } else {
                                     current.lastCheckInDate.ifBlank { remoteLastCheckIn }
                                 }
 
-                                val mergedVerifiedCheckIn = if (current.verifiedCheckInDate == getTodayDateString() || remoteVerifiedCheckIn == getTodayDateString()) {
-                                    getTodayDateString()
+                                val mergedVerifiedCheckIn = if (current.verifiedCheckInDate == today || remoteVerifiedCheckIn == today) {
+                                    today
                                 } else {
                                     current.verifiedCheckInDate.ifBlank { remoteVerifiedCheckIn }
                                 }
 
+                                val isZeroActivity = maxOf(current.totalXp, highestRemoteXp) == 0 &&
+                                        (current.completedLessonIds + allRemoteLessons).isEmpty() &&
+                                        current.totalSolvedExercises == 0
+
+                                val finalStreak = if (isZeroActivity) 0 else validatedStreak
+                                val finalDates = if (isZeroActivity) emptySet() else unionDates
+                                val finalLastQualifying = if (isZeroActivity) "" else mergedLastQualifying
+                                val finalCheckIn = if (isZeroActivity) "" else mergedCheckIn
+                                val finalVerifiedCheckIn = if (isZeroActivity) "" else mergedVerifiedCheckIn
+
                                 val merged = current.copy(
                                     totalXp = maxOf(current.totalXp, highestRemoteXp),
-                                    currentStreak = bestStreak,
-                                    activeStudyDates = unionDates,
-                                    lastCheckInDate = mergedCheckIn,
-                                    verifiedCheckInDate = mergedVerifiedCheckIn,
+                                    currentStreak = finalStreak,
+                                    activeStudyDates = finalDates,
+                                    lastCheckInDate = finalCheckIn,
+                                    verifiedCheckInDate = finalVerifiedCheckIn,
+                                    lastQualifyingStudyDate = finalLastQualifying,
                                     completedLessonIds = current.completedLessonIds + allRemoteLessons,
                                     unlockedBadges = current.unlockedBadges + allRemoteBadges,
                                     perfectTestModules = current.perfectTestModules + allRemotePerfect
@@ -554,6 +618,7 @@ class UserProgressRepository(context: Context) {
             "unlockedBadges" to current.unlockedBadges.toList(),
             "totalSolvedExercises" to current.totalSolvedExercises,
             "lastActiveDate" to current.lastActiveDate,
+            "lastQualifyingStudyDate" to current.lastQualifyingStudyDate,
             "updatedAt" to FieldValue.serverTimestamp()
         )
         if (!resolvedPhoto.isNullOrBlank()) {
@@ -585,8 +650,8 @@ class UserProgressRepository(context: Context) {
                         photoUrl = obj.optString("photoUrl", "").ifBlank { null },
                         totalXp = obj.getInt("totalXp"),
                         level = obj.optInt("level", 1),
-                        streak = obj.optInt("streak", 1),
-                        activeDays = obj.optInt("activeDays", 1)
+                        streak = obj.optInt("streak", 0),
+                        activeDays = obj.optInt("activeDays", 0)
                     )
                 )
             }
@@ -638,8 +703,8 @@ class UserProgressRepository(context: Context) {
                                 val photo = doc.getString("photoUrl")?.takeIf { it.isNotBlank() }
                                 val xp = doc.getLong("totalXp")?.toInt() ?: 0
                                 val lvl = doc.getLong("level")?.toInt() ?: ((xp / 100) + 1)
-                                val strk = doc.getLong("currentStreak")?.toInt() ?: 1
-                                val days = doc.getLong("activeDays")?.toInt() ?: 1
+                                val strk = doc.getLong("currentStreak")?.toInt() ?: 0
+                                val days = doc.getLong("activeDays")?.toInt() ?: 0
                                 val candidate = GlobalLeaderboardUser(uid, name, em, photo, xp, lvl, strk, days)
 
                                 val key = if (em.isNotBlank()) em else uid
@@ -733,21 +798,49 @@ class UserProgressRepository(context: Context) {
         // XP is ONLY awarded once per lesson
         val actualXp = if (isFirstTime) xpEarned else 0
 
+        val updatedBadges = current.unlockedBadges.toMutableSet()
+        var bonusBadgeXp = 0
+        fun checkSubjectBadge(badgeId: String, prefix: String, required: Int, bonus: Int) {
+            if (!updatedBadges.contains(badgeId) && newCompleted.count { it.startsWith(prefix) || it.contains(prefix) } >= required) {
+                updatedBadges.add(badgeId)
+                bonusBadgeXp += bonus
+                val badgeObj = TrackBadgesCatalog.findBadge(badgeId)
+                AchievementAlertManager.postAlert(
+                    InAppAchievementAlert(
+                        title = badgeObj?.title ?: "Emblema de Trilha!",
+                        description = badgeObj?.description ?: "Maestria na disciplina!",
+                        xpBonus = bonus,
+                        drawableRes = badgeObj?.drawableRes,
+                        category = "NOVO EMBLEMA DE TRILHA!"
+                    )
+                )
+            }
+        }
+
+        checkSubjectBadge("badge_enem_chemistry", "ch_", 3, 400)
+        checkSubjectBadge("badge_enem_geography", "geo_", 3, 350)
+        checkSubjectBadge("badge_enem_history", "hist_", 3, 350)
+        checkSubjectBadge("badge_enem_languages", "ling_", 3, 350)
+        checkSubjectBadge("badge_enem_physics", "fis_", 3, 400)
+        checkSubjectBadge("badge_enem_biology", "bio_", 3, 400)
+        checkSubjectBadge("badge_enem_math", "mat_", 4, 500)
+
         val updated = current.copy(
-            totalXp = current.totalXp + actualXp,
-            dailyXp = current.dailyXp + actualXp,
+            totalXp = current.totalXp + actualXp + bonusBadgeXp,
+            dailyXp = current.dailyXp + actualXp + bonusBadgeXp,
             lastActiveDate = today,
             activeStudyDates = current.activeStudyDates + today,
             lastCheckInDate = today,
             verifiedCheckInDate = today,
             completedLessonIds = newCompleted,
             reviewLessonIds = newReviews,
+            unlockedBadges = updatedBadges,
             totalSolvedExercises = if (isFirstTime) current.totalSolvedExercises + 1 else current.totalSolvedExercises
         )
         saveProgress(updated)
 
         // REGRA ESTRITA: Fazer uma aula em 'Trilhas' avança a sequência (streak) em 1 dia
-        recordQualifyingStudyActivity(source = "Trilha: $lessonId", xpEarned = actualXp)
+        recordQualifyingStudyActivity(source = "Trilha: $lessonId", xpEarned = actualXp + bonusBadgeXp)
 
         updateAchievements(_progressState.value)
         return actualXp
@@ -780,13 +873,39 @@ class UserProgressRepository(context: Context) {
             }
         }
 
+        val updatedBadges = current.unlockedBadges.toMutableSet()
+        var bonusBadgeXp = 0
+        fun checkStreakBadge(badgeId: String, required: Int, bonus: Int) {
+            if (newStreak >= required && !updatedBadges.contains(badgeId)) {
+                updatedBadges.add(badgeId)
+                bonusBadgeXp += bonus
+                val badgeObj = TrackBadgesCatalog.findBadge(badgeId)
+                AchievementAlertManager.postAlert(
+                    InAppAchievementAlert(
+                        title = badgeObj?.title ?: "Emblema de Foco!",
+                        description = badgeObj?.description ?: "Parabéns pela sequência de $required dias!",
+                        xpBonus = bonus,
+                        drawableRes = badgeObj?.drawableRes,
+                        category = "EMBLEMA DE SEQUÊNCIA!"
+                    )
+                )
+            }
+        }
+        checkStreakBadge("badge_streak_3", 3, 150)
+        checkStreakBadge("badge_streak_7", 7, 300)
+        checkStreakBadge("badge_streak_14", 14, 500)
+        checkStreakBadge("badge_streak_30", 30, 1000)
+
         val updated = current.copy(
+            totalXp = current.totalXp + bonusBadgeXp,
+            dailyXp = current.dailyXp + bonusBadgeXp,
             currentStreak = newStreak,
             lastQualifyingStudyDate = today,
             lastActiveDate = today,
             lastCheckInDate = today,
             verifiedCheckInDate = today,
-            activeStudyDates = current.activeStudyDates + today
+            activeStudyDates = current.activeStudyDates + today,
+            unlockedBadges = updatedBadges
         )
         saveProgress(updated)
         updateAchievements(updated)
@@ -916,15 +1035,46 @@ class UserProgressRepository(context: Context) {
 
     fun addBonusXp(xp: Int, source: String = "Exercício") {
         val current = _progressState.value
+        val newExerciseCount = current.totalSolvedExercises + 1
+        val updatedBadges = current.unlockedBadges.toMutableSet()
+        var bonusBadgeXp = 0
+
+        fun checkExerciseBadge(badgeId: String, required: Int, bonus: Int) {
+            if (newExerciseCount >= required && !updatedBadges.contains(badgeId)) {
+                updatedBadges.add(badgeId)
+                bonusBadgeXp += bonus
+                val badgeObj = TrackBadgesCatalog.findBadge(badgeId)
+                AchievementAlertManager.postAlert(
+                    InAppAchievementAlert(
+                        title = badgeObj?.title ?: "Emblema Desbloqueado!",
+                        description = badgeObj?.description ?: "Parabéns por atingir $required exercícios!",
+                        xpBonus = bonus,
+                        drawableRes = badgeObj?.drawableRes,
+                        category = "EMBLEMA DE EXERCÍCIOS!"
+                    )
+                )
+            }
+        }
+
+        checkExerciseBadge("badge_exercises_10", 10, 150)
+        checkExerciseBadge("badge_exercises_25", 25, 250)
+        checkExerciseBadge("badge_exercises_50", 50, 450)
+        checkExerciseBadge("badge_exercises_100", 100, 1000)
+        checkExerciseBadge("badge_exercises_250", 250, 1500)
+        checkExerciseBadge("badge_exercises_500", 500, 2500)
+        checkExerciseBadge("badge_exercises_1000", 1000, 5000)
+        checkExerciseBadge("badge_exercises_2000", 2000, 10000)
+
         val updated = current.copy(
-            totalXp = current.totalXp + xp,
-            dailyXp = current.dailyXp + xp,
-            totalSolvedExercises = current.totalSolvedExercises + 1
+            totalXp = current.totalXp + xp + bonusBadgeXp,
+            dailyXp = current.dailyXp + xp + bonusBadgeXp,
+            totalSolvedExercises = newExerciseCount,
+            unlockedBadges = updatedBadges
         )
         saveProgress(updated)
 
         // REGRA ESTRITA: Resolver exercício avança a sequência (streak) em 1 dia
-        recordQualifyingStudyActivity(source = source, xpEarned = xp)
+        recordQualifyingStudyActivity(source = source, xpEarned = xp + bonusBadgeXp)
 
         updateAchievements(_progressState.value)
     }
@@ -960,7 +1110,18 @@ class UserProgressRepository(context: Context) {
         _progressState.value = progress
         val json = serializeProgressToJson(progress)
         val key = if (!activeUserId.isNullOrBlank()) "user_progress_data_${activeUserId}" else "user_progress_data_guest"
-        prefs.edit().putString(key, json.toString()).apply()
+        val editor = prefs.edit().putString(key, json.toString())
+
+        // PERSISTÊNCIA REFORÇADA: Salva campos vitais em chaves de backup independentes
+        // para que atualizações do app nunca percam o streak, XP ou emblemas conquistados
+        val backupPrefix = if (!activeUserId.isNullOrBlank()) "backup_user_${activeUserId}_" else "backup_guest_"
+        editor.putInt("${backupPrefix}streak", progress.currentStreak)
+            .putString("${backupPrefix}last_qualifying", progress.lastQualifyingStudyDate)
+            .putInt("${backupPrefix}total_xp", progress.totalXp)
+            .putInt("${backupPrefix}exercises", progress.totalSolvedExercises)
+            .putStringSet("${backupPrefix}unlocked_badges", progress.unlockedBadges)
+            .putStringSet("${backupPrefix}completed_lessons", progress.completedLessonIds)
+            .apply()
 
         if (pushToRemote && activeUserId != null) {
             pushCurrentProgressToFirestore()
@@ -971,7 +1132,7 @@ class UserProgressRepository(context: Context) {
         val key = "user_progress_data_$userId"
         var raw = prefs.getString(key, null)
 
-        // Legacy compatibility: check by email key or single-user legacy keys if userId key is missing
+        // Compatibilidade legada e persistência pós-atualização: recupera de chaves alternativas
         if (raw.isNullOrBlank() && !activeUserEmail.isNullOrBlank()) {
             raw = prefs.getString("user_progress_data_${activeUserEmail!!.trim().lowercase()}", null)
         }
@@ -982,18 +1143,48 @@ class UserProgressRepository(context: Context) {
             if (!legacySingle.isNullOrBlank()) {
                 val parsedLegacy = parseProgressJson(legacySingle)
                 if (parsedLegacy.totalXp > 0 || parsedLegacy.completedLessonIds.isNotEmpty()) {
-                    // Migrate legacy data to current userId key
                     prefs.edit().putString(key, legacySingle).apply()
                     return parsedLegacy
                 }
             }
         }
 
+        // Se o JSON estiver ausente, tenta restaurar das chaves de backup reforçadas
         if (raw.isNullOrBlank()) {
+            val backupPrefix = if (userId.isNotBlank()) "backup_user_${userId}_" else "backup_guest_"
+            val backupStreak = prefs.getInt("${backupPrefix}streak", -1)
+            if (backupStreak >= 0) {
+                val backupLastQualifying = prefs.getString("${backupPrefix}last_qualifying", "") ?: ""
+                val backupXp = prefs.getInt("${backupPrefix}total_xp", 0)
+                val backupExercises = prefs.getInt("${backupPrefix}exercises", 0)
+                val backupBadges = prefs.getStringSet("${backupPrefix}unlocked_badges", emptySet()) ?: emptySet()
+                val backupLessons = prefs.getStringSet("${backupPrefix}completed_lessons", emptySet()) ?: emptySet()
+
+                val isZeroActivityBackup = backupXp == 0 && backupLessons.isEmpty() && backupExercises == 0
+                val cleanStreak = if (isZeroActivityBackup) 0 else backupStreak
+                val cleanLastQualifying = if (isZeroActivityBackup) "" else backupLastQualifying
+
+                val restored = UserProgress(
+                    totalXp = backupXp,
+                    currentStreak = cleanStreak,
+                    lastQualifyingStudyDate = cleanLastQualifying,
+                    totalSolvedExercises = backupExercises,
+                    unlockedBadges = backupBadges,
+                    completedLessonIds = backupLessons,
+                    lastActiveDate = getTodayDateString()
+                )
+                val json = serializeProgressToJson(restored)
+                prefs.edit().putString(key, json.toString()).apply()
+                return restored
+            }
+
             return UserProgress(
                 lastActiveDate = getTodayDateString(),
                 activeStudyDates = emptySet(),
-                lastCheckInDate = ""
+                lastCheckInDate = "",
+                verifiedCheckInDate = "",
+                lastQualifyingStudyDate = "",
+                currentStreak = 0
             )
         }
         return parseProgressJson(raw)
@@ -1054,6 +1245,9 @@ class UserProgressRepository(context: Context) {
     private fun parseProgressJson(raw: String): UserProgress {
         return try {
             val json = JSONObject(raw)
+            val totalXp = json.optInt("totalXp", 0)
+            val totalExercises = json.optInt("totalSolvedExercises", 0)
+
             val completed = mutableSetOf<String>()
             val completedArr = json.optJSONArray("completedLessonIds")
             if (completedArr != null) {
@@ -1070,27 +1264,34 @@ class UserProgressRepository(context: Context) {
 
             val todayGmt3 = com.example.data.time.NetworkTimeProvider.getTodayGmt3()
             val yesterdayGmt3 = com.example.data.time.NetworkTimeProvider.getYesterdayGmt3()
-            val isStreakExpired = rawStreak > 0 &&
-                    (savedLastQualifying.isBlank() || (savedLastQualifying != todayGmt3 && savedLastQualifying != yesterdayGmt3))
-            val savedStreak = if (isStreakExpired) 0 else rawStreak
+
+            // Validação estrita do Streak:
+            // 1. Usuário ocioso / sem XP / sem lições completadas => sempre 0d
+            // 2. Não estudou hoje nem ontem => expirado para 0d
+            // 3. Estudou ontem => mantém sequência acumulada (aguardando atividade de hoje)
+            // 4. Estudou hoje => mantém sequência ativa com fogo aceso
+            val isZeroActivity = totalXp == 0 && completed.isEmpty() && totalExercises == 0
+            val savedStreak = when {
+                isZeroActivity -> 0
+                rawStreak <= 0 -> 0
+                savedLastQualifying.isBlank() -> 0
+                savedLastQualifying != todayGmt3 && savedLastQualifying != yesterdayGmt3 -> 0
+                else -> rawStreak
+            }
 
             val activeDates = mutableSetOf<String>()
-            val activeDatesArr = json.optJSONArray("activeStudyDates")
-            if (activeDatesArr != null) {
-                for (i in 0 until activeDatesArr.length()) {
-                    activeDates.add(activeDatesArr.getString(i))
+            if (!isZeroActivity) {
+                val activeDatesArr = json.optJSONArray("activeStudyDates")
+                if (activeDatesArr != null) {
+                    for (i in 0 until activeDatesArr.length()) {
+                        activeDates.add(activeDatesArr.getString(i))
+                    }
                 }
-            }
-            if (savedLastCheckIn.isNotBlank()) {
-                activeDates.add(savedLastCheckIn)
-            }
-            if (savedVerifiedCheckIn.isNotBlank()) {
-                activeDates.add(savedVerifiedCheckIn)
-            }
-            // Legacy compatibility: if activeDates had fewer entries than savedStreak from an older app version, backfill past days
-            if (activeDates.size < savedStreak && (json.optInt("totalXp", 0) > 0 || completed.isNotEmpty())) {
-                for (d in 1..savedStreak) {
-                    activeDates.add(getDateDaysAgoString(d))
+                if (savedLastCheckIn.isNotBlank() && (totalXp > 0 || completed.isNotEmpty())) {
+                    activeDates.add(savedLastCheckIn)
+                }
+                if (savedVerifiedCheckIn.isNotBlank() && (totalXp > 0 || completed.isNotEmpty())) {
+                    activeDates.add(savedVerifiedCheckIn)
                 }
             }
 
@@ -1118,40 +1319,45 @@ class UserProgressRepository(context: Context) {
                     val k = keys.next()
                     val scoreVal = kahootObj.optInt(k, 0)
                     kahootScores[k] = scoreVal
-                    // Legacy compatibility: in older app versions, passing scores were stored in completedKahootScores without perfectTestModules
                     if (scoreVal >= 80 || (scoreVal in 5..10)) {
                         perfectTests.add(k)
                     }
                 }
             }
 
-            // Legacy compatibility: if badges were unlocked in older app versions, ensure corresponding perfectTests are populated
-            if (badges.contains("badge_python_basic")) perfectTests.add("kahoot_basic")
-            if (badges.contains("badge_python_intermediate")) perfectTests.add("kahoot_intermediate")
-            if (badges.contains("badge_python_advanced")) perfectTests.add("kahoot_advanced")
+            // Auto-desbloqueio retroativo de emblemas por testes e marcos
+            if (perfectTests.contains("kahoot_basic") || perfectTests.contains("test_basic")) badges.add("badge_python_basic")
+            if (perfectTests.contains("kahoot_intermediate") || perfectTests.contains("test_intermediate")) badges.add("badge_python_intermediate")
+            if (perfectTests.contains("kahoot_advanced") || perfectTests.contains("test_advanced")) badges.add("badge_python_advanced")
+            if (perfectTests.contains("test_math_basic")) badges.add("badge_math_basic")
+            if (perfectTests.contains("test_calculus_limits") || kahootScores.containsKey("test_calculus_limits")) badges.add("badge_calculus_limits")
+            if (perfectTests.contains("test_calculus_derivatives") || kahootScores.containsKey("test_calculus_derivatives")) badges.add("badge_calculus_derivatives")
+            if (perfectTests.contains("test_calculus_integrals") || kahootScores.containsKey("test_calculus_integrals")) badges.add("badge_calculus_integrals")
 
-            // Auto-grant badges if module final test is completed with 100%
-            if (perfectTests.contains("kahoot_basic") || perfectTests.contains("test_basic")) {
-                badges.add("badge_python_basic")
-            }
-            if (perfectTests.contains("kahoot_intermediate") || perfectTests.contains("test_intermediate")) {
-                badges.add("badge_python_intermediate")
-            }
-            if (perfectTests.contains("kahoot_advanced") || perfectTests.contains("test_advanced")) {
-                badges.add("badge_python_advanced")
-            }
-            if (perfectTests.contains("test_math_basic")) {
-                badges.add("badge_math_basic")
-            }
-            if (perfectTests.contains("test_calculus_limits") || kahootScores.containsKey("test_calculus_limits")) {
-                badges.add("badge_calculus_limits")
-            }
-            if (perfectTests.contains("test_calculus_derivatives") || kahootScores.containsKey("test_calculus_derivatives")) {
-                badges.add("badge_calculus_derivatives")
-            }
-            if (perfectTests.contains("test_calculus_integrals") || kahootScores.containsKey("test_calculus_integrals")) {
-                badges.add("badge_calculus_integrals")
-            }
+            // Auto-desbloqueio por marcos de exercícios resolvidos
+            if (totalExercises >= 10) badges.add("badge_exercises_10")
+            if (totalExercises >= 25) badges.add("badge_exercises_25")
+            if (totalExercises >= 50) badges.add("badge_exercises_50")
+            if (totalExercises >= 100) badges.add("badge_exercises_100")
+            if (totalExercises >= 250) badges.add("badge_exercises_250")
+            if (totalExercises >= 500) badges.add("badge_exercises_500")
+            if (totalExercises >= 1000) badges.add("badge_exercises_1000")
+            if (totalExercises >= 2000) badges.add("badge_exercises_2000")
+
+            // Auto-desbloqueio por marcos de sequência
+            if (savedStreak >= 3) badges.add("badge_streak_3")
+            if (savedStreak >= 7) badges.add("badge_streak_7")
+            if (savedStreak >= 14) badges.add("badge_streak_14")
+            if (savedStreak >= 30) badges.add("badge_streak_30")
+
+            // Auto-desbloqueio por matérias concluídas
+            if (completed.count { it.startsWith("ch_") || it.contains("quimica") } >= 3) badges.add("badge_enem_chemistry")
+            if (completed.count { it.startsWith("geo_") || it.contains("geografia") } >= 3) badges.add("badge_enem_geography")
+            if (completed.count { it.startsWith("hist_") || it.contains("historia") } >= 3) badges.add("badge_enem_history")
+            if (completed.count { it.startsWith("ling_") || it.contains("linguagens") } >= 3) badges.add("badge_enem_languages")
+            if (completed.count { it.startsWith("fis_") || it.contains("fisica") } >= 3) badges.add("badge_enem_physics")
+            if (completed.count { it.startsWith("bio_") || it.contains("biologia") } >= 3) badges.add("badge_enem_biology")
+            if (completed.count { it.startsWith("mat_") || it.contains("matematica") } >= 4) badges.add("badge_enem_math")
 
             val reviews = mutableSetOf<String>()
             val reviewArr = json.optJSONArray("reviewLessonIds")
@@ -1161,18 +1367,22 @@ class UserProgressRepository(context: Context) {
                 }
             }
 
+            val cleanLastQualifying = if (isZeroActivity) "" else savedLastQualifying
+            val cleanLastCheckIn = if (isZeroActivity) "" else savedLastCheckIn
+            val cleanVerifiedCheckIn = if (isZeroActivity) "" else savedVerifiedCheckIn
+
             UserProgress(
-                totalXp = json.optInt("totalXp", 0),
+                totalXp = totalXp,
                 currentStreak = savedStreak,
                 lastActiveDate = savedLastActive.ifBlank { getTodayDateString() },
                 activeStudyDates = activeDates,
-                lastCheckInDate = savedLastCheckIn,
-                verifiedCheckInDate = savedVerifiedCheckIn,
-                lastQualifyingStudyDate = savedLastQualifying,
+                lastCheckInDate = cleanLastCheckIn,
+                verifiedCheckInDate = cleanVerifiedCheckIn,
+                lastQualifyingStudyDate = cleanLastQualifying,
                 dailyXp = json.optInt("dailyXp", 0),
                 dailyGoalXp = json.optInt("dailyGoalXp", 50),
                 totalExecutions = json.optInt("totalExecutions", 0),
-                totalSolvedExercises = json.optInt("totalSolvedExercises", completed.size),
+                totalSolvedExercises = totalExercises,
                 currentLessonId = json.optString("currentLessonId", "py_b1_l1"),
                 favoriteAreaId = json.optString("favoriteAreaId", "py_b1"),
                 completedLessonIds = completed,
@@ -1218,7 +1428,7 @@ class UserProgressRepository(context: Context) {
                             val photo = doc.getString("photoUrl")?.takeIf { it.isNotBlank() }
                             val xp = doc.getLong("totalXp")?.toInt() ?: 0
                             val lvl = doc.getLong("level")?.toInt() ?: ((xp / 100) + 1)
-                            val streak = doc.getLong("currentStreak")?.toInt() ?: 1
+                            val streak = doc.getLong("currentStreak")?.toInt() ?: 0
                             val isDev = doc.getBoolean("isDev") ?: (email.equals("contatopedro21g@gmail.com", ignoreCase = true))
 
                             val lessons = (doc.get("completedLessonIds") as? List<*>)
@@ -1242,7 +1452,7 @@ class UserProgressRepository(context: Context) {
                                     totalXp = xp,
                                     level = lvl,
                                     currentStreak = streak,
-                                    activeStudyDaysCount = maxOf(1, streak),
+                                    activeStudyDaysCount = maxOf(0, streak),
                                     completedLessonsCount = lessons.size,
                                     completedLessons = lessons,
                                     kahootScores = kahootMap,
@@ -1305,7 +1515,7 @@ class UserProgressRepository(context: Context) {
                     val photo = doc.getString("photoUrl")?.takeIf { it.isNotBlank() }
                     val xp = doc.getLong("totalXp")?.toInt() ?: 0
                     val lvl = doc.getLong("level")?.toInt() ?: ((xp / 100) + 1)
-                    val streak = doc.getLong("currentStreak")?.toInt() ?: 1
+                    val streak = doc.getLong("currentStreak")?.toInt() ?: 0
                     val isDev = doc.getBoolean("isDev") ?: (email.equals("contatopedro21g@gmail.com", ignoreCase = true))
 
                     val lessons = (doc.get("completedLessonIds") as? List<*>)
@@ -1329,7 +1539,7 @@ class UserProgressRepository(context: Context) {
                             totalXp = xp,
                             level = lvl,
                             currentStreak = streak,
-                            activeStudyDaysCount = maxOf(1, streak),
+                            activeStudyDaysCount = maxOf(0, streak),
                             completedLessonsCount = lessons.size,
                             completedLessons = lessons,
                             kahootScores = kahootMap,
@@ -1400,7 +1610,270 @@ class UserProgressRepository(context: Context) {
     private val previouslyUnlockedAchievementIds = mutableSetOf<String>()
 
     private fun buildAchievementsList(progress: UserProgress): List<Achievement> {
+        val ex = progress.totalSolvedExercises
+        val lessons = progress.completedLessonIds
+        val streak = progress.currentStreak
+        val xp = progress.totalXp
+
         return listOf(
+            // ========================================================
+            // ESCALA COMPLETA DE EXERCÍCIOS RESOLVIDOS
+            // ========================================================
+            Achievement(
+                id = "ach_exercises_1",
+                title = "Primeiro Acerto",
+                description = "Resolva seu 1º exercício com gabarito no Knowverse.",
+                xpBonus = 30,
+                isUnlocked = ex >= 1,
+                progress = (ex.toFloat() / 1f).coerceIn(0f, 1f),
+                iconKey = "CHECK"
+            ),
+            Achievement(
+                id = "ach_exercises_5",
+                title = "Início dos Treinos",
+                description = "Resolva 5 exercícios com gabarito.",
+                xpBonus = 75,
+                isUnlocked = ex >= 5,
+                progress = (ex.toFloat() / 5f).coerceIn(0f, 1f),
+                iconKey = "CHECK"
+            ),
+            Achievement(
+                id = "ach_exercises_10",
+                title = "Atirador de Elite",
+                description = "Resolva 10 exercícios no Banco Universal.",
+                xpBonus = 120,
+                isUnlocked = ex >= 10,
+                progress = (ex.toFloat() / 10f).coerceIn(0f, 1f),
+                iconKey = "CHECK"
+            ),
+            Achievement(
+                id = "ach_exercises_20",
+                title = "Sábio dos Exercícios",
+                description = "Resolva 20 exercícios com gabarito oficial.",
+                xpBonus = 200,
+                isUnlocked = ex >= 20,
+                progress = (ex.toFloat() / 20f).coerceIn(0f, 1f),
+                iconKey = "CHECK"
+            ),
+            Achievement(
+                id = "ach_exercises_35",
+                title = "Ritmo de Ferro",
+                description = "Supere 35 exercícios de vestibular e ENEM.",
+                xpBonus = 300,
+                isUnlocked = ex >= 35,
+                progress = (ex.toFloat() / 35f).coerceIn(0f, 1f),
+                iconKey = "CHECK"
+            ),
+            Achievement(
+                id = "ach_exercises_50",
+                title = "Gabaritador Implacável",
+                description = "Resolva 50 exercícios no Banco Universal.",
+                xpBonus = 450,
+                isUnlocked = ex >= 50,
+                progress = (ex.toFloat() / 50f).coerceIn(0f, 1f),
+                iconKey = "CHECK"
+            ),
+            Achievement(
+                id = "ach_exercises_75",
+                title = "Especialista em Simulado",
+                description = "Supere 75 questões oficiais com persistência.",
+                xpBonus = 600,
+                isUnlocked = ex >= 75,
+                progress = (ex.toFloat() / 75f).coerceIn(0f, 1f),
+                iconKey = "CHECK"
+            ),
+            Achievement(
+                id = "ach_exercises_100",
+                title = "Centurião das Questões",
+                description = "Resolva 100 exercícios no Knowverse!",
+                xpBonus = 1000,
+                isUnlocked = ex >= 100,
+                progress = (ex.toFloat() / 100f).coerceIn(0f, 1f),
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_exercises_150",
+                title = "Muralha do ENEM",
+                description = "Supere 150 questões de vestibulares oficiais.",
+                xpBonus = 1300,
+                isUnlocked = ex >= 150,
+                progress = (ex.toFloat() / 150f).coerceIn(0f, 1f),
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_exercises_200",
+                title = "Veterano dos Gabaritos",
+                description = "Atinja a expressiva marca de 200 exercícios resolvidos.",
+                xpBonus = 1750,
+                isUnlocked = ex >= 200,
+                progress = (ex.toFloat() / 200f).coerceIn(0f, 1f),
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_exercises_300",
+                title = "Titã da Resolução",
+                description = "Resolva 300 questões no Banco Universal.",
+                xpBonus = 2200,
+                isUnlocked = ex >= 300,
+                progress = (ex.toFloat() / 300f).coerceIn(0f, 1f),
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_exercises_500",
+                title = "Lenda dos 500 Acertos",
+                description = "Meio milhar de questões resolvidas com excelência!",
+                xpBonus = 3500,
+                isUnlocked = ex >= 500,
+                progress = (ex.toFloat() / 500f).coerceIn(0f, 1f),
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_exercises_750",
+                title = "Grão-Mestre Imparável",
+                description = "750 exercícios conquistados através da dedicação diária.",
+                xpBonus = 5000,
+                isUnlocked = ex >= 750,
+                progress = (ex.toFloat() / 750f).coerceIn(0f, 1f),
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_exercises_1000",
+                title = "O Imperador do ENEM",
+                description = "1.000 questões dominadas! Uma conquista monumental e histórica.",
+                xpBonus = 7500,
+                isUnlocked = ex >= 1000,
+                progress = (ex.toFloat() / 1000f).coerceIn(0f, 1f),
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_exercises_1500",
+                title = "Conhecimento Infinito",
+                description = "1.500 exercícios resolvidos. Sua bagagem é incomparável.",
+                xpBonus = 10000,
+                isUnlocked = ex >= 1500,
+                progress = (ex.toFloat() / 1500f).coerceIn(0f, 1f),
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_exercises_2000",
+                title = "Soberano Supremo do Knowverse",
+                description = "2.000 questões superadas! Você zerou praticamente todas as questões do sistema.",
+                xpBonus = 15000,
+                isUnlocked = ex >= 2000,
+                progress = (ex.toFloat() / 2000f).coerceIn(0f, 1f),
+                iconKey = "TROPHY"
+            ),
+
+            // ========================================================
+            // SEQUÊNCIA DE FOCO (STREAK)
+            // ========================================================
+            Achievement(
+                id = "ach_streak_3",
+                title = "Chama Sagrada (3 Dias)",
+                description = "Mantenha uma sequência de estudos por 3 dias seguidos.",
+                xpBonus = 100,
+                isUnlocked = streak >= 3,
+                progress = (streak.toFloat() / 3f).coerceIn(0f, 1f),
+                iconKey = "STREAK"
+            ),
+            Achievement(
+                id = "ach_streak_7",
+                title = "Semana de Ouro (7 Dias)",
+                description = "Mantenha uma sequência de estudos por 7 dias seguidos.",
+                xpBonus = 250,
+                isUnlocked = streak >= 7,
+                progress = (streak.toFloat() / 7f).coerceIn(0f, 1f),
+                iconKey = "STREAK"
+            ),
+            Achievement(
+                id = "ach_streak_14",
+                title = "Guardião da Disciplina (14 Dias)",
+                description = "Mantenha a chama acesa por duas semanas consecutivas.",
+                xpBonus = 500,
+                isUnlocked = streak >= 14,
+                progress = (streak.toFloat() / 14f).coerceIn(0f, 1f),
+                iconKey = "STREAK"
+            ),
+            Achievement(
+                id = "ach_streak_30",
+                title = "Centurião do Foco (30 Dias)",
+                description = "Um mês inteiro ininterrupto de aprendizado diário!",
+                xpBonus = 1200,
+                isUnlocked = streak >= 30,
+                progress = (streak.toFloat() / 30f).coerceIn(0f, 1f),
+                iconKey = "STREAK"
+            ),
+
+            // ========================================================
+            // DOMÍNIO DAS DISCIPLINAS
+            // ========================================================
+            Achievement(
+                id = "ach_chemistry_explorer",
+                title = "Alquimista do ENEM",
+                description = "Conclua aulas e exercícios da Trilha Oficial de Química.",
+                xpBonus = 350,
+                isUnlocked = lessons.any { it.startsWith("ch_") || it.contains("quimica") },
+                progress = if (lessons.any { it.startsWith("ch_") || it.contains("quimica") }) 1f else 0f,
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_geography_explorer",
+                title = "Cartógrafo Global",
+                description = "Conclua aulas e exercícios da Trilha de Geografia.",
+                xpBonus = 300,
+                isUnlocked = lessons.any { it.startsWith("geo_") || it.contains("geografia") },
+                progress = if (lessons.any { it.startsWith("geo_") || it.contains("geografia") }) 1f else 0f,
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_history_explorer",
+                title = "Cronista das Eras",
+                description = "Conclua aulas e exercícios da Trilha de História.",
+                xpBonus = 300,
+                isUnlocked = lessons.any { it.startsWith("hist_") || it.contains("historia") },
+                progress = if (lessons.any { it.startsWith("hist_") || it.contains("historia") }) 1f else 0f,
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_languages_explorer",
+                title = "Mestre dos Discursos",
+                description = "Conclua aulas e exercícios da Trilha de Linguagens.",
+                xpBonus = 300,
+                isUnlocked = lessons.any { it.startsWith("ling_") || it.contains("linguagens") },
+                progress = if (lessons.any { it.startsWith("ling_") || it.contains("linguagens") }) 1f else 0f,
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_physics_explorer",
+                title = "Newtoniano Moderno",
+                description = "Conclua aulas e exercícios da Trilha de Física.",
+                xpBonus = 350,
+                isUnlocked = lessons.any { it.startsWith("fis_") || it.contains("fisica") },
+                progress = if (lessons.any { it.startsWith("fis_") || it.contains("fisica") }) 1f else 0f,
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_biology_explorer",
+                title = "Naturalista da Vida",
+                description = "Conclua aulas e exercícios da Trilha de Biologia.",
+                xpBonus = 350,
+                isUnlocked = lessons.any { it.startsWith("bio_") || it.contains("biologia") },
+                progress = if (lessons.any { it.startsWith("bio_") || it.contains("biologia") }) 1f else 0f,
+                iconKey = "TROPHY"
+            ),
+            Achievement(
+                id = "ach_math_explorer",
+                title = "Estrategista dos Números",
+                description = "Conclua aulas e exercícios da Trilha de Matemática ENEM.",
+                xpBonus = 400,
+                isUnlocked = lessons.any { it.startsWith("mat_") || it.contains("matematica") },
+                progress = if (lessons.any { it.startsWith("mat_") || it.contains("matematica") }) 1f else 0f,
+                iconKey = "TROPHY"
+            ),
+
+            // ========================================================
+            // MARCOS GERAIS E NÍVEL
+            // ========================================================
             Achievement(
                 id = "ach_first_code",
                 title = "Primeira Execução",
@@ -1415,36 +1888,9 @@ class UserProgressRepository(context: Context) {
                 title = "Primeiro Módulo",
                 description = "Conclua sua primeira lição completa.",
                 xpBonus = 50,
-                isUnlocked = progress.completedLessonIds.isNotEmpty(),
-                progress = (progress.completedLessonIds.size.toFloat() / 1f).coerceIn(0f, 1f),
+                isUnlocked = lessons.isNotEmpty(),
+                progress = (lessons.size.toFloat() / 1f).coerceIn(0f, 1f),
                 iconKey = "CHECK"
-            ),
-            Achievement(
-                id = "ach_exercises_5",
-                title = "Praticante Dedicado",
-                description = "Resolva 5 exercícios no Banco Universal.",
-                xpBonus = 75,
-                isUnlocked = progress.totalSolvedExercises >= 5,
-                progress = (progress.totalSolvedExercises.toFloat() / 5f).coerceIn(0f, 1f),
-                iconKey = "CHECK"
-            ),
-            Achievement(
-                id = "ach_streak_3",
-                title = "Consistência (3 Dias)",
-                description = "Mantenha uma sequência de estudos por 3 dias seguidos.",
-                xpBonus = 100,
-                isUnlocked = progress.currentStreak >= 3,
-                progress = (progress.currentStreak.toFloat() / 3f).coerceIn(0f, 1f),
-                iconKey = "STREAK"
-            ),
-            Achievement(
-                id = "ach_streak_7",
-                title = "Semana de Ouro (7 Dias)",
-                description = "Mantenha uma sequência de estudos por 7 dias seguidos.",
-                xpBonus = 200,
-                isUnlocked = progress.currentStreak >= 7,
-                progress = (progress.currentStreak.toFloat() / 7f).coerceIn(0f, 1f),
-                iconKey = "STREAK"
             ),
             Achievement(
                 id = "ach_final_test_master",
@@ -1465,13 +1911,13 @@ class UserProgressRepository(context: Context) {
                 iconKey = "TROPHY"
             ),
             Achievement(
-                id = "ach_exercises_20",
-                title = "Sábio dos Exercícios",
-                description = "Resolva 20 exercícios com gabarito no Knowverse.",
-                xpBonus = 250,
-                isUnlocked = progress.totalSolvedExercises >= 20,
-                progress = (progress.totalSolvedExercises.toFloat() / 20f).coerceIn(0f, 1f),
-                iconKey = "CHECK"
+                id = "ach_level_10",
+                title = "Grão-Mestre Acadêmico",
+                description = "Atinja o Nível 10 de Maestria no Knowverse.",
+                xpBonus = 500,
+                isUnlocked = progress.level >= 10,
+                progress = (progress.level.toFloat() / 10f).coerceIn(0f, 1f),
+                iconKey = "TROPHY"
             )
         )
     }

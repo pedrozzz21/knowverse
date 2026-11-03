@@ -60,6 +60,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
@@ -118,8 +119,10 @@ import com.example.ui.theme.SurfaceElevated
 import com.example.ui.theme.TextPrimary
 import com.example.ui.theme.TextSecondary
 import com.example.ui.theme.TextTertiary
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  * Converte a representação textual de dificuldade em peso numérico (1 a 3) para comparação algorítmica.
@@ -262,11 +265,30 @@ fun ExerciseSolverScreen(
     val coroutineScope = rememberCoroutineScope()
     val listState = rememberLazyListState()
 
-    // Carrega e registra questões do ENEM no banco universal imediatamente
-    val enemExercises = remember {
-        val list = enemRepo.getAsUniversalExercises()
-        UniversalExerciseBank.registerEnemExercises(list)
-        list
+    var isQuestionsLoading by remember { mutableStateOf(true) }
+    var allExercisesList by remember { mutableStateOf<List<UniversalExercise>>(emptyList()) }
+    var visibleItemCount by remember { mutableIntStateOf(40) }
+
+    // Carrega assincronamente as questões do ENEM e registra no banco universal em background thread (Dispatchers.IO)
+    LaunchedEffect(Unit) {
+        withContext(Dispatchers.IO) {
+            try {
+                val list = enemRepo.getAsUniversalExercises()
+                UniversalExerciseBank.registerEnemExercises(list)
+                val bank = UniversalExerciseBank.getAllExercises().distinctBy { it.id }
+                withContext(Dispatchers.Main) {
+                    allExercisesList = bank
+                    isQuestionsLoading = false
+                }
+            } catch (t: Throwable) {
+                android.util.Log.e("ExerciseSolver", "Falha ao carregar banco assíncrono: ${t.message}", t)
+                val fallback = UniversalExerciseBank.getAllExercises().distinctBy { it.id }
+                withContext(Dispatchers.Main) {
+                    allExercisesList = fallback
+                    isQuestionsLoading = false
+                }
+            }
+        }
     }
 
     // Respostas locais e resolvidas na sessão
@@ -297,12 +319,20 @@ fun ExerciseSolverScreen(
         when (selectedDiscipline) {
             ExerciseDiscipline.ENEM -> listOf(
                 "all" to "Todos os Módulos ENEM",
+                "Química" to "Ciências da Natureza • Química",
                 "Geografia" to "Ciências Humanas • Geografia",
                 "História" to "Ciências Humanas • História",
                 "Linguagens" to "Linguagens e Códigos",
                 "Física" to "Ciências da Natureza • Física",
                 "Biologia" to "Ciências da Natureza • Biologia",
                 "Matemática" to "Matemática e Tecnologias"
+            )
+            ExerciseDiscipline.CHEMISTRY -> listOf(
+                "all" to "Todos os Módulos",
+                "Geral" to "Módulo 1: Química Geral e Matéria",
+                "Físico" to "Módulo 2: Físico-Química",
+                "Orgânica" to "Módulo 3: Química Orgânica",
+                "Ambiental" to "Módulo 4: Química Ambiental e Cotidiano"
             )
             ExerciseDiscipline.GEOGRAPHY -> listOf(
                 "all" to "Todos os Módulos",
@@ -386,6 +416,8 @@ fun ExerciseSolverScreen(
             )
             ExerciseDiscipline.ALL -> listOf(
                 "all" to "Todos os Tópicos",
+                "Química" to "ENEM: Química",
+                "Geografia" to "ENEM: Geografia",
                 "História" to "ENEM: História",
                 "Linguagens" to "ENEM: Linguagens",
                 "Física" to "ENEM: Física",
@@ -399,7 +431,12 @@ fun ExerciseSolverScreen(
         }
     }
 
-    val allExercises = remember(enemExercises) { UniversalExerciseBank.getAllExercises().map { it.randomized() } }
+    val allExercises = allExercisesList
+
+    // Redefine paginação ao alterar qualquer filtro
+    LaunchedEffect(searchQuery, selectedDiscipline, selectedSubtopic, selectedDifficulty, selectedYear, onlyVisuals) {
+        visibleItemCount = 40
+    }
 
     val filteredList = remember(
         searchQuery,
@@ -461,6 +498,10 @@ fun ExerciseSolverScreen(
         } else {
             baseList
         }
+    }
+
+    val displayedList = remember(filteredList, visibleItemCount) {
+        filteredList.take(visibleItemCount)
     }
 
     // Notifica o container principal quando o modo foco está ativo
@@ -825,7 +866,29 @@ fun ExerciseSolverScreen(
         // ========================================================
         // LISTA DE QUESTÕES (Cards compactos com clique para Modo Foco)
         // ========================================================
-        if (filteredList.isEmpty()) {
+        if (isQuestionsLoading) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(32.dp),
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(14.dp)
+                ) {
+                    CircularProgressIndicator(
+                        color = PrimaryViolet,
+                        modifier = Modifier.size(36.dp),
+                        strokeWidth = 3.dp
+                    )
+                    Text(
+                        text = "Carregando banco de questões...",
+                        style = MaterialTheme.typography.bodyMedium.copy(color = TextSecondary)
+                    )
+                }
+            }
+        } else if (filteredList.isEmpty()) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
@@ -868,7 +931,7 @@ fun ExerciseSolverScreen(
                 verticalArrangement = Arrangement.spacedBy(10.dp),
                 modifier = Modifier.fillMaxSize()
             ) {
-                itemsIndexed(filteredList, key = { _, item -> item.id }) { index, item ->
+                itemsIndexed(displayedList, key = { index, item -> "${item.id}_$index" }) { index, item ->
                     val isSolved = solvedExercises[item.id] == true
 
                     ExerciseListItemCard(
@@ -880,6 +943,41 @@ fun ExerciseSolverScreen(
                             onFocusModeChange?.invoke(true)
                         }
                     )
+                }
+
+                if (displayedList.size < filteredList.size) {
+                    item(key = "load_more_footer") {
+                        Surface(
+                            color = SurfaceElevated,
+                            shape = RoundedCornerShape(8.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable { visibleItemCount += 40 }
+                                .padding(vertical = 4.dp)
+                        ) {
+                            Row(
+                                modifier = Modifier.padding(14.dp),
+                                horizontalArrangement = Arrangement.Center,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Refresh,
+                                    contentDescription = null,
+                                    tint = PrimaryViolet,
+                                    modifier = Modifier.size(18.dp)
+                                )
+                                Spacer(modifier = Modifier.width(8.dp))
+                                Text(
+                                    text = "Carregar mais questões (${filteredList.size - displayedList.size} restantes)",
+                                    style = MaterialTheme.typography.bodySmall.copy(
+                                        color = PrimaryViolet,
+                                        fontWeight = FontWeight.Bold
+                                    )
+                                )
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -1000,6 +1098,7 @@ private fun ExerciseListItemCard(
         ExerciseDiscipline.BASIC_MATH -> SuccessEmerald
         ExerciseDiscipline.CALCULUS -> GoldXp
         ExerciseDiscipline.ENEM -> Color(0xFFF59E0B)
+        ExerciseDiscipline.CHEMISTRY -> Color(0xFF06B6D4)
         ExerciseDiscipline.GEOGRAPHY -> Color(0xFF2A9D8F)
         ExerciseDiscipline.HISTORY -> Color(0xFFE07A5F)
         ExerciseDiscipline.LANGUAGES -> Color(0xFFFB923C)
@@ -1125,14 +1224,18 @@ private fun ExerciseListItemCard(
 
             // Trecho do Enunciado formatado para notação matemática legível
             val formattedSnippet = remember(item.problemStatement) {
-                MathNotationHelper.formatInlineMath(
-                    item.problemStatement
-                        .replace("\\[", "")
-                        .replace("\\]", "")
-                        .replace("$$", "")
-                        .replace(Regex("""^["'`]+|["'`]+$"""), "")
-                        .trim()
-                )
+                try {
+                    MathNotationHelper.formatInlineMath(
+                        item.problemStatement
+                            .replace("\\[", "")
+                            .replace("\\]", "")
+                            .replace("$$", "")
+                            .replace(Regex("""^["'`]+|["'`]+$"""), "")
+                            .trim()
+                    )
+                } catch (_: Throwable) {
+                    item.problemStatement.take(160)
+                }
             }
             Text(
                 text = formattedSnippet,
@@ -1477,23 +1580,12 @@ fun FocusModeExerciseScreen(
                     caption = "Figura da questão",
                     modifier = Modifier.fillMaxWidth()
                 )
-            } else if (exercise.visualDrawableRes != null) {
-                Surface(
-                    color = SurfaceElevated,
-                    shape = RoundedCornerShape(8.dp),
-                    border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle),
+            } else if (exercise.visualDrawableRes != null && exercise.visualDrawableRes != 0) {
+                DidacticImageView(
+                    drawableResId = exercise.visualDrawableRes,
+                    caption = "Figura da questão",
                     modifier = Modifier.fillMaxWidth()
-                ) {
-                    Image(
-                        painter = painterResource(id = exercise.visualDrawableRes),
-                        contentDescription = "Figura da questão",
-                        contentScale = ContentScale.Fit,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(180.dp)
-                            .clip(RoundedCornerShape(8.dp))
-                    )
-                }
+                )
             }
 
             // 2. ALTERNATIVAS LIMPAS (A, B, C, D, E)
@@ -1647,8 +1739,10 @@ fun FocusModeExerciseScreen(
                                 shape = RoundedCornerShape(6.dp),
                                 modifier = Modifier.fillMaxWidth()
                             ) {
+                                val correctOptionText = exercise.options.getOrElse(exercise.correctIndex) { "" }
+                                val letter = if (exercise.correctIndex in 0..25) ('A' + exercise.correctIndex).toString() else ""
                                 Text(
-                                    text = "Alternativa Correta: ${('A' + exercise.correctIndex)} — ${exercise.options[exercise.correctIndex]}",
+                                    text = "Alternativa Correta: $letter${if (correctOptionText.isNotBlank()) " — $correctOptionText" else ""}",
                                     style = MaterialTheme.typography.bodySmall.copy(
                                         fontWeight = FontWeight.Bold,
                                         color = SuccessEmerald,

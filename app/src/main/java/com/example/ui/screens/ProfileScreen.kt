@@ -25,6 +25,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.animation.AnimatedVisibility
@@ -1310,7 +1311,7 @@ fun ProfileScreen(
                             shape = RoundedCornerShape(4.dp)
                         ) {
                             Text(
-                                text = "v1.6.0",
+                                text = "v${com.example.BuildConfig.VERSION_NAME}",
                                 style = MaterialTheme.typography.labelSmall.copy(
                                     color = PrimaryViolet,
                                     fontWeight = FontWeight.Bold,
@@ -1330,14 +1331,16 @@ fun ProfileScreen(
                     ) {
                         Text(
                             text = "Novas versões e downloads de .APK",
-                            style = MaterialTheme.typography.labelSmall.copy(color = TextTertiary, fontSize = 11.sp)
+                            style = MaterialTheme.typography.labelSmall.copy(color = TextTertiary, fontSize = 11.sp),
+                            modifier = Modifier.weight(1f).padding(end = 8.dp),
+                            maxLines = 2
                         )
                         Button(
                             onClick = onOpenNotifications,
                             colors = ButtonDefaults.buttonColors(containerColor = PrimaryViolet),
                             shape = RoundedCornerShape(6.dp),
-                            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 12.dp, vertical = 4.dp),
-                            modifier = Modifier.height(30.dp).testTag("check_app_updates_profile_btn")
+                            contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 10.dp, vertical = 4.dp),
+                            modifier = Modifier.height(30.dp).wrapContentWidth().testTag("check_app_updates_profile_btn")
                         ) {
                             Icon(
                                 imageVector = Icons.Default.SystemUpdate,

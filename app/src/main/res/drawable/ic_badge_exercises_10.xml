@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon -->
+    <path
+        android:fillColor="#042F2E"
+        android:strokeColor="#14B8A6"
+        android:strokeWidth="2.5"
+        android:pathData="M36,4 L64,18 L64,48 L36,68 L8,48 L8,18 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#115E59"
+        android:pathData="M36,9 L59,21 L59,46 L36,63 L13,46 L13,21 Z" />
+    <!-- 10 Exercises Target Motif -->
+    <path
+        android:fillColor="#2DD4BF"
+        android:pathData="M36,25 C30,25 25,30 25,36 C25,42 30,47 36,47 C42,47 47,42 47,36 C47,30 42,25 36,25 Z M36,43 C32.1,43 29,39.9 29,36 C29,32.1 32.1,29 36,29 C39.9,29 43,32.1 43,36 C43,39.9 39.9,43 36,43 Z" />
+    <!-- Center Dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,33 A3,3 0 1,1 35.9,33 Z" />
+    <!-- Star -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M36,15 L37.5,18 L41,18.5 L38.5,20.5 L39,24 L36,22 L33,24 L33.5,20.5 L31,18.5 L34.5,18 Z" />
+</vector>

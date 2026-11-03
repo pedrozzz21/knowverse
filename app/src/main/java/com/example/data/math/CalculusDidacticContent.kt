@@ -41,17 +41,27 @@ object CalculusDidacticContent {
     )
 
     fun getContentForLesson(lessonId: String): CalculusDidacticBundle {
-        val bundle = com.example.data.geography.EnemGeographyDidacticProvider.getBundleForLesson(lessonId)
-            ?: com.example.data.history.EnemHistoryDidacticProvider.getDidacticBundle(lessonId)
-            ?: com.example.data.languages.EnemLanguagesDidacticProvider.getDidacticBundle(lessonId)
-            ?: com.example.data.biology.EnemBiologyDidacticProvider.getDidacticBundle(lessonId)
-            ?: com.example.data.physics.EnemPhysicsDidacticProvider.getDidacticBundle(lessonId)
-            ?: EnemDidacticProvider.getDidacticBundle(lessonId)
-            ?: BasicMathDidactic.get(lessonId)
-            ?: CalculusLimitsDidactic.get(lessonId)
-            ?: CalculusDerivativesDidactic.get(lessonId)
-            ?: CalculusIntegralsDidactic.get(lessonId)
-            ?: getContextualFallback(lessonId)
+        val bundle = when {
+            lessonId.startsWith("quim_") -> com.example.data.chemistry.EnemChemistryDidacticProvider.getDidacticBundle(lessonId)
+            lessonId.startsWith("geo_") -> com.example.data.geography.EnemGeographyDidacticProvider.getBundleForLesson(lessonId)
+            lessonId.startsWith("hist_") -> com.example.data.history.EnemHistoryDidacticProvider.getDidacticBundle(lessonId)
+            lessonId.startsWith("ling_") -> com.example.data.languages.EnemLanguagesDidacticProvider.getDidacticBundle(lessonId)
+            lessonId.startsWith("bio_") -> com.example.data.biology.EnemBiologyDidacticProvider.getDidacticBundle(lessonId)
+            lessonId.startsWith("fis_") -> com.example.data.physics.EnemPhysicsDidacticProvider.getDidacticBundle(lessonId)
+            lessonId.startsWith("enem_") -> EnemDidacticProvider.getDidacticBundle(lessonId)
+            lessonId.startsWith("mb_") -> BasicMathDidactic.get(lessonId)
+            lessonId.startsWith("calc_l") -> {
+                CalculusLimitsDidactic.get(lessonId)
+                    ?: CalculusDerivativesDidactic.get(lessonId)
+                    ?: CalculusIntegralsDidactic.get(lessonId)
+            }
+            else -> {
+                CalculusLimitsDidactic.get(lessonId)
+                    ?: CalculusDerivativesDidactic.get(lessonId)
+                    ?: CalculusIntegralsDidactic.get(lessonId)
+                    ?: BasicMathDidactic.get(lessonId)
+            }
+        } ?: getContextualFallback(lessonId)
 
         val ggbConfig = GeoGebraCurriculumPresets.get(lessonId)
         return if (ggbConfig != null && bundle.geoGebraConfig == null) {
@@ -63,6 +73,7 @@ object CalculusDidacticContent {
 
     private fun getContextualFallback(lessonId: String): CalculusDidacticBundle {
         val subject = when {
+            lessonId.startsWith("quim_") -> "Química • Ciências da Natureza ENEM"
             lessonId.startsWith("geo_") -> "Geografia • Ciências Humanas ENEM"
             lessonId.startsWith("hist_") -> "História • Ciências Humanas ENEM"
             lessonId.startsWith("ling_") -> "Linguagens e Códigos ENEM"

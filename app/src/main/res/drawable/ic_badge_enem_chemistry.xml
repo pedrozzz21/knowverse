@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon -->
+    <path
+        android:fillColor="#083344"
+        android:strokeColor="#06B6D4"
+        android:strokeWidth="2.5"
+        android:pathData="M36,4 L64,18 L64,48 L36,68 L8,48 L8,18 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#155E75"
+        android:pathData="M36,9 L59,21 L59,46 L36,63 L13,46 L13,21 Z" />
+    <!-- Chemistry Flask Motif -->
+    <path
+        android:fillColor="#22D3EE"
+        android:pathData="M33,20 L39,20 L39,28 L49,46 C50,48 49,51 46,51 L26,51 C23,51 22,48 23,46 L33,28 Z" />
+    <!-- Liquid Surface Inside Flask -->
+    <path
+        android:fillColor="#67E8F9"
+        android:pathData="M27,45 C30,43 34,46 38,44 C42,42 44,45 45,45 L46,49 C46,50 45,50 44,50 L28,50 C27,50 26,50 26,49 Z" />
+    <!-- Center Star of Mastery -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,34 L37.5,37 L41,37.5 L38.5,39.5 L39,43 L36,41 L33,43 L33.5,39.5 L31,37.5 L34.5,37 Z" />
+</vector>

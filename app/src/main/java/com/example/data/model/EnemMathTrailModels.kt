@@ -96,6 +96,7 @@ data class EnemTrailLesson(
     fun toAppLesson(): Lesson {
         val resolvedExercises = when {
             exercises.isNotEmpty() -> exercises
+            id.startsWith("quim_") -> com.example.data.chemistry.EnemChemistryDidacticProvider.getExercisesForLesson(id)
             id.startsWith("geo_") -> com.example.data.geography.EnemGeographyDidacticProvider.getExercisesForLesson(id)
             id.startsWith("hist_") -> com.example.data.history.EnemHistoryDidacticProvider.getExercisesForLesson(id)
             id.startsWith("bio_") -> com.example.data.biology.EnemBiologyDidacticProvider.getExercisesForLesson(id)
@@ -104,6 +105,7 @@ data class EnemTrailLesson(
             else -> com.example.data.math.EnemDidacticProvider.getExercisesForLesson(id)
         }
         val didacticBundle = when {
+            id.startsWith("quim_") -> com.example.data.chemistry.EnemChemistryDidacticProvider.getDidacticBundle(id)
             id.startsWith("geo_") -> com.example.data.geography.EnemGeographyDidacticProvider.getBundleForLesson(id)
             id.startsWith("hist_") -> com.example.data.history.EnemHistoryDidacticProvider.getDidacticBundle(id)
             id.startsWith("bio_") -> com.example.data.biology.EnemBiologyDidacticProvider.getDidacticBundle(id)

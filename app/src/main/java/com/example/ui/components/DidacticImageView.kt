@@ -187,10 +187,10 @@ fun DidacticImageView(
                         )
                     }
 
-                    drawableResId != null -> {
+                    drawableResId != null && drawableResId != 0 -> {
                         Image(
                             painter = painterResource(id = drawableResId),
-                            contentDescription = altText,
+                            contentDescription = effectiveAlt,
                             contentScale = ContentScale.Fit,
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -199,10 +199,10 @@ fun DidacticImageView(
                         )
                     }
 
-                    imagePathOrRes.startsWith("http") || imagePathOrRes.startsWith("file:") -> {
+                    effectivePath.startsWith("http://") || effectivePath.startsWith("https://") || effectivePath.startsWith("file:") -> {
                         SubcomposeAsyncImage(
                             model = ImageRequest.Builder(context)
-                                .data(imagePathOrRes)
+                                .data(effectivePath)
                                 .crossfade(true)
                                 .build(),
                             contentDescription = altText,
@@ -335,7 +335,7 @@ fun DidacticImageView(
                                     modifier = Modifier.fillMaxSize()
                                 )
                             }
-                            drawableResId != null -> {
+                            drawableResId != null && drawableResId != 0 -> {
                                 Image(
                                     painter = painterResource(id = drawableResId),
                                     contentDescription = effectiveAlt,

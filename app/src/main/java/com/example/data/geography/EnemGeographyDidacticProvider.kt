@@ -10,8 +10,15 @@ import com.example.data.model.MathExercise
 object EnemGeographyDidacticProvider {
 
     fun getBundleForLesson(lessonId: String): CalculusDidacticBundle? {
+        if (!lessonId.startsWith("geo_")) return null
         val lesson = EnemGeographyCurriculum.findLesson(lessonId)
-            ?: com.example.data.model.EnemTrailLesson(id = lessonId, moduleId = "", lessonIndex = 1, title = "Aula de Geografia")
+            ?: com.example.data.model.EnemTrailLesson(
+                id = lessonId,
+                moduleId = "mod_geo_01_fisica",
+                lessonIndex = 1,
+                title = "Aula de Geografia",
+                subtopic = "Geografia Geral e do Brasil"
+            )
         return when {
             lessonId.startsWith("geo_fis_") -> GeographyPhysicalDidactic.buildBundle(lesson)
             lessonId.startsWith("geo_agr_") -> GeographyAgrarianDidactic.buildBundle(lesson)
@@ -23,8 +30,15 @@ object EnemGeographyDidacticProvider {
     }
 
     fun getExercisesForLesson(lessonId: String): List<MathExercise> {
+        if (!lessonId.startsWith("geo_")) return emptyList()
         val lesson = EnemGeographyCurriculum.findLesson(lessonId)
-            ?: com.example.data.model.EnemTrailLesson(id = lessonId, moduleId = "", lessonIndex = 1, title = "Aula de Geografia")
+            ?: com.example.data.model.EnemTrailLesson(
+                id = lessonId,
+                moduleId = "mod_geo_01_fisica",
+                lessonIndex = 1,
+                title = "Aula de Geografia",
+                subtopic = "Geografia Geral e do Brasil"
+            )
         val exercises = when {
             lessonId.startsWith("geo_fis_") -> GeographyPhysicalDidactic.buildExercises(lesson)
             lessonId.startsWith("geo_agr_") -> GeographyAgrarianDidactic.buildExercises(lesson)

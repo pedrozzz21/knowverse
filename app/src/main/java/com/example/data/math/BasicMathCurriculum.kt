@@ -30,15 +30,15 @@ object BasicMathCurriculum {
         unitNumber = 1,
         tier = DifficultyTier.BASIC,
         title = "Matemática Básica (Ciclo ENEM)",
-        description = "Os 9 pilares essenciais: Frações, Decimais, MMC/MDC, Potências, Notação Científica, Unidades, Razão, Regra de Três, Escalas e Porcentagem.",
+        description = "Fundamentos essenciais: Conjuntos Numéricos, Operações Fundamentais, Frações, Divisibilidade, MMC/MDC, Potências, Notação Científica, Unidades, Razão, Regra de Três, Porcentagem, Álgebra, Produtos Notáveis, Fatoração, Equações e Inequações.",
         category = "Matemática",
         subject = "Matemática Básica",
         lessons = listOf(
             Lesson(
                 id = "mb_l1",
                 unitId = "math_u_basic",
-                title = "Aula 1: Frações e Decimais",
-                conceptTitle = "Operações com Frações e Decimais no ENEM",
+                title = "Aula 1: Conjuntos Numéricos, Frações e Decimais",
+                conceptTitle = "Conjuntos Numéricos e Operações com Frações",
                 explanation = """
                     As operações aritméticas entre frações e decimais formam a base indispensável para a prova de Matemática do ENEM.
                     
@@ -110,7 +110,7 @@ object BasicMathCurriculum {
             Lesson(
                 id = "mb_l2",
                 unitId = "math_u_basic",
-                title = "Aula 2: MMC e MDC (Múltiplos e Divisores)",
+                title = "Aula 2: Divisibilidade, MMC e MDC",
                 conceptTitle = "Sincronicidade vs Divisão em Partes Iguais",
                 explanation = """
                     • MMC (Mínimo Múltiplo Comum): menor número inteiro positivo múltiplo simultâneo.
@@ -692,7 +692,7 @@ object BasicMathCurriculum {
             Lesson(
                 id = "mb_l10",
                 unitId = "math_u_basic",
-                title = "Aula 10: Equações de 1º/2º Grau e Sistemas Lineares",
+                title = "Aula 10: Álgebra, Produtos Notáveis, Equações e Inequações",
                 conceptTitle = "Modelagem Algébrica, Bhaskara e Sistemas 2x2",
                 explanation = """
                     • Equação do 1º Grau: \( ax + b = 0 \implies x = -\frac{b}{a} \).

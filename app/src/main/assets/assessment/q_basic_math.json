@@ -1,0 +1,3308 @@
+[
+  {
+    "id": "mb_l1_n01",
+    "lessonId": "mb_l1",
+    "format": "TRUE_FALSE",
+    "difficulty": "EASY",
+    "skill": "Julgar proposições físicas sobre Conjuntos Numéricos e Operações com Frações",
+    "concept": "Conjuntos numéricos (N, Z, Q, I, R), operações com frações (MMC no denominador) e dízimas periódicas",
+    "statement": "Todo número decimal exato e toda dízima periódica podem ser escritos na forma de fração p/q (com p inteiro e q inteiro não nulo), pertencendo ao conjunto dos números racionais (Q).",
+    "explanation": "A afirmação é verdadeira: Todo número decimal exato e toda dízima periódica podem ser escritos na forma de fração p/q (com p inteiro e q inteiro não nulo), pertencendo ao conjunto dos números racionais (Q). Esse princípio é fundamental em Conjuntos Numéricos e Operações com Frações.",
+    "retryGuidance": "Revise as leis físicas e relações matemáticas de Conjuntos Numéricos e Operações com Frações.",
+    "source": "AUTORAL",
+    "answerBool": true
+  },
+  {
+    "id": "mb_l1_n02",
+    "lessonId": "mb_l1",
+    "format": "FILL_BLANK",
+    "difficulty": "EASY",
+    "skill": "Identificar o conceito ou lei física em Conjuntos Numéricos e Operações com Frações",
+    "concept": "Conjuntos numéricos (N, Z, Q, I, R), operações com frações (MMC no denominador) e dízimas periódicas",
+    "statement": "No estudo de Conjuntos Numéricos e Operações com Frações (Conjuntos numéricos (N, Z, Q, I, R), operações com frações (MMC no denominador) e dízimas periódicas), o termo, unidade ou grandeza física central destacada na aula é ___.",
+    "explanation": "O termo correto para completar a lacuna é 'racionais', elemento essencial de Conjuntos Numéricos e Operações com Frações.",
+    "retryGuidance": "Consulte o quadro de conceitos e fórmulas de Conjuntos Numéricos e Operações com Frações e verifique a grafia do termo principal.",
+    "source": "AUTORAL",
+    "answers": [
+      "racionais"
+    ]
+  },
+  {
+    "id": "mb_l1_n03",
+    "lessonId": "mb_l1",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "EASY",
+    "skill": "Relacionar leis físicas e equações em Conjuntos Numéricos e Operações com Frações",
+    "concept": "Conjunto dos Racionais (Q) em Conjuntos Numéricos e Operações com Frações",
+    "statement": "Considerando os princípios de Conjuntos Numéricos e Operações com Frações, assinale a alternativa que caracteriza corretamente 'Conjunto dos Racionais (Q)':",
+    "explanation": "A alternativa correta relaciona 'Conjunto dos Racionais (Q)' a: Números que podem ser escritos como fração a/b com b != 0 (inclui decimais exatos e dízimas). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Conjunto dos Racionais (Q)' com os demais tópicos de Conjuntos Numéricos e Operações com Frações.",
+    "source": "AUTORAL",
+    "options": [
+      "Conjunto dos Racionais (Q): Números que podem ser escritos como fração a/b com b != 0 (inclui decimais exatos e dízimas)",
+      "Conjunto dos Racionais (Q): Decimais infinitos e não periódicos como raiz(2), raiz(3) e pi",
+      "Conjunto dos Racionais (Q): Reduzir ao mesmo denominador comum pelo MMC antes de somar os numeradores",
+      "Conjunto dos Racionais (Q): Conservar a primeira fração e multiplicar pelo inverso da segunda: (a.d)/(b.c)",
+      "Conjunto dos Racionais (Q): Grandeza nula que independe de qualquer variável física"
+    ],
+    "answerIndex": 0,
+    "distractorConcepts": [
+      "",
+      "Confundiu 'Conjunto dos Racionais (Q)' com 'Conjunto dos Irracionais (I)'",
+      "Confundiu 'Conjunto dos Racionais (Q)' com 'Soma de frações heterogêneas'",
+      "Confundiu 'Conjunto dos Racionais (Q)' com 'Divisão de frações (a/b) : (c/d)'",
+      "Desconsiderou a lei física aplicável a 'Conjunto dos Racionais (Q)' em Conjuntos Numéricos e Operações com Frações"
+    ]
+  },
+  {
+    "id": "mb_l1_n05",
+    "lessonId": "mb_l1",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Conjuntos Numéricos e Operações com Frações",
+    "concept": "Soma de frações heterogêneas em Conjuntos Numéricos e Operações com Frações",
+    "statement": "Considerando os princípios de Conjuntos Numéricos e Operações com Frações, assinale a alternativa que caracteriza corretamente 'Soma de frações heterogêneas':",
+    "explanation": "A alternativa correta relaciona 'Soma de frações heterogêneas' a: Reduzir ao mesmo denominador comum pelo MMC antes de somar os numeradores. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Soma de frações heterogêneas' com os demais tópicos de Conjuntos Numéricos e Operações com Frações.",
+    "source": "AUTORAL",
+    "options": [
+      "Soma de frações heterogêneas: Decimais infinitos e não periódicos como raiz(2), raiz(3) e pi",
+      "Soma de frações heterogêneas: Conservar a primeira fração e multiplicar pelo inverso da segunda: (a.d)/(b.c)",
+      "Soma de frações heterogêneas: Grandeza nula que independe de qualquer variável física",
+      "Soma de frações heterogêneas: Reduzir ao mesmo denominador comum pelo MMC antes de somar os numeradores",
+      "Soma de frações heterogêneas: Números que podem ser escritos como fração a/b com b != 0 (inclui decimais exatos e dízimas)"
+    ],
+    "answerIndex": 3,
+    "distractorConcepts": [
+      "Confundiu 'Soma de frações heterogêneas' com 'Conjunto dos Irracionais (I)'",
+      "Confundiu 'Soma de frações heterogêneas' com 'Divisão de frações (a/b) : (c/d)'",
+      "Desconsiderou a lei física aplicável a 'Soma de frações heterogêneas' em Conjuntos Numéricos e Operações com Frações",
+      "",
+      "Confundiu 'Soma de frações heterogêneas' com 'Conjunto dos Racionais (Q)'"
+    ]
+  },
+  {
+    "id": "mb_l1_n06",
+    "lessonId": "mb_l1",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Conjuntos Numéricos e Operações com Frações",
+    "concept": "Divisão de frações (a/b) : (c/d) em Conjuntos Numéricos e Operações com Frações",
+    "statement": "Considerando os princípios de Conjuntos Numéricos e Operações com Frações, assinale a alternativa que caracteriza corretamente 'Divisão de frações (a/b) : (c/d)':",
+    "explanation": "A alternativa correta relaciona 'Divisão de frações (a/b) : (c/d)' a: Conservar a primeira fração e multiplicar pelo inverso da segunda: (a.d)/(b.c). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Divisão de frações (a/b) : (c/d)' com os demais tópicos de Conjuntos Numéricos e Operações com Frações.",
+    "source": "AUTORAL",
+    "options": [
+      "Divisão de frações (a/b) : (c/d): Grandeza nula que independe de qualquer variável física",
+      "Divisão de frações (a/b) : (c/d): Conservar a primeira fração e multiplicar pelo inverso da segunda: (a.d)/(b.c)",
+      "Divisão de frações (a/b) : (c/d): Números que podem ser escritos como fração a/b com b != 0 (inclui decimais exatos e dízimas)",
+      "Divisão de frações (a/b) : (c/d): Decimais infinitos e não periódicos como raiz(2), raiz(3) e pi",
+      "Divisão de frações (a/b) : (c/d): Reduzir ao mesmo denominador comum pelo MMC antes de somar os numeradores"
+    ],
+    "answerIndex": 1,
+    "distractorConcepts": [
+      "Desconsiderou a lei física aplicável a 'Divisão de frações (a/b) : (c/d)' em Conjuntos Numéricos e Operações com Frações",
+      "",
+      "Confundiu 'Divisão de frações (a/b) : (c/d)' com 'Conjunto dos Racionais (Q)'",
+      "Confundiu 'Divisão de frações (a/b) : (c/d)' com 'Conjunto dos Irracionais (I)'",
+      "Confundiu 'Divisão de frações (a/b) : (c/d)' com 'Soma de frações heterogêneas'"
+    ]
+  },
+  {
+    "id": "mb_l1_n04",
+    "lessonId": "mb_l1",
+    "format": "MATCHING",
+    "difficulty": "MEDIUM",
+    "skill": "Associar grandezas, leis e aplicações de Conjuntos Numéricos e Operações com Frações",
+    "concept": "Conjuntos numéricos (N, Z, Q, I, R), operações com frações (MMC no denominador) e dízimas periódicas",
+    "statement": "Associe cada grandeza, lei ou fenômeno de Conjuntos Numéricos e Operações com Frações à sua respectiva propriedade física:",
+    "explanation": "Relacionar cada lei física à sua expressão matemática e aplicação prática é indispensável para resolver problemas contextualizados.",
+    "retryGuidance": "Analise as unidades e relações de proporcionalidade de cada item de Conjuntos Numéricos e Operações com Frações.",
+    "source": "AUTORAL",
+    "pairs": [
+      [
+        "Conjunto dos Racionais (Q)",
+        "Números que podem ser escritos como fração a/b com b != 0 (inclui decimais exatos e dízimas)"
+      ],
+      [
+        "Conjunto dos Irracionais (I)",
+        "Decimais infinitos e não periódicos como raiz(2), raiz(3) e pi"
+      ],
+      [
+        "Soma de frações heterogêneas",
+        "Reduzir ao mesmo denominador comum pelo MMC antes de somar os numeradores"
+      ],
+      [
+        "Divisão de frações (a/b) : (c/d)",
+        "Conservar a primeira fração e multiplicar pelo inverso da segunda: (a.d)/(b.c)"
+      ]
+    ]
+  },
+  {
+    "id": "mb_l1_n07",
+    "lessonId": "mb_l1",
+    "format": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "skill": "Resolver problema numérico de Conjuntos Numéricos e Operações com Frações",
+    "concept": "Conjuntos numéricos (N, Z, Q, I, R), operações com frações (MMC no denominador) e dízimas periódicas",
+    "statement": "Um reservatório tinha $3/4$ de sua capacidade preenchida com água. Após o consumo de $1/5$ da capacidade total do reservatório, qual porcentagem (%) da capacidade total permaneceu com água ($(3/4 - 1/5) \\times 100$)?",
+    "explanation": "Aplicando a equação de Conjuntos Numéricos e Operações com Frações ((3/4 - 1/5) * 100), obtemos o resultado exato de 55 %.",
+    "retryGuidance": "Identifique os dados no Sistema Internacional e aplique a relação (3/4 - 1/5) * 100.",
+    "source": "AUTORAL",
+    "answerNumber": 55,
+    "tolerance": 0.01,
+    "unit": "%",
+    "verify": "(3/4 - 1/5) * 100"
+  },
+  {
+    "id": "mb_l1_n08",
+    "lessonId": "mb_l1",
+    "format": "CHART",
+    "difficulty": "HARD",
+    "skill": "Interpretar gráficos e tabelas de Conjuntos Numéricos e Operações com Frações",
+    "concept": "Conjuntos numéricos (N, Z, Q, I, R), operações com frações (MMC no denominador) e dízimas periódicas",
+    "statement": "Sabendo que o consumo total do condomínio foi de 120 m³, sendo 1/4 no jardim (30 m³) e 1/3 na piscina (40 m³), quantos metros cúbicos foram consumidos pelos apartamentos?",
+    "explanation": "Analisando os dados de 'Consumo Mensal de Água (m³) por Setor de um Condomínio' (120 - (30 + 40)), conclui-se corretamente: 50 m³ (pois 120 - (30 + 40) = 50 m³, correspondente a 5/12 do total).",
+    "retryGuidance": "Extraia os valores diretamente dos eixos/colunas antes de substituir na equação física.",
+    "source": "AUTORAL",
+    "options": [
+      "70 m³",
+      "30 m³",
+      "40 m³",
+      "60 m³",
+      "50 m³ (pois 120 - (30 + 40) = 50 m³, correspondente a 5/12 do total)"
+    ],
+    "answerIndex": 4,
+    "distractorConcepts": [
+      "70 m³ é a soma de jardim + piscina (30 + 40), esquecendo de subtrair de 120 m³",
+      "30 m³ é apenas o consumo do jardim",
+      "40 m³ é apenas o consumo da piscina",
+      "Dividiu 120 por 2 ignorando as frações fornecidas",
+      ""
+    ],
+    "verify": "120 - (30 + 40)",
+    "chart": {
+      "type": "bar",
+      "title": "Consumo Mensal de Água (m³) por Setor de um Condomínio",
+      "labels": [
+        "Jardim (1/4 de 120 m³)",
+        "Piscina (1/3 de 120 m³)",
+        "Apartamentos (Restante)"
+      ],
+      "series": [
+        {
+          "name": "Volume Consumido (m³)",
+          "values": [
+            30,
+            40,
+            50
+          ]
+        }
+      ],
+      "unit": ""
+    }
+  },
+  {
+    "id": "mb_l1_n09",
+    "lessonId": "mb_l1",
+    "format": "NUMERIC",
+    "difficulty": "HARD",
+    "skill": "Modelar e calcular situação física em Conjuntos Numéricos e Operações com Frações",
+    "concept": "Conjuntos numéricos (N, Z, Q, I, R), operações com frações (MMC no denominador) e dízimas periódicas",
+    "statement": "Qual é o numerador da fração geratriz irredutível da dízima periódica simples $0{,}333\\dots = 1/3$ somada com $5/3$ ($(1 + 5)/3$, resultado inteiro)?",
+    "explanation": "Substituindo os valores na relação física ((1 + 5) / 3), encontramos 2 .",
+    "retryGuidance": "Confira se todas as grandezas estão nas unidades pedidas e aplique (1 + 5) / 3.",
+    "source": "AUTORAL",
+    "answerNumber": 2,
+    "tolerance": 0.01,
+    "unit": "",
+    "verify": "(1 + 5) / 3"
+  },
+  {
+    "id": "mb_l1_n10",
+    "lessonId": "mb_l1",
+    "format": "ESSAY",
+    "difficulty": "HARD",
+    "skill": "Explicar fenômenos cotidianos e tecnológicos usando Conjuntos Numéricos e Operações com Frações",
+    "concept": "Conjuntos numéricos (N, Z, Q, I, R), operações com frações (MMC no denominador) e dízimas periódicas",
+    "statement": "Explique a diferença entre números racionais e irracionais e descreva passo a passo como somar duas frações com denominadores diferentes ($2/3 + 1/4$) e como dividir duas frações.",
+    "explanation": "Síntese conceitual esperada pela rubrica: Números racionais podem ser representados como razão de dois inteiros (a/b, com b != 0), incluindo inteiros, decimais exatos e dízimas periódicas; já os irracionais (como pi e raiz de 2) têm representação decimal infinita e não periódica. Para somar 2/3 + 1/4, calcula-se o MMC(3, 4) = 12, gerando frações equivalentes 8/12 + 3/12 = 11/12. Na divisão de frações, conserva-se a primeira e multiplica-se pelo inverso da segunda.",
+    "retryGuidance": "Estruture sua resposta mencionando a lei física de Conjuntos Numéricos e Operações com Frações, a relação entre as grandezas e a aplicação prática.",
+    "source": "AUTORAL",
+    "modelAnswer": "Números racionais podem ser representados como razão de dois inteiros (a/b, com b != 0), incluindo inteiros, decimais exatos e dízimas periódicas; já os irracionais (como pi e raiz de 2) têm representação decimal infinita e não periódica. Para somar 2/3 + 1/4, calcula-se o MMC(3, 4) = 12, gerando frações equivalentes 8/12 + 3/12 = 11/12. Na divisão de frações, conserva-se a primeira e multiplica-se pelo inverso da segunda.",
+    "passScore": 0.6,
+    "rubric": [
+      {
+        "criterion": "Enuncia o princípio ou lei física central de Conjuntos Numéricos e Operações com Frações",
+        "points": 4,
+        "keywords": [
+          [
+            "raciona",
+            "fracao",
+            "fração",
+            "dizima",
+            "dízima",
+            "irraciona",
+            "pi",
+            "raiz"
+          ]
+        ]
+      },
+      {
+        "criterion": "Relaciona corretamente as grandezas físicas envolvidas",
+        "points": 3,
+        "keywords": [
+          [
+            "mmc",
+            "denominador",
+            "equivalente"
+          ]
+        ]
+      },
+      {
+        "criterion": "Explica a aplicação prática ou consequência física",
+        "points": 3,
+        "keywords": [
+          [
+            "divisao",
+            "divisão",
+            "inverso",
+            "multiplica"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mb_l2_n01",
+    "lessonId": "mb_l2",
+    "format": "TRUE_FALSE",
+    "difficulty": "EASY",
+    "skill": "Julgar proposições físicas sobre Sincronicidade vs Divisão em Partes Iguais",
+    "concept": "Critérios de divisibilidade, fatoração em primos, Mínimo Múltiplo Comum (MMC: ciclos futuros) e Máximo Divisor Comum (MDC: divisão máxima sem sobras)",
+    "statement": "Para problemas de encontro futuro de eventos periódicos utiliza-se o MMC, enquanto para dividir comprimentos ou grupos em partes iguais do maior tamanho possível sem sobra utiliza-se o MDC.",
+    "explanation": "A afirmação é verdadeira: Para problemas de encontro futuro de eventos periódicos utiliza-se o MMC, enquanto para dividir comprimentos ou grupos em partes iguais do maior tamanho possível sem sobra utiliza-se o MDC. Esse princípio é fundamental em Sincronicidade vs Divisão em Partes Iguais.",
+    "retryGuidance": "Revise as leis físicas e relações matemáticas de Sincronicidade vs Divisão em Partes Iguais.",
+    "source": "AUTORAL",
+    "answerBool": true
+  },
+  {
+    "id": "mb_l2_n02",
+    "lessonId": "mb_l2",
+    "format": "FILL_BLANK",
+    "difficulty": "EASY",
+    "skill": "Identificar o conceito ou lei física em Sincronicidade vs Divisão em Partes Iguais",
+    "concept": "Critérios de divisibilidade, fatoração em primos, Mínimo Múltiplo Comum (MMC: ciclos futuros) e Máximo Divisor Comum (MDC: divisão máxima sem sobras)",
+    "statement": "No estudo de Sincronicidade vs Divisão em Partes Iguais (Critérios de divisibilidade, fatoração em primos, Mínimo Múltiplo Comum (MMC: ciclos futuros) e Máximo Divisor Comum (MDC: divisão máxima sem sobras)), o termo, unidade ou grandeza física central destacada na aula é ___.",
+    "explanation": "O termo correto para completar a lacuna é 'MDC', elemento essencial de Sincronicidade vs Divisão em Partes Iguais.",
+    "retryGuidance": "Consulte o quadro de conceitos e fórmulas de Sincronicidade vs Divisão em Partes Iguais e verifique a grafia do termo principal.",
+    "source": "AUTORAL",
+    "answers": [
+      "MDC",
+      "mdc"
+    ]
+  },
+  {
+    "id": "mb_l2_n03",
+    "lessonId": "mb_l2",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "EASY",
+    "skill": "Relacionar leis físicas e equações em Sincronicidade vs Divisão em Partes Iguais",
+    "concept": "Mínimo Múltiplo Comum (MMC) em Sincronicidade vs Divisão em Partes Iguais",
+    "statement": "Considerando os princípios de Sincronicidade vs Divisão em Partes Iguais, assinale a alternativa que caracteriza corretamente 'Mínimo Múltiplo Comum (MMC)':",
+    "explanation": "A alternativa correta relaciona 'Mínimo Múltiplo Comum (MMC)' a: Resolve problemas de sincronicidade e tempo até o próximo encontro simultâneo. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Mínimo Múltiplo Comum (MMC)' com os demais tópicos de Sincronicidade vs Divisão em Partes Iguais.",
+    "source": "AUTORAL",
+    "options": [
+      "Mínimo Múltiplo Comum (MMC): Resolve problemas de divisão em partes iguais de tamanho máximo sem sobra",
+      "Mínimo Múltiplo Comum (MMC): Para dois inteiros positivos a e b: MMC(a, b) . MDC(a, b) = a . b",
+      "Mínimo Múltiplo Comum (MMC): A soma dos algarismos do número é múltiplo de 3 (ou de 9)",
+      "Mínimo Múltiplo Comum (MMC): Grandeza nula que independe de qualquer variável física",
+      "Mínimo Múltiplo Comum (MMC): Resolve problemas de sincronicidade e tempo até o próximo encontro simultâneo"
+    ],
+    "answerIndex": 4,
+    "distractorConcepts": [
+      "Confundiu 'Mínimo Múltiplo Comum (MMC)' com 'Máximo Divisor Comum (MDC)'",
+      "Confundiu 'Mínimo Múltiplo Comum (MMC)' com 'Relação fundamental MMC x MDC'",
+      "Confundiu 'Mínimo Múltiplo Comum (MMC)' com 'Divisibilidade por 3 e por 9'",
+      "Desconsiderou a lei física aplicável a 'Mínimo Múltiplo Comum (MMC)' em Sincronicidade vs Divisão em Partes Iguais",
+      ""
+    ]
+  },
+  {
+    "id": "mb_l2_n05",
+    "lessonId": "mb_l2",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Sincronicidade vs Divisão em Partes Iguais",
+    "concept": "Relação fundamental MMC x MDC em Sincronicidade vs Divisão em Partes Iguais",
+    "statement": "Considerando os princípios de Sincronicidade vs Divisão em Partes Iguais, assinale a alternativa que caracteriza corretamente 'Relação fundamental MMC x MDC':",
+    "explanation": "A alternativa correta relaciona 'Relação fundamental MMC x MDC' a: Para dois inteiros positivos a e b: MMC(a, b) . MDC(a, b) = a . b. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Relação fundamental MMC x MDC' com os demais tópicos de Sincronicidade vs Divisão em Partes Iguais.",
+    "source": "AUTORAL",
+    "options": [
+      "Relação fundamental MMC x MDC: A soma dos algarismos do número é múltiplo de 3 (ou de 9)",
+      "Relação fundamental MMC x MDC: Grandeza nula que independe de qualquer variável física",
+      "Relação fundamental MMC x MDC: Para dois inteiros positivos a e b: MMC(a, b) . MDC(a, b) = a . b",
+      "Relação fundamental MMC x MDC: Resolve problemas de sincronicidade e tempo até o próximo encontro simultâneo",
+      "Relação fundamental MMC x MDC: Resolve problemas de divisão em partes iguais de tamanho máximo sem sobra"
+    ],
+    "answerIndex": 2,
+    "distractorConcepts": [
+      "Confundiu 'Relação fundamental MMC x MDC' com 'Divisibilidade por 3 e por 9'",
+      "Desconsiderou a lei física aplicável a 'Relação fundamental MMC x MDC' em Sincronicidade vs Divisão em Partes Iguais",
+      "",
+      "Confundiu 'Relação fundamental MMC x MDC' com 'Mínimo Múltiplo Comum (MMC)'",
+      "Confundiu 'Relação fundamental MMC x MDC' com 'Máximo Divisor Comum (MDC)'"
+    ]
+  },
+  {
+    "id": "mb_l2_n06",
+    "lessonId": "mb_l2",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Sincronicidade vs Divisão em Partes Iguais",
+    "concept": "Divisibilidade por 3 e por 9 em Sincronicidade vs Divisão em Partes Iguais",
+    "statement": "Considerando os princípios de Sincronicidade vs Divisão em Partes Iguais, assinale a alternativa que caracteriza corretamente 'Divisibilidade por 3 e por 9':",
+    "explanation": "A alternativa correta relaciona 'Divisibilidade por 3 e por 9' a: A soma dos algarismos do número é múltiplo de 3 (ou de 9). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Divisibilidade por 3 e por 9' com os demais tópicos de Sincronicidade vs Divisão em Partes Iguais.",
+    "source": "AUTORAL",
+    "options": [
+      "Divisibilidade por 3 e por 9: A soma dos algarismos do número é múltiplo de 3 (ou de 9)",
+      "Divisibilidade por 3 e por 9: Resolve problemas de sincronicidade e tempo até o próximo encontro simultâneo",
+      "Divisibilidade por 3 e por 9: Resolve problemas de divisão em partes iguais de tamanho máximo sem sobra",
+      "Divisibilidade por 3 e por 9: Para dois inteiros positivos a e b: MMC(a, b) . MDC(a, b) = a . b",
+      "Divisibilidade por 3 e por 9: Grandeza nula que independe de qualquer variável física"
+    ],
+    "answerIndex": 0,
+    "distractorConcepts": [
+      "",
+      "Confundiu 'Divisibilidade por 3 e por 9' com 'Mínimo Múltiplo Comum (MMC)'",
+      "Confundiu 'Divisibilidade por 3 e por 9' com 'Máximo Divisor Comum (MDC)'",
+      "Confundiu 'Divisibilidade por 3 e por 9' com 'Relação fundamental MMC x MDC'",
+      "Desconsiderou a lei física aplicável a 'Divisibilidade por 3 e por 9' em Sincronicidade vs Divisão em Partes Iguais"
+    ]
+  },
+  {
+    "id": "mb_l2_n04",
+    "lessonId": "mb_l2",
+    "format": "MATCHING",
+    "difficulty": "MEDIUM",
+    "skill": "Associar grandezas, leis e aplicações de Sincronicidade vs Divisão em Partes Iguais",
+    "concept": "Critérios de divisibilidade, fatoração em primos, Mínimo Múltiplo Comum (MMC: ciclos futuros) e Máximo Divisor Comum (MDC: divisão máxima sem sobras)",
+    "statement": "Associe cada grandeza, lei ou fenômeno de Sincronicidade vs Divisão em Partes Iguais à sua respectiva propriedade física:",
+    "explanation": "Relacionar cada lei física à sua expressão matemática e aplicação prática é indispensável para resolver problemas contextualizados.",
+    "retryGuidance": "Analise as unidades e relações de proporcionalidade de cada item de Sincronicidade vs Divisão em Partes Iguais.",
+    "source": "AUTORAL",
+    "pairs": [
+      [
+        "Mínimo Múltiplo Comum (MMC)",
+        "Resolve problemas de sincronicidade e tempo até o próximo encontro simultâneo"
+      ],
+      [
+        "Máximo Divisor Comum (MDC)",
+        "Resolve problemas de divisão em partes iguais de tamanho máximo sem sobra"
+      ],
+      [
+        "Relação fundamental MMC x MDC",
+        "Para dois inteiros positivos a e b: MMC(a, b) . MDC(a, b) = a . b"
+      ],
+      [
+        "Divisibilidade por 3 e por 9",
+        "A soma dos algarismos do número é múltiplo de 3 (ou de 9)"
+      ]
+    ]
+  },
+  {
+    "id": "mb_l2_n07",
+    "lessonId": "mb_l2",
+    "format": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "skill": "Resolver problema numérico de Sincronicidade vs Divisão em Partes Iguais",
+    "concept": "Critérios de divisibilidade, fatoração em primos, Mínimo Múltiplo Comum (MMC: ciclos futuros) e Máximo Divisor Comum (MDC: divisão máxima sem sobras)",
+    "statement": "Três linhas de ônibus partem juntas de um terminal às 06h00: a linha A sai a cada 15 min, a linha B a cada 20 min e a linha C a cada 30 min. Daqui a quantos minutos as três linhas partirão juntas novamente ($\\text{MMC}(15, 20, 30)$)?",
+    "explanation": "Aplicando a equação de Sincronicidade vs Divisão em Partes Iguais (60 * 1), obtemos o resultado exato de 60 min.",
+    "retryGuidance": "Identifique os dados no Sistema Internacional e aplique a relação 60 * 1.",
+    "source": "AUTORAL",
+    "answerNumber": 60,
+    "tolerance": 0.01,
+    "unit": "min",
+    "verify": "60 * 1"
+  },
+  {
+    "id": "mb_l2_n08",
+    "lessonId": "mb_l2",
+    "format": "CHART",
+    "difficulty": "MEDIUM",
+    "skill": "Interpretar gráficos e tabelas de Sincronicidade vs Divisão em Partes Iguais",
+    "concept": "Critérios de divisibilidade, fatoração em primos, Mínimo Múltiplo Comum (MMC: ciclos futuros) e Máximo Divisor Comum (MDC: divisão máxima sem sobras)",
+    "statement": "Qual é o comprimento máximo (em cm) de cada tora menor que pode ser obtido cortando as três toras da tabela em partes iguais sem nenhuma sobra ($\\text{MDC}(120, 180, 300)$)?",
+    "explanation": "Analisando os dados de 'Tamanhos de Toras de Madeira para Corte em Partes Máximas Iguais' (60 * 1), conclui-se corretamente: 60 cm (pois MDC(120, 180, 300) = 60 cm, gerando 2 + 3 + 5 = 10 pedaços).",
+    "retryGuidance": "Extraia os valores diretamente dos eixos/colunas antes de substituir na equação física.",
+    "source": "AUTORAL",
+    "options": [
+      "30 cm",
+      "120 cm",
+      "900 cm",
+      "60 cm (pois MDC(120, 180, 300) = 60 cm, gerando 2 + 3 + 5 = 10 pedaços)",
+      "10 cm"
+    ],
+    "answerIndex": 3,
+    "distractorConcepts": [
+      "30 cm é divisor comum, mas não é o MÁXIMO divisor comum",
+      "120 não divide 180 nem 300 de forma exata",
+      "900 cm é o MMC, não o MDC",
+      "",
+      "10 é o número total de pedaços obtidos, não o comprimento de cada pedaço em cm"
+    ],
+    "verify": "60 * 1",
+    "chart": {
+      "type": "bar",
+      "title": "Tamanhos de Toras de Madeira para Corte em Partes Máximas Iguais",
+      "labels": [
+        "Tora A (120 cm)",
+        "Tora B (180 cm)",
+        "Tora C (300 cm)"
+      ],
+      "series": [
+        {
+          "name": "Comprimento (cm)",
+          "values": [
+            120,
+            180,
+            300
+          ]
+        }
+      ],
+      "unit": ""
+    }
+  },
+  {
+    "id": "mb_l2_n09",
+    "lessonId": "mb_l2",
+    "format": "NUMERIC",
+    "difficulty": "HARD",
+    "skill": "Modelar e calcular situação física em Sincronicidade vs Divisão em Partes Iguais",
+    "concept": "Critérios de divisibilidade, fatoração em primos, Mínimo Múltiplo Comum (MMC: ciclos futuros) e Máximo Divisor Comum (MDC: divisão máxima sem sobras)",
+    "statement": "Um marceneiro possui duas tábuas de comprimentos $180\\text{ cm}$ e $240\\text{ cm}$ e deseja cortá-las em pedaços iguais do maior comprimento possível sem sobra ($\\text{MDC}(180, 240) = 60\\text{ cm}$). Quantos pedaços de $60\\text{ cm}$ ele obterá no total somando as duas tábuas?",
+    "explanation": "Substituindo os valores na relação física ((180 / 60) + (240 / 60)), encontramos 7 pedaços.",
+    "retryGuidance": "Confira se todas as grandezas estão nas unidades pedidas e aplique (180 / 60) + (240 / 60).",
+    "source": "AUTORAL",
+    "answerNumber": 7,
+    "tolerance": 0.01,
+    "unit": "pedaços",
+    "verify": "(180 / 60) + (240 / 60)"
+  },
+  {
+    "id": "mb_l2_n10",
+    "lessonId": "mb_l2",
+    "format": "ESSAY",
+    "difficulty": "HARD",
+    "skill": "Explicar fenômenos cotidianos e tecnológicos usando Sincronicidade vs Divisão em Partes Iguais",
+    "concept": "Critérios de divisibilidade, fatoração em primos, Mínimo Múltiplo Comum (MMC: ciclos futuros) e Máximo Divisor Comum (MDC: divisão máxima sem sobras)",
+    "statement": "Explique como diferenciar na leitura de um enunciado quando aplicar MMC e quando aplicar MDC, dando um exemplo prático de cada caso.",
+    "explanation": "Síntese conceitual esperada pela rubrica: Usa-se o MMC quando o problema envolve eventos periódicos ou ciclos que começam juntos e pergunta quando voltarão a coincidir no futuro (ex.: ônibus saindo em intervalos diferentes ou tomada de medicamentos). Usa-se o MDC quando se deseja repartir duas ou mais quantidades distintas em partes iguais, sem deixar resto, de modo que o tamanho de cada parte seja o maior possível (ex.: cortar fitas/tábuas ou montar kits com o menor número de pacotes).",
+    "retryGuidance": "Estruture sua resposta mencionando a lei física de Sincronicidade vs Divisão em Partes Iguais, a relação entre as grandezas e a aplicação prática.",
+    "source": "AUTORAL",
+    "modelAnswer": "Usa-se o MMC quando o problema envolve eventos periódicos ou ciclos que começam juntos e pergunta quando voltarão a coincidir no futuro (ex.: ônibus saindo em intervalos diferentes ou tomada de medicamentos). Usa-se o MDC quando se deseja repartir duas ou mais quantidades distintas em partes iguais, sem deixar resto, de modo que o tamanho de cada parte seja o maior possível (ex.: cortar fitas/tábuas ou montar kits com o menor número de pacotes).",
+    "passScore": 0.6,
+    "rubric": [
+      {
+        "criterion": "Enuncia o princípio ou lei física central de Sincronicidade vs Divisão em Partes Iguais",
+        "points": 4,
+        "keywords": [
+          [
+            "mmc",
+            "ciclo",
+            "encontro",
+            "futuro",
+            "simultaneamente",
+            "repet"
+          ]
+        ]
+      },
+      {
+        "criterion": "Relaciona corretamente as grandezas físicas envolvidas",
+        "points": 3,
+        "keywords": [
+          [
+            "mdc",
+            "dividir",
+            "partes iguais",
+            "maior",
+            "maximo",
+            "máximo",
+            "sem sobra"
+          ]
+        ]
+      },
+      {
+        "criterion": "Explica a aplicação prática ou consequência física",
+        "points": 3,
+        "keywords": [
+          [
+            "onibus",
+            "ônibus",
+            "fita",
+            "tabua",
+            "tábua",
+            "pacote",
+            "fator",
+            "primo",
+            "exemplo"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mb_l3_n01",
+    "lessonId": "mb_l3",
+    "format": "TRUE_FALSE",
+    "difficulty": "EASY",
+    "skill": "Julgar proposições físicas sobre Propriedades Operatórias e Expoente Fracionário",
+    "concept": "Potenciação ($a^m \\cdot a^n = a^{m+n}$, $(a^m)^n = a^{mn}$, $a^{-n} = 1/a^n$), radiciação, expoente fracionário ($a^{m/n} = \\sqrt[n]{a^m}$) e racionalização",
+    "statement": "Toda potência de expoente fracionário equivale a um radical: na expressão a^(m/n), o numerador m é o expoente do radicando e o denominador n é o índice da raiz.",
+    "explanation": "A afirmação é verdadeira: Toda potência de expoente fracionário equivale a um radical: na expressão a^(m/n), o numerador m é o expoente do radicando e o denominador n é o índice da raiz. Esse princípio é fundamental em Propriedades Operatórias e Expoente Fracionário.",
+    "retryGuidance": "Revise as leis físicas e relações matemáticas de Propriedades Operatórias e Expoente Fracionário.",
+    "source": "AUTORAL",
+    "answerBool": true
+  },
+  {
+    "id": "mb_l3_n02",
+    "lessonId": "mb_l3",
+    "format": "FILL_BLANK",
+    "difficulty": "EASY",
+    "skill": "Identificar o conceito ou lei física em Propriedades Operatórias e Expoente Fracionário",
+    "concept": "Potenciação ($a^m \\cdot a^n = a^{m+n}$, $(a^m)^n = a^{mn}$, $a^{-n} = 1/a^n$), radiciação, expoente fracionário ($a^{m/n} = \\sqrt[n]{a^m}$) e racionalização",
+    "statement": "No estudo de Propriedades Operatórias e Expoente Fracionário (Potenciação ($a^m \\cdot a^n = a^{m+n}$, $(a^m)^n = a^{mn}$, $a^{-n} = 1/a^n$), radiciação, expoente fracionário ($a^{m/n} = \\sqrt[n]{a^m}$) e racionalização), o termo, unidade ou grandeza física central destacada na aula é ___.",
+    "explanation": "O termo correto para completar a lacuna é 'fracionário', elemento essencial de Propriedades Operatórias e Expoente Fracionário.",
+    "retryGuidance": "Consulte o quadro de conceitos e fórmulas de Propriedades Operatórias e Expoente Fracionário e verifique a grafia do termo principal.",
+    "source": "AUTORAL",
+    "answers": [
+      "fracionário"
+    ]
+  },
+  {
+    "id": "mb_l3_n03",
+    "lessonId": "mb_l3",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "EASY",
+    "skill": "Relacionar leis físicas e equações em Propriedades Operatórias e Expoente Fracionário",
+    "concept": "Produto de potências de mesma base em Propriedades Operatórias e Expoente Fracionário",
+    "statement": "Considerando os princípios de Propriedades Operatórias e Expoente Fracionário, assinale a alternativa que caracteriza corretamente 'Produto de potências de mesma base':",
+    "explanation": "A alternativa correta relaciona 'Produto de potências de mesma base' a: Conserva a base e soma os expoentes: a^m . a^n = a^(m+n). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Produto de potências de mesma base' com os demais tópicos de Propriedades Operatórias e Expoente Fracionário.",
+    "source": "AUTORAL",
+    "options": [
+      "Produto de potências de mesma base: Inverte a base e troca o sinal do expoente: (1/a)^n",
+      "Produto de potências de mesma base: Raiz n-ésima de a elevado a m ('quem está no sol vai para a sombra')",
+      "Produto de potências de mesma base: Grandeza nula que independe de qualquer variável física",
+      "Produto de potências de mesma base: Conserva a base e soma os expoentes: a^m . a^n = a^(m+n)",
+      "Produto de potências de mesma base: Conserva a base e subtrai os expoentes: a^m / a^n = a^(m-n)"
+    ],
+    "answerIndex": 3,
+    "distractorConcepts": [
+      "Confundiu 'Produto de potências de mesma base' com 'Expoente negativo (a^-n)'",
+      "Confundiu 'Produto de potências de mesma base' com 'Expoente fracionário a^(m/n)'",
+      "Desconsiderou a lei física aplicável a 'Produto de potências de mesma base' em Propriedades Operatórias e Expoente Fracionário",
+      "",
+      "Confundiu 'Produto de potências de mesma base' com 'Divisão de potências de mesma base'"
+    ]
+  },
+  {
+    "id": "mb_l3_n05",
+    "lessonId": "mb_l3",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Propriedades Operatórias e Expoente Fracionário",
+    "concept": "Expoente negativo (a^-n) em Propriedades Operatórias e Expoente Fracionário",
+    "statement": "Considerando os princípios de Propriedades Operatórias e Expoente Fracionário, assinale a alternativa que caracteriza corretamente 'Expoente negativo (a^-n)':",
+    "explanation": "A alternativa correta relaciona 'Expoente negativo (a^-n)' a: Inverte a base e troca o sinal do expoente: (1/a)^n. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Expoente negativo (a^-n)' com os demais tópicos de Propriedades Operatórias e Expoente Fracionário.",
+    "source": "AUTORAL",
+    "options": [
+      "Expoente negativo (a^-n): Grandeza nula que independe de qualquer variável física",
+      "Expoente negativo (a^-n): Inverte a base e troca o sinal do expoente: (1/a)^n",
+      "Expoente negativo (a^-n): Conserva a base e soma os expoentes: a^m . a^n = a^(m+n)",
+      "Expoente negativo (a^-n): Conserva a base e subtrai os expoentes: a^m / a^n = a^(m-n)",
+      "Expoente negativo (a^-n): Raiz n-ésima de a elevado a m ('quem está no sol vai para a sombra')"
+    ],
+    "answerIndex": 1,
+    "distractorConcepts": [
+      "Desconsiderou a lei física aplicável a 'Expoente negativo (a^-n)' em Propriedades Operatórias e Expoente Fracionário",
+      "",
+      "Confundiu 'Expoente negativo (a^-n)' com 'Produto de potências de mesma base'",
+      "Confundiu 'Expoente negativo (a^-n)' com 'Divisão de potências de mesma base'",
+      "Confundiu 'Expoente negativo (a^-n)' com 'Expoente fracionário a^(m/n)'"
+    ]
+  },
+  {
+    "id": "mb_l3_n06",
+    "lessonId": "mb_l3",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Propriedades Operatórias e Expoente Fracionário",
+    "concept": "Expoente fracionário a^(m/n) em Propriedades Operatórias e Expoente Fracionário",
+    "statement": "Considerando os princípios de Propriedades Operatórias e Expoente Fracionário, assinale a alternativa que caracteriza corretamente 'Expoente fracionário a^(m/n)':",
+    "explanation": "A alternativa correta relaciona 'Expoente fracionário a^(m/n)' a: Raiz n-ésima de a elevado a m ('quem está no sol vai para a sombra'). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Expoente fracionário a^(m/n)' com os demais tópicos de Propriedades Operatórias e Expoente Fracionário.",
+    "source": "AUTORAL",
+    "options": [
+      "Expoente fracionário a^(m/n): Conserva a base e soma os expoentes: a^m . a^n = a^(m+n)",
+      "Expoente fracionário a^(m/n): Conserva a base e subtrai os expoentes: a^m / a^n = a^(m-n)",
+      "Expoente fracionário a^(m/n): Inverte a base e troca o sinal do expoente: (1/a)^n",
+      "Expoente fracionário a^(m/n): Grandeza nula que independe de qualquer variável física",
+      "Expoente fracionário a^(m/n): Raiz n-ésima de a elevado a m ('quem está no sol vai para a sombra')"
+    ],
+    "answerIndex": 4,
+    "distractorConcepts": [
+      "Confundiu 'Expoente fracionário a^(m/n)' com 'Produto de potências de mesma base'",
+      "Confundiu 'Expoente fracionário a^(m/n)' com 'Divisão de potências de mesma base'",
+      "Confundiu 'Expoente fracionário a^(m/n)' com 'Expoente negativo (a^-n)'",
+      "Desconsiderou a lei física aplicável a 'Expoente fracionário a^(m/n)' em Propriedades Operatórias e Expoente Fracionário",
+      ""
+    ]
+  },
+  {
+    "id": "mb_l3_n04",
+    "lessonId": "mb_l3",
+    "format": "MATCHING",
+    "difficulty": "MEDIUM",
+    "skill": "Associar grandezas, leis e aplicações de Propriedades Operatórias e Expoente Fracionário",
+    "concept": "Potenciação ($a^m \\cdot a^n = a^{m+n}$, $(a^m)^n = a^{mn}$, $a^{-n} = 1/a^n$), radiciação, expoente fracionário ($a^{m/n} = \\sqrt[n]{a^m}$) e racionalização",
+    "statement": "Associe cada grandeza, lei ou fenômeno de Propriedades Operatórias e Expoente Fracionário à sua respectiva propriedade física:",
+    "explanation": "Relacionar cada lei física à sua expressão matemática e aplicação prática é indispensável para resolver problemas contextualizados.",
+    "retryGuidance": "Analise as unidades e relações de proporcionalidade de cada item de Propriedades Operatórias e Expoente Fracionário.",
+    "source": "AUTORAL",
+    "pairs": [
+      [
+        "Produto de potências de mesma base",
+        "Conserva a base e soma os expoentes: a^m . a^n = a^(m+n)"
+      ],
+      [
+        "Divisão de potências de mesma base",
+        "Conserva a base e subtrai os expoentes: a^m / a^n = a^(m-n)"
+      ],
+      [
+        "Expoente negativo (a^-n)",
+        "Inverte a base e troca o sinal do expoente: (1/a)^n"
+      ],
+      [
+        "Expoente fracionário a^(m/n)",
+        "Raiz n-ésima de a elevado a m ('quem está no sol vai para a sombra')"
+      ]
+    ]
+  },
+  {
+    "id": "mb_l3_n07",
+    "lessonId": "mb_l3",
+    "format": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "skill": "Resolver problema numérico de Propriedades Operatórias e Expoente Fracionário",
+    "concept": "Potenciação ($a^m \\cdot a^n = a^{m+n}$, $(a^m)^n = a^{mn}$, $a^{-n} = 1/a^n$), radiciação, expoente fracionário ($a^{m/n} = \\sqrt[n]{a^m}$) e racionalização",
+    "statement": "Calcule o valor numérico da expressão $8^{2/3} + 16^{1/4} - 5^0$, sabendo que $8^{2/3} = (\\sqrt[3]{8})^2 = 4$, $16^{1/4} = 2$ e $5^0 = 1$:",
+    "explanation": "Aplicando a equação de Propriedades Operatórias e Expoente Fracionário ((8**(2/3)) + (16**(1/4)) - (5**0)), obtemos o resultado exato de 5 .",
+    "retryGuidance": "Identifique os dados no Sistema Internacional e aplique a relação (8**(2/3)) + (16**(1/4)) - (5**0).",
+    "source": "AUTORAL",
+    "answerNumber": 5,
+    "tolerance": 0.01,
+    "unit": "",
+    "verify": "(8**(2/3)) + (16**(1/4)) - (5**0)"
+  },
+  {
+    "id": "mb_l3_n08",
+    "lessonId": "mb_l3",
+    "format": "CHART",
+    "difficulty": "HARD",
+    "skill": "Interpretar gráficos e tabelas de Propriedades Operatórias e Expoente Fracionário",
+    "concept": "Potenciação ($a^m \\cdot a^n = a^{m+n}$, $(a^m)^n = a^{mn}$, $a^{-n} = 1/a^n$), radiciação, expoente fracionário ($a^{m/n} = \\sqrt[n]{a^m}$) e racionalização",
+    "statement": "Aplicando as propriedades de potenciação, qual é o valor numérico de $(2^5 \\cdot 2^3) / 2^4 = 2^{5+3-4} = 2^4$?",
+    "explanation": "Analisando os dados de 'Simplificação de Radicais e Potências de Base 2' ((2**5 * 2**3) / (2**4)), conclui-se corretamente: 16 (pois 2^(5 + 3 - 4) = 2^4 = 16).",
+    "retryGuidance": "Extraia os valores diretamente dos eixos/colunas antes de substituir na equação física.",
+    "source": "AUTORAL",
+    "options": [
+      "64 (2^6)",
+      "4 (2^2)",
+      "16 (pois 2^(5 + 3 - 4) = 2^4 = 16)",
+      "8 (2^3)",
+      "32 (2^5)"
+    ],
+    "answerIndex": 2,
+    "distractorConcepts": [
+      "Somou os expoentes de forma incorreta",
+      "Multiplicou os expoentes 5x3 em vez de somar",
+      "",
+      "Subtraiu 1 unidade a mais no expoente",
+      "Esqueceu de dividir por 2^4"
+    ],
+    "verify": "(2**5 * 2**3) / (2**4)",
+    "chart": {
+      "type": "bar",
+      "title": "Simplificação de Radicais e Potências de Base 2",
+      "labels": [
+        "2^3",
+        "2^5",
+        "2^8"
+      ],
+      "series": [
+        {
+          "name": "Valor da Potência",
+          "values": [
+            8,
+            32,
+            256
+          ]
+        }
+      ],
+      "unit": ""
+    }
+  },
+  {
+    "id": "mb_l3_n09",
+    "lessonId": "mb_l3",
+    "format": "NUMERIC",
+    "difficulty": "HARD",
+    "skill": "Modelar e calcular situação física em Propriedades Operatórias e Expoente Fracionário",
+    "concept": "Potenciação ($a^m \\cdot a^n = a^{m+n}$, $(a^m)^n = a^{mn}$, $a^{-n} = 1/a^n$), radiciação, expoente fracionário ($a^{m/n} = \\sqrt[n]{a^m}$) e racionalização",
+    "statement": "Uma colônia bacteriana triplica a cada hora ($3^t$). Quantas vezes maior será a população após $6\\text{ horas}$ em comparação com a população que havia após $2\\text{ horas}$ ($3^6 / 3^2 = 3^4$)?",
+    "explanation": "Substituindo os valores na relação física ((3**6) / (3**2)), encontramos 81 vezes.",
+    "retryGuidance": "Confira se todas as grandezas estão nas unidades pedidas e aplique (3**6) / (3**2).",
+    "source": "AUTORAL",
+    "answerNumber": 81,
+    "tolerance": 0.01,
+    "unit": "vezes",
+    "verify": "(3**6) / (3**2)"
+  },
+  {
+    "id": "mb_l3_n10",
+    "lessonId": "mb_l3",
+    "format": "ESSAY",
+    "difficulty": "HARD",
+    "skill": "Explicar fenômenos cotidianos e tecnológicos usando Propriedades Operatórias e Expoente Fracionário",
+    "concept": "Potenciação ($a^m \\cdot a^n = a^{m+n}$, $(a^m)^n = a^{mn}$, $a^{-n} = 1/a^n$), radiciação, expoente fracionário ($a^{m/n} = \\sqrt[n]{a^m}$) e racionalização",
+    "statement": "Enuncie as regras de produto e quociente de potências de mesma base, explique o significado do expoente negativo ($a^{-n}$) e do expoente fracionário ($a^{m/n}$) e mostre como racionalizar $6/\\sqrt{3}$.",
+    "explanation": "Síntese conceitual esperada pela rubrica: No produto de potências de mesma base somam-se os expoentes (a^m . a^n = a^(m+n)) e na divisão subtraem-se (a^m / a^n = a^(m-n)). O expoente negativo inverte a base (a^-n = 1/a^n), não tornando o número negativo. O expoente fracionário a^(m/n) representa a raiz de índice n de a^m. Para racionalizar 6/raiz(3), multiplica-se numerador e denominador por raiz(3), obtendo 6.raiz(3)/3 = 2.raiz(3).",
+    "retryGuidance": "Estruture sua resposta mencionando a lei física de Propriedades Operatórias e Expoente Fracionário, a relação entre as grandezas e a aplicação prática.",
+    "source": "AUTORAL",
+    "modelAnswer": "No produto de potências de mesma base somam-se os expoentes (a^m . a^n = a^(m+n)) e na divisão subtraem-se (a^m / a^n = a^(m-n)). O expoente negativo inverte a base (a^-n = 1/a^n), não tornando o número negativo. O expoente fracionário a^(m/n) representa a raiz de índice n de a^m. Para racionalizar 6/raiz(3), multiplica-se numerador e denominador por raiz(3), obtendo 6.raiz(3)/3 = 2.raiz(3).",
+    "passScore": 0.6,
+    "rubric": [
+      {
+        "criterion": "Enuncia o princípio ou lei física central de Propriedades Operatórias e Expoente Fracionário",
+        "points": 4,
+        "keywords": [
+          [
+            "mesma base",
+            "soma",
+            "subtrai",
+            "expoente"
+          ]
+        ]
+      },
+      {
+        "criterion": "Relaciona corretamente as grandezas físicas envolvidas",
+        "points": 3,
+        "keywords": [
+          [
+            "negativo",
+            "inverte",
+            "1/",
+            "fracionario",
+            "fracionário",
+            "raiz"
+          ]
+        ]
+      },
+      {
+        "criterion": "Explica a aplicação prática ou consequência física",
+        "points": 3,
+        "keywords": [
+          [
+            "racionaliz",
+            "denominador",
+            "raiz(3)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mb_l4_n01",
+    "lessonId": "mb_l4",
+    "format": "TRUE_FALSE",
+    "difficulty": "EASY",
+    "skill": "Julgar proposições físicas sobre Representação Exponencial e Magnitude Física",
+    "concept": "Notação científica ($a \\times 10^n$ com $1 \\le |a| < 10$), operações com potências de 10 e ordem de grandeza (limiar $\\sqrt{10} \\approx 3{,}16$)",
+    "statement": "Um número está escrito em notação científica padrão quando é expresso na forma m . 10^n, onde o coeficiente (mantissa) satisfaz 1 <= |m| < 10 e o expoente n é um número inteiro.",
+    "explanation": "A afirmação é verdadeira: Um número está escrito em notação científica padrão quando é expresso na forma m . 10^n, onde o coeficiente (mantissa) satisfaz 1 <= |m| < 10 e o expoente n é um número inteiro. Esse princípio é fundamental em Representação Exponencial e Magnitude Física.",
+    "retryGuidance": "Revise as leis físicas e relações matemáticas de Representação Exponencial e Magnitude Física.",
+    "source": "AUTORAL",
+    "answerBool": true
+  },
+  {
+    "id": "mb_l4_n02",
+    "lessonId": "mb_l4",
+    "format": "FILL_BLANK",
+    "difficulty": "EASY",
+    "skill": "Identificar o conceito ou lei física em Representação Exponencial e Magnitude Física",
+    "concept": "Notação científica ($a \\times 10^n$ com $1 \\le |a| < 10$), operações com potências de 10 e ordem de grandeza (limiar $\\sqrt{10} \\approx 3{,}16$)",
+    "statement": "No estudo de Representação Exponencial e Magnitude Física (Notação científica ($a \\times 10^n$ com $1 \\le |a| < 10$), operações com potências de 10 e ordem de grandeza (limiar $\\sqrt{10} \\approx 3{,}16$)), o termo, unidade ou grandeza física central destacada na aula é ___.",
+    "explanation": "O termo correto para completar a lacuna é 'mantissa', elemento essencial de Representação Exponencial e Magnitude Física.",
+    "retryGuidance": "Consulte o quadro de conceitos e fórmulas de Representação Exponencial e Magnitude Física e verifique a grafia do termo principal.",
+    "source": "AUTORAL",
+    "answers": [
+      "mantissa"
+    ]
+  },
+  {
+    "id": "mb_l4_n03",
+    "lessonId": "mb_l4",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "EASY",
+    "skill": "Relacionar leis físicas e equações em Representação Exponencial e Magnitude Física",
+    "concept": "Mantissa (coeficiente m) em Representação Exponencial e Magnitude Física",
+    "statement": "Considerando os princípios de Representação Exponencial e Magnitude Física, assinale a alternativa que caracteriza corretamente 'Mantissa (coeficiente m)':",
+    "explanation": "A alternativa correta relaciona 'Mantissa (coeficiente m)' a: Número real no intervalo 1 <= |m| < 10 na notação científica. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Mantissa (coeficiente m)' com os demais tópicos de Representação Exponencial e Magnitude Física.",
+    "source": "AUTORAL",
+    "options": [
+      "Mantissa (coeficiente m): Se m < 3,16 a OG é 10^n; se m >= 3,16 a OG passa a ser 10^(n+1)",
+      "Mantissa (coeficiente m): Grandeza nula que independe de qualquer variável física",
+      "Mantissa (coeficiente m): Número real no intervalo 1 <= |m| < 10 na notação científica",
+      "Mantissa (coeficiente m): Diminui a mantissa e AUMENTA o expoente da potência de 10",
+      "Mantissa (coeficiente m): Aumenta a mantissa e DIMINUI o expoente da potência de 10"
+    ],
+    "answerIndex": 2,
+    "distractorConcepts": [
+      "Confundiu 'Mantissa (coeficiente m)' com 'Ordem de grandeza (limiar 3,16)'",
+      "Desconsiderou a lei física aplicável a 'Mantissa (coeficiente m)' em Representação Exponencial e Magnitude Física",
+      "",
+      "Confundiu 'Mantissa (coeficiente m)' com 'Deslocar a vírgula para a esquerda'",
+      "Confundiu 'Mantissa (coeficiente m)' com 'Deslocar a vírgula para a direita'"
+    ]
+  },
+  {
+    "id": "mb_l4_n05",
+    "lessonId": "mb_l4",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Representação Exponencial e Magnitude Física",
+    "concept": "Deslocar a vírgula para a direita em Representação Exponencial e Magnitude Física",
+    "statement": "Considerando os princípios de Representação Exponencial e Magnitude Física, assinale a alternativa que caracteriza corretamente 'Deslocar a vírgula para a direita':",
+    "explanation": "A alternativa correta relaciona 'Deslocar a vírgula para a direita' a: Aumenta a mantissa e DIMINUI o expoente da potência de 10. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Deslocar a vírgula para a direita' com os demais tópicos de Representação Exponencial e Magnitude Física.",
+    "source": "AUTORAL",
+    "options": [
+      "Deslocar a vírgula para a direita: Aumenta a mantissa e DIMINUI o expoente da potência de 10",
+      "Deslocar a vírgula para a direita: Número real no intervalo 1 <= |m| < 10 na notação científica",
+      "Deslocar a vírgula para a direita: Diminui a mantissa e AUMENTA o expoente da potência de 10",
+      "Deslocar a vírgula para a direita: Se m < 3,16 a OG é 10^n; se m >= 3,16 a OG passa a ser 10^(n+1)",
+      "Deslocar a vírgula para a direita: Grandeza nula que independe de qualquer variável física"
+    ],
+    "answerIndex": 0,
+    "distractorConcepts": [
+      "",
+      "Confundiu 'Deslocar a vírgula para a direita' com 'Mantissa (coeficiente m)'",
+      "Confundiu 'Deslocar a vírgula para a direita' com 'Deslocar a vírgula para a esquerda'",
+      "Confundiu 'Deslocar a vírgula para a direita' com 'Ordem de grandeza (limiar 3,16)'",
+      "Desconsiderou a lei física aplicável a 'Deslocar a vírgula para a direita' em Representação Exponencial e Magnitude Física"
+    ]
+  },
+  {
+    "id": "mb_l4_n06",
+    "lessonId": "mb_l4",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Representação Exponencial e Magnitude Física",
+    "concept": "Ordem de grandeza (limiar 3,16) em Representação Exponencial e Magnitude Física",
+    "statement": "Considerando os princípios de Representação Exponencial e Magnitude Física, assinale a alternativa que caracteriza corretamente 'Ordem de grandeza (limiar 3,16)':",
+    "explanation": "A alternativa correta relaciona 'Ordem de grandeza (limiar 3,16)' a: Se m < 3,16 a OG é 10^n; se m >= 3,16 a OG passa a ser 10^(n+1). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Ordem de grandeza (limiar 3,16)' com os demais tópicos de Representação Exponencial e Magnitude Física.",
+    "source": "AUTORAL",
+    "options": [
+      "Ordem de grandeza (limiar 3,16): Diminui a mantissa e AUMENTA o expoente da potência de 10",
+      "Ordem de grandeza (limiar 3,16): Aumenta a mantissa e DIMINUI o expoente da potência de 10",
+      "Ordem de grandeza (limiar 3,16): Grandeza nula que independe de qualquer variável física",
+      "Ordem de grandeza (limiar 3,16): Se m < 3,16 a OG é 10^n; se m >= 3,16 a OG passa a ser 10^(n+1)",
+      "Ordem de grandeza (limiar 3,16): Número real no intervalo 1 <= |m| < 10 na notação científica"
+    ],
+    "answerIndex": 3,
+    "distractorConcepts": [
+      "Confundiu 'Ordem de grandeza (limiar 3,16)' com 'Deslocar a vírgula para a esquerda'",
+      "Confundiu 'Ordem de grandeza (limiar 3,16)' com 'Deslocar a vírgula para a direita'",
+      "Desconsiderou a lei física aplicável a 'Ordem de grandeza (limiar 3,16)' em Representação Exponencial e Magnitude Física",
+      "",
+      "Confundiu 'Ordem de grandeza (limiar 3,16)' com 'Mantissa (coeficiente m)'"
+    ]
+  },
+  {
+    "id": "mb_l4_n04",
+    "lessonId": "mb_l4",
+    "format": "MATCHING",
+    "difficulty": "MEDIUM",
+    "skill": "Associar grandezas, leis e aplicações de Representação Exponencial e Magnitude Física",
+    "concept": "Notação científica ($a \\times 10^n$ com $1 \\le |a| < 10$), operações com potências de 10 e ordem de grandeza (limiar $\\sqrt{10} \\approx 3{,}16$)",
+    "statement": "Associe cada grandeza, lei ou fenômeno de Representação Exponencial e Magnitude Física à sua respectiva propriedade física:",
+    "explanation": "Relacionar cada lei física à sua expressão matemática e aplicação prática é indispensável para resolver problemas contextualizados.",
+    "retryGuidance": "Analise as unidades e relações de proporcionalidade de cada item de Representação Exponencial e Magnitude Física.",
+    "source": "AUTORAL",
+    "pairs": [
+      [
+        "Mantissa (coeficiente m)",
+        "Número real no intervalo 1 <= |m| < 10 na notação científica"
+      ],
+      [
+        "Deslocar a vírgula para a esquerda",
+        "Diminui a mantissa e AUMENTA o expoente da potência de 10"
+      ],
+      [
+        "Deslocar a vírgula para a direita",
+        "Aumenta a mantissa e DIMINUI o expoente da potência de 10"
+      ],
+      [
+        "Ordem de grandeza (limiar 3,16)",
+        "Se m < 3,16 a OG é 10^n; se m >= 3,16 a OG passa a ser 10^(n+1)"
+      ]
+    ]
+  },
+  {
+    "id": "mb_l4_n07",
+    "lessonId": "mb_l4",
+    "format": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "skill": "Resolver problema numérico de Representação Exponencial e Magnitude Física",
+    "concept": "Notação científica ($a \\times 10^n$ com $1 \\le |a| < 10$), operações com potências de 10 e ordem de grandeza (limiar $\\sqrt{10} \\approx 3{,}16$)",
+    "statement": "A distância média da Terra ao Sol é de $1{,}5 \\times 10^{11}\\text{ m}$ e a velocidade da luz no vácuo é $3{,}0 \\times 10^8\\text{ m/s}$. Em quantos segundos a luz solar chega à Terra ($t = d / c$)?",
+    "explanation": "Aplicando a equação de Representação Exponencial e Magnitude Física (1.5e11 / 3.0e8), obtemos o resultado exato de 500 s.",
+    "retryGuidance": "Identifique os dados no Sistema Internacional e aplique a relação 1.5e11 / 3.0e8.",
+    "source": "AUTORAL",
+    "answerNumber": 500,
+    "tolerance": 0.01,
+    "unit": "s",
+    "verify": "1.5e11 / 3.0e8"
+  },
+  {
+    "id": "mb_l4_n08",
+    "lessonId": "mb_l4",
+    "format": "CHART",
+    "difficulty": "MEDIUM",
+    "skill": "Interpretar gráficos e tabelas de Representação Exponencial e Magnitude Física",
+    "concept": "Notação científica ($a \\times 10^n$ com $1 \\le |a| < 10$), operações com potências de 10 e ordem de grandeza (limiar $\\sqrt{10} \\approx 3{,}16$)",
+    "statement": "Convertendo todas as regiões para a mesma potência $10^4\\text{ GWh}$ ($2{,}4 + 5{,}6 + 12{,}0$), qual é a soma total do consumo das três regiões expressa como múltiplo de $10^4\\text{ GWh}$?",
+    "explanation": "Analisando os dados de 'Consumo Anual de Energia Elétrica de Três Regiões em GWh' (2.4 + 5.6 + 12.0), conclui-se corretamente: 20,0 x 10^4 GWh (ou 2,0 x 10^5 GWh em notação científica padrão).",
+    "retryGuidance": "Extraia os valores diretamente dos eixos/colunas antes de substituir na equação física.",
+    "source": "AUTORAL",
+    "options": [
+      "3,2 x 10^4 GWh",
+      "20,0 x 10^4 GWh (ou 2,0 x 10^5 GWh em notação científica padrão)",
+      "9,2 x 10^4 GWh",
+      "12,0 x 10^4 GWh",
+      "8,0 x 10^4 GWh"
+    ],
+    "answerIndex": 1,
+    "distractorConcepts": [
+      "Erro de alinhamento dos expoentes de base 10",
+      "",
+      "Somou 1,2 em vez de 12,0 ao esquecer que a Região C está em 10^5 (= 12,0 x 10^4)",
+      "Considerou apenas a Região C isolada",
+      "Somou apenas as Regiões A e B (2,4 + 5,6 = 8,0)"
+    ],
+    "verify": "2.4 + 5.6 + 12.0",
+    "chart": {
+      "type": "bar",
+      "title": "Consumo Anual de Energia Elétrica de Três Regiões em GWh",
+      "labels": [
+        "Região A (2,4 x 10^4)",
+        "Região B (5,6 x 10^4)",
+        "Região C (1,2 x 10^5)"
+      ],
+      "series": [
+        {
+          "name": "Energia (x 10^4 GWh)",
+          "values": [
+            2.4,
+            5.6,
+            12.0
+          ]
+        }
+      ],
+      "unit": ""
+    }
+  },
+  {
+    "id": "mb_l4_n09",
+    "lessonId": "mb_l4",
+    "format": "NUMERIC",
+    "difficulty": "HARD",
+    "skill": "Modelar e calcular situação física em Representação Exponencial e Magnitude Física",
+    "concept": "Notação científica ($a \\times 10^n$ com $1 \\le |a| < 10$), operações com potências de 10 e ordem de grandeza (limiar $\\sqrt{10} \\approx 3{,}16$)",
+    "statement": "Ao escrever o número $450.000.000$ ($450\\text{ milhões}$) em notação científica padrão $4{,}5 \\times 10^n$, qual é o valor inteiro do expoente $n$?",
+    "explanation": "Substituindo os valores na relação física (8 * 1), encontramos 8 .",
+    "retryGuidance": "Confira se todas as grandezas estão nas unidades pedidas e aplique 8 * 1.",
+    "source": "AUTORAL",
+    "answerNumber": 8,
+    "tolerance": 0.01,
+    "unit": "",
+    "verify": "8 * 1"
+  },
+  {
+    "id": "mb_l4_n10",
+    "lessonId": "mb_l4",
+    "format": "ESSAY",
+    "difficulty": "HARD",
+    "skill": "Explicar fenômenos cotidianos e tecnológicos usando Representação Exponencial e Magnitude Física",
+    "concept": "Notação científica ($a \\times 10^n$ com $1 \\le |a| < 10$), operações com potências de 10 e ordem de grandeza (limiar $\\sqrt{10} \\approx 3{,}16$)",
+    "statement": "Explique as regras para escrever um número muito grande e um número muito pequeno em notação científica padrão ($m \\times 10^n$) e como determinar a ordem de grandeza usando o limiar $\\sqrt{10} \\approx 3{,}16$.",
+    "explanation": "Síntese conceitual esperada pela rubrica: Na notação científica padrão m . 10^n, a mantissa m deve ficar entre 1 (inclusive) e 10 (exclusive) e n é inteiro: para números grandes desloca-se a vírgula para a esquerda somando ao expoente o número de casas; para números pequenos (0,00...) desloca-se para a direita subtraindo no expoente. Para achar a ordem de grandeza, compara-se m com raiz(10) ~ 3,16: se m < 3,16 a ordem de grandeza é 10^n; se m >= 3,16 a ordem de grandeza é 10^(n+1).",
+    "retryGuidance": "Estruture sua resposta mencionando a lei física de Representação Exponencial e Magnitude Física, a relação entre as grandezas e a aplicação prática.",
+    "source": "AUTORAL",
+    "modelAnswer": "Na notação científica padrão m . 10^n, a mantissa m deve ficar entre 1 (inclusive) e 10 (exclusive) e n é inteiro: para números grandes desloca-se a vírgula para a esquerda somando ao expoente o número de casas; para números pequenos (0,00...) desloca-se para a direita subtraindo no expoente. Para achar a ordem de grandeza, compara-se m com raiz(10) ~ 3,16: se m < 3,16 a ordem de grandeza é 10^n; se m >= 3,16 a ordem de grandeza é 10^(n+1).",
+    "passScore": 0.6,
+    "rubric": [
+      {
+        "criterion": "Enuncia o princípio ou lei física central de Representação Exponencial e Magnitude Física",
+        "points": 4,
+        "keywords": [
+          [
+            "mantissa",
+            "1",
+            "10",
+            "inteiro",
+            "virgula",
+            "vírgula"
+          ]
+        ]
+      },
+      {
+        "criterion": "Relaciona corretamente as grandezas físicas envolvidas",
+        "points": 3,
+        "keywords": [
+          [
+            "esquerda",
+            "direita",
+            "expoente"
+          ]
+        ]
+      },
+      {
+        "criterion": "Explica a aplicação prática ou consequência física",
+        "points": 3,
+        "keywords": [
+          [
+            "ordem de grandeza",
+            "3,16",
+            "n+1"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mb_l5_n01",
+    "lessonId": "mb_l5",
+    "format": "TRUE_FALSE",
+    "difficulty": "EASY",
+    "skill": "Julgar proposições físicas sobre Sistema Métrico, Volumes e Vazão",
+    "concept": "Conversão de unidades de comprimento (x10), área (x100), volume (x1000) e relações fundamentais de capacidade ($1\\text{ m}^3 = 1.000\\text{ L}$ e $1\\text{ dm}^3 = 1\\text{ L}$)",
+    "statement": "Nas conversões de volume e capacidade, 1 metro cúbico (1 m³) equivale exatamente a 1.000 litros (1.000 dm³), e 1 centímetro cúbico (1 cm³) equivale a 1 mililitro (1 mL).",
+    "explanation": "A afirmação é verdadeira: Nas conversões de volume e capacidade, 1 metro cúbico (1 m³) equivale exatamente a 1.000 litros (1.000 dm³), e 1 centímetro cúbico (1 cm³) equivale a 1 mililitro (1 mL). Esse princípio é fundamental em Sistema Métrico, Volumes e Vazão.",
+    "retryGuidance": "Revise as leis físicas e relações matemáticas de Sistema Métrico, Volumes e Vazão.",
+    "source": "AUTORAL",
+    "answerBool": true
+  },
+  {
+    "id": "mb_l5_n02",
+    "lessonId": "mb_l5",
+    "format": "FILL_BLANK",
+    "difficulty": "EASY",
+    "skill": "Identificar o conceito ou lei física em Sistema Métrico, Volumes e Vazão",
+    "concept": "Conversão de unidades de comprimento (x10), área (x100), volume (x1000) e relações fundamentais de capacidade ($1\\text{ m}^3 = 1.000\\text{ L}$ e $1\\text{ dm}^3 = 1\\text{ L}$)",
+    "statement": "No estudo de Sistema Métrico, Volumes e Vazão (Conversão de unidades de comprimento (x10), área (x100), volume (x1000) e relações fundamentais de capacidade ($1\\text{ m}^3 = 1.000\\text{ L}$ e $1\\text{ dm}^3 = 1\\text{ L}$)), o termo, unidade ou grandeza física central destacada na aula é ___.",
+    "explanation": "O termo correto para completar a lacuna é '1000', elemento essencial de Sistema Métrico, Volumes e Vazão.",
+    "retryGuidance": "Consulte o quadro de conceitos e fórmulas de Sistema Métrico, Volumes e Vazão e verifique a grafia do termo principal.",
+    "source": "AUTORAL",
+    "answers": [
+      "1000"
+    ]
+  },
+  {
+    "id": "mb_l5_n03",
+    "lessonId": "mb_l5",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "EASY",
+    "skill": "Relacionar leis físicas e equações em Sistema Métrico, Volumes e Vazão",
+    "concept": "1 metro cúbico (1 m³) em Sistema Métrico, Volumes e Vazão",
+    "statement": "Considerando os princípios de Sistema Métrico, Volumes e Vazão, assinale a alternativa que caracteriza corretamente '1 metro cúbico (1 m³)':",
+    "explanation": "A alternativa correta relaciona '1 metro cúbico (1 m³)' a: Equivale a 1.000 litros (caixa-d'água residencial padrão). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de '1 metro cúbico (1 m³)' com os demais tópicos de Sistema Métrico, Volumes e Vazão.",
+    "source": "AUTORAL",
+    "options": [
+      "1 metro cúbico (1 m³): Grandeza nula que independe de qualquer variável física",
+      "1 metro cúbico (1 m³): Equivale a 1.000 litros (caixa-d'água residencial padrão)",
+      "1 metro cúbico (1 m³): Equivale exatamente a 1 litro (cubo de 10 cm x 10 cm x 10 cm)",
+      "1 metro cúbico (1 m³): Equivale exatamente a 1 mililitro (1 mL)",
+      "1 metro cúbico (1 m³): Cada casa na escala métrica de área multiplica por 100 (10²)"
+    ],
+    "answerIndex": 1,
+    "distractorConcepts": [
+      "Desconsiderou a lei física aplicável a '1 metro cúbico (1 m³)' em Sistema Métrico, Volumes e Vazão",
+      "",
+      "Confundiu '1 metro cúbico (1 m³)' com '1 decímetro cúbico (1 dm³)'",
+      "Confundiu '1 metro cúbico (1 m³)' com '1 centímetro cúbico (1 cm³)'",
+      "Confundiu '1 metro cúbico (1 m³)' com 'Conversão de área (km² para m²)'"
+    ]
+  },
+  {
+    "id": "mb_l5_n05",
+    "lessonId": "mb_l5",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Sistema Métrico, Volumes e Vazão",
+    "concept": "1 centímetro cúbico (1 cm³) em Sistema Métrico, Volumes e Vazão",
+    "statement": "Considerando os princípios de Sistema Métrico, Volumes e Vazão, assinale a alternativa que caracteriza corretamente '1 centímetro cúbico (1 cm³)':",
+    "explanation": "A alternativa correta relaciona '1 centímetro cúbico (1 cm³)' a: Equivale exatamente a 1 mililitro (1 mL). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de '1 centímetro cúbico (1 cm³)' com os demais tópicos de Sistema Métrico, Volumes e Vazão.",
+    "source": "AUTORAL",
+    "options": [
+      "1 centímetro cúbico (1 cm³): Equivale a 1.000 litros (caixa-d'água residencial padrão)",
+      "1 centímetro cúbico (1 cm³): Equivale exatamente a 1 litro (cubo de 10 cm x 10 cm x 10 cm)",
+      "1 centímetro cúbico (1 cm³): Cada casa na escala métrica de área multiplica por 100 (10²)",
+      "1 centímetro cúbico (1 cm³): Grandeza nula que independe de qualquer variável física",
+      "1 centímetro cúbico (1 cm³): Equivale exatamente a 1 mililitro (1 mL)"
+    ],
+    "answerIndex": 4,
+    "distractorConcepts": [
+      "Confundiu '1 centímetro cúbico (1 cm³)' com '1 metro cúbico (1 m³)'",
+      "Confundiu '1 centímetro cúbico (1 cm³)' com '1 decímetro cúbico (1 dm³)'",
+      "Confundiu '1 centímetro cúbico (1 cm³)' com 'Conversão de área (km² para m²)'",
+      "Desconsiderou a lei física aplicável a '1 centímetro cúbico (1 cm³)' em Sistema Métrico, Volumes e Vazão",
+      ""
+    ]
+  },
+  {
+    "id": "mb_l5_n06",
+    "lessonId": "mb_l5",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Sistema Métrico, Volumes e Vazão",
+    "concept": "Conversão de área (km² para m²) em Sistema Métrico, Volumes e Vazão",
+    "statement": "Considerando os princípios de Sistema Métrico, Volumes e Vazão, assinale a alternativa que caracteriza corretamente 'Conversão de área (km² para m²)':",
+    "explanation": "A alternativa correta relaciona 'Conversão de área (km² para m²)' a: Cada casa na escala métrica de área multiplica por 100 (10²). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Conversão de área (km² para m²)' com os demais tópicos de Sistema Métrico, Volumes e Vazão.",
+    "source": "AUTORAL",
+    "options": [
+      "Conversão de área (km² para m²): Equivale exatamente a 1 mililitro (1 mL)",
+      "Conversão de área (km² para m²): Grandeza nula que independe de qualquer variável física",
+      "Conversão de área (km² para m²): Cada casa na escala métrica de área multiplica por 100 (10²)",
+      "Conversão de área (km² para m²): Equivale a 1.000 litros (caixa-d'água residencial padrão)",
+      "Conversão de área (km² para m²): Equivale exatamente a 1 litro (cubo de 10 cm x 10 cm x 10 cm)"
+    ],
+    "answerIndex": 2,
+    "distractorConcepts": [
+      "Confundiu 'Conversão de área (km² para m²)' com '1 centímetro cúbico (1 cm³)'",
+      "Desconsiderou a lei física aplicável a 'Conversão de área (km² para m²)' em Sistema Métrico, Volumes e Vazão",
+      "",
+      "Confundiu 'Conversão de área (km² para m²)' com '1 metro cúbico (1 m³)'",
+      "Confundiu 'Conversão de área (km² para m²)' com '1 decímetro cúbico (1 dm³)'"
+    ]
+  },
+  {
+    "id": "mb_l5_n04",
+    "lessonId": "mb_l5",
+    "format": "MATCHING",
+    "difficulty": "MEDIUM",
+    "skill": "Associar grandezas, leis e aplicações de Sistema Métrico, Volumes e Vazão",
+    "concept": "Conversão de unidades de comprimento (x10), área (x100), volume (x1000) e relações fundamentais de capacidade ($1\\text{ m}^3 = 1.000\\text{ L}$ e $1\\text{ dm}^3 = 1\\text{ L}$)",
+    "statement": "Associe cada grandeza, lei ou fenômeno de Sistema Métrico, Volumes e Vazão à sua respectiva propriedade física:",
+    "explanation": "Relacionar cada lei física à sua expressão matemática e aplicação prática é indispensável para resolver problemas contextualizados.",
+    "retryGuidance": "Analise as unidades e relações de proporcionalidade de cada item de Sistema Métrico, Volumes e Vazão.",
+    "source": "AUTORAL",
+    "pairs": [
+      [
+        "1 metro cúbico (1 m³)",
+        "Equivale a 1.000 litros (caixa-d'água residencial padrão)"
+      ],
+      [
+        "1 decímetro cúbico (1 dm³)",
+        "Equivale exatamente a 1 litro (cubo de 10 cm x 10 cm x 10 cm)"
+      ],
+      [
+        "1 centímetro cúbico (1 cm³)",
+        "Equivale exatamente a 1 mililitro (1 mL)"
+      ],
+      [
+        "Conversão de área (km² para m²)",
+        "Cada casa na escala métrica de área multiplica por 100 (10²)"
+      ]
+    ]
+  },
+  {
+    "id": "mb_l5_n07",
+    "lessonId": "mb_l5",
+    "format": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "skill": "Resolver problema numérico de Sistema Métrico, Volumes e Vazão",
+    "concept": "Conversão de unidades de comprimento (x10), área (x100), volume (x1000) e relações fundamentais de capacidade ($1\\text{ m}^3 = 1.000\\text{ L}$ e $1\\text{ dm}^3 = 1\\text{ L}$)",
+    "statement": "Uma piscina retangular possui dimensões internas de $8\\text{ m}$ de comprimento, $4\\text{ m}$ de largura e $1{,}5\\text{ m}$ de profundidade ($V = 48\\text{ m}^3$). Quantos milhares de litros de água cabem nessa piscina (ou seja, quantos $\\text{m}^3$, sabendo que cada $\\text{m}^3 = 1.000\\text{ L}$, dê o volume total em litros)?",
+    "explanation": "Aplicando a equação de Sistema Métrico, Volumes e Vazão (8 * 4 * 1.5 * 1000), obtemos o resultado exato de 48000 L.",
+    "retryGuidance": "Identifique os dados no Sistema Internacional e aplique a relação 8 * 4 * 1.5 * 1000.",
+    "source": "AUTORAL",
+    "answerNumber": 48000,
+    "tolerance": 0.01,
+    "unit": "L",
+    "verify": "8 * 4 * 1.5 * 1000"
+  },
+  {
+    "id": "mb_l5_n08",
+    "lessonId": "mb_l5",
+    "format": "CHART",
+    "difficulty": "HARD",
+    "skill": "Interpretar gráficos e tabelas de Sistema Métrico, Volumes e Vazão",
+    "concept": "Conversão de unidades de comprimento (x10), área (x100), volume (x1000) e relações fundamentais de capacidade ($1\\text{ m}^3 = 1.000\\text{ L}$ e $1\\text{ dm}^3 = 1\\text{ L}$)",
+    "statement": "Somando as capacidades dos três tanques convertidas para litros (500 L + 1.200 L + 300 L), qual é a capacidade total armazenada em litros?",
+    "explanation": "Analisando os dados de 'Equivalência de Volumes em Litros para Três Reservatórios' (500 + 1200 + 300), conclui-se corretamente: 2000 L (ou 2,0 m³ no total).",
+    "retryGuidance": "Extraia os valores diretamente dos eixos/colunas antes de substituir na equação física.",
+    "source": "AUTORAL",
+    "options": [
+      "2000 L (ou 2,0 m³ no total)",
+      "1700 L",
+      "800 L",
+      "1500 L",
+      "301200.5 L"
+    ],
+    "answerIndex": 0,
+    "distractorConcepts": [
+      "",
+      "Esqueceu de somar os 300 L do Tanque C",
+      "Somou apenas os Tanques A e C",
+      "Somou apenas os Tanques B e C",
+      "Somou os números brutos sem converter m³, dm³ e cm³ para a mesma unidade (litros)"
+    ],
+    "verify": "500 + 1200 + 300",
+    "chart": {
+      "type": "bar",
+      "title": "Equivalência de Volumes em Litros para Três Reservatórios",
+      "labels": [
+        "Tanque A (0,5 m³)",
+        "Tanque B (1200 dm³)",
+        "Tanque C (300.000 cm³)"
+      ],
+      "series": [
+        {
+          "name": "Capacidade em Litros (L)",
+          "values": [
+            500,
+            1200,
+            300
+          ]
+        }
+      ],
+      "unit": ""
+    }
+  },
+  {
+    "id": "mb_l5_n09",
+    "lessonId": "mb_l5",
+    "format": "NUMERIC",
+    "difficulty": "HARD",
+    "skill": "Modelar e calcular situação física em Sistema Métrico, Volumes e Vazão",
+    "concept": "Conversão de unidades de comprimento (x10), área (x100), volume (x1000) e relações fundamentais de capacidade ($1\\text{ m}^3 = 1.000\\text{ L}$ e $1\\text{ dm}^3 = 1\\text{ L}$)",
+    "statement": "Uma torneira despeja água com vazão constante de $25\\text{ litros por minuto}$. Em quantos minutos ela encherá um reservatório de $1{,}5\\text{ m}^3$ ($1.500\\text{ litros}$)?",
+    "explanation": "Substituindo os valores na relação física ((1.5 * 1000) / 25), encontramos 60 min.",
+    "retryGuidance": "Confira se todas as grandezas estão nas unidades pedidas e aplique (1.5 * 1000) / 25.",
+    "source": "AUTORAL",
+    "answerNumber": 60,
+    "tolerance": 0.01,
+    "unit": "min",
+    "verify": "(1.5 * 1000) / 25"
+  },
+  {
+    "id": "mb_l5_n10",
+    "lessonId": "mb_l5",
+    "format": "ESSAY",
+    "difficulty": "HARD",
+    "skill": "Explicar fenômenos cotidianos e tecnológicos usando Sistema Métrico, Volumes e Vazão",
+    "concept": "Conversão de unidades de comprimento (x10), área (x100), volume (x1000) e relações fundamentais de capacidade ($1\\text{ m}^3 = 1.000\\text{ L}$ e $1\\text{ dm}^3 = 1\\text{ L}$)",
+    "statement": "Explique por que na escala de comprimento cada degrau multiplica por $10$, na de área por $100$ ($10^2$) e na de volume por $1.000$ ($10^3$), e mostre as três pontes entre volume e capacidade ($\\text{m}^3$, $\\text{dm}^3$ e $\\text{cm}^3$ para litros/mL).",
+    "explanation": "Síntese conceitual esperada pela rubrica: O comprimento tem 1 dimensão (1 m = 10 dm); a área tem 2 dimensões (1 m² = 10 dm x 10 dm = 100 dm²), multiplicando por 10² a cada casa; e o volume tem 3 dimensões (1 m³ = 10 dm x 10 dm x 10 dm = 1.000 dm³), multiplicando por 10³ a cada casa. Por definição, 1 dm³ = 1 litro; consequentemente, 1 m³ = 1.000 litros e 1 cm³ = 0,001 L = 1 mL.",
+    "retryGuidance": "Estruture sua resposta mencionando a lei física de Sistema Métrico, Volumes e Vazão, a relação entre as grandezas e a aplicação prática.",
+    "source": "AUTORAL",
+    "modelAnswer": "O comprimento tem 1 dimensão (1 m = 10 dm); a área tem 2 dimensões (1 m² = 10 dm x 10 dm = 100 dm²), multiplicando por 10² a cada casa; e o volume tem 3 dimensões (1 m³ = 10 dm x 10 dm x 10 dm = 1.000 dm³), multiplicando por 10³ a cada casa. Por definição, 1 dm³ = 1 litro; consequentemente, 1 m³ = 1.000 litros e 1 cm³ = 0,001 L = 1 mL.",
+    "passScore": 0.6,
+    "rubric": [
+      {
+        "criterion": "Enuncia o princípio ou lei física central de Sistema Métrico, Volumes e Vazão",
+        "points": 4,
+        "keywords": [
+          [
+            "comprimento",
+            "10",
+            "area",
+            "área",
+            "100",
+            "volume",
+            "1000",
+            "1.000",
+            "dimens"
+          ]
+        ]
+      },
+      {
+        "criterion": "Relaciona corretamente as grandezas físicas envolvidas",
+        "points": 3,
+        "keywords": [
+          [
+            "dm³",
+            "1 litro",
+            "litro"
+          ]
+        ]
+      },
+      {
+        "criterion": "Explica a aplicação prática ou consequência física",
+        "points": 3,
+        "keywords": [
+          [
+            "m³",
+            "cm³",
+            "ml",
+            "mililitro"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mb_l6_n01",
+    "lessonId": "mb_l6",
+    "format": "TRUE_FALSE",
+    "difficulty": "EASY",
+    "skill": "Julgar proposições físicas sobre Grandezas Diretas e Inversas",
+    "concept": "Razão, proporção ($a/b = c/d \\Rightarrow a \\cdot d = b \\cdot c$), divisão em partes diretamente proporcionais ($A/x = B/y = k$) e inversamente proporcionais ($A \\cdot x = B \\cdot y = k$)",
+    "statement": "Duas grandezas são diretamente proporcionais quando a razão (quociente) entre seus valores correspondentes é constante (y/x = k), e são inversamente proporcionais quando o produto entre elas é constante (y.x = k).",
+    "explanation": "A afirmação é verdadeira: Duas grandezas são diretamente proporcionais quando a razão (quociente) entre seus valores correspondentes é constante (y/x = k), e são inversamente proporcionais quando o produto entre elas é constante (y.x = k). Esse princípio é fundamental em Grandezas Diretas e Inversas.",
+    "retryGuidance": "Revise as leis físicas e relações matemáticas de Grandezas Diretas e Inversas.",
+    "source": "AUTORAL",
+    "answerBool": true
+  },
+  {
+    "id": "mb_l6_n02",
+    "lessonId": "mb_l6",
+    "format": "FILL_BLANK",
+    "difficulty": "EASY",
+    "skill": "Identificar o conceito ou lei física em Grandezas Diretas e Inversas",
+    "concept": "Razão, proporção ($a/b = c/d \\Rightarrow a \\cdot d = b \\cdot c$), divisão em partes diretamente proporcionais ($A/x = B/y = k$) e inversamente proporcionais ($A \\cdot x = B \\cdot y = k$)",
+    "statement": "No estudo de Grandezas Diretas e Inversas (Razão, proporção ($a/b = c/d \\Rightarrow a \\cdot d = b \\cdot c$), divisão em partes diretamente proporcionais ($A/x = B/y = k$) e inversamente proporcionais ($A \\cdot x = B \\cdot y = k$)), o termo, unidade ou grandeza física central destacada na aula é ___.",
+    "explanation": "O termo correto para completar a lacuna é 'constante', elemento essencial de Grandezas Diretas e Inversas.",
+    "retryGuidance": "Consulte o quadro de conceitos e fórmulas de Grandezas Diretas e Inversas e verifique a grafia do termo principal.",
+    "source": "AUTORAL",
+    "answers": [
+      "constante"
+    ]
+  },
+  {
+    "id": "mb_l6_n03",
+    "lessonId": "mb_l6",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "EASY",
+    "skill": "Relacionar leis físicas e equações em Grandezas Diretas e Inversas",
+    "concept": "Grandezas diretamente proporcionais em Grandezas Diretas e Inversas",
+    "statement": "Considerando os princípios de Grandezas Diretas e Inversas, assinale a alternativa que caracteriza corretamente 'Grandezas diretamente proporcionais':",
+    "explanation": "A alternativa correta relaciona 'Grandezas diretamente proporcionais' a: Razão constante: y / x = k (gráfico é uma reta que passa pela origem). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Grandezas diretamente proporcionais' com os demais tópicos de Grandezas Diretas e Inversas.",
+    "source": "AUTORAL",
+    "options": [
+      "Grandezas diretamente proporcionais: Razão constante: y / x = k (gráfico é uma reta que passa pela origem)",
+      "Grandezas diretamente proporcionais: Produto constante: y . x = k (gráfico é um ramo de hipérbole)",
+      "Grandezas diretamente proporcionais: Em a/b = c/d, o produto dos meios é igual ao produto dos extremos (a.d = b.c)",
+      "Grandezas diretamente proporcionais: Fator unitário que permite resolver divisões proporcionais rapidamente",
+      "Grandezas diretamente proporcionais: Grandeza nula que independe de qualquer variável física"
+    ],
+    "answerIndex": 0,
+    "distractorConcepts": [
+      "",
+      "Confundiu 'Grandezas diretamente proporcionais' com 'Grandezas inversamente proporcionais'",
+      "Confundiu 'Grandezas diretamente proporcionais' com 'Propriedade fundamental das proporções'",
+      "Confundiu 'Grandezas diretamente proporcionais' com 'Constante de proporcionalidade (k)'",
+      "Desconsiderou a lei física aplicável a 'Grandezas diretamente proporcionais' em Grandezas Diretas e Inversas"
+    ]
+  },
+  {
+    "id": "mb_l6_n05",
+    "lessonId": "mb_l6",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Grandezas Diretas e Inversas",
+    "concept": "Propriedade fundamental das proporções em Grandezas Diretas e Inversas",
+    "statement": "Considerando os princípios de Grandezas Diretas e Inversas, assinale a alternativa que caracteriza corretamente 'Propriedade fundamental das proporções':",
+    "explanation": "A alternativa correta relaciona 'Propriedade fundamental das proporções' a: Em a/b = c/d, o produto dos meios é igual ao produto dos extremos (a.d = b.c). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Propriedade fundamental das proporções' com os demais tópicos de Grandezas Diretas e Inversas.",
+    "source": "AUTORAL",
+    "options": [
+      "Propriedade fundamental das proporções: Produto constante: y . x = k (gráfico é um ramo de hipérbole)",
+      "Propriedade fundamental das proporções: Fator unitário que permite resolver divisões proporcionais rapidamente",
+      "Propriedade fundamental das proporções: Grandeza nula que independe de qualquer variável física",
+      "Propriedade fundamental das proporções: Em a/b = c/d, o produto dos meios é igual ao produto dos extremos (a.d = b.c)",
+      "Propriedade fundamental das proporções: Razão constante: y / x = k (gráfico é uma reta que passa pela origem)"
+    ],
+    "answerIndex": 3,
+    "distractorConcepts": [
+      "Confundiu 'Propriedade fundamental das proporções' com 'Grandezas inversamente proporcionais'",
+      "Confundiu 'Propriedade fundamental das proporções' com 'Constante de proporcionalidade (k)'",
+      "Desconsiderou a lei física aplicável a 'Propriedade fundamental das proporções' em Grandezas Diretas e Inversas",
+      "",
+      "Confundiu 'Propriedade fundamental das proporções' com 'Grandezas diretamente proporcionais'"
+    ]
+  },
+  {
+    "id": "mb_l6_n06",
+    "lessonId": "mb_l6",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Grandezas Diretas e Inversas",
+    "concept": "Constante de proporcionalidade (k) em Grandezas Diretas e Inversas",
+    "statement": "Considerando os princípios de Grandezas Diretas e Inversas, assinale a alternativa que caracteriza corretamente 'Constante de proporcionalidade (k)':",
+    "explanation": "A alternativa correta relaciona 'Constante de proporcionalidade (k)' a: Fator unitário que permite resolver divisões proporcionais rapidamente. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Constante de proporcionalidade (k)' com os demais tópicos de Grandezas Diretas e Inversas.",
+    "source": "AUTORAL",
+    "options": [
+      "Constante de proporcionalidade (k): Grandeza nula que independe de qualquer variável física",
+      "Constante de proporcionalidade (k): Fator unitário que permite resolver divisões proporcionais rapidamente",
+      "Constante de proporcionalidade (k): Razão constante: y / x = k (gráfico é uma reta que passa pela origem)",
+      "Constante de proporcionalidade (k): Produto constante: y . x = k (gráfico é um ramo de hipérbole)",
+      "Constante de proporcionalidade (k): Em a/b = c/d, o produto dos meios é igual ao produto dos extremos (a.d = b.c)"
+    ],
+    "answerIndex": 1,
+    "distractorConcepts": [
+      "Desconsiderou a lei física aplicável a 'Constante de proporcionalidade (k)' em Grandezas Diretas e Inversas",
+      "",
+      "Confundiu 'Constante de proporcionalidade (k)' com 'Grandezas diretamente proporcionais'",
+      "Confundiu 'Constante de proporcionalidade (k)' com 'Grandezas inversamente proporcionais'",
+      "Confundiu 'Constante de proporcionalidade (k)' com 'Propriedade fundamental das proporções'"
+    ]
+  },
+  {
+    "id": "mb_l6_n04",
+    "lessonId": "mb_l6",
+    "format": "MATCHING",
+    "difficulty": "MEDIUM",
+    "skill": "Associar grandezas, leis e aplicações de Grandezas Diretas e Inversas",
+    "concept": "Razão, proporção ($a/b = c/d \\Rightarrow a \\cdot d = b \\cdot c$), divisão em partes diretamente proporcionais ($A/x = B/y = k$) e inversamente proporcionais ($A \\cdot x = B \\cdot y = k$)",
+    "statement": "Associe cada grandeza, lei ou fenômeno de Grandezas Diretas e Inversas à sua respectiva propriedade física:",
+    "explanation": "Relacionar cada lei física à sua expressão matemática e aplicação prática é indispensável para resolver problemas contextualizados.",
+    "retryGuidance": "Analise as unidades e relações de proporcionalidade de cada item de Grandezas Diretas e Inversas.",
+    "source": "AUTORAL",
+    "pairs": [
+      [
+        "Grandezas diretamente proporcionais",
+        "Razão constante: y / x = k (gráfico é uma reta que passa pela origem)"
+      ],
+      [
+        "Grandezas inversamente proporcionais",
+        "Produto constante: y . x = k (gráfico é um ramo de hipérbole)"
+      ],
+      [
+        "Propriedade fundamental das proporções",
+        "Em a/b = c/d, o produto dos meios é igual ao produto dos extremos (a.d = b.c)"
+      ],
+      [
+        "Constante de proporcionalidade (k)",
+        "Fator unitário que permite resolver divisões proporcionais rapidamente"
+      ]
+    ]
+  },
+  {
+    "id": "mb_l6_n07",
+    "lessonId": "mb_l6",
+    "format": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "skill": "Resolver problema numérico de Grandezas Diretas e Inversas",
+    "concept": "Razão, proporção ($a/b = c/d \\Rightarrow a \\cdot d = b \\cdot c$), divisão em partes diretamente proporcionais ($A/x = B/y = k$) e inversamente proporcionais ($A \\cdot x = B \\cdot y = k$)",
+    "statement": "Três sócios investiram $2$, $3$ e $5$ cotas em uma startup e vão dividir um lucro de $\\text{R\\$ }80.000$ em partes diretamente proporcionais às cotas ($2k + 3k + 5k = 10k = 80.000$). Quanto receberá o sócio que possui $5$ cotas ($5k$)?",
+    "explanation": "Aplicando a equação de Grandezas Diretas e Inversas ((80000 / (2 + 3 + 5)) * 5), obtemos o resultado exato de 40000 R$.",
+    "retryGuidance": "Identifique os dados no Sistema Internacional e aplique a relação (80000 / (2 + 3 + 5)) * 5.",
+    "source": "AUTORAL",
+    "answerNumber": 40000,
+    "tolerance": 0.01,
+    "unit": "R$",
+    "verify": "(80000 / (2 + 3 + 5)) * 5"
+  },
+  {
+    "id": "mb_l6_n08",
+    "lessonId": "mb_l6",
+    "format": "CHART",
+    "difficulty": "MEDIUM",
+    "skill": "Interpretar gráficos e tabelas de Grandezas Diretas e Inversas",
+    "concept": "Razão, proporção ($a/b = c/d \\Rightarrow a \\cdot d = b \\cdot c$), divisão em partes diretamente proporcionais ($A/x = B/y = k$) e inversamente proporcionais ($A \\cdot x = B \\cdot y = k$)",
+    "statement": "Na tabela de um percurso fixo de 240 km, a velocidade média e o tempo de viagem são grandezas inversamente proporcionais ($v \\cdot t = 240$). Se um motorista fizer esse percurso a $96\\text{ km/h}$, qual será o tempo de viagem em horas?",
+    "explanation": "Analisando os dados de 'Tempo de Viagem (horas) por Velocidade Média em um Percurso de 240 km' (240 / 96), conclui-se corretamente: 2,5 horas (pois 240 / 96 = 2,5 h).",
+    "retryGuidance": "Extraia os valores diretamente dos eixos/colunas antes de substituir na equação física.",
+    "source": "AUTORAL",
+    "options": [
+      "3,5 horas",
+      "2,0 horas",
+      "4,0 horas",
+      "1,5 hora",
+      "2,5 horas (pois 240 / 96 = 2,5 h)"
+    ],
+    "answerIndex": 4,
+    "distractorConcepts": [
+      "Calculou média simples em vez de dividir 240 por 96",
+      "2,0 horas exigiria velocidade de 120 km/h",
+      "4,0 horas corresponde a 60 km/h",
+      "1,5 hora exigiria velocidade de 160 km/h",
+      ""
+    ],
+    "verify": "240 / 96",
+    "chart": {
+      "type": "bar",
+      "title": "Tempo de Viagem (horas) por Velocidade Média em um Percurso de 240 km",
+      "labels": [
+        "v = 40 km/h",
+        "v = 60 km/h",
+        "v = 80 km/h",
+        "v = 120 km/h"
+      ],
+      "series": [
+        {
+          "name": "Tempo de Viagem (h)",
+          "values": [
+            6.0,
+            4.0,
+            3.0,
+            2.0
+          ]
+        }
+      ],
+      "unit": ""
+    }
+  },
+  {
+    "id": "mb_l6_n09",
+    "lessonId": "mb_l6",
+    "format": "NUMERIC",
+    "difficulty": "HARD",
+    "skill": "Modelar e calcular situação física em Grandezas Diretas e Inversas",
+    "concept": "Razão, proporção ($a/b = c/d \\Rightarrow a \\cdot d = b \\cdot c$), divisão em partes diretamente proporcionais ($A/x = B/y = k$) e inversamente proporcionais ($A \\cdot x = B \\cdot y = k$)",
+    "statement": "Um prêmio de $\\text{R\\$ }4.200$ será dividido entre dois funcionários de forma INVERSAMENTE proporcional ao número de faltas: João teve $2$ faltas e Carlos teve $5$ faltas ($k/2 + k/5 = 7k/10 = 4200 \\Rightarrow k = 6000$). Quanto receberá João ($k/2$)?",
+    "explanation": "Substituindo os valores na relação física (4200 * (1/2) / (1/2 + 1/5)), encontramos 3000 R$.",
+    "retryGuidance": "Confira se todas as grandezas estão nas unidades pedidas e aplique 4200 * (1/2) / (1/2 + 1/5).",
+    "source": "AUTORAL",
+    "answerNumber": 3000,
+    "tolerance": 0.01,
+    "unit": "R$",
+    "verify": "4200 * (1/2) / (1/2 + 1/5)"
+  },
+  {
+    "id": "mb_l6_n10",
+    "lessonId": "mb_l6",
+    "format": "ESSAY",
+    "difficulty": "HARD",
+    "skill": "Explicar fenômenos cotidianos e tecnológicos usando Grandezas Diretas e Inversas",
+    "concept": "Razão, proporção ($a/b = c/d \\Rightarrow a \\cdot d = b \\cdot c$), divisão em partes diretamente proporcionais ($A/x = B/y = k$) e inversamente proporcionais ($A \\cdot x = B \\cdot y = k$)",
+    "statement": "Explique a diferença matemática e gráfica entre grandezas diretamente proporcionais e grandezas inversamente proporcionais, e mostre como usar a constante $k$ na divisão proporcional.",
+    "explanation": "Síntese conceitual esperada pela rubrica: Em grandezas diretamente proporcionais, dobrar uma faz a outra dobrar, mantendo a razão constante (y/x = k) e gerando uma semirreta que parte da origem. Em grandezas inversamente proporcionais, dobrar uma reduz a outra à metade, mantendo o produto constante (y.x = k) e gerando uma curva hiperbólica. Na divisão diretamente proporcional a (a, b, c), escrevemos as partes como ak, bk e ck, somamos para igualar ao total, achamos k e substituímos.",
+    "retryGuidance": "Estruture sua resposta mencionando a lei física de Grandezas Diretas e Inversas, a relação entre as grandezas e a aplicação prática.",
+    "source": "AUTORAL",
+    "modelAnswer": "Em grandezas diretamente proporcionais, dobrar uma faz a outra dobrar, mantendo a razão constante (y/x = k) e gerando uma semirreta que parte da origem. Em grandezas inversamente proporcionais, dobrar uma reduz a outra à metade, mantendo o produto constante (y.x = k) e gerando uma curva hiperbólica. Na divisão diretamente proporcional a (a, b, c), escrevemos as partes como ak, bk e ck, somamos para igualar ao total, achamos k e substituímos.",
+    "passScore": 0.6,
+    "rubric": [
+      {
+        "criterion": "Enuncia o princípio ou lei física central de Grandezas Diretas e Inversas",
+        "points": 4,
+        "keywords": [
+          [
+            "diretamente",
+            "razao",
+            "razão",
+            "quociente",
+            "reta"
+          ]
+        ]
+      },
+      {
+        "criterion": "Relaciona corretamente as grandezas físicas envolvidas",
+        "points": 3,
+        "keywords": [
+          [
+            "inversamente",
+            "produto",
+            "hiperbole",
+            "hipérbole",
+            "metade"
+          ]
+        ]
+      },
+      {
+        "criterion": "Explica a aplicação prática ou consequência física",
+        "points": 3,
+        "keywords": [
+          [
+            "constante",
+            "k",
+            "soma",
+            "total"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mb_l7_n01",
+    "lessonId": "mb_l7",
+    "format": "TRUE_FALSE",
+    "difficulty": "EASY",
+    "skill": "Julgar proposições físicas sobre Análise de Grandezas e Equacionamento",
+    "concept": "Regra de três simples (direta e inversa) e regra de três composta (isolamento da grandeza da incógnita e análise de setas)",
+    "statement": "Ao resolver uma regra de três simples envolvendo número de operários (de mesma eficiência) e tempo necessário para concluir uma mesma obra, as grandezas são inversamente proporcionais: multiplica-se em linha reta (horizontal) em vez de multiplicar em cruz.",
+    "explanation": "A afirmação é verdadeira: Ao resolver uma regra de três simples envolvendo número de operários (de mesma eficiência) e tempo necessário para concluir uma mesma obra, as grandezas são inversamente proporcionais: multiplica-se em linha reta (horizontal) em vez de multiplicar em cruz. Esse princípio é fundamental em Análise de Grandezas e Equacionamento.",
+    "retryGuidance": "Revise as leis físicas e relações matemáticas de Análise de Grandezas e Equacionamento.",
+    "source": "AUTORAL",
+    "answerBool": true
+  },
+  {
+    "id": "mb_l7_n02",
+    "lessonId": "mb_l7",
+    "format": "FILL_BLANK",
+    "difficulty": "EASY",
+    "skill": "Identificar o conceito ou lei física em Análise de Grandezas e Equacionamento",
+    "concept": "Regra de três simples (direta e inversa) e regra de três composta (isolamento da grandeza da incógnita e análise de setas)",
+    "statement": "No estudo de Análise de Grandezas e Equacionamento (Regra de três simples (direta e inversa) e regra de três composta (isolamento da grandeza da incógnita e análise de setas)), o termo, unidade ou grandeza física central destacada na aula é ___.",
+    "explanation": "O termo correto para completar a lacuna é 'inversa', elemento essencial de Análise de Grandezas e Equacionamento.",
+    "retryGuidance": "Consulte o quadro de conceitos e fórmulas de Análise de Grandezas e Equacionamento e verifique a grafia do termo principal.",
+    "source": "AUTORAL",
+    "answers": [
+      "inversa"
+    ]
+  },
+  {
+    "id": "mb_l7_n03",
+    "lessonId": "mb_l7",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "EASY",
+    "skill": "Relacionar leis físicas e equações em Análise de Grandezas e Equacionamento",
+    "concept": "Regra de três simples direta em Análise de Grandezas e Equacionamento",
+    "statement": "Considerando os princípios de Análise de Grandezas e Equacionamento, assinale a alternativa que caracteriza corretamente 'Regra de três simples direta':",
+    "explanation": "A alternativa correta relaciona 'Regra de três simples direta' a: As duas grandezas variam no mesmo sentido: multiplica-se em cruz. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Regra de três simples direta' com os demais tópicos de Análise de Grandezas e Equacionamento.",
+    "source": "AUTORAL",
+    "options": [
+      "Regra de três simples direta: Uma aumenta e a outra diminui na mesma proporção: produto em linha é constante",
+      "Regra de três simples direta: Compara-se cada grandeza isoladamente com a coluna da incógnita x",
+      "Regra de três simples direta: Somam-se as taxas horárias (1/t1 + 1/t2 = 1/t_total)",
+      "Regra de três simples direta: Grandeza nula que independe de qualquer variável física",
+      "Regra de três simples direta: As duas grandezas variam no mesmo sentido: multiplica-se em cruz"
+    ],
+    "answerIndex": 4,
+    "distractorConcepts": [
+      "Confundiu 'Regra de três simples direta' com 'Regra de três simples inversa'",
+      "Confundiu 'Regra de três simples direta' com 'Regra de três composta'",
+      "Confundiu 'Regra de três simples direta' com 'Rendimento / Produção em problemas de torneiras'",
+      "Desconsiderou a lei física aplicável a 'Regra de três simples direta' em Análise de Grandezas e Equacionamento",
+      ""
+    ]
+  },
+  {
+    "id": "mb_l7_n05",
+    "lessonId": "mb_l7",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Análise de Grandezas e Equacionamento",
+    "concept": "Regra de três composta em Análise de Grandezas e Equacionamento",
+    "statement": "Considerando os princípios de Análise de Grandezas e Equacionamento, assinale a alternativa que caracteriza corretamente 'Regra de três composta':",
+    "explanation": "A alternativa correta relaciona 'Regra de três composta' a: Compara-se cada grandeza isoladamente com a coluna da incógnita x. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Regra de três composta' com os demais tópicos de Análise de Grandezas e Equacionamento.",
+    "source": "AUTORAL",
+    "options": [
+      "Regra de três composta: Somam-se as taxas horárias (1/t1 + 1/t2 = 1/t_total)",
+      "Regra de três composta: Grandeza nula que independe de qualquer variável física",
+      "Regra de três composta: Compara-se cada grandeza isoladamente com a coluna da incógnita x",
+      "Regra de três composta: As duas grandezas variam no mesmo sentido: multiplica-se em cruz",
+      "Regra de três composta: Uma aumenta e a outra diminui na mesma proporção: produto em linha é constante"
+    ],
+    "answerIndex": 2,
+    "distractorConcepts": [
+      "Confundiu 'Regra de três composta' com 'Rendimento / Produção em problemas de torneiras'",
+      "Desconsiderou a lei física aplicável a 'Regra de três composta' em Análise de Grandezas e Equacionamento",
+      "",
+      "Confundiu 'Regra de três composta' com 'Regra de três simples direta'",
+      "Confundiu 'Regra de três composta' com 'Regra de três simples inversa'"
+    ]
+  },
+  {
+    "id": "mb_l7_n06",
+    "lessonId": "mb_l7",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Análise de Grandezas e Equacionamento",
+    "concept": "Rendimento / Produção em problemas de torneiras em Análise de Grandezas e Equacionamento",
+    "statement": "Considerando os princípios de Análise de Grandezas e Equacionamento, assinale a alternativa que caracteriza corretamente 'Rendimento / Produção em problemas de torneiras':",
+    "explanation": "A alternativa correta relaciona 'Rendimento / Produção em problemas de torneiras' a: Somam-se as taxas horárias (1/t1 + 1/t2 = 1/t_total). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Rendimento / Produção em problemas de torneiras' com os demais tópicos de Análise de Grandezas e Equacionamento.",
+    "source": "AUTORAL",
+    "options": [
+      "Rendimento / Produção em problemas de torneiras: Somam-se as taxas horárias (1/t1 + 1/t2 = 1/t_total)",
+      "Rendimento / Produção em problemas de torneiras: As duas grandezas variam no mesmo sentido: multiplica-se em cruz",
+      "Rendimento / Produção em problemas de torneiras: Uma aumenta e a outra diminui na mesma proporção: produto em linha é constante",
+      "Rendimento / Produção em problemas de torneiras: Compara-se cada grandeza isoladamente com a coluna da incógnita x",
+      "Rendimento / Produção em problemas de torneiras: Grandeza nula que independe de qualquer variável física"
+    ],
+    "answerIndex": 0,
+    "distractorConcepts": [
+      "",
+      "Confundiu 'Rendimento / Produção em problemas de torneiras' com 'Regra de três simples direta'",
+      "Confundiu 'Rendimento / Produção em problemas de torneiras' com 'Regra de três simples inversa'",
+      "Confundiu 'Rendimento / Produção em problemas de torneiras' com 'Regra de três composta'",
+      "Desconsiderou a lei física aplicável a 'Rendimento / Produção em problemas de torneiras' em Análise de Grandezas e Equacionamento"
+    ]
+  },
+  {
+    "id": "mb_l7_n04",
+    "lessonId": "mb_l7",
+    "format": "MATCHING",
+    "difficulty": "MEDIUM",
+    "skill": "Associar grandezas, leis e aplicações de Análise de Grandezas e Equacionamento",
+    "concept": "Regra de três simples (direta e inversa) e regra de três composta (isolamento da grandeza da incógnita e análise de setas)",
+    "statement": "Associe cada grandeza, lei ou fenômeno de Análise de Grandezas e Equacionamento à sua respectiva propriedade física:",
+    "explanation": "Relacionar cada lei física à sua expressão matemática e aplicação prática é indispensável para resolver problemas contextualizados.",
+    "retryGuidance": "Analise as unidades e relações de proporcionalidade de cada item de Análise de Grandezas e Equacionamento.",
+    "source": "AUTORAL",
+    "pairs": [
+      [
+        "Regra de três simples direta",
+        "As duas grandezas variam no mesmo sentido: multiplica-se em cruz"
+      ],
+      [
+        "Regra de três simples inversa",
+        "Uma aumenta e a outra diminui na mesma proporção: produto em linha é constante"
+      ],
+      [
+        "Regra de três composta",
+        "Compara-se cada grandeza isoladamente com a coluna da incógnita x"
+      ],
+      [
+        "Rendimento / Produção em problemas de torneiras",
+        "Somam-se as taxas horárias (1/t1 + 1/t2 = 1/t_total)"
+      ]
+    ]
+  },
+  {
+    "id": "mb_l7_n07",
+    "lessonId": "mb_l7",
+    "format": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "skill": "Resolver problema numérico de Análise de Grandezas e Equacionamento",
+    "concept": "Regra de três simples (direta e inversa) e regra de três composta (isolamento da grandeza da incógnita e análise de setas)",
+    "statement": "Se $6$ impressoras idênticas imprimem um lote de provas em $40\\text{ minutos}$, em quantos minutos $10$ impressoras idênticas imprimirão esse mesmo lote (regra de três inversa: $6 \\cdot 40 = 10 \\cdot t$)?",
+    "explanation": "Aplicando a equação de Análise de Grandezas e Equacionamento ((6 * 40) / 10), obtemos o resultado exato de 24 min.",
+    "retryGuidance": "Identifique os dados no Sistema Internacional e aplique a relação (6 * 40) / 10.",
+    "source": "AUTORAL",
+    "answerNumber": 24,
+    "tolerance": 0.01,
+    "unit": "min",
+    "verify": "(6 * 40) / 10"
+  },
+  {
+    "id": "mb_l7_n08",
+    "lessonId": "mb_l7",
+    "format": "CHART",
+    "difficulty": "HARD",
+    "skill": "Interpretar gráficos e tabelas de Análise de Grandezas e Equacionamento",
+    "concept": "Regra de três simples (direta e inversa) e regra de três composta (isolamento da grandeza da incógnita e análise de setas)",
+    "statement": "Sabendo que 1 torneira leva 120 minutos para encher o tanque sozinha, em quantos minutos 5 torneiras idênticas abertas simultaneamente encherão esse mesmo tanque?",
+    "explanation": "Analisando os dados de 'Tempo para Encher um Tanque por Número de Torneiras Idênticas Abertas' (120 / 5), conclui-se corretamente: 24 minutos (pois 120 / 5 = 24 min, relação inversamente proporcional).",
+    "retryGuidance": "Extraia os valores diretamente dos eixos/colunas antes de substituir na equação física.",
+    "source": "AUTORAL",
+    "options": [
+      "25 minutos",
+      "600 minutos",
+      "15 minutos",
+      "24 minutos (pois 120 / 5 = 24 min, relação inversamente proporcional)",
+      "20 minutos"
+    ],
+    "answerIndex": 3,
+    "distractorConcepts": [
+      "Subtraiu 5 de 30 em vez de dividir 120 por 5",
+      "Multiplicou 120 x 5 como se fosse diretamente proporcional",
+      "15 minutos seria para 8 torneiras",
+      "",
+      "20 minutos seria para 6 torneiras (120 / 6 = 20)"
+    ],
+    "verify": "120 / 5",
+    "chart": {
+      "type": "bar",
+      "title": "Tempo para Encher um Tanque por Número de Torneiras Idênticas Abertas",
+      "labels": [
+        "1 Torneira",
+        "2 Torneiras",
+        "3 Torneiras",
+        "4 Torneiras"
+      ],
+      "series": [
+        {
+          "name": "Tempo Necessário (min)",
+          "values": [
+            120,
+            60,
+            40,
+            30
+          ]
+        }
+      ],
+      "unit": ""
+    }
+  },
+  {
+    "id": "mb_l7_n09",
+    "lessonId": "mb_l7",
+    "format": "NUMERIC",
+    "difficulty": "HARD",
+    "skill": "Modelar e calcular situação física em Análise de Grandezas e Equacionamento",
+    "concept": "Regra de três simples (direta e inversa) e regra de três composta (isolamento da grandeza da incógnita e análise de setas)",
+    "statement": "Em uma gráfica, $4$ máquinas trabalhando $6\\text{ horas/dia}$ produzem $1.200\\text{ livros}$. Quantos livros serão produzidos por $5$ máquinas trabalhando $8\\text{ horas/dia}$ no mesmo número de dias?",
+    "explanation": "Substituindo os valores na relação física (1200 * (5/4) * (8/6)), encontramos 2000 livros.",
+    "retryGuidance": "Confira se todas as grandezas estão nas unidades pedidas e aplique 1200 * (5/4) * (8/6).",
+    "source": "AUTORAL",
+    "answerNumber": 2000,
+    "tolerance": 0.01,
+    "unit": "livros",
+    "verify": "1200 * (5/4) * (8/6)"
+  },
+  {
+    "id": "mb_l7_n10",
+    "lessonId": "mb_l7",
+    "format": "ESSAY",
+    "difficulty": "HARD",
+    "skill": "Explicar fenômenos cotidianos e tecnológicos usando Análise de Grandezas e Equacionamento",
+    "concept": "Regra de três simples (direta e inversa) e regra de três composta (isolamento da grandeza da incógnita e análise de setas)",
+    "statement": "Descreva o método passo a passo para montar e resolver uma Regra de Três Composta sem errar a orientação das grandezas diretas e inversas.",
+    "explanation": "Síntese conceitual esperada pela rubrica: Primeiro organizam-se os dados em uma tabela colocando cada grandeza em uma coluna. Em seguida, isola-se a razão da coluna que contém a incógnita x no lado esquerdo da igualdade. Depois, compara-se cada uma das demais colunas individualmente com a coluna do x (imaginando as outras fixas): se a grandeza for diretamente proporcional ao x, mantém-se a fração na ordem original; se for inversamente proporcional, inverte-se a fração. Por fim, iguala-se a razão do x ao produto das demais frações.",
+    "retryGuidance": "Estruture sua resposta mencionando a lei física de Análise de Grandezas e Equacionamento, a relação entre as grandezas e a aplicação prática.",
+    "source": "AUTORAL",
+    "modelAnswer": "Primeiro organizam-se os dados em uma tabela colocando cada grandeza em uma coluna. Em seguida, isola-se a razão da coluna que contém a incógnita x no lado esquerdo da igualdade. Depois, compara-se cada uma das demais colunas individualmente com a coluna do x (imaginando as outras fixas): se a grandeza for diretamente proporcional ao x, mantém-se a fração na ordem original; se for inversamente proporcional, inverte-se a fração. Por fim, iguala-se a razão do x ao produto das demais frações.",
+    "passScore": 0.6,
+    "rubric": [
+      {
+        "criterion": "Enuncia o princípio ou lei física central de Análise de Grandezas e Equacionamento",
+        "points": 4,
+        "keywords": [
+          [
+            "coluna",
+            "tabela",
+            "incognita",
+            "incógnita",
+            "isola"
+          ]
+        ]
+      },
+      {
+        "criterion": "Relaciona corretamente as grandezas físicas envolvidas",
+        "points": 3,
+        "keywords": [
+          [
+            "diretamente",
+            "mantem",
+            "mantém",
+            "inversamente",
+            "inverte"
+          ]
+        ]
+      },
+      {
+        "criterion": "Explica a aplicação prática ou consequência física",
+        "points": 3,
+        "keywords": [
+          [
+            "produto",
+            "multiplica",
+            "fração",
+            "fracao"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mb_l8_n01",
+    "lessonId": "mb_l8",
+    "format": "TRUE_FALSE",
+    "difficulty": "EASY",
+    "skill": "Julgar proposições físicas sobre Escala Linear vs Escala de Área",
+    "concept": "Escala cartográfica ($E = d / D$), conversão cm <-> km ($1\\text{ km} = 100.000\\text{ cm}$), escala de área ($E_{\\text{área}} = E^2$) e escala de volume ($E_{\\text{vol}} = E^3$)",
+    "statement": "Enquanto a razão entre comprimentos no mapa e no terreno segue a escala linear E = d/D, a razão entre a área no mapa e a área real segue o QUADRADO da escala linear: a / A = (d / D)².",
+    "explanation": "A afirmação é verdadeira: Enquanto a razão entre comprimentos no mapa e no terreno segue a escala linear E = d/D, a razão entre a área no mapa e a área real segue o QUADRADO da escala linear: a / A = (d / D)². Esse princípio é fundamental em Escala Linear vs Escala de Área.",
+    "retryGuidance": "Revise as leis físicas e relações matemáticas de Escala Linear vs Escala de Área.",
+    "source": "AUTORAL",
+    "answerBool": true
+  },
+  {
+    "id": "mb_l8_n02",
+    "lessonId": "mb_l8",
+    "format": "FILL_BLANK",
+    "difficulty": "EASY",
+    "skill": "Identificar o conceito ou lei física em Escala Linear vs Escala de Área",
+    "concept": "Escala cartográfica ($E = d / D$), conversão cm <-> km ($1\\text{ km} = 100.000\\text{ cm}$), escala de área ($E_{\\text{área}} = E^2$) e escala de volume ($E_{\\text{vol}} = E^3$)",
+    "statement": "No estudo de Escala Linear vs Escala de Área (Escala cartográfica ($E = d / D$), conversão cm <-> km ($1\\text{ km} = 100.000\\text{ cm}$), escala de área ($E_{\\text{área}} = E^2$) e escala de volume ($E_{\\text{vol}} = E^3$)), o termo, unidade ou grandeza física central destacada na aula é ___.",
+    "explanation": "O termo correto para completar a lacuna é 'quadrado', elemento essencial de Escala Linear vs Escala de Área.",
+    "retryGuidance": "Consulte o quadro de conceitos e fórmulas de Escala Linear vs Escala de Área e verifique a grafia do termo principal.",
+    "source": "AUTORAL",
+    "answers": [
+      "quadrado"
+    ]
+  },
+  {
+    "id": "mb_l8_n03",
+    "lessonId": "mb_l8",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "EASY",
+    "skill": "Relacionar leis físicas e equações em Escala Linear vs Escala de Área",
+    "concept": "Escala cartográfica linear (E) em Escala Linear vs Escala de Área",
+    "statement": "Considerando os princípios de Escala Linear vs Escala de Área, assinale a alternativa que caracteriza corretamente 'Escala cartográfica linear (E)':",
+    "explanation": "A alternativa correta relaciona 'Escala cartográfica linear (E)' a: E = d (desenho) / D (real), com d e D na mesma unidade de medida. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Escala cartográfica linear (E)' com os demais tópicos de Escala Linear vs Escala de Área.",
+    "source": "AUTORAL",
+    "options": [
+      "Escala cartográfica linear (E): Razão entre áreas é o quadrado da razão linear: A_mapa / A_real = (1/k)²",
+      "Escala cartográfica linear (E): Razão entre volumes é o cubo da razão linear: V_maquete / V_real = (1/k)³",
+      "Escala cartográfica linear (E): Grandeza nula que independe de qualquer variável física",
+      "Escala cartográfica linear (E): E = d (desenho) / D (real), com d e D na mesma unidade de medida",
+      "Escala cartográfica linear (E): Cortar 5 zeros do denominador em cm fornece quantos km valem 1 cm no mapa"
+    ],
+    "answerIndex": 3,
+    "distractorConcepts": [
+      "Confundiu 'Escala cartográfica linear (E)' com 'Escala superficial (Área)'",
+      "Confundiu 'Escala cartográfica linear (E)' com 'Escala volumétrica (Maquete 3D)'",
+      "Desconsiderou a lei física aplicável a 'Escala cartográfica linear (E)' em Escala Linear vs Escala de Área",
+      "",
+      "Confundiu 'Escala cartográfica linear (E)' com 'Atalho de conversão 1 km = 100.000 cm'"
+    ]
+  },
+  {
+    "id": "mb_l8_n05",
+    "lessonId": "mb_l8",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Escala Linear vs Escala de Área",
+    "concept": "Escala superficial (Área) em Escala Linear vs Escala de Área",
+    "statement": "Considerando os princípios de Escala Linear vs Escala de Área, assinale a alternativa que caracteriza corretamente 'Escala superficial (Área)':",
+    "explanation": "A alternativa correta relaciona 'Escala superficial (Área)' a: Razão entre áreas é o quadrado da razão linear: A_mapa / A_real = (1/k)². As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Escala superficial (Área)' com os demais tópicos de Escala Linear vs Escala de Área.",
+    "source": "AUTORAL",
+    "options": [
+      "Escala superficial (Área): Grandeza nula que independe de qualquer variável física",
+      "Escala superficial (Área): Razão entre áreas é o quadrado da razão linear: A_mapa / A_real = (1/k)²",
+      "Escala superficial (Área): E = d (desenho) / D (real), com d e D na mesma unidade de medida",
+      "Escala superficial (Área): Cortar 5 zeros do denominador em cm fornece quantos km valem 1 cm no mapa",
+      "Escala superficial (Área): Razão entre volumes é o cubo da razão linear: V_maquete / V_real = (1/k)³"
+    ],
+    "answerIndex": 1,
+    "distractorConcepts": [
+      "Desconsiderou a lei física aplicável a 'Escala superficial (Área)' em Escala Linear vs Escala de Área",
+      "",
+      "Confundiu 'Escala superficial (Área)' com 'Escala cartográfica linear (E)'",
+      "Confundiu 'Escala superficial (Área)' com 'Atalho de conversão 1 km = 100.000 cm'",
+      "Confundiu 'Escala superficial (Área)' com 'Escala volumétrica (Maquete 3D)'"
+    ]
+  },
+  {
+    "id": "mb_l8_n06",
+    "lessonId": "mb_l8",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Escala Linear vs Escala de Área",
+    "concept": "Escala volumétrica (Maquete 3D) em Escala Linear vs Escala de Área",
+    "statement": "Considerando os princípios de Escala Linear vs Escala de Área, assinale a alternativa que caracteriza corretamente 'Escala volumétrica (Maquete 3D)':",
+    "explanation": "A alternativa correta relaciona 'Escala volumétrica (Maquete 3D)' a: Razão entre volumes é o cubo da razão linear: V_maquete / V_real = (1/k)³. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Escala volumétrica (Maquete 3D)' com os demais tópicos de Escala Linear vs Escala de Área.",
+    "source": "AUTORAL",
+    "options": [
+      "Escala volumétrica (Maquete 3D): E = d (desenho) / D (real), com d e D na mesma unidade de medida",
+      "Escala volumétrica (Maquete 3D): Cortar 5 zeros do denominador em cm fornece quantos km valem 1 cm no mapa",
+      "Escala volumétrica (Maquete 3D): Razão entre áreas é o quadrado da razão linear: A_mapa / A_real = (1/k)²",
+      "Escala volumétrica (Maquete 3D): Grandeza nula que independe de qualquer variável física",
+      "Escala volumétrica (Maquete 3D): Razão entre volumes é o cubo da razão linear: V_maquete / V_real = (1/k)³"
+    ],
+    "answerIndex": 4,
+    "distractorConcepts": [
+      "Confundiu 'Escala volumétrica (Maquete 3D)' com 'Escala cartográfica linear (E)'",
+      "Confundiu 'Escala volumétrica (Maquete 3D)' com 'Atalho de conversão 1 km = 100.000 cm'",
+      "Confundiu 'Escala volumétrica (Maquete 3D)' com 'Escala superficial (Área)'",
+      "Desconsiderou a lei física aplicável a 'Escala volumétrica (Maquete 3D)' em Escala Linear vs Escala de Área",
+      ""
+    ]
+  },
+  {
+    "id": "mb_l8_n04",
+    "lessonId": "mb_l8",
+    "format": "MATCHING",
+    "difficulty": "MEDIUM",
+    "skill": "Associar grandezas, leis e aplicações de Escala Linear vs Escala de Área",
+    "concept": "Escala cartográfica ($E = d / D$), conversão cm <-> km ($1\\text{ km} = 100.000\\text{ cm}$), escala de área ($E_{\\text{área}} = E^2$) e escala de volume ($E_{\\text{vol}} = E^3$)",
+    "statement": "Associe cada grandeza, lei ou fenômeno de Escala Linear vs Escala de Área à sua respectiva propriedade física:",
+    "explanation": "Relacionar cada lei física à sua expressão matemática e aplicação prática é indispensável para resolver problemas contextualizados.",
+    "retryGuidance": "Analise as unidades e relações de proporcionalidade de cada item de Escala Linear vs Escala de Área.",
+    "source": "AUTORAL",
+    "pairs": [
+      [
+        "Escala cartográfica linear (E)",
+        "E = d (desenho) / D (real), com d e D na mesma unidade de medida"
+      ],
+      [
+        "Atalho de conversão 1 km = 100.000 cm",
+        "Cortar 5 zeros do denominador em cm fornece quantos km valem 1 cm no mapa"
+      ],
+      [
+        "Escala superficial (Área)",
+        "Razão entre áreas é o quadrado da razão linear: A_mapa / A_real = (1/k)²"
+      ],
+      [
+        "Escala volumétrica (Maquete 3D)",
+        "Razão entre volumes é o cubo da razão linear: V_maquete / V_real = (1/k)³"
+      ]
+    ]
+  },
+  {
+    "id": "mb_l8_n07",
+    "lessonId": "mb_l8",
+    "format": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "skill": "Resolver problema numérico de Escala Linear vs Escala de Área",
+    "concept": "Escala cartográfica ($E = d / D$), conversão cm <-> km ($1\\text{ km} = 100.000\\text{ cm}$), escala de área ($E_{\\text{área}} = E^2$) e escala de volume ($E_{\\text{vol}} = E^3$)",
+    "statement": "Em um mapa rodoviário na escala $1 : 500.000$ (onde $1\\text{ cm}$ no mapa equivale a $5\\text{ km}$ reais), a distância em linha reta entre duas cidades mede $14\\text{ cm}$. Qual é a distância real entre elas em quilômetros (km)?",
+    "explanation": "Aplicando a equação de Escala Linear vs Escala de Área (14 * 5), obtemos o resultado exato de 70 km.",
+    "retryGuidance": "Identifique os dados no Sistema Internacional e aplique a relação 14 * 5.",
+    "source": "AUTORAL",
+    "answerNumber": 70,
+    "tolerance": 0.01,
+    "unit": "km",
+    "verify": "14 * 5"
+  },
+  {
+    "id": "mb_l8_n08",
+    "lessonId": "mb_l8",
+    "format": "CHART",
+    "difficulty": "MEDIUM",
+    "skill": "Interpretar gráficos e tabelas de Escala Linear vs Escala de Área",
+    "concept": "Escala cartográfica ($E = d / D$), conversão cm <-> km ($1\\text{ km} = 100.000\\text{ cm}$), escala de área ($E_{\\text{área}} = E^2$) e escala de volume ($E_{\\text{vol}} = E^3$)",
+    "statement": "Qual das três escalas da tabela possui maior riqueza de detalhes cartográficos (maior escala numérica) e quantos quilômetros reais são representados por 10 cm nessa escala?",
+    "explanation": "Analisando os dados de 'Distância Real (km) para 10 cm no Mapa em Diferentes Escalas' (10 * 1), conclui-se corretamente: 10 km na Escala A (1 : 100.000, que é a maior escala por ter o menor denominador).",
+    "retryGuidance": "Extraia os valores diretamente dos eixos/colunas antes de substituir na equação física.",
+    "source": "AUTORAL",
+    "options": [
+      "1 km na Escala A",
+      "1000 km na Escala C",
+      "10 km na Escala A (1 : 100.000, que é a maior escala por ter o menor denominador)",
+      "100 km na Escala C (1 : 1.000.000)",
+      "25 km na Escala B"
+    ],
+    "answerIndex": 2,
+    "distractorConcepts": [
+      "1 km corresponde a apenas 1 cm na Escala A, não a 10 cm",
+      "Erro de conversão de cm para km",
+      "",
+      "1 : 1.000.000 tem denominador maior, logo é uma escala MENOR (menos detalhada)",
+      "A Escala B é intermediária"
+    ],
+    "verify": "10 * 1",
+    "chart": {
+      "type": "bar",
+      "title": "Distância Real (km) para 10 cm no Mapa em Diferentes Escalas",
+      "labels": [
+        "Escala A (1 : 100.000)",
+        "Escala B (1 : 250.000)",
+        "Escala C (1 : 1.000.000)"
+      ],
+      "series": [
+        {
+          "name": "Distância Real para 10 cm (km)",
+          "values": [
+            10,
+            25,
+            100
+          ]
+        }
+      ],
+      "unit": ""
+    }
+  },
+  {
+    "id": "mb_l8_n09",
+    "lessonId": "mb_l8",
+    "format": "NUMERIC",
+    "difficulty": "HARD",
+    "skill": "Modelar e calcular situação física em Escala Linear vs Escala de Área",
+    "concept": "Escala cartográfica ($E = d / D$), conversão cm <-> km ($1\\text{ km} = 100.000\\text{ cm}$), escala de área ($E_{\\text{área}} = E^2$) e escala de volume ($E_{\\text{vol}} = E^3$)",
+    "statement": "Uma praça tem área no mapa igual a $6\\text{ cm}^2$ em uma planta na escala $1 : 1.000$ (onde $1\\text{ cm}$ no desenho equivale a $10\\text{ m}$ reais, logo $1\\text{ cm}^2$ no desenho equivale a $10^2 = 100\\text{ m}^2$ reais). Qual é a área real da praça em $\\text{m}^2$?",
+    "explanation": "Substituindo os valores na relação física (6 * (10**2)), encontramos 600 m².",
+    "retryGuidance": "Confira se todas as grandezas estão nas unidades pedidas e aplique 6 * (10**2).",
+    "source": "AUTORAL",
+    "answerNumber": 600,
+    "tolerance": 0.01,
+    "unit": "m²",
+    "verify": "6 * (10**2)"
+  },
+  {
+    "id": "mb_l8_n10",
+    "lessonId": "mb_l8",
+    "format": "ESSAY",
+    "difficulty": "HARD",
+    "skill": "Explicar fenômenos cotidianos e tecnológicos usando Escala Linear vs Escala de Área",
+    "concept": "Escala cartográfica ($E = d / D$), conversão cm <-> km ($1\\text{ km} = 100.000\\text{ cm}$), escala de área ($E_{\\text{área}} = E^2$) e escala de volume ($E_{\\text{vol}} = E^3$)",
+    "statement": "Explique por que uma escala $1 : 5.000$ é considerada MAIOR (e mais detalhada) que uma escala $1 : 500.000$, e demonstre por que não se pode usar regra de três linear simples ao converter áreas ou volumes de uma maquete.",
+    "explanation": "Síntese conceitual esperada pela rubrica: A escala é uma fração E = 1/k: quanto menor o denominador k, maior é o valor da fração e menor foi a redução aplicada ao terreno, exibindo muito mais detalhes (por isso 1:5.000 > 1:500.000). Ao calcular áreas (duas dimensões: base x altura), cada dimensão linear é multiplicada por k, logo a área real é multiplicada por k²; analogamente, no volume de uma maquete (três dimensões), o volume real é multiplicado por k³.",
+    "retryGuidance": "Estruture sua resposta mencionando a lei física de Escala Linear vs Escala de Área, a relação entre as grandezas e a aplicação prática.",
+    "source": "AUTORAL",
+    "modelAnswer": "A escala é uma fração E = 1/k: quanto menor o denominador k, maior é o valor da fração e menor foi a redução aplicada ao terreno, exibindo muito mais detalhes (por isso 1:5.000 > 1:500.000). Ao calcular áreas (duas dimensões: base x altura), cada dimensão linear é multiplicada por k, logo a área real é multiplicada por k²; analogamente, no volume de uma maquete (três dimensões), o volume real é multiplicado por k³.",
+    "passScore": 0.6,
+    "rubric": [
+      {
+        "criterion": "Enuncia o princípio ou lei física central de Escala Linear vs Escala de Área",
+        "points": 4,
+        "keywords": [
+          [
+            "fracao",
+            "fração",
+            "denominador",
+            "detalh",
+            "reducao",
+            "redução"
+          ]
+        ]
+      },
+      {
+        "criterion": "Relaciona corretamente as grandezas físicas envolvidas",
+        "points": 3,
+        "keywords": [
+          [
+            "area",
+            "área",
+            "quadrado",
+            "k²",
+            "duas dimensoes",
+            "duas dimensões"
+          ]
+        ]
+      },
+      {
+        "criterion": "Explica a aplicação prática ou consequência física",
+        "points": 3,
+        "keywords": [
+          [
+            "volume",
+            "cubo",
+            "k³",
+            "maquete"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mb_l9_n01",
+    "lessonId": "mb_l9",
+    "format": "TRUE_FALSE",
+    "difficulty": "EASY",
+    "skill": "Julgar proposições físicas sobre Fator Multiplicativo e Variações Percentuais",
+    "concept": "Porcentagem como razão centesimal, fator de aumento ($1 + i$) e de desconto ($1 - i$), aumentos e descontos sucessivos",
+    "statement": "Aplicar um aumento de 10% seguido de um desconto de 10% sobre o novo valor NÃO retorna ao preço original: como 1,10 x 0,90 = 0,99, o resultado final equivale a um desconto líquido de 1%.",
+    "explanation": "A afirmação é verdadeira: Aplicar um aumento de 10% seguido de um desconto de 10% sobre o novo valor NÃO retorna ao preço original: como 1,10 x 0,90 = 0,99, o resultado final equivale a um desconto líquido de 1%. Esse princípio é fundamental em Fator Multiplicativo e Variações Percentuais.",
+    "retryGuidance": "Revise as leis físicas e relações matemáticas de Fator Multiplicativo e Variações Percentuais.",
+    "source": "AUTORAL",
+    "answerBool": true
+  },
+  {
+    "id": "mb_l9_n02",
+    "lessonId": "mb_l9",
+    "format": "FILL_BLANK",
+    "difficulty": "EASY",
+    "skill": "Identificar o conceito ou lei física em Fator Multiplicativo e Variações Percentuais",
+    "concept": "Porcentagem como razão centesimal, fator de aumento ($1 + i$) e de desconto ($1 - i$), aumentos e descontos sucessivos",
+    "statement": "No estudo de Fator Multiplicativo e Variações Percentuais (Porcentagem como razão centesimal, fator de aumento ($1 + i$) e de desconto ($1 - i$), aumentos e descontos sucessivos), o termo, unidade ou grandeza física central destacada na aula é ___.",
+    "explanation": "O termo correto para completar a lacuna é '0,99', elemento essencial de Fator Multiplicativo e Variações Percentuais.",
+    "retryGuidance": "Consulte o quadro de conceitos e fórmulas de Fator Multiplicativo e Variações Percentuais e verifique a grafia do termo principal.",
+    "source": "AUTORAL",
+    "answers": [
+      "0,99"
+    ]
+  },
+  {
+    "id": "mb_l9_n03",
+    "lessonId": "mb_l9",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "EASY",
+    "skill": "Relacionar leis físicas e equações em Fator Multiplicativo e Variações Percentuais",
+    "concept": "Fator de aumento de i% em Fator Multiplicativo e Variações Percentuais",
+    "statement": "Considerando os princípios de Fator Multiplicativo e Variações Percentuais, assinale a alternativa que caracteriza corretamente 'Fator de aumento de i%':",
+    "explanation": "A alternativa correta relaciona 'Fator de aumento de i%' a: Multiplicar o valor inicial por (1 + i/100) (ex.: +25% => x 1,25). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Fator de aumento de i%' com os demais tópicos de Fator Multiplicativo e Variações Percentuais.",
+    "source": "AUTORAL",
+    "options": [
+      "Fator de aumento de i%: Após cair 20% (x 0,80), precisa subir 25% (1 / 0,80 = 1,25) para voltar ao início",
+      "Fator de aumento de i%: Grandeza nula que independe de qualquer variável física",
+      "Fator de aumento de i%: Multiplicar o valor inicial por (1 + i/100) (ex.: +25% => x 1,25)",
+      "Fator de aumento de i%: Multiplicar o valor inicial por (1 - i/100) (ex.: -20% => x 0,80)",
+      "Fator de aumento de i%: Multiplicam-se os fatores acumulados: F_total = F1 . F2"
+    ],
+    "answerIndex": 2,
+    "distractorConcepts": [
+      "Confundiu 'Fator de aumento de i%' com 'Retorno ao valor original após desconto'",
+      "Desconsiderou a lei física aplicável a 'Fator de aumento de i%' em Fator Multiplicativo e Variações Percentuais",
+      "",
+      "Confundiu 'Fator de aumento de i%' com 'Fator de desconto de i%'",
+      "Confundiu 'Fator de aumento de i%' com 'Variações percentuais sucessivas'"
+    ]
+  },
+  {
+    "id": "mb_l9_n05",
+    "lessonId": "mb_l9",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Fator Multiplicativo e Variações Percentuais",
+    "concept": "Variações percentuais sucessivas em Fator Multiplicativo e Variações Percentuais",
+    "statement": "Considerando os princípios de Fator Multiplicativo e Variações Percentuais, assinale a alternativa que caracteriza corretamente 'Variações percentuais sucessivas':",
+    "explanation": "A alternativa correta relaciona 'Variações percentuais sucessivas' a: Multiplicam-se os fatores acumulados: F_total = F1 . F2. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Variações percentuais sucessivas' com os demais tópicos de Fator Multiplicativo e Variações Percentuais.",
+    "source": "AUTORAL",
+    "options": [
+      "Variações percentuais sucessivas: Multiplicam-se os fatores acumulados: F_total = F1 . F2",
+      "Variações percentuais sucessivas: Multiplicar o valor inicial por (1 + i/100) (ex.: +25% => x 1,25)",
+      "Variações percentuais sucessivas: Multiplicar o valor inicial por (1 - i/100) (ex.: -20% => x 0,80)",
+      "Variações percentuais sucessivas: Após cair 20% (x 0,80), precisa subir 25% (1 / 0,80 = 1,25) para voltar ao início",
+      "Variações percentuais sucessivas: Grandeza nula que independe de qualquer variável física"
+    ],
+    "answerIndex": 0,
+    "distractorConcepts": [
+      "",
+      "Confundiu 'Variações percentuais sucessivas' com 'Fator de aumento de i%'",
+      "Confundiu 'Variações percentuais sucessivas' com 'Fator de desconto de i%'",
+      "Confundiu 'Variações percentuais sucessivas' com 'Retorno ao valor original após desconto'",
+      "Desconsiderou a lei física aplicável a 'Variações percentuais sucessivas' em Fator Multiplicativo e Variações Percentuais"
+    ]
+  },
+  {
+    "id": "mb_l9_n06",
+    "lessonId": "mb_l9",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Fator Multiplicativo e Variações Percentuais",
+    "concept": "Retorno ao valor original após desconto em Fator Multiplicativo e Variações Percentuais",
+    "statement": "Considerando os princípios de Fator Multiplicativo e Variações Percentuais, assinale a alternativa que caracteriza corretamente 'Retorno ao valor original após desconto':",
+    "explanation": "A alternativa correta relaciona 'Retorno ao valor original após desconto' a: Após cair 20% (x 0,80), precisa subir 25% (1 / 0,80 = 1,25) para voltar ao início. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Retorno ao valor original após desconto' com os demais tópicos de Fator Multiplicativo e Variações Percentuais.",
+    "source": "AUTORAL",
+    "options": [
+      "Retorno ao valor original após desconto: Multiplicar o valor inicial por (1 - i/100) (ex.: -20% => x 0,80)",
+      "Retorno ao valor original após desconto: Multiplicam-se os fatores acumulados: F_total = F1 . F2",
+      "Retorno ao valor original após desconto: Grandeza nula que independe de qualquer variável física",
+      "Retorno ao valor original após desconto: Após cair 20% (x 0,80), precisa subir 25% (1 / 0,80 = 1,25) para voltar ao início",
+      "Retorno ao valor original após desconto: Multiplicar o valor inicial por (1 + i/100) (ex.: +25% => x 1,25)"
+    ],
+    "answerIndex": 3,
+    "distractorConcepts": [
+      "Confundiu 'Retorno ao valor original após desconto' com 'Fator de desconto de i%'",
+      "Confundiu 'Retorno ao valor original após desconto' com 'Variações percentuais sucessivas'",
+      "Desconsiderou a lei física aplicável a 'Retorno ao valor original após desconto' em Fator Multiplicativo e Variações Percentuais",
+      "",
+      "Confundiu 'Retorno ao valor original após desconto' com 'Fator de aumento de i%'"
+    ]
+  },
+  {
+    "id": "mb_l9_n04",
+    "lessonId": "mb_l9",
+    "format": "MATCHING",
+    "difficulty": "MEDIUM",
+    "skill": "Associar grandezas, leis e aplicações de Fator Multiplicativo e Variações Percentuais",
+    "concept": "Porcentagem como razão centesimal, fator de aumento ($1 + i$) e de desconto ($1 - i$), aumentos e descontos sucessivos",
+    "statement": "Associe cada grandeza, lei ou fenômeno de Fator Multiplicativo e Variações Percentuais à sua respectiva propriedade física:",
+    "explanation": "Relacionar cada lei física à sua expressão matemática e aplicação prática é indispensável para resolver problemas contextualizados.",
+    "retryGuidance": "Analise as unidades e relações de proporcionalidade de cada item de Fator Multiplicativo e Variações Percentuais.",
+    "source": "AUTORAL",
+    "pairs": [
+      [
+        "Fator de aumento de i%",
+        "Multiplicar o valor inicial por (1 + i/100) (ex.: +25% => x 1,25)"
+      ],
+      [
+        "Fator de desconto de i%",
+        "Multiplicar o valor inicial por (1 - i/100) (ex.: -20% => x 0,80)"
+      ],
+      [
+        "Variações percentuais sucessivas",
+        "Multiplicam-se os fatores acumulados: F_total = F1 . F2"
+      ],
+      [
+        "Retorno ao valor original após desconto",
+        "Após cair 20% (x 0,80), precisa subir 25% (1 / 0,80 = 1,25) para voltar ao início"
+      ]
+    ]
+  },
+  {
+    "id": "mb_l9_n07",
+    "lessonId": "mb_l9",
+    "format": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "skill": "Resolver problema numérico de Fator Multiplicativo e Variações Percentuais",
+    "concept": "Porcentagem como razão centesimal, fator de aumento ($1 + i$) e de desconto ($1 - i$), aumentos e descontos sucessivos",
+    "statement": "Um notebook que custava $\\text{R\\$ }3.000$ sofreu um aumento de $20\\%$ e, na semana seguinte, recebeu um desconto promocional de $10\\%$ sobre o novo preço ($3000 \\times 1{,}20 \\times 0{,}90$). Qual passou a ser o preço final em reais?",
+    "explanation": "Aplicando a equação de Fator Multiplicativo e Variações Percentuais (3000 * 1.20 * 0.90), obtemos o resultado exato de 3240 R$.",
+    "retryGuidance": "Identifique os dados no Sistema Internacional e aplique a relação 3000 * 1.20 * 0.90.",
+    "source": "AUTORAL",
+    "answerNumber": 3240,
+    "tolerance": 0.01,
+    "unit": "R$",
+    "verify": "3000 * 1.20 * 0.90"
+  },
+  {
+    "id": "mb_l9_n08",
+    "lessonId": "mb_l9",
+    "format": "CHART",
+    "difficulty": "HARD",
+    "skill": "Interpretar gráficos e tabelas de Fator Multiplicativo e Variações Percentuais",
+    "concept": "Porcentagem como razão centesimal, fator de aumento ($1 + i$) e de desconto ($1 - i$), aumentos e descontos sucessivos",
+    "statement": "Ao aplicar +30% e depois -20% sobre um produto de R$ 200,00, o preço final passou para R$ 208,00. Qual foi a variação percentual acumulada líquida em relação aos R$ 200,00 iniciais?",
+    "explanation": "Analisando os dados de 'Evolução do Preço de um Produto (Base = R$ 200,00) após Duas Variações' ((1.30 * 0.80 - 1) * 100), conclui-se corretamente: 4% de aumento acumulado (pois 1,30 x 0,80 = 1,04, ou (208 - 200)/200 = +4%).",
+    "retryGuidance": "Extraia os valores diretamente dos eixos/colunas antes de substituir na equação física.",
+    "source": "AUTORAL",
+    "options": [
+      "0% de variação",
+      "4% de aumento acumulado (pois 1,30 x 0,80 = 1,04, ou (208 - 200)/200 = +4%)",
+      "10% de aumento acumulado (30% - 20%)",
+      "8% de aumento acumulado",
+      "50% de variação"
+    ],
+    "answerIndex": 1,
+    "distractorConcepts": [
+      "O preço subiu de R$ 200 para R$ 208",
+      "",
+      "Erro clássico: subtraiu 30% - 20% = 10%, esquecendo que os 20% incidem sobre R$ 260 e não sobre R$ 200",
+      "R$ 8,00 é o aumento em reais (para base 200), o que equivale a 4% e não 8%",
+      "Somou os módulos das taxas percentuais"
+    ],
+    "verify": "(1.30 * 0.80 - 1) * 100",
+    "chart": {
+      "type": "bar",
+      "title": "Evolução do Preço de um Produto (Base = R$ 200,00) após Duas Variações",
+      "labels": [
+        "Preço Inicial",
+        "Após +30% (x 1,30)",
+        "Após -20% sobre o anterior (x 0,80)"
+      ],
+      "series": [
+        {
+          "name": "Preço (R$)",
+          "values": [
+            200,
+            260,
+            208
+          ]
+        }
+      ],
+      "unit": ""
+    }
+  },
+  {
+    "id": "mb_l9_n09",
+    "lessonId": "mb_l9",
+    "format": "NUMERIC",
+    "difficulty": "HARD",
+    "skill": "Modelar e calcular situação física em Fator Multiplicativo e Variações Percentuais",
+    "concept": "Porcentagem como razão centesimal, fator de aumento ($1 + i$) e de desconto ($1 - i$), aumentos e descontos sucessivos",
+    "statement": "Uma loja oferece dois descontos sucessivos de $20\\%$ e $10\\%$ ($0{,}80 \\times 0{,}90 = 0{,}72$). Qual é o desconto percentual único equivalente em porcentagem ($100 - 72$)?",
+    "explanation": "Substituindo os valores na relação física ((1 - 0.80 * 0.90) * 100), encontramos 28 %.",
+    "retryGuidance": "Confira se todas as grandezas estão nas unidades pedidas e aplique (1 - 0.80 * 0.90) * 100.",
+    "source": "AUTORAL",
+    "answerNumber": 28,
+    "tolerance": 0.01,
+    "unit": "%",
+    "verify": "(1 - 0.80 * 0.90) * 100"
+  },
+  {
+    "id": "mb_l9_n10",
+    "lessonId": "mb_l9",
+    "format": "ESSAY",
+    "difficulty": "HARD",
+    "skill": "Explicar fenômenos cotidianos e tecnológicos usando Fator Multiplicativo e Variações Percentuais",
+    "concept": "Porcentagem como razão centesimal, fator de aumento ($1 + i$) e de desconto ($1 - i$), aumentos e descontos sucessivos",
+    "statement": "Explique por que um aumento de $20\\%$ seguido de um desconto de $20\\%$ resulta em prejuízo de $4\\%$ em vez de empatar em $0\\%$, utilizando fatores multiplicativos.",
+    "explanation": "Síntese conceitual esperada pela rubrica: O aumento de 20% multiplica o valor inicial V por 1,20. O desconto seguinte de 20% incide sobre esse valor já aumentado (1,20 V), multiplicando-o pelo fator 0,80. O fator acumulado é o produto 1,20 x 0,80 = 0,96, o que corresponde a 96% do valor inicial, ou seja, uma redução líquida de 4% (porque 20% de 1,20 V equivale a 0,24 V, que é maior que o ganho inicial de 0,20 V).",
+    "retryGuidance": "Estruture sua resposta mencionando a lei física de Fator Multiplicativo e Variações Percentuais, a relação entre as grandezas e a aplicação prática.",
+    "source": "AUTORAL",
+    "modelAnswer": "O aumento de 20% multiplica o valor inicial V por 1,20. O desconto seguinte de 20% incide sobre esse valor já aumentado (1,20 V), multiplicando-o pelo fator 0,80. O fator acumulado é o produto 1,20 x 0,80 = 0,96, o que corresponde a 96% do valor inicial, ou seja, uma redução líquida de 4% (porque 20% de 1,20 V equivale a 0,24 V, que é maior que o ganho inicial de 0,20 V).",
+    "passScore": 0.6,
+    "rubric": [
+      {
+        "criterion": "Enuncia o princípio ou lei física central de Fator Multiplicativo e Variações Percentuais",
+        "points": 4,
+        "keywords": [
+          [
+            "fator",
+            "1,20",
+            "0,80",
+            "produto",
+            "multiplica"
+          ]
+        ]
+      },
+      {
+        "criterion": "Relaciona corretamente as grandezas físicas envolvidas",
+        "points": 3,
+        "keywords": [
+          [
+            "0,96",
+            "96%",
+            "4%",
+            "reducao",
+            "redução",
+            "desconto"
+          ]
+        ]
+      },
+      {
+        "criterion": "Explica a aplicação prática ou consequência física",
+        "points": 3,
+        "keywords": [
+          [
+            "incide",
+            "novo valor",
+            "base maior"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mb_l10_n01",
+    "lessonId": "mb_l10",
+    "format": "TRUE_FALSE",
+    "difficulty": "EASY",
+    "skill": "Julgar proposições físicas sobre Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "concept": "Tradução de enunciados para equações do 1º grau, sistemas lineares 2x2 (substituição e adição) e equações do 2º grau (Bhaskara, discriminante Delta e soma/produto de Girard)",
+    "statement": "Em uma equação do 2º grau ax² + bx + c = 0 (com a != 0), a soma das raízes é dada por S = -b/a, o produto das raízes é P = c/a e o número de raízes reais depende do sinal do discriminante Delta = b² - 4ac.",
+    "explanation": "A afirmação é verdadeira: Em uma equação do 2º grau ax² + bx + c = 0 (com a != 0), a soma das raízes é dada por S = -b/a, o produto das raízes é P = c/a e o número de raízes reais depende do sinal do discriminante Delta = b² - 4ac. Esse princípio é fundamental em Modelagem Algébrica, Bhaskara e Sistemas 2x2.",
+    "retryGuidance": "Revise as leis físicas e relações matemáticas de Modelagem Algébrica, Bhaskara e Sistemas 2x2.",
+    "source": "AUTORAL",
+    "answerBool": true
+  },
+  {
+    "id": "mb_l10_n02",
+    "lessonId": "mb_l10",
+    "format": "FILL_BLANK",
+    "difficulty": "EASY",
+    "skill": "Identificar o conceito ou lei física em Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "concept": "Tradução de enunciados para equações do 1º grau, sistemas lineares 2x2 (substituição e adição) e equações do 2º grau (Bhaskara, discriminante Delta e soma/produto de Girard)",
+    "statement": "No estudo de Modelagem Algébrica, Bhaskara e Sistemas 2x2 (Tradução de enunciados para equações do 1º grau, sistemas lineares 2x2 (substituição e adição) e equações do 2º grau (Bhaskara, discriminante Delta e soma/produto de Girard)), o termo, unidade ou grandeza física central destacada na aula é ___.",
+    "explanation": "O termo correto para completar a lacuna é 'discriminante', elemento essencial de Modelagem Algébrica, Bhaskara e Sistemas 2x2.",
+    "retryGuidance": "Consulte o quadro de conceitos e fórmulas de Modelagem Algébrica, Bhaskara e Sistemas 2x2 e verifique a grafia do termo principal.",
+    "source": "AUTORAL",
+    "answers": [
+      "discriminante"
+    ]
+  },
+  {
+    "id": "mb_l10_n03",
+    "lessonId": "mb_l10",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "EASY",
+    "skill": "Relacionar leis físicas e equações em Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "concept": "Equação do 1º grau (ax + b = 0) em Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "statement": "Considerando os princípios de Modelagem Algébrica, Bhaskara e Sistemas 2x2, assinale a alternativa que caracteriza corretamente 'Equação do 1º grau (ax + b = 0)':",
+    "explanation": "A alternativa correta relaciona 'Equação do 1º grau (ax + b = 0)' a: Modela custos com taxa fixa b mais parcela variável linear a.x. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Equação do 1º grau (ax + b = 0)' com os demais tópicos de Modelagem Algébrica, Bhaskara e Sistemas 2x2.",
+    "source": "AUTORAL",
+    "options": [
+      "Equação do 1º grau (ax + b = 0): Grandeza nula que independe de qualquer variável física",
+      "Equação do 1º grau (ax + b = 0): Modela custos com taxa fixa b mais parcela variável linear a.x",
+      "Equação do 1º grau (ax + b = 0): Par de equações com duas incógnitas resolvido por adição ou substituição",
+      "Equação do 1º grau (ax + b = 0): Delta > 0: 2 raízes reais distintas; Delta = 0: 1 raiz real dupla; Delta < 0: sem raiz real",
+      "Equação do 1º grau (ax + b = 0): Soma das raízes x1 + x2 = -b/a e Produto x1 . x2 = c/a"
+    ],
+    "answerIndex": 1,
+    "distractorConcepts": [
+      "Desconsiderou a lei física aplicável a 'Equação do 1º grau (ax + b = 0)' em Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+      "",
+      "Confundiu 'Equação do 1º grau (ax + b = 0)' com 'Sistema linear 2x2'",
+      "Confundiu 'Equação do 1º grau (ax + b = 0)' com 'Discriminante (Delta = b² - 4ac)'",
+      "Confundiu 'Equação do 1º grau (ax + b = 0)' com 'Relações de Girard (Soma e Produto)'"
+    ]
+  },
+  {
+    "id": "mb_l10_n05",
+    "lessonId": "mb_l10",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "concept": "Discriminante (Delta = b² - 4ac) em Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "statement": "Considerando os princípios de Modelagem Algébrica, Bhaskara e Sistemas 2x2, assinale a alternativa que caracteriza corretamente 'Discriminante (Delta = b² - 4ac)':",
+    "explanation": "A alternativa correta relaciona 'Discriminante (Delta = b² - 4ac)' a: Delta > 0: 2 raízes reais distintas; Delta = 0: 1 raiz real dupla; Delta < 0: sem raiz real. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Discriminante (Delta = b² - 4ac)' com os demais tópicos de Modelagem Algébrica, Bhaskara e Sistemas 2x2.",
+    "source": "AUTORAL",
+    "options": [
+      "Discriminante (Delta = b² - 4ac): Modela custos com taxa fixa b mais parcela variável linear a.x",
+      "Discriminante (Delta = b² - 4ac): Par de equações com duas incógnitas resolvido por adição ou substituição",
+      "Discriminante (Delta = b² - 4ac): Soma das raízes x1 + x2 = -b/a e Produto x1 . x2 = c/a",
+      "Discriminante (Delta = b² - 4ac): Grandeza nula que independe de qualquer variável física",
+      "Discriminante (Delta = b² - 4ac): Delta > 0: 2 raízes reais distintas; Delta = 0: 1 raiz real dupla; Delta < 0: sem raiz real"
+    ],
+    "answerIndex": 4,
+    "distractorConcepts": [
+      "Confundiu 'Discriminante (Delta = b² - 4ac)' com 'Equação do 1º grau (ax + b = 0)'",
+      "Confundiu 'Discriminante (Delta = b² - 4ac)' com 'Sistema linear 2x2'",
+      "Confundiu 'Discriminante (Delta = b² - 4ac)' com 'Relações de Girard (Soma e Produto)'",
+      "Desconsiderou a lei física aplicável a 'Discriminante (Delta = b² - 4ac)' em Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+      ""
+    ]
+  },
+  {
+    "id": "mb_l10_n06",
+    "lessonId": "mb_l10",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "concept": "Relações de Girard (Soma e Produto) em Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "statement": "Considerando os princípios de Modelagem Algébrica, Bhaskara e Sistemas 2x2, assinale a alternativa que caracteriza corretamente 'Relações de Girard (Soma e Produto)':",
+    "explanation": "A alternativa correta relaciona 'Relações de Girard (Soma e Produto)' a: Soma das raízes x1 + x2 = -b/a e Produto x1 . x2 = c/a. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Relações de Girard (Soma e Produto)' com os demais tópicos de Modelagem Algébrica, Bhaskara e Sistemas 2x2.",
+    "source": "AUTORAL",
+    "options": [
+      "Relações de Girard (Soma e Produto): Delta > 0: 2 raízes reais distintas; Delta = 0: 1 raiz real dupla; Delta < 0: sem raiz real",
+      "Relações de Girard (Soma e Produto): Grandeza nula que independe de qualquer variável física",
+      "Relações de Girard (Soma e Produto): Soma das raízes x1 + x2 = -b/a e Produto x1 . x2 = c/a",
+      "Relações de Girard (Soma e Produto): Modela custos com taxa fixa b mais parcela variável linear a.x",
+      "Relações de Girard (Soma e Produto): Par de equações com duas incógnitas resolvido por adição ou substituição"
+    ],
+    "answerIndex": 2,
+    "distractorConcepts": [
+      "Confundiu 'Relações de Girard (Soma e Produto)' com 'Discriminante (Delta = b² - 4ac)'",
+      "Desconsiderou a lei física aplicável a 'Relações de Girard (Soma e Produto)' em Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+      "",
+      "Confundiu 'Relações de Girard (Soma e Produto)' com 'Equação do 1º grau (ax + b = 0)'",
+      "Confundiu 'Relações de Girard (Soma e Produto)' com 'Sistema linear 2x2'"
+    ]
+  },
+  {
+    "id": "mb_l10_n04",
+    "lessonId": "mb_l10",
+    "format": "MATCHING",
+    "difficulty": "MEDIUM",
+    "skill": "Associar grandezas, leis e aplicações de Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "concept": "Tradução de enunciados para equações do 1º grau, sistemas lineares 2x2 (substituição e adição) e equações do 2º grau (Bhaskara, discriminante Delta e soma/produto de Girard)",
+    "statement": "Associe cada grandeza, lei ou fenômeno de Modelagem Algébrica, Bhaskara e Sistemas 2x2 à sua respectiva propriedade física:",
+    "explanation": "Relacionar cada lei física à sua expressão matemática e aplicação prática é indispensável para resolver problemas contextualizados.",
+    "retryGuidance": "Analise as unidades e relações de proporcionalidade de cada item de Modelagem Algébrica, Bhaskara e Sistemas 2x2.",
+    "source": "AUTORAL",
+    "pairs": [
+      [
+        "Equação do 1º grau (ax + b = 0)",
+        "Modela custos com taxa fixa b mais parcela variável linear a.x"
+      ],
+      [
+        "Sistema linear 2x2",
+        "Par de equações com duas incógnitas resolvido por adição ou substituição"
+      ],
+      [
+        "Discriminante (Delta = b² - 4ac)",
+        "Delta > 0: 2 raízes reais distintas; Delta = 0: 1 raiz real dupla; Delta < 0: sem raiz real"
+      ],
+      [
+        "Relações de Girard (Soma e Produto)",
+        "Soma das raízes x1 + x2 = -b/a e Produto x1 . x2 = c/a"
+      ]
+    ]
+  },
+  {
+    "id": "mb_l10_n07",
+    "lessonId": "mb_l10",
+    "format": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "skill": "Resolver problema numérico de Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "concept": "Tradução de enunciados para equações do 1º grau, sistemas lineares 2x2 (substituição e adição) e equações do 2º grau (Bhaskara, discriminante Delta e soma/produto de Girard)",
+    "statement": "Em um estacionamento há carros (4 rodas) e motos (2 rodas), totalizando $30\\text{ veículos}$ e $96\\text{ rodas}$ ($c + m = 30$ e $4c + 2m = 96$). Quantos carros estão nesse estacionamento?",
+    "explanation": "Aplicando a equação de Modelagem Algébrica, Bhaskara e Sistemas 2x2 ((96 - 2*30) / 2), obtemos o resultado exato de 18 carros.",
+    "retryGuidance": "Identifique os dados no Sistema Internacional e aplique a relação (96 - 2*30) / 2.",
+    "source": "AUTORAL",
+    "answerNumber": 18,
+    "tolerance": 0.01,
+    "unit": "carros",
+    "verify": "(96 - 2*30) / 2"
+  },
+  {
+    "id": "mb_l10_n08",
+    "lessonId": "mb_l10",
+    "format": "CHART",
+    "difficulty": "MEDIUM",
+    "skill": "Interpretar gráficos e tabelas de Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "concept": "Tradução de enunciados para equações do 1º grau, sistemas lineares 2x2 (substituição e adição) e equações do 2º grau (Bhaskara, discriminante Delta e soma/produto de Girard)",
+    "statement": "O Plano A cobra R$ 80,00 fixos + R$ 1,20 por km rodado, e o Plano B cobra R$ 120,00 fixos + R$ 0,80 por km rodado. Igualando os dois planos ($80 + 1{,}20x = 120 + 0{,}80x$), para quantos quilômetros rodados os dois planos custam exatamente o mesmo valor (R$ 200,00)?",
+    "explanation": "Analisando os dados de 'Comparação de Planos de Aluguel de Veículos por Quilômetro Rodado' ((120 - 80) / (1.20 - 0.80)), conclui-se corretamente: 100 km (pois 0,40x = 40 => x = 100 km).",
+    "retryGuidance": "Extraia os valores diretamente dos eixos/colunas antes de substituir na equação física.",
+    "source": "AUTORAL",
+    "options": [
+      "100 km (pois 0,40x = 40 => x = 100 km)",
+      "50 km",
+      "150 km",
+      "200 km",
+      "80 km"
+    ],
+    "answerIndex": 0,
+    "distractorConcepts": [
+      "",
+      "Em 50 km o Plano A custa R$ 140 e o Plano B custa R$ 160",
+      "Em 150 km o Plano B já é mais barato que o Plano A",
+      "200 é o custo em reais no ponto de equilíbrio, não a distância em km",
+      "80 é a taxa fixa do Plano A"
+    ],
+    "verify": "(120 - 80) / (1.20 - 0.80)",
+    "chart": {
+      "type": "bar",
+      "title": "Comparação de Planos de Aluguel de Veículos por Quilômetro Rodado",
+      "labels": [
+        "50 km rodados",
+        "100 km rodados (Ponto de Equilíbrio)",
+        "150 km rodados"
+      ],
+      "series": [
+        {
+          "name": "Custo no Plano A: 80 + 1,20.x (R$)",
+          "values": [
+            140,
+            200,
+            260
+          ]
+        }
+      ],
+      "unit": ""
+    }
+  },
+  {
+    "id": "mb_l10_n09",
+    "lessonId": "mb_l10",
+    "format": "NUMERIC",
+    "difficulty": "HARD",
+    "skill": "Modelar e calcular situação física em Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "concept": "Tradução de enunciados para equações do 1º grau, sistemas lineares 2x2 (substituição e adição) e equações do 2º grau (Bhaskara, discriminante Delta e soma/produto de Girard)",
+    "statement": "Qual é a maior raiz real da equação do 2º grau $x^2 - 9x + 20 = 0$ (onde a soma das raízes é $9$ e o produto é $20$)?",
+    "explanation": "Substituindo os valores na relação física ((9 + (81 - 80)**0.5) / 2), encontramos 5 .",
+    "retryGuidance": "Confira se todas as grandezas estão nas unidades pedidas e aplique (9 + (81 - 80)**0.5) / 2.",
+    "source": "AUTORAL",
+    "answerNumber": 5,
+    "tolerance": 0.01,
+    "unit": "",
+    "verify": "(9 + (81 - 80)**0.5) / 2"
+  },
+  {
+    "id": "mb_l10_n10",
+    "lessonId": "mb_l10",
+    "format": "ESSAY",
+    "difficulty": "HARD",
+    "skill": "Explicar fenômenos cotidianos e tecnológicos usando Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+    "concept": "Tradução de enunciados para equações do 1º grau, sistemas lineares 2x2 (substituição e adição) e equações do 2º grau (Bhaskara, discriminante Delta e soma/produto de Girard)",
+    "statement": "Explique os métodos da adição e da substituição para resolver sistemas lineares 2x2 e mostre como o sinal do discriminante $\\Delta = b^2 - 4ac$ e as relações de soma e produto agilizam a resolução de equações do 2º grau.",
+    "explanation": "Síntese conceitual esperada pela rubrica: No método da substituição, isola-se uma incógnita em uma das equações e substitui-se na outra; no método da adição, multiplicam-se as equações por constantes adequadas para que uma incógnita tenha coeficientes simétricos e seja cancelada ao somar as duas equações. Na equação do 2º grau ax² + bx + c = 0, o discriminante Delta = b² - 4ac indica se há duas raízes reais distintas (Delta > 0), uma raiz dupla (Delta = 0) ou nenhuma raiz real (Delta < 0), e as relações de Girard (S = -b/a e P = c/a) permitem achar as raízes mentalmente quando inteiras.",
+    "retryGuidance": "Estruture sua resposta mencionando a lei física de Modelagem Algébrica, Bhaskara e Sistemas 2x2, a relação entre as grandezas e a aplicação prática.",
+    "source": "AUTORAL",
+    "modelAnswer": "No método da substituição, isola-se uma incógnita em uma das equações e substitui-se na outra; no método da adição, multiplicam-se as equações por constantes adequadas para que uma incógnita tenha coeficientes simétricos e seja cancelada ao somar as duas equações. Na equação do 2º grau ax² + bx + c = 0, o discriminante Delta = b² - 4ac indica se há duas raízes reais distintas (Delta > 0), uma raiz dupla (Delta = 0) ou nenhuma raiz real (Delta < 0), e as relações de Girard (S = -b/a e P = c/a) permitem achar as raízes mentalmente quando inteiras.",
+    "passScore": 0.6,
+    "rubric": [
+      {
+        "criterion": "Enuncia o princípio ou lei física central de Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+        "points": 4,
+        "keywords": [
+          [
+            "substituicao",
+            "substituição",
+            "isola",
+            "adicao",
+            "adição",
+            "soma",
+            "cancela"
+          ]
+        ]
+      },
+      {
+        "criterion": "Relaciona corretamente as grandezas físicas envolvidas",
+        "points": 3,
+        "keywords": [
+          [
+            "delta",
+            "discriminante",
+            "b² - 4ac",
+            "raizes reais",
+            "raízes reais"
+          ]
+        ]
+      },
+      {
+        "criterion": "Explica a aplicação prática ou consequência física",
+        "points": 3,
+        "keywords": [
+          [
+            "girard",
+            "produto",
+            "-b/a",
+            "c/a"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mb_l11_n01",
+    "lessonId": "mb_l11",
+    "format": "TRUE_FALSE",
+    "difficulty": "EASY",
+    "skill": "Julgar proposições físicas sobre Medidas de Tendência Central e Análise de Dados",
+    "concept": "Estatística descritiva: média aritmética simples, média ponderada (soma dos valores x pesos dividida pela soma dos pesos), moda e mediana (com ordenação obrigatória do rol)",
+    "statement": "Para calcular corretamente a mediana de um conjunto de dados numéricos, é obrigatório primeiro ordenar os valores em rol (ordem crescente ou decrescente); además, a mediana é a medida central mais resistente a valores discrepantes (outliers).",
+    "explanation": "A afirmação é verdadeira: Para calcular corretamente a mediana de um conjunto de dados numéricos, é obrigatório primeiro ordenar os valores em rol (ordem crescente ou decrescente); además, a mediana é a medida central mais resistente a valores discrepantes (outliers). Esse princípio é fundamental em Medidas de Tendência Central e Análise de Dados.",
+    "retryGuidance": "Revise as leis físicas e relações matemáticas de Medidas de Tendência Central e Análise de Dados.",
+    "source": "AUTORAL",
+    "answerBool": true
+  },
+  {
+    "id": "mb_l11_n02",
+    "lessonId": "mb_l11",
+    "format": "FILL_BLANK",
+    "difficulty": "EASY",
+    "skill": "Identificar o conceito ou lei física em Medidas de Tendência Central e Análise de Dados",
+    "concept": "Estatística descritiva: média aritmética simples, média ponderada (soma dos valores x pesos dividida pela soma dos pesos), moda e mediana (com ordenação obrigatória do rol)",
+    "statement": "No estudo de Medidas de Tendência Central e Análise de Dados (Estatística descritiva: média aritmética simples, média ponderada (soma dos valores x pesos dividida pela soma dos pesos), moda e mediana (com ordenação obrigatória do rol)), o termo, unidade ou grandeza física central destacada na aula é ___.",
+    "explanation": "O termo correto para completar a lacuna é 'mediana', elemento essencial de Medidas de Tendência Central e Análise de Dados.",
+    "retryGuidance": "Consulte o quadro de conceitos e fórmulas de Medidas de Tendência Central e Análise de Dados e verifique a grafia do termo principal.",
+    "source": "AUTORAL",
+    "answers": [
+      "mediana"
+    ]
+  },
+  {
+    "id": "mb_l11_n03",
+    "lessonId": "mb_l11",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "EASY",
+    "skill": "Relacionar leis físicas e equações em Medidas de Tendência Central e Análise de Dados",
+    "concept": "Média aritmética simples em Medidas de Tendência Central e Análise de Dados",
+    "statement": "Considerando os princípios de Medidas de Tendência Central e Análise de Dados, assinale a alternativa que caracteriza corretamente 'Média aritmética simples':",
+    "explanation": "A alternativa correta relaciona 'Média aritmética simples' a: Soma de todos os n valores dividida pela quantidade n. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Média aritmética simples' com os demais tópicos de Medidas de Tendência Central e Análise de Dados.",
+    "source": "AUTORAL",
+    "options": [
+      "Média aritmética simples: Soma de todos os n valores dividida pela quantidade n",
+      "Média aritmética simples: Soma dos produtos (valor x peso) dividida pela soma dos pesos",
+      "Média aritmética simples: Valor que aparece com maior frequência no conjunto de dados",
+      "Média aritmética simples: Termo central do rol ordenado (ou média dos dois termos centrais se n for par)",
+      "Média aritmética simples: Grandeza nula que independe de qualquer variável física"
+    ],
+    "answerIndex": 0,
+    "distractorConcepts": [
+      "",
+      "Confundiu 'Média aritmética simples' com 'Média aritmética ponderada'",
+      "Confundiu 'Média aritmética simples' com 'Moda (Mo)'",
+      "Confundiu 'Média aritmética simples' com 'Mediana (Md)'",
+      "Desconsiderou a lei física aplicável a 'Média aritmética simples' em Medidas de Tendência Central e Análise de Dados"
+    ]
+  },
+  {
+    "id": "mb_l11_n05",
+    "lessonId": "mb_l11",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Medidas de Tendência Central e Análise de Dados",
+    "concept": "Moda (Mo) em Medidas de Tendência Central e Análise de Dados",
+    "statement": "Considerando os princípios de Medidas de Tendência Central e Análise de Dados, assinale a alternativa que caracteriza corretamente 'Moda (Mo)':",
+    "explanation": "A alternativa correta relaciona 'Moda (Mo)' a: Valor que aparece com maior frequência no conjunto de dados. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Moda (Mo)' com os demais tópicos de Medidas de Tendência Central e Análise de Dados.",
+    "source": "AUTORAL",
+    "options": [
+      "Moda (Mo): Soma dos produtos (valor x peso) dividida pela soma dos pesos",
+      "Moda (Mo): Termo central do rol ordenado (ou média dos dois termos centrais se n for par)",
+      "Moda (Mo): Grandeza nula que independe de qualquer variável física",
+      "Moda (Mo): Valor que aparece com maior frequência no conjunto de dados",
+      "Moda (Mo): Soma de todos os n valores dividida pela quantidade n"
+    ],
+    "answerIndex": 3,
+    "distractorConcepts": [
+      "Confundiu 'Moda (Mo)' com 'Média aritmética ponderada'",
+      "Confundiu 'Moda (Mo)' com 'Mediana (Md)'",
+      "Desconsiderou a lei física aplicável a 'Moda (Mo)' em Medidas de Tendência Central e Análise de Dados",
+      "",
+      "Confundiu 'Moda (Mo)' com 'Média aritmética simples'"
+    ]
+  },
+  {
+    "id": "mb_l11_n06",
+    "lessonId": "mb_l11",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Medidas de Tendência Central e Análise de Dados",
+    "concept": "Mediana (Md) em Medidas de Tendência Central e Análise de Dados",
+    "statement": "Considerando os princípios de Medidas de Tendência Central e Análise de Dados, assinale a alternativa que caracteriza corretamente 'Mediana (Md)':",
+    "explanation": "A alternativa correta relaciona 'Mediana (Md)' a: Termo central do rol ordenado (ou média dos dois termos centrais se n for par). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Mediana (Md)' com os demais tópicos de Medidas de Tendência Central e Análise de Dados.",
+    "source": "AUTORAL",
+    "options": [
+      "Mediana (Md): Grandeza nula que independe de qualquer variável física",
+      "Mediana (Md): Termo central do rol ordenado (ou média dos dois termos centrais se n for par)",
+      "Mediana (Md): Soma de todos os n valores dividida pela quantidade n",
+      "Mediana (Md): Soma dos produtos (valor x peso) dividida pela soma dos pesos",
+      "Mediana (Md): Valor que aparece com maior frequência no conjunto de dados"
+    ],
+    "answerIndex": 1,
+    "distractorConcepts": [
+      "Desconsiderou a lei física aplicável a 'Mediana (Md)' em Medidas de Tendência Central e Análise de Dados",
+      "",
+      "Confundiu 'Mediana (Md)' com 'Média aritmética simples'",
+      "Confundiu 'Mediana (Md)' com 'Média aritmética ponderada'",
+      "Confundiu 'Mediana (Md)' com 'Moda (Mo)'"
+    ]
+  },
+  {
+    "id": "mb_l11_n04",
+    "lessonId": "mb_l11",
+    "format": "MATCHING",
+    "difficulty": "MEDIUM",
+    "skill": "Associar grandezas, leis e aplicações de Medidas de Tendência Central e Análise de Dados",
+    "concept": "Estatística descritiva: média aritmética simples, média ponderada (soma dos valores x pesos dividida pela soma dos pesos), moda e mediana (com ordenação obrigatória do rol)",
+    "statement": "Associe cada grandeza, lei ou fenômeno de Medidas de Tendência Central e Análise de Dados à sua respectiva propriedade física:",
+    "explanation": "Relacionar cada lei física à sua expressão matemática e aplicação prática é indispensável para resolver problemas contextualizados.",
+    "retryGuidance": "Analise as unidades e relações de proporcionalidade de cada item de Medidas de Tendência Central e Análise de Dados.",
+    "source": "AUTORAL",
+    "pairs": [
+      [
+        "Média aritmética simples",
+        "Soma de todos os n valores dividida pela quantidade n"
+      ],
+      [
+        "Média aritmética ponderada",
+        "Soma dos produtos (valor x peso) dividida pela soma dos pesos"
+      ],
+      [
+        "Moda (Mo)",
+        "Valor que aparece com maior frequência no conjunto de dados"
+      ],
+      [
+        "Mediana (Md)",
+        "Termo central do rol ordenado (ou média dos dois termos centrais se n for par)"
+      ]
+    ]
+  },
+  {
+    "id": "mb_l11_n07",
+    "lessonId": "mb_l11",
+    "format": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "skill": "Resolver problema numérico de Medidas de Tendência Central e Análise de Dados",
+    "concept": "Estatística descritiva: média aritmética simples, média ponderada (soma dos valores x pesos dividida pela soma dos pesos), moda e mediana (com ordenação obrigatória do rol)",
+    "statement": "Um candidato obteve notas $7{,}0$ (peso 2), $8{,}0$ (peso 3) e $9{,}0$ (peso 5) nas três provas de um concurso. Qual foi a sua média aritmética ponderada final ($(7\\cdot 2 + 8\\cdot 3 + 9\\cdot 5)/(2+3+5)$)?",
+    "explanation": "Aplicando a equação de Medidas de Tendência Central e Análise de Dados ((7*2 + 8*3 + 9*5) / (2 + 3 + 5)), obtemos o resultado exato de 8.3 pontos.",
+    "retryGuidance": "Identifique os dados no Sistema Internacional e aplique a relação (7*2 + 8*3 + 9*5) / (2 + 3 + 5).",
+    "source": "AUTORAL",
+    "answerNumber": 8.3,
+    "tolerance": 0.01,
+    "unit": "pontos",
+    "verify": "(7*2 + 8*3 + 9*5) / (2 + 3 + 5)"
+  },
+  {
+    "id": "mb_l11_n08",
+    "lessonId": "mb_l11",
+    "format": "CHART",
+    "difficulty": "HARD",
+    "skill": "Interpretar gráficos e tabelas de Medidas de Tendência Central e Análise de Dados",
+    "concept": "Estatística descritiva: média aritmética simples, média ponderada (soma dos valores x pesos dividida pela soma dos pesos), moda e mediana (com ordenação obrigatória do rol)",
+    "statement": "Na tabela salarial acima, o salário do Diretor (R$ 17.000) eleva a média aritmética para R$ 5.000,00. Qual é o valor da MEDIANA salarial (termo central do rol ordenado de 5 salários), que representa de forma mais fiel o salário típico da equipe?",
+    "explanation": "Analisando os dados de 'Salários Mensais dos 5 Funcionários de uma Microempresa' (2000 * 1), conclui-se corretamente: R$ 2000 (3º valor do rol ordenado, imune à distorção do salário extremo do diretor).",
+    "retryGuidance": "Extraia os valores diretamente dos eixos/colunas antes de substituir na equação física.",
+    "source": "AUTORAL",
+    "options": [
+      "R$ 5000",
+      "R$ 17000",
+      "R$ 1500",
+      "R$ 2250",
+      "R$ 2000 (3º valor do rol ordenado, imune à distorção do salário extremo do diretor)"
+    ],
+    "answerIndex": 4,
+    "distractorConcepts": [
+      "R$ 5.000 é a média aritmética distorcida pelo outlier de R$ 17.000",
+      "R$ 17.000 é o valor máximo (diretor), não a mediana",
+      "R$ 1.500 é o valor mínimo",
+      "Calculou média entre 2000 e 2500 como se houvesse número par de funcionários",
+      ""
+    ],
+    "verify": "2000 * 1",
+    "chart": {
+      "type": "bar",
+      "title": "Salários Mensais dos 5 Funcionários de uma Microempresa",
+      "labels": [
+        "Estagiário",
+        "Auxiliar 1",
+        "Auxiliar 2",
+        "Analista",
+        "Diretor (Outlier)"
+      ],
+      "series": [
+        {
+          "name": "Salário (R$)",
+          "values": [
+            1500,
+            2000,
+            2000,
+            2500,
+            17000
+          ]
+        }
+      ],
+      "unit": ""
+    }
+  },
+  {
+    "id": "mb_l11_n09",
+    "lessonId": "mb_l11",
+    "format": "NUMERIC",
+    "difficulty": "HARD",
+    "skill": "Modelar e calcular situação física em Medidas de Tendência Central e Análise de Dados",
+    "concept": "Estatística descritiva: média aritmética simples, média ponderada (soma dos valores x pesos dividida pela soma dos pesos), moda e mediana (com ordenação obrigatória do rol)",
+    "statement": "Considere o conjunto de idades desordenadas de 6 atletas: $\\{24, 18, 30, 20, 22, 19\\}$. Ordenando em rol crescente $\\{18, 19, 20, 22, 24, 30\\}$, qual é o valor da mediana (média dos dois termos centrais)?",
+    "explanation": "Substituindo os valores na relação física ((20 + 22) / 2), encontramos 21 anos.",
+    "retryGuidance": "Confira se todas as grandezas estão nas unidades pedidas e aplique (20 + 22) / 2.",
+    "source": "AUTORAL",
+    "answerNumber": 21,
+    "tolerance": 0.01,
+    "unit": "anos",
+    "verify": "(20 + 22) / 2"
+  },
+  {
+    "id": "mb_l11_n10",
+    "lessonId": "mb_l11",
+    "format": "ESSAY",
+    "difficulty": "HARD",
+    "skill": "Explicar fenômenos cotidianos e tecnológicos usando Medidas de Tendência Central e Análise de Dados",
+    "concept": "Estatística descritiva: média aritmética simples, média ponderada (soma dos valores x pesos dividida pela soma dos pesos), moda e mediana (com ordenação obrigatória do rol)",
+    "statement": "Explique a diferença de cálculo entre a mediana para quantidade ímpar de dados e para quantidade par de dados (destacando a necessidade de ordenar o rol) e por que a mediana é preferível à média quando há valores extremos (outliers).",
+    "explanation": "Síntese conceitual esperada pela rubrica: Para achar a mediana, o primeiro passo obrigatório é ordenar os dados em rol. Se a quantidade n de elementos for ímpar, a mediana é o único elemento exatamente no centro do rol (posição (n+1)/2); se n for par, a mediana é a média aritmética simples dos dois elementos centrais (posições n/2 e n/2 + 1). A mediana é preferível na presença de outliers (valores muito altos ou muito baixos) porque depende apenas da posição central, enquanto a média aritmética é fortemente puxada pelo valor extremo.",
+    "retryGuidance": "Estruture sua resposta mencionando a lei física de Medidas de Tendência Central e Análise de Dados, a relação entre as grandezas e a aplicação prática.",
+    "source": "AUTORAL",
+    "modelAnswer": "Para achar a mediana, o primeiro passo obrigatório é ordenar os dados em rol. Se a quantidade n de elementos for ímpar, a mediana é o único elemento exatamente no centro do rol (posição (n+1)/2); se n for par, a mediana é a média aritmética simples dos dois elementos centrais (posições n/2 e n/2 + 1). A mediana é preferível na presença de outliers (valores muito altos ou muito baixos) porque depende apenas da posição central, enquanto a média aritmética é fortemente puxada pelo valor extremo.",
+    "passScore": 0.6,
+    "rubric": [
+      {
+        "criterion": "Enuncia o princípio ou lei física central de Medidas de Tendência Central e Análise de Dados",
+        "points": 4,
+        "keywords": [
+          [
+            "ordenar",
+            "rol",
+            "crescente"
+          ]
+        ]
+      },
+      {
+        "criterion": "Relaciona corretamente as grandezas físicas envolvidas",
+        "points": 3,
+        "keywords": [
+          [
+            "impar",
+            "ímpar",
+            "centro",
+            "par",
+            "dois",
+            "media dos dois",
+            "média dos dois"
+          ]
+        ]
+      },
+      {
+        "criterion": "Explica a aplicação prática ou consequência física",
+        "points": 3,
+        "keywords": [
+          [
+            "outlier",
+            "extremo",
+            "discrepante",
+            "distorc"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mb_l12_n01",
+    "lessonId": "mb_l12",
+    "format": "TRUE_FALSE",
+    "difficulty": "EASY",
+    "skill": "Julgar proposições físicas sobre Figuras Planas, Triângulo Retângulo e Sólidos",
+    "concept": "Geometria essencial: áreas planas (retângulo, triângulo, trapézio, círculo pi.R²), Teorema de Pitágoras ($a^2 = b^2 + c^2$) e volumes de prisma e cilindro ($V = A_b \\cdot h$)",
+    "statement": "Em todo triângulo retângulo, o quadrado da medida da hipotenusa (lado oposto ao ângulo de 90°) é igual à soma dos quadrados das medidas dos catetos (a² = b² + c²), sendo 3-4-5 e 5-12-13 as ternas pitagóricas mais recorrentes.",
+    "explanation": "A afirmação é verdadeira: Em todo triângulo retângulo, o quadrado da medida da hipotenusa (lado oposto ao ângulo de 90°) é igual à soma dos quadrados das medidas dos catetos (a² = b² + c²), sendo 3-4-5 e 5-12-13 as ternas pitagóricas mais recorrentes. Esse princípio é fundamental em Figuras Planas, Triângulo Retângulo e Sólidos.",
+    "retryGuidance": "Revise as leis físicas e relações matemáticas de Figuras Planas, Triângulo Retângulo e Sólidos.",
+    "source": "AUTORAL",
+    "answerBool": true
+  },
+  {
+    "id": "mb_l12_n02",
+    "lessonId": "mb_l12",
+    "format": "FILL_BLANK",
+    "difficulty": "EASY",
+    "skill": "Identificar o conceito ou lei física em Figuras Planas, Triângulo Retângulo e Sólidos",
+    "concept": "Geometria essencial: áreas planas (retângulo, triângulo, trapézio, círculo pi.R²), Teorema de Pitágoras ($a^2 = b^2 + c^2$) e volumes de prisma e cilindro ($V = A_b \\cdot h$)",
+    "statement": "No estudo de Figuras Planas, Triângulo Retângulo e Sólidos (Geometria essencial: áreas planas (retângulo, triângulo, trapézio, círculo pi.R²), Teorema de Pitágoras ($a^2 = b^2 + c^2$) e volumes de prisma e cilindro ($V = A_b \\cdot h$)), o termo, unidade ou grandeza física central destacada na aula é ___.",
+    "explanation": "O termo correto para completar a lacuna é 'Pitágoras', elemento essencial de Figuras Planas, Triângulo Retângulo e Sólidos.",
+    "retryGuidance": "Consulte o quadro de conceitos e fórmulas de Figuras Planas, Triângulo Retângulo e Sólidos e verifique a grafia do termo principal.",
+    "source": "AUTORAL",
+    "answers": [
+      "pitágoras",
+      "Pitágoras"
+    ]
+  },
+  {
+    "id": "mb_l12_n03",
+    "lessonId": "mb_l12",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "EASY",
+    "skill": "Relacionar leis físicas e equações em Figuras Planas, Triângulo Retângulo e Sólidos",
+    "concept": "Teorema de Pitágoras em Figuras Planas, Triângulo Retângulo e Sólidos",
+    "statement": "Considerando os princípios de Figuras Planas, Triângulo Retângulo e Sólidos, assinale a alternativa que caracteriza corretamente 'Teorema de Pitágoras':",
+    "explanation": "A alternativa correta relaciona 'Teorema de Pitágoras' a: a² = b² + c² (hipotenusa ao quadrado igual à soma dos quadrados dos catetos). As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Teorema de Pitágoras' com os demais tópicos de Figuras Planas, Triângulo Retângulo e Sólidos.",
+    "source": "AUTORAL",
+    "options": [
+      "Teorema de Pitágoras: A = (B + b) . h / 2 (média das bases multiplicada pela altura)",
+      "Teorema de Pitágoras: Área A = pi . R² e Comprimento C = 2 . pi . R",
+      "Teorema de Pitágoras: Produto da área da base pela altura: V = Ab . h",
+      "Teorema de Pitágoras: Grandeza nula que independe de qualquer variável física",
+      "Teorema de Pitágoras: a² = b² + c² (hipotenusa ao quadrado igual à soma dos quadrados dos catetos)"
+    ],
+    "answerIndex": 4,
+    "distractorConcepts": [
+      "Confundiu 'Teorema de Pitágoras' com 'Área do trapézio'",
+      "Confundiu 'Teorema de Pitágoras' com 'Área do círculo e comprimento da circunferência'",
+      "Confundiu 'Teorema de Pitágoras' com 'Volume de prisma e de cilindro reto'",
+      "Desconsiderou a lei física aplicável a 'Teorema de Pitágoras' em Figuras Planas, Triângulo Retângulo e Sólidos",
+      ""
+    ]
+  },
+  {
+    "id": "mb_l12_n05",
+    "lessonId": "mb_l12",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Figuras Planas, Triângulo Retângulo e Sólidos",
+    "concept": "Área do círculo e comprimento da circunferência em Figuras Planas, Triângulo Retângulo e Sólidos",
+    "statement": "Considerando os princípios de Figuras Planas, Triângulo Retângulo e Sólidos, assinale a alternativa que caracteriza corretamente 'Área do círculo e comprimento da circunferência':",
+    "explanation": "A alternativa correta relaciona 'Área do círculo e comprimento da circunferência' a: Área A = pi . R² e Comprimento C = 2 . pi . R. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Área do círculo e comprimento da circunferência' com os demais tópicos de Figuras Planas, Triângulo Retângulo e Sólidos.",
+    "source": "AUTORAL",
+    "options": [
+      "Área do círculo e comprimento da circunferência: Produto da área da base pela altura: V = Ab . h",
+      "Área do círculo e comprimento da circunferência: Grandeza nula que independe de qualquer variável física",
+      "Área do círculo e comprimento da circunferência: Área A = pi . R² e Comprimento C = 2 . pi . R",
+      "Área do círculo e comprimento da circunferência: a² = b² + c² (hipotenusa ao quadrado igual à soma dos quadrados dos catetos)",
+      "Área do círculo e comprimento da circunferência: A = (B + b) . h / 2 (média das bases multiplicada pela altura)"
+    ],
+    "answerIndex": 2,
+    "distractorConcepts": [
+      "Confundiu 'Área do círculo e comprimento da circunferência' com 'Volume de prisma e de cilindro reto'",
+      "Desconsiderou a lei física aplicável a 'Área do círculo e comprimento da circunferência' em Figuras Planas, Triângulo Retângulo e Sólidos",
+      "",
+      "Confundiu 'Área do círculo e comprimento da circunferência' com 'Teorema de Pitágoras'",
+      "Confundiu 'Área do círculo e comprimento da circunferência' com 'Área do trapézio'"
+    ]
+  },
+  {
+    "id": "mb_l12_n06",
+    "lessonId": "mb_l12",
+    "format": "MULTIPLE_CHOICE",
+    "difficulty": "MEDIUM",
+    "skill": "Relacionar leis físicas e equações em Figuras Planas, Triângulo Retângulo e Sólidos",
+    "concept": "Volume de prisma e de cilindro reto em Figuras Planas, Triângulo Retângulo e Sólidos",
+    "statement": "Considerando os princípios de Figuras Planas, Triângulo Retângulo e Sólidos, assinale a alternativa que caracteriza corretamente 'Volume de prisma e de cilindro reto':",
+    "explanation": "A alternativa correta relaciona 'Volume de prisma e de cilindro reto' a: Produto da área da base pela altura: V = Ab . h. As demais opções descrevem outros conceitos da aula.",
+    "retryGuidance": "Compare a definição e a fórmula de 'Volume de prisma e de cilindro reto' com os demais tópicos de Figuras Planas, Triângulo Retângulo e Sólidos.",
+    "source": "AUTORAL",
+    "options": [
+      "Volume de prisma e de cilindro reto: Produto da área da base pela altura: V = Ab . h",
+      "Volume de prisma e de cilindro reto: a² = b² + c² (hipotenusa ao quadrado igual à soma dos quadrados dos catetos)",
+      "Volume de prisma e de cilindro reto: A = (B + b) . h / 2 (média das bases multiplicada pela altura)",
+      "Volume de prisma e de cilindro reto: Área A = pi . R² e Comprimento C = 2 . pi . R",
+      "Volume de prisma e de cilindro reto: Grandeza nula que independe de qualquer variável física"
+    ],
+    "answerIndex": 0,
+    "distractorConcepts": [
+      "",
+      "Confundiu 'Volume de prisma e de cilindro reto' com 'Teorema de Pitágoras'",
+      "Confundiu 'Volume de prisma e de cilindro reto' com 'Área do trapézio'",
+      "Confundiu 'Volume de prisma e de cilindro reto' com 'Área do círculo e comprimento da circunferência'",
+      "Desconsiderou a lei física aplicável a 'Volume de prisma e de cilindro reto' em Figuras Planas, Triângulo Retângulo e Sólidos"
+    ]
+  },
+  {
+    "id": "mb_l12_n04",
+    "lessonId": "mb_l12",
+    "format": "MATCHING",
+    "difficulty": "MEDIUM",
+    "skill": "Associar grandezas, leis e aplicações de Figuras Planas, Triângulo Retângulo e Sólidos",
+    "concept": "Geometria essencial: áreas planas (retângulo, triângulo, trapézio, círculo pi.R²), Teorema de Pitágoras ($a^2 = b^2 + c^2$) e volumes de prisma e cilindro ($V = A_b \\cdot h$)",
+    "statement": "Associe cada grandeza, lei ou fenômeno de Figuras Planas, Triângulo Retângulo e Sólidos à sua respectiva propriedade física:",
+    "explanation": "Relacionar cada lei física à sua expressão matemática e aplicação prática é indispensável para resolver problemas contextualizados.",
+    "retryGuidance": "Analise as unidades e relações de proporcionalidade de cada item de Figuras Planas, Triângulo Retângulo e Sólidos.",
+    "source": "AUTORAL",
+    "pairs": [
+      [
+        "Teorema de Pitágoras",
+        "a² = b² + c² (hipotenusa ao quadrado igual à soma dos quadrados dos catetos)"
+      ],
+      [
+        "Área do trapézio",
+        "A = (B + b) . h / 2 (média das bases multiplicada pela altura)"
+      ],
+      [
+        "Área do círculo e comprimento da circunferência",
+        "Área A = pi . R² e Comprimento C = 2 . pi . R"
+      ],
+      [
+        "Volume de prisma e de cilindro reto",
+        "Produto da área da base pela altura: V = Ab . h"
+      ]
+    ]
+  },
+  {
+    "id": "mb_l12_n07",
+    "lessonId": "mb_l12",
+    "format": "NUMERIC",
+    "difficulty": "MEDIUM",
+    "skill": "Resolver problema numérico de Figuras Planas, Triângulo Retângulo e Sólidos",
+    "concept": "Geometria essencial: áreas planas (retângulo, triângulo, trapézio, círculo pi.R²), Teorema de Pitágoras ($a^2 = b^2 + c^2$) e volumes de prisma e cilindro ($V = A_b \\cdot h$)",
+    "statement": "Uma escada de $13\\text{ m}$ de comprimento (hipotenusa) está apoiada no topo de um muro vertical, com sua base afastada $5\\text{ m}$ do pé do muro em terreno horizontal. Pelo Teorema de Pitágoras ($h^2 + 5^2 = 13^2$), qual é a altura do muro em metros?",
+    "explanation": "Aplicando a equação de Figuras Planas, Triângulo Retângulo e Sólidos ((13**2 - 5**2)**0.5), obtemos o resultado exato de 12 m.",
+    "retryGuidance": "Identifique os dados no Sistema Internacional e aplique a relação (13**2 - 5**2)**0.5.",
+    "source": "AUTORAL",
+    "answerNumber": 12,
+    "tolerance": 0.01,
+    "unit": "m",
+    "verify": "(13**2 - 5**2)**0.5"
+  },
+  {
+    "id": "mb_l12_n08",
+    "lessonId": "mb_l12",
+    "format": "CHART",
+    "difficulty": "MEDIUM",
+    "skill": "Interpretar gráficos e tabelas de Figuras Planas, Triângulo Retângulo e Sólidos",
+    "concept": "Geometria essencial: áreas planas (retângulo, triângulo, trapézio, círculo pi.R²), Teorema de Pitágoras ($a^2 = b^2 + c^2$) e volumes de prisma e cilindro ($V = A_b \\cdot h$)",
+    "statement": "Qual é a área (em m²) do terreno em forma de trapézio de base maior B = 18 m, base menor b = 12 m e altura h = 8 m ($A = (B + b) \\cdot h / 2$), que coincide com a área dos outros dois terrenos?",
+    "explanation": "Analisando os dados de 'Área de Terrenos deDiferentes Formas Geométricas' ((18 + 12) * 8 / 2), conclui-se corretamente: 120 m² (pois (18 + 12) x 8 / 2 = 30 x 4 = 120 m²).",
+    "retryGuidance": "Extraia os valores diretamente dos eixos/colunas antes de substituir na equação física.",
+    "source": "AUTORAL",
+    "options": [
+      "1728 m²",
+      "60 m²",
+      "96 m²",
+      "120 m² (pois (18 + 12) x 8 / 2 = 30 x 4 = 120 m²)",
+      "240 m²"
+    ],
+    "answerIndex": 3,
+    "distractorConcepts": [
+      "Multiplicou B x b x h em vez de somar as bases",
+      "Dividiu por 4 em vez de 2",
+      "Multiplicou apenas a base menor b = 12 m pela altura 8 m",
+      "",
+      "Esqueceu de dividir por 2 na fórmula da área do trapézio"
+    ],
+    "verify": "(18 + 12) * 8 / 2",
+    "chart": {
+      "type": "bar",
+      "title": "Área de Terrenos deDiferentes Formas Geométricas",
+      "labels": [
+        "Retângulo (12 m x 10 m)",
+        "Triângulo (base 20 m, h = 12 m)",
+        "Trapézio (B=18 m, b=12 m, h=8 m)"
+      ],
+      "series": [
+        {
+          "name": "Área (m²)",
+          "values": [
+            120,
+            120,
+            120
+          ]
+        }
+      ],
+      "unit": ""
+    }
+  },
+  {
+    "id": "mb_l12_n09",
+    "lessonId": "mb_l12",
+    "format": "NUMERIC",
+    "difficulty": "HARD",
+    "skill": "Modelar e calcular situação física em Figuras Planas, Triângulo Retângulo e Sólidos",
+    "concept": "Geometria essencial: áreas planas (retângulo, triângulo, trapézio, círculo pi.R²), Teorema de Pitágoras ($a^2 = b^2 + c^2$) e volumes de prisma e cilindro ($V = A_b \\cdot h$)",
+    "statement": "Um reservatório cilíndrico reto possui raio da base $R = 2\\text{ m}$ e altura $h = 5\\text{ m}$. Adotando $\\pi = 3$, qual é o volume desse cilindro em $\\text{m}^3$ ($V = \\pi \\cdot R^2 \\cdot h$)?",
+    "explanation": "Substituindo os valores na relação física (3 * (2**2) * 5), encontramos 60 m³.",
+    "retryGuidance": "Confira se todas as grandezas estão nas unidades pedidas e aplique 3 * (2**2) * 5.",
+    "source": "AUTORAL",
+    "answerNumber": 60,
+    "tolerance": 0.01,
+    "unit": "m³",
+    "verify": "3 * (2**2) * 5"
+  },
+  {
+    "id": "mb_l12_n10",
+    "lessonId": "mb_l12",
+    "format": "ESSAY",
+    "difficulty": "HARD",
+    "skill": "Explicar fenômenos cotidianos e tecnológicos usando Figuras Planas, Triângulo Retângulo e Sólidos",
+    "concept": "Geometria essencial: áreas planas (retângulo, triângulo, trapézio, círculo pi.R²), Teorema de Pitágoras ($a^2 = b^2 + c^2$) e volumes de prisma e cilindro ($V = A_b \\cdot h$)",
+    "statement": "Apresente as fórmulas de área do retângulo, triângulo, trapézio e círculo, explique o Teorema de Pitágoras com as ternas $(3, 4, 5)$ e $(5, 12, 13)$ e compare o volume de um cilindro com o de um cone de mesma base e altura.",
+    "explanation": "Síntese conceitual esperada pela rubrica: A área do retângulo é b.h, a do triângulo é (b.h)/2, a do trapézio é ((B+b).h)/2 e a do círculo é pi.R². Pelo Teorema de Pitágoras, em qualquer triângulo retângulo a hipotenusa a e os catetos b e c satisfazem a² = b² + c², gerando os triângulos clássicos (3, 4, 5) e (5, 12, 13) e seus múltiplos. O volume do cilindro é V = pi.R².h (área da base vezes altura), enquanto o volume do cone de mesma base e altura é exatamente um terço do cilindro: V_cone = (pi.R².h)/3.",
+    "retryGuidance": "Estruture sua resposta mencionando a lei física de Figuras Planas, Triângulo Retângulo e Sólidos, a relação entre as grandezas e a aplicação prática.",
+    "source": "AUTORAL",
+    "modelAnswer": "A área do retângulo é b.h, a do triângulo é (b.h)/2, a do trapézio é ((B+b).h)/2 e a do círculo é pi.R². Pelo Teorema de Pitágoras, em qualquer triângulo retângulo a hipotenusa a e os catetos b e c satisfazem a² = b² + c², gerando os triângulos clássicos (3, 4, 5) e (5, 12, 13) e seus múltiplos. O volume do cilindro é V = pi.R².h (área da base vezes altura), enquanto o volume do cone de mesma base e altura é exatamente um terço do cilindro: V_cone = (pi.R².h)/3.",
+    "passScore": 0.6,
+    "rubric": [
+      {
+        "criterion": "Enuncia o princípio ou lei física central de Figuras Planas, Triângulo Retângulo e Sólidos",
+        "points": 4,
+        "keywords": [
+          [
+            "retangulo",
+            "retângulo",
+            "triangulo",
+            "triângulo",
+            "trapezio",
+            "trapézio",
+            "circulo",
+            "círculo",
+            "pi"
+          ]
+        ]
+      },
+      {
+        "criterion": "Relaciona corretamente as grandezas físicas envolvidas",
+        "points": 3,
+        "keywords": [
+          [
+            "pitagoras",
+            "pitágoras",
+            "hipotenusa",
+            "cateto",
+            "3",
+            "4",
+            "5"
+          ]
+        ]
+      },
+      {
+        "criterion": "Explica a aplicação prática ou consequência física",
+        "points": 3,
+        "keywords": [
+          [
+            "cilindro",
+            "cone",
+            "1/3",
+            "terco",
+            "terço",
+            "volume"
+          ]
+        ]
+      }
+    ]
+  }
+]

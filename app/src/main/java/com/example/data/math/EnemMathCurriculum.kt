@@ -22,7 +22,7 @@ object EnemMathCurriculum {
             name = "Matemática ENEM",
             description = "Trilha oficial com 14 módulos estruturados e 81 aulas sequenciais focadas nas competências e habilidades da Matriz de Referência do ENEM.",
             modules = listOf(
-                // ========================================================
+// ========================================================
                 // MÓDULO 1: Matemática Básica
                 // ========================================================
                 EnemTrailModule(
@@ -118,12 +118,212 @@ object EnemMathCurriculum {
                     )
                 ),
 
+// ========================================================
+                // MÓDULO 2: Álgebra e Equações
                 // ========================================================
-                // MÓDULO 2: Matemática Financeira
+                EnemTrailModule(
+                    id = "mod_07_algebra_equacoes",
+                    moduleNumber = 2,
+                    title = "Álgebra e Equações",
+                    summary = "Expressões algébricas, valor numérico, produtos notáveis, fatoração, equações e inequações do 1º e 2º grau e sistemas 2x2.",
+                    lessons = listOf(
+                        EnemTrailLesson(
+                            id = "enem_m7_a1",
+                            moduleId = "mod_07_algebra_equacoes",
+                            lessonIndex = 1,
+                            title = "Aula 1: Expressões algébricas e valor numérico",
+                            subtopic = "Expressões Algébricas",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m7_a2",
+                            moduleId = "mod_07_algebra_equacoes",
+                            lessonIndex = 2,
+                            title = "Aula 2: Produtos notáveis e fatoração algébrica",
+                            subtopic = "Produtos Notáveis & Fatoração",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m7_a3",
+                            moduleId = "mod_07_algebra_equacoes",
+                            lessonIndex = 3,
+                            title = "Aula 3: Equações e inequações do 1º grau",
+                            subtopic = "Equações do 1º Grau",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m7_a4",
+                            moduleId = "mod_07_algebra_equacoes",
+                            lessonIndex = 4,
+                            title = "Aula 4: Equações e inequações do 2º grau",
+                            subtopic = "Equações do 2º Grau",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m7_a5",
+                            moduleId = "mod_07_algebra_equacoes",
+                            lessonIndex = 5,
+                            title = "Aula 5: Sistemas de equações do 1º grau (2x2)",
+                            subtopic = "Sistemas Lineares 2x2",
+                            xpReward = 30
+                        )
+                    ),
+                    finalSimulado = EnemTrailSimulado(
+                        id = "simulado_mod_07",
+                        moduleId = "mod_07_algebra_equacoes"
+                    )
+                ),
+
+// ========================================================
+                // MÓDULO 3: Funções
+                // ========================================================
+                EnemTrailModule(
+                    id = "mod_06_funcoes",
+                    moduleNumber = 3,
+                    title = "Funções",
+                    summary = "Plano cartesiano, domínio, contradomínio, imagem, funções afins, funções quadráticas (máximo e mínimo), exponenciais e logarítmicas.",
+                    lessons = listOf(
+                        EnemTrailLesson(
+                            id = "enem_m6_a1",
+                            moduleId = "mod_06_funcoes",
+                            lessonIndex = 1,
+                            title = "Aula 1: Plano cartesiano e pares ordenados",
+                            subtopic = "Plano Cartesiano",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m6_a2",
+                            moduleId = "mod_06_funcoes",
+                            lessonIndex = 2,
+                            title = "Aula 2: Conceito de função (domínio, contradomínio e imagem)",
+                            subtopic = "Definição de Função",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m6_a3",
+                            moduleId = "mod_06_funcoes",
+                            lessonIndex = 3,
+                            title = "Aula 3: Função afim ou de 1º grau (gráficos, raízes, coeficiente angular e linear, taxa de variação)",
+                            subtopic = "Função Afim (1º Grau)",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m6_a4",
+                            moduleId = "mod_06_funcoes",
+                            lessonIndex = 4,
+                            title = "Aula 4: Função quadrática ou de 2º grau (parábola, raízes por Bhaskara, vértices para pontos de máximo e mínimo)",
+                            subtopic = "Função Quadrática & Vértices",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m6_a5",
+                            moduleId = "mod_06_funcoes",
+                            lessonIndex = 5,
+                            title = "Aula 5: Função exponencial (crescimento e decaimento exponencial)",
+                            subtopic = "Função Exponencial",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m6_a6",
+                            moduleId = "mod_06_funcoes",
+                            lessonIndex = 6,
+                            title = "Aula 6: Função logarítmica (gráficos e comportamento)",
+                            subtopic = "Função Logarítmica",
+                            xpReward = 30
+                        )
+                    ),
+                    finalSimulado = EnemTrailSimulado(
+                        id = "simulado_mod_06",
+                        moduleId = "mod_06_funcoes"
+                    )
+                ),
+
+// ========================================================
+                // MÓDULO 4: Sequências e Progressões
+                // ========================================================
+                EnemTrailModule(
+                    id = "mod_10_sequencias_progressoes",
+                    moduleNumber = 4,
+                    title = "Sequências e Progressões",
+                    summary = "Padrões lógicos e numéricos, Progressão Aritmética (PA) com termo geral e soma, e Progressão Geométrica (PG) com termo geral e soma.",
+                    lessons = listOf(
+                        EnemTrailLesson(
+                            id = "enem_m10_a1",
+                            moduleId = "mod_10_sequencias_progressoes",
+                            lessonIndex = 1,
+                            title = "Aula 1: Identificação de padrões lógicos, numéricos e figurativos",
+                            subtopic = "Padrões Lógicos & Sequências",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m10_a2",
+                            moduleId = "mod_10_sequencias_progressoes",
+                            lessonIndex = 2,
+                            title = "Aula 2: Progressão Aritmética (PA): fórmula do termo geral e soma dos termos",
+                            subtopic = "Progressão Aritmética (PA)",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m10_a3",
+                            moduleId = "mod_10_sequencias_progressoes",
+                            lessonIndex = 3,
+                            title = "Aula 3: Progressão Geométrica (PG): fórmula do termo geral e soma dos termos",
+                            subtopic = "Progressão Geométrica (PG)",
+                            xpReward = 30
+                        )
+                    ),
+                    finalSimulado = EnemTrailSimulado(
+                        id = "simulado_mod_10",
+                        moduleId = "mod_10_sequencias_progressoes"
+                    )
+                ),
+
+// ========================================================
+                // MÓDULO 5: Logaritmos
+                // ========================================================
+                EnemTrailModule(
+                    id = "mod_11_logaritmos",
+                    moduleNumber = 5,
+                    title = "Logaritmos",
+                    summary = "Definição, condições de existência, propriedades operatórias (produto, quociente, potência e mudança de base) e equações exponenciais aplicadas.",
+                    lessons = listOf(
+                        EnemTrailLesson(
+                            id = "enem_m11_a1",
+                            moduleId = "mod_11_logaritmos",
+                            lessonIndex = 1,
+                            title = "Aula 1: Definição e condição de existência",
+                            subtopic = "Definição de Logaritmo",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m11_a2",
+                            moduleId = "mod_11_logaritmos",
+                            lessonIndex = 2,
+                            title = "Aula 2: Propriedades operatórias (logaritmo do produto, do quociente, da potência e mudança de base)",
+                            subtopic = "Propriedades dos Logaritmos",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m11_a3",
+                            moduleId = "mod_11_logaritmos",
+                            lessonIndex = 3,
+                            title = "Aula 3: Resolução de equações exponenciais utilizando logaritmos",
+                            subtopic = "Equações Exponenciais & Log",
+                            xpReward = 30
+                        )
+                    ),
+                    finalSimulado = EnemTrailSimulado(
+                        id = "simulado_mod_11",
+                        moduleId = "mod_11_logaritmos"
+                    )
+                ),
+
+// ========================================================
+                // MÓDULO 6: Matemática Financeira
                 // ========================================================
                 EnemTrailModule(
                     id = "mod_02_matematica_financeira",
-                    moduleNumber = 2,
+                    moduleNumber = 6,
                     title = "Matemática Financeira",
                     summary = "Juros simples, juros compostos, tabelas de amortização, financiamentos e tomada de decisões econômicas no ENEM.",
                     lessons = listOf(
@@ -158,12 +358,12 @@ object EnemMathCurriculum {
                     )
                 ),
 
-                // ========================================================
-                // MÓDULO 3: Estatística
+// ========================================================
+                // MÓDULO 7: Estatística
                 // ========================================================
                 EnemTrailModule(
                     id = "mod_03_estatistica",
-                    moduleNumber = 3,
+                    moduleNumber = 7,
                     title = "Estatística",
                     summary = "Interpretação de gráficos, média simples, média ponderada, moda, mediana e medidas de dispersão (variância e desvio padrão).",
                     lessons = listOf(
@@ -222,12 +422,132 @@ object EnemMathCurriculum {
                     )
                 ),
 
+// ========================================================
+                // MÓDULO 8: Análise Combinatória
                 // ========================================================
-                // MÓDULO 4: Geometria Plana
+                EnemTrailModule(
+                    id = "mod_08_analise_combinatoria",
+                    moduleNumber = 8,
+                    title = "Análise Combinatória",
+                    summary = "Princípio Fundamental da Contagem (PFC), fatorial, permutações simples e com repetição, arranjos simples e combinações.",
+                    lessons = listOf(
+                        EnemTrailLesson(
+                            id = "enem_m8_a1",
+                            moduleId = "mod_08_analise_combinatoria",
+                            lessonIndex = 1,
+                            title = "Aula 1: Princípio Fundamental da Contagem (PFC) ou Princípio Multiplicativo",
+                            subtopic = "Princípio Fundamental da Contagem",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m8_a2",
+                            moduleId = "mod_08_analise_combinatoria",
+                            lessonIndex = 2,
+                            title = "Aula 2: Fatorial",
+                            subtopic = "Fatorial & Simplificações",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m8_a3",
+                            moduleId = "mod_08_analise_combinatoria",
+                            lessonIndex = 3,
+                            title = "Aula 3: Permutação simples e permutação com repetição",
+                            subtopic = "Permutações",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m8_a4",
+                            moduleId = "mod_08_analise_combinatoria",
+                            lessonIndex = 4,
+                            title = "Aula 4: Arranjo simples",
+                            subtopic = "Arranjos Simples",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m8_a5",
+                            moduleId = "mod_08_analise_combinatoria",
+                            lessonIndex = 5,
+                            title = "Aula 5: Combinação simples",
+                            subtopic = "Combinações Simples",
+                            xpReward = 30
+                        )
+                    ),
+                    finalSimulado = EnemTrailSimulado(
+                        id = "simulado_mod_08",
+                        moduleId = "mod_08_analise_combinatoria"
+                    )
+                ),
+
+// ========================================================
+                // MÓDULO 9: Probabilidade
+                // ========================================================
+                EnemTrailModule(
+                    id = "mod_09_probabilidade",
+                    moduleNumber = 9,
+                    title = "Probabilidade",
+                    summary = "Espaço amostral, eventos, definição clássica, união de eventos, intersecção de eventos independentes, probabilidade condicional e evento complementar.",
+                    lessons = listOf(
+                        EnemTrailLesson(
+                            id = "enem_m9_a1",
+                            moduleId = "mod_09_probabilidade",
+                            lessonIndex = 1,
+                            title = "Aula 1: Experimento aleatório, espaço amostral e evento",
+                            subtopic = "Espaço Amostral & Eventos",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m9_a2",
+                            moduleId = "mod_09_probabilidade",
+                            lessonIndex = 2,
+                            title = "Aula 2: Definição clássica de probabilidade",
+                            subtopic = "Probabilidade Clássica",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m9_a3",
+                            moduleId = "mod_09_probabilidade",
+                            lessonIndex = 3,
+                            title = "Aula 3: Probabilidade da união de eventos (eventos mutuamente exclusivos)",
+                            subtopic = "União de Eventos",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m9_a4",
+                            moduleId = "mod_09_probabilidade",
+                            lessonIndex = 4,
+                            title = "Aula 4: Probabilidade da intersecção de eventos (eventos independentes)",
+                            subtopic = "Intersecção de Eventos",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m9_a5",
+                            moduleId = "mod_09_probabilidade",
+                            lessonIndex = 5,
+                            title = "Aula 5: Probabilidade condicional",
+                            subtopic = "Probabilidade Condicional",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m9_a6",
+                            moduleId = "mod_09_probabilidade",
+                            lessonIndex = 6,
+                            title = "Aula 6: Probabilidade do evento complementar",
+                            subtopic = "Evento Complementar",
+                            xpReward = 30
+                        )
+                    ),
+                    finalSimulado = EnemTrailSimulado(
+                        id = "simulado_mod_09",
+                        moduleId = "mod_09_probabilidade"
+                    )
+                ),
+
+// ========================================================
+                // MÓDULO 10: Geometria Plana
                 // ========================================================
                 EnemTrailModule(
                     id = "mod_04_geometria_plana",
-                    moduleNumber = 4,
+                    moduleNumber = 10,
                     title = "Geometria Plana",
                     summary = "Pontos, retas, ângulos, polígonos, triângulos, semelhança, Teorema de Tales, Pitágoras, perímetros, áreas e circunferência.",
                     lessons = listOf(
@@ -310,12 +630,68 @@ object EnemMathCurriculum {
                     )
                 ),
 
+// ========================================================
+                // MÓDULO 11: Trigonometria
                 // ========================================================
-                // MÓDULO 5: Geometria Espacial
+                EnemTrailModule(
+                    id = "mod_12_trigonometria",
+                    moduleNumber = 11,
+                    title = "Trigonometria",
+                    summary = "Seno, cosseno e tangente no triângulo retângulo, ângulos notáveis, Lei dos Senos e dos Cossenos, ciclo trigonométrico e funções trigonométricas.",
+                    lessons = listOf(
+                        EnemTrailLesson(
+                            id = "enem_m12_a1",
+                            moduleId = "mod_12_trigonometria",
+                            lessonIndex = 1,
+                            title = "Aula 1: Relações trigonométricas no triângulo retângulo (seno, cosseno e tangente)",
+                            subtopic = "Trigonometria no Triângulo Retângulo",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m12_a2",
+                            moduleId = "mod_12_trigonometria",
+                            lessonIndex = 2,
+                            title = "Aula 2: Ângulos notáveis (30º, 45º e 60º)",
+                            subtopic = "Ângulos Notáveis (30°, 45°, 60°)",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m12_a3",
+                            moduleId = "mod_12_trigonometria",
+                            lessonIndex = 3,
+                            title = "Aula 3: Trigonometria em triângulos quaisquer (Lei dos Senos e Lei dos Cossenos)",
+                            subtopic = "Lei dos Senos & Cossenos",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m12_a4",
+                            moduleId = "mod_12_trigonometria",
+                            lessonIndex = 4,
+                            title = "Aula 4: Ciclo trigonométrico (conversão entre graus e radianos)",
+                            subtopic = "Ciclo Trigonométrico & Radianos",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "enem_m12_a5",
+                            moduleId = "mod_12_trigonometria",
+                            lessonIndex = 5,
+                            title = "Aula 5: Funções trigonométricas (análise de gráficos, período e amplitude de seno e cosseno)",
+                            subtopic = "Funções Periódicas (Seno & Cosseno)",
+                            xpReward = 30
+                        )
+                    ),
+                    finalSimulado = EnemTrailSimulado(
+                        id = "simulado_mod_12",
+                        moduleId = "mod_12_trigonometria"
+                    )
+                ),
+
+// ========================================================
+                // MÓDULO 12: Geometria Espacial
                 // ========================================================
                 EnemTrailModule(
                     id = "mod_05_geometria_espacial",
-                    moduleNumber = 5,
+                    moduleNumber = 12,
                     title = "Geometria Espacial",
                     summary = "Projeções ortogonais, planificação de sólidos, Relação de Euler, prismas, cilindros, pirâmides, cones, esferas e troncos.",
                     lessons = listOf(
@@ -398,383 +774,7 @@ object EnemMathCurriculum {
                     )
                 ),
 
-                // ========================================================
-                // MÓDULO 6: Funções
-                // ========================================================
-                EnemTrailModule(
-                    id = "mod_06_funcoes",
-                    moduleNumber = 6,
-                    title = "Funções",
-                    summary = "Plano cartesiano, domínio, contradomínio, imagem, funções afins, funções quadráticas (máximo e mínimo), exponenciais e logarítmicas.",
-                    lessons = listOf(
-                        EnemTrailLesson(
-                            id = "enem_m6_a1",
-                            moduleId = "mod_06_funcoes",
-                            lessonIndex = 1,
-                            title = "Aula 1: Plano cartesiano e pares ordenados",
-                            subtopic = "Plano Cartesiano",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m6_a2",
-                            moduleId = "mod_06_funcoes",
-                            lessonIndex = 2,
-                            title = "Aula 2: Conceito de função (domínio, contradomínio e imagem)",
-                            subtopic = "Definição de Função",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m6_a3",
-                            moduleId = "mod_06_funcoes",
-                            lessonIndex = 3,
-                            title = "Aula 3: Função afim ou de 1º grau (gráficos, raízes, coeficiente angular e linear, taxa de variação)",
-                            subtopic = "Função Afim (1º Grau)",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m6_a4",
-                            moduleId = "mod_06_funcoes",
-                            lessonIndex = 4,
-                            title = "Aula 4: Função quadrática ou de 2º grau (parábola, raízes por Bhaskara, vértices para pontos de máximo e mínimo)",
-                            subtopic = "Função Quadrática & Vértices",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m6_a5",
-                            moduleId = "mod_06_funcoes",
-                            lessonIndex = 5,
-                            title = "Aula 5: Função exponencial (crescimento e decaimento exponencial)",
-                            subtopic = "Função Exponencial",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m6_a6",
-                            moduleId = "mod_06_funcoes",
-                            lessonIndex = 6,
-                            title = "Aula 6: Função logarítmica (gráficos e comportamento)",
-                            subtopic = "Função Logarítmica",
-                            xpReward = 30
-                        )
-                    ),
-                    finalSimulado = EnemTrailSimulado(
-                        id = "simulado_mod_06",
-                        moduleId = "mod_06_funcoes"
-                    )
-                ),
-
-                // ========================================================
-                // MÓDULO 7: Álgebra e Equações
-                // ========================================================
-                EnemTrailModule(
-                    id = "mod_07_algebra_equacoes",
-                    moduleNumber = 7,
-                    title = "Álgebra e Equações",
-                    summary = "Expressões algébricas, valor numérico, produtos notáveis, fatoração, equações e inequações do 1º e 2º grau e sistemas 2x2.",
-                    lessons = listOf(
-                        EnemTrailLesson(
-                            id = "enem_m7_a1",
-                            moduleId = "mod_07_algebra_equacoes",
-                            lessonIndex = 1,
-                            title = "Aula 1: Expressões algébricas e valor numérico",
-                            subtopic = "Expressões Algébricas",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m7_a2",
-                            moduleId = "mod_07_algebra_equacoes",
-                            lessonIndex = 2,
-                            title = "Aula 2: Produtos notáveis e fatoração algébrica",
-                            subtopic = "Produtos Notáveis & Fatoração",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m7_a3",
-                            moduleId = "mod_07_algebra_equacoes",
-                            lessonIndex = 3,
-                            title = "Aula 3: Equações e inequações do 1º grau",
-                            subtopic = "Equações do 1º Grau",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m7_a4",
-                            moduleId = "mod_07_algebra_equacoes",
-                            lessonIndex = 4,
-                            title = "Aula 4: Equações e inequações do 2º grau",
-                            subtopic = "Equações do 2º Grau",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m7_a5",
-                            moduleId = "mod_07_algebra_equacoes",
-                            lessonIndex = 5,
-                            title = "Aula 5: Sistemas de equações do 1º grau (2x2)",
-                            subtopic = "Sistemas Lineares 2x2",
-                            xpReward = 30
-                        )
-                    ),
-                    finalSimulado = EnemTrailSimulado(
-                        id = "simulado_mod_07",
-                        moduleId = "mod_07_algebra_equacoes"
-                    )
-                ),
-
-                // ========================================================
-                // MÓDULO 8: Análise Combinatória
-                // ========================================================
-                EnemTrailModule(
-                    id = "mod_08_analise_combinatoria",
-                    moduleNumber = 8,
-                    title = "Análise Combinatória",
-                    summary = "Princípio Fundamental da Contagem (PFC), fatorial, permutações simples e com repetição, arranjos simples e combinações.",
-                    lessons = listOf(
-                        EnemTrailLesson(
-                            id = "enem_m8_a1",
-                            moduleId = "mod_08_analise_combinatoria",
-                            lessonIndex = 1,
-                            title = "Aula 1: Princípio Fundamental da Contagem (PFC) ou Princípio Multiplicativo",
-                            subtopic = "Princípio Fundamental da Contagem",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m8_a2",
-                            moduleId = "mod_08_analise_combinatoria",
-                            lessonIndex = 2,
-                            title = "Aula 2: Fatorial",
-                            subtopic = "Fatorial & Simplificações",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m8_a3",
-                            moduleId = "mod_08_analise_combinatoria",
-                            lessonIndex = 3,
-                            title = "Aula 3: Permutação simples e permutação com repetição",
-                            subtopic = "Permutações",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m8_a4",
-                            moduleId = "mod_08_analise_combinatoria",
-                            lessonIndex = 4,
-                            title = "Aula 4: Arranjo simples",
-                            subtopic = "Arranjos Simples",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m8_a5",
-                            moduleId = "mod_08_analise_combinatoria",
-                            lessonIndex = 5,
-                            title = "Aula 5: Combinação simples",
-                            subtopic = "Combinações Simples",
-                            xpReward = 30
-                        )
-                    ),
-                    finalSimulado = EnemTrailSimulado(
-                        id = "simulado_mod_08",
-                        moduleId = "mod_08_analise_combinatoria"
-                    )
-                ),
-
-                // ========================================================
-                // MÓDULO 9: Probabilidade
-                // ========================================================
-                EnemTrailModule(
-                    id = "mod_09_probabilidade",
-                    moduleNumber = 9,
-                    title = "Probabilidade",
-                    summary = "Espaço amostral, eventos, definição clássica, união de eventos, intersecção de eventos independentes, probabilidade condicional e evento complementar.",
-                    lessons = listOf(
-                        EnemTrailLesson(
-                            id = "enem_m9_a1",
-                            moduleId = "mod_09_probabilidade",
-                            lessonIndex = 1,
-                            title = "Aula 1: Experimento aleatório, espaço amostral e evento",
-                            subtopic = "Espaço Amostral & Eventos",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m9_a2",
-                            moduleId = "mod_09_probabilidade",
-                            lessonIndex = 2,
-                            title = "Aula 2: Definição clássica de probabilidade",
-                            subtopic = "Probabilidade Clássica",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m9_a3",
-                            moduleId = "mod_09_probabilidade",
-                            lessonIndex = 3,
-                            title = "Aula 3: Probabilidade da união de eventos (eventos mutuamente exclusivos)",
-                            subtopic = "União de Eventos",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m9_a4",
-                            moduleId = "mod_09_probabilidade",
-                            lessonIndex = 4,
-                            title = "Aula 4: Probabilidade da intersecção de eventos (eventos independentes)",
-                            subtopic = "Intersecção de Eventos",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m9_a5",
-                            moduleId = "mod_09_probabilidade",
-                            lessonIndex = 5,
-                            title = "Aula 5: Probabilidade condicional",
-                            subtopic = "Probabilidade Condicional",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m9_a6",
-                            moduleId = "mod_09_probabilidade",
-                            lessonIndex = 6,
-                            title = "Aula 6: Probabilidade do evento complementar",
-                            subtopic = "Evento Complementar",
-                            xpReward = 30
-                        )
-                    ),
-                    finalSimulado = EnemTrailSimulado(
-                        id = "simulado_mod_09",
-                        moduleId = "mod_09_probabilidade"
-                    )
-                ),
-
-                // ========================================================
-                // MÓDULO 10: Sequências e Progressões
-                // ========================================================
-                EnemTrailModule(
-                    id = "mod_10_sequencias_progressoes",
-                    moduleNumber = 10,
-                    title = "Sequências e Progressões",
-                    summary = "Padrões lógicos e numéricos, Progressão Aritmética (PA) com termo geral e soma, e Progressão Geométrica (PG) com termo geral e soma.",
-                    lessons = listOf(
-                        EnemTrailLesson(
-                            id = "enem_m10_a1",
-                            moduleId = "mod_10_sequencias_progressoes",
-                            lessonIndex = 1,
-                            title = "Aula 1: Identificação de padrões lógicos, numéricos e figurativos",
-                            subtopic = "Padrões Lógicos & Sequências",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m10_a2",
-                            moduleId = "mod_10_sequencias_progressoes",
-                            lessonIndex = 2,
-                            title = "Aula 2: Progressão Aritmética (PA): fórmula do termo geral e soma dos termos",
-                            subtopic = "Progressão Aritmética (PA)",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m10_a3",
-                            moduleId = "mod_10_sequencias_progressoes",
-                            lessonIndex = 3,
-                            title = "Aula 3: Progressão Geométrica (PG): fórmula do termo geral e soma dos termos",
-                            subtopic = "Progressão Geométrica (PG)",
-                            xpReward = 30
-                        )
-                    ),
-                    finalSimulado = EnemTrailSimulado(
-                        id = "simulado_mod_10",
-                        moduleId = "mod_10_sequencias_progressoes"
-                    )
-                ),
-
-                // ========================================================
-                // MÓDULO 11: Logaritmos
-                // ========================================================
-                EnemTrailModule(
-                    id = "mod_11_logaritmos",
-                    moduleNumber = 11,
-                    title = "Logaritmos",
-                    summary = "Definição, condições de existência, propriedades operatórias (produto, quociente, potência e mudança de base) e equações exponenciais aplicadas.",
-                    lessons = listOf(
-                        EnemTrailLesson(
-                            id = "enem_m11_a1",
-                            moduleId = "mod_11_logaritmos",
-                            lessonIndex = 1,
-                            title = "Aula 1: Definição e condição de existência",
-                            subtopic = "Definição de Logaritmo",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m11_a2",
-                            moduleId = "mod_11_logaritmos",
-                            lessonIndex = 2,
-                            title = "Aula 2: Propriedades operatórias (logaritmo do produto, do quociente, da potência e mudança de base)",
-                            subtopic = "Propriedades dos Logaritmos",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m11_a3",
-                            moduleId = "mod_11_logaritmos",
-                            lessonIndex = 3,
-                            title = "Aula 3: Resolução de equações exponenciais utilizando logaritmos",
-                            subtopic = "Equações Exponenciais & Log",
-                            xpReward = 30
-                        )
-                    ),
-                    finalSimulado = EnemTrailSimulado(
-                        id = "simulado_mod_11",
-                        moduleId = "mod_11_logaritmos"
-                    )
-                ),
-
-                // ========================================================
-                // MÓDULO 12: Trigonometria
-                // ========================================================
-                EnemTrailModule(
-                    id = "mod_12_trigonometria",
-                    moduleNumber = 12,
-                    title = "Trigonometria",
-                    summary = "Seno, cosseno e tangente no triângulo retângulo, ângulos notáveis, Lei dos Senos e dos Cossenos, ciclo trigonométrico e funções trigonométricas.",
-                    lessons = listOf(
-                        EnemTrailLesson(
-                            id = "enem_m12_a1",
-                            moduleId = "mod_12_trigonometria",
-                            lessonIndex = 1,
-                            title = "Aula 1: Relações trigonométricas no triângulo retângulo (seno, cosseno e tangente)",
-                            subtopic = "Trigonometria no Triângulo Retângulo",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m12_a2",
-                            moduleId = "mod_12_trigonometria",
-                            lessonIndex = 2,
-                            title = "Aula 2: Ângulos notáveis (30º, 45º e 60º)",
-                            subtopic = "Ângulos Notáveis (30°, 45°, 60°)",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m12_a3",
-                            moduleId = "mod_12_trigonometria",
-                            lessonIndex = 3,
-                            title = "Aula 3: Trigonometria em triângulos quaisquer (Lei dos Senos e Lei dos Cossenos)",
-                            subtopic = "Lei dos Senos & Cossenos",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m12_a4",
-                            moduleId = "mod_12_trigonometria",
-                            lessonIndex = 4,
-                            title = "Aula 4: Ciclo trigonométrico (conversão entre graus e radianos)",
-                            subtopic = "Ciclo Trigonométrico & Radianos",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "enem_m12_a5",
-                            moduleId = "mod_12_trigonometria",
-                            lessonIndex = 5,
-                            title = "Aula 5: Funções trigonométricas (análise de gráficos, período e amplitude de seno e cosseno)",
-                            subtopic = "Funções Periódicas (Seno & Cosseno)",
-                            xpReward = 30
-                        )
-                    ),
-                    finalSimulado = EnemTrailSimulado(
-                        id = "simulado_mod_12",
-                        moduleId = "mod_12_trigonometria"
-                    )
-                ),
-
-                // ========================================================
+// ========================================================
                 // MÓDULO 13: Geometria Analítica
                 // ========================================================
                 EnemTrailModule(
@@ -838,7 +838,7 @@ object EnemMathCurriculum {
                     )
                 ),
 
-                // ========================================================
+// ========================================================
                 // MÓDULO 14: Matrizes e Sistemas Lineares
                 // ========================================================
                 EnemTrailModule(
@@ -877,6 +877,7 @@ object EnemMathCurriculum {
                         moduleId = "mod_14_matrizes_sistemas"
                     )
                 )
+
             )
         )
     }

@@ -28,6 +28,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.automirrored.filled.HelpOutline
 import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.CheckCircle
@@ -65,6 +66,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.material.icons.filled.CloudQueue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontFamily
@@ -125,6 +128,7 @@ fun EssayLabScreen(
     var correctionResult by remember { mutableStateOf<EssayCorrectionResult?>(null) }
     var showApiKeyDialog by remember { mutableStateOf(false) }
 
+    val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
     val scrollState = rememberScrollState()
 
@@ -265,7 +269,7 @@ fun EssayLabScreen(
                             color = TextPrimary
                         )
                         Text(
-                            text = "Escreva sua dissertação respeitando a estrutura de até 30 linhas e envie para análise das 5 competências do INEP.",
+                            text = "Escreva sua dissertação em até 30 linhas. A avaliação requer conexão com a internet para análise semântica e argumentativa em nuvem pelo Agente Oficial do ENEM (sem diagnósticos heurísticos offline).",
                             style = MaterialTheme.typography.bodySmall,
                             color = TextSecondary,
                             lineHeight = 16.sp
@@ -505,15 +509,21 @@ fun EssayLabScreen(
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Botão Principal: "Corrigir Redação"
+            // Ação de Avaliação: Correção Online via Agente Oficial ENEM
             Button(
                 onClick = {
                     if (topic.isBlank()) {
                         errorMessage = "Por favor, especifique o tema da redação."
                         return@Button
                     }
-                    if (essayText.isBlank() || essayText.length < 50) {
-                        errorMessage = "A redação precisa conter texto suficiente para análise pedagógica (mínimo de 7 linhas/50 caracteres)."
+                    if (essayText.isBlank() || wordCount < 5) {
+                        errorMessage = "Por favor, insira o texto da redação para iniciar a avaliação pedagógica."
+                        return@Button
+                    }
+
+                    // Validação estrita de conexão com a internet
+                    if (!EnemEssayService.isNetworkAvailable(context)) {
+                        errorMessage = "Sem conexão com a internet. A avaliação oficial da redação pelo Agente ENEM requer acesso à rede (Wi-Fi ou dados móveis) para a análise semântica das 5 competências. Conecte-se e tente novamente."
                         return@Button
                     }
 
@@ -523,15 +533,16 @@ fun EssayLabScreen(
                     coroutineScope.launch {
                         val result = EnemEssayService.correctEssay(
                             topic = topic,
-                            essayText = essayText
+                            essayText = essayText,
+                            allowOfflineFallback = false,
+                            context = context
                         )
                         isLoading = false
                         result.onSuccess { corrected ->
                             correctionResult = corrected
-                            // Premia o estudante com XP por treinar redação
                             progressRepository?.addBonusXp(50)
                         }.onFailure { ex ->
-                            errorMessage = ex.message ?: "Ocorreu um erro ao comunicar com a IA."
+                            errorMessage = ex.message ?: "Ocorreu um erro ao comunicar com o Agente ENEM. Verifique sua conexão à internet."
                         }
                     }
                 },
@@ -552,10 +563,10 @@ fun EssayLabScreen(
                         strokeWidth = 2.dp,
                         color = TextPrimary
                     )
-                    Spacer(modifier = Modifier.width(10.dp))
+                    Spacer(modifier = Modifier.width(8.dp))
                     Text(
-                        text = "Avaliando pela Matriz do INEP...",
-                        style = MaterialTheme.typography.bodyMedium,
+                        text = "Consultando Agente Corretor...",
+                        style = MaterialTheme.typography.bodySmall,
                         fontWeight = FontWeight.Bold,
                         color = TextPrimary
                     )
@@ -566,10 +577,10 @@ fun EssayLabScreen(
                         tint = TextPrimary,
                         modifier = Modifier.size(18.dp)
                     )
-                    Spacer(modifier = Modifier.width(8.dp))
+                    Spacer(modifier = Modifier.width(6.dp))
                     Text(
-                        text = "Corrigir Redação",
-                        style = MaterialTheme.typography.bodyMedium,
+                        text = "Avaliar Redação com Agente ENEM (Online)",
+                        style = MaterialTheme.typography.bodySmall,
                         fontWeight = FontWeight.Bold,
                         color = TextPrimary
                     )
@@ -621,9 +632,9 @@ fun EssayLabScreen(
                         ) {
                             Column {
                                 Text(
-                                    text = "NOTA ESTIMADA",
+                                    text = if (res.isPreliminaryDiagnosis) "DIAGNÓSTICO PRELIMINAR (OFFLINE)" else "AVALIAÇÃO OFICIAL VIA AGENTE ENEM (ONLINE)",
                                     style = MaterialTheme.typography.labelSmall,
-                                    color = PrimaryVioletLight,
+                                    color = if (res.isPreliminaryDiagnosis) WarningAmber else PrimaryVioletLight,
                                     fontWeight = FontWeight.Bold,
                                     letterSpacing = 1.sp
                                 )
@@ -683,6 +694,41 @@ fun EssayLabScreen(
                             }
                         }
 
+                        if (res.isPreliminaryDiagnosis) {
+                            Spacer(modifier = Modifier.height(10.dp))
+                            Surface(
+                                color = WarningAmber.copy(alpha = 0.12f),
+                                shape = RoundedCornerShape(8.dp),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .border(1.dp, WarningAmber.copy(alpha = 0.4f), RoundedCornerShape(8.dp))
+                            ) {
+                                Row(
+                                    modifier = Modifier.padding(10.dp),
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Info,
+                                        contentDescription = null,
+                                        tint = WarningAmber,
+                                        modifier = Modifier.size(18.dp)
+                                    )
+                                    Text(
+                                        text = if (res.isInsufficientLength) {
+                                            "Texto com extensão insuficiente: de acordo com o edital do ENEM (INEP), redações com até 7 linhas manuscritas recebem nota ZERO."
+                                        } else {
+                                            "Diagnóstico estrutural preliminar: Avaliação formal baseada em extensão, parágrafos e conectivos. Não substitui a correção semântica oficial do ENEM."
+                                        },
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = TextPrimary,
+                                        fontSize = 12.sp,
+                                        lineHeight = 16.sp
+                                    )
+                                }
+                            }
+                        }
+
                         HorizontalDivider(
                             modifier = Modifier.padding(vertical = 12.dp),
                             color = BorderSubtle
@@ -726,6 +772,16 @@ fun EssayLabScreen(
                                             color = TextTertiary,
                                             fontSize = 11.sp
                                         )
+                                        if (comp.feedback.isNotBlank() && !comp.feedback.startsWith("Avaliação semântica realizada")) {
+                                            Spacer(modifier = Modifier.height(4.dp))
+                                            Text(
+                                                text = comp.feedback,
+                                                style = MaterialTheme.typography.bodySmall,
+                                                color = PrimaryVioletLight,
+                                                fontSize = 12.sp,
+                                                lineHeight = 16.sp
+                                            )
+                                        }
                                     }
 
                                     Surface(
@@ -806,7 +862,11 @@ fun EssayLabScreen(
                         modifier = Modifier.size(18.dp)
                     )
                     Text(
-                        text = "Atenção: A nota gerada é uma estimativa pedagógica por Inteligência Artificial para fins de treino.",
+                        text = if (correctionResult?.isPreliminaryDiagnosis == true) {
+                            "Atenção: Diagnóstico preliminar estrutural offline. Não possui a precisão semântica de uma correção oficial do INEP ou de avaliadores humanos."
+                        } else {
+                            "Atenção: A avaliação foi processada pelo Agente Oficial do ENEM conectado à internet, seguindo rigorosamente a matriz pedagógica do INEP."
+                        },
                         style = MaterialTheme.typography.bodySmall,
                         color = TextSecondary,
                         fontSize = 12.sp,

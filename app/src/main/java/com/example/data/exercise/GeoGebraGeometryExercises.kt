@@ -21,7 +21,7 @@ object GeoGebraGeometryExercises {
             category = "Matemática Básica",
             subtopic = "Geometria Analítica & Gráficos",
             difficulty = "Mediano",
-            source = "ENEM / Cinemática & Geometria Analítica",
+            source = "Autoral (Estilo ENEM) / Cinemática & Geometria Analítica",
             problemStatement = """O lançamento oblíquo de um projétil é modelado no plano cartesiano pela parábola f(x) = -0,5x² + 3x, onde x é a distância horizontal percorrida (em metros) e f(x) é a altitude correspondente (em metros). Observe a representação gráfica no GeoGebra acima e determine a altitude máxima atingida pelo projétil e a distância horizontal total do alcance.""",
             geoGebraConfig = GeoGebraGraphConfig(
                 title = "Trajetória Parabólica do Projétil: f(x) = -0.5x² + 3x",
@@ -78,7 +78,7 @@ object GeoGebraGeometryExercises {
             category = "Matemática Básica",
             subtopic = "Geometria: Áreas e Volumes",
             difficulty = "Fácil",
-            source = "ENEM / Geometria Cartesiana",
+            source = "Autoral (Estilo ENEM) / Geometria Cartesiana",
             problemStatement = """Um terreno triangular no plano cartesiano tem seus vértices localizados nos pontos A(1, 1), B(7, 1) e C(4, 5), onde cada unidade de coordenada representa 10 metros na realidade. Utilizando o gráfico interativo do GeoGebra, calcule a área real desse terreno em metros quadrados.""",
             geoGebraConfig = GeoGebraGraphConfig(
                 title = "Triângulo Cartesiano com Vértices A(1,1), B(7,1) e C(4,5)",
@@ -191,7 +191,7 @@ object GeoGebraGeometryExercises {
             category = "Matemática Básica",
             subtopic = "Geometria e Volumes",
             difficulty = "Mediano",
-            source = "ENEM / Geometria Plana",
+            source = "Autoral (Estilo ENEM) / Geometria Plana",
             problemStatement = """Um arquiteto projetou uma claraboia com o formato de um trapézio isósceles posicionado no plano cartesiano com os vértices A(0, 0), B(8, 0), C(6, 4) e D(2, 4). Com base no gráfico do GeoGebra acima, calcule o perímetro total e a área dessa claraboia (adote √20 ≈ 4,47).""",
             geoGebraConfig = GeoGebraGraphConfig(
                 title = "Claraboia Trapezoidal Isósceles: Vértices (0,0), (8,0), (6,4), (2,4)",
@@ -312,7 +312,7 @@ object GeoGebraGeometryExercises {
             category = "Cálculo I",
             subtopic = "Domínio & Gráficos",
             difficulty = "Fácil",
-            source = "ENEM / Ondulatória & Funções Trigonométricas",
+            source = "Autoral (Estilo ENEM) / Ondulatória & Funções Trigonométricas",
             problemStatement = """Uma onda mecânica em propagação é modelada pela função f(x) = 3 sen(2x). Com base no gráfico trigonométrico interativo fornecido no GeoGebra, determine a amplitude da onda, seu período T e o valor máximo atingido pela função.""",
             geoGebraConfig = GeoGebraGraphConfig(
                 title = "Onda Harmônica f(x) = 3 sen(2x)",
@@ -430,7 +430,7 @@ object GeoGebraGeometryExercises {
             category = "Matemática Básica",
             subtopic = "Geometria e Volumes",
             difficulty = "Difícil",
-            source = "ENEM / Cônicas & Geometria Analítica",
+            source = "Autoral (Estilo ENEM) / Cônicas & Geometria Analítica",
             problemStatement = """Uma praça tem o formato elíptico modelado pela equação cartesiana x²/25 + y²/9 = 1, com medidas em dezenas de metros. Com o auxílio da visualização geométrica do GeoGebra, determine os comprimentos dos semieixos maior (a) e menor (b), e a distância focal 2c entre os dois focos dessa elipse.""",
             geoGebraConfig = GeoGebraGraphConfig(
                 title = "Elipse Canônica x²/25 + y²/9 = 1 e Focos F₁(-4, 0) e F₂(4, 0)",
@@ -545,7 +545,7 @@ object GeoGebraGeometryExercises {
             category = "Matemática Básica",
             subtopic = "Geometria Analítica & Gráficos",
             difficulty = "Mediano",
-            source = "ENEM / Geometria Cartesiana & Otimização",
+            source = "Autoral (Estilo ENEM) / Geometria Cartesiana & Otimização",
             problemStatement = """Um duto de gás subterrâneo segue a reta de equação 3x + 4y - 12 = 0. Uma estação de controle deve ser instalada no ponto P(6, 6). Utilizando o gráfico analítico do GeoGebra, calcule a distância perpendicular mínima que ligará a estação diretamente ao duto.""",
             geoGebraConfig = GeoGebraGraphConfig(
                 title = "Distância Mínima do Ponto P(6, 6) à Reta 3x + 4y - 12 = 0",
@@ -664,7 +664,7 @@ object GeoGebraGeometryExercises {
             category = "Matemática Básica",
             subtopic = "Geometria Analítica & Gráficos",
             difficulty = "Mediano",
-            source = "ENEM / Cônicas & Órbitas",
+            source = "Autoral (Estilo ENEM) / Cônicas & Órbitas",
             problemStatement = """A órbita plana de um satélite de pesquisa é modelada pela equação da elipse x²/25 + y²/9 = 1, com medidas em milhares de quilômetros. Utilizando as ferramentas visuais do GeoGebra, determine a distância focal total (distância entre os dois focos F₁ e F₂) e a excentricidade e dessa órbita elíptica.""",
             geoGebraConfig = GeoGebraGraphConfig(
                 title = "Elipse Centrada na Origem: x²/25 + y²/9 = 1",
@@ -786,7 +786,7 @@ object GeoGebraGeometryExercises {
             category = "Matemática Básica",
             subtopic = "Geometria Analítica & Gráficos",
             difficulty = "Fácil",
-            source = "ENEM / Fenômenos Periódicos",
+            source = "Autoral (Estilo ENEM) / Fenômenos Periódicos",
             problemStatement = """Um oscilador harmônico gera uma onda senoidal representada no plano cartesiano por f(x) = 2 sen(2x), onde x é o tempo em segundos e f(x) é o deslocamento em centímetros. Analise a forma de onda traçada no GeoGebra e indique corretamente a amplitude A e o período T dessa oscilação.""",
             geoGebraConfig = GeoGebraGraphConfig(
                 title = "Onda Harmônica Periódica: f(x) = 2 sen(2x)",
@@ -847,7 +847,7 @@ object GeoGebraGeometryExercises {
             category = "Cálculo I",
             subtopic = "Geometria com GeoGebra",
             difficulty = "Difícil",
-            source = "ENEM / Assíntotas e Comportamento Assintótico",
+            source = "Autoral (Estilo ENEM) / Assíntotas e Comportamento Assintótico",
             problemStatement = """Observe o gráfico da função racional f(x) = (2x + 1) / (x - 1) no GeoGebra. O gráfico descreve uma hipérbole transladada com duas assíntotas retilíneas: uma vertical e uma horizontal. Determine as equações dessas duas assíntotas calculando os limites pertinentes.""",
             geoGebraConfig = GeoGebraGraphConfig(
                 title = "Hipérbole Transladada: f(x) = (2x + 1)/(x - 1)",
@@ -904,7 +904,7 @@ object GeoGebraGeometryExercises {
             category = "Cálculo I",
             subtopic = "Geometria com GeoGebra",
             difficulty = "Mediano",
-            source = "ENEM / Problemas de Otimização Clássica",
+            source = "Autoral (Estilo ENEM) / Problemas de Otimização Clássica",
             problemStatement = """Um fazendeiro possui 80 metros de cerca linear para construir um cercado retangular de plantio aproveitando o plano do terreno. Se x e y são as dimensões dos lados (perímetro 2x + 2y = 80), a área é A(x) = x(40 - x) = 40x - x². Observe a parábola de área no GeoGebra e determine as dimensões x e y que maximizam a área e o valor dessa área máxima.""",
             geoGebraConfig = GeoGebraGraphConfig(
                 title = "Otimização de Área: A(x) = 40x - x² (Perímetro = 80m)",
@@ -1022,7 +1022,7 @@ object GeoGebraGeometryExercises {
             category = "Matemática Básica",
             subtopic = "Geometria Analítica & Gráficos",
             difficulty = "Fácil",
-            source = "ENEM / Economia e Sistemas Lineares",
+            source = "Autoral (Estilo ENEM) / Economia e Sistemas Lineares",
             problemStatement = """As curvas de oferta e demanda de um insumo tecnológico no mercado são dadas pelas retas: Demanda D(x): y = -2x + 20 e Oferta S(x): y = 3x + 5, onde x é a quantidade em milhares de peças e y é o preço unitário em reais. Utilizando o cruzamento gráfico no GeoGebra, determine o ponto de equilíbrio de mercado (quantidade e preço).""",
             geoGebraConfig = GeoGebraGraphConfig(
                 title = "Ponto de Equilíbrio: Retas de Oferta e Demanda",
@@ -1079,7 +1079,7 @@ object GeoGebraGeometryExercises {
             category = "Matemática Básica",
             subtopic = "Geometria: Áreas e Volumes",
             difficulty = "Mediano",
-            source = "ENEM / Polígonos Regulares & Pavimentação",
+            source = "Autoral (Estilo ENEM) / Polígonos Regulares & Pavimentação",
             problemStatement = """Um mosaico com formato de hexágono regular centrado na origem do plano cartesiano tem raio da circunferência circunscrita igual a R = 4 metros (logo, cada lado mede L = 4 metros). Utilizando o modelo do GeoGebra, determine o comprimento exato do seu apótema a e a área total desse hexágono regular.""",
             geoGebraConfig = GeoGebraGraphConfig(
                 title = "Hexágono Regular Centrado na Origem (Raio R = 4 m)",

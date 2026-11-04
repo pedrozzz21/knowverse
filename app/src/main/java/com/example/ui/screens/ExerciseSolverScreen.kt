@@ -363,9 +363,9 @@ fun ExerciseSolverScreen(
             )
             ExerciseDiscipline.ALL -> listOf(
                 "all" to "Todos os Tópicos",
-                "Matemática Básica" to "ENEM: Mat. Básica",
-                "Estatística" to "ENEM: Estatística",
-                "Geometria Plana" to "ENEM: Geometria",
+                "Matemática Básica" to "Contextualizada: Mat. Básica",
+                "Estatística" to "Contextualizada: Estatística",
+                "Geometria Plana" to "Contextualizada: Geometria",
                 "Geometria Analítica & Gráficos" to "GeoGebra & Gráficos",
                 "if e else (Condicionais)" to "Python: if/else",
                 "for & while (Laços)" to "Python: Loops",

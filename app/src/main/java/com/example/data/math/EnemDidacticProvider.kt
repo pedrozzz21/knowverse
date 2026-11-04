@@ -383,7 +383,7 @@ object EnemDidacticProvider {
             "enem_m1_a1" to listOf(
                 MathExercise(
                     id = "ex_m1_a1_1",
-                    title = "ENEM: Economia e Combustível",
+                    title = "Contextualizada: Economia e Combustível",
                     problemStatement = "Um motorista realizou uma viagem de 480 km. O carro tem consumo médio de 12 km por litro de gasolina. Sabendo que o preço do litro de gasolina é R$ 5,60 e que foram pagos R$ 34,00 em pedágios, qual foi o custo total com combustível e pedágios nessa viagem?",
                     options = listOf("R$ 224,00", "R$ 258,00", "R$ 268,00", "R$ 280,00", "R$ 310,00"),
                     correctIndex = 1,
@@ -404,7 +404,7 @@ object EnemDidacticProvider {
             "enem_m1_a2" to listOf(
                 MathExercise(
                     id = "ex_m1_a2_1",
-                    title = "ENEM: Soma de Frações e Volume",
+                    title = "Contextualizada: Soma de Frações e Volume",
                     problemStatement = "Uma cozinheira utilizou 3/4 de xícara de açúcar para uma massa e 2/5 de xícara para o recheio. Qual foi o total de açúcar utilizado em número decimal?",
                     options = listOf("1,05 xícaras", "1,15 xícaras", "1,20 xícaras", "1,25 xícaras", "1,35 xícaras"),
                     correctIndex = 1,
@@ -416,7 +416,7 @@ object EnemDidacticProvider {
             "enem_m1_a3" to listOf(
                 MathExercise(
                     id = "ex_m1_a3_1",
-                    title = "ENEM: Plantão Médico e MMC",
+                    title = "Contextualizada: Plantão Médico e MMC",
                     problemStatement = "Dois médicos dão plantão em um hospital de emergência. O médico A dá plantão a cada 6 dias e o médico B a cada 8 dias. Se ambos deram plantão juntos no dia 1º de março, quantos dias depois voltarão a dar plantão juntos?",
                     options = listOf("12 dias", "16 dias", "24 dias", "36 dias", "48 dias"),
                     correctIndex = 2,
@@ -428,7 +428,7 @@ object EnemDidacticProvider {
             "enem_m1_a4" to listOf(
                 MathExercise(
                     id = "ex_m1_a4_1",
-                    title = "ENEM: Escala Cartográfica",
+                    title = "Contextualizada: Escala Cartográfica",
                     problemStatement = "Em uma planta arquitetônica desenhada na escala 1:50, a sala de um apartamento possui 8 cm de comprimento por 6 cm de largura. As dimensões reais dessa sala são:",
                     options = listOf("4 m x 3 m", "4,5 m x 3,5 m", "5 m x 4 m", "8 m x 6 m", "40 m x 30 m"),
                     correctIndex = 0,
@@ -440,7 +440,7 @@ object EnemDidacticProvider {
             "enem_m1_a5" to listOf(
                 MathExercise(
                     id = "ex_m1_a5_1",
-                    title = "ENEM: Equipe de Operários (Regra de Três Inversa)",
+                    title = "Contextualizada: Equipe de Operários (Regra de Três Inversa)",
                     problemStatement = "Uma obra é realizada por 6 operários em 20 dias de trabalho contínuo. Se a equipe for reforçada, passando a contar com 8 operários com a mesma produtividade, em quantos dias a mesma obra será concluída?",
                     options = listOf("12 dias", "14 dias", "15 dias", "16 dias", "18 dias"),
                     correctIndex = 2,
@@ -452,7 +452,7 @@ object EnemDidacticProvider {
             "enem_m1_a6" to listOf(
                 MathExercise(
                     id = "ex_m1_a6_1",
-                    title = "ENEM: Aumento Sucessivo",
+                    title = "Contextualizada: Aumento Sucessivo",
                     problemStatement = "Uma mercadoria teve seu preço reajustado em 10% no mês de janeiro e, sobre o novo preço, recebeu outro aumento de 20% em fevereiro. O aumento percentual acumulado em relação ao preço inicial foi de:",
                     options = listOf("30%", "31%", "32%", "33%", "34%"),
                     correctIndex = 2,
@@ -464,7 +464,7 @@ object EnemDidacticProvider {
             "enem_m2_a1" to listOf(
                 MathExercise(
                     id = "ex_m2_a1_1",
-                    title = "ENEM: Juros Simples e Renda",
+                    title = "Contextualizada: Juros Simples e Renda",
                     problemStatement = "Um investidor aplicou R$ 4.000,00 a uma taxa de juros simples de 1,5% ao mês durante 8 meses. Qual é o valor dos juros e o montante final resgatado?",
                     options = listOf("J = R$ 480,00 e M = R$ 4.480,00", "J = R$ 520,00 e M = R$ 4.520,00", "J = R$ 600,00 e M = R$ 4.600,00", "J = R$ 640,00 e M = R$ 4.640,00", "J = R$ 720,00 e M = R$ 4.720,00"),
                     correctIndex = 0,
@@ -476,7 +476,7 @@ object EnemDidacticProvider {
             "enem_m2_a2" to listOf(
                 MathExercise(
                     id = "ex_m2_a2_1",
-                    title = "ENEM: Montante Composto",
+                    title = "Contextualizada: Montante Composto",
                     problemStatement = "Um capital de R$ 2.000,00 foi aplicado a juros compostos com taxa de 10% ao ano durante 2 anos. O montante ao final da aplicação foi de:",
                     options = listOf("R$ 2.200,00", "R$ 2.400,00", "R$ 2.420,00", "R$ 2.440,00", "R$ 2.500,00"),
                     correctIndex = 2,

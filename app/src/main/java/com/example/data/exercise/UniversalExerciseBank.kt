@@ -54,7 +54,7 @@ object UniversalExerciseBank {
             category = "Matemática Básica",
             subtopic = "Frações e Decimais",
             difficulty = "Fácil",
-            source = "ENEM / Guia de Estudos",
+            source = "Autoral (Estilo ENEM) / Guia de Estudos",
             problemStatement = """Um recipiente continha 2,75 litros de água. Inicialmente, foram retirados 3/4 de litro dessa água e, em seguida, adicionou-se 1,2 litro ao volume restante. Qual é o volume final de água no recipiente?""",
             options = listOf(
                 "2,30 litros",
@@ -80,7 +80,7 @@ object UniversalExerciseBank {
             category = "Matemática Básica",
             subtopic = "MMC e MDC",
             difficulty = "Mediano",
-            source = "ENEM / Ciclos & Sincronicidade",
+            source = "Autoral (Estilo ENEM) / Ciclos & Sincronicidade",
             problemStatement = """Dois corredores, A e B, treinam em uma pista circular. O corredor A completa uma volta em 12 minutos, enquanto o corredor B completa em 18 minutos. Se ambos partirem juntos do mesmo ponto às 08h00, a que horas eles se encontrarão novamente no ponto de partida?""",
             visualTable = VisualTable(
                 title = "Decomposição Simultânea em Fatores Primos",
@@ -116,7 +116,7 @@ object UniversalExerciseBank {
             category = "Matemática Básica",
             subtopic = "MMC e MDC",
             difficulty = "Mediano",
-            source = "ENEM / Divisão Máxima",
+            source = "Autoral (Estilo ENEM) / Divisão Máxima",
             problemStatement = """Um comerciante possui três rolos de fita com comprimentos de 120 cm, 180 cm e 240 cm. Ele deseja cortar todas as fitas em pedaços iguais, de modo que não haja sobra e que o tamanho de cada pedaço seja o maior possível. Qual deve ser o comprimento de cada pedaço e quantos pedaços serão obtidos no total?""",
             options = listOf(
                 "Comprimento de 30 cm e 18 pedaços",
@@ -144,7 +144,7 @@ object UniversalExerciseBank {
             category = "Matemática Básica",
             subtopic = "Potenciação e Radiciação",
             difficulty = "Mediano",
-            source = "ENEM / Propriedades de Potências",
+            source = "Autoral (Estilo ENEM) / Propriedades de Potências",
             problemStatement = """Simplifique a expressão numérica E = (2⁵ × 8⁻²) / 4⁻³ e apresente o resultado sob a forma de uma única potência de base 2.""",
             options = listOf(
                 "2³ (ou 8)",
@@ -172,7 +172,7 @@ object UniversalExerciseBank {
             category = "Matemática Básica",
             subtopic = "Notação Científica & Ordem de Grandeza",
             difficulty = "Fácil",
-            source = "ENEM / Ciências da Natureza e Matemática",
+            source = "Autoral (Estilo ENEM) / Ciências da Natureza e Matemática",
             problemStatement = """A distância média entre a Terra e o Sol é de aproximadamente 149.600.000 km, e o diâmetro de um átomo de hidrogênio é cerca de 0,000000000106 m. Escreva ambos os valores em notação científica e determine a ordem de grandeza do diâmetro do átomo.""",
             options = listOf(
                 "1,496 × 10⁸ km e 1,06 × 10⁻¹⁰ m; Ordem de grandeza: 10⁻¹⁰ m",
@@ -199,7 +199,7 @@ object UniversalExerciseBank {
             category = "Matemática Básica",
             subtopic = "Conversão de Unidades",
             difficulty = "Fácil",
-            source = "ENEM / Grandezas e Medidas",
+            source = "Autoral (Estilo ENEM) / Grandezas e Medidas",
             problemStatement = """Uma caixa-d'água possui formato cúbico com capacidade total de 15.000 litros. Calcule o volume desta caixa em metros cúbicos (m³) e determine a velocidade média equivalente em m/s de um vazamento no cano principal que foi registrado a 18 km/h.""",
             options = listOf(
                 "Volume = 15 m³; Velocidade = 5 m/s",
@@ -226,7 +226,7 @@ object UniversalExerciseBank {
             category = "Matemática Básica",
             subtopic = "Razão e Proporção",
             difficulty = "Mediano",
-            source = "ENEM / Divisão Proporcional",
+            source = "Autoral (Estilo ENEM) / Divisão Proporcional",
             problemStatement = """Dois sócios, Carlos e Eduardo, investiram respectivamente R$ 20.000,00 e R$ 30.000,00 para fundar uma empresa. Após um ano, a empresa obteve um lucro líquido de R$ 50.000,00, que será dividido de forma diretamente proporcional ao valor investido por cada um. Qual a quantia exata do lucro que cabe a cada sócio?""",
             options = listOf(
                 "Carlos: R$ 25.000,00 | Eduardo: R$ 25.000,00",
@@ -253,7 +253,7 @@ object UniversalExerciseBank {
             category = "Matemática Básica",
             subtopic = "Regra de Três (Simples e Composta)",
             difficulty = "Fácil",
-            source = "ENEM / Proporcionalidade Inversa",
+            source = "Autoral (Estilo ENEM) / Proporcionalidade Inversa",
             problemStatement = """Um veículo, mantendo uma velocidade constante de 80 km/h, realiza um percurso em 3 horas. Quanto tempo ele levaria para cobrir o mesmo percurso se a sua velocidade fosse de 120 km/h?""",
             options = listOf(
                 "1,5 hora",
@@ -280,7 +280,7 @@ object UniversalExerciseBank {
             category = "Matemática Básica",
             subtopic = "Regra de Três (Simples e Composta)",
             difficulty = "Mediano",
-            source = "ENEM / Regra de Três Composta",
+            source = "Autoral (Estilo ENEM) / Regra de Três Composta",
             problemStatement = """Em uma fábrica, 6 máquinas idênticas produzem 1.200 peças trabalhando durante 8 dias. Quantas peças serão produzidas por 10 máquinas similares operando durante 6 dias?""",
             visualTable = VisualTable(
                 title = "Alinhamento das Grandezas",
@@ -317,7 +317,7 @@ object UniversalExerciseBank {
             category = "Matemática Básica",
             subtopic = "Escalas Cartográficas",
             difficulty = "Fácil",
-            source = "ENEM / Cartografia e Escala",
+            source = "Autoral (Estilo ENEM) / Cartografia e Escala",
             problemStatement = """Em um mapa cartográfico desenhado na escala 1 : 250.000, a distância entre duas cidades é representada por um segmento de reta de 8 cm. Qual é a distância real em quilômetros (km) entre essas duas cidades?""",
             options = listOf(
                 "2 km",
@@ -344,7 +344,7 @@ object UniversalExerciseBank {
             category = "Matemática Básica",
             subtopic = "Porcentagem e Variação",
             difficulty = "Mediano",
-            source = "ENEM / Matemática Financeira",
+            source = "Autoral (Estilo ENEM) / Matemática Financeira",
             problemStatement = """Um produto cujo preço inicial era de R$ 200,00 sofreu um aumento de 10% e, no mês seguinte, recebeu um desconto de 20% sobre o novo preço. Qual é o preço final do produto e a taxa percentual de variação total em relação ao valor original?""",
             options = listOf(
                 "Preço final R$ 180,00 | Desconto total de 10%",
@@ -1236,7 +1236,7 @@ print(f"Área do Quadrado: {q.area()} cm²")""",
             category = "Matemática Básica",
             subtopic = "Porcentagem e Variação",
             difficulty = "Fácil",
-            source = "ENEM / Aumentos Sucessivos Acumulados",
+            source = "Autoral (Estilo ENEM) / Aumentos Sucessivos Acumulados",
             problemStatement = """Um plano de telefonia móvel sofreu um reajuste de 20% no primeiro semestre e, seis meses depois, novo aumento de 30% sobre a fatura já reajustada. Qual foi o percentual total de aumento real acumulado?""",
             options = listOf(
                 "50%",
@@ -1264,7 +1264,7 @@ print(f"Área do Quadrado: {q.area()} cm²")""",
             category = "Matemática Básica",
             subtopic = "Regra de Três (Simples e Composta)",
             difficulty = "Mediano",
-            source = "ENEM / Produção Industrial e Horas de Trabalho",
+            source = "Autoral (Estilo ENEM) / Produção Industrial e Horas de Trabalho",
             problemStatement = """Em uma fábrica automatizada, 5 máquinas idênticas produzem 600 peças de reposição operando durante 4 horas diárias. Se a fábrica colocar 8 dessas máquinas para operar durante 6 horas diárias, quantas peças serão produzidas?""",
             visualTable = VisualTable(
                 title = "Quadro de Grandezas Proporcionais",

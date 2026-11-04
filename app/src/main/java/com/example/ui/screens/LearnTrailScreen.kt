@@ -104,7 +104,7 @@ fun LearnTrailScreen(
     var isPhysicsExpanded by remember { mutableStateOf(false) }
     var expandedPhysicsModuleId by remember { mutableStateOf<String?>("mod_fis_01_mecanica") }
     var isBiologyExpanded by remember { mutableStateOf(false) }
-    var expandedBiologyModuleId by remember { mutableStateOf<String?>("mod_bio_01_ecologia") }
+    var expandedBiologyModuleId by remember { mutableStateOf<String?>("mod_bio_04_citologia") }
 
     val enemModules = remember { EnemMathCurriculum.getAllModules() }
     val physicsModules = remember { com.example.data.physics.EnemPhysicsCurriculum.getAllModules() }

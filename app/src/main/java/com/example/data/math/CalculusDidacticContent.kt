@@ -5,11 +5,14 @@ import com.example.data.model.LessonExample
 
 data class CalculusDidacticBundle(
     val theoryMarkdown: String,
-    val formulas: List<FormulaOrSyntaxItem>,
-    val solvedExamples: List<LessonExample>,
+    val formulas: List<FormulaOrSyntaxItem> = emptyList(),
+    val solvedExamples: List<LessonExample> = emptyList(),
     val imageResId: Int? = null,
-    val goldTip: String,
-    val geoGebraConfig: GeoGebraGraphConfig? = null
+    val goldTip: String = "",
+    val geoGebraConfig: GeoGebraGraphConfig? = null,
+    val formulasAndSyntax: List<FormulaOrSyntaxItem> = emptyList(),
+    val practicalExamples: List<LessonExample> = emptyList(),
+    val interactiveChallenge: String = ""
 )
 
 object CalculusDidacticContent {

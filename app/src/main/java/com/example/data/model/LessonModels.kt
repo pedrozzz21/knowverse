@@ -54,16 +54,22 @@ data class MathExercise(
 }
 
 data class LessonExample(
-    val title: String,
-    val codeOrFormula: String,
-    val explanation: String
+    val title: String = "",
+    val codeOrFormula: String = "",
+    val explanation: String = "",
+    val id: String = "",
+    val problem: String = "",
+    val codeSnippet: String = ""
 )
 
 data class FormulaOrSyntaxItem(
-    val termOrFunction: String,
-    val syntax: String,
-    val description: String,
-    val parametersInfo: String = ""
+    val termOrFunction: String = "",
+    val syntax: String = "",
+    val description: String = "",
+    val parametersInfo: String = "",
+    val name: String = "",
+    val syntaxOrFormula: String = "",
+    val explanation: String = ""
 )
 
 data class Lesson(

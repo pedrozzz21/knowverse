@@ -7,7 +7,13 @@ import com.example.data.model.EnemTrailSimulado
 
 /**
  * Repositório e Taxonomia Oficial da Trilha de Física ENEM para o Knowverse.
- * Totalmente compatível com a arquitetura de trilhas do Android e da versão Web.
+ * Reestruturado pedagogicamente conforme a física clássica e moderna (Halliday / Sears / Tipler / BNCC):
+ * 1. Mecânica (Grandezas, Cinemática, Dinâmica, Trabalho, Energia, Gravitação, Hidrostática)
+ * 2. Termologia e Termodinâmica (Temperatura, Calorimetria, Gases, 1ª e 2ª Leis)
+ * 3. Ondulatória (Ondas, Equação Fundamental, Fenômenos e Acústica)
+ * 4. Óptica (Óptica Geométrica, Espelhos, Refração, Lentes e Visão)
+ * 5. Eletricidade e Magnetismo (Eletrostática, Eletrodinâmica, Circuitos e Eletromagnetismo)
+ * 6. Física Moderna (Fótons, Efeito Fotoelétrico, Radioatividade e Relatividade)
  */
 object EnemPhysicsCurriculum {
 
@@ -15,7 +21,7 @@ object EnemPhysicsCurriculum {
         EnemTrailDiscipline(
             id = "fisica_enem",
             name = "Física ENEM",
-            description = "Trilha completa e sequencial de Física para o ENEM contendo 6 módulos essenciais: Mecânica, Eletricidade e Magnetismo, Termologia, Ondulatória, Óptica e Física Moderna.",
+            description = "Trilha completa e sequencial de Física para o ENEM contendo 6 módulos essenciais: Mecânica, Termologia, Ondulatória, Óptica, Eletricidade e Magnetismo, e Física Moderna.",
             modules = listOf(
                 // ========================================================
                 // MÓDULO 1: Mecânica
@@ -117,11 +123,188 @@ object EnemPhysicsCurriculum {
                 ),
 
                 // ========================================================
-                // MÓDULO 2: Eletricidade e Magnetismo
+                // MÓDULO 2: Termologia (Termodinâmica)
+                // ========================================================
+                EnemTrailModule(
+                    id = "mod_fis_03_termologia",
+                    moduleNumber = 2,
+                    title = "Termologia (Termodinâmica)",
+                    summary = "Termometria, Dilatação Térmica, Calorimetria e Leis da Termodinâmica.",
+                    lessons = listOf(
+                        EnemTrailLesson(
+                            id = "fis_m3_a1",
+                            moduleId = "mod_fis_03_termologia",
+                            lessonIndex = 1,
+                            title = "Aula 1: Termometria e Escalas Termométricas",
+                            subtopic = "Conceito de Temperatura, Escalas Celsius, Fahrenheit e Kelvin",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "fis_m3_a2",
+                            moduleId = "mod_fis_03_termologia",
+                            lessonIndex = 2,
+                            title = "Aula 2: Dilatação Térmica dos Sólidos e Líquidos",
+                            subtopic = "Dilatação Linear, Superficial, Volumétrica e Dilatação Anômala da Água",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "fis_m3_a3",
+                            moduleId = "mod_fis_03_termologia",
+                            lessonIndex = 3,
+                            title = "Aula 3: Calorimetria - Calor Sensível e Calor Latente",
+                            subtopic = "Capacidade Térmica, Equação Fundamental da Calorimetria e Mudanças de Fase",
+                            xpReward = 35
+                        ),
+                        EnemTrailLesson(
+                            id = "fis_m3_a4",
+                            moduleId = "mod_fis_03_termologia",
+                            lessonIndex = 4,
+                            title = "Aula 4: Processos de Transmissão de Calor e Equilíbrio Térmico",
+                            subtopic = "Condução, Convecção, Irradiação Térmica e Efeito Estufa",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "fis_m3_a5",
+                            moduleId = "mod_fis_03_termologia",
+                            lessonIndex = 5,
+                            title = "Aula 5: Termodinâmica, Gases Ideais e Máquinas Térmicas",
+                            subtopic = "Equação de Clapeyron, 1ª Lei da Termodinâmica, Ciclo de Carnot e 2ª Lei",
+                            xpReward = 35
+                        )
+                    ),
+                    finalSimulado = EnemTrailSimulado(
+                        id = "simulado_fis_03",
+                        moduleId = "mod_fis_03_termologia",
+                        title = "Simulado Final: Termologia",
+                        xpReward = 100,
+                        questionCount = 10
+                    )
+                ),
+
+                // ========================================================
+                // MÓDULO 3: Ondulatória
+                // ========================================================
+                EnemTrailModule(
+                    id = "mod_fis_04_ondulatoria",
+                    moduleNumber = 3,
+                    title = "Ondulatória",
+                    summary = "Fundamentos da Ondulatória, Equação Fundamental, Fenômenos Ondulatórios e Acústica.",
+                    lessons = listOf(
+                        EnemTrailLesson(
+                            id = "fis_m4_a1",
+                            moduleId = "mod_fis_04_ondulatoria",
+                            lessonIndex = 1,
+                            title = "Aula 1: Fundamentos da Ondulatória e Equação Fundamental (v = λ · f)",
+                            subtopic = "Classificação das Ondas (Mecânicas vs Eletromagnéticas, Transversais e Longitudinais)",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "fis_m4_a2",
+                            moduleId = "mod_fis_04_ondulatoria",
+                            lessonIndex = 2,
+                            title = "Aula 2: Fenômenos Ondulatórios - Reflexão, Refração e Difração",
+                            subtopic = "Comportamento das Ondas e Contorno de Obstáculos",
+                            xpReward = 35
+                        ),
+                        EnemTrailLesson(
+                            id = "fis_m4_a3",
+                            moduleId = "mod_fis_04_ondulatoria",
+                            lessonIndex = 3,
+                            title = "Aula 3: Interferência, Polarização e Ressonância",
+                            subtopic = "Interferência Construtiva/Destrutiva, Filtros de Polarização e Frequência Própria",
+                            xpReward = 35
+                        ),
+                        EnemTrailLesson(
+                            id = "fis_m4_a4",
+                            moduleId = "mod_fis_04_ondulatoria",
+                            lessonIndex = 4,
+                            title = "Aula 4: Acústica e Qualidades Fisiológicas do Som",
+                            subtopic = "Altura (Frequência), Intensidade (Volume), Timbre e Ondas Estacionárias em Cordas/Tubos",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "fis_m4_a5",
+                            moduleId = "mod_fis_04_ondulatoria",
+                            lessonIndex = 5,
+                            title = "Aula 5: Efeito Doppler e Aplicações Tecnológicas",
+                            subtopic = "Deslocamento Aparente de Frequência no ENEM (Radares, Som e Astronomia)",
+                            xpReward = 35
+                        )
+                    ),
+                    finalSimulado = EnemTrailSimulado(
+                        id = "simulado_fis_04",
+                        moduleId = "mod_fis_04_ondulatoria",
+                        title = "Simulado Final: Ondulatória",
+                        xpReward = 100,
+                        questionCount = 10
+                    )
+                ),
+
+                // ========================================================
+                // MÓDULO 4: Óptica
+                // ========================================================
+                EnemTrailModule(
+                    id = "mod_fis_05_optica",
+                    moduleNumber = 4,
+                    title = "Óptica",
+                    summary = "Óptica Geométrica, Espelhos Planos e Esféricos, Refração, Lentes e Óptica da Visão.",
+                    lessons = listOf(
+                        EnemTrailLesson(
+                            id = "fis_m5_a1",
+                            moduleId = "mod_fis_05_optica",
+                            lessonIndex = 1,
+                            title = "Aula 1: Fundamentos da Óptica Geométrica e Propagação da Luz",
+                            subtopic = "Fontes de Luz, Princípio da Independência, Reversibilidade e Sombras",
+                            xpReward = 30
+                        ),
+                        EnemTrailLesson(
+                            id = "fis_m5_a2",
+                            moduleId = "mod_fis_05_optica",
+                            lessonIndex = 2,
+                            title = "Aula 2: Espelhos Planos e Esféricos (Côncavos e Convexos)",
+                            subtopic = "Formação de Imagens (Real, Virtual, Direita e Invertida) e Campo Visual",
+                            xpReward = 35
+                        ),
+                        EnemTrailLesson(
+                            id = "fis_m5_a3",
+                            moduleId = "mod_fis_05_optica",
+                            lessonIndex = 3,
+                            title = "Aula 3: Refração Luminosa, Lei de Snell-Descartes e Ângulo Limite",
+                            subtopic = "Índice de Refração, Dioptro Plano e Reflexão Total (Fibras Ópticas)",
+                            xpReward = 35
+                        ),
+                        EnemTrailLesson(
+                            id = "fis_m5_a4",
+                            moduleId = "mod_fis_05_optica",
+                            lessonIndex = 4,
+                            title = "Aula 4: Lentes Esféricas Delgadas e Equação de Gauss",
+                            subtopic = "Lentes Convergentes/Divergentes, Foco, Vergência e Construção Geométrica",
+                            xpReward = 35
+                        ),
+                        EnemTrailLesson(
+                            id = "fis_m5_a5",
+                            moduleId = "mod_fis_05_optica",
+                            lessonIndex = 5,
+                            title = "Aula 5: Óptica da Visão e Instrumentos Ópticos",
+                            subtopic = "Olho Humano, Miopia, Hipermetropia, Astigmatismo e Correção por Lentes",
+                            xpReward = 35
+                        )
+                    ),
+                    finalSimulado = EnemTrailSimulado(
+                        id = "simulado_fis_05",
+                        moduleId = "mod_fis_05_optica",
+                        title = "Simulado Final: Óptica",
+                        xpReward = 100,
+                        questionCount = 10
+                    )
+                ),
+
+                // ========================================================
+                // MÓDULO 5: Eletricidade e Magnetismo
                 // ========================================================
                 EnemTrailModule(
                     id = "mod_fis_02_eletricidade",
-                    moduleNumber = 2,
+                    moduleNumber = 5,
                     title = "Eletricidade e Magnetismo",
                     summary = "Eletrodinâmica (maior incidência), Eletrostática e Eletromagnetismo.",
                     lessons = listOf(
@@ -178,183 +361,6 @@ object EnemPhysicsCurriculum {
                         id = "simulado_fis_02",
                         moduleId = "mod_fis_02_eletricidade",
                         title = "Simulado Final: Eletricidade e Magnetismo",
-                        xpReward = 100,
-                        questionCount = 10
-                    )
-                ),
-
-                // ========================================================
-                // MÓDULO 3: Termologia (Termodinâmica)
-                // ========================================================
-                EnemTrailModule(
-                    id = "mod_fis_03_termologia",
-                    moduleNumber = 3,
-                    title = "Termologia (Termodinâmica)",
-                    summary = "Termometria, Dilatação Térmica, Calorimetria e Leis da Termodinâmica.",
-                    lessons = listOf(
-                        EnemTrailLesson(
-                            id = "fis_m3_a1",
-                            moduleId = "mod_fis_03_termologia",
-                            lessonIndex = 1,
-                            title = "Aula 1: Termometria e Escalas Termométricas",
-                            subtopic = "Conceito de Temperatura, Escalas Celsius, Fahrenheit e Kelvin",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "fis_m3_a2",
-                            moduleId = "mod_fis_03_termologia",
-                            lessonIndex = 2,
-                            title = "Aula 2: Dilatação Térmica dos Sólidos e Líquidos",
-                            subtopic = "Dilatação Linear, Superficial, Volumétrica e Dilatação Anômala da Água",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "fis_m3_a3",
-                            moduleId = "mod_fis_03_termologia",
-                            lessonIndex = 3,
-                            title = "Aula 3: Calorimetria - Calor Sensível e Calor Latente",
-                            subtopic = "Capacidade Térmica, Equação Fundamental da Calorimetria e Mudanças de Fase",
-                            xpReward = 35
-                        ),
-                        EnemTrailLesson(
-                            id = "fis_m3_a4",
-                            moduleId = "mod_fis_03_termologia",
-                            lessonIndex = 4,
-                            title = "Aula 4: Processos de Transmissão de Calor e Equilíbrio Térmico",
-                            subtopic = "Condução, Convecção, Irradiação Térmica e Efeito Estufa",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "fis_m3_a5",
-                            moduleId = "mod_fis_03_termologia",
-                            lessonIndex = 5,
-                            title = "Aula 5: Termodinâmica, Gases Ideais e Máquinas Térmicas",
-                            subtopic = "Equação de Clapeyron, 1ª Lei da Termodinâmica, Ciclo de Carnot e 2ª Lei",
-                            xpReward = 35
-                        )
-                    ),
-                    finalSimulado = EnemTrailSimulado(
-                        id = "simulado_fis_03",
-                        moduleId = "mod_fis_03_termologia",
-                        title = "Simulado Final: Termologia",
-                        xpReward = 100,
-                        questionCount = 10
-                    )
-                ),
-
-                // ========================================================
-                // MÓDULO 4: Ondulatória
-                // ========================================================
-                EnemTrailModule(
-                    id = "mod_fis_04_ondulatoria",
-                    moduleNumber = 4,
-                    title = "Ondulatória",
-                    summary = "Fundamentos da Ondulatória, Equação Fundamental, Fenômenos Ondulatórios e Acústica.",
-                    lessons = listOf(
-                        EnemTrailLesson(
-                            id = "fis_m4_a1",
-                            moduleId = "mod_fis_04_ondulatoria",
-                            lessonIndex = 1,
-                            title = "Aula 1: Fundamentos da Ondulatória e Equação Fundamental (v = λ · f)",
-                            subtopic = "Classificação das Ondas (Mecânicas vs Eletromagnéticas, Transversais e Longitudinais)",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "fis_m4_a2",
-                            moduleId = "mod_fis_04_ondulatoria",
-                            lessonIndex = 2,
-                            title = "Aula 2: Fenômenos Ondulatórios - Reflexão, Refração e Difração",
-                            subtopic = "Comportamento das Ondas e Contorno de Obstáculos",
-                            xpReward = 35
-                        ),
-                        EnemTrailLesson(
-                            id = "fis_m4_a3",
-                            moduleId = "mod_fis_04_ondulatoria",
-                            lessonIndex = 3,
-                            title = "Aula 3: Interferência, Polarização e Ressonância",
-                            subtopic = "Interferência Construtiva/Destrutiva, Filtros de Polarização e Frequência Própria",
-                            xpReward = 35
-                        ),
-                        EnemTrailLesson(
-                            id = "fis_m4_a4",
-                            moduleId = "mod_fis_04_ondulatoria",
-                            lessonIndex = 4,
-                            title = "Aula 4: Acústica e Qualidades Fisiológicas do Som",
-                            subtopic = "Altura (Frequência), Intensidade (Volume), Timbre e Ondas Estacionárias em Cordas/Tubos",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "fis_m4_a5",
-                            moduleId = "mod_fis_04_ondulatoria",
-                            lessonIndex = 5,
-                            title = "Aula 5: Efeito Doppler e Aplicações Tecnológicas",
-                            subtopic = "Deslocamento Aparente de Frequência no ENEM (Radares, Som e Astronomia)",
-                            xpReward = 35
-                        )
-                    ),
-                    finalSimulado = EnemTrailSimulado(
-                        id = "simulado_fis_04",
-                        moduleId = "mod_fis_04_ondulatoria",
-                        title = "Simulado Final: Ondulatória",
-                        xpReward = 100,
-                        questionCount = 10
-                    )
-                ),
-
-                // ========================================================
-                // MÓDULO 5: Óptica
-                // ========================================================
-                EnemTrailModule(
-                    id = "mod_fis_05_optica",
-                    moduleNumber = 5,
-                    title = "Óptica",
-                    summary = "Óptica Geométrica, Espelhos Planos e Esféricos, Refração, Lentes e Óptica da Visão.",
-                    lessons = listOf(
-                        EnemTrailLesson(
-                            id = "fis_m5_a1",
-                            moduleId = "mod_fis_05_optica",
-                            lessonIndex = 1,
-                            title = "Aula 1: Fundamentos da Óptica Geométrica e Propagação da Luz",
-                            subtopic = "Fontes de Luz, Princípio da Independência, Reversibilidade e Sombras",
-                            xpReward = 30
-                        ),
-                        EnemTrailLesson(
-                            id = "fis_m5_a2",
-                            moduleId = "mod_fis_05_optica",
-                            lessonIndex = 2,
-                            title = "Aula 2: Espelhos Planos e Esféricos (Côncavos e Convexos)",
-                            subtopic = "Formação de Imagens (Real, Virtual, Direita e Invertida) e Campo Visual",
-                            xpReward = 35
-                        ),
-                        EnemTrailLesson(
-                            id = "fis_m5_a3",
-                            moduleId = "mod_fis_05_optica",
-                            lessonIndex = 3,
-                            title = "Aula 3: Refração Luminosa, Lei de Snell-Descartes e Ângulo Limite",
-                            subtopic = "Índice de Refração, Dioptro Plano e Reflexão Total (Fibras Ópticas)",
-                            xpReward = 35
-                        ),
-                        EnemTrailLesson(
-                            id = "fis_m5_a4",
-                            moduleId = "mod_fis_05_optica",
-                            lessonIndex = 4,
-                            title = "Aula 4: Lentes Esféricas Delgadas e Equação de Gauss",
-                            subtopic = "Lentes Convergentes/Divergentes, Foco, Vergência e Construção Geométrica",
-                            xpReward = 35
-                        ),
-                        EnemTrailLesson(
-                            id = "fis_m5_a5",
-                            moduleId = "mod_fis_05_optica",
-                            lessonIndex = 5,
-                            title = "Aula 5: Óptica da Visão e Instrumentos Ópticos",
-                            subtopic = "Olho Humano, Miopia, Hipermetropia, Astigmatismo e Correção por Lentes",
-                            xpReward = 35
-                        )
-                    ),
-                    finalSimulado = EnemTrailSimulado(
-                        id = "simulado_fis_05",
-                        moduleId = "mod_fis_05_optica",
-                        title = "Simulado Final: Óptica",
                         xpReward = 100,
                         questionCount = 10
                     )

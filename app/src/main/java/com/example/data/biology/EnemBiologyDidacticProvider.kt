@@ -12,6 +12,13 @@ import com.example.data.model.MathExercise
 object EnemBiologyDidacticProvider {
 
     fun getDidacticBundle(lessonId: String): CalculusDidacticBundle? {
+        val modular = com.example.data.biology.didactic.BiologyCitologyDidactic.get(lessonId)
+            ?: com.example.data.biology.didactic.BiologyGeneticsDidactic.get(lessonId)
+            ?: com.example.data.biology.didactic.BiologyEvolutionDidactic.get(lessonId)
+            ?: com.example.data.biology.didactic.BiologyPhysiologyDidactic.get(lessonId)
+            ?: com.example.data.biology.didactic.BiologyEcologyDidactic.get(lessonId)
+        if (modular != null) return modular
+
         val entry = didacticMap[lessonId] ?: return null
         return CalculusDidacticBundle(
             theoryMarkdown = entry.theoryMarkdown,

@@ -16,7 +16,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Frações e Decimais",
             difficulty = "Fácil",
-            source = "ENEM / Operações com Frações",
+            source = "Autoral (Estilo ENEM) / Operações com Frações",
             problemStatement = "Qual é o resultado da soma de frações com denominadores diferentes: 2/5 + 1/3?",
             options = listOf(
                 "11/15",
@@ -43,7 +43,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Frações e Decimais",
             difficulty = "Fácil",
-            source = "ENEM / Conversão Decimal-Fração",
+            source = "Autoral (Estilo ENEM) / Conversão Decimal-Fração",
             problemStatement = "A fração irredutível equivalente ao número decimal 0,375 é:",
             options = listOf(
                 "3/8",
@@ -70,7 +70,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Frações e Decimais",
             difficulty = "Mediano",
-            source = "ENEM / Dízima Periódica Simples",
+            source = "Autoral (Estilo ENEM) / Dízima Periódica Simples",
             problemStatement = "Qual é a fração geratriz da dízima periódica simples 0,777...?",
             options = listOf(
                 "7/9",
@@ -97,7 +97,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Frações e Decimais",
             difficulty = "Mediano",
-            source = "ENEM / Problema de Resto Fracionário",
+            source = "Autoral (Estilo ENEM) / Problema de Resto Fracionário",
             problemStatement = "Lucas gastou 1/3 do seu salário com aluguel e 2/5 do que sobrou com alimentação. Se ainda lhe restaram R$ 1.200,00, qual é o salário total de Lucas?",
             options = listOf(
                 "R$ 3.000,00",
@@ -152,7 +152,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Frações e Decimais",
             difficulty = "Difícil",
-            source = "ENEM / Frações Contínuas e Escalas",
+            source = "Autoral (Estilo ENEM) / Frações Contínuas e Escalas",
             problemStatement = """Simplifique a fração complexa contínua:
 1 / (1 + 1 / (1 + 1/2))""",
             options = listOf(
@@ -183,7 +183,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "MMC e MDC",
             difficulty = "Fácil",
-            source = "ENEM / Cálculo Direto de MMC",
+            source = "Autoral (Estilo ENEM) / Cálculo Direto de MMC",
             problemStatement = "Qual é o Mínimo Múltiplo Comum entre os números 12 e 20?",
             options = listOf(
                 "60",
@@ -209,7 +209,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "MMC e MDC",
             difficulty = "Fácil",
-            source = "ENEM / Cálculo Direto de MDC",
+            source = "Autoral (Estilo ENEM) / Cálculo Direto de MDC",
             problemStatement = "Qual é o Máximo Divisor Comum (MDC) entre os números 36 e 48?",
             options = listOf(
                 "12",
@@ -235,7 +235,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "MMC e MDC",
             difficulty = "Mediano",
-            source = "ENEM / Medicamentos Periódicos (MMC)",
+            source = "Autoral (Estilo ENEM) / Medicamentos Periódicos (MMC)",
             problemStatement = "Um paciente toma um remédio A a cada 6 horas, um remédio B a cada 8 horas e um remédio C a cada 12 horas. Se ele tomou os três juntos às 08h00 de segunda-feira, quando ele voltará a tomar os três remédios simultaneamente?",
             options = listOf(
                 "Às 08h00 de terça-feira (após 24 horas)",
@@ -264,7 +264,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "MMC e MDC",
             difficulty = "Mediano",
-            source = "ENEM / Divisão em Lotes Iguais (MDC)",
+            source = "Autoral (Estilo ENEM) / Divisão em Lotes Iguais (MDC)",
             problemStatement = "Um marceneiro tem duas tábuas de madeira, uma com 180 cm de comprimento e outra com 240 cm. Ele deseja cortá-las em pedaços de mesmo comprimento, sendo este o maior possível e sem sobras. Qual deve ser o comprimento de cada pedaço e quantos pedaços ele obterá no total?",
             options = listOf(
                 "60 cm por pedaço (total de 7 pedaços)",
@@ -323,7 +323,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "MMC e MDC",
             difficulty = "Difícil",
-            source = "ENEM / Divisão com Resto Constante",
+            source = "Autoral (Estilo ENEM) / Divisão com Resto Constante",
             problemStatement = "Qual é o menor número natural que, quando dividido por 4, deixa resto 3; quando dividido por 5, deixa resto 4; e quando dividido por 6, deixa resto 5?",
             options = listOf(
                 "59",
@@ -362,7 +362,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Porcentagem e Variação",
             difficulty = "Fácil",
-            source = "ENEM / Desconto Simples",
+            source = "Autoral (Estilo ENEM) / Desconto Simples",
             problemStatement = "Um produto que custava R$ 200,00 teve um desconto de 15%. Qual é o novo preço do produto?",
             options = listOf(
                 "R$ 170,00",
@@ -389,7 +389,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Porcentagem e Variação",
             difficulty = "Fácil",
-            source = "ENEM / Aumento Percentual",
+            source = "Autoral (Estilo ENEM) / Aumento Percentual",
             problemStatement = "Uma mensalidade escolar passou de R$ 500,00 para R$ 550,00. Qual foi o percentual de aumento aplicado?",
             options = listOf(
                 "10%",
@@ -415,7 +415,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Porcentagem e Variação",
             difficulty = "Mediano",
-            source = "ENEM / Aumentos Sucessivos",
+            source = "Autoral (Estilo ENEM) / Aumentos Sucessivos",
             problemStatement = "O preço da gasolina subiu 10% em janeiro e mais 20% em fevereiro. Qual foi o aumento percentual ACUMULADO nesses dois meses?",
             options = listOf(
                 "32%",
@@ -442,7 +442,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Porcentagem e Variação",
             difficulty = "Mediano",
-            source = "ENEM / Aumento seguido de Desconto Igual",
+            source = "Autoral (Estilo ENEM) / Aumento seguido de Desconto Igual",
             problemStatement = "Uma mercadoria sofreu um aumento de 20% e, no mês seguinte, recebeu um desconto de 20%. Em relação ao preço original, o preço final:",
             options = listOf(
                 "Diminuiu 4%",
@@ -469,7 +469,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Porcentagem e Variação",
             difficulty = "Difícil",
-            source = "ENEM / Preço de Custo vs Margem sobre Venda",
+            source = "Autoral (Estilo ENEM) / Preço de Custo vs Margem sobre Venda",
             problemStatement = "Um lojista comprou um artigo por R$ 120,00 e deseja vendê-lo obtendo um lucro de 25% calculado SOBRE O PREÇO DE VENDA. Por quanto ele deve vender o artigo?",
             options = listOf(
                 "R$ 160,00",
@@ -500,7 +500,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Porcentagem e Variação",
             difficulty = "Difícil",
-            source = "ENEM / Inflação e Perda de Poder de Compra",
+            source = "Autoral (Estilo ENEM) / Inflação e Perda de Poder de Compra",
             problemStatement = "Se a inflação acumulada de um determinado ano foi de 25% e o salário de um trabalhador não teve nenhum reajuste, qual foi a perda percentual exata do seu poder de compra?",
             options = listOf(
                 "20%",
@@ -531,7 +531,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Regra de Três (Simples e Composta)",
             difficulty = "Fácil",
-            source = "ENEM / Regra de Três Direta",
+            source = "Autoral (Estilo ENEM) / Regra de Três Direta",
             problemStatement = "Um automóvel consome 12 litros de gasolina para percorrer 180 km. Quantos litros de gasolina serão necessários para percorrer 300 km nas mesmas condições?",
             options = listOf(
                 "20 litros",
@@ -560,7 +560,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Regra de Três (Simples e Composta)",
             difficulty = "Fácil",
-            source = "ENEM / Regra de Três Inversa",
+            source = "Autoral (Estilo ENEM) / Regra de Três Inversa",
             problemStatement = "Um carro viaja a uma velocidade constante de 60 km/h e completa uma viagem em 4 horas. Se a velocidade fosse de 80 km/h, em quanto tempo faria o mesmo trajeto?",
             options = listOf(
                 "3 horas",
@@ -587,7 +587,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Regra de Três (Simples e Composta)",
             difficulty = "Mediano",
-            source = "ENEM / Regra de Três Composta",
+            source = "Autoral (Estilo ENEM) / Regra de Três Composta",
             problemStatement = "Em uma fábrica, 6 máquinas idênticas produzem 900 peças funcionando durante 5 horas por dia. Quantas peças 8 dessas máquinas produzirão funcionando durante 6 horas por dia?",
             options = listOf(
                 "1.440 peças",
@@ -617,7 +617,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Regra de Três (Simples e Composta)",
             difficulty = "Mediano",
-            source = "ENEM / Torneiras e Ralos",
+            source = "Autoral (Estilo ENEM) / Torneiras e Ralos",
             problemStatement = "Uma torneira enche um tanque em 3 horas e outra torneira enche o mesmo tanque em 6 horas. Se abrirmos ambas as torneiras juntas, em quanto tempo o tanque vazio ficará totalmente cheio?",
             options = listOf(
                 "2 horas",
@@ -646,7 +646,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Regra de Três (Simples e Composta)",
             difficulty = "Difícil",
-            source = "ENEM / Regra de Três Composta Mista (Direta e Inversa)",
+            source = "Autoral (Estilo ENEM) / Regra de Três Composta Mista (Direta e Inversa)",
             problemStatement = "Para pavimentar 1.200 metros de estrada, 15 operários trabalharam 8 horas por dia durante 10 dias. Quantos dias serão necessários para 12 operários pavimentarem 1.800 metros dessa estrada, trabalhando 6 horas por dia?",
             options = listOf(
                 "25 dias",
@@ -681,7 +681,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Regra de Três (Simples e Composta)",
             difficulty = "Difícil",
-            source = "ENEM / Proporcionalidade com Consumo Variável",
+            source = "Autoral (Estilo ENEM) / Proporcionalidade com Consumo Variável",
             problemStatement = "Um navio partiu para uma viagem com mantimentos suficientes para alimentar 40 tripulantes durante 30 dias. Após 10 dias de viagem, o navio resgatou 10 náufragos. Se a ração diária por pessoa for reduzida para 80% do valor inicial, por quantos dias adicionais os mantimentos restantes durarão?",
             options = listOf(
                 "20 dias adicionais",
@@ -712,7 +712,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Equações e Sistemas Lineares",
             difficulty = "Fácil",
-            source = "ENEM / Equação do 1º Grau",
+            source = "Autoral (Estilo ENEM) / Equação do 1º Grau",
             problemStatement = "Resolva a equação do 1º grau: 3x - 7 = 2x + 5.",
             options = listOf(
                 "x = 12",
@@ -736,7 +736,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Equações e Sistemas Lineares",
             difficulty = "Fácil",
-            source = "ENEM / Equação do 2º Grau por Soma e Produto",
+            source = "Autoral (Estilo ENEM) / Equação do 2º Grau por Soma e Produto",
             problemStatement = "Quais são as raízes da equação quadrática x² - 7x + 10 = 0 usando a relação de Soma e Produto?",
             options = listOf(
                 "x₁ = 2 e x₂ = 5",
@@ -763,7 +763,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Equações e Sistemas Lineares",
             difficulty = "Mediano",
-            source = "ENEM / Sistema 2x2 Clássico",
+            source = "Autoral (Estilo ENEM) / Sistema 2x2 Clássico",
             problemStatement = "Em um estacionamento há carros e motos, totalizando 30 veículos e 84 rodas. Quantos carros e quantas motos há no estacionamento?",
             options = listOf(
                 "12 carros e 18 motos",
@@ -795,7 +795,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Equações e Sistemas Lineares",
             difficulty = "Mediano",
-            source = "ENEM / Vértice da Parábola e Ponto de Máximo",
+            source = "Autoral (Estilo ENEM) / Vértice da Parábola e Ponto de Máximo",
             problemStatement = "A trajetória de um projétil é descrita pela função quadrática h(t) = -5t² + 30t, onde h é a altura em metros e t o tempo em segundos. Qual é a altura MÁXIMA atingida pelo projétil?",
             options = listOf(
                 "45 metros (no instante t = 3s)",
@@ -857,7 +857,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Equações e Sistemas Lineares",
             difficulty = "Difícil",
-            source = "ENEM / Equação Exponencial Redutível a 2º Grau",
+            source = "Autoral (Estilo ENEM) / Equação Exponencial Redutível a 2º Grau",
             problemStatement = """Encontre o conjunto de soluções reais da equação:
 \[ 4^x - 5 \cdot 2^x + 4 = 0 \]""",
             options = listOf(
@@ -892,7 +892,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Geometria: Áreas e Volumes",
             difficulty = "Fácil",
-            source = "ENEM / Teorema de Pitágoras",
+            source = "Autoral (Estilo ENEM) / Teorema de Pitágoras",
             problemStatement = "Um triângulo retângulo possui catetos de comprimentos 6 cm e 8 cm. Qual é o comprimento da sua hipotenusa?",
             options = listOf(
                 "10 cm",
@@ -918,7 +918,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Geometria: Áreas e Volumes",
             difficulty = "Fácil",
-            source = "ENEM / Área do Trapézio",
+            source = "Autoral (Estilo ENEM) / Área do Trapézio",
             problemStatement = "Qual é a área de um terreno em formato de trapézio com base maior B = 14 m, base menor b = 6 m e altura h = 5 m?",
             options = listOf(
                 "50 m²",
@@ -943,7 +943,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Geometria: Áreas e Volumes",
             difficulty = "Mediano",
-            source = "ENEM / Caixa D'Água e Conversão m³ para Litros",
+            source = "Autoral (Estilo ENEM) / Caixa D'Água e Conversão m³ para Litros",
             problemStatement = "Uma piscina retangular possui 8 metros de comprimento, 4 metros de largura e 1,5 metro de profundidade. Quantos litros de água são necessários para enchê-la totalmente?",
             options = listOf(
                 "48.000 litros",
@@ -970,7 +970,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Geometria: Áreas e Volumes",
             difficulty = "Mediano",
-            source = "ENEM / Volume do Cone",
+            source = "Autoral (Estilo ENEM) / Volume do Cone",
             problemStatement = "Uma casquinha de sorvete possui formato cônico com raio da base r = 3 cm e altura h = 10 cm. Adotando π = 3,14, qual é o volume aproximado de sorvete que preenche o interior da casquinha?",
             options = listOf(
                 "94,2 cm³",
@@ -997,7 +997,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Geometria: Áreas e Volumes",
             difficulty = "Difícil",
-            source = "ENEM / Volume da Esfera Inscrita no Cubo",
+            source = "Autoral (Estilo ENEM) / Volume da Esfera Inscrita no Cubo",
             problemStatement = "Uma esfera de chumbo está perfeitamente inscrita no interior de uma caixa cúbica de aresta a = 6 cm. Qual é o volume da esfera em termos de π?",
             options = listOf(
                 "36π cm³",
@@ -1057,7 +1057,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Estatística: Média, Mediana e Moda",
             difficulty = "Fácil",
-            source = "ENEM / Moda e Média Aritmética",
+            source = "Autoral (Estilo ENEM) / Moda e Média Aritmética",
             problemStatement = "Considere a lista de idades de um grupo de amigos: [18, 20, 20, 22, 25]. Qual é a MODA dessa distribuição?",
             options = listOf(
                 "20 anos (aparece com maior frequência)",
@@ -1082,7 +1082,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Estatística: Média, Mediana e Moda",
             difficulty = "Fácil",
-            source = "ENEM / Mediana de Quantidade Par de Elementos",
+            source = "Autoral (Estilo ENEM) / Mediana de Quantidade Par de Elementos",
             problemStatement = "Qual é a MEDIANA do conjunto de números: [12, 5, 8, 20, 15, 3]?",
             options = listOf(
                 "10",
@@ -1109,7 +1109,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Estatística: Média, Mediana e Moda",
             difficulty = "Mediano",
-            source = "ENEM / Média Ponderada com Pesos",
+            source = "Autoral (Estilo ENEM) / Média Ponderada com Pesos",
             problemStatement = "Um estudante obteve as seguintes notas em três provas: Prova 1 (nota 6,0, peso 2), Prova 2 (nota 7,0, peso 3) e Prova 3 (nota 9,0, peso 5). Qual foi a média ponderada final do estudante?",
             options = listOf(
                 "7,8",
@@ -1136,7 +1136,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Estatística: Média, Mediana e Moda",
             difficulty = "Mediano",
-            source = "ENEM / Nota Necessária para Atingir Média",
+            source = "Autoral (Estilo ENEM) / Nota Necessária para Atingir Média",
             problemStatement = "Um curso adota média aritmética simples 7,0 em 4 bimestres para aprovação. Se um aluno tirou 5,5 no 1º bimestre, 6,5 no 2º e 7,0 no 3º, qual nota mínima ele precisa tirar no 4º bimestre para ser aprovado?",
             options = listOf(
                 "9,0",
@@ -1161,7 +1161,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Estatística: Média, Mediana e Moda",
             difficulty = "Difícil",
-            source = "ENEM / Desvio Padrão e Regularidade",
+            source = "Autoral (Estilo ENEM) / Desvio Padrão e Regularidade",
             problemStatement = "Três atiradores realizaram 5 tiros cada. Todos obtiveram a mesma média de 80 pontos, mas seus desvios padrões foram: Atirador A (DP = 2,5), Atirador B (DP = 0,8) e Atirador C (DP = 5,1). Qual atirador foi o MAIS REGULAR?",
             options = listOf(
                 "Atirador B (menor desvio padrão indica maior consistência e homogeneidade)",
@@ -1187,7 +1187,7 @@ object ComprehensiveBasicMathExercises {
             category = "Matemática Básica",
             subtopic = "Estatística: Média, Mediana e Moda",
             difficulty = "Difícil",
-            source = "ENEM / Alteração de Média por Entrada de Elemento",
+            source = "Autoral (Estilo ENEM) / Alteração de Média por Entrada de Elemento",
             problemStatement = "Em um grupo de 10 pessoas, a média de idade é de 24 anos. Se uma nova pessoa de 46 anos entrar no grupo, qual passará a ser a nova média de idade do grupo?",
             options = listOf(
                 "26 anos",

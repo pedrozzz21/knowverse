@@ -1,0 +1,1932 @@
+[
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m1_a1",
+  "moduleId": "mod_01_matematica_basica",
+  "moduleTitle": "Matemática Básica",
+  "title": "Aula 1: Operações com números inteiros, fracionários e decimais",
+  "subtopic": "Operações Fundamentais & Frações",
+  "lessonIndexInModule": 1,
+  "order": 0
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m1_a2",
+  "moduleId": "mod_01_matematica_basica",
+  "moduleTitle": "Matemática Básica",
+  "title": "Aula 2: Múltiplos e divisores (MMC e MDC)",
+  "subtopic": "Aritmética: MMC e MDC",
+  "lessonIndexInModule": 2,
+  "order": 1
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m1_a3",
+  "moduleId": "mod_01_matematica_basica",
+  "moduleTitle": "Matemática Básica",
+  "title": "Aula 3: Potenciação e radiciação",
+  "subtopic": "Potências e Raízes",
+  "lessonIndexInModule": 3,
+  "order": 2
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m1_a4",
+  "moduleId": "mod_01_matematica_basica",
+  "moduleTitle": "Matemática Básica",
+  "title": "Aula 4: Notação científica e ordem de grandeza",
+  "subtopic": "Notação Científica",
+  "lessonIndexInModule": 4,
+  "order": 3
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m1_a5",
+  "moduleId": "mod_01_matematica_basica",
+  "moduleTitle": "Matemática Básica",
+  "title": "Aula 5: Sistema métrico decimal e conversão de unidades (comprimento, área, volume, massa, capacidade, tempo)",
+  "subtopic": "Conversão de Unidades",
+  "lessonIndexInModule": 5,
+  "order": 4
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m1_a6",
+  "moduleId": "mod_01_matematica_basica",
+  "moduleTitle": "Matemática Básica",
+  "title": "Aula 6: Razão e proporção",
+  "subtopic": "Razão e Proporção",
+  "lessonIndexInModule": 6,
+  "order": 5
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m1_a7",
+  "moduleId": "mod_01_matematica_basica",
+  "moduleTitle": "Matemática Básica",
+  "title": "Aula 7: Grandezas diretamente e inversamente proporcionais",
+  "subtopic": "Grandezas Proporcionais",
+  "lessonIndexInModule": 7,
+  "order": 6
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m1_a8",
+  "moduleId": "mod_01_matematica_basica",
+  "moduleTitle": "Matemática Básica",
+  "title": "Aula 8: Regra de três simples e composta",
+  "subtopic": "Regra de Três",
+  "lessonIndexInModule": 8,
+  "order": 7
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m1_a9",
+  "moduleId": "mod_01_matematica_basica",
+  "moduleTitle": "Matemática Básica",
+  "title": "Aula 9: Escalas (lineares, de área e volumétricas)",
+  "subtopic": "Escalas Cartográficas",
+  "lessonIndexInModule": 9,
+  "order": 8
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m1_a10",
+  "moduleId": "mod_01_matematica_basica",
+  "moduleTitle": "Matemática Básica",
+  "title": "Aula 10: Porcentagem (aumentos, descontos e variações sucessivas)",
+  "subtopic": "Porcentagem e Variações",
+  "lessonIndexInModule": 10,
+  "order": 9
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m7_a1",
+  "moduleId": "mod_07_algebra_equacoes",
+  "moduleTitle": "Álgebra e Equações",
+  "title": "Aula 1: Expressões algébricas e valor numérico",
+  "subtopic": "Expressões Algébricas",
+  "lessonIndexInModule": 1,
+  "order": 10
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m7_a2",
+  "moduleId": "mod_07_algebra_equacoes",
+  "moduleTitle": "Álgebra e Equações",
+  "title": "Aula 2: Produtos notáveis e fatoração algébrica",
+  "subtopic": "Produtos Notáveis & Fatoração",
+  "lessonIndexInModule": 2,
+  "order": 11
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m7_a3",
+  "moduleId": "mod_07_algebra_equacoes",
+  "moduleTitle": "Álgebra e Equações",
+  "title": "Aula 3: Equações e inequações do 1º grau",
+  "subtopic": "Equações do 1º Grau",
+  "lessonIndexInModule": 3,
+  "order": 12
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m7_a4",
+  "moduleId": "mod_07_algebra_equacoes",
+  "moduleTitle": "Álgebra e Equações",
+  "title": "Aula 4: Equações e inequações do 2º grau",
+  "subtopic": "Equações do 2º Grau",
+  "lessonIndexInModule": 4,
+  "order": 13
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m7_a5",
+  "moduleId": "mod_07_algebra_equacoes",
+  "moduleTitle": "Álgebra e Equações",
+  "title": "Aula 5: Sistemas de equações do 1º grau (2x2)",
+  "subtopic": "Sistemas Lineares 2x2",
+  "lessonIndexInModule": 5,
+  "order": 14
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m6_a1",
+  "moduleId": "mod_06_funcoes",
+  "moduleTitle": "Funções",
+  "title": "Aula 1: Plano cartesiano e pares ordenados",
+  "subtopic": "Plano Cartesiano",
+  "lessonIndexInModule": 1,
+  "order": 15
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m6_a2",
+  "moduleId": "mod_06_funcoes",
+  "moduleTitle": "Funções",
+  "title": "Aula 2: Conceito de função (domínio, contradomínio e imagem)",
+  "subtopic": "Definição de Função",
+  "lessonIndexInModule": 2,
+  "order": 16
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m6_a3",
+  "moduleId": "mod_06_funcoes",
+  "moduleTitle": "Funções",
+  "title": "Aula 3: Função afim ou de 1º grau (gráficos, raízes, coeficiente angular e linear, taxa de variação)",
+  "subtopic": "Função Afim (1º Grau)",
+  "lessonIndexInModule": 3,
+  "order": 17
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m6_a4",
+  "moduleId": "mod_06_funcoes",
+  "moduleTitle": "Funções",
+  "title": "Aula 4: Função quadrática ou de 2º grau (parábola, raízes por Bhaskara, vértices para pontos de máximo e mínimo)",
+  "subtopic": "Função Quadrática & Vértices",
+  "lessonIndexInModule": 4,
+  "order": 18
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m6_a5",
+  "moduleId": "mod_06_funcoes",
+  "moduleTitle": "Funções",
+  "title": "Aula 5: Função exponencial (crescimento e decaimento exponencial)",
+  "subtopic": "Função Exponencial",
+  "lessonIndexInModule": 5,
+  "order": 19
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m6_a6",
+  "moduleId": "mod_06_funcoes",
+  "moduleTitle": "Funções",
+  "title": "Aula 6: Função logarítmica (gráficos e comportamento)",
+  "subtopic": "Função Logarítmica",
+  "lessonIndexInModule": 6,
+  "order": 20
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m10_a1",
+  "moduleId": "mod_10_sequencias_progressoes",
+  "moduleTitle": "Sequências e Progressões",
+  "title": "Aula 1: Identificação de padrões lógicos, numéricos e figurativos",
+  "subtopic": "Padrões Lógicos & Sequências",
+  "lessonIndexInModule": 1,
+  "order": 21
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m10_a2",
+  "moduleId": "mod_10_sequencias_progressoes",
+  "moduleTitle": "Sequências e Progressões",
+  "title": "Aula 2: Progressão Aritmética (PA): fórmula do termo geral e soma dos termos",
+  "subtopic": "Progressão Aritmética (PA)",
+  "lessonIndexInModule": 2,
+  "order": 22
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m10_a3",
+  "moduleId": "mod_10_sequencias_progressoes",
+  "moduleTitle": "Sequências e Progressões",
+  "title": "Aula 3: Progressão Geométrica (PG): fórmula do termo geral e soma dos termos",
+  "subtopic": "Progressão Geométrica (PG)",
+  "lessonIndexInModule": 3,
+  "order": 23
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m11_a1",
+  "moduleId": "mod_11_logaritmos",
+  "moduleTitle": "Logaritmos",
+  "title": "Aula 1: Definição e condição de existência",
+  "subtopic": "Definição de Logaritmo",
+  "lessonIndexInModule": 1,
+  "order": 24
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m11_a2",
+  "moduleId": "mod_11_logaritmos",
+  "moduleTitle": "Logaritmos",
+  "title": "Aula 2: Propriedades operatórias (logaritmo do produto, do quociente, da potência e mudança de base)",
+  "subtopic": "Propriedades dos Logaritmos",
+  "lessonIndexInModule": 2,
+  "order": 25
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m11_a3",
+  "moduleId": "mod_11_logaritmos",
+  "moduleTitle": "Logaritmos",
+  "title": "Aula 3: Resolução de equações exponenciais utilizando logaritmos",
+  "subtopic": "Equações Exponenciais & Log",
+  "lessonIndexInModule": 3,
+  "order": 26
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m2_a1",
+  "moduleId": "mod_02_matematica_financeira",
+  "moduleTitle": "Matemática Financeira",
+  "title": "Aula 1: Juros simples",
+  "subtopic": "Juros Simples & Montante",
+  "lessonIndexInModule": 1,
+  "order": 27
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m2_a2",
+  "moduleId": "mod_02_matematica_financeira",
+  "moduleTitle": "Matemática Financeira",
+  "title": "Aula 2: Juros compostos",
+  "subtopic": "Juros Compostos & Exponencial",
+  "lessonIndexInModule": 2,
+  "order": 28
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m2_a3",
+  "moduleId": "mod_02_matematica_financeira",
+  "moduleTitle": "Matemática Financeira",
+  "title": "Aula 3: Interpretação de tabelas de amortização e financiamento",
+  "subtopic": "Amortização e Financiamento",
+  "lessonIndexInModule": 3,
+  "order": 29
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m3_a1",
+  "moduleId": "mod_03_estatistica",
+  "moduleTitle": "Estatística",
+  "title": "Aula 1: Leitura e interpretação de tabelas e gráficos (barras, linhas, setores, pictogramas)",
+  "subtopic": "Interpretação Gráfica",
+  "lessonIndexInModule": 1,
+  "order": 30
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m3_a2",
+  "moduleId": "mod_03_estatistica",
+  "moduleTitle": "Estatística",
+  "title": "Aula 2: Média aritmética simples",
+  "subtopic": "Média Aritmética Simples",
+  "lessonIndexInModule": 2,
+  "order": 31
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m3_a3",
+  "moduleId": "mod_03_estatistica",
+  "moduleTitle": "Estatística",
+  "title": "Aula 3: Média aritmética ponderada",
+  "subtopic": "Média Ponderada",
+  "lessonIndexInModule": 3,
+  "order": 32
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m3_a4",
+  "moduleId": "mod_03_estatistica",
+  "moduleTitle": "Estatística",
+  "title": "Aula 4: Moda",
+  "subtopic": "Moda Estatística",
+  "lessonIndexInModule": 4,
+  "order": 33
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m3_a5",
+  "moduleId": "mod_03_estatistica",
+  "moduleTitle": "Estatística",
+  "title": "Aula 5: Mediana",
+  "subtopic": "Mediana & Posição Central",
+  "lessonIndexInModule": 5,
+  "order": 34
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m3_a6",
+  "moduleId": "mod_03_estatistica",
+  "moduleTitle": "Estatística",
+  "title": "Aula 6: Medidas de dispersão (variância e desvio padrão)",
+  "subtopic": "Variância & Desvio Padrão",
+  "lessonIndexInModule": 6,
+  "order": 35
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m8_a1",
+  "moduleId": "mod_08_analise_combinatoria",
+  "moduleTitle": "Análise Combinatória",
+  "title": "Aula 1: Princípio Fundamental da Contagem (PFC) ou Princípio Multiplicativo",
+  "subtopic": "Princípio Fundamental da Contagem",
+  "lessonIndexInModule": 1,
+  "order": 36
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m8_a2",
+  "moduleId": "mod_08_analise_combinatoria",
+  "moduleTitle": "Análise Combinatória",
+  "title": "Aula 2: Fatorial",
+  "subtopic": "Fatorial & Simplificações",
+  "lessonIndexInModule": 2,
+  "order": 37
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m8_a3",
+  "moduleId": "mod_08_analise_combinatoria",
+  "moduleTitle": "Análise Combinatória",
+  "title": "Aula 3: Permutação simples e permutação com repetição",
+  "subtopic": "Permutações",
+  "lessonIndexInModule": 3,
+  "order": 38
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m8_a4",
+  "moduleId": "mod_08_analise_combinatoria",
+  "moduleTitle": "Análise Combinatória",
+  "title": "Aula 4: Arranjo simples",
+  "subtopic": "Arranjos Simples",
+  "lessonIndexInModule": 4,
+  "order": 39
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m8_a5",
+  "moduleId": "mod_08_analise_combinatoria",
+  "moduleTitle": "Análise Combinatória",
+  "title": "Aula 5: Combinação simples",
+  "subtopic": "Combinações Simples",
+  "lessonIndexInModule": 5,
+  "order": 40
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m9_a1",
+  "moduleId": "mod_09_probabilidade",
+  "moduleTitle": "Probabilidade",
+  "title": "Aula 1: Experimento aleatório, espaço amostral e evento",
+  "subtopic": "Espaço Amostral & Eventos",
+  "lessonIndexInModule": 1,
+  "order": 41
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m9_a2",
+  "moduleId": "mod_09_probabilidade",
+  "moduleTitle": "Probabilidade",
+  "title": "Aula 2: Definição clássica de probabilidade",
+  "subtopic": "Probabilidade Clássica",
+  "lessonIndexInModule": 2,
+  "order": 42
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m9_a3",
+  "moduleId": "mod_09_probabilidade",
+  "moduleTitle": "Probabilidade",
+  "title": "Aula 3: Probabilidade da união de eventos (eventos mutuamente exclusivos)",
+  "subtopic": "União de Eventos",
+  "lessonIndexInModule": 3,
+  "order": 43
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m9_a4",
+  "moduleId": "mod_09_probabilidade",
+  "moduleTitle": "Probabilidade",
+  "title": "Aula 4: Probabilidade da intersecção de eventos (eventos independentes)",
+  "subtopic": "Intersecção de Eventos",
+  "lessonIndexInModule": 4,
+  "order": 44
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m9_a5",
+  "moduleId": "mod_09_probabilidade",
+  "moduleTitle": "Probabilidade",
+  "title": "Aula 5: Probabilidade condicional",
+  "subtopic": "Probabilidade Condicional",
+  "lessonIndexInModule": 5,
+  "order": 45
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m9_a6",
+  "moduleId": "mod_09_probabilidade",
+  "moduleTitle": "Probabilidade",
+  "title": "Aula 6: Probabilidade do evento complementar",
+  "subtopic": "Evento Complementar",
+  "lessonIndexInModule": 6,
+  "order": 46
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m4_a1",
+  "moduleId": "mod_04_geometria_plana",
+  "moduleTitle": "Geometria Plana",
+  "title": "Aula 1: Conceitos fundamentais (ponto, reta, plano, ângulos)",
+  "subtopic": "Fundamentos da Geometria Plana",
+  "lessonIndexInModule": 1,
+  "order": 47
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m4_a2",
+  "moduleId": "mod_04_geometria_plana",
+  "moduleTitle": "Geometria Plana",
+  "title": "Aula 2: Polígonos (soma de ângulos internos e externos, diagonais)",
+  "subtopic": "Polígonos & Ângulos",
+  "lessonIndexInModule": 2,
+  "order": 48
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m4_a3",
+  "moduleId": "mod_04_geometria_plana",
+  "moduleTitle": "Geometria Plana",
+  "title": "Aula 3: Triângulos (classificação, condição de existência, pontos notáveis)",
+  "subtopic": "Triângulos & Pontos Notáveis",
+  "lessonIndexInModule": 3,
+  "order": 49
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m4_a4",
+  "moduleId": "mod_04_geometria_plana",
+  "moduleTitle": "Geometria Plana",
+  "title": "Aula 4: Semelhança e congruência de triângulos",
+  "subtopic": "Semelhança de Triângulos",
+  "lessonIndexInModule": 4,
+  "order": 50
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m4_a5",
+  "moduleId": "mod_04_geometria_plana",
+  "moduleTitle": "Geometria Plana",
+  "title": "Aula 5: Teorema de Tales",
+  "subtopic": "Teorema de Tales",
+  "lessonIndexInModule": 5,
+  "order": 51
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m4_a6",
+  "moduleId": "mod_04_geometria_plana",
+  "moduleTitle": "Geometria Plana",
+  "title": "Aula 6: Teorema de Pitágoras e relações métricas no triângulo retângulo",
+  "subtopic": "Pitágoras & Relações Métricas",
+  "lessonIndexInModule": 6,
+  "order": 52
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m4_a7",
+  "moduleId": "mod_04_geometria_plana",
+  "moduleTitle": "Geometria Plana",
+  "title": "Aula 7: Cálculo de perímetros",
+  "subtopic": "Perímetros de Figuras Planas",
+  "lessonIndexInModule": 7,
+  "order": 53
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m4_a8",
+  "moduleId": "mod_04_geometria_plana",
+  "moduleTitle": "Geometria Plana",
+  "title": "Aula 8: Cálculo de áreas (triângulos, quadriláteros, polígonos regulares)",
+  "subtopic": "Cálculo de Áreas Planas",
+  "lessonIndexInModule": 8,
+  "order": 54
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m4_a9",
+  "moduleId": "mod_04_geometria_plana",
+  "moduleTitle": "Geometria Plana",
+  "title": "Aula 9: Círculo e circunferência (comprimento da circunferência, área do círculo, coroa e setor circular)",
+  "subtopic": "Círculo, Setor & Coroa Circular",
+  "lessonIndexInModule": 9,
+  "order": 55
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m12_a1",
+  "moduleId": "mod_12_trigonometria",
+  "moduleTitle": "Trigonometria",
+  "title": "Aula 1: Relações trigonométricas no triângulo retângulo (seno, cosseno e tangente)",
+  "subtopic": "Trigonometria no Triângulo Retângulo",
+  "lessonIndexInModule": 1,
+  "order": 56
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m12_a2",
+  "moduleId": "mod_12_trigonometria",
+  "moduleTitle": "Trigonometria",
+  "title": "Aula 2: Ângulos notáveis (30º, 45º e 60º)",
+  "subtopic": "Ângulos Notáveis (30°, 45°, 60°)",
+  "lessonIndexInModule": 2,
+  "order": 57
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m12_a3",
+  "moduleId": "mod_12_trigonometria",
+  "moduleTitle": "Trigonometria",
+  "title": "Aula 3: Trigonometria em triângulos quaisquer (Lei dos Senos e Lei dos Cossenos)",
+  "subtopic": "Lei dos Senos & Cossenos",
+  "lessonIndexInModule": 3,
+  "order": 58
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m12_a4",
+  "moduleId": "mod_12_trigonometria",
+  "moduleTitle": "Trigonometria",
+  "title": "Aula 4: Ciclo trigonométrico (conversão entre graus e radianos)",
+  "subtopic": "Ciclo Trigonométrico & Radianos",
+  "lessonIndexInModule": 4,
+  "order": 59
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m12_a5",
+  "moduleId": "mod_12_trigonometria",
+  "moduleTitle": "Trigonometria",
+  "title": "Aula 5: Funções trigonométricas (análise de gráficos, período e amplitude de seno e cosseno)",
+  "subtopic": "Funções Periódicas (Seno & Cosseno)",
+  "lessonIndexInModule": 5,
+  "order": 60
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m5_a1",
+  "moduleId": "mod_05_geometria_espacial",
+  "moduleTitle": "Geometria Espacial",
+  "title": "Aula 1: Visão espacial (projeções ortogonais e vistas frontais, laterais e superiores)",
+  "subtopic": "Projeções Ortogonais & Vistas",
+  "lessonIndexInModule": 1,
+  "order": 61
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m5_a2",
+  "moduleId": "mod_05_geometria_espacial",
+  "moduleTitle": "Geometria Espacial",
+  "title": "Aula 2: Planificação de sólidos geométricos",
+  "subtopic": "Planificação de Sólidos",
+  "lessonIndexInModule": 2,
+  "order": 62
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m5_a3",
+  "moduleId": "mod_05_geometria_espacial",
+  "moduleTitle": "Geometria Espacial",
+  "title": "Aula 3: Poliedros e Relação de Euler",
+  "subtopic": "Poliedros & Relação de Euler",
+  "lessonIndexInModule": 3,
+  "order": 63
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m5_a4",
+  "moduleId": "mod_05_geometria_espacial",
+  "moduleTitle": "Geometria Espacial",
+  "title": "Aula 4: Prismas (elementos, área da superfície e cálculo de volume)",
+  "subtopic": "Prismas: Superfície e Volume",
+  "lessonIndexInModule": 4,
+  "order": 64
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m5_a5",
+  "moduleId": "mod_05_geometria_espacial",
+  "moduleTitle": "Geometria Espacial",
+  "title": "Aula 5: Cilindros (elementos, área da superfície e cálculo de volume)",
+  "subtopic": "Cilindros: Superfície e Volume",
+  "lessonIndexInModule": 5,
+  "order": 65
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m5_a6",
+  "moduleId": "mod_05_geometria_espacial",
+  "moduleTitle": "Geometria Espacial",
+  "title": "Aula 6: Pirâmides (elementos, área da superfície e cálculo de volume)",
+  "subtopic": "Pirâmides: Superfície e Volume",
+  "lessonIndexInModule": 6,
+  "order": 66
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m5_a7",
+  "moduleId": "mod_05_geometria_espacial",
+  "moduleTitle": "Geometria Espacial",
+  "title": "Aula 7: Cones (elementos, área da superfície e cálculo de volume)",
+  "subtopic": "Cones: Superfície e Volume",
+  "lessonIndexInModule": 7,
+  "order": 67
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m5_a8",
+  "moduleId": "mod_05_geometria_espacial",
+  "moduleTitle": "Geometria Espacial",
+  "title": "Aula 8: Esferas (área da superfície e cálculo de volume)",
+  "subtopic": "Esferas: Superfície e Volume",
+  "lessonIndexInModule": 8,
+  "order": 68
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m5_a9",
+  "moduleId": "mod_05_geometria_espacial",
+  "moduleTitle": "Geometria Espacial",
+  "title": "Aula 9: Troncos de pirâmide e de cone",
+  "subtopic": "Troncos de Sólidos",
+  "lessonIndexInModule": 9,
+  "order": 69
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m13_a1",
+  "moduleId": "mod_13_geometria_analitica",
+  "moduleTitle": "Geometria Analítica",
+  "title": "Aula 1: Distância entre dois pontos no plano cartesiano",
+  "subtopic": "Distância Entre Dois Pontos",
+  "lessonIndexInModule": 1,
+  "order": 70
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m13_a2",
+  "moduleId": "mod_13_geometria_analitica",
+  "moduleTitle": "Geometria Analítica",
+  "title": "Aula 2: Ponto médio de um segmento de reta",
+  "subtopic": "Ponto Médio",
+  "lessonIndexInModule": 2,
+  "order": 71
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m13_a3",
+  "moduleId": "mod_13_geometria_analitica",
+  "moduleTitle": "Geometria Analítica",
+  "title": "Aula 3: Condição de alinhamento de três pontos",
+  "subtopic": "Alinhamento de Pontos",
+  "lessonIndexInModule": 3,
+  "order": 72
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m13_a4",
+  "moduleId": "mod_13_geometria_analitica",
+  "moduleTitle": "Geometria Analítica",
+  "title": "Aula 4: Estudo da reta (equação reduzida, equação geral, coeficientes angular e linear)",
+  "subtopic": "Equações da Reta",
+  "lessonIndexInModule": 4,
+  "order": 73
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m13_a5",
+  "moduleId": "mod_13_geometria_analitica",
+  "moduleTitle": "Geometria Analítica",
+  "title": "Aula 5: Posições relativas entre retas (paralelas e perpendiculares)",
+  "subtopic": "Retas Paralelas & Perpendiculares",
+  "lessonIndexInModule": 5,
+  "order": 74
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m13_a6",
+  "moduleId": "mod_13_geometria_analitica",
+  "moduleTitle": "Geometria Analítica",
+  "title": "Aula 6: Equação reduzida e geral da circunferência",
+  "subtopic": "Equação da Circunferência",
+  "lessonIndexInModule": 6,
+  "order": 75
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m14_a1",
+  "moduleId": "mod_14_matrizes_sistemas",
+  "moduleTitle": "Matrizes e Sistemas Lineares",
+  "title": "Aula 1: Lei de formação e operações elementares com matrizes (adição, subtração, multiplicação)",
+  "subtopic": "Matrizes & Operações",
+  "lessonIndexInModule": 1,
+  "order": 76
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m14_a2",
+  "moduleId": "mod_14_matrizes_sistemas",
+  "moduleTitle": "Matrizes e Sistemas Lineares",
+  "title": "Aula 2: Determinantes (ordens 2 e 3)",
+  "subtopic": "Determinantes (Ordem 2 e 3)",
+  "lessonIndexInModule": 2,
+  "order": 77
+ },
+ {
+  "subject": "Matemática",
+  "lessonId": "enem_m14_a3",
+  "moduleId": "mod_14_matrizes_sistemas",
+  "moduleTitle": "Matrizes e Sistemas Lineares",
+  "title": "Aula 3: Resolução e classificação de sistemas lineares simples",
+  "subtopic": "Sistemas Lineares & Classificação",
+  "lessonIndexInModule": 3,
+  "order": 78
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_cit_01",
+  "moduleId": "mod_bio_04_citologia",
+  "moduleTitle": "Citologia e Bioquímica Celular",
+  "title": "1. Teoria Celular, Envoltórios e Citoesqueleto",
+  "subtopic": "Procariontes, Eucariontes, Membrana, Osmose e Glicocálix",
+  "lessonIndexInModule": 1,
+  "order": 79
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_cit_02",
+  "moduleId": "mod_bio_04_citologia",
+  "moduleTitle": "Citologia e Bioquímica Celular",
+  "title": "2. Organelas Citoplasmáticas e Célula Animal vs. Vegetal",
+  "subtopic": "Ribossomos, RER, REL, Golgi, Lisossomos e Peroxissomos",
+  "lessonIndexInModule": 2,
+  "order": 80
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_cit_03",
+  "moduleId": "mod_bio_04_citologia",
+  "moduleTitle": "Citologia e Bioquímica Celular",
+  "title": "3. Teoria Endossimbiótica e Mitocôndria",
+  "subtopic": "Origem Bacteriana, Evidências e Herança Mitocondrial Materna",
+  "lessonIndexInModule": 3,
+  "order": 81
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_cit_04",
+  "moduleId": "mod_bio_04_citologia",
+  "moduleTitle": "Citologia e Bioquímica Celular",
+  "title": "4. Metabolismo Energético",
+  "subtopic": "Respiração Celular, Fermentação Láctica/Alcoólica e Fotossíntese",
+  "lessonIndexInModule": 4,
+  "order": 82
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_cit_05",
+  "moduleId": "mod_bio_04_citologia",
+  "moduleTitle": "Citologia e Bioquímica Celular",
+  "title": "5. Bioquímica Celular",
+  "subtopic": "Água, Sais, Carboidratos, Lipídios, Enzimas e Vitaminas",
+  "lessonIndexInModule": 5,
+  "order": 83
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_gen_01",
+  "moduleId": "mod_bio_03_genetica",
+  "moduleTitle": "Genética e Biotecnologia",
+  "title": "1. Conceitos Iniciais e Ácidos Nucleicos",
+  "subtopic": "DNA, RNA, Genótipo e Fenótipo",
+  "lessonIndexInModule": 1,
+  "order": 84
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_gen_02",
+  "moduleId": "mod_bio_03_genetica",
+  "moduleTitle": "Genética e Biotecnologia",
+  "title": "2. Primeira Lei de Mendel",
+  "subtopic": "Segregação dos Fatores e Monoibridismo 3:1",
+  "lessonIndexInModule": 2,
+  "order": 85
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_gen_03",
+  "moduleId": "mod_bio_03_genetica",
+  "moduleTitle": "Genética e Biotecnologia",
+  "title": "3. Segunda Lei de Mendel e Linkage",
+  "subtopic": "Segregação Independente 9:3:3:1 e Crossing-over",
+  "lessonIndexInModule": 3,
+  "order": 86
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_gen_04",
+  "moduleId": "mod_bio_03_genetica",
+  "moduleTitle": "Genética e Biotecnologia",
+  "title": "4. Doenças Genéticas e Sistema ABO",
+  "subtopic": "Tipagem Sanguínea, Rh, Daltonismo e Down",
+  "lessonIndexInModule": 4,
+  "order": 87
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_gen_05",
+  "moduleId": "mod_bio_03_genetica",
+  "moduleTitle": "Genética e Biotecnologia",
+  "title": "5. Biotecnologia e Transgênicos",
+  "subtopic": "DNA Recombinante, Eletroforese, Dolly e Células-Tronco",
+  "lessonIndexInModule": 5,
+  "order": 88
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_evo_01",
+  "moduleId": "mod_bio_05_evolucao",
+  "moduleTitle": "Evolução Biológica e Hominização",
+  "title": "1. Evidências da Evolução e Homologia vs. Analogia",
+  "subtopic": "Fósseis, Órgãos Vestigiais e Irradiação vs. Convergência",
+  "lessonIndexInModule": 1,
+  "order": 89
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_evo_02",
+  "moduleId": "mod_bio_05_evolucao",
+  "moduleTitle": "Evolução Biológica e Hominização",
+  "title": "2. Lamarckismo",
+  "subtopic": "Uso e Desuso, Caracteres Adquiridos e Barreira Somática",
+  "lessonIndexInModule": 2,
+  "order": 90
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_evo_03",
+  "moduleId": "mod_bio_05_evolucao",
+  "moduleTitle": "Evolução Biológica e Hominização",
+  "title": "3. Darwinismo e Neodarwinismo",
+  "subtopic": "Seleção Natural, Mutação, Recombinação e Superbactérias",
+  "lessonIndexInModule": 3,
+  "order": 91
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_evo_04",
+  "moduleId": "mod_bio_05_evolucao",
+  "moduleTitle": "Evolução Biológica e Hominização",
+  "title": "4. Evolução Humana e Hominização",
+  "subtopic": "Ancestral Comum, Bipedalismo, Homo habilis, erectus e sapiens",
+  "lessonIndexInModule": 4,
+  "order": 92
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_fis_01",
+  "moduleId": "mod_bio_02_fisiologia",
+  "moduleTitle": "Fisiologia e Anatomia Humana",
+  "title": "1. Sistemas do Corpo Humano e Anatomia Integrada",
+  "subtopic": "Digestão, Respiração, Circulação e Excreção",
+  "lessonIndexInModule": 1,
+  "order": 93
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_fis_02",
+  "moduleId": "mod_bio_02_fisiologia",
+  "moduleTitle": "Fisiologia e Anatomia Humana",
+  "title": "2. Saúde e Doenças (Imunologia)",
+  "subtopic": "Vírus, Bactérias, Parasitas, Vacinas e Soros",
+  "lessonIndexInModule": 2,
+  "order": 94
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_fis_03",
+  "moduleId": "mod_bio_02_fisiologia",
+  "moduleTitle": "Fisiologia e Anatomia Humana",
+  "title": "3. Reprodução e Gravidez",
+  "subtopic": "Ciclo Menstrual, Ovulação, Nidação e Placenta",
+  "lessonIndexInModule": 3,
+  "order": 95
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_fis_04",
+  "moduleId": "mod_bio_02_fisiologia",
+  "moduleTitle": "Fisiologia e Anatomia Humana",
+  "title": "4. Métodos Contraceptivos e ISTs",
+  "subtopic": "Barreiras, Hormonais, Vasectomia e Prevenção",
+  "lessonIndexInModule": 4,
+  "order": 96
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_eco_01",
+  "moduleId": "mod_bio_01_ecologia",
+  "moduleTitle": "Ecologia",
+  "title": "1. Conceitos de Meio Ambiente e Biodiversidade",
+  "subtopic": "Habitat, Nicho Ecológico e Hotspots",
+  "lessonIndexInModule": 1,
+  "order": 97
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_eco_02",
+  "moduleId": "mod_bio_01_ecologia",
+  "moduleTitle": "Ecologia",
+  "title": "2. Cadeias e Teias Alimentares",
+  "subtopic": "Níveis Tróficos, Fluxo de Energia e Bioacumulação",
+  "lessonIndexInModule": 2,
+  "order": 98
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_eco_03",
+  "moduleId": "mod_bio_01_ecologia",
+  "moduleTitle": "Ecologia",
+  "title": "3. Relações Ecológicas",
+  "subtopic": "Relações Harmônicas e Desarmônicas",
+  "lessonIndexInModule": 3,
+  "order": 99
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_eco_04",
+  "moduleId": "mod_bio_01_ecologia",
+  "moduleTitle": "Ecologia",
+  "title": "4. Ciclos Biogeoquímicos",
+  "subtopic": "Ciclo da Água, Carbono e Nitrogênio",
+  "lessonIndexInModule": 4,
+  "order": 100
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_eco_05",
+  "moduleId": "mod_bio_01_ecologia",
+  "moduleTitle": "Ecologia",
+  "title": "5. Impactos Ambientais e Poluição",
+  "subtopic": "Eutrofização, Chuva Ácida e Inversão Térmica",
+  "lessonIndexInModule": 5,
+  "order": 101
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_eco_06",
+  "moduleId": "mod_bio_01_ecologia",
+  "moduleTitle": "Ecologia",
+  "title": "6. Efeito Estufa e Aquecimento Global",
+  "subtopic": "Gases Estufa, Aquecimento dos Oceanos e Branqueamento de Corais",
+  "lessonIndexInModule": 6,
+  "order": 102
+ },
+ {
+  "subject": "Biologia",
+  "lessonId": "bio_eco_07",
+  "moduleId": "mod_bio_01_ecologia",
+  "moduleTitle": "Ecologia",
+  "title": "7. Sustentabilidade",
+  "subtopic": "Energias Renováveis, Biorremediação e Controle Biológico",
+  "lessonIndexInModule": 7,
+  "order": 103
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m1_a1",
+  "moduleId": "mod_fis_01_mecanica",
+  "moduleTitle": "Mecânica",
+  "title": "Aula 1: Cinemática Escalar (Ordem de Grandeza, MRU e MRUV)",
+  "subtopic": "MRU, MRUV e Funções Horárias",
+  "lessonIndexInModule": 1,
+  "order": 104
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m1_a2",
+  "moduleId": "mod_fis_01_mecanica",
+  "moduleTitle": "Mecânica",
+  "title": "Aula 2: Análise Gráfica, Vetores e Lançamentos",
+  "subtopic": "Gráficos do Movimento e Lançamentos (Vertical, Horizontal, Oblíquo e Queda Livre)",
+  "lessonIndexInModule": 2,
+  "order": 105
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m1_a3",
+  "moduleId": "mod_fis_01_mecanica",
+  "moduleTitle": "Mecânica",
+  "title": "Aula 3: Cinemática Angular e Movimento Circular Uniforme (MCU)",
+  "subtopic": "MCU, Período, Frequência e Aceleração Centrípeta",
+  "lessonIndexInModule": 3,
+  "order": 106
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m1_a4",
+  "moduleId": "mod_fis_01_mecanica",
+  "moduleTitle": "Mecânica",
+  "title": "Aula 4: Dinâmica e Leis de Newton",
+  "subtopic": "1ª, 2ª e 3ª Leis de Newton, Atrito, Força Elástica e Centrípeta",
+  "lessonIndexInModule": 4,
+  "order": 107
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m1_a5",
+  "moduleId": "mod_fis_01_mecanica",
+  "moduleTitle": "Mecânica",
+  "title": "Aula 5: Máquinas Simples e Aplicações",
+  "subtopic": "Roldanas, Elevadores, Plano Inclinado e Alavancas",
+  "lessonIndexInModule": 5,
+  "order": 108
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m1_a6",
+  "moduleId": "mod_fis_01_mecanica",
+  "moduleTitle": "Mecânica",
+  "title": "Aula 6: Trabalho, Potência e Energia Mecânica",
+  "subtopic": "Trabalho, Potência, Energia Cinética, Potencial e Conservação da Energia",
+  "lessonIndexInModule": 6,
+  "order": 109
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m1_a7",
+  "moduleId": "mod_fis_01_mecanica",
+  "moduleTitle": "Mecânica",
+  "title": "Aula 7: Impulso, Quantidade de Movimento e Colisões",
+  "subtopic": "Teorema do Impulso, Choques Mecânicos e Conservação do Momento",
+  "lessonIndexInModule": 7,
+  "order": 110
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m1_a8",
+  "moduleId": "mod_fis_01_mecanica",
+  "moduleTitle": "Mecânica",
+  "title": "Aula 8: Estática do Ponto Material e Corpos Extensos",
+  "subtopic": "Condições de Equilíbrio e Momento de uma Força (Torque)",
+  "lessonIndexInModule": 8,
+  "order": 111
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m1_a9",
+  "moduleId": "mod_fis_01_mecanica",
+  "moduleTitle": "Mecânica",
+  "title": "Aula 9: Hidrostática (Pressão, Stevin, Pascal e Arquimedes)",
+  "subtopic": "Massa Específica, Pressão Hidrostática, Vasos Comunicantes e Empuxo",
+  "lessonIndexInModule": 9,
+  "order": 112
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m1_a10",
+  "moduleId": "mod_fis_01_mecanica",
+  "moduleTitle": "Mecânica",
+  "title": "Aula 10: Gravitação Universal e Leis de Kepler",
+  "subtopic": "Órbitas Planetárias e Lei da Gravitação de Newton",
+  "lessonIndexInModule": 10,
+  "order": 113
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m3_a1",
+  "moduleId": "mod_fis_03_termologia",
+  "moduleTitle": "Termologia (Termodinâmica)",
+  "title": "Aula 1: Termometria e Escalas Termométricas",
+  "subtopic": "Conceito de Temperatura, Escalas Celsius, Fahrenheit e Kelvin",
+  "lessonIndexInModule": 1,
+  "order": 114
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m3_a2",
+  "moduleId": "mod_fis_03_termologia",
+  "moduleTitle": "Termologia (Termodinâmica)",
+  "title": "Aula 2: Dilatação Térmica dos Sólidos e Líquidos",
+  "subtopic": "Dilatação Linear, Superficial, Volumétrica e Dilatação Anômala da Água",
+  "lessonIndexInModule": 2,
+  "order": 115
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m3_a3",
+  "moduleId": "mod_fis_03_termologia",
+  "moduleTitle": "Termologia (Termodinâmica)",
+  "title": "Aula 3: Calorimetria - Calor Sensível e Calor Latente",
+  "subtopic": "Capacidade Térmica, Equação Fundamental da Calorimetria e Mudanças de Fase",
+  "lessonIndexInModule": 3,
+  "order": 116
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m3_a4",
+  "moduleId": "mod_fis_03_termologia",
+  "moduleTitle": "Termologia (Termodinâmica)",
+  "title": "Aula 4: Processos de Transmissão de Calor e Equilíbrio Térmico",
+  "subtopic": "Condução, Convecção, Irradiação Térmica e Efeito Estufa",
+  "lessonIndexInModule": 4,
+  "order": 117
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m3_a5",
+  "moduleId": "mod_fis_03_termologia",
+  "moduleTitle": "Termologia (Termodinâmica)",
+  "title": "Aula 5: Termodinâmica, Gases Ideais e Máquinas Térmicas",
+  "subtopic": "Equação de Clapeyron, 1ª Lei da Termodinâmica, Ciclo de Carnot e 2ª Lei",
+  "lessonIndexInModule": 5,
+  "order": 118
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m4_a1",
+  "moduleId": "mod_fis_04_ondulatoria",
+  "moduleTitle": "Ondulatória",
+  "title": "Aula 1: Fundamentos da Ondulatória e Equação Fundamental (v = λ · f)",
+  "subtopic": "Classificação das Ondas (Mecânicas vs Eletromagnéticas, Transversais e Longitudinais)",
+  "lessonIndexInModule": 1,
+  "order": 119
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m4_a2",
+  "moduleId": "mod_fis_04_ondulatoria",
+  "moduleTitle": "Ondulatória",
+  "title": "Aula 2: Fenômenos Ondulatórios - Reflexão, Refração e Difração",
+  "subtopic": "Comportamento das Ondas e Contorno de Obstáculos",
+  "lessonIndexInModule": 2,
+  "order": 120
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m4_a3",
+  "moduleId": "mod_fis_04_ondulatoria",
+  "moduleTitle": "Ondulatória",
+  "title": "Aula 3: Interferência, Polarização e Ressonância",
+  "subtopic": "Interferência Construtiva/Destrutiva, Filtros de Polarização e Frequência Própria",
+  "lessonIndexInModule": 3,
+  "order": 121
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m4_a4",
+  "moduleId": "mod_fis_04_ondulatoria",
+  "moduleTitle": "Ondulatória",
+  "title": "Aula 4: Acústica e Qualidades Fisiológicas do Som",
+  "subtopic": "Altura (Frequência), Intensidade (Volume), Timbre e Ondas Estacionárias em Cordas/Tubos",
+  "lessonIndexInModule": 4,
+  "order": 122
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m4_a5",
+  "moduleId": "mod_fis_04_ondulatoria",
+  "moduleTitle": "Ondulatória",
+  "title": "Aula 5: Efeito Doppler e Aplicações Tecnológicas",
+  "subtopic": "Deslocamento Aparente de Frequência no ENEM (Radares, Som e Astronomia)",
+  "lessonIndexInModule": 5,
+  "order": 123
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m5_a1",
+  "moduleId": "mod_fis_05_optica",
+  "moduleTitle": "Óptica",
+  "title": "Aula 1: Fundamentos da Óptica Geométrica e Propagação da Luz",
+  "subtopic": "Fontes de Luz, Princípio da Independência, Reversibilidade e Sombras",
+  "lessonIndexInModule": 1,
+  "order": 124
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m5_a2",
+  "moduleId": "mod_fis_05_optica",
+  "moduleTitle": "Óptica",
+  "title": "Aula 2: Espelhos Planos e Esféricos (Côncavos e Convexos)",
+  "subtopic": "Formação de Imagens (Real, Virtual, Direita e Invertida) e Campo Visual",
+  "lessonIndexInModule": 2,
+  "order": 125
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m5_a3",
+  "moduleId": "mod_fis_05_optica",
+  "moduleTitle": "Óptica",
+  "title": "Aula 3: Refração Luminosa, Lei de Snell-Descartes e Ângulo Limite",
+  "subtopic": "Índice de Refração, Dioptro Plano e Reflexão Total (Fibras Ópticas)",
+  "lessonIndexInModule": 3,
+  "order": 126
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m5_a4",
+  "moduleId": "mod_fis_05_optica",
+  "moduleTitle": "Óptica",
+  "title": "Aula 4: Lentes Esféricas Delgadas e Equação de Gauss",
+  "subtopic": "Lentes Convergentes/Divergentes, Foco, Vergência e Construção Geométrica",
+  "lessonIndexInModule": 4,
+  "order": 127
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m5_a5",
+  "moduleId": "mod_fis_05_optica",
+  "moduleTitle": "Óptica",
+  "title": "Aula 5: Óptica da Visão e Instrumentos Ópticos",
+  "subtopic": "Olho Humano, Miopia, Hipermetropia, Astigmatismo e Correção por Lentes",
+  "lessonIndexInModule": 5,
+  "order": 128
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m2_a1",
+  "moduleId": "mod_fis_02_eletricidade",
+  "moduleTitle": "Eletricidade e Magnetismo",
+  "title": "Aula 1: Eletrodinâmica - Corrente, Tensão e Potência Elétrica",
+  "subtopic": "Conceito de Carga, Corrente Elétrica, ddp e Cálculo de Consumo de Energia (kWh)",
+  "lessonIndexInModule": 1,
+  "order": 129
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m2_a2",
+  "moduleId": "mod_fis_02_eletricidade",
+  "moduleTitle": "Eletricidade e Magnetismo",
+  "title": "Aula 2: 1ª e 2ª Leis de Ohm e Resistores",
+  "subtopic": "Resistência, Resistividade, Efeito Joule e Associação de Resistores (Série/Paralelo)",
+  "lessonIndexInModule": 2,
+  "order": 130
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m2_a3",
+  "moduleId": "mod_fis_02_eletricidade",
+  "moduleTitle": "Eletricidade e Magnetismo",
+  "title": "Aula 3: Circuitos Elétricos, Curtos-Circuitos e Dimensionamento",
+  "subtopic": "Fusíveis, Disjuntores, Geradores, Receptores e Medidores (Amperímetro e Voltímetro)",
+  "lessonIndexInModule": 3,
+  "order": 131
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m2_a4",
+  "moduleId": "mod_fis_02_eletricidade",
+  "moduleTitle": "Eletricidade e Magnetismo",
+  "title": "Aula 4: Eletrostática - Cargas, Processos de Eletrização e Lei de Coulomb",
+  "subtopic": "Atrito, Contato, Indução e Força Elétrica",
+  "lessonIndexInModule": 4,
+  "order": 132
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m2_a5",
+  "moduleId": "mod_fis_02_eletricidade",
+  "moduleTitle": "Eletricidade e Magnetismo",
+  "title": "Aula 5: Campo Elétrico, Potencial e Blindagem Eletrostática",
+  "subtopic": "Linhas de Força, Gaiola de Faraday e Energia Potencial Elétrica",
+  "lessonIndexInModule": 5,
+  "order": 133
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m2_a6",
+  "moduleId": "mod_fis_02_eletricidade",
+  "moduleTitle": "Eletricidade e Magnetismo",
+  "title": "Aula 6: Eletromagnetismo, Campo Magnético e Indução de Faraday",
+  "subtopic": "Ímãs, Campo da Terra, Experimento de Oersted, Força Magnética e Lei de Lenz",
+  "lessonIndexInModule": 6,
+  "order": 134
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m6_a1",
+  "moduleId": "mod_fis_06_moderna",
+  "moduleTitle": "Física Moderna",
+  "title": "Aula 1: Dualidade Onda-Partícula e Efeito Fotoelétrico",
+  "subtopic": "Fótons, Energia de Planck (E = h · f) e Células Fotoelétricas no ENEM",
+  "lessonIndexInModule": 1,
+  "order": 135
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m6_a2",
+  "moduleId": "mod_fis_06_moderna",
+  "moduleTitle": "Física Moderna",
+  "title": "Aula 2: Estrutura Atômica, Radioatividade e Reações Nucleares",
+  "subtopic": "Fissão Nuclear, Fusão Nuclear, Decaimento Alfa/Beta/Gama e Meia-Vida",
+  "lessonIndexInModule": 2,
+  "order": 136
+ },
+ {
+  "subject": "Física",
+  "lessonId": "fis_m6_a3",
+  "moduleId": "mod_fis_06_moderna",
+  "moduleTitle": "Física Moderna",
+  "title": "Aula 3: Teoria da Relatividade Restrita e Geral",
+  "subtopic": "Postulados de Einstein, Dilatação Temporal, Contração Espacial e Equivalência E = mc²",
+  "lessonIndexInModule": 3,
+  "order": 137
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_b1_l1",
+  "moduleId": "py_b1",
+  "moduleTitle": "Sintaxe, Variáveis & Tipos Primitivos",
+  "lessonIndexInModule": 1,
+  "title": "Primeiros Passos com print()",
+  "subtopic": "A Função print() e Saída Padrão",
+  "order": 138
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_b1_l2",
+  "moduleId": "py_b1",
+  "moduleTitle": "Sintaxe, Variáveis & Tipos Primitivos",
+  "lessonIndexInModule": 2,
+  "title": "Variáveis e Tipagem Dinâmica",
+  "subtopic": "Declarando Variáveis",
+  "order": 139
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_b1_l3",
+  "moduleId": "py_b1",
+  "moduleTitle": "Sintaxe, Variáveis & Tipos Primitivos",
+  "lessonIndexInModule": 3,
+  "title": "Conversão de Tipos (Type Casting)",
+  "subtopic": "Casting com int() e float()",
+  "order": 140
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_b2_l1",
+  "moduleId": "py_b2",
+  "moduleTitle": "Operadores & Estruturas Condicionais",
+  "lessonIndexInModule": 4,
+  "title": "Operadores Aritméticos",
+  "subtopic": "Divisão Inteira e Módulo (%)",
+  "order": 141
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_b2_l2",
+  "moduleId": "py_b2",
+  "moduleTitle": "Operadores & Estruturas Condicionais",
+  "lessonIndexInModule": 5,
+  "title": "Controle com if, elif e else",
+  "subtopic": "Tomada de Decisão com Indentação",
+  "order": 142
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_b3_l1",
+  "moduleId": "py_b3",
+  "moduleTitle": "Laços de Repetição & Dicionários",
+  "lessonIndexInModule": 6,
+  "title": "Laço for com range()",
+  "subtopic": "Acumulando Valores em Sequência",
+  "order": 143
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_b3_l2",
+  "moduleId": "py_b3",
+  "moduleTitle": "Laços de Repetição & Dicionários",
+  "lessonIndexInModule": 7,
+  "title": "Dicionários (Chave e Valor)",
+  "subtopic": "Mapeamentos com dict",
+  "order": 144
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_i1_l1",
+  "moduleId": "py_i1",
+  "moduleTitle": "Strings Avançadas & Cifras",
+  "lessonIndexInModule": 8,
+  "title": "F-Strings e Formatação Numérica",
+  "subtopic": "Interpolação Moderna de Variáveis",
+  "order": 145
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_i1_l2",
+  "moduleId": "py_i1",
+  "moduleTitle": "Strings Avançadas & Cifras",
+  "lessonIndexInModule": 9,
+  "title": "Projeto: Cifra de Substituição",
+  "subtopic": "Manipulação e Criptografia Clássica",
+  "order": 146
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_i2_l1",
+  "moduleId": "py_i2",
+  "moduleTitle": "Compreensões & Exceções",
+  "lessonIndexInModule": 10,
+  "title": "List Comprehension com Condicional",
+  "subtopic": "Criação Concisa e Elegante de Listas",
+  "order": 147
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_i2_l2",
+  "moduleId": "py_i2",
+  "moduleTitle": "Compreensões & Exceções",
+  "lessonIndexInModule": 11,
+  "title": "Tratamento de Exceções com try / except",
+  "subtopic": "Resiliência e Proteção contra Falhas",
+  "order": 148
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_i3_l1",
+  "moduleId": "py_i3",
+  "moduleTitle": "Algoritmos Fundamentais: Busca Binária",
+  "lessonIndexInModule": 12,
+  "title": "Algoritmo de Busca Binária",
+  "subtopic": "Estratégia de Divisão e Conquista",
+  "order": 149
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_a1_l1",
+  "moduleId": "py_a1",
+  "moduleTitle": "Classes, Herança & Métodos Mágicos",
+  "lessonIndexInModule": 13,
+  "title": "Classes, Construtor e Métodos",
+  "subtopic": "Modelagem Orientada a Objetos",
+  "order": 150
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_a1_l2",
+  "moduleId": "py_a1",
+  "moduleTitle": "Classes, Herança & Métodos Mágicos",
+  "lessonIndexInModule": 14,
+  "title": "Herança e Polimorfismo com super()",
+  "subtopic": "Reaproveitamento e Especialização de Classes",
+  "order": 151
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_a2_l1",
+  "moduleId": "py_a2",
+  "moduleTitle": "Geradores, Regex & Estruturas de Dados",
+  "lessonIndexInModule": 15,
+  "title": "Geradores com yield",
+  "subtopic": "Iteradores Sob Demanda",
+  "order": 152
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_a2_l2",
+  "moduleId": "py_a2",
+  "moduleTitle": "Geradores, Regex & Estruturas de Dados",
+  "lessonIndexInModule": 16,
+  "title": "Expressões Regulares (re)",
+  "subtopic": "Casamento de Padrões em Textos",
+  "order": 153
+ },
+ {
+  "subject": "Python",
+  "lessonId": "py_a2_l3",
+  "moduleId": "py_a2",
+  "moduleTitle": "Geradores, Regex & Estruturas de Dados",
+  "lessonIndexInModule": 17,
+  "title": "Estrutura de Dados: Pilha (Stack)",
+  "subtopic": "Implementação da Política LIFO",
+  "order": 154
+ },
+ {
+  "subject": "Matemática Básica",
+  "lessonId": "mb_l1",
+  "moduleId": "math_u_basic",
+  "moduleTitle": "Matemática Básica (Ciclo ENEM)",
+  "lessonIndexInModule": 1,
+  "title": "Aula 1: Conjuntos Numéricos, Frações e Decimais",
+  "subtopic": "Conjuntos Numéricos e Operações com Frações",
+  "order": 155
+ },
+ {
+  "subject": "Matemática Básica",
+  "lessonId": "mb_l2",
+  "moduleId": "math_u_basic",
+  "moduleTitle": "Matemática Básica (Ciclo ENEM)",
+  "lessonIndexInModule": 2,
+  "title": "Aula 2: Divisibilidade, MMC e MDC",
+  "subtopic": "Sincronicidade vs Divisão em Partes Iguais",
+  "order": 156
+ },
+ {
+  "subject": "Matemática Básica",
+  "lessonId": "mb_l3",
+  "moduleId": "math_u_basic",
+  "moduleTitle": "Matemática Básica (Ciclo ENEM)",
+  "lessonIndexInModule": 3,
+  "title": "Aula 3: Potenciação e Radiciação",
+  "subtopic": "Propriedades Operatórias e Expoente Fracionário",
+  "order": 157
+ },
+ {
+  "subject": "Matemática Básica",
+  "lessonId": "mb_l4",
+  "moduleId": "math_u_basic",
+  "moduleTitle": "Matemática Básica (Ciclo ENEM)",
+  "lessonIndexInModule": 4,
+  "title": "Aula 4: Notação Científica e Ordem de Grandeza",
+  "subtopic": "Representação Exponencial e Magnitude Física",
+  "order": 158
+ },
+ {
+  "subject": "Matemática Básica",
+  "lessonId": "mb_l5",
+  "moduleId": "math_u_basic",
+  "moduleTitle": "Matemática Básica (Ciclo ENEM)",
+  "lessonIndexInModule": 5,
+  "title": "Aula 5: Conversão de Unidades e Capacidade",
+  "subtopic": "Sistema Métrico, Volumes e Vazão",
+  "order": 159
+ },
+ {
+  "subject": "Matemática Básica",
+  "lessonId": "mb_l6",
+  "moduleId": "math_u_basic",
+  "moduleTitle": "Matemática Básica (Ciclo ENEM)",
+  "lessonIndexInModule": 6,
+  "title": "Aula 6: Razão, Proporção e Grandezas",
+  "subtopic": "Grandezas Diretas e Inversas",
+  "order": 160
+ },
+ {
+  "subject": "Matemática Básica",
+  "lessonId": "mb_l7",
+  "moduleId": "math_u_basic",
+  "moduleTitle": "Matemática Básica (Ciclo ENEM)",
+  "lessonIndexInModule": 7,
+  "title": "Aula 7: Regra de Três (Simples e Composta)",
+  "subtopic": "Análise de Grandezas e Equacionamento",
+  "order": 161
+ },
+ {
+  "subject": "Matemática Básica",
+  "lessonId": "mb_l8",
+  "moduleId": "math_u_basic",
+  "moduleTitle": "Matemática Básica (Ciclo ENEM)",
+  "lessonIndexInModule": 8,
+  "title": "Aula 8: Escalas Cartográficas",
+  "subtopic": "Escala Linear vs Escala de Área",
+  "order": 162
+ },
+ {
+  "subject": "Matemática Básica",
+  "lessonId": "mb_l9",
+  "moduleId": "math_u_basic",
+  "moduleTitle": "Matemática Básica (Ciclo ENEM)",
+  "lessonIndexInModule": 9,
+  "title": "Aula 9: Porcentagem (Aumentos e Descontos Sucessivos)",
+  "subtopic": "Fator Multiplicativo e Variações Percentuais",
+  "order": 163
+ },
+ {
+  "subject": "Matemática Básica",
+  "lessonId": "mb_l10",
+  "moduleId": "math_u_basic",
+  "moduleTitle": "Matemática Básica (Ciclo ENEM)",
+  "lessonIndexInModule": 10,
+  "title": "Aula 10: Álgebra, Produtos Notáveis, Equações e Inequações",
+  "subtopic": "Modelagem Algébrica, Bhaskara e Sistemas 2x2",
+  "order": 164
+ },
+ {
+  "subject": "Matemática Básica",
+  "lessonId": "mb_l11",
+  "moduleId": "math_u_basic",
+  "moduleTitle": "Matemática Básica (Ciclo ENEM)",
+  "lessonIndexInModule": 11,
+  "title": "Aula 11: Estatística: Média, Mediana e Moda",
+  "subtopic": "Medidas de Tendência Central e Análise de Dados",
+  "order": 165
+ },
+ {
+  "subject": "Matemática Básica",
+  "lessonId": "mb_l12",
+  "moduleId": "math_u_basic",
+  "moduleTitle": "Matemática Básica (Ciclo ENEM)",
+  "lessonIndexInModule": 12,
+  "title": "Aula 12: Geometria Essencial: Áreas, Pitágoras e Volumes",
+  "subtopic": "Figuras Planas, Triângulo Retângulo e Sólidos",
+  "order": 166
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l1",
+  "moduleId": "calc_u_limits",
+  "moduleTitle": "Limites e Continuidade",
+  "lessonIndexInModule": 1,
+  "title": "Aula 1: O que é o Limite? (A Ideia Básica)",
+  "subtopic": "Aproximação na Vizinhança: lim_{x->a} f(x) = L",
+  "order": 167
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l2",
+  "moduleId": "calc_u_limits",
+  "moduleTitle": "Limites e Continuidade",
+  "lessonIndexInModule": 2,
+  "title": "Aula 2: Limites Laterais e Existência",
+  "subtopic": "O Teste Decisivo do 'Vem por Onde?'",
+  "order": 168
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l3",
+  "moduleId": "calc_u_limits",
+  "moduleTitle": "Limites e Continuidade",
+  "lessonIndexInModule": 3,
+  "title": "Aula 3: Propriedades e Substituição Direta",
+  "subtopic": "As Regras do Jogo e Estratégia nº 1",
+  "order": 169
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l4",
+  "moduleId": "calc_u_limits",
+  "moduleTitle": "Limites e Continuidade",
+  "lessonIndexInModule": 4,
+  "title": "Aula 4: Indeterminação 0/0 e o Furo Removível",
+  "subtopic": "A Ilusão do 0/0 Esconde um Buraco Geométrico",
+  "order": 170
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l5",
+  "moduleId": "calc_u_limits",
+  "moduleTitle": "Limites e Continuidade",
+  "lessonIndexInModule": 5,
+  "title": "Aula 5: Ferramentas Algébricas (Fatoração e Racionalização)",
+  "subtopic": "O Bisturi e o Espelho Conjugado",
+  "order": 171
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l6",
+  "moduleId": "calc_u_limits",
+  "moduleTitle": "Limites e Continuidade",
+  "lessonIndexInModule": 6,
+  "title": "Aula 6: Continuidade e Matriz Diagnóstica",
+  "subtopic": "Desenhando Sem Tirar a Caneta do Papel",
+  "order": 172
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l7",
+  "moduleId": "calc_u_limits",
+  "moduleTitle": "Limites e Continuidade",
+  "lessonIndexInModule": 7,
+  "title": "Aula 7: Limites Infinitos e Assíntotas Verticais",
+  "subtopic": "O Abraço da Parede Vertical: 1/x e 1/x²",
+  "order": 173
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l8",
+  "moduleId": "calc_u_limits",
+  "moduleTitle": "Limites e Continuidade",
+  "lessonIndexInModule": 8,
+  "title": "Aula 8: Limites no Infinito e Assíntotas Horizontais",
+  "subtopic": "A Busca pelo Horizonte Geométrico: lim_{x->∞} f(x) = L",
+  "order": 174
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l9",
+  "moduleId": "calc_u_limits",
+  "moduleTitle": "Limites e Continuidade",
+  "lessonIndexInModule": 9,
+  "title": "Aula 9: Teorema do Sanduíche e Limite Trigonométrico",
+  "subtopic": "Domesticando Oscilações e lim_{x->0} sen(x)/x = 1",
+  "order": 175
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l10",
+  "moduleId": "calc_u_limits",
+  "moduleTitle": "Limites e Continuidade",
+  "lessonIndexInModule": 10,
+  "title": "Aula 10: O Elo Fundamental (Da Secante à Tangente)",
+  "subtopic": "A Ponte para as Derivadas: f'(a) = lim_{h->0} [f(a+h) - f(a)] / h",
+  "order": 176
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l11",
+  "moduleId": "calc_u_derivatives",
+  "moduleTitle": "Derivadas e Aplicações",
+  "lessonIndexInModule": 11,
+  "title": "Aula 1: O que é a Derivada (Na Prática)?",
+  "subtopic": "Taxa de Variação Instantânea e Reta Tangente",
+  "order": 177
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l12",
+  "moduleId": "calc_u_derivatives",
+  "moduleTitle": "Derivadas e Aplicações",
+  "lessonIndexInModule": 12,
+  "title": "Aula 2: As Regras Rápidas de Derivação",
+  "subtopic": "Sem Fazer Limite! Regra do Tombo e Funções Especiais",
+  "order": 178
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l13",
+  "moduleId": "calc_u_derivatives",
+  "moduleTitle": "Derivadas e Aplicações",
+  "lessonIndexInModule": 13,
+  "title": "Aula 3: As 3 Regras de Ouro para Operações",
+  "subtopic": "Regra do Produto, Quociente e da Cadeia",
+  "order": 179
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l14",
+  "moduleId": "calc_u_derivatives",
+  "moduleTitle": "Derivadas e Aplicações",
+  "lessonIndexInModule": 14,
+  "title": "Aula 4: Técnicas Especiais: Derivação Implícita e Logarítmica",
+  "subtopic": "Quando y Não Está Isolado ou Está no Expoente",
+  "order": 180
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l15",
+  "moduleId": "calc_u_derivatives",
+  "moduleTitle": "Derivadas e Aplicações",
+  "lessonIndexInModule": 15,
+  "title": "Aula 5: Aproximação Linear e Diferenciais",
+  "subtopic": "Linearização: L(x) = f(a) + f'(a)(x - a)",
+  "order": 181
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l16",
+  "moduleId": "calc_u_derivatives",
+  "moduleTitle": "Derivadas e Aplicações",
+  "lessonIndexInModule": 16,
+  "title": "Aula 6: Estudo Completo da Função e Esboço de Gráficos",
+  "subtopic": "Pontos Críticos, Máximos, Mínimos e Concavidade",
+  "order": 182
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l17",
+  "moduleId": "calc_u_derivatives",
+  "moduleTitle": "Derivadas e Aplicações",
+  "lessonIndexInModule": 17,
+  "title": "Aula 7: Regra de L'Hôpital (O Shortcut de Ouro)",
+  "subtopic": "Destravando 0/0 e ∞/∞ com Derivadas",
+  "order": 183
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l18",
+  "moduleId": "calc_u_derivatives",
+  "moduleTitle": "Derivadas e Aplicações",
+  "lessonIndexInModule": 18,
+  "title": "Aula 8: Problemas de Otimização (A Aplicação Suprema)",
+  "subtopic": "Maximizando Lucro e Minimizando Custo em 4 Passos",
+  "order": 184
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l19",
+  "moduleId": "calc_u_integrals",
+  "moduleTitle": "Integrais e Teorema Fundamental",
+  "lessonIndexInModule": 19,
+  "title": "Aula 1: O que significa 'Integrar'? (Primitivas)",
+  "subtopic": "A Antiderivada Geral e a Constante de Integração C",
+  "order": 185
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l20",
+  "moduleId": "calc_u_integrals",
+  "moduleTitle": "Integrais e Teorema Fundamental",
+  "lessonIndexInModule": 20,
+  "title": "Aula 2: A Mecânica Básica: Regra da Potência",
+  "subtopic": "O Inverso da Regra do Tombo: ∫ xⁿ dx = x^(n+1)/(n+1) + C",
+  "order": 186
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l21",
+  "moduleId": "calc_u_integrals",
+  "moduleTitle": "Integrais e Teorema Fundamental",
+  "lessonIndexInModule": 21,
+  "title": "Aula 3: Exponenciais, Logaritmos e Funções Trigonométricas",
+  "subtopic": "Integrais Imediatas Clássicas",
+  "order": 187
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l22",
+  "moduleId": "calc_u_integrals",
+  "moduleTitle": "Integrais e Teorema Fundamental",
+  "lessonIndexInModule": 22,
+  "title": "Aula 4: Propriedades da Linearidade na Integral",
+  "subtopic": "Integração Termo a Termo e Fatores Constantes",
+  "order": 188
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l23",
+  "moduleId": "calc_u_integrals",
+  "moduleTitle": "Integrais e Teorema Fundamental",
+  "lessonIndexInModule": 23,
+  "title": "Aula 5: Técnica de Substituição (Regra da Cadeia ao Contrário)",
+  "subtopic": "A Técnica da Mudança de Variável (u-substituição)",
+  "order": 189
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l24",
+  "moduleId": "calc_u_integrals",
+  "moduleTitle": "Integrais e Teorema Fundamental",
+  "lessonIndexInModule": 24,
+  "title": "Aula 6: Integração por Partes (Regra do Produto ao Contrário)",
+  "subtopic": "A Fórmula: ∫ u dv = u*v - ∫ v du (Regra LIATE)",
+  "order": 190
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l25",
+  "moduleId": "calc_u_integrals",
+  "moduleTitle": "Integrais e Teorema Fundamental",
+  "lessonIndexInModule": 25,
+  "title": "Aula 7: Frações Parciais e Substituição Trigonométrica",
+  "subtopic": "Decomposição de Funções Racionais P(x)/Q(x)",
+  "order": 191
+ },
+ {
+  "subject": "Cálculo I",
+  "lessonId": "calc_l26",
+  "moduleId": "calc_u_integrals",
+  "moduleTitle": "Integrais e Teorema Fundamental",
+  "lessonIndexInModule": 26,
+  "title": "Aula 8: A Integral Definida e o Teorema Fundamental (TFC)",
+  "subtopic": "Cálculo de Área e a Relação [F(b) - F(a)]",
+  "order": 192
+ }
+]

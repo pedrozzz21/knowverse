@@ -14,6 +14,15 @@ import com.example.data.model.MathExercise
 object EnemPhysicsDidacticProvider {
 
     fun getDidacticBundle(lessonId: String): CalculusDidacticBundle? {
+        val modular = com.example.data.physics.didactic.PhysicsMechanicsPart1.get(lessonId)
+            ?: com.example.data.physics.didactic.PhysicsMechanicsPart2.get(lessonId)
+            ?: com.example.data.physics.didactic.PhysicsThermalDidactic.get(lessonId)
+            ?: com.example.data.physics.didactic.PhysicsWavesDidactic.get(lessonId)
+            ?: com.example.data.physics.didactic.PhysicsOpticsDidactic.get(lessonId)
+            ?: com.example.data.physics.didactic.PhysicsElectromagnetismDidactic.get(lessonId)
+            ?: com.example.data.physics.didactic.PhysicsModernDidactic.get(lessonId)
+        if (modular != null) return modular
+
         val entry = didacticMap[lessonId] ?: return null
         return CalculusDidacticBundle(
             theoryMarkdown = entry.theoryMarkdown,

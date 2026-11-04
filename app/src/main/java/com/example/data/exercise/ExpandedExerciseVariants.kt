@@ -349,7 +349,7 @@ Qual é a inclinação (coeficiente angular) da reta tangente à curva no ponto 
             category = "Matemática Básica",
             subtopic = "Geometria Espacial • Cilindros",
             difficulty = "Mediano",
-            source = "ENEM / Geometria & Volumes",
+            source = "Autoral (Estilo ENEM) / Geometria & Volumes",
             problemStatement = "Um reservatório cilíndrico reto possui raio da base igual a 3 metros e altura de 10 metros. Se utilizarmos a aproximação π = 3,14, quantos litros de água esse reservatório comporta quando totalmente cheio?",
             options = listOf(
                 "282.600 litros",
@@ -405,7 +405,7 @@ Qual é a inclinação (coeficiente angular) da reta tangente à curva no ponto 
             category = "Matemática Básica",
             subtopic = "Juros Compostos e Matemática Financeira",
             difficulty = "Difícil",
-            source = "ENEM / Matemática Financeira",
+            source = "Autoral (Estilo ENEM) / Matemática Financeira",
             problemStatement = "Um capital de R$ 5.000,00 foi aplicado sob regime de juros compostos a uma taxa de 10% ao ano durante 2 anos. Qual foi o montante final resgatado e o rendimento total de juros acumulados?",
             options = listOf(
                 "Montante: R$ 6.050,00 | Juros: R$ 1.050,00",
@@ -759,7 +759,7 @@ p.preco = -50""",
             category = "Matemática Básica",
             subtopic = "Progressão Aritmética (PA) & Soma de Gauss",
             difficulty = "Mediano",
-            source = "ENEM / Sequências Numéricas",
+            source = "Autoral (Estilo ENEM) / Sequências Numéricas",
             problemStatement = "Uma pessoa decide economizar dinheiro durante 30 dias. No primeiro dia ela guarda R$ 5,00 e, a cada dia seguinte, guarda R$ 3,00 a mais do que no dia anterior. Quanto ela terá guardado no total ao final dos 30 dias?",
             options = listOf(
                 "R$ 1.455,00",
@@ -789,7 +789,7 @@ p.preco = -50""",
             category = "Matemática Básica",
             subtopic = "Progressão Geométrica (PG) Infinita Convergente",
             difficulty = "Mediano",
-            source = "ENEM / Séries Geométricas",
+            source = "Autoral (Estilo ENEM) / Séries Geométricas",
             problemStatement = """Uma bola de borracha é solta de uma altura inicial de 16 metros. A cada quique no solo, ela rebate atingindo exatamente metade (1/2) da altura atingida no salto anterior. Qual é a distância total percorrida pela bola (somando todas as subidas e descidas) até parar completamente?""",
             options = listOf(
                 "48 metros",
@@ -820,7 +820,7 @@ p.preco = -50""",
             category = "Matemática Básica",
             subtopic = "Logaritmos e Escala Richter",
             difficulty = "Difícil",
-            source = "ENEM / Logaritmos & Ciências",
+            source = "Autoral (Estilo ENEM) / Logaritmos & Ciências",
             problemStatement = """A magnitude M de um terremoto na Escala Richter é dada por:
 \[ M = \frac{2}{3} \log_{10} \left( \frac{E}{E_0} \right) \]
 Onde E é a energia liberada e E₀ é uma energia de referência. Se um terremoto A possui magnitude M_A = 7 e um terremoto B possui magnitude M_B = 5, quantas vezes a energia liberada pelo terremoto A é maior que a do terremoto B?""",
@@ -850,7 +850,7 @@ Onde E é a energia liberada e E₀ é uma energia de referência. Se um terremo
             category = "Matemática Básica",
             subtopic = "Análise Combinatória: Permutação com Repetição",
             difficulty = "Fácil",
-            source = "ENEM / Contagem e Anagramas",
+            source = "Autoral (Estilo ENEM) / Contagem e Anagramas",
             problemStatement = "Quantos anagramas distintos podem ser formados com as letras da palavra 'KNOWVERSE'?",
             options = listOf(
                 "181.440 anagramas",
@@ -882,7 +882,7 @@ Onde E é a energia liberada e E₀ é uma energia de referência. Se um terremo
             category = "Matemática Básica",
             subtopic = "Estatística: Mediana com Distribuição de Frequência",
             difficulty = "Mediano",
-            source = "ENEM / Estatística Descritiva",
+            source = "Autoral (Estilo ENEM) / Estatística Descritiva",
             problemStatement = """Uma turma de 25 alunos realizou um simulado. As notas obtidas foram registradas na tabela de frequência abaixo:
 - Nota 5: 4 alunos
 - Nota 6: 6 alunos

@@ -3,7 +3,8 @@ package com.example.data.enem
 /**
  * Taxonomia Oficial do ENEM para Matemática.
  * Organiza os tópicos principais e seus respectivos subtópicos detalhados
- * para alimentar filtros de estudo, simulados e trilhas gamificadas no Knowverse.
+ * ordenados pedagogicamente por pré-requisitos fundamentais para alimentar
+ * filtros de estudo, simulados e trilhas gamificadas no Knowverse.
  */
 object EnemTaxonomy {
 
@@ -16,6 +17,27 @@ object EnemTaxonomy {
             "Regra de Três (Simples e Composta)",
             "Porcentagem"
         ),
+        "Álgebra" to listOf(
+            "Expressões Algébricas",
+            "Produtos Notáveis e Fatoração",
+            "Equações e Inequações do 1º e 2º Grau"
+        ),
+        "Funções" to listOf(
+            "Conceitos Básicos e Plano Cartesiano",
+            "Função Afim (1º Grau)",
+            "Função Quadrática (2º Grau)",
+            "Interpretação de Gráficos de Funções"
+        ),
+        "Sequências" to listOf(
+            "Padrões Numéricos",
+            "Progressão Aritmética (PA)",
+            "Progressão Geométrica (PG)"
+        ),
+        "Logaritmos" to listOf(
+            "Conceito de Exponencial",
+            "Definição e Propriedades dos Logaritmos",
+            "Equações Exponenciais e Logarítmicas"
+        ),
         "Matemática Financeira" to listOf(
             "Juros Simples",
             "Juros Compostos",
@@ -25,31 +47,6 @@ object EnemTaxonomy {
             "Leitura e Interpretação de Gráficos e Tabelas",
             "Medidas de Tendência Central (Média Aritmética, Ponderada, Moda e Mediana)",
             "Medidas de Dispersão (Desvio Padrão e Variância)"
-        ),
-        "Geometria Plana" to listOf(
-            "Ângulos e Polígonos",
-            "Relações Métricas no Triângulo Retângulo (Teorema de Pitágoras)",
-            "Semelhança e Congruência de Triângulos",
-            "Áreas de Figuras Planas",
-            "Círculo e Circunferência"
-        ),
-        "Geometria Espacial" to listOf(
-            "Características dos Poliedros (Relação de Euler)",
-            "Prismas e Cilindros (Áreas e Volumes)",
-            "Pirâmides e Cones (Áreas e Volumes)",
-            "Esferas (Área e Volume)",
-            "Projeção Ortogonal"
-        ),
-        "Funções" to listOf(
-            "Conceitos Básicos e Plano Cartesiano",
-            "Função Afim (1º Grau)",
-            "Função Quadrática (2º Grau)",
-            "Interpretação de Gráficos de Funções"
-        ),
-        "Álgebra" to listOf(
-            "Expressões Algébricas",
-            "Produtos Notáveis e Fatoração",
-            "Equações e Inequações do 1º e 2º Grau"
         ),
         "Análise Combinatória" to listOf(
             "Princípio Fundamental da Contagem (PFC)",
@@ -63,21 +60,25 @@ object EnemTaxonomy {
             "Probabilidade Condicional",
             "Eventos Independentes e Mutuamente Exclusivos"
         ),
-        "Sequências" to listOf(
-            "Padrões Numéricos",
-            "Progressão Aritmética (PA)",
-            "Progressão Geométrica (PG)"
-        ),
-        "Logaritmos" to listOf(
-            "Conceito de Exponencial",
-            "Definição e Propriedades dos Logaritmos",
-            "Equações Exponenciais e Logarítmicas"
+        "Geometria Plana" to listOf(
+            "Ângulos e Polígonos",
+            "Relações Métricas no Triângulo Retângulo (Teorema de Pitágoras)",
+            "Semelhança e Congruência de Triângulos",
+            "Áreas de Figuras Planas",
+            "Círculo e Circunferência"
         ),
         "Trigonometria" to listOf(
             "Relações Trigonométricas no Triângulo Retângulo (Seno, Cosseno, Tangente)",
             "Ciclo Trigonométrico",
             "Funções Trigonométricas",
             "Lei dos Senos e Lei dos Cossenos"
+        ),
+        "Geometria Espacial" to listOf(
+            "Características dos Poliedros (Relação de Euler)",
+            "Prismas e Cilindros (Áreas e Volumes)",
+            "Pirâmides e Cones (Áreas e Volumes)",
+            "Esferas (Área e Volume)",
+            "Projeção Ortogonal"
         ),
         "Geometria Analítica" to listOf(
             "Distância entre Dois Pontos e Ponto Médio",

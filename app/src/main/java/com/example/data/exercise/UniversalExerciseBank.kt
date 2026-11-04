@@ -8,8 +8,12 @@ import com.example.data.math.GeoGebraGraphConfig
 enum class ExerciseDiscipline(val label: String, val tag: String) {
     ALL("Todas as Matérias", "all"),
     ENEM("Banco ENEM (Oficial)", "enem"),
+    GEOGRAPHY("Geografia • Humanas ENEM", "geography"),
+    HISTORY("História • Humanas ENEM", "history"),
+    LANGUAGES("Linguagens e Códigos", "languages"),
     PHYSICS("Física ENEM", "physics"),
     BIOLOGY("Biologia ENEM", "biology"),
+    CHEMISTRY("Química • Natureza ENEM", "chemistry"),
     BASIC_MATH("Matemática Básica", "basic_math"),
     CALCULUS("Cálculo I", "calculus"),
     PROGRAMMING("Programação (Python)", "programming")
@@ -31,6 +35,7 @@ data class UniversalExercise(
     val problemStatement: String,
     val codeSnippet: String? = null,
     val visualDrawableRes: Int? = null,
+    val assetImagePath: String? = null,
     val visualTable: VisualTable? = null,
     val terminalOutput: String? = null,
     val geoGebraConfig: GeoGebraGraphConfig? = null,
@@ -40,7 +45,42 @@ data class UniversalExercise(
     val pedagogicalAlert: String,
     val keyMethod: String,
     val xpReward: Int = 30
-)
+) {
+    /**
+     * Gera uma cópia do exercício com as alternativas embaralhadas aleatoriamente,
+     * garantindo que a resposta certa não fique previsível ou presa a uma mesma letra/índice.
+     */
+    fun randomized(): UniversalExercise {
+        if (options.size < 2) return this
+        val cleanOptions = options.map { opt ->
+            opt.replace(Regex("^(\\([A-E]\\)|[A-E]\\)|\\b[A-E]\\s*[-–:]\\s*)", RegexOption.IGNORE_CASE), "").trim()
+        }
+        val indexed = cleanOptions.mapIndexed { idx, text ->
+            Pair(text, idx == correctIndex)
+        }.shuffled()
+
+        val newCorrectIndex = indexed.indexOfFirst { it.second }.let { if (it >= 0) it else 0 }
+        val newCorrectLetter = ('A' + newCorrectIndex).toString()
+
+        val hasLetterPrefix = options.any { it.matches(Regex("^[A-E]\\)\\s.*", RegexOption.IGNORE_CASE)) }
+        val finalOptions = indexed.mapIndexed { idx, pair ->
+            val letter = ('A' + idx)
+            if (hasLetterPrefix) "$letter) ${pair.first}" else pair.first
+        }
+
+        val updatedSteps = solutionSteps.map { step ->
+            step.replace(Regex("(Alternativa correta(?: é|:)?\\s*(?:a letra)?\\s*)[A-E]", RegexOption.IGNORE_CASE)) { m ->
+                "${m.groupValues[1]}$newCorrectLetter"
+            }
+        }
+
+        return copy(
+            options = finalOptions,
+            correctIndex = newCorrectIndex,
+            solutionSteps = updatedSteps
+        )
+    }
+}
 
 object UniversalExerciseBank {
 
@@ -1345,7 +1385,73 @@ print(f"Área do Quadrado: {q.area()} cm²")""",
             }
         }
 
-        return curatedExercises +
+        val convertedLanguages = com.example.data.languages.EnemLanguagesCurriculum.getAllModules().flatMap { module ->
+            module.lessons.flatMap { lesson ->
+                com.example.data.languages.EnemLanguagesDidacticProvider.getExercisesForLesson(lesson.id).map { me ->
+                    UniversalExercise(
+                        id = me.id,
+                        discipline = ExerciseDiscipline.LANGUAGES,
+                        category = "Linguagens e Códigos",
+                        subtopic = lesson.title,
+                        difficulty = "Mediano",
+                        source = "ENEM • ${module.title}",
+                        problemStatement = me.problemStatement,
+                        options = me.options,
+                        correctIndex = me.correctIndex,
+                        solutionSteps = listOf(me.stepByStepSolution).filter { it.isNotBlank() },
+                        pedagogicalAlert = me.hint,
+                        keyMethod = "Análise crítica de enunciados, gêneros e recursos expressivos.",
+                        xpReward = 30
+                    )
+                }
+            }
+        }
+
+        val convertedHistory = com.example.data.history.EnemHistoryCurriculum.getAllModules().flatMap { module ->
+            module.lessons.flatMap { lesson ->
+                com.example.data.history.EnemHistoryDidacticProvider.getExercisesForLesson(lesson.id).map { me ->
+                    UniversalExercise(
+                        id = me.id,
+                        discipline = ExerciseDiscipline.HISTORY,
+                        category = "História • Humanas ENEM",
+                        subtopic = lesson.title,
+                        difficulty = "Mediano",
+                        source = "ENEM • ${module.title}",
+                        problemStatement = me.problemStatement,
+                        options = me.options,
+                        correctIndex = me.correctIndex,
+                        solutionSteps = listOf(me.stepByStepSolution).filter { it.isNotBlank() },
+                        pedagogicalAlert = me.hint,
+                        keyMethod = "Análise historiográfica e contextualização de processos e fontes.",
+                        xpReward = 30
+                    )
+                }
+            }
+        }
+
+        val convertedGeography = com.example.data.geography.EnemGeographyCurriculum.getAllModules().flatMap { module ->
+            module.lessons.flatMap { lesson ->
+                com.example.data.geography.EnemGeographyDidacticProvider.getExercisesForLesson(lesson.id).map { me ->
+                    UniversalExercise(
+                        id = me.id,
+                        discipline = ExerciseDiscipline.GEOGRAPHY,
+                        category = "Geografia • Humanas ENEM",
+                        subtopic = lesson.title,
+                        difficulty = "Mediano",
+                        source = "ENEM • ${module.title}",
+                        problemStatement = me.problemStatement,
+                        options = me.options,
+                        correctIndex = me.correctIndex,
+                        solutionSteps = listOf(me.stepByStepSolution).filter { it.isNotBlank() },
+                        pedagogicalAlert = me.hint,
+                        keyMethod = "Análise geográfica de dinâmica espacial, cartografia e relações socioambientais.",
+                        xpReward = 30
+                    )
+                }
+            }
+        }
+
+        val combined = curatedExercises +
                 GeoGebraGeometryExercises.exercises +
                 ExtendedExerciseCollection.additionalExercises +
                 ExpandedExerciseVariants.variantExercises +
@@ -1354,7 +1460,12 @@ print(f"Área do Quadrado: {q.area()} cm²")""",
                 ComprehensiveBasicMathExercises.exercises +
                 convertedCalculus +
                 convertedBasicMath +
+                convertedLanguages +
+                convertedHistory +
+                convertedGeography +
                 externalEnemExercises
+
+        return combined.distinctBy { it.id }
     }
 
     private var externalEnemExercises: List<UniversalExercise> = emptyList()
@@ -1395,11 +1506,18 @@ print(f"Área do Quadrado: {q.area()} cm²")""",
             val matchesSubtopic = when (subtopic) {
                 "all" -> true
                 else -> item.subtopic.equals(subtopic, ignoreCase = true) ||
-                        item.subtopic.contains(subtopic, ignoreCase = true)
+                        item.subtopic.contains(subtopic, ignoreCase = true) ||
+                        item.category.contains(subtopic, ignoreCase = true)
             }
 
-            val matchesDifficulty = when (difficulty) {
-                "all" -> true
+            val matchesDifficulty = when {
+                difficulty.equals("all", ignoreCase = true) || difficulty.equals("Todos", ignoreCase = true) -> true
+                difficulty.equals("Fácil", ignoreCase = true) ->
+                    item.difficulty.equals("Fácil", ignoreCase = true) || item.difficulty.equals("Básico", ignoreCase = true)
+                difficulty.equals("Média", ignoreCase = true) || difficulty.equals("Mediano", ignoreCase = true) || difficulty.equals("Médio", ignoreCase = true) ->
+                    item.difficulty.equals("Média", ignoreCase = true) || item.difficulty.equals("Mediano", ignoreCase = true) || item.difficulty.equals("Médio", ignoreCase = true)
+                difficulty.equals("Difícil", ignoreCase = true) || difficulty.equals("Desafiador", ignoreCase = true) ->
+                    item.difficulty.equals("Difícil", ignoreCase = true) || item.difficulty.equals("Desafiador", ignoreCase = true)
                 else -> item.difficulty.equals(difficulty, ignoreCase = true)
             }
 

@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon in Royal Purple & Ruby -->
+    <path
+        android:fillColor="#3B0764"
+        android:strokeColor="#C084FC"
+        android:strokeWidth="2.8"
+        android:pathData="M36,4 L64,18 L64,48 L36,68 L8,48 L8,18 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#581C87"
+        android:pathData="M36,9 L59,21 L59,46 L36,63 L13,46 L13,21 Z" />
+    <!-- 500 Crown of Mastery -->
+    <path
+        android:fillColor="#E879F9"
+        android:pathData="M24,42 L48,42 L46,47 L26,47 Z M24,40 L28,28 L36,35 L44,28 L48,40 Z" />
+    <!-- Triple Gem Stars -->
+    <path
+        android:fillColor="#FDE047"
+        android:pathData="M28,27 L30,25 L32,27 L30,29 Z M40,27 L42,25 L44,27 L42,29 Z M36,16 L38,14 L40,16 L38,18 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,38 A3,3 0 1,1 35.9,38 Z" />
+</vector>

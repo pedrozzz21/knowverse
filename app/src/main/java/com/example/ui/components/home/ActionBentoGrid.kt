@@ -195,9 +195,10 @@ fun ActionBentoGrid(
                             style = MaterialTheme.typography.titleSmall.copy(
                                 fontWeight = FontWeight.Bold,
                                 color = TextPrimary,
-                                fontSize = 14.sp
+                                fontSize = 13.5.sp,
+                                lineHeight = 17.sp
                             ),
-                            maxLines = 1,
+                            maxLines = 2,
                             overflow = TextOverflow.Ellipsis
                         )
                         Spacer(modifier = Modifier.height(2.dp))
@@ -290,14 +291,25 @@ fun ActionBentoGrid(
                         )
                     }
 
-                    Text(
-                        text = "Feedback IA ➔",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            color = TextSecondary,
-                            fontWeight = FontWeight.Medium,
-                            fontSize = 10.sp
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Text(
+                            text = "Feedback IA",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = TextSecondary,
+                                fontWeight = FontWeight.Medium,
+                                fontSize = 10.sp
+                            )
                         )
-                    )
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                            contentDescription = null,
+                            tint = TextSecondary,
+                            modifier = Modifier.size(11.dp)
+                        )
+                    }
                 }
             }
         }
@@ -392,9 +404,10 @@ fun ActionBentoGrid(
                             text = "Treino prático de sintaxe e raciocínio lógico",
                             style = MaterialTheme.typography.bodySmall.copy(
                                 color = TextSecondary,
-                                fontSize = 11.sp
+                                fontSize = 10.5.sp,
+                                lineHeight = 14.sp
                             ),
-                            maxLines = 1,
+                            maxLines = 2,
                             overflow = TextOverflow.Ellipsis
                         )
                     }
@@ -473,14 +486,25 @@ fun ActionBentoGrid(
                         )
                     }
 
-                    Text(
-                        text = "Ver Ranking ➔",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            color = TextTertiary,
-                            fontWeight = FontWeight.Medium,
-                            fontSize = 10.sp
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Text(
+                            text = "Ver Ranking",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = TextTertiary,
+                                fontWeight = FontWeight.Medium,
+                                fontSize = 10.sp
+                            )
                         )
-                    )
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                            contentDescription = null,
+                            tint = TextTertiary,
+                            modifier = Modifier.size(11.dp)
+                        )
+                    }
                 }
             }
         }

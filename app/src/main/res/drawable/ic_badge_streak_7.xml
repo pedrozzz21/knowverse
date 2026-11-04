@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon in Fiery Crimson -->
+    <path
+        android:fillColor="#450A0A"
+        android:strokeColor="#EF4444"
+        android:strokeWidth="2.5"
+        android:pathData="M36,4 L64,18 L64,48 L36,68 L8,48 L8,18 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#7F1D1D"
+        android:pathData="M36,9 L59,21 L59,46 L36,63 L13,46 L13,21 Z" />
+    <!-- Roaring Flame Double Wing Motif -->
+    <path
+        android:fillColor="#F87171"
+        android:pathData="M36,17 C40,23 48,27 48,37 C48,46 41,51 34,51 C27,51 23,45 27,38 C28,34 33,33 33,28 C33,24 29,22 36,17 Z" />
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M36,31 C38,34 42,37 42,42 C42,46 39,49 35,49 C31,49 30,46 32,42 C33,39 34,37 36,31 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,39 C37,41 39,43 39,45 C39,47 38,48 36,48 C34,48 33,47 34,45 C34.5,43 35,42 36,39 Z" />
+</vector>

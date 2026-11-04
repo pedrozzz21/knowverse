@@ -10,6 +10,7 @@ data class CalculusDidacticBundle(
     val imageResId: Int? = null,
     val goldTip: String = "",
     val geoGebraConfig: GeoGebraGraphConfig? = null,
+    val assetImagePath: String? = null,
     val formulasAndSyntax: List<FormulaOrSyntaxItem> = emptyList(),
     val practicalExamples: List<LessonExample> = emptyList(),
     val interactiveChallenge: String = ""
@@ -43,14 +44,27 @@ object CalculusDidacticContent {
     )
 
     fun getContentForLesson(lessonId: String): CalculusDidacticBundle {
-        val bundle = com.example.data.biology.EnemBiologyDidacticProvider.getDidacticBundle(lessonId)
-            ?: com.example.data.physics.EnemPhysicsDidacticProvider.getDidacticBundle(lessonId)
-            ?: EnemDidacticProvider.getDidacticBundle(lessonId)
-            ?: BasicMathDidactic.get(lessonId)
-            ?: CalculusLimitsDidactic.get(lessonId)
-            ?: CalculusDerivativesDidactic.get(lessonId)
-            ?: CalculusIntegralsDidactic.get(lessonId)
-            ?: fallbackBundle
+        val bundle = when {
+            lessonId.startsWith("quim_") -> com.example.data.chemistry.EnemChemistryDidacticProvider.getDidacticBundle(lessonId)
+            lessonId.startsWith("geo_") -> com.example.data.geography.EnemGeographyDidacticProvider.getBundleForLesson(lessonId)
+            lessonId.startsWith("hist_") -> com.example.data.history.EnemHistoryDidacticProvider.getDidacticBundle(lessonId)
+            lessonId.startsWith("ling_") -> com.example.data.languages.EnemLanguagesDidacticProvider.getDidacticBundle(lessonId)
+            lessonId.startsWith("bio_") -> com.example.data.biology.EnemBiologyDidacticProvider.getDidacticBundle(lessonId)
+            lessonId.startsWith("fis_") -> com.example.data.physics.EnemPhysicsDidacticProvider.getDidacticBundle(lessonId)
+            lessonId.startsWith("enem_") -> EnemDidacticProvider.getDidacticBundle(lessonId)
+            lessonId.startsWith("mb_") -> BasicMathDidactic.get(lessonId)
+            lessonId.startsWith("calc_l") -> {
+                CalculusLimitsDidactic.get(lessonId)
+                    ?: CalculusDerivativesDidactic.get(lessonId)
+                    ?: CalculusIntegralsDidactic.get(lessonId)
+            }
+            else -> {
+                CalculusLimitsDidactic.get(lessonId)
+                    ?: CalculusDerivativesDidactic.get(lessonId)
+                    ?: CalculusIntegralsDidactic.get(lessonId)
+                    ?: BasicMathDidactic.get(lessonId)
+            }
+        } ?: getContextualFallback(lessonId)
 
         val ggbConfig = GeoGebraCurriculumPresets.get(lessonId)
         return if (ggbConfig != null && bundle.geoGebraConfig == null) {
@@ -58,5 +72,46 @@ object CalculusDidacticContent {
         } else {
             bundle
         }
+    }
+
+    private fun getContextualFallback(lessonId: String): CalculusDidacticBundle {
+        val subject = when {
+            lessonId.startsWith("quim_") -> "Química • Ciências da Natureza ENEM"
+            lessonId.startsWith("geo_") -> "Geografia • Ciências Humanas ENEM"
+            lessonId.startsWith("hist_") -> "História • Ciências Humanas ENEM"
+            lessonId.startsWith("ling_") -> "Linguagens e Códigos ENEM"
+            lessonId.startsWith("bio_") -> "Biologia ENEM"
+            lessonId.startsWith("fis_") -> "Física ENEM"
+            lessonId.startsWith("enem_") -> "Matemática ENEM"
+            lessonId.startsWith("mb_") -> "Matemática Básica"
+            else -> "Cálculo I"
+        }
+
+        return CalculusDidacticBundle(
+            theoryMarkdown = """
+                # Aula Didática: $subject
+                
+                Nesta aula, exploramos a fundamentação conceitual, as relações analíticas e a aplicação prática necessária para resolver problemas estilo ENEM e vestibulares nacionais.
+                
+                Compreender os princípios teóricos transforma o aprendizado em uma ferramenta sólida de interpretação e raciocínio crítico.
+            """.trimIndent(),
+            formulas = listOf(
+                FormulaOrSyntaxItem(
+                    termOrFunction = "Princípio Fundamental",
+                    syntax = "Relação Teórica e Operatória",
+                    description = "Aplicação dos conceitos essenciais de $subject.",
+                    parametersInfo = "Verifique as condições do enunciado e os dados fornecidos."
+                )
+            ),
+            solvedExamples = listOf(
+                LessonExample(
+                    title = "Aplicação Prática",
+                    codeOrFormula = "Resolução Passo a Passo",
+                    explanation = "Identifique as variáveis do problema, aplique os conceitos adequados e simplifique antes de assinalar a resposta."
+                )
+            ),
+            imageResId = null,
+            goldTip = "Revise sempre o enunciado com atenção e elimine as alternativas com contradições evidentes!"
+        )
     }
 }

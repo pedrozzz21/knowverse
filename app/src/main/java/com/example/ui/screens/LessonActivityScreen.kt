@@ -732,13 +732,24 @@ fun LessonActivityScreen(
                             .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
                     ) {
                         Column(modifier = Modifier.padding(12.dp)) {
-                            Text(
-                                text = "🎯 Objetivo da Missão:",
-                                style = MaterialTheme.typography.labelMedium.copy(
-                                    color = GoldXp,
-                                    fontWeight = FontWeight.Bold
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Star,
+                                    contentDescription = null,
+                                    tint = GoldXp,
+                                    modifier = Modifier.size(14.dp)
                                 )
-                            )
+                                Text(
+                                    text = "Objetivo da Missão:",
+                                    style = MaterialTheme.typography.labelMedium.copy(
+                                        color = GoldXp,
+                                        fontWeight = FontWeight.Bold
+                                    )
+                                )
+                            }
                             Spacer(modifier = Modifier.height(4.dp))
                             Text(
                                 text = lesson.explanation,

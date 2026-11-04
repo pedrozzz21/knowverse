@@ -97,6 +97,8 @@ fun HomeScreen(
     onNavigateToExercises: () -> Unit = {},
     onNavigateToEssayLab: () -> Unit = {},
     onStartFinalTest: (KahootModule) -> Unit,
+    unreadNotificationsCount: Int = 0,
+    onNotificationsClick: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
@@ -161,11 +163,13 @@ fun HomeScreen(
                 .fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
-            // 1. Cabeçalho Minimalista Consolidado (Otto + Saudação + Sequência)
+            // 1. Cabeçalho Minimalista Consolidado (Otto + Saudação + Sequência + Notificações)
             com.example.ui.components.home.HeroHeader(
                 userName = userName,
                 currentStreak = userProgress.currentStreak,
                 hasStudiedToday = hasStudiedToday,
+                unreadNotificationsCount = unreadNotificationsCount,
+                onNotificationsClick = onNotificationsClick,
                 onStreakClick = onNavigateToRanking
             )
 

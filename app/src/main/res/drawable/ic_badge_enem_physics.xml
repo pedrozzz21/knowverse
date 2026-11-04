@@ -1,0 +1,35 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon -->
+    <path
+        android:fillColor="#0C4A6E"
+        android:strokeColor="#0284C7"
+        android:strokeWidth="2.5"
+        android:pathData="M36,4 L64,18 L64,48 L36,68 L8,48 L8,18 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#0369A1"
+        android:pathData="M36,9 L59,21 L59,46 L36,63 L13,46 L13,21 Z" />
+    <!-- Orbit and Atom Core Motif -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#7DD3FC"
+        android:strokeWidth="2.2"
+        android:pathData="M22,36 A14,6 30 1,1 50,36 A14,6 30 1,1 22,36" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#38BDF8"
+        android:strokeWidth="2.2"
+        android:pathData="M22,36 A14,6 -30 1,1 50,36 A14,6 -30 1,1 22,36" />
+    <!-- Center Energy Core -->
+    <path
+        android:fillColor="#F0F9FF"
+        android:pathData="M36,32 A4,4 0 1,1 35.9,32 Z" />
+    <!-- Center Star of Mastery -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,19 L37.5,22 L41,22.5 L38.5,24.5 L39,28 L36,26 L33,28 L33.5,24.5 L31,22.5 L34.5,22 Z" />
+</vector>

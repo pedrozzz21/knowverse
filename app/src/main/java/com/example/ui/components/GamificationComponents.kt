@@ -60,6 +60,7 @@ fun TopUserStatsBar(
         streakDays = userProgress.currentStreak,
         totalXp = userProgress.totalXp,
         level = userProgress.level,
+        isCompletedToday = userProgress.hasStudiedToday(),
         userPhotoUrl = userPhotoUrl,
         onStatsClick = onStatsClick,
         modifier = modifier
@@ -71,6 +72,7 @@ fun TopUserStatsBar(
     streakDays: Int,
     totalXp: Int,
     level: Int,
+    isCompletedToday: Boolean = false,
     userPhotoUrl: String? = null,
     onStatsClick: () -> Unit = {},
     modifier: Modifier = Modifier
@@ -98,18 +100,19 @@ fun TopUserStatsBar(
                     .padding(horizontal = 8.dp, vertical = 4.dp)
                     .testTag("streak_pill")
             ) {
+                val isStreakActive = isCompletedToday && streakDays > 0
                 Icon(
-                    imageVector = KnowverseIcons.StreakFire,
-                    contentDescription = "Sequência",
-                    tint = StreakFire,
+                    imageVector = if (isStreakActive) KnowverseIcons.StreakFire else KnowverseIcons.FlameInactive,
+                    contentDescription = if (isStreakActive) "Sequência ativa hoje" else "Sequência inativa (estude hoje para acender)",
+                    tint = if (isStreakActive) StreakFire else TextTertiary,
                     modifier = Modifier.size(15.dp)
                 )
                 Spacer(modifier = Modifier.width(6.dp))
                 Text(
                     text = "$streakDays d",
                     style = MaterialTheme.typography.labelMedium.copy(
-                        color = TextPrimary,
-                        fontWeight = FontWeight.SemiBold
+                        color = if (isStreakActive) TextPrimary else TextTertiary,
+                        fontWeight = if (isStreakActive) FontWeight.SemiBold else FontWeight.Medium
                     )
                 )
             }

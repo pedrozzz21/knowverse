@@ -18,6 +18,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.NotificationsActive
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -60,7 +63,9 @@ fun HeroHeader(
     userName: String,
     currentStreak: Int,
     hasStudiedToday: Boolean,
+    unreadNotificationsCount: Int = 0,
     modifier: Modifier = Modifier,
+    onNotificationsClick: (() -> Unit)? = null,
     onStreakClick: (() -> Unit)? = null
 ) {
     var greetingIndex by remember { mutableIntStateOf(0) }
@@ -172,39 +177,82 @@ fun HeroHeader(
 
             Spacer(modifier = Modifier.width(12.dp))
 
-            // Seção Direita: Streak Pill de Alto Contraste Funcional
-            val streakBg = if (hasStudiedToday) StreakFire.copy(alpha = 0.12f) else SurfaceElevated
-            val streakBorder = if (hasStudiedToday) StreakFire.copy(alpha = 0.4f) else BorderSubtle
-            val streakColor = if (hasStudiedToday) StreakFire else TextTertiary
-
-            Surface(
-                color = streakBg,
-                shape = RoundedCornerShape(8.dp),
-                border = BorderStroke(1.dp, streakBorder),
-                modifier = Modifier.clickable(
-                    enabled = onStreakClick != null,
-                    onClick = { onStreakClick?.invoke() }
-                )
+            // Seção Direita: Streak Pill + Sino de Notificações
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                Row(
-                    modifier = Modifier.padding(horizontal = 9.dp, vertical = 5.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(4.dp)
+                val isIgnited = hasStudiedToday && currentStreak > 0
+                val streakBg = if (isIgnited) StreakFire.copy(alpha = 0.12f) else SurfaceElevated
+                val streakBorder = if (isIgnited) StreakFire.copy(alpha = 0.4f) else BorderSubtle
+                val streakColor = if (isIgnited) StreakFire else TextTertiary
+
+                Surface(
+                    color = streakBg,
+                    shape = RoundedCornerShape(8.dp),
+                    border = BorderStroke(1.dp, streakBorder),
+                    modifier = Modifier.clickable(
+                        enabled = onStreakClick != null,
+                        onClick = { onStreakClick?.invoke() }
+                    )
                 ) {
-                    Icon(
-                        imageVector = if (hasStudiedToday) KnowverseIcons.StreakFire else KnowverseIcons.FlameInactive,
-                        contentDescription = "Sequência Diária",
-                        tint = streakColor,
-                        modifier = Modifier.size(15.dp)
-                    )
-                    Text(
-                        text = "${currentStreak}d",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            fontWeight = FontWeight.Bold,
-                            color = if (hasStudiedToday) TextPrimary else TextSecondary,
-                            fontSize = 11.sp
+                    Row(
+                        modifier = Modifier.padding(horizontal = 9.dp, vertical = 5.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Icon(
+                            imageVector = if (isIgnited) KnowverseIcons.StreakFire else KnowverseIcons.FlameInactive,
+                            contentDescription = "Sequência Diária",
+                            tint = streakColor,
+                            modifier = Modifier.size(15.dp)
                         )
-                    )
+                        Text(
+                            text = "${currentStreak}d",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                fontWeight = FontWeight.Bold,
+                                color = if (isIgnited) TextPrimary else TextSecondary,
+                                fontSize = 11.sp
+                            )
+                        )
+                    }
+                }
+
+                // Notification Bell with unread badge
+                Surface(
+                    color = SurfaceElevated,
+                    shape = RoundedCornerShape(8.dp),
+                    border = BorderStroke(
+                        1.dp,
+                        if (unreadNotificationsCount > 0) PrimaryViolet.copy(alpha = 0.6f) else BorderSubtle
+                    ),
+                    modifier = Modifier.clickable(
+                        enabled = onNotificationsClick != null,
+                        onClick = { onNotificationsClick?.invoke() }
+                    ).testTag("header_notifications_bell")
+                ) {
+                    Row(
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 5.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Icon(
+                            imageVector = if (unreadNotificationsCount > 0) Icons.Default.NotificationsActive else Icons.Default.Notifications,
+                            contentDescription = "Avisos e Notificações",
+                            tint = if (unreadNotificationsCount > 0) PrimaryViolet else TextSecondary,
+                            modifier = Modifier.size(15.dp)
+                        )
+                        if (unreadNotificationsCount > 0) {
+                            Text(
+                                text = "$unreadNotificationsCount",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    color = PrimaryViolet,
+                                    fontSize = 11.sp
+                                )
+                            )
+                        }
+                    }
                 }
             }
         }

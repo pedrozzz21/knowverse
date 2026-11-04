@@ -907,4 +907,6 @@ object EnemMathCurriculum {
      */
     fun getLessonById(lessonId: String): EnemTrailLesson? =
         getAllLessons().firstOrNull { it.id == lessonId }
+
+    fun findLesson(lessonId: String): EnemTrailLesson? = getLessonById(lessonId)
 }

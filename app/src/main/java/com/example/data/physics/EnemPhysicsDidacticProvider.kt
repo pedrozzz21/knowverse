@@ -23,18 +23,38 @@ object EnemPhysicsDidacticProvider {
             ?: com.example.data.physics.didactic.PhysicsModernDidactic.get(lessonId)
         if (modular != null) return modular
 
-        val entry = didacticMap[lessonId] ?: return null
-        return CalculusDidacticBundle(
-            theoryMarkdown = entry.theoryMarkdown,
-            formulas = entry.formulas,
-            solvedExamples = entry.solvedExamples,
-            imageResId = entry.imageResId,
-            goldTip = entry.goldTip
-        )
+        val entry = didacticMap[lessonId]
+        if (entry != null) {
+            return CalculusDidacticBundle(
+                theoryMarkdown = entry.theoryMarkdown,
+                formulas = entry.formulas,
+                solvedExamples = entry.solvedExamples,
+                imageResId = entry.imageResId,
+                goldTip = entry.goldTip,
+                assetImagePath = entry.assetImagePath
+            )
+        }
+        PhysicsMechanicsElectricityDidactic.getDidacticBundle(lessonId)?.let { return it }
+        PhysicsThermalWavesOpticsModernDidactic.getDidacticBundle(lessonId)?.let { return it }
+
+        val lesson = EnemPhysicsCurriculum.findLesson(lessonId) ?: return null
+        return PhysicsModuleGenerator.buildBundle(lesson)
     }
 
     fun getExercisesForLesson(lessonId: String): List<MathExercise> {
-        return exercisesMap[lessonId] ?: emptyList()
+        val staticList = exercisesMap[lessonId]
+        if (!staticList.isNullOrEmpty()) {
+            return staticList.map { it.randomized() }
+        }
+        PhysicsMechanicsElectricityDidactic.getExercisesForLesson(lessonId)?.takeIf { it.isNotEmpty() }?.let {
+            return it.map { ex -> ex.randomized() }
+        }
+        PhysicsThermalWavesOpticsModernDidactic.getExercisesForLesson(lessonId)?.takeIf { it.isNotEmpty() }?.let {
+            return it.map { ex -> ex.randomized() }
+        }
+
+        val lesson = EnemPhysicsCurriculum.findLesson(lessonId) ?: return emptyList()
+        return PhysicsModuleGenerator.buildExercises(lesson).map { it.randomized() }
     }
 
     private val exercisesMap: Map<String, List<MathExercise>> by lazy {
@@ -96,7 +116,8 @@ object EnemPhysicsDidacticProvider {
         val formulas: List<FormulaOrSyntaxItem>,
         val solvedExamples: List<LessonExample>,
         val imageResId: Int? = null,
-        val goldTip: String
+        val goldTip: String,
+        val assetImagePath: String? = null
     )
 
     private val didacticMap: Map<String, PhysicsDidacticEntry> by lazy {
@@ -147,7 +168,8 @@ object EnemPhysicsDidacticProvider {
                     )
                 ),
                 imageResId = R.drawable.grafico_fisica_lancamento,
-                goldTip = "Sempre converta km/h para m/s dividindo por 3,6 antes de aplicar qualquer fórmula no ENEM!"
+                goldTip = "Sempre converta km/h para m/s dividindo por 3,6 antes de aplicar qualquer fórmula no ENEM!",
+                assetImagePath = "images/fisica/cinematica.png"
             ),
 
             "fis_m1_a2" to PhysicsDidacticEntry(

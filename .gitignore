@@ -1,7 +1,10 @@
 # Built application files
-*.apk
 *.aar
 *.aab
+!Knowverse.apk
+!knowverse.apk
+!app-debug.apk
+!public/*.apk
 
 # Files for the ART/Dalvik VM
 *.dex

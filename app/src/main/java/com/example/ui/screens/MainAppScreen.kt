@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.Home
@@ -41,6 +42,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -51,7 +53,10 @@ import com.example.data.model.KahootModule
 import com.example.data.model.Lesson
 import com.example.data.python.CodeEvaluator
 import com.example.data.python.PythonEngine
+import com.example.notification.BroadcastNotificationRepository
+import com.example.ui.components.BroadcastNotificationBanner
 import com.example.ui.components.KnowverseIcons
+import com.example.ui.components.NotificationCenterModal
 import com.example.ui.components.UserAvatarDisplay
 import com.example.ui.components.InAppAchievementNotificationBanner
 import com.example.ui.theme.BorderSubtle
@@ -104,6 +109,12 @@ fun MainAppScreen(
         return
     }
 
+    val context = LocalContext.current
+    val broadcastRepository = remember { BroadcastNotificationRepository(context) }
+    val unreadNotificationsCount by broadcastRepository.unreadCount.collectAsState()
+    val activeBanner by broadcastRepository.activeBanner.collectAsState()
+    var showNotificationCenterModal by remember { mutableStateOf(false) }
+
     var currentTab by remember { mutableStateOf(NavigationTab.HOME) }
     var selectedTrailTier by remember { mutableStateOf(DifficultyTier.BASIC) }
     var activeLesson by remember { mutableStateOf<Lesson?>(null) }
@@ -129,6 +140,8 @@ fun MainAppScreen(
                 DevDashboardScreen(
                     progressRepository = progressRepository,
                     currentDevEmail = currentUser?.email ?: "contatopedro21g@gmail.com",
+                    broadcastRepository = broadcastRepository,
+                    currentUser = currentUser,
                     onNavigateBack = { showDevDashboard = false }
                 )
             }
@@ -143,14 +156,7 @@ fun MainAppScreen(
 
             activeLesson != null -> {
                 val currentLesson = activeLesson!!
-                if (currentLesson.id.startsWith("enem_") || currentLesson.id.startsWith("calc_") || currentLesson.id.startsWith("fis_") || currentLesson.id.startsWith("bio_") || currentLesson.id.startsWith("mb_") || currentLesson.mathExercises.isNotEmpty()) {
-                    CalculusLessonScreen(
-                        lesson = currentLesson,
-                        progressRepository = progressRepository,
-                        onNavigateBack = { activeLesson = null },
-                        onNavigateToNextLesson = { next -> activeLesson = next }
-                    )
-                } else {
+                if (currentLesson.id.startsWith("py_")) {
                     LessonActivityScreen(
                         lesson = currentLesson,
                         pythonEngine = pythonEngine,
@@ -158,6 +164,13 @@ fun MainAppScreen(
                         progressRepository = progressRepository,
                         onNavigateBack = { activeLesson = null },
                         onNavigateToLesson = { next -> activeLesson = next }
+                    )
+                } else {
+                    CalculusLessonScreen(
+                        lesson = currentLesson,
+                        progressRepository = progressRepository,
+                        onNavigateBack = { activeLesson = null },
+                        onNavigateToNextLesson = { next -> activeLesson = next }
                     )
                 }
             }
@@ -271,7 +284,7 @@ fun MainAppScreen(
                                 onClick = { currentTab = NavigationTab.LEADERBOARD },
                                 icon = {
                                     Icon(
-                                        imageVector = if (currentTab == NavigationTab.LEADERBOARD) Icons.Filled.EmojiEvents else Icons.Outlined.EmojiEvents,
+                                        imageVector = KnowverseIcons.Trophy,
                                         contentDescription = "Ranking",
                                         modifier = Modifier.size(24.dp)
                                     )
@@ -353,6 +366,8 @@ fun MainAppScreen(
                                         userPhotoUrl = currentUser?.photoUrl,
                                         authManager = authManager,
                                         progressRepository = progressRepository,
+                                        unreadNotificationsCount = unreadNotificationsCount,
+                                        onNotificationsClick = { showNotificationCenterModal = true },
                                         onContinueLearningClick = { lesson -> activeLesson = lesson },
                                         onStartNewLearning = { currentTab = NavigationTab.TRAIL },
                                         onNavigateToTrail = { currentTab = NavigationTab.TRAIL },
@@ -396,6 +411,7 @@ fun MainAppScreen(
                                         userProgress = userProgress,
                                         authManager = authManager,
                                         onOpenDevDashboard = { showDevDashboard = true },
+                                        onOpenNotifications = { showNotificationCenterModal = true },
                                         progressRepository = progressRepository
                                     )
                                 }
@@ -404,6 +420,24 @@ fun MainAppScreen(
                     }
                 }
             }
+        }
+
+        // Floating Dev Broadcast Notification Banner
+        BroadcastNotificationBanner(
+            notification = activeBanner,
+            onOpenDetails = { showNotificationCenterModal = true },
+            onDismiss = { broadcastRepository.dismissBanner() },
+            modifier = Modifier
+                .align(Alignment.TopCenter)
+                .statusBarsPadding()
+        )
+
+        // Modal de Central de Notificações e Atualizações do APK
+        if (showNotificationCenterModal) {
+            NotificationCenterModal(
+                repository = broadcastRepository,
+                onDismiss = { showNotificationCenterModal = false }
+            )
         }
 
         // Floating In-App Achievement Notification Banner across all screens

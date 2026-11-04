@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon in Emerald Tech -->
+    <path
+        android:fillColor="#064E3B"
+        android:strokeColor="#10B981"
+        android:strokeWidth="2.5"
+        android:pathData="M36,4 L64,18 L64,48 L36,68 L8,48 L8,18 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#065F46"
+        android:pathData="M36,9 L59,21 L59,46 L36,63 L13,46 L13,21 Z" />
+    <!-- Target Bullseye & Checkmark Motif -->
+    <path
+        android:fillColor="#34D399"
+        android:pathData="M36,22 C28.27,22 22,28.27 22,36 C22,43.73 28.27,50 36,50 C43.73,50 50,43.73 50,36 C50,28.27 43.73,22 36,22 Z M36,46 C30.48,46 26,41.52 26,36 C26,30.48 30.48,26 36,26 C41.52,26 46,30.48 46,36 C46,41.52 41.52,46 36,46 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M33,40 L28,35 L29.4,33.6 L33,37.2 L42.6,27.6 L44,29 Z" />
+    <!-- Star of 50 Exercises -->
+    <path
+        android:fillColor="#FBBF24"
+        android:pathData="M36,15 L37.5,18 L41,18.5 L38.5,20.5 L39,24 L36,22 L33,24 L33.5,20.5 L31,18.5 L34.5,18 Z" />
+</vector>

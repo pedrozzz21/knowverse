@@ -15,18 +15,51 @@ import com.example.data.model.MathExercise
 object EnemDidacticProvider {
 
     fun getDidacticBundle(lessonId: String): CalculusDidacticBundle? {
-        val content = didacticRegistry[lessonId] ?: return null
-        return CalculusDidacticBundle(
-            theoryMarkdown = content.theoryMarkdown,
-            formulas = content.formulas,
-            solvedExamples = content.solvedExamples,
-            imageResId = null,
-            goldTip = content.goldTip
-        )
+        val content = didacticRegistry[lessonId]
+        if (content != null) {
+            return CalculusDidacticBundle(
+                theoryMarkdown = content.theoryMarkdown,
+                formulas = content.formulas,
+                solvedExamples = content.solvedExamples,
+                imageResId = null,
+                goldTip = content.goldTip
+            )
+        }
+        val lesson = EnemMathCurriculum.findLesson(lessonId) ?: return null
+        if (lessonId.startsWith("enem_m4_") || lessonId.startsWith("enem_m5_")) {
+            return MathGeometryDidactic.buildBundle(lesson)
+        }
+        if (lessonId.startsWith("enem_m6_") || lessonId.startsWith("enem_m7_") || lessonId.startsWith("enem_m11_")) {
+            return MathFunctionsDidactic.buildBundle(lesson)
+        }
+        if (lessonId.startsWith("enem_m3_") || lessonId.startsWith("enem_m8_") || lessonId.startsWith("enem_m9_")) {
+            return MathCombinatoricsDidactic.buildBundle(lesson)
+        }
+        MathAdvancedCurriculumDidactic.getDidacticBundle(lessonId)?.let { return it }
+
+        return MathModuleGenerator.buildBundle(lesson)
     }
 
     fun getExercisesForLesson(lessonId: String): List<MathExercise> {
-        return exerciseRegistry[lessonId] ?: emptyList()
+        val staticList = exerciseRegistry[lessonId]
+        if (!staticList.isNullOrEmpty()) {
+            return staticList.map { it.randomized() }
+        }
+        val lesson = EnemMathCurriculum.findLesson(lessonId) ?: return emptyList()
+        if (lessonId.startsWith("enem_m4_") || lessonId.startsWith("enem_m5_")) {
+            return MathGeometryDidactic.buildExercises(lesson).map { it.randomized() }
+        }
+        if (lessonId.startsWith("enem_m6_") || lessonId.startsWith("enem_m7_") || lessonId.startsWith("enem_m11_")) {
+            return MathFunctionsDidactic.buildExercises(lesson).map { it.randomized() }
+        }
+        if (lessonId.startsWith("enem_m3_") || lessonId.startsWith("enem_m8_") || lessonId.startsWith("enem_m9_")) {
+            return MathCombinatoricsDidactic.buildExercises(lesson).map { it.randomized() }
+        }
+        MathAdvancedCurriculumDidactic.getExercisesForLesson(lessonId)?.takeIf { it.isNotEmpty() }?.let {
+            return it.map { ex -> ex.randomized() }
+        }
+
+        return MathModuleGenerator.buildExercises(lesson).map { it.randomized() }
     }
 
     data class LessonDidacticEntry(

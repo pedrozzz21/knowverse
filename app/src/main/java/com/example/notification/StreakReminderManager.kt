@@ -27,6 +27,10 @@ class StreakReminderManager(private val context: Context) {
         const val CHANNEL_NAME = "Lembretes Diários de Estudo & Streak"
         const val NOTIFICATION_ID = 1001
 
+        const val CHANNEL_BROADCAST_ID = "knowverse_dev_broadcasts"
+        const val CHANNEL_BROADCAST_NAME = "Avisos e Atualizações do Knowverse"
+        const val BROADCAST_NOTIFICATION_ID = 2002
+
         const val PREF_ENABLED = "pref_notifications_enabled"
         const val PREF_HOUR = "pref_reminder_hour"
         const val PREF_MINUTE = "pref_reminder_minute"
@@ -35,16 +39,23 @@ class StreakReminderManager(private val context: Context) {
 
         fun createNotificationChannel(context: Context) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                val name = CHANNEL_NAME
-                val descriptionText = "Notificações diárias do Knowverse para lembrar de praticar lições e manter a sequência (streak) ativa."
-                val importance = NotificationManager.IMPORTANCE_DEFAULT
-                val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
-                    description = descriptionText
+                val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+                // Streak reminder channel
+                val streakChannel = NotificationChannel(CHANNEL_ID, CHANNEL_NAME, NotificationManager.IMPORTANCE_DEFAULT).apply {
+                    description = "Notificações diárias do Knowverse para lembrar de praticar lições e manter a sequência (streak) ativa."
                     enableVibration(true)
                     enableLights(true)
                 }
-                val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-                notificationManager.createNotificationChannel(channel)
+                notificationManager.createNotificationChannel(streakChannel)
+
+                // Broadcast & updates channel
+                val broadcastChannel = NotificationChannel(CHANNEL_BROADCAST_ID, CHANNEL_BROADCAST_NAME, NotificationManager.IMPORTANCE_HIGH).apply {
+                    description = "Avisos do desenvolvedor, novidades de conteúdo e notificações de novas versões do Knowverse."
+                    enableVibration(true)
+                    enableLights(true)
+                }
+                notificationManager.createNotificationChannel(broadcastChannel)
             }
         }
     }
@@ -196,6 +207,70 @@ class StreakReminderManager(private val context: Context) {
             notificationManager.notify(NOTIFICATION_ID, notification)
         } catch (_: SecurityException) {
             // Permission POST_NOTIFICATIONS might be denied on Android 13+
+        }
+    }
+
+    /**
+     * Dispatches a broadcast notification sent by the developer (e.g., "Hora de estudar! Nova atualização!!").
+     */
+    fun showBroadcastNotification(
+        title: String,
+        message: String,
+        isUpdate: Boolean = false,
+        downloadUrl: String? = null,
+        notificationId: Int = BROADCAST_NOTIFICATION_ID
+    ) {
+        val contentIntent = Intent(context, MainActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            putExtra("OPEN_BROADCAST_MODAL", true)
+            putExtra("BROADCAST_TITLE", title)
+            putExtra("BROADCAST_MESSAGE", message)
+            putExtra("BROADCAST_IS_UPDATE", isUpdate)
+            downloadUrl?.let { putExtra("BROADCAST_APK_URL", it) }
+        }
+        val pendingContentIntent = PendingIntent.getActivity(
+            context,
+            notificationId,
+            contentIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+
+        val mascotBitmap = try {
+            BitmapFactory.decodeResource(context.resources, R.drawable.img_mascot_otter_boy)
+        } catch (_: Exception) {
+            null
+        }
+
+        val builder = NotificationCompat.Builder(context, CHANNEL_BROADCAST_ID)
+            .setSmallIcon(R.drawable.img_mascot_otter_boy)
+            .setLargeIcon(mascotBitmap)
+            .setContentTitle(title)
+            .setContentText(message)
+            .setStyle(NotificationCompat.BigTextStyle().bigText(message))
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setColor(0xFF7C3AED.toInt()) // Violet accent
+            .setAutoCancel(true)
+            .setContentIntent(pendingContentIntent)
+
+        if (isUpdate) {
+            builder.addAction(
+                R.drawable.img_mascot_otter_boy,
+                "Baixar Atualização",
+                pendingContentIntent
+            )
+        } else {
+            builder.addAction(
+                R.drawable.img_mascot_otter_boy,
+                "Ver no Knowverse",
+                pendingContentIntent
+            )
+        }
+
+        try {
+            val notificationManager = NotificationManagerCompat.from(context)
+            notificationManager.notify(notificationId, builder.build())
+        } catch (_: SecurityException) {
+            // Notifications permission not granted
         }
     }
 }

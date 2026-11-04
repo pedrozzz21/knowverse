@@ -49,20 +49,12 @@ class PythonEngine(private val context: Context) {
     )
 
     init {
-        mainHandler.post {
-            setupWebView()
-        }
+        // Inicialização sob demanda (lazy) para evitar chamadas nativas desnecessárias do Chromium no boot
     }
 
     @SuppressLint("SetJavaScriptEnabled")
-    private fun setupWebView() {
+    fun setupWebView() {
         if (webView != null) return
-        try {
-            val cacheBase = context.cacheDir
-            File(cacheBase, "WebView/Default/HTTP Cache/Code Cache/js").mkdirs()
-            File(cacheBase, "WebView/Default/HTTP Cache/Code Cache/wasm").mkdirs()
-        } catch (_: Exception) {}
-
         try {
             val wv = WebView(context).apply {
                 setLayerType(View.LAYER_TYPE_SOFTWARE, null)
@@ -72,6 +64,9 @@ class PythonEngine(private val context: Context) {
                     allowFileAccess = true
                     allowContentAccess = true
                     cacheMode = WebSettings.LOAD_NO_CACHE
+                    try {
+                        safeBrowsingEnabled = false
+                    } catch (_: Throwable) {}
                 }
                 addJavascriptInterface(AndroidBridge(), "AndroidBridge")
                 webViewClient = object : WebViewClient() {
@@ -82,13 +77,16 @@ class PythonEngine(private val context: Context) {
             }
             webView = wv
             wv.loadUrl("file:///android_asset/python/runner.html")
-        } catch (e: Exception) {
+        } catch (e: Throwable) {
             android.util.Log.w("PythonEngine", "WebView initialization: ${e.message}")
             isReady = true
         }
     }
 
     suspend fun executeCode(code: String, timeoutMs: Long = 7000L): ExecutionResult {
+        if (webView == null) {
+            mainHandler.post { setupWebView() }
+        }
         // Ensure engine is loaded
         if (!isReady) {
             val readyResult = withTimeoutOrNull(4000L) {

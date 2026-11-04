@@ -33,7 +33,9 @@ import androidx.compose.material.icons.filled.Functions
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Public
 import androidx.compose.material.icons.filled.WorkspacePremium
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -96,19 +98,31 @@ fun LearnTrailScreen(
 ) {
     var selectedCategory by remember { mutableStateOf("Todas") }
 
-    // Course expansion states
+    // Course expansion states - all start closed by default as requested
     var isPythonExpanded by remember { mutableStateOf(false) }
-    var isEnemMathExpanded by remember { mutableStateOf(true) }
-    var expandedEnemModuleId by remember { mutableStateOf<String?>("mod_01_matematica_basica") }
+    var isEnemMathExpanded by remember { mutableStateOf(false) }
+    var expandedEnemModuleId by remember { mutableStateOf<String?>(null) }
     var isCalculusExpanded by remember { mutableStateOf(false) }
     var isPhysicsExpanded by remember { mutableStateOf(false) }
-    var expandedPhysicsModuleId by remember { mutableStateOf<String?>("mod_fis_01_mecanica") }
+    var expandedPhysicsModuleId by remember { mutableStateOf<String?>(null) }
     var isBiologyExpanded by remember { mutableStateOf(false) }
-    var expandedBiologyModuleId by remember { mutableStateOf<String?>("mod_bio_04_citologia") }
+    var expandedBiologyModuleId by remember { mutableStateOf<String?>(null) }
+    var isChemistryExpanded by remember { mutableStateOf(false) }
+    var expandedChemistryModuleId by remember { mutableStateOf<String?>(null) }
+    var isLanguagesExpanded by remember { mutableStateOf(false) }
+    var expandedLanguagesModuleId by remember { mutableStateOf<String?>(null) }
+    var isHistoryExpanded by remember { mutableStateOf(false) }
+    var expandedHistoryModuleId by remember { mutableStateOf<String?>(null) }
+    var isGeographyExpanded by remember { mutableStateOf(false) }
+    var expandedGeographyModuleId by remember { mutableStateOf<String?>(null) }
 
     val enemModules = remember { EnemMathCurriculum.getAllModules() }
     val physicsModules = remember { com.example.data.physics.EnemPhysicsCurriculum.getAllModules() }
     val biologyModules = remember { com.example.data.biology.EnemBiologyCurriculum.getAllModules() }
+    val chemistryModules = remember { com.example.data.chemistry.EnemChemistryCurriculum.getAllModules() }
+    val languagesModules = remember { com.example.data.languages.EnemLanguagesCurriculum.getAllModules() }
+    val historyModules = remember { com.example.data.history.EnemHistoryCurriculum.getAllModules() }
+    val geographyModules = remember { com.example.data.geography.EnemGeographyCurriculum.getAllModules() }
 
     // Active sub-module selection inside Python
     var selectedPythonTier by remember { mutableStateOf(initialTier) }
@@ -117,11 +131,31 @@ fun LearnTrailScreen(
     var selectedCalculusModule by remember { mutableStateOf("Limites") }
     var expandedCalculusModule by remember { mutableStateOf<String?>(null) }
 
-    val categories = listOf("Todas", "Programação", "Matemática", "Física", "Biologia")
+    var activeFollowTrail by remember(userProgress.favoriteAreaId, userProgress.currentLessonId) {
+        val initial = when {
+            userProgress.currentLessonId.startsWith("mat_") || userProgress.currentLessonId.startsWith("enem_") -> "matematica_enem"
+            userProgress.currentLessonId.startsWith("calc_") -> "calculus"
+            userProgress.currentLessonId.startsWith("fis_") -> "fisica"
+            userProgress.currentLessonId.startsWith("bio_") -> "biologia"
+            userProgress.currentLessonId.startsWith("quim_") -> "quimica"
+            userProgress.currentLessonId.startsWith("ling_") -> "linguagens"
+            userProgress.currentLessonId.startsWith("hist_") -> "historia"
+            userProgress.currentLessonId.startsWith("geo_") -> "geografia"
+            userProgress.favoriteAreaId.isNotBlank() && userProgress.favoriteAreaId != "py_b1" -> userProgress.favoriteAreaId
+            else -> "python"
+        }
+        mutableStateOf(initial)
+    }
+
+    val categories = listOf("Todas", "Química", "Geografia", "História", "Linguagens", "Matemática", "Física", "Biologia", "Programação")
     val showProgramming = selectedCategory == "Todas" || selectedCategory == "Programação"
     val showMath = selectedCategory == "Todas" || selectedCategory == "Matemática"
     val showPhysics = selectedCategory == "Todas" || selectedCategory == "Física"
     val showBiology = selectedCategory == "Todas" || selectedCategory == "Biologia"
+    val showChemistry = selectedCategory == "Todas" || selectedCategory == "Química"
+    val showLanguages = selectedCategory == "Todas" || selectedCategory == "Linguagens"
+    val showHistory = selectedCategory == "Todas" || selectedCategory == "História"
+    val showGeography = selectedCategory == "Todas" || selectedCategory == "Geografia"
 
     val isIntermediateUnlocked = userProgress.isTierUnlocked(DifficultyTier.INTERMEDIATE)
     val isAdvancedUnlocked = userProgress.isTierUnlocked(DifficultyTier.ADVANCED)
@@ -278,13 +312,21 @@ fun LearnTrailScreen(
                         modifier = Modifier.padding(top = 4.dp, bottom = 2.dp)
                     )
 
+                    val isPythonActive = activeFollowTrail == "python"
                     Card(
                         shape = RoundedCornerShape(8.dp),
                         colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
-                            .clickable { isPythonExpanded = !isPythonExpanded }
+                            .border(
+                                if (isPythonActive) 1.5.dp else 1.dp,
+                                if (isPythonActive) PrimaryViolet else BorderSubtle,
+                                RoundedCornerShape(8.dp)
+                            )
+                            .clickable {
+                                isPythonExpanded = !isPythonExpanded
+                                activeFollowTrail = "python"
+                            }
                             .testTag("course_card_python")
                     ) {
                         Column(modifier = Modifier.padding(14.dp)) {
@@ -473,11 +515,12 @@ fun LearnTrailScreen(
             if (showMath) {
                 // CURSO PRINCIPAL: MATEMÁTICA ENEM (14 MÓDULOS TAXONÔMICOS)
                 item {
+                    val isEnemMathActive = activeFollowTrail == "matematica_enem"
                     Spacer(modifier = Modifier.height(4.dp))
                     Text(
                         text = "Disciplina: Matemática ENEM",
                         style = MaterialTheme.typography.labelSmall.copy(
-                            color = NeonGreen,
+                            color = if (isEnemMathActive) NeonGreen else TextTertiary,
                             fontWeight = FontWeight.Bold,
                             fontSize = 11.sp,
                             letterSpacing = 0.5.sp
@@ -486,12 +529,19 @@ fun LearnTrailScreen(
                     )
 
                     Card(
-                        shape = RoundedCornerShape(10.dp),
+                        shape = RoundedCornerShape(8.dp),
                         colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .border(1.dp, NeonGreen.copy(alpha = 0.5f), RoundedCornerShape(10.dp))
-                            .clickable { isEnemMathExpanded = !isEnemMathExpanded }
+                            .border(
+                                if (isEnemMathActive) 1.5.dp else 1.dp,
+                                if (isEnemMathActive) NeonGreen else BorderSubtle,
+                                RoundedCornerShape(8.dp)
+                            )
+                            .clickable {
+                                isEnemMathExpanded = !isEnemMathExpanded
+                                activeFollowTrail = "matematica_enem"
+                            }
                             .testTag("discipline_card_matematica_enem")
                     ) {
                         Column(modifier = Modifier.padding(14.dp)) {
@@ -521,29 +571,56 @@ fun LearnTrailScreen(
 
                                     Spacer(modifier = Modifier.width(12.dp))
 
-                                    Column {
-                                        Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                        ) {
                                             Text(
                                                 text = "Matemática ENEM",
                                                 style = MaterialTheme.typography.titleMedium.copy(
                                                     fontWeight = FontWeight.Bold,
                                                     color = TextPrimary
-                                                )
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
                                             )
-                                            Spacer(modifier = Modifier.width(8.dp))
-                                            Surface(
-                                                color = NeonGreen.copy(alpha = 0.15f),
-                                                shape = RoundedCornerShape(4.dp)
-                                            ) {
-                                                Text(
-                                                    text = "14 Módulos • 81 Aulas",
-                                                    style = MaterialTheme.typography.labelSmall.copy(
-                                                        color = NeonGreen,
-                                                        fontWeight = FontWeight.Bold,
-                                                        fontSize = 10.sp
-                                                    ),
-                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                                                )
+                                            if (isEnemMathActive) {
+                                                Surface(
+                                                    color = NeonGreen.copy(alpha = 0.15f),
+                                                    shape = RoundedCornerShape(4.dp)
+                                                ) {
+                                                    Text(
+                                                        text = "Trilha Selecionada",
+                                                        style = MaterialTheme.typography.labelSmall.copy(
+                                                            color = NeonGreen,
+                                                            fontWeight = FontWeight.Bold,
+                                                            fontSize = 10.sp
+                                                        ),
+                                                        maxLines = 1,
+                                                        softWrap = false,
+                                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                    )
+                                                }
+                                            } else {
+                                                Surface(
+                                                    color = SurfaceElevated,
+                                                    shape = RoundedCornerShape(4.dp),
+                                                    border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle)
+                                                ) {
+                                                    Text(
+                                                        text = "14 Módulos • 81 Aulas",
+                                                        style = MaterialTheme.typography.labelSmall.copy(
+                                                            color = TextSecondary,
+                                                            fontWeight = FontWeight.Medium,
+                                                            fontSize = 10.sp
+                                                        ),
+                                                        maxLines = 1,
+                                                        softWrap = false,
+                                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                    )
+                                                }
                                             }
                                         }
 
@@ -602,13 +679,21 @@ fun LearnTrailScreen(
                     Spacer(modifier = Modifier.height(10.dp))
 
                     // CURSO 2 DE MATEMÁTICA: CÁLCULO I
+                    val isCalculusActive = activeFollowTrail == "calculus"
                     Card(
                         shape = RoundedCornerShape(8.dp),
                         colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
-                            .clickable { isCalculusExpanded = !isCalculusExpanded }
+                            .border(
+                                if (isCalculusActive) 1.5.dp else 1.dp,
+                                if (isCalculusActive) GoldXp else BorderSubtle,
+                                RoundedCornerShape(8.dp)
+                            )
+                            .clickable {
+                                isCalculusExpanded = !isCalculusExpanded
+                                activeFollowTrail = "calculus"
+                            }
                             .testTag("course_card_calculus")
                     ) {
                         Column(modifier = Modifier.padding(14.dp)) {
@@ -791,13 +876,21 @@ fun LearnTrailScreen(
                 item {
                     Spacer(modifier = Modifier.height(10.dp))
 
+                    val isPhysicsActive = activeFollowTrail == "fisica"
                     Card(
                         shape = RoundedCornerShape(8.dp),
                         colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
                         modifier = Modifier
                             .fillMaxWidth()
-                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
-                            .clickable { isPhysicsExpanded = !isPhysicsExpanded }
+                            .border(
+                                if (isPhysicsActive) 1.5.dp else 1.dp,
+                                if (isPhysicsActive) Color(0xFF38BDF8) else BorderSubtle,
+                                RoundedCornerShape(8.dp)
+                            )
+                            .clickable {
+                                isPhysicsExpanded = !isPhysicsExpanded
+                                activeFollowTrail = "fisica"
+                            }
                             .testTag("course_card_physics")
                     ) {
                         Column(modifier = Modifier.padding(14.dp)) {
@@ -827,16 +920,21 @@ fun LearnTrailScreen(
 
                                     Spacer(modifier = Modifier.width(12.dp))
 
-                                    Column {
-                                        Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                        ) {
                                             Text(
                                                 text = "Física • ENEM Completo",
                                                 style = MaterialTheme.typography.titleMedium.copy(
                                                     fontWeight = FontWeight.ExtraBold,
                                                     color = TextPrimary
-                                                )
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
                                             )
-                                            Spacer(modifier = Modifier.width(6.dp))
                                             Surface(
                                                 color = Color(0xFF38BDF8).copy(alpha = 0.15f),
                                                 shape = RoundedCornerShape(4.dp)
@@ -848,6 +946,8 @@ fun LearnTrailScreen(
                                                         fontWeight = FontWeight.Bold,
                                                         fontSize = 10.sp
                                                     ),
+                                                    maxLines = 1,
+                                                    softWrap = false,
                                                     modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                                                 )
                                             }
@@ -959,27 +1059,34 @@ fun LearnTrailScreen(
 
                                     Spacer(modifier = Modifier.width(12.dp))
 
-                                    Column {
-                                        Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                        ) {
                                             Text(
                                                 text = "Biologia • ENEM",
                                                 style = MaterialTheme.typography.titleMedium.copy(
                                                     fontWeight = FontWeight.ExtraBold,
                                                     color = TextPrimary
-                                                )
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
                                             )
-                                            Spacer(modifier = Modifier.width(6.dp))
                                             Surface(
                                                 color = SuccessEmerald.copy(alpha = 0.15f),
                                                 shape = RoundedCornerShape(4.dp)
                                             ) {
                                                 Text(
-                                                    text = "Tópico 1 • Ecologia",
+                                                    text = "5 Módulos • 29 Aulas",
                                                     style = MaterialTheme.typography.labelSmall.copy(
                                                         color = SuccessEmerald,
                                                         fontWeight = FontWeight.Bold,
                                                         fontSize = 10.sp
                                                     ),
+                                                    maxLines = 1,
+                                                    softWrap = false,
                                                     modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                                                 )
                                             }
@@ -988,7 +1095,7 @@ fun LearnTrailScreen(
                                         Spacer(modifier = Modifier.height(2.dp))
 
                                         Text(
-                                            text = "Ecologia completa: Biodiversidade, Teias, Relações, Ciclos, Poluição e Sustentabilidade",
+                                            text = "Ecologia, Fisiologia Humana, Genética, Citologia e Evolução Biológica",
                                             style = MaterialTheme.typography.bodySmall.copy(
                                                 color = TextSecondary,
                                                 fontSize = 11.sp
@@ -1031,6 +1138,565 @@ fun LearnTrailScreen(
                                                 expandedBiologyModuleId = if (expandedBiologyModuleId == module.id) null else module.id
                                             },
                                             onSelectLesson = onSelectLesson
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ========================================================
+            // CATEGORIA: CIÊNCIAS DA NATUREZA -> QUÍMICA ENEM
+            // ========================================================
+            if (showChemistry) {
+                item {
+                    Text(
+                        text = "Categoria: Ciências da Natureza • Química",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            color = Color(0xFF06B6D4),
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 11.sp
+                        ),
+                        modifier = Modifier.padding(top = 10.dp, bottom = 2.dp)
+                    )
+
+                    Card(
+                        shape = RoundedCornerShape(8.dp),
+                        colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
+                            .clickable { isChemistryExpanded = !isChemistryExpanded }
+                            .testTag("course_card_chemistry")
+                    ) {
+                        Column(modifier = Modifier.padding(14.dp)) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(40.dp)
+                                            .clip(CircleShape)
+                                            .background(Color(0xFF06B6D4).copy(alpha = 0.2f)),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = KnowverseIcons.ChemistryFlask,
+                                            contentDescription = "Química ENEM",
+                                            tint = Color(0xFF06B6D4),
+                                            modifier = Modifier.size(22.dp)
+                                        )
+                                    }
+
+                                    Spacer(modifier = Modifier.width(12.dp))
+
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                        ) {
+                                            Text(
+                                                text = "Química • ENEM",
+                                                style = MaterialTheme.typography.titleMedium.copy(
+                                                    fontWeight = FontWeight.ExtraBold,
+                                                    color = TextPrimary
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
+                                            )
+                                            Surface(
+                                                color = Color(0xFF06B6D4).copy(alpha = 0.15f),
+                                                shape = RoundedCornerShape(4.dp)
+                                            ) {
+                                                Text(
+                                                    text = "4 Módulos • 21 Aulas",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = Color(0xFF06B6D4),
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 10.sp
+                                                    ),
+                                                    maxLines = 1,
+                                                    softWrap = false,
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
+
+                                        Spacer(modifier = Modifier.height(2.dp))
+
+                                        Text(
+                                            text = "Geral e Matéria, Físico-Química, Química Orgânica e Meio Ambiente",
+                                            style = MaterialTheme.typography.bodySmall.copy(
+                                                color = TextSecondary,
+                                                fontSize = 11.sp
+                                            ),
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis
+                                        )
+                                    }
+                                }
+
+                                IconButton(
+                                    onClick = { isChemistryExpanded = !isChemistryExpanded },
+                                    modifier = Modifier.size(28.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = if (isChemistryExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                        contentDescription = "Expandir Química ENEM",
+                                        tint = TextSecondary
+                                    )
+                                }
+                            }
+
+                            AnimatedVisibility(
+                                visible = isChemistryExpanded,
+                                enter = fadeIn() + expandVertically(),
+                                exit = fadeOut() + shrinkVertically()
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(top = 14.dp),
+                                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                                ) {
+                                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
+
+                                    chemistryModules.forEach { module ->
+                                        EnemMathTrailModuleContainer(
+                                            module = module,
+                                            isExpanded = expandedChemistryModuleId == module.id,
+                                            userProgress = userProgress,
+                                            onToggleExpand = {
+                                                expandedChemistryModuleId = if (expandedChemistryModuleId == module.id) null else module.id
+                                            },
+                                            onSelectLesson = onSelectLesson
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ========================================================
+            // CATEGORIA: LINGUAGENS -> LINGUAGENS E CÓDIGOS ENEM
+            // ========================================================
+            if (showLanguages) {
+                item {
+                    Text(
+                        text = "Categoria: Linguagens, Códigos e suas Tecnologias",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            color = Color(0xFFFB923C),
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 11.sp
+                        ),
+                        modifier = Modifier.padding(top = 10.dp, bottom = 2.dp)
+                    )
+
+                    Card(
+                        shape = RoundedCornerShape(8.dp),
+                        colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
+                            .clickable { isLanguagesExpanded = !isLanguagesExpanded }
+                            .testTag("course_card_languages")
+                    ) {
+                        Column(modifier = Modifier.padding(14.dp)) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(40.dp)
+                                            .clip(CircleShape)
+                                            .background(Color(0xFFFB923C).copy(alpha = 0.2f)),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.MenuBook,
+                                            contentDescription = "Linguagens ENEM",
+                                            tint = Color(0xFFFB923C),
+                                            modifier = Modifier.size(22.dp)
+                                        )
+                                    }
+
+                                    Spacer(modifier = Modifier.width(12.dp))
+
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                        ) {
+                                            Text(
+                                                text = "Linguagens • ENEM",
+                                                style = MaterialTheme.typography.titleMedium.copy(
+                                                    fontWeight = FontWeight.ExtraBold,
+                                                    color = TextPrimary
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
+                                            )
+                                            Surface(
+                                                color = Color(0xFFFB923C).copy(alpha = 0.15f),
+                                                shape = RoundedCornerShape(4.dp)
+                                            ) {
+                                                Text(
+                                                    text = "5 Módulos • 23 Aulas",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = Color(0xFFFB923C),
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 10.sp
+                                                    ),
+                                                    maxLines = 1,
+                                                    softWrap = false,
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
+
+                                        Spacer(modifier = Modifier.height(2.dp))
+
+                                        Text(
+                                            text = "Interpretação, Linguística, Literatura Brasileira, Gramática e Artes",
+                                            style = MaterialTheme.typography.bodySmall.copy(
+                                                color = TextSecondary,
+                                                fontSize = 11.sp
+                                            ),
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis
+                                        )
+                                    }
+                                }
+
+                                IconButton(
+                                    onClick = { isLanguagesExpanded = !isLanguagesExpanded },
+                                    modifier = Modifier.size(28.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = if (isLanguagesExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                        contentDescription = "Expandir Linguagens ENEM",
+                                        tint = TextSecondary
+                                    )
+                                }
+                            }
+
+                            AnimatedVisibility(
+                                visible = isLanguagesExpanded,
+                                enter = fadeIn() + expandVertically(),
+                                exit = fadeOut() + shrinkVertically()
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(top = 14.dp),
+                                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                                ) {
+                                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
+
+                                    languagesModules.forEach { module ->
+                                        EnemMathTrailModuleContainer(
+                                            module = module,
+                                            isExpanded = expandedLanguagesModuleId == module.id,
+                                            userProgress = userProgress,
+                                            onToggleExpand = {
+                                                expandedLanguagesModuleId = if (expandedLanguagesModuleId == module.id) null else module.id
+                                            },
+                                            onSelectLesson = onSelectLesson,
+                                            accentColor = Color(0xFFFB923C)
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ========================================================
+            // CATEGORIA: HISTÓRIA -> CIÊNCIAS HUMANAS ENEM (6 MÓDULOS)
+            // ========================================================
+            if (showHistory) {
+                item {
+                    Text(
+                        text = "Categoria: Ciências Humanas e suas Tecnologias",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            color = Color(0xFFE07A5F),
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 11.sp
+                        ),
+                        modifier = Modifier.padding(top = 10.dp, bottom = 2.dp)
+                    )
+
+                    Card(
+                        shape = RoundedCornerShape(8.dp),
+                        colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
+                            .clickable { isHistoryExpanded = !isHistoryExpanded }
+                            .testTag("course_card_history")
+                    ) {
+                        Column(modifier = Modifier.padding(14.dp)) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(40.dp)
+                                            .clip(CircleShape)
+                                            .background(Color(0xFFE07A5F).copy(alpha = 0.2f)),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.MenuBook,
+                                            contentDescription = "História ENEM",
+                                            tint = Color(0xFFE07A5F),
+                                            modifier = Modifier.size(22.dp)
+                                        )
+                                    }
+
+                                    Spacer(modifier = Modifier.width(12.dp))
+
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                        ) {
+                                            Text(
+                                                text = "História • ENEM",
+                                                style = MaterialTheme.typography.titleMedium.copy(
+                                                    fontWeight = FontWeight.ExtraBold,
+                                                    color = TextPrimary
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
+                                            )
+                                            Surface(
+                                                color = Color(0xFFE07A5F).copy(alpha = 0.15f),
+                                                shape = RoundedCornerShape(4.dp)
+                                            ) {
+                                                Text(
+                                                    text = "6 Módulos • 26 Aulas",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = Color(0xFFE07A5F),
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 10.sp
+                                                    ),
+                                                    maxLines = 1,
+                                                    softWrap = false,
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
+
+                                        Spacer(modifier = Modifier.height(2.dp))
+
+                                        Text(
+                                            text = "Brasil (Colônia, Império, República) e História Geral",
+                                            style = MaterialTheme.typography.bodySmall.copy(
+                                                color = TextSecondary,
+                                                fontSize = 11.sp
+                                            ),
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis
+                                        )
+                                    }
+                                }
+
+                                IconButton(
+                                    onClick = { isHistoryExpanded = !isHistoryExpanded },
+                                    modifier = Modifier.size(28.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = if (isHistoryExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                        contentDescription = "Expandir História ENEM",
+                                        tint = TextSecondary
+                                    )
+                                }
+                            }
+
+                            AnimatedVisibility(
+                                visible = isHistoryExpanded,
+                                enter = fadeIn() + expandVertically(),
+                                exit = fadeOut() + shrinkVertically()
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(top = 14.dp),
+                                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                                ) {
+                                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
+
+                                    historyModules.forEach { module ->
+                                        EnemMathTrailModuleContainer(
+                                            module = module,
+                                            isExpanded = expandedHistoryModuleId == module.id,
+                                            userProgress = userProgress,
+                                            onToggleExpand = {
+                                                expandedHistoryModuleId = if (expandedHistoryModuleId == module.id) null else module.id
+                                            },
+                                            onSelectLesson = onSelectLesson,
+                                            accentColor = Color(0xFFE07A5F)
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ========================================================
+            // CATEGORIA: GEOGRAFIA -> CIÊNCIAS HUMANAS ENEM (5 MÓDULOS)
+            // ========================================================
+            if (showGeography) {
+                item {
+                    Text(
+                        text = "Categoria: Ciências Humanas e suas Tecnologias",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            color = Color(0xFF2A9D8F),
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 11.sp
+                        ),
+                        modifier = Modifier.padding(top = 10.dp, bottom = 2.dp)
+                    )
+
+                    Card(
+                        shape = RoundedCornerShape(8.dp),
+                        colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
+                            .clickable { isGeographyExpanded = !isGeographyExpanded }
+                            .testTag("course_card_geography")
+                    ) {
+                        Column(modifier = Modifier.padding(14.dp)) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(40.dp)
+                                            .clip(CircleShape)
+                                            .background(Color(0xFF2A9D8F).copy(alpha = 0.2f)),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.Public,
+                                            contentDescription = "Geografia ENEM",
+                                            tint = Color(0xFF2A9D8F),
+                                            modifier = Modifier.size(22.dp)
+                                        )
+                                    }
+
+                                    Spacer(modifier = Modifier.width(12.dp))
+
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                        ) {
+                                            Text(
+                                                text = "Geografia • ENEM",
+                                                style = MaterialTheme.typography.titleMedium.copy(
+                                                    fontWeight = FontWeight.ExtraBold,
+                                                    color = TextPrimary
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
+                                            )
+                                            Surface(
+                                                color = Color(0xFF2A9D8F).copy(alpha = 0.15f),
+                                                shape = RoundedCornerShape(4.dp)
+                                            ) {
+                                                Text(
+                                                    text = "5 Módulos • 21 Aulas",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = Color(0xFF2A9D8F),
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 10.sp
+                                                    ),
+                                                    maxLines = 1,
+                                                    softWrap = false,
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
+
+                                        Spacer(modifier = Modifier.height(2.dp))
+
+                                        Text(
+                                            text = "Física & Meio Ambiente, Agrária, Urbana, Demografia e Geopolítica",
+                                            style = MaterialTheme.typography.bodySmall.copy(
+                                                color = TextSecondary,
+                                                fontSize = 11.sp
+                                            ),
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis
+                                        )
+                                    }
+                                }
+
+                                IconButton(
+                                    onClick = { isGeographyExpanded = !isGeographyExpanded },
+                                    modifier = Modifier.size(28.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = if (isGeographyExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                        contentDescription = "Expandir Geografia ENEM",
+                                        tint = TextSecondary
+                                    )
+                                }
+                            }
+
+                            AnimatedVisibility(
+                                visible = isGeographyExpanded,
+                                enter = fadeIn() + expandVertically(),
+                                exit = fadeOut() + shrinkVertically()
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(top = 14.dp),
+                                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                                ) {
+                                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
+
+                                    geographyModules.forEach { module ->
+                                        EnemMathTrailModuleContainer(
+                                            module = module,
+                                            isExpanded = expandedGeographyModuleId == module.id,
+                                            userProgress = userProgress,
+                                            onToggleExpand = {
+                                                expandedGeographyModuleId = if (expandedGeographyModuleId == module.id) null else module.id
+                                            },
+                                            onSelectLesson = onSelectLesson,
+                                            accentColor = Color(0xFF2A9D8F)
                                         )
                                     }
                                 }
@@ -1496,7 +2162,8 @@ fun EnemMathTrailModuleContainer(
     isExpanded: Boolean,
     userProgress: UserProgress,
     onToggleExpand: () -> Unit,
-    onSelectLesson: (Lesson) -> Unit
+    onSelectLesson: (Lesson) -> Unit,
+    accentColor: Color = NeonGreen
 ) {
     val completedCount = module.lessons.count { userProgress.completedLessonIds.contains(it.id) }
     val totalCount = module.lessons.size
@@ -1507,7 +2174,7 @@ fun EnemMathTrailModuleContainer(
         colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
         border = androidx.compose.foundation.BorderStroke(
             width = if (isExpanded) 1.5.dp else 1.dp,
-            color = if (isExpanded) NeonGreen else NeonGreen.copy(alpha = 0.35f)
+            color = if (isExpanded) accentColor else accentColor.copy(alpha = 0.35f)
         ),
         modifier = Modifier
             .fillMaxWidth()
@@ -1527,14 +2194,14 @@ fun EnemMathTrailModuleContainer(
                 ) {
                     // Badge "Módulo X"
                     Surface(
-                        color = NeonGreen.copy(alpha = 0.15f),
+                        color = accentColor.copy(alpha = 0.15f),
                         shape = RoundedCornerShape(6.dp),
-                        border = androidx.compose.foundation.BorderStroke(1.dp, NeonGreen.copy(alpha = 0.5f))
+                        border = androidx.compose.foundation.BorderStroke(1.dp, accentColor.copy(alpha = 0.5f))
                     ) {
                         Text(
                             text = "Módulo ${module.moduleNumber}",
                             style = MaterialTheme.typography.labelSmall.copy(
-                                color = NeonGreen,
+                                color = accentColor,
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 11.sp
                             ),

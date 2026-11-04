@@ -39,16 +39,35 @@ data class MathExercise(
 ) {
     /**
      * Gera uma cópia do exercício com as alternativas embaralhadas aleatoriamente,
-     * garantindo que a resposta correta não fique fixa na primeira posição.
+     * garantindo que a resposta correta não fique fixa na primeira posição ou índice estático.
      */
     fun randomized(): MathExercise {
         if (options.size < 2) return this
-        val correctValue = options.getOrNull(correctIndex) ?: options[0]
-        val shuffledOptions = options.shuffled()
-        val newCorrectIndex = shuffledOptions.indexOf(correctValue)
+        val cleanOptions = options.map { opt ->
+            opt.replace(Regex("^(\\([A-E]\\)|[A-E]\\)|\\b[A-E]\\s*[-–:]\\s*)", RegexOption.IGNORE_CASE), "").trim()
+        }
+        val targetText = cleanOptions.getOrNull(correctIndex) ?: cleanOptions[0]
+        val indexed = cleanOptions.mapIndexed { idx, text ->
+            Pair(text, idx == correctIndex)
+        }.shuffled()
+
+        val newCorrectIndex = indexed.indexOfFirst { it.second }.let { if (it >= 0) it else 0 }
+        val newCorrectLetter = ('A' + newCorrectIndex).toString()
+
+        val hasLetterPrefix = options.any { it.matches(Regex("^[A-E]\\)\\s.*", RegexOption.IGNORE_CASE)) }
+        val finalOptions = indexed.mapIndexed { idx, pair ->
+            val letter = ('A' + idx)
+            if (hasLetterPrefix) "$letter) ${pair.first}" else pair.first
+        }
+
+        val updatedSolution = stepByStepSolution.replace(Regex("(Alternativa correta(?: é|:)?\\s*(?:a letra)?\\s*)[A-E]", RegexOption.IGNORE_CASE)) { m ->
+            "${m.groupValues[1]}$newCorrectLetter"
+        }
+
         return copy(
-            options = shuffledOptions,
-            correctIndex = if (newCorrectIndex >= 0) newCorrectIndex else 0
+            options = finalOptions,
+            correctIndex = newCorrectIndex,
+            stepByStepSolution = updatedSolution
         )
     }
 }
@@ -101,7 +120,40 @@ data class KahootQuestion(
     val conceptTag: String = "Conceito Geral",
     val recommendedLessonId: String? = null,
     val recommendedLessonTitle: String? = null
-)
+) {
+    /**
+     * Gera uma cópia da questão com as 4 alternativas embaralhadas aleatoriamente,
+     * atualizando o índice do gabarito para que a resposta certa não seja previsível.
+     */
+    fun randomized(): KahootQuestion {
+        if (options.size < 2) return this
+        val cleanOptions = options.map { opt ->
+            opt.replace(Regex("^(\\([A-E]\\)|[A-E]\\)|\\b[A-E]\\s*[-–:]\\s*)", RegexOption.IGNORE_CASE), "").trim()
+        }
+        val indexed = cleanOptions.mapIndexed { idx, text ->
+            Pair(text, idx == correctIndex)
+        }.shuffled()
+
+        val newCorrectIndex = indexed.indexOfFirst { it.second }.let { if (it >= 0) it else 0 }
+        val newCorrectLetter = ('A' + newCorrectIndex).toString()
+
+        val hasLetterPrefix = options.any { it.matches(Regex("^[A-E]\\)\\s.*", RegexOption.IGNORE_CASE)) }
+        val finalOptions = indexed.mapIndexed { idx, pair ->
+            val letter = ('A' + idx)
+            if (hasLetterPrefix) "$letter) ${pair.first}" else pair.first
+        }
+
+        val updatedExplanation = explanation.replace(Regex("(Alternativa correta(?: é|:)?\\s*(?:a letra)?\\s*)[A-E]", RegexOption.IGNORE_CASE)) { m ->
+            "${m.groupValues[1]}$newCorrectLetter"
+        }
+
+        return copy(
+            options = finalOptions,
+            correctIndex = newCorrectIndex,
+            explanation = updatedExplanation
+        )
+    }
+}
 
 // Alias for clear semantics
 typealias FinalTestQuestion = KahootQuestion

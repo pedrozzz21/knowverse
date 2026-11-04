@@ -32,7 +32,7 @@ abstract class KnowverseDatabase : RoomDatabase() {
                     KnowverseDatabase::class.java,
                     "knowverse_offline_cache.db"
                 )
-                    .fallbackToDestructiveMigration()
+                    .fallbackToDestructiveMigration(dropAllTables = true)
                     .build()
                 INSTANCE = instance
                 instance

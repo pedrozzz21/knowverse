@@ -96,19 +96,27 @@ data class EnemTrailLesson(
     fun toAppLesson(): Lesson {
         val resolvedExercises = when {
             exercises.isNotEmpty() -> exercises
+            id.startsWith("quim_") -> com.example.data.chemistry.EnemChemistryDidacticProvider.getExercisesForLesson(id)
+            id.startsWith("geo_") -> com.example.data.geography.EnemGeographyDidacticProvider.getExercisesForLesson(id)
+            id.startsWith("hist_") -> com.example.data.history.EnemHistoryDidacticProvider.getExercisesForLesson(id)
             id.startsWith("bio_") -> com.example.data.biology.EnemBiologyDidacticProvider.getExercisesForLesson(id)
             id.startsWith("fis_") -> com.example.data.physics.EnemPhysicsDidacticProvider.getExercisesForLesson(id)
+            id.startsWith("ling_") -> com.example.data.languages.EnemLanguagesDidacticProvider.getExercisesForLesson(id)
             else -> com.example.data.math.EnemDidacticProvider.getExercisesForLesson(id)
         }
         val didacticBundle = when {
+            id.startsWith("quim_") -> com.example.data.chemistry.EnemChemistryDidacticProvider.getDidacticBundle(id)
+            id.startsWith("geo_") -> com.example.data.geography.EnemGeographyDidacticProvider.getBundleForLesson(id)
+            id.startsWith("hist_") -> com.example.data.history.EnemHistoryDidacticProvider.getDidacticBundle(id)
             id.startsWith("bio_") -> com.example.data.biology.EnemBiologyDidacticProvider.getDidacticBundle(id)
             id.startsWith("fis_") -> com.example.data.physics.EnemPhysicsDidacticProvider.getDidacticBundle(id)
+            id.startsWith("ling_") -> com.example.data.languages.EnemLanguagesDidacticProvider.getDidacticBundle(id)
             else -> com.example.data.math.EnemDidacticProvider.getDidacticBundle(id)
         }
         val resolvedTheory = when {
             theoryMarkdown.isNotBlank() -> theoryMarkdown
             didacticBundle != null -> didacticBundle.theoryMarkdown
-            else -> "Aula da Trilha Oficial de Ciências da Natureza para o ENEM.\n\nSubtópico: $subtopic.\n\nExplore a teoria, o quadro de fórmulas e resolva os exercícios de fixação."
+            else -> "Aula da Trilha Oficial do ENEM no Knowverse.\n\nSubtópico: $subtopic.\n\nExplore a teoria, conceitos-chave e resolva os exercícios comentados."
         }
 
         return Lesson(

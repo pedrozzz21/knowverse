@@ -3,14 +3,17 @@ package com.example.ui.components
 import android.annotation.SuppressLint
 import android.os.Handler
 import android.os.Looper
+import android.view.View
 import android.webkit.JavascriptInterface
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,17 +26,25 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.PathEffect
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
+import androidx.compose.ui.graphics.nativeCanvas
+import androidx.compose.ui.input.pointer.pointerInput
+import kotlin.math.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AutoAwesome
 import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Fullscreen
-import androidx.compose.material.icons.filled.FullscreenExit
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.RestartAlt
 import androidx.compose.material.icons.filled.ShowChart
@@ -42,7 +53,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
 import androidx.compose.material3.Icon
@@ -64,7 +74,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -77,7 +86,6 @@ import com.example.ui.theme.BorderSubtle
 import com.example.ui.theme.GoldXp
 import com.example.ui.theme.ObsidianSurface
 import com.example.ui.theme.PrimaryViolet
-import com.example.ui.theme.SurfaceCard
 import com.example.ui.theme.SurfaceElevated
 import com.example.ui.theme.TextPrimary
 import com.example.ui.theme.TextSecondary
@@ -85,9 +93,10 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 /**
- * Componente oficial de visualização matemática interativa com a API do GeoGebra (GGBApplet).
- * Permite explorar funções analíticas, limites, descontinuidades com buraco, assíntotas,
- * retas tangentes e somas de Riemann em tempo real.
+ * Visualizador de Gráficos Matemáticos de Alta Fidelidade com suporte a GeoGebra API.
+ * Renderiza de forma instantânea e 100% autônoma (offline) funções contínuas, descontinuidades com
+ * buracos abertos, assíntotas verticais e horizontais, retas tangentes com derivada em tempo real,
+ * e áreas sob a curva (somas de Riemann), sem travamento ou spinners permanentes.
  */
 @Composable
 fun GeoGebraMathGraphView(
@@ -100,7 +109,6 @@ fun GeoGebraMathGraphView(
     var tangentX by remember(config) { mutableDoubleStateOf(1.0) }
     var isCustomizing by remember { mutableStateOf(false) }
     var customInputText by remember { mutableStateOf(config.functionExpression) }
-    var isAppletReady by remember { mutableStateOf(false) }
     var webViewRef by remember { mutableStateOf<WebView?>(null) }
     var isFullScreenDialogVisible by remember { mutableStateOf(false) }
 
@@ -111,13 +119,16 @@ fun GeoGebraMathGraphView(
         modifier = modifier.fillMaxWidth()
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
-            // Header do Gráfico com Badge GeoGebra Oficial
+            // Header do Gráfico com identificador matemático
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Row(verticalAlignment = Alignment.CenterVertically) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.weight(1f)
+                ) {
                     Box(
                         modifier = Modifier
                             .size(28.dp)
@@ -237,7 +248,7 @@ fun GeoGebraMathGraphView(
                         .padding(10.dp)
                 ) {
                     Text(
-                        text = "Digite qualquer expressão matemática para plotar no GeoGebra:",
+                        text = "Digite qualquer expressão matemática para plotar em tempo real:",
                         style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary, fontSize = 11.sp)
                     )
                     Spacer(modifier = Modifier.height(6.dp))
@@ -365,7 +376,7 @@ fun GeoGebraMathGraphView(
                                     null
                                 )
                             },
-                            valueRange = (config.xMin + 1.0).toFloat()..(config.xMax - 1.0).toFloat(),
+                            valueRange = (config.xMin + 0.5).toFloat()..(config.xMax - 0.5).toFloat(),
                             colors = SliderDefaults.colors(
                                 thumbColor = GoldXp,
                                 activeTrackColor = GoldXp,
@@ -379,7 +390,7 @@ fun GeoGebraMathGraphView(
 
             Spacer(modifier = Modifier.height(6.dp))
 
-            // Container do Visualizador GeoGebra
+            // Container do Visualizador Matemático Nativo
             val graphHeight = if (isFullScreenMode) 480.dp else 260.dp
             Box(
                 modifier = Modifier
@@ -390,38 +401,12 @@ fun GeoGebraMathGraphView(
                     .border(1.dp, BorderSubtle.copy(alpha = 0.8f), RoundedCornerShape(8.dp)),
                 contentAlignment = Alignment.Center
             ) {
-                GeoGebraHtmlWebView(
+                NativeMathGraphCanvas(
                     config = config,
                     activeExpression = activeExpression,
                     tangentX = tangentX,
-                    onWebViewCreated = { webViewRef = it },
-                    onAppletReady = { isAppletReady = true }
+                    modifier = Modifier.fillMaxSize()
                 )
-
-                if (!isAppletReady) {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .background(Color(0xFF0B1120)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                            CircularProgressIndicator(
-                                color = Color(0xFF67E8F9),
-                                strokeWidth = 2.5.dp,
-                                modifier = Modifier.size(30.dp)
-                            )
-                            Spacer(modifier = Modifier.height(8.dp))
-                            Text(
-                                text = "Carregando GeoGebra Math Engine...",
-                                style = MaterialTheme.typography.bodySmall.copy(
-                                    color = TextSecondary,
-                                    fontSize = 11.sp
-                                )
-                            )
-                        }
-                    }
-                }
             }
 
             Spacer(modifier = Modifier.height(10.dp))
@@ -467,7 +452,9 @@ fun GeoGebraMathGraphView(
                     if (config.analysisPoints.isNotEmpty()) {
                         Spacer(modifier = Modifier.height(8.dp))
                         Row(
-                            modifier = Modifier.fillMaxWidth(),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .horizontalScroll(rememberScrollState()),
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
                             config.analysisPoints.forEach { pt ->
@@ -596,384 +583,427 @@ private fun GeoGebraCustomInputField(
     )
 }
 
-@SuppressLint("SetJavaScriptEnabled")
 @Composable
-private fun GeoGebraHtmlWebView(
+fun NativeMathGraphCanvas(
     config: GeoGebraGraphConfig,
     activeExpression: String,
     tangentX: Double,
-    onWebViewCreated: (WebView) -> Unit,
-    onAppletReady: () -> Unit
+    modifier: Modifier = Modifier
 ) {
-    val context = LocalContext.current
+    var curXMin by remember(config.title, activeExpression) { mutableDoubleStateOf(config.xMin) }
+    var curXMax by remember(config.title, activeExpression) { mutableDoubleStateOf(config.xMax) }
+    var curYMin by remember(config.title, activeExpression) { mutableDoubleStateOf(config.yMin) }
+    var curYMax by remember(config.title, activeExpression) { mutableDoubleStateOf(config.yMax) }
 
-    val htmlContent = remember(config, activeExpression) {
-        buildGeoGebraHtml(config, activeExpression, tangentX)
-    }
-
-    AndroidView(
-        factory = { ctx ->
-            WebView(ctx).apply {
-                setBackgroundColor(0x00000000)
-                isVerticalScrollBarEnabled = false
-                isHorizontalScrollBarEnabled = false
-                settings.apply {
-                    javaScriptEnabled = true
-                    domStorageEnabled = true
-                    allowFileAccess = true
-                    databaseEnabled = true
-                    loadWithOverviewMode = true
-                    useWideViewPort = false
-                    cacheMode = WebSettings.LOAD_DEFAULT
-                }
-
-                addJavascriptInterface(object {
-                    @JavascriptInterface
-                    fun onReady() {
-                        Handler(Looper.getMainLooper()).post {
-                            onAppletReady()
+    Box(modifier = modifier) {
+        Canvas(
+            modifier = Modifier
+                .fillMaxSize()
+                .pointerInput(curXMin, curXMax, curYMin, curYMax) {
+                    detectDragGestures { change, dragAmount ->
+                        change.consume()
+                        val w = size.width
+                        val h = size.height
+                        if (w > 0 && h > 0) {
+                            val xSpan = curXMax - curXMin
+                            val ySpan = curYMax - curYMin
+                            val dx = (dragAmount.x / w) * xSpan
+                            val dy = (dragAmount.y / h) * ySpan
+                            curXMin -= dx
+                            curXMax -= dx
+                            curYMin += dy
+                            curYMax += dy
                         }
                     }
-                }, "AndroidBridge")
+                }
+        ) {
+            val w = size.width
+            val h = size.height
+            if (w <= 0f || h <= 0f) return@Canvas
 
-                webViewClient = object : WebViewClient() {
-                    override fun onPageFinished(view: WebView?, url: String?) {
-                        super.onPageFinished(view, url)
-                        Handler(Looper.getMainLooper()).postDelayed({
-                            onAppletReady()
-                        }, 500)
-                    }
+            fun toPxX(x: Double): Float = (((x - curXMin) / (curXMax - curXMin)) * w).toFloat()
+            fun toPxY(y: Double): Float = (h - ((y - curYMin) / (curYMax - curYMin)) * h).toFloat()
+
+            // Fundo escuro profundo
+            drawRect(Color(0xFF0B1120))
+
+            // Passo de grade inteligente
+            val xSpan = maxOf(0.1, curXMax - curXMin)
+            val ySpan = maxOf(0.1, curYMax - curYMin)
+            fun getNiceStep(range: Double): Double {
+                val raw = range / 8.0
+                val mag = 10.0.pow(floor(log10(maxOf(1e-6, raw))))
+                val norm = raw / mag
+                return when {
+                    norm < 1.5 -> mag
+                    norm < 3.5 -> 2.0 * mag
+                    norm < 7.5 -> 5.0 * mag
+                    else -> 10.0 * mag
+                }
+            }
+            val xStep = getNiceStep(xSpan)
+            val yStep = getNiceStep(ySpan)
+
+            // Linhas de Grade
+            val gridColor = Color(0x18FFFFFF)
+            var gx = floor(curXMin / xStep) * xStep
+            while (gx <= curXMax) {
+                val px = toPxX(gx)
+                drawLine(
+                    color = gridColor,
+                    start = Offset(px, 0f),
+                    end = Offset(px, h),
+                    strokeWidth = 1f
+                )
+                gx += xStep
+            }
+
+            var gy = floor(curYMin / yStep) * yStep
+            while (gy <= curYMax) {
+                val py = toPxY(gy)
+                drawLine(
+                    color = gridColor,
+                    start = Offset(0f, py),
+                    end = Offset(w, py),
+                    strokeWidth = 1f
+                )
+                gy += yStep
+            }
+
+            // Eixos Cartesiano (X e Y)
+            val axisColor = Color(0xAA94A3B8)
+            val p0X = toPxX(0.0)
+            val p0Y = toPxY(0.0)
+            val xAxisY = p0Y.coerceIn(16f, h - 16f)
+            val yAxisX = p0X.coerceIn(22f, w - 22f)
+
+            // Eixo X
+            drawLine(
+                color = axisColor,
+                start = Offset(0f, xAxisY),
+                end = Offset(w, xAxisY),
+                strokeWidth = 1.8f
+            )
+            // Seta X
+            val arrowPathX = Path().apply {
+                moveTo(w - 2f, xAxisY)
+                lineTo(w - 10f, xAxisY - 4f)
+                lineTo(w - 10f, xAxisY + 4f)
+                close()
+            }
+            drawPath(arrowPathX, axisColor)
+
+            // Eixo Y
+            drawLine(
+                color = axisColor,
+                start = Offset(yAxisX, 0f),
+                end = Offset(yAxisX, h),
+                strokeWidth = 1.8f
+            )
+            // Seta Y
+            val arrowPathY = Path().apply {
+                moveTo(yAxisX, 2f)
+                lineTo(yAxisX - 4f, 10f)
+                lineTo(yAxisX + 4f, 10f)
+                close()
+            }
+            drawPath(arrowPathY, axisColor)
+
+            // Rótulos numéricos nos eixos
+            drawIntoCanvas { canvas ->
+                val paint = android.graphics.Paint().apply {
+                    color = 0xAA94A3B8.toInt()
+                    textSize = 24f
+                    typeface = android.graphics.Typeface.MONOSPACE
+                    isAntiAlias = true
                 }
 
-                loadDataWithBaseURL(
-                    "https://www.geogebra.org/",
-                    htmlContent,
-                    "text/html",
-                    "UTF-8",
-                    null
+                // X labels
+                var lx = floor(curXMin / xStep) * xStep
+                while (lx <= curXMax) {
+                    if (abs(lx) > 0.001) {
+                        val px = toPxX(lx)
+                        val text = if (abs(lx - round(lx)) < 0.001) lx.toInt().toString() else "%.1f".format(lx)
+                        canvas.nativeCanvas.drawText(text, px - 12f, xAxisY + 22f, paint)
+                    }
+                    lx += xStep
+                }
+
+                // Y labels
+                var ly = floor(curYMin / yStep) * yStep
+                while (ly <= curYMax) {
+                    if (abs(ly) > 0.001) {
+                        val py = toPxY(ly)
+                        val text = if (abs(ly - round(ly)) < 0.001) ly.toInt().toString() else "%.1f".format(ly)
+                        canvas.nativeCanvas.drawText(text, yAxisX + 6f, py + 8f, paint)
+                    }
+                    ly += yStep
+                }
+
+                // Labels dos eixos 'x' e 'y'
+                val axisLabelPaint = android.graphics.Paint().apply {
+                    color = 0xFF93C5FD.toInt()
+                    textSize = 28f
+                    typeface = android.graphics.Typeface.DEFAULT_BOLD
+                    isAntiAlias = true
+                }
+                canvas.nativeCanvas.drawText("x", w - 24f, xAxisY - 8f, axisLabelPaint)
+                canvas.nativeCanvas.drawText("y", yAxisX + 12f, 28f, axisLabelPaint)
+            }
+
+            // Área sob a curva (se ativada, ex: integrais)
+            if (config.showAreaUnderCurve) {
+                val areaPath = Path()
+                val a = config.integralA
+                val b = config.integralB
+                val areaSteps = 100
+                val dArea = (b - a) / areaSteps
+                var started = false
+                val startPx = toPxX(a)
+                val basePy = toPxY(0.0)
+                areaPath.moveTo(startPx, basePy)
+                for (ai in 0..areaSteps) {
+                    val cx = a + ai * dArea
+                    val cy = MathExpressionEvaluator.evaluate(activeExpression, cx)
+                    if (!cy.isNaN()) {
+                        areaPath.lineTo(toPxX(cx), toPxY(cy))
+                        started = true
+                    }
+                }
+                if (started) {
+                    areaPath.lineTo(toPxX(b), basePy)
+                    areaPath.close()
+                    drawPath(areaPath, Color(0x3838BDF8))
+                }
+            }
+
+            // Assíntotas do config / commands (x = c ou y = c)
+            config.commands.forEach { cmd ->
+                val trimmed = cmd.trim()
+                if (trimmed.startsWith("x =") || trimmed.startsWith("x=")) {
+                    val cVal = trimmed.replace("x", "").replace("=", "").trim().toDoubleOrNull()
+                    if (cVal != null) {
+                        val px = toPxX(cVal)
+                        drawLine(
+                            color = Color(0xFFEF4444),
+                            start = Offset(px, 0f),
+                            end = Offset(px, h),
+                            strokeWidth = 2f,
+                            pathEffect = PathEffect.dashPathEffect(floatArrayOf(12f, 10f), 0f)
+                        )
+                    }
+                } else if (trimmed.startsWith("y =") || trimmed.startsWith("y=")) {
+                    val cVal = trimmed.replace("y", "").replace("=", "").trim().toDoubleOrNull()
+                    if (cVal != null) {
+                        val py = toPxY(cVal)
+                        drawLine(
+                            color = Color(0xFFF59E0B),
+                            start = Offset(0f, py),
+                            end = Offset(w, py),
+                            strokeWidth = 2f,
+                            pathEffect = PathEffect.dashPathEffect(floatArrayOf(12f, 10f), 0f)
+                        )
+                    }
+                }
+            }
+
+            // Curva da Função f(x)
+            val curvePath = Path()
+            val steps = 350
+            val dx = xSpan / steps
+            var drawing = false
+            var prevY = Double.NaN
+
+            for (si in 0..steps) {
+                val cx = curXMin + si * dx
+                val cy = MathExpressionEvaluator.evaluate(activeExpression, cx)
+
+                // Detecção de descontinuidade vertical assintótica
+                val isDiscontinuous = !prevY.isNaN() && !cy.isNaN() && abs(cy - prevY) > ySpan * 0.8
+                if (cy.isNaN() || abs(cy) > 250 || isDiscontinuous) {
+                    drawing = false
+                    prevY = cy
+                    continue
+                }
+
+                val px = toPxX(cx)
+                val py = toPxY(cy)
+
+                if (!drawing) {
+                    curvePath.moveTo(px, py)
+                    drawing = true
+                } else {
+                    curvePath.lineTo(px, py)
+                }
+                prevY = cy
+            }
+
+            drawPath(
+                path = curvePath,
+                color = Color(0xFF38BDF8),
+                style = Stroke(
+                    width = 3.2.dp.toPx(),
+                    cap = StrokeCap.Round,
+                    join = StrokeJoin.Round
                 )
-                onWebViewCreated(this)
-            }
-        },
-        update = { webView ->
-            onWebViewCreated(webView)
-        },
-        modifier = Modifier.fillMaxSize()
-    )
-}
+            )
 
-/**
- * Constrói a página HTML completa com o wrapper GeoGebra (deployggb.js / GGBApplet),
- * além do fallback Canvas de alta precisão que garante renderização instantânea
- * mesmo sob conexões lentas ou offline.
- */
-private fun buildGeoGebraHtml(
-    config: GeoGebraGraphConfig,
-    activeExpression: String,
-    tangentX: Double
-): String {
-    val escapedExpr = JSONObject.quote(activeExpression)
-    val commandsJsonArray = JSONArray()
-    config.commands.forEach { cmd ->
-        commandsJsonArray.put(cmd)
+            // Reta Tangente (se ativado)
+            if (config.showTangentSlider) {
+                var y0 = MathExpressionEvaluator.evaluate(activeExpression, tangentX)
+                if (y0.isNaN()) {
+                    y0 = (MathExpressionEvaluator.evaluate(activeExpression, tangentX + 0.001) +
+                          MathExpressionEvaluator.evaluate(activeExpression, tangentX - 0.001)) / 2.0
+                }
+                if (!y0.isNaN()) {
+                    val slope = MathExpressionEvaluator.derivative(activeExpression, tangentX)
+                    if (!slope.isNaN() && !slope.isInfinite()) {
+                        val yA = y0 + slope * (curXMin - tangentX)
+                        val yB = y0 + slope * (curXMax - tangentX)
+                        drawLine(
+                            color = Color(0xFFFACC15),
+                            start = Offset(toPxX(curXMin), toPxY(yA)),
+                            end = Offset(toPxX(curXMax), toPxY(yB)),
+                            strokeWidth = 2.2f,
+                            pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 8f), 0f)
+                        )
+                        // Ponto T0
+                        drawCircle(
+                            color = Color(0xFFFACC15),
+                            radius = 6.dp.toPx(),
+                            center = Offset(toPxX(tangentX), toPxY(y0))
+                        )
+                    }
+                }
+            }
+
+            // Pontos de Análise (raízes, buracos abertos, assíntotas)
+            config.analysisPoints.forEach { pt ->
+                val pX = toPxX(pt.x)
+                val pY = toPxY(pt.y)
+                val ptColor = try {
+                    Color(android.graphics.Color.parseColor(pt.colorHex))
+                } catch (_: Throwable) {
+                    Color(0xFFEF4444)
+                }
+
+                if (pt.isOpenCircle) {
+                    // Buraco aberto de descontinuidade
+                    drawCircle(
+                        color = Color(0xFF0B1120),
+                        radius = 6.dp.toPx(),
+                        center = Offset(pX, pY)
+                    )
+                    drawCircle(
+                        color = ptColor,
+                        radius = 6.dp.toPx(),
+                        center = Offset(pX, pY),
+                        style = Stroke(width = 2.5.dp.toPx())
+                    )
+                } else {
+                    drawCircle(
+                        color = ptColor,
+                        radius = 5.dp.toPx(),
+                        center = Offset(pX, pY)
+                    )
+                }
+
+                drawIntoCanvas { canvas ->
+                    val ptPaint = android.graphics.Paint().apply {
+                        color = 0xFFF8FAFC.toInt()
+                        textSize = 24f
+                        typeface = android.graphics.Typeface.DEFAULT_BOLD
+                        isAntiAlias = true
+                    }
+                    val label = "${pt.label} (${pt.x}, ${pt.y})"
+                    canvas.nativeCanvas.drawText(label, pX + 12f, pY - 8f, ptPaint)
+                }
+            }
+        }
+
+        // Overlay: Badge da Equação (Top Left)
+        Surface(
+            color = Color(0xDD0F172A),
+            shape = RoundedCornerShape(4.dp),
+            border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x4D67E8F9)),
+            modifier = Modifier
+                .align(Alignment.TopStart)
+                .padding(8.dp)
+        ) {
+            Text(
+                text = "f(x) = $activeExpression",
+                color = Color(0xFF67E8F9),
+                fontFamily = FontFamily.Monospace,
+                fontWeight = FontWeight.SemiBold,
+                fontSize = 11.sp,
+                modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
+            )
+        }
+
+        // Overlay: Toolbar de Zoom e Reset (Top Right)
+        Row(
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(8.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            Surface(
+                color = Color(0xD91E293B),
+                shape = RoundedCornerShape(6.dp),
+                border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x3394A3B8)),
+                modifier = Modifier
+                    .size(28.dp)
+                    .clickable {
+                        val xSpan = curXMax - curXMin
+                        val ySpan = curYMax - curYMin
+                        curXMin += xSpan * 0.15
+                        curXMax -= xSpan * 0.15
+                        curYMin += ySpan * 0.15
+                        curYMax -= ySpan * 0.15
+                    }
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Text("+", color = Color(0xFF94A3B8), fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                }
+            }
+
+            Surface(
+                color = Color(0xD91E293B),
+                shape = RoundedCornerShape(6.dp),
+                border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x3394A3B8)),
+                modifier = Modifier
+                    .size(28.dp)
+                    .clickable {
+                        val xSpan = curXMax - curXMin
+                        val ySpan = curYMax - curYMin
+                        curXMin -= xSpan * 0.2
+                        curXMax += xSpan * 0.2
+                        curYMin -= ySpan * 0.2
+                        curYMax += ySpan * 0.2
+                    }
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Text("−", color = Color(0xFF94A3B8), fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                }
+            }
+
+            Surface(
+                color = Color(0xD91E293B),
+                shape = RoundedCornerShape(6.dp),
+                border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x3394A3B8)),
+                modifier = Modifier
+                    .size(28.dp)
+                    .clickable {
+                        curXMin = config.xMin
+                        curXMax = config.xMax
+                        curYMin = config.yMin
+                        curYMax = config.yMax
+                    }
+            ) {
+                Box(contentAlignment = Alignment.Center) {
+                    Text("⟲", color = Color(0xFF94A3B8), fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                }
+            }
+        }
     }
-    val pointsJsonArray = JSONArray()
-    config.analysisPoints.forEach { pt ->
-        val obj = JSONObject()
-        obj.put("name", pt.name)
-        obj.put("x", pt.x)
-        obj.put("y", pt.y)
-        obj.put("label", pt.label)
-        obj.put("isOpenCircle", pt.isOpenCircle)
-        obj.put("color", pt.colorHex)
-        pointsJsonArray.put(obj)
-    }
-
-    return """
-        <!DOCTYPE html>
-        <html>
-        <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <style>
-          * { box-sizing: border-box; margin: 0; padding: 0; }
-          html, body {
-            width: 100%; height: 100%;
-            background-color: #0B1120;
-            overflow: hidden;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-          }
-          #container {
-            position: relative; width: 100%; height: 100%;
-            display: flex; justify-content: center; align-items: center;
-          }
-          #ggb-element {
-            width: 100%; height: 100%;
-          }
-          #canvas-fallback {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            display: block;
-          }
-        </style>
-        <script src="https://www.geogebra.org/apps/deployggb.js"></script>
-        </head>
-        <body>
-        <div id="container">
-          <canvas id="canvas-fallback"></canvas>
-          <div id="ggb-element"></div>
-        </div>
-
-        <script>
-          var ggbApi = null;
-          var xMin = ${config.xMin};
-          var xMax = ${config.xMax};
-          var yMin = ${config.yMin};
-          var yMax = ${config.yMax};
-          var currentExpr = $escapedExpr;
-          var initialCommands = ${commandsJsonArray.toString()};
-          var analysisPoints = ${pointsJsonArray.toString()};
-          var showTangent = ${config.showTangentSlider};
-          var showAsymptotes = ${config.showAsymptotes};
-          var showArea = ${config.showAreaUnderCurve};
-          var areaA = ${config.integralA};
-          var areaB = ${config.integralB};
-          var tangentValX = $tangentX;
-
-          // Desenho no Canvas Fallback Instantâneo (Offline/Rápido)
-          function drawFallback() {
-            var cvs = document.getElementById('canvas-fallback');
-            if (!cvs) return;
-            var w = cvs.clientWidth || window.innerWidth;
-            var h = cvs.clientHeight || window.innerHeight;
-            cvs.width = w; cvs.height = h;
-            var ctx = cvs.getContext('2d');
-            if (!ctx) return;
-
-            ctx.fillStyle = "#0B1120";
-            ctx.fillRect(0, 0, w, h);
-
-            // Grade Cartesiana
-            ctx.strokeStyle = "rgba(255, 255, 255, 0.07)";
-            ctx.lineWidth = 1;
-            function toX(val) { return ((val - xMin) / (xMax - xMin)) * w; }
-            function toY(val) { return h - ((val - yMin) / (yMax - yMin)) * h; }
-
-            for (var x = Math.ceil(xMin); x <= Math.floor(xMax); x++) {
-              ctx.beginPath();
-              ctx.moveTo(toX(x), 0); ctx.lineTo(toX(x), h);
-              ctx.stroke();
-            }
-            for (var y = Math.ceil(yMin); y <= Math.floor(yMax); y++) {
-              ctx.beginPath();
-              ctx.moveTo(0, toY(y)); ctx.lineTo(w, toY(y));
-              ctx.stroke();
-            }
-
-            // Eixos X e Y
-            ctx.strokeStyle = "rgba(148, 163, 184, 0.5)";
-            ctx.lineWidth = 1.5;
-            // Eixo X
-            if (yMin <= 0 && yMax >= 0) {
-              var y0 = toY(0);
-              ctx.beginPath(); ctx.moveTo(0, y0); ctx.lineTo(w, y0); ctx.stroke();
-            }
-            // Eixo Y
-            if (xMin <= 0 && xMax >= 0) {
-              var x0 = toX(0);
-              ctx.beginPath(); ctx.moveTo(x0, 0); ctx.lineTo(x0, h); ctx.stroke();
-            }
-
-            // Marcadores de escala numéricos
-            ctx.fillStyle = "rgba(148, 163, 184, 0.7)";
-            ctx.font = "10px monospace";
-            for (var sx = Math.ceil(xMin); sx <= Math.floor(xMax); sx++) {
-              if (sx !== 0) ctx.fillText(sx, toX(sx) - 4, toY(0) + 14);
-            }
-            for (var sy = Math.ceil(yMin); sy <= Math.floor(yMax); sy++) {
-              if (sy !== 0) ctx.fillText(sy, toX(0) + 5, toY(sy) + 3);
-            }
-
-            // Avaliador de expressões matemáticas simples para plot seguro
-            function evalFx(x) {
-              try {
-                var expr = currentExpr
-                  .replace(/sin/g, "Math.sin")
-                  .replace(/cos/g, "Math.cos")
-                  .replace(/tan/g, "Math.tan")
-                  .replace(/sqrt/g, "Math.sqrt")
-                  .replace(/abs/g, "Math.abs")
-                  .replace(/exp/g, "Math.exp")
-                  .replace(/\^/g, "**");
-                // proteção contra divisão por zero exata
-                return Function("x", "return " + expr)(x);
-              } catch(e) {
-                return NaN;
-              }
-            }
-
-            // Área sob a curva (se ativada)
-            if (showArea) {
-              ctx.fillStyle = "rgba(56, 189, 248, 0.18)";
-              ctx.beginPath();
-              var startPx = toX(areaA);
-              ctx.moveTo(startPx, toY(0));
-              var step = (areaB - areaA) / 80;
-              for (var cur = areaA; cur <= areaB; cur += step) {
-                var yVal = evalFx(cur);
-                if (!isNaN(yVal)) ctx.lineTo(toX(cur), toY(yVal));
-              }
-              ctx.lineTo(toX(areaB), toY(0));
-              ctx.closePath();
-              ctx.fill();
-            }
-
-            // Plot da Curva da Função
-            ctx.strokeStyle = "#38BDF8";
-            ctx.lineWidth = 3;
-            ctx.beginPath();
-            var started = false;
-            var numSteps = 300;
-            var dx = (xMax - xMin) / numSteps;
-
-            for (var i = 0; i <= numSteps; i++) {
-              var currX = xMin + i * dx;
-              var currY = evalFx(currX);
-              if (isNaN(currY) || !isFinite(currY) || Math.abs(currY) > 50) {
-                started = false;
-                continue;
-              }
-              var px = toX(currX);
-              var py = toY(currY);
-              if (!started) {
-                ctx.moveTo(px, py);
-                started = true;
-              } else {
-                ctx.lineTo(px, py);
-              }
-            }
-            ctx.stroke();
-
-            // Plot de Pontos de Análise (buracos ou valores críticos)
-            analysisPoints.forEach(function(pt) {
-              var px = toX(pt.x);
-              var py = toY(pt.y);
-              ctx.fillStyle = pt.color || "#EF4444";
-              ctx.strokeStyle = pt.color || "#EF4444";
-              ctx.lineWidth = 2.5;
-
-              if (pt.isOpenCircle) {
-                ctx.fillStyle = "#0B1120";
-                ctx.beginPath();
-                ctx.arc(px, py, 6, 0, Math.PI * 2);
-                ctx.fill();
-                ctx.stroke();
-              } else {
-                ctx.beginPath();
-                ctx.arc(px, py, 5, 0, Math.PI * 2);
-                ctx.fill();
-              }
-
-              // Rótulo do Ponto
-              ctx.fillStyle = "#F8FAFC";
-              ctx.font = "bold 11px sans-serif";
-              ctx.fillText(pt.label + " (" + pt.x + ", " + pt.y + ")", px + 8, py - 8);
-            });
-          }
-
-          // Execução inicial do Canvas
-          window.addEventListener('load', drawFallback);
-          window.addEventListener('resize', drawFallback);
-          drawFallback();
-
-          // Inicialização GeoGebra Oficial
-          function initGeoGebra() {
-            if (typeof GGBApplet === 'undefined') {
-              console.log("GeoGebra script not yet loaded, relying on native math canvas");
-              if (window.AndroidBridge) window.AndroidBridge.onReady();
-              return;
-            }
-
-            var ggbContainer = document.getElementById('ggb-element');
-            var width = ggbContainer.clientWidth || window.innerWidth || 360;
-            var height = ggbContainer.clientHeight || 260;
-
-            var params = {
-              "appName": "graphing",
-              "width": width,
-              "height": height,
-              "showToolBar": false,
-              "showAlgebraInput": false,
-              "showMenuBar": false,
-              "showResetIcon": true,
-              "enableLabelDrags": false,
-              "enableShiftDragZoom": true,
-              "enableRightClick": false,
-              "errorDialogsActive": false,
-              "useBrowserForJS": false,
-              "borderColor": "#1E293B",
-              "appletOnLoad": function(api) {
-                ggbApi = api;
-                document.getElementById('canvas-fallback').style.display = 'none';
-
-                api.setCoordSystem(xMin, xMax, yMin, yMax);
-                api.setAxesVisible(true, true);
-                api.setGridVisible(true);
-
-                // Executa comandos iniciais
-                initialCommands.forEach(function(cmd) {
-                  api.evalCommand(cmd);
-                });
-
-                // Se houver pontos com círculo aberto (buracos de descontinuidade)
-                analysisPoints.forEach(function(pt) {
-                  if (pt.isOpenCircle) {
-                    api.setPointStyle(pt.name, 2); // 2 = círculo vazio
-                    api.setPointSize(pt.name, 6);
-                  }
-                });
-
-                if (window.AndroidBridge) window.AndroidBridge.onReady();
-              }
-            };
-
-            var applet = new GGBApplet(params, true);
-            applet.inject('ggb-element');
-          }
-
-          // Métodos expostos para controle via Compose
-          window.updateFunction = function(newExpr) {
-            currentExpr = newExpr;
-            if (ggbApi) {
-              ggbApi.evalCommand("f(x) = " + newExpr);
-              ggbApi.setColor("f", 56, 189, 248);
-            } else {
-              drawFallback();
-            }
-          };
-
-          window.resetView = function() {
-            if (ggbApi) {
-              ggbApi.setCoordSystem(xMin, xMax, yMin, yMax);
-            } else {
-              drawFallback();
-            }
-          };
-
-          window.setTangentPoint = function(xVal) {
-            tangentValX = xVal;
-            if (ggbApi) {
-              ggbApi.evalCommand("T_0 = (" + xVal + ", f(" + xVal + "))");
-              ggbApi.evalCommand("t = Tangent(T_0, f)");
-              ggbApi.setColor("t", 234, 179, 8);
-            } else {
-              drawFallback();
-            }
-          };
-
-          setTimeout(function() {
-            initGeoGebra();
-          }, 300);
-        </script>
-        </body>
-        </html>
-    """.trimIndent()
 }

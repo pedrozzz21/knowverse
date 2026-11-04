@@ -100,7 +100,7 @@ fun KahootQuizScreen(
         onNavigateBack()
     }
 
-    val shuffledQuestions = remember(module.id) { module.questions.shuffled() }
+    val shuffledQuestions = remember(module.id) { module.questions.map { it.randomized() }.shuffled() }
 
     var currentQuestionIndex by remember { mutableIntStateOf(0) }
     var selectedOptionIndex by remember { mutableStateOf<Int?>(null) }
@@ -608,6 +608,64 @@ fun KahootQuizScreen(
                                 )
                             }
                         }
+                    }
+                }
+            } else {
+                // Empty state when module questions are empty or unavailable
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(24.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .size(56.dp)
+                            .clip(CircleShape)
+                            .background(SurfaceElevated)
+                            .border(1.dp, BorderSubtle, CircleShape),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Icon(
+                            imageVector = KnowverseIcons.Brain,
+                            contentDescription = null,
+                            tint = TextSecondary,
+                            modifier = Modifier.size(28.dp)
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(
+                        text = "Simulado em Preparação",
+                        style = MaterialTheme.typography.titleMedium.copy(
+                            fontWeight = FontWeight.SemiBold,
+                            color = TextPrimary
+                        ),
+                        textAlign = TextAlign.Center
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "As questões deste módulo estão sendo sincronizadas. Retorne à trilha para continuar as aulas teóricas e práticas.",
+                        style = MaterialTheme.typography.bodyMedium.copy(color = TextSecondary),
+                        textAlign = TextAlign.Center
+                    )
+                    Spacer(modifier = Modifier.height(24.dp))
+                    Button(
+                        onClick = {
+                            audioEngine.stopMusic()
+                            onNavigateBack()
+                        },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = PrimaryViolet,
+                            contentColor = Color.White
+                        ),
+                        shape = RoundedCornerShape(6.dp),
+                        modifier = Modifier
+                            .fillMaxWidth(0.7f)
+                            .height(44.dp)
+                            .testTag("empty_quiz_back_btn")
+                    ) {
+                        Text("Retornar à Trilha", fontWeight = FontWeight.SemiBold)
                     }
                 }
             }

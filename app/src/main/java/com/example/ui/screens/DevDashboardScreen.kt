@@ -22,10 +22,13 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Analytics
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Campaign
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Search
+import androidx.compose.material.icons.filled.SystemUpdate
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -36,11 +39,16 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Tab
+import androidx.compose.material3.TabRow
+import androidx.compose.material3.TabRowDefaults
+import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -48,15 +56,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.R
+import com.example.auth.AppUser
 import com.example.data.local.UserProgressRepository
 import com.example.data.model.TrackBadgesCatalog
 import com.example.data.model.UserProgressAdminRecord
+import com.example.notification.BroadcastNotificationRepository
 import com.example.ui.components.KnowverseIcons
 import com.example.ui.components.UserAvatarDisplay
 import com.example.ui.theme.BorderSubtle
@@ -77,11 +88,20 @@ import com.example.ui.theme.TextTertiary
 fun DevDashboardScreen(
     progressRepository: UserProgressRepository,
     currentDevEmail: String,
+    broadcastRepository: BroadcastNotificationRepository? = null,
+    currentUser: AppUser? = null,
     onNavigateBack: () -> Unit
 ) {
     BackHandler {
         onNavigateBack()
     }
+
+    val context = LocalContext.current
+    val effectiveBroadcastRepo = remember(broadcastRepository) {
+        broadcastRepository ?: BroadcastNotificationRepository(context)
+    }
+
+    var selectedTabIndex by remember { mutableIntStateOf(0) }
 
     var isLoading by remember { mutableStateOf(true) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
@@ -136,78 +156,139 @@ fun DevDashboardScreen(
                     .border(width = 1.dp, color = BorderSubtle)
                     .statusBarsPadding()
             ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 12.dp, vertical = 8.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        IconButton(
-                            onClick = onNavigateBack,
-                            modifier = Modifier.size(36.dp).testTag("dev_back_btn")
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.ArrowBack,
-                                contentDescription = "Voltar",
-                                tint = TextPrimary,
-                                modifier = Modifier.size(18.dp)
-                            )
-                        }
-                        Spacer(modifier = Modifier.width(6.dp))
-                        Column {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Text(
-                                    text = "Painel Dev",
-                                    style = MaterialTheme.typography.titleSmall.copy(
-                                        fontWeight = FontWeight.SemiBold,
-                                        color = TextPrimary
-                                    )
+                Column {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 12.dp, vertical = 8.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            IconButton(
+                                onClick = onNavigateBack,
+                                modifier = Modifier.size(36.dp).testTag("dev_back_btn")
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.ArrowBack,
+                                    contentDescription = "Voltar",
+                                    tint = TextPrimary,
+                                    modifier = Modifier.size(18.dp)
                                 )
-                                Spacer(modifier = Modifier.width(6.dp))
-                                Surface(
-                                    color = PrimaryViolet.copy(alpha = 0.2f),
-                                    shape = RoundedCornerShape(4.dp)
-                                ) {
-                                    Text(
-                                        text = "Admin",
-                                        style = MaterialTheme.typography.labelSmall.copy(
-                                            color = PrimaryViolet,
-                                            fontWeight = FontWeight.Bold
-                                        ),
-                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 1.dp)
-                                    )
-                                }
                             }
-                            Text(
-                                text = currentDevEmail,
-                                style = MaterialTheme.typography.labelSmall.copy(color = TextSecondary)
-                            )
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Column {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Text(
+                                        text = "Painel Dev",
+                                        style = MaterialTheme.typography.titleSmall.copy(
+                                            fontWeight = FontWeight.SemiBold,
+                                            color = TextPrimary
+                                        )
+                                    )
+                                    Spacer(modifier = Modifier.width(6.dp))
+                                    Surface(
+                                        color = PrimaryViolet.copy(alpha = 0.2f),
+                                        shape = RoundedCornerShape(4.dp)
+                                    ) {
+                                        Text(
+                                            text = "Admin",
+                                            style = MaterialTheme.typography.labelSmall.copy(
+                                                color = PrimaryViolet,
+                                                fontWeight = FontWeight.Bold
+                                            ),
+                                            modifier = Modifier.padding(horizontal = 6.dp, vertical = 1.dp)
+                                        )
+                                    }
+                                }
+                                Text(
+                                    text = currentDevEmail,
+                                    style = MaterialTheme.typography.labelSmall.copy(color = TextSecondary)
+                                )
+                            }
+                        }
+
+                        if (selectedTabIndex == 0) {
+                            IconButton(
+                                onClick = { refreshUsers() },
+                                modifier = Modifier.size(36.dp).testTag("refresh_dev_users_btn")
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Refresh,
+                                    contentDescription = "Recarregar",
+                                    tint = TextSecondary,
+                                    modifier = Modifier.size(18.dp)
+                                )
+                            }
                         }
                     }
 
-                    IconButton(
-                        onClick = { refreshUsers() },
-                        modifier = Modifier.size(36.dp).testTag("refresh_dev_users_btn")
+                    // Tab Navigation: Telemetry vs Broadcast & APK
+                    TabRow(
+                        selectedTabIndex = selectedTabIndex,
+                        containerColor = ObsidianSurface,
+                        contentColor = PrimaryViolet,
+                        indicator = { tabPositions ->
+                            TabRowDefaults.SecondaryIndicator(
+                                modifier = Modifier.tabIndicatorOffset(tabPositions[selectedTabIndex]),
+                                color = PrimaryViolet
+                            )
+                        },
+                        divider = {
+                            Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
+                        }
                     ) {
-                        Icon(
-                            imageVector = Icons.Default.Refresh,
-                            contentDescription = "Recarregar",
-                            tint = TextSecondary,
-                            modifier = Modifier.size(18.dp)
+                        Tab(
+                            selected = selectedTabIndex == 0,
+                            onClick = { selectedTabIndex = 0 },
+                            text = {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Icon(imageVector = Icons.Default.Analytics, contentDescription = null, modifier = Modifier.size(14.dp))
+                                    Spacer(modifier = Modifier.width(6.dp))
+                                    Text("Alunos & Métricas", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.SemiBold))
+                                }
+                            },
+                            selectedContentColor = PrimaryViolet,
+                            unselectedContentColor = TextSecondary,
+                            modifier = Modifier.testTag("tab_dev_telemetry")
+                        )
+
+                        Tab(
+                            selected = selectedTabIndex == 1,
+                            onClick = { selectedTabIndex = 1 },
+                            text = {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Icon(imageVector = Icons.Default.Campaign, contentDescription = null, modifier = Modifier.size(14.dp))
+                                    Spacer(modifier = Modifier.width(6.dp))
+                                    Text("Transmissão & APK", style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.SemiBold))
+                                }
+                            },
+                            selectedContentColor = PrimaryViolet,
+                            unselectedContentColor = TextSecondary,
+                            modifier = Modifier.testTag("tab_dev_broadcast")
                         )
                     }
                 }
             }
         }
     ) { paddingValues ->
-        Column(
+        Box(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .navigationBarsPadding()
         ) {
+            if (selectedTabIndex == 1) {
+                DevBroadcastTab(
+                    broadcastRepository = effectiveBroadcastRepo,
+                    currentUser = currentUser,
+                    currentDevEmail = currentDevEmail
+                )
+            } else {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .navigationBarsPadding()
+                ) {
             // Metrics Overview (Linear style 3-column stats)
             Surface(
                 color = SurfaceCard,
@@ -534,6 +615,8 @@ fun DevDashboardScreen(
                             }
                         }
                     }
+                }
+            }
                 }
             }
         }

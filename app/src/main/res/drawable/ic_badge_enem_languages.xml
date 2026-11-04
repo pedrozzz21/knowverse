@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon -->
+    <path
+        android:fillColor="#4C0519"
+        android:strokeColor="#F43F5E"
+        android:strokeWidth="2.5"
+        android:pathData="M36,4 L64,18 L64,48 L36,68 L8,48 L8,18 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#881337"
+        android:pathData="M36,9 L59,21 L59,46 L36,63 L13,46 L13,21 Z" />
+    <!-- Open Book / Quill Motif -->
+    <path
+        android:fillColor="#FDA4AF"
+        android:pathData="M36,29 C32,26 25,26 22,27 L22,46 C25,45 32,45 36,48 C40,45 47,45 50,46 L50,27 C47,26 40,26 36,29 Z" />
+    <path
+        android:fillColor="#BE123C"
+        android:pathData="M35,30 L35,46 C32,44 26,44 24,45 L24,28.5 C26,27.5 32,27.5 35,30 Z" />
+    <!-- Center Star of Mastery -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,21 L37.5,24 L41,24.5 L38.5,26.5 L39,30 L36,28 L33,30 L33.5,26.5 L31,24.5 L34.5,24 Z" />
+</vector>

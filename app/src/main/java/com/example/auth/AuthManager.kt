@@ -61,7 +61,10 @@ data class RegisteredAccountRecord(
 
 class AuthManager(private val context: Context) {
 
-    private val auth: FirebaseAuth = Firebase.auth
+    private val auth: FirebaseAuth by lazy {
+        com.example.KnowverseApp.ensureFirebase(context)
+        FirebaseAuth.getInstance()
+    }
     private val credentialManager = CredentialManager.create(context)
     private val defaultScope = CoroutineScope(Dispatchers.IO)
     private val sessionPrefs: SharedPreferences =
@@ -96,13 +99,17 @@ class AuthManager(private val context: Context) {
         cleanClonedDevAccounts()
         _currentUserState.value = loadInitialSession()
         fetchAndCacheFirestoreAccounts()
-        auth.addAuthStateListener { firebaseAuth ->
-            val fbUser = firebaseAuth.currentUser
-            if (fbUser != null) {
-                val appUser = fbUser.toAppUser()
-                saveSession(appUser)
-                _currentUserState.value = appUser
+        try {
+            auth.addAuthStateListener { firebaseAuth ->
+                val fbUser = firebaseAuth.currentUser
+                if (fbUser != null) {
+                    val appUser = fbUser.toAppUser()
+                    saveSession(appUser)
+                    _currentUserState.value = appUser
+                }
             }
+        } catch (e: Exception) {
+            Log.w("AuthManager", "Could not attach AuthStateListener: ${e.message}")
         }
     }
 

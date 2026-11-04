@@ -31,6 +31,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.filled.AutoStories
+import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Functions
@@ -49,6 +51,7 @@ import com.example.ui.components.MathFormulaCard
 import com.example.ui.components.StepByStepSolutionView
 import com.example.ui.components.CalculusTheoryRenderer
 import com.example.ui.components.GeoGebraMathGraphView
+import com.example.ui.components.DidacticImageView
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -87,6 +90,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.data.local.UserProgressRepository
 import com.example.data.math.CalculusCurriculum
+import com.example.data.math.CalculusDidacticBundle
 import com.example.data.math.CalculusDidacticContent
 import com.example.data.model.Lesson
 import com.example.ui.theme.BorderSubtle
@@ -121,19 +125,81 @@ fun CalculusLessonScreen(
     }
 
     val nextLesson = remember(lesson.id) {
-        if (lesson.id.startsWith("enem_")) {
-            val allEnem = com.example.data.math.EnemMathCurriculum.getAllLessons()
-            val currIdx = allEnem.indexOfFirst { it.id == lesson.id }
-            if (currIdx in 0 until allEnem.size - 1) {
-                allEnem[currIdx + 1].toAppLesson()
-            } else null
-        } else {
-            CalculusCurriculum.findNextLesson(lesson.id)
+        try {
+            when {
+                lesson.id.startsWith("quim_") -> {
+                    val allQuim = com.example.data.chemistry.EnemChemistryCurriculum.getAllModules().flatMap { it.lessons }
+                    val currIdx = allQuim.indexOfFirst { it.id == lesson.id }
+                    if (currIdx in 0 until allQuim.size - 1) {
+                        allQuim[currIdx + 1].toAppLesson()
+                    } else null
+                }
+                lesson.id.startsWith("geo_") -> {
+                    val allGeo = com.example.data.geography.EnemGeographyCurriculum.getAllModules().flatMap { it.lessons }
+                    val currIdx = allGeo.indexOfFirst { it.id == lesson.id }
+                    if (currIdx in 0 until allGeo.size - 1) {
+                        allGeo[currIdx + 1].toAppLesson()
+                    } else null
+                }
+                lesson.id.startsWith("hist_") -> {
+                    val allHist = com.example.data.history.EnemHistoryCurriculum.getAllModules().flatMap { it.lessons }
+                    val currIdx = allHist.indexOfFirst { it.id == lesson.id }
+                    if (currIdx in 0 until allHist.size - 1) {
+                        allHist[currIdx + 1].toAppLesson()
+                    } else null
+                }
+                lesson.id.startsWith("ling_") -> {
+                    val allLing = com.example.data.languages.EnemLanguagesCurriculum.getAllModules().flatMap { it.lessons }
+                    val currIdx = allLing.indexOfFirst { it.id == lesson.id }
+                    if (currIdx in 0 until allLing.size - 1) {
+                        allLing[currIdx + 1].toAppLesson()
+                    } else null
+                }
+                lesson.id.startsWith("bio_") -> {
+                    val allBio = com.example.data.biology.EnemBiologyCurriculum.discipline.modules.flatMap { it.lessons }
+                    val currIdx = allBio.indexOfFirst { it.id == lesson.id }
+                    if (currIdx in 0 until allBio.size - 1) {
+                        allBio[currIdx + 1].toAppLesson()
+                    } else null
+                }
+                lesson.id.startsWith("fis_") -> {
+                    val allPhysics = com.example.data.physics.EnemPhysicsCurriculum.getAllModules().flatMap { it.lessons }
+                    val currIdx = allPhysics.indexOfFirst { it.id == lesson.id }
+                    if (currIdx in 0 until allPhysics.size - 1) {
+                        allPhysics[currIdx + 1].toAppLesson()
+                    } else null
+                }
+                lesson.id.startsWith("enem_") -> {
+                    val allEnem = com.example.data.math.EnemMathCurriculum.getAllLessons()
+                    val currIdx = allEnem.indexOfFirst { it.id == lesson.id }
+                    if (currIdx in 0 until allEnem.size - 1) {
+                        allEnem[currIdx + 1].toAppLesson()
+                    } else null
+                }
+                else -> CalculusCurriculum.findNextLesson(lesson.id)
+            }
+        } catch (_: Throwable) {
+            null
         }
     }
 
-    val didacticBundle = remember(lesson.id) {
-        CalculusDidacticContent.getContentForLesson(lesson.id)
+    val didacticBundle: CalculusDidacticBundle = remember(lesson.id) {
+        try {
+            val bundle = when {
+                lesson.id.startsWith("quim_") -> com.example.data.chemistry.EnemChemistryDidacticProvider.getDidacticBundle(lesson.id)
+                lesson.id.startsWith("geo_") -> com.example.data.geography.EnemGeographyDidacticProvider.getBundleForLesson(lesson.id)
+                lesson.id.startsWith("hist_") -> com.example.data.history.EnemHistoryDidacticProvider.getDidacticBundle(lesson.id)
+                lesson.id.startsWith("ling_") -> com.example.data.languages.EnemLanguagesDidacticProvider.getDidacticBundle(lesson.id)
+                lesson.id.startsWith("bio_") -> com.example.data.biology.EnemBiologyDidacticProvider.getDidacticBundle(lesson.id)
+                lesson.id.startsWith("fis_") -> com.example.data.physics.EnemPhysicsDidacticProvider.getDidacticBundle(lesson.id)
+                lesson.id.startsWith("enem_") -> com.example.data.math.EnemDidacticProvider.getDidacticBundle(lesson.id)
+                else -> CalculusDidacticContent.getContentForLesson(lesson.id)
+            }
+            bundle ?: CalculusDidacticContent.getContentForLesson(lesson.id)
+        } catch (t: Throwable) {
+            android.util.Log.e("CalculusLessonScreen", "Erro didacticBundle: ${t.message}", t)
+            CalculusDidacticContent.getContentForLesson(lesson.id)
+        }
     }
 
     var currentStage by remember(lesson.id) { mutableStateOf(CalculusStage.THEORY) }
@@ -144,7 +210,26 @@ fun CalculusLessonScreen(
 
     // Lista de exercícios com alternativas geradas e embaralhadas aleatoriamente a cada sessão
     val exercises = remember(lesson.id) {
-        lesson.mathExercises.map { it.randomized() }
+        try {
+            val list = if (lesson.mathExercises.isNotEmpty()) {
+                lesson.mathExercises
+            } else {
+                when {
+                    lesson.id.startsWith("quim_") -> com.example.data.chemistry.EnemChemistryDidacticProvider.getExercisesForLesson(lesson.id)
+                    lesson.id.startsWith("geo_") -> com.example.data.geography.EnemGeographyDidacticProvider.getExercisesForLesson(lesson.id)
+                    lesson.id.startsWith("hist_") -> com.example.data.history.EnemHistoryDidacticProvider.getExercisesForLesson(lesson.id)
+                    lesson.id.startsWith("ling_") -> com.example.data.languages.EnemLanguagesDidacticProvider.getExercisesForLesson(lesson.id)
+                    lesson.id.startsWith("bio_") -> com.example.data.biology.EnemBiologyDidacticProvider.getExercisesForLesson(lesson.id)
+                    lesson.id.startsWith("fis_") -> com.example.data.physics.EnemPhysicsDidacticProvider.getExercisesForLesson(lesson.id)
+                    lesson.id.startsWith("enem_") -> com.example.data.math.EnemDidacticProvider.getExercisesForLesson(lesson.id)
+                    else -> emptyList()
+                }
+            }
+            list.map { it.randomized() }
+        } catch (t: Throwable) {
+            android.util.Log.e("CalculusLessonScreen", "Erro exercises: ${t.message}", t)
+            emptyList()
+        }
     }
 
     // Map of exercise index to selected option index
@@ -171,8 +256,15 @@ fun CalculusLessonScreen(
         }
     }
 
+    val isChemistryLesson = lesson.id.startsWith("quim_")
+    val isGeographyLesson = lesson.id.startsWith("geo_")
+    val isHistoryLesson = lesson.id.startsWith("hist_")
+    val isLanguagesLesson = lesson.id.startsWith("ling_")
+    val isBiologyLesson = lesson.id.startsWith("bio_")
+    val isPhysicsLesson = lesson.id.startsWith("fis_")
     val isEnemLesson = lesson.id.startsWith("enem_")
     val isBasicMath = lesson.id.startsWith("mb_") || lesson.unitId.contains("basic_math")
+    val isNonFormulaSubject = isLanguagesLesson || isHistoryLesson || isGeographyLesson
     val isIntegralsUnit = lesson.unitId.contains("integral") || 
         lesson.id.startsWith("calc_l19") || lesson.id.startsWith("calc_l20") ||
         lesson.id.startsWith("calc_l21") || lesson.id.startsWith("calc_l22") ||
@@ -187,12 +279,53 @@ fun CalculusLessonScreen(
         lesson.id.startsWith("calc_l17") || lesson.id.startsWith("calc_l18")
 
     val disciplineTitle = when {
+        isChemistryLesson -> "Química • Natureza ENEM"
+        isGeographyLesson -> "Geografia • Humanas ENEM"
+        isHistoryLesson -> "História • Humanas ENEM"
+        isLanguagesLesson -> "Linguagens e Códigos"
+        isBiologyLesson -> "Biologia ENEM"
+        isPhysicsLesson -> "Física ENEM"
         isEnemLesson -> "Matemática ENEM"
         isBasicMath -> "Matemática Básica"
         else -> "Cálculo I"
     }
 
+    val subjectAccentColor = when {
+        isChemistryLesson -> Color(0xFF06B6D4)
+        isGeographyLesson -> Color(0xFF2A9D8F)
+        isHistoryLesson -> Color(0xFFE07A5F)
+        isLanguagesLesson -> Color(0xFFFB923C)
+        isBiologyLesson -> SuccessEmerald
+        isPhysicsLesson -> Color(0xFF38BDF8)
+        isEnemLesson -> Color(0xFF00E676)
+        else -> GoldXp
+    }
+
     val moduleSubtitle = when {
+        isChemistryLesson -> {
+            val mod = com.example.data.chemistry.EnemChemistryCurriculum.getAllModules().firstOrNull { it.id == lesson.unitId }
+            mod?.title ?: "Química Geral e Ambiental"
+        }
+        isGeographyLesson -> {
+            val mod = com.example.data.geography.EnemGeographyCurriculum.getAllModules().firstOrNull { it.id == lesson.unitId }
+            mod?.title ?: "Geografia do Brasil e Geral"
+        }
+        isHistoryLesson -> {
+            val mod = com.example.data.history.EnemHistoryCurriculum.getAllModules().firstOrNull { it.id == lesson.unitId }
+            mod?.title ?: "História do Brasil ENEM"
+        }
+        isLanguagesLesson -> {
+            val mod = com.example.data.languages.EnemLanguagesCurriculum.getAllModules().firstOrNull { it.id == lesson.unitId }
+            mod?.title ?: "Trilha de Linguagens ENEM"
+        }
+        isBiologyLesson -> {
+            val mod = com.example.data.biology.EnemBiologyCurriculum.discipline.modules.firstOrNull { it.id == lesson.unitId }
+            mod?.title ?: "Trilha de Biologia ENEM"
+        }
+        isPhysicsLesson -> {
+            val mod = com.example.data.physics.EnemPhysicsCurriculum.getAllModules().firstOrNull { it.id == lesson.unitId }
+            mod?.title ?: "Trilha de Física ENEM"
+        }
         isEnemLesson -> {
             val mod = com.example.data.math.EnemMathCurriculum.getModule(lesson.unitId)
             mod?.title ?: "Trilha de Matemática ENEM"
@@ -236,30 +369,35 @@ fun CalculusLessonScreen(
                                 )
                             }
                             Spacer(modifier = Modifier.width(6.dp))
-                            Column {
+                            Column(modifier = Modifier.weight(1f).padding(end = 6.dp)) {
                                 Text(
                                     text = "$disciplineTitle • $moduleSubtitle",
                                     style = MaterialTheme.typography.labelSmall.copy(
-                                        color = GoldXp,
+                                        color = subjectAccentColor,
                                         fontWeight = FontWeight.SemiBold
-                                    )
+                                    ),
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis
                                 )
                                 Text(
                                     text = lesson.title,
                                     style = MaterialTheme.typography.titleSmall.copy(
                                         fontWeight = FontWeight.Bold,
-                                        color = TextPrimary
+                                        color = TextPrimary,
+                                        fontSize = 13.5.sp,
+                                        lineHeight = 17.sp
                                     ),
-                                    maxLines = 1
+                                    maxLines = 2,
+                                    overflow = TextOverflow.Ellipsis
                                 )
                             }
                         }
 
                         // XP Badge
                         Surface(
-                            color = GoldXp.copy(alpha = 0.15f),
+                            color = subjectAccentColor.copy(alpha = 0.15f),
                             shape = RoundedCornerShape(12.dp),
-                            border = androidx.compose.foundation.BorderStroke(1.dp, GoldXp.copy(alpha = 0.4f))
+                            border = androidx.compose.foundation.BorderStroke(1.dp, subjectAccentColor.copy(alpha = 0.4f))
                         ) {
                             Row(
                                 modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
@@ -268,14 +406,14 @@ fun CalculusLessonScreen(
                                 Icon(
                                     imageVector = Icons.Default.Star,
                                     contentDescription = null,
-                                    tint = GoldXp,
+                                    tint = subjectAccentColor,
                                     modifier = Modifier.size(13.dp)
                                 )
                                 Spacer(modifier = Modifier.width(4.dp))
                                 Text(
                                     text = if (isLessonCompletedLocal) "Concluída" else "+${lesson.xpReward} XP",
                                     style = MaterialTheme.typography.labelSmall.copy(
-                                        color = GoldXp,
+                                        color = subjectAccentColor,
                                         fontWeight = FontWeight.Bold
                                     )
                                 )
@@ -293,6 +431,13 @@ fun CalculusLessonScreen(
                     ) {
                         CalculusStage.values().forEach { stage ->
                             val isSelected = currentStage == stage
+                            val stageLabelText = when {
+                                isNonFormulaSubject && stage == CalculusStage.THEORY -> "1. Teoria"
+                                isNonFormulaSubject && stage == CalculusStage.FORMULAS -> "2. Conceitos"
+                                isNonFormulaSubject && stage == CalculusStage.EXAMPLES -> "3. Análises"
+                                isNonFormulaSubject && stage == CalculusStage.EXERCISES -> "4. Treino"
+                                else -> stage.label
+                            }
                             Surface(
                                 color = if (isSelected) PrimaryViolet else Color.Transparent,
                                 shape = RoundedCornerShape(6.dp),
@@ -307,19 +452,20 @@ fun CalculusLessonScreen(
                                 ) {
                                     Icon(
                                         imageVector = stage.icon,
-                                        contentDescription = stage.label,
+                                        contentDescription = stageLabelText,
                                         tint = if (isSelected) Color.White else TextTertiary,
                                         modifier = Modifier.size(14.dp)
                                     )
                                     Spacer(modifier = Modifier.width(4.dp))
                                     Text(
-                                        text = stage.label,
+                                        text = stageLabelText,
                                         style = MaterialTheme.typography.labelSmall.copy(
                                             color = if (isSelected) Color.White else TextSecondary,
                                             fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal,
                                             fontSize = 11.sp
                                         ),
-                                        maxLines = 1
+                                        maxLines = 1,
+                                        softWrap = false
                                     )
                                 }
                             }
@@ -351,7 +497,7 @@ fun CalculusLessonScreen(
                                 shape = RoundedCornerShape(8.dp),
                                 modifier = Modifier.fillMaxWidth().height(44.dp)
                             ) {
-                                Text("Avançar para 2. Fórmulas & Regras", fontWeight = FontWeight.Bold)
+                                Text(if (isNonFormulaSubject) "Avançar para 2. Conceitos-Chave" else "Avançar para 2. Fórmulas & Regras", fontWeight = FontWeight.Bold)
                                 Spacer(modifier = Modifier.width(8.dp))
                                 Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null, modifier = Modifier.size(16.dp))
                             }
@@ -370,7 +516,7 @@ fun CalculusLessonScreen(
                                 shape = RoundedCornerShape(8.dp),
                                 modifier = Modifier.weight(1.5f).height(44.dp)
                             ) {
-                                Text("Ver Exemplos", fontWeight = FontWeight.Bold)
+                                Text(if (isNonFormulaSubject) "Ver Análises & Textos" else "Ver Exemplos", fontWeight = FontWeight.Bold)
                                 Spacer(modifier = Modifier.width(6.dp))
                                 Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null, modifier = Modifier.size(16.dp))
                             }
@@ -381,7 +527,7 @@ fun CalculusLessonScreen(
                                 shape = RoundedCornerShape(8.dp),
                                 modifier = Modifier.weight(1f).height(44.dp)
                             ) {
-                                Text("Fórmulas", color = TextSecondary)
+                                Text(if (isNonFormulaSubject) "Conceitos" else "Fórmulas", color = TextSecondary)
                             }
                             Button(
                                 onClick = { currentStage = CalculusStage.EXERCISES },
@@ -389,7 +535,7 @@ fun CalculusLessonScreen(
                                 shape = RoundedCornerShape(8.dp),
                                 modifier = Modifier.weight(1.5f).height(44.dp)
                             ) {
-                                Text("Ir para os Exercícios", fontWeight = FontWeight.Bold)
+                                Text(if (isNonFormulaSubject) "Ir para as Questões" else "Ir para os Exercícios", fontWeight = FontWeight.Bold)
                                 Spacer(modifier = Modifier.width(6.dp))
                                 Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null, modifier = Modifier.size(16.dp))
                             }
@@ -533,54 +679,23 @@ fun CalculusLessonScreen(
                             config = geoConfig,
                             modifier = Modifier.fillMaxWidth()
                         )
-                    } else {
-                        val imgRes = didacticBundle.imageResId ?: lesson.imageResId
-                        if (imgRes != null) {
-                            Card(
-                                colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
-                                shape = RoundedCornerShape(10.dp),
-                                border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle),
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Column(modifier = Modifier.padding(12.dp)) {
-                                    Row(
-                                        verticalAlignment = Alignment.CenterVertically,
-                                        modifier = Modifier.padding(bottom = 8.dp)
-                                    ) {
-                                        Icon(
-                                            imageVector = Icons.Default.Calculate,
-                                            contentDescription = null,
-                                            tint = GoldXp,
-                                            modifier = Modifier.size(16.dp)
-                                        )
-                                        Spacer(modifier = Modifier.width(6.dp))
-                                        Text(
-                                            text = "Gráfico Diagnóstico em Alta Resolução",
-                                            style = MaterialTheme.typography.labelMedium.copy(
-                                                color = GoldXp,
-                                                fontWeight = FontWeight.Bold
-                                            )
-                                        )
-                                    }
+                    }
 
-                                    Box(
-                                        modifier = Modifier
-                                            .fillMaxWidth()
-                                            .height(230.dp)
-                                            .clip(RoundedCornerShape(8.dp))
-                                            .background(Color(0xFF0D1322)),
-                                        contentAlignment = Alignment.Center
-                                    ) {
-                                        Image(
-                                            painter = painterResource(id = imgRes),
-                                            contentDescription = "Gráfico Explicativo",
-                                            modifier = Modifier.fillMaxSize(),
-                                            contentScale = ContentScale.Fit
-                                        )
-                                    }
-                                }
-                            }
-                        }
+                    // Imagem Didática ou Gráfico Diagnóstico em Alta Resolução
+                    val assetImg = didacticBundle.assetImagePath
+                    val imgRes = didacticBundle.imageResId ?: lesson.imageResId
+                    if (assetImg != null) {
+                        DidacticImageView(
+                            imagePath = assetImg,
+                            caption = "Gráfico Diagnóstico: ${lesson.title}",
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    } else if (imgRes != null && imgRes != 0) {
+                        DidacticImageView(
+                            drawableResId = imgRes,
+                            caption = "Gráfico Diagnóstico em Alta Resolução",
+                            modifier = Modifier.fillMaxWidth()
+                        )
                     }
 
                     // Gold Tip Card
@@ -623,44 +738,88 @@ fun CalculusLessonScreen(
                 }
 
                 // ========================================================
-                // ETAPA 2: FÓRMULAS & REGRAS MATEMÁTICAS
+                // ETAPA 2: FÓRMULAS & CONCEITOS-CHAVE
                 // ========================================================
                 CalculusStage.FORMULAS -> {
                     Text(
-                        text = "Quadro de Fórmulas e Regras Operatórias",
+                        text = if (isNonFormulaSubject) "Conceitos-Chave e Fundamentos Teóricos" else "Quadro de Fórmulas e Regras Operatórias",
                         style = MaterialTheme.typography.titleMedium.copy(
                             fontWeight = FontWeight.Bold,
                             color = TextPrimary
                         )
                     )
                     Text(
-                        text = "Entenda cada termo matemático e o papel de cada variável nas equações:",
+                        text = if (isNonFormulaSubject)
+                            "Categorias analíticas, termos técnicos e estruturas essenciais para a interpretação:"
+                        else
+                            "Entenda cada termo matemático e o papel de cada variável nas equações:",
                         style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary)
                     )
 
                     didacticBundle.formulas.forEach { formulaItem ->
                         Card(
                             colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
-                            shape = RoundedCornerShape(8.dp),
+                            shape = RoundedCornerShape(10.dp),
                             border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle),
                             modifier = Modifier.fillMaxWidth()
                         ) {
                             Column(modifier = Modifier.padding(14.dp)) {
-                                Text(
-                                    text = formulaItem.termOrFunction,
-                                    style = MaterialTheme.typography.titleSmall.copy(
-                                        color = GoldXp,
-                                        fontWeight = FontWeight.Bold
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                ) {
+                                    if (isNonFormulaSubject) {
+                                        Box(
+                                            modifier = Modifier
+                                                .size(26.dp)
+                                                .clip(RoundedCornerShape(6.dp))
+                                                .background(subjectAccentColor.copy(alpha = 0.15f)),
+                                            contentAlignment = Alignment.Center
+                                        ) {
+                                            Icon(
+                                                imageVector = Icons.Default.Bookmark,
+                                                contentDescription = null,
+                                                tint = subjectAccentColor,
+                                                modifier = Modifier.size(14.dp)
+                                            )
+                                        }
+                                    }
+                                    Text(
+                                        text = formulaItem.termOrFunction,
+                                        style = MaterialTheme.typography.titleSmall.copy(
+                                            color = if (isNonFormulaSubject) subjectAccentColor else GoldXp,
+                                            fontWeight = FontWeight.Bold,
+                                            fontSize = 14.sp
+                                        )
                                     )
-                                )
+                                }
 
-                                Spacer(modifier = Modifier.height(6.dp))
+                                Spacer(modifier = Modifier.height(8.dp))
 
-                                // Formula Box com suporte a Símbolos Matemáticos Visuais
-                                MathFormulaCard(
-                                    formula = formulaItem.syntax,
-                                    label = formulaItem.termOrFunction
-                                )
+                                if (isNonFormulaSubject) {
+                                    Surface(
+                                        color = SurfaceElevated,
+                                        shape = RoundedCornerShape(6.dp),
+                                        border = androidx.compose.foundation.BorderStroke(1.dp, subjectAccentColor.copy(alpha = 0.25f)),
+                                        modifier = Modifier.fillMaxWidth()
+                                    ) {
+                                        Text(
+                                            text = formulaItem.syntax,
+                                            style = MaterialTheme.typography.bodyMedium.copy(
+                                                color = TextPrimary,
+                                                fontWeight = FontWeight.Medium,
+                                                lineHeight = 20.sp
+                                            ),
+                                            modifier = Modifier.padding(12.dp)
+                                        )
+                                    }
+                                } else {
+                                    // Formula Box com suporte a Símbolos Matemáticos Visuais
+                                    MathFormulaCard(
+                                        formula = formulaItem.syntax,
+                                        label = formulaItem.termOrFunction
+                                    )
+                                }
 
                                 Spacer(modifier = Modifier.height(8.dp))
 
@@ -673,12 +832,30 @@ fun CalculusLessonScreen(
 
                                 if (formulaItem.parametersInfo.isNotBlank()) {
                                     Spacer(modifier = Modifier.height(6.dp))
-                                    MathFormattedText(
-                                        text = "• Termos e Parâmetros: ${formulaItem.parametersInfo}",
-                                        style = MaterialTheme.typography.labelSmall,
-                                        color = TextSecondary,
-                                        lineHeightSp = 16f
-                                    )
+                                    if (isNonFormulaSubject) {
+                                        Surface(
+                                            color = PrimaryViolet.copy(alpha = 0.08f),
+                                            shape = RoundedCornerShape(6.dp),
+                                            modifier = Modifier.fillMaxWidth()
+                                        ) {
+                                            Text(
+                                                text = "Aplicação ENEM: ${formulaItem.parametersInfo}",
+                                                style = MaterialTheme.typography.labelSmall.copy(
+                                                    color = PrimaryViolet,
+                                                    fontWeight = FontWeight.SemiBold,
+                                                    lineHeight = 15.sp
+                                                ),
+                                                modifier = Modifier.padding(8.dp)
+                                            )
+                                        }
+                                    } else {
+                                        MathFormattedText(
+                                            text = "• Termos e Parâmetros: ${formulaItem.parametersInfo}",
+                                            style = MaterialTheme.typography.labelSmall,
+                                            color = TextSecondary,
+                                            lineHeightSp = 16f
+                                        )
+                                    }
                                 }
                             }
                         }
@@ -686,25 +863,28 @@ fun CalculusLessonScreen(
                 }
 
                 // ========================================================
-                // ETAPA 3: EXEMPLOS RESOLVIDOS PASSO A PASSO
+                // ETAPA 3: EXEMPLOS RESOLVIDOS & ANÁLISES COMENTADAS
                 // ========================================================
                 CalculusStage.EXAMPLES -> {
                     Text(
-                        text = "Exemplos Resolvidos e Comentados",
+                        text = if (isNonFormulaSubject) "Textos Didáticos & Análises Comentadas" else "Exemplos Resolvidos e Comentados",
                         style = MaterialTheme.typography.titleMedium.copy(
                             fontWeight = FontWeight.Bold,
                             color = TextPrimary
                         )
                     )
                     Text(
-                        text = "Veja como aplicar as fórmulas e o raciocínio analítico na prática:",
+                        text = if (isNonFormulaSubject)
+                            "Interpretação passo a passo de fontes, textos e estudos de caso do ENEM:"
+                        else
+                            "Veja como aplicar as fórmulas e o raciocínio analítico na prática:",
                         style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary)
                     )
 
                     didacticBundle.solvedExamples.forEach { example ->
                         Card(
                             colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
-                            shape = RoundedCornerShape(8.dp),
+                            shape = RoundedCornerShape(10.dp),
                             border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle),
                             modifier = Modifier.fillMaxWidth()
                         ) {
@@ -712,17 +892,46 @@ fun CalculusLessonScreen(
                                 Text(
                                     text = example.title,
                                     style = MaterialTheme.typography.titleSmall.copy(
-                                        color = PrimaryViolet,
+                                        color = if (isNonFormulaSubject) subjectAccentColor else PrimaryViolet,
                                         fontWeight = FontWeight.Bold
                                     )
                                 )
 
-                                Spacer(modifier = Modifier.height(6.dp))
+                                Spacer(modifier = Modifier.height(8.dp))
 
-                                MathFormulaCard(
-                                    formula = example.codeOrFormula,
-                                    label = "Passo Analítico"
-                                )
+                                if (isNonFormulaSubject) {
+                                    Surface(
+                                        color = SurfaceElevated,
+                                        shape = RoundedCornerShape(6.dp),
+                                        border = androidx.compose.foundation.BorderStroke(1.dp, subjectAccentColor.copy(alpha = 0.3f)),
+                                        modifier = Modifier.fillMaxWidth()
+                                    ) {
+                                        Column(modifier = Modifier.padding(10.dp)) {
+                                            Text(
+                                                text = "FONTE / TRECHO DIDÁTICO:",
+                                                style = MaterialTheme.typography.labelSmall.copy(
+                                                    color = subjectAccentColor,
+                                                    fontWeight = FontWeight.Bold,
+                                                    fontSize = 10.sp
+                                                )
+                                            )
+                                            Spacer(modifier = Modifier.height(4.dp))
+                                            Text(
+                                                text = example.codeOrFormula,
+                                                style = MaterialTheme.typography.bodySmall.copy(
+                                                    color = TextPrimary,
+                                                    fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
+                                                    lineHeight = 18.sp
+                                                )
+                                            )
+                                        }
+                                    }
+                                } else {
+                                    MathFormulaCard(
+                                        formula = example.codeOrFormula,
+                                        label = "Passo Analítico"
+                                    )
+                                }
 
                                 Spacer(modifier = Modifier.height(8.dp))
 
@@ -823,6 +1032,44 @@ fun CalculusLessonScreen(
                                 contentPadding = PaddingValues(horizontal = 6.dp, vertical = 2.dp)
                             ) {
                                 Text("Recolher todos", fontSize = 11.sp, color = TextTertiary)
+                            }
+                        }
+                    }
+
+                    if (exercises.isEmpty()) {
+                        Surface(
+                            color = ObsidianSurface,
+                            shape = RoundedCornerShape(10.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle),
+                            modifier = Modifier.fillMaxWidth().padding(vertical = 12.dp)
+                        ) {
+                            Column(
+                                modifier = Modifier.padding(20.dp),
+                                horizontalAlignment = Alignment.CenterHorizontally
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.CheckCircle,
+                                    contentDescription = null,
+                                    tint = SuccessEmerald,
+                                    modifier = Modifier.size(36.dp)
+                                )
+                                Spacer(modifier = Modifier.height(10.dp))
+                                Text(
+                                    text = "Conteúdo Teórico Dominado!",
+                                    style = MaterialTheme.typography.titleMedium.copy(
+                                        color = TextPrimary,
+                                        fontWeight = FontWeight.Bold
+                                    )
+                                )
+                                Spacer(modifier = Modifier.height(6.dp))
+                                Text(
+                                    text = "Você completou as etapas de teoria, conceitos e exemplos práticos. Clique em 'Concluir Aula' abaixo para registrar seu progresso e ganhar XP!",
+                                    style = MaterialTheme.typography.bodySmall.copy(
+                                        color = TextSecondary,
+                                        textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                                        lineHeight = 18.sp
+                                    )
+                                )
                             }
                         }
                     }
@@ -1227,7 +1474,7 @@ fun CalculusLessonScreen(
                                                         text = if (index + 1 < exercises.size) {
                                                             "Prosseguir para o Próximo Exercício (${index + 2}/${exercises.size})"
                                                         } else {
-                                                            "🎉 Todos os Exercícios da Aula Concluídos!"
+                                                            "Todos os Exercícios da Aula Concluídos!"
                                                         },
                                                         style = MaterialTheme.typography.labelMedium.copy(
                                                             fontWeight = FontWeight.Bold,

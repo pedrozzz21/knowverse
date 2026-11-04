@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Hexagon in Amber Flame -->
+    <path
+        android:fillColor="#451A03"
+        android:strokeColor="#F97316"
+        android:strokeWidth="2.5"
+        android:pathData="M36,4 L64,18 L64,48 L36,68 L8,48 L8,18 Z" />
+    <!-- Inner Accent Shield -->
+    <path
+        android:fillColor="#7C2D12"
+        android:pathData="M36,9 L59,21 L59,46 L36,63 L13,46 L13,21 Z" />
+    <!-- Fire Flame Shape with '3' Accent -->
+    <path
+        android:fillColor="#FB923C"
+        android:pathData="M36,19 C38,24 45,28 45,36 C45,43 40,49 34,49 C28,49 25,43 28,37 C29,34 32,33 32,29 C32,26 30,23 36,19 Z" />
+    <path
+        android:fillColor="#FDE047"
+        android:pathData="M36,33 C37,35 40,38 40,41 C40,44 38,47 35,47 C32,47 31,44 32,41 C33,39 34,38 36,33 Z" />
+    <!-- Star of 3 Days -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,14 L37.5,17 L41,17.5 L38.5,19.5 L39,23 L36,21 L33,23 L33.5,19.5 L31,17.5 L34.5,17 Z" />
+</vector>

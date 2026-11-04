@@ -331,4 +331,14 @@ object EnemBiologyCurriculum {
     }
 
     fun getAllModules(): List<EnemTrailModule> = discipline.modules
+
+    fun findModule(moduleId: String): EnemTrailModule? = discipline.modules.find { it.id == moduleId }
+
+    fun findLesson(lessonId: String): EnemTrailLesson? {
+        for (module in discipline.modules) {
+            val lesson = module.lessons.find { it.id == lessonId }
+            if (lesson != null) return lesson
+        }
+        return null
+    }
 }

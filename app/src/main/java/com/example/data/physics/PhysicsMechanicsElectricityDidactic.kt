@@ -58,13 +58,13 @@ object PhysicsMechanicsElectricityDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Aceleração Centrípeta",
-                        syntax = "a_c = \\frac{v^2}{R} = \\omega^2 \\cdot R",
+                        syntax = """a_c = \\frac{v^2}{R} = \\omega^2 \\cdot R""",
                         description = "Responsável por alterar a direção do vetor velocidade em curvas.",
                         parametersInfo = "Se o raio da curva dobra para a mesma velocidade, a aceleração centrípeta cai pela metade."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Acoplamento por Correia",
-                        syntax = "R_A \\cdot f_A = R_B \\cdot f_B",
+                        syntax = """R_A \\cdot f_A = R_B \\cdot f_B""",
                         description = "Igualdade das velocidades periféricas tangenciais.",
                         parametersInfo = "Catraca menor (raio menor) gira com maior rotação/frequência."
                     )
@@ -72,7 +72,7 @@ object PhysicsMechanicsElectricityDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Marchas de Bicicleta",
-                        codeOrFormula = "R_{coroa} \\cdot f_{pedal} = R_{catraca} \\cdot f_{roda}",
+                        codeOrFormula = """R_{coroa} \\cdot f_{pedal} = R_{catraca} \\cdot f_{roda}""",
                         explanation = "Para atingir a maior velocidade linear pedalando com frequência constante, o ciclista deve escolher a coroa de MAIOR raio acoplada à catraca de MENOR raio."
                     )
                 ),
@@ -104,13 +104,13 @@ object PhysicsMechanicsElectricityDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Segunda Lei de Newton",
-                        syntax = "F_R = m \\cdot a",
+                        syntax = """F_R = m \\cdot a""",
                         description = "Força resultante proporcional à aceleração adquirida.",
                         parametersInfo = "1 Newton (N) = 1 kg * m/s²."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Força de Atrito",
-                        syntax = "F_{at} = \\mu \\cdot N",
+                        syntax = """F_{at} = \\mu \\cdot N""",
                         description = "Força paralela à superfície que se opõe à tendência de deslizamento.",
                         parametersInfo = "μ é o coeficiente adimensional de atrito e N é a força normal de compressão."
                     )
@@ -145,13 +145,13 @@ object PhysicsMechanicsElectricityDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equilíbrio da Alavanca",
-                        syntax = "F_P \\cdot d_P = F_R \\cdot d_R",
+                        syntax = """F_P \\cdot d_P = F_R \\cdot d_R""",
                         description = "Igualdade dos momentos das forças potente e resistente.",
                         parametersInfo = "Braço de alavanca maior exige menor força aplicada."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Talha Exponencial",
-                        syntax = "F = \\frac{P}{2^n}",
+                        syntax = """F = \\frac{P}{2^n}""",
                         description = "Força reduzida exponencialmente pelo número de polias móveis.",
                         parametersInfo = "O trabalho mecânico total realizado idealmente permanece o mesmo (conservação da energia)."
                     )
@@ -159,7 +159,7 @@ object PhysicsMechanicsElectricityDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Talha com 3 Roldanas Móveis",
-                        codeOrFormula = "F = \\frac{800}{2^3} = \\frac{800}{8} = 100 \\text{ N}",
+                        codeOrFormula = """F = \\frac{800}{2^3} = \\frac{800}{8} = 100 \\text{ N}""",
                         explanation = "Para erguer um motor de peso 800 N com 3 roldanas móveis, a força necessária na corda é de apenas 100 N."
                     )
                 ),
@@ -195,7 +195,7 @@ object PhysicsMechanicsElectricityDidactic {
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Potência Mecânica",
-                        syntax = "P = \\frac{\\tau}{\\Delta t} = F \\cdot v",
+                        syntax = """P = \\frac{\\tau}{\\Delta t} = F \\cdot v""",
                         description = "Taxa temporal de realização de trabalho ou transferência energética.",
                         parametersInfo = "1 Watt (W) = 1 Joule por segundo (J/s)."
                     )
@@ -203,7 +203,7 @@ object PhysicsMechanicsElectricityDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Velocidade ao pé da Montanha-Russa",
-                        codeOrFormula = "mgh = \\frac{mv^2}{2} \\implies v = \\sqrt{2gh}",
+                        codeOrFormula = """mgh = \\frac{mv^2}{2} \\implies v = \\sqrt{2gh}""",
                         explanation = "Um carrinho solto do repouso a 20 m de altura sem atrito atinge a base com velocidade v = sqrt(2 * 10 * 20) = sqrt(400) = 20 m/s (72 km/h)."
                     )
                 ),
@@ -234,13 +234,13 @@ object PhysicsMechanicsElectricityDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Teorema do Impulso",
-                        syntax = "I = F_m \\cdot \\Delta t = \\Delta Q",
+                        syntax = """I = F_m \\cdot \\Delta t = \\Delta Q""",
                         description = "Explica o princípio dos airbags e capacetes no amortecimento de choques.",
                         parametersInfo = "Maior tempo de impacto -> Menor força exercida sobre o corpo."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Colisão Perfeitamente Inelástica",
-                        syntax = "m_1 v_1 + m_2 v_2 = (m_1 + m_2) \\cdot v'",
+                        syntax = """m_1 v_1 + m_2 v_2 = (m_1 + m_2) \\cdot v'""",
                         description = "Os corpos permanecem unidos após o impacto.",
                         parametersInfo = "Utilizado para calcular velocidades conjuntas pós-colisão no ENEM."
                     )
@@ -248,7 +248,7 @@ object PhysicsMechanicsElectricityDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Colisão de Veículos no Cruzamento",
-                        codeOrFormula = "m v_1 + m(0) = 2m \\cdot v' \\implies v' = v_1 / 2",
+                        codeOrFormula = """m v_1 + m(0) = 2m \\cdot v' \\implies v' = v_1 / 2""",
                         explanation = "Um carro de massa m a 20 m/s bate na traseira de um carro idêntico parado. Se engatarem os para-choques, a velocidade do conjunto após a batida é 10 m/s."
                     )
                 ),
@@ -275,7 +275,7 @@ object PhysicsMechanicsElectricityDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Momento de uma Força (Torque)",
-                        syntax = "M = F \\cdot b = F \\cdot d \\cdot \\sin(\\theta)",
+                        syntax = """M = F \\cdot b = F \\cdot d \\cdot \\sin(\\theta)""",
                         description = "Tendência de rotação que uma força produz em torno de um eixo.",
                         parametersInfo = "Forças cuja linha de ação passa exatamente pelo ponto de apoio não produzem torque (b = 0)."
                     )
@@ -283,7 +283,7 @@ object PhysicsMechanicsElectricityDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Chave de Roda para Trocar Pneu",
-                        codeOrFormula = "M = F_1 \\cdot d_1 = F_2 \\cdot d_2",
+                        codeOrFormula = """M = F_1 \\cdot d_1 = F_2 \\cdot d_2""",
                         explanation = "Uma chave de roda mais longa (maior d) permite gerar o mesmo torque para desapertar o parafuso com uma força muscular muito menor."
                     )
                 ),
@@ -316,13 +316,13 @@ object PhysicsMechanicsElectricityDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Teorema de Stevin",
-                        syntax = "\\Delta P = \\rho \\cdot g \\cdot \\Delta h",
+                        syntax = """\\Delta P = \\rho \\cdot g \\cdot \\Delta h""",
                         description = "Variação de pressão proporcional à profundidade do fluido.",
                         parametersInfo = "A cada 10 metros de profundidade na água, a pressão hidrostática aumenta aproximadamente 1 atm."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Empuxo de Arquimedes",
-                        syntax = "E = \\rho_{\\text{fluido}} \\cdot V_{\\text{imerso}} \\cdot g",
+                        syntax = """E = \\rho_{\\text{fluido}} \\cdot V_{\\text{imerso}} \\cdot g""",
                         description = "Força vertical ascendente exercida pelo fluido sobre o corpo.",
                         parametersInfo = "Cuidado: a densidade na fórmula do empuxo é a do LÍQUIDO, nunca a do corpo!"
                     )
@@ -330,7 +330,7 @@ object PhysicsMechanicsElectricityDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Iceberg Flutuando",
-                        codeOrFormula = "\\frac{V_{\\text{imerso}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{gelo}}}{\\rho_{\\text{água}}} = \\frac{0,92}{1,0} = 92\\%",
+                        codeOrFormula = """\\frac{V_{\\text{imerso}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{gelo}}}{\\rho_{\\text{água}}} = \\frac{0,92}{1,0} = 92\\%""",
                         explanation = "Como o gelo tem densidade 0,92 g/cm³ e a água salgada 1,03 g/cm³, cerca de 90% do volume total do iceberg permanece submerso."
                     )
                 ),
@@ -355,13 +355,13 @@ object PhysicsMechanicsElectricityDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Lei da Gravitação de Newton",
-                        syntax = "F_G = G \\frac{M \\cdot m}{d^2}",
+                        syntax = """F_G = G \\frac{M \\cdot m}{d^2}""",
                         description = "Atração gravitacional entre duas massas pontuais.",
                         parametersInfo = "G é a constante gravitacional universal (6,67 * 10^-11 N m²/kg²)."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Terceira Lei de Kepler",
-                        syntax = "\\frac{T_A^2}{R_A^3} = \\frac{T_B^2}{R_B^3}",
+                        syntax = """\\frac{T_A^2}{R_A^3} = \\frac{T_B^2}{R_B^3}""",
                         description = "Relaciona o período de translação e a distância média à estrela.",
                         parametersInfo = "Válido para quaisquer corpos em órbita do mesmo centro de atração."
                     )
@@ -369,7 +369,7 @@ object PhysicsMechanicsElectricityDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Satélite Geoestacionário",
-                        codeOrFormula = "T = 24 \\text{ horas}, \\quad \\text{órbita sobre a linha do Equador}",
+                        codeOrFormula = """T = 24 \\text{ horas}, \\quad \\text{órbita sobre a linha do Equador}""",
                         explanation = "Um satélite geoestacionário possui período de translação igual ao período de rotação da Terra (24h) e gira no mesmo sentido, parecendo imóvel a um observador no solo."
                     )
                 ),
@@ -402,13 +402,13 @@ object PhysicsMechanicsElectricityDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Segunda Lei de Ohm",
-                        syntax = "R = \\rho \\frac{L}{A}",
+                        syntax = """R = \\rho \\frac{L}{A}""",
                         description = "Resistência proporcional ao comprimento e inversamente proporcional à área transversal.",
                         parametersInfo = "Duplicar o raio do fio quadruplica a área (A = pi*r²), reduzindo a resistência a 1/4."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Resistores Idênticos em Paralelo",
-                        syntax = "R_{eq} = \\frac{R}{n}",
+                        syntax = """R_{eq} = \\frac{R}{n}""",
                         description = "Resistência equivalente de n resistores de valor R em paralelo.",
                         parametersInfo = "Ligar mais lâmpadas em paralelo diminui a resistência total e aumenta a corrente geral."
                     )
@@ -416,7 +416,7 @@ object PhysicsMechanicsElectricityDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Associação Mista",
-                        codeOrFormula = "R_p = \\frac{6 \\cdot 3}{6 + 3} = 2\\,\\Omega \\implies R_{eq} = 2 + 4 = 6\\,\\Omega",
+                        codeOrFormula = """R_p = \\frac{6 \\cdot 3}{6 + 3} = 2\\,\\Omega \\implies R_{eq} = 2 + 4 = 6\\,\\Omega""",
                         explanation = "Dois resistores de 6 Ω e 3 Ω em paralelo equivalem a 2 Ω. Ligados em série com um resistor de 4 Ω, a resistência total do circuito é 6 Ω."
                     )
                 ),
@@ -438,7 +438,7 @@ object PhysicsMechanicsElectricityDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Dimensionamento de Disjuntor",
-                        syntax = "I = \\frac{P_{\\text{total}}}{U}",
+                        syntax = """I = \\frac{P_{\\text{total}}}{U}""",
                         description = "Cálculo da corrente nominal mínima necessária para proteger a instalação.",
                         parametersInfo = "O disjuntor deve ser escolhido ligeiramente acima da corrente de operação normal."
                     )
@@ -446,7 +446,7 @@ object PhysicsMechanicsElectricityDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Chuveiro e Disjuntor",
-                        codeOrFormula = "I = \\frac{6600 \\text{ W}}{220 \\text{ V}} = 30 \\text{ A}",
+                        codeOrFormula = """I = \\frac{6600 \\text{ W}}{220 \\text{ V}} = 30 \\text{ A}""",
                         explanation = "Um chuveiro elétrico de 6.600 W em 220 V consome corrente de 30 A. O disjuntor adequado para esse circuito deve ser calibrado para 32 A."
                     )
                 ),
@@ -473,7 +473,7 @@ object PhysicsMechanicsElectricityDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Lei de Coulomb",
-                        syntax = "F_e = K_0 \\frac{|q_1 \\cdot q_2|}{d^2}",
+                        syntax = """F_e = K_0 \\frac{|q_1 \\cdot q_2|}{d^2}""",
                         description = "Força eletrostática entre duas cargas puntiformes no vácuo.",
                         parametersInfo = "K_0 = 9 * 10^9 N m²/C². Se a distância d dobra, a força cai para 1/4."
                     )
@@ -481,7 +481,7 @@ object PhysicsMechanicsElectricityDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Contato entre Esferas Idênticas",
-                        codeOrFormula = "Q' = \\frac{Q_A + Q_B}{2} = \\frac{+6\\mu\\text{C} + (-2\\mu\\text{C})}{2} = +2\\mu\\text{C}",
+                        codeOrFormula = """Q' = \\frac{Q_A + Q_B}{2} = \\frac{+6\\mu\\text{C} + (-2\\mu\\text{C})}{2} = +2\\mu\\text{C}""",
                         explanation = "Duas esferas condutoras idênticas com cargas +6 μC e -2 μC entram em contato. A carga final de cada uma após a separação é +2 μC."
                     )
                 ),
@@ -509,7 +509,7 @@ object PhysicsMechanicsElectricityDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Relação Campo Uniforme e DDP",
-                        syntax = "U = E \\cdot d",
+                        syntax = """U = E \\cdot d""",
                         description = "Válido para placas condutoras paralelas (capacitores planos).",
                         parametersInfo = "U em Volts, E em V/m ou N/C, d em metros."
                     ),
@@ -550,13 +550,13 @@ object PhysicsMechanicsElectricityDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Fluxo Magnético",
-                        syntax = "\\Phi = B \\cdot A \\cdot \\cos(\\theta)",
+                        syntax = """\\Phi = B \\cdot A \\cdot \\cos(\\theta)""",
                         description = "Quantidade de linhas de campo que atravessam uma área de superfície.",
                         parametersInfo = "Unidade no SI: Weber (Wb) = Tesla * metro quadrado."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Lei de Faraday-Lenz",
-                        syntax = "\\mathcal{E} = -\\frac{\\Delta \\Phi}{\\Delta t}",
+                        syntax = """\\mathcal{E} = -\\frac{\\Delta \\Phi}{\\Delta t}""",
                         description = "Força eletromotriz induzida pela variação do fluxo no tempo.",
                         parametersInfo = "Base operacional de usinas elétricas, alternadores de carros e captadores de guitarra."
                     )

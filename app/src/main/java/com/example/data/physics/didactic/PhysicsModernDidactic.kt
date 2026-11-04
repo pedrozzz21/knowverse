@@ -135,32 +135,32 @@ A radiação luminosa com comprimentos de onda superiores a \( 680\text{ nm} \) 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação Fotoelétrica de Einstein",
-                syntax = "E_{\\text{fóton}} = \\Phi + E_{c,\\text{máx}} \\iff h \\cdot f = h \\cdot f_0 + E_{c,\\text{máx}}",
+                syntax = """E_{\\text{fóton}} = \\Phi + E_{c,\\text{máx}} \\iff h \\cdot f = h \\cdot f_0 + E_{c,\\text{máx}}""",
                 description = "Balanço de energia de colisão unitária onde a energia do fóton incidente supera a função trabalho do metal e ejeta o elétron.",
-                parametersInfo = "h: \\text{Planck}; \\quad f: \\text{frequência}; \\quad \\Phi = h f_0: \\text{função trabalho}; \\quad E_{c,\\text{máx}}: \\text{energia cinética máxima}"
+                parametersInfo = """h: \\text{Planck}; \\quad f: \\text{frequência}; \\quad \\Phi = h f_0: \\text{função trabalho}; \\quad E_{c,\\text{máx}}: \\text{energia cinética máxima}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Comprimento de Onda de De Broglie",
-                syntax = "\\lambda = \\frac{h}{p} = \\frac{h}{m \\cdot v}",
+                syntax = """\\lambda = \\frac{h}{p} = \\frac{h}{m \\cdot v}""",
                 description = "Postulado da dualidade onda-partícula associando um comprimento de onda quântico a qualquer corpo material em movimento.",
-                parametersInfo = "\\lambda: \\text{comprimento de onda da matéria (m)}; \\quad p: \\text{momento linear (kg}\\cdot\\text{m/s)}; \\quad m: \\text{massa}"
+                parametersInfo = """\\lambda: \\text{comprimento de onda da matéria (m)}; \\quad p: \\text{momento linear (kg}\\cdot\\text{m/s)}; \\quad m: \\text{massa}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Energia do Fóton em Função do Comprimento de Onda",
-                syntax = "E = \\frac{h \\cdot c}{\\lambda}",
+                syntax = """E = \\frac{h \\cdot c}{\\lambda}""",
                 description = "Energia transportada pelo fóton inversamente proporcional ao seu comprimento de onda no vácuo.",
-                parametersInfo = "h = 6{,}63 \\times 10^{-34}\\text{ J}\\cdot\\text{s}; \\quad c = 3 \\times 10^8\\text{ m/s}; \\quad \\lambda: \\text{comprimento de onda}"
+                parametersInfo = """h = 6{,}63 \\times 10^{-34}\\text{ J}\\cdot\\text{s}; \\quad c = 3 \\times 10^8\\text{ m/s}; \\quad \\lambda: \\text{comprimento de onda}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Independência entre Intensidade e Energia Cinética",
-                codeOrFormula = "\\text{Intensidade Luminosa } \\uparrow \\implies \\text{Número de Fótons/s } \\uparrow \\implies i_{\\text{fotoelétrica}} \\uparrow \\quad (E_{c,\\text{máx}} = \\text{constante})",
+                codeOrFormula = """\\text{Intensidade Luminosa } \\uparrow \\implies \\text{Número de Fótons/s } \\uparrow \\implies i_{\\text{fotoelétrica}} \\uparrow \\quad (E_{c,\\text{máx}} = \\text{constante})""",
                 explanation = "Mais luz apenas ejeta mais elétrons por segundo; a velocidade de saída de cada elétron é governada estritamente pela frequência do fóton."
             ),
             LessonExample(
                 title = "Célula Fotovoltaica e Conversão Solar",
-                codeOrFormula = "h \\cdot f \\ge E_{\\text{gap}} \\implies \\text{Excitação de Elétrons para a Banda de Condução}",
+                codeOrFormula = """h \\cdot f \\ge E_{\\text{gap}} \\implies \\text{Excitação de Elétrons para a Banda de Condução}""",
                 explanation = "O fóton solar absorvido pela junção de silício quebra pares eletrônicos gerando corrente elétrica renovável utilizável."
             )
         ),
@@ -319,32 +319,32 @@ Por que a Fusão Nuclear é considerada a fonte de energia definitiva e ideal do
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Transição Eletrônica e Fóton de Bohr",
-                syntax = "\\Delta E = E_{\\text{final}} - E_{\\text{inicial}} = h \\cdot f = \\frac{h \\cdot c}{\\lambda}",
+                syntax = """\\Delta E = E_{\\text{final}} - E_{\\text{inicial}} = h \\cdot f = \\frac{h \\cdot c}{\\lambda}""",
                 description = "Energia discreta do fóton emitido ou absorvido correspondente à diferença exata entre dois níveis quânticos.",
-                parametersInfo = "\\Delta E: \\text{diferença de energia em Joules ou eV}; \\quad h: \\text{Planck}; \\quad f: \\text{frequência}"
+                parametersInfo = """\\Delta E: \\text{diferença de energia em Joules ou eV}; \\quad h: \\text{Planck}; \\quad f: \\text{frequência}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação do Decaimento e Meia-Vida",
-                syntax = "N(t) = N_0 \\cdot \\left(\\frac{1}{2}\\right)^{\\frac{t}{T_{1/2}}}",
+                syntax = """N(t) = N_0 \\cdot \\left(\\frac{1}{2}\\right)^{\\frac{t}{T_{1/2}}}""",
                 description = "Lei exponencial do decaimento radioativo calculando a massa ou atividade remanescente.",
-                parametersInfo = "N_0: \\text{quantidade inicial}; \\quad t: \\text{tempo total decorrido}; \\quad T_{1/2}: \\text{período de meia-vida}"
+                parametersInfo = """N_0: \\text{quantidade inicial}; \\quad t: \\text{tempo total decorrido}; \\quad T_{1/2}: \\text{período de meia-vida}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Equivalência Massa-Energia de Einstein",
-                syntax = "E = \\Delta m \\cdot c^2",
+                syntax = """E = \\Delta m \\cdot c^2""",
                 description = "Energia liberada em processos nucleares decorrente do defeito de massa entre reagentes e produtos.",
-                parametersInfo = "\\Delta m: \\text{diferença de massa (kg)}; \\quad c = 3 \\times 10^8\\text{ m/s}; \\quad E: \\text{energia em Joules}"
+                parametersInfo = """\\Delta m: \\text{diferença de massa (kg)}; \\quad c = 3 \\times 10^8\\text{ m/s}; \\quad E: \\text{energia em Joules}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Datação por Carbono-14",
-                codeOrFormula = "\\text{Atividade} = \\frac{1}{4} \\text{ da inicial} \\implies x = 2 \\text{ meias-vidas} \\implies t = 2 \\times 5730 = 11460\\text{ anos}",
+                codeOrFormula = """\\text{Atividade} = \\frac{1}{4} \\text{ da inicial} \\implies x = 2 \\text{ meias-vidas} \\implies t = 2 \\times 5730 = 11460\\text{ anos}""",
                 explanation = "A redução exponencial a um quarto do valor original revela com exatidão o transcurso de duas meias-vidas históricas."
             ),
             LessonExample(
                 title = "Balanço Nuclear na Fissão do Urânio",
-                codeOrFormula = "_{92}^{235}\\text{U} + _0^1\\text{n} \\to _{56}^{141}\\text{Ba} + _{36}^{92}\\text{Kr} + 3 _0^1\\text{n} + \\text{Energia}",
+                codeOrFormula = """_{92}^{235}\\text{U} + _0^1\\text{n} \\to _{56}^{141}\\text{Ba} + _{36}^{92}\\text{Kr} + 3 _0^1\\text{n} + \\text{Energia}""",
                 explanation = "A conservação estrita do número atômico total (92 = 56 + 36) e do número de massa total (236 = 141 + 92 + 3) valida a reação nuclear."
             )
         ),
@@ -478,38 +478,38 @@ O paradoxo dos gêmeos consiste na história de dois irmãos gêmeos idênticos 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Fator de Lorentz Relativístico",
-                syntax = "\\gamma = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}} \\ge 1",
+                syntax = """\\gamma = \\frac{1}{\\sqrt{1 - \\frac{v^2}{c^2}}} \\ge 1""",
                 description = "Fator adimensional de escala que governa as transformações relativísticas de coordenadas temporais e espaciais.",
-                parametersInfo = "v: \\text{velocidade relativa do referencial}; \\quad c = 3 \\times 10^8\\text{ m/s}; \\quad \\gamma \\ge 1"
+                parametersInfo = """v: \\text{velocidade relativa do referencial}; \\quad c = 3 \\times 10^8\\text{ m/s}; \\quad \\gamma \\ge 1"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Dilatação Temporal Relativística",
-                syntax = "\\Delta t = \\gamma \\cdot \\Delta t_0 = \\frac{\\Delta t_0}{\\sqrt{1 - \\frac{v^2}{c^2}}}",
+                syntax = """\\Delta t = \\gamma \\cdot \\Delta t_0 = \\frac{\\Delta t_0}{\\sqrt{1 - \\frac{v^2}{c^2}}}""",
                 description = "Intervalo de tempo dilatado medido por observadores em relação a um relógio em movimento.",
-                parametersInfo = "\\Delta t: \\text{tempo dilatado externo}; \\quad \\Delta t_0: \\text{tempo próprio medido no referencial de repouso}"
+                parametersInfo = """\\Delta t: \\text{tempo dilatado externo}; \\quad \\Delta t_0: \\text{tempo próprio medido no referencial de repouso}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Contração Espacial de Lorentz",
-                syntax = "L = \\frac{L_0}{\\gamma} = L_0 \\cdot \\sqrt{1 - \\frac{v^2}{c^2}}",
+                syntax = """L = \\frac{L_0}{\\gamma} = L_0 \\cdot \\sqrt{1 - \\frac{v^2}{c^2}}""",
                 description = "Encurtamento das dimensões espaciais lineares paralelas ao vetor de velocidade relativa.",
-                parametersInfo = "L: \\text{comprimento contraído observado}; \\quad L_0: \\text{comprimento próprio no repouso}"
+                parametersInfo = """L: \\text{comprimento contraído observado}; \\quad L_0: \\text{comprimento próprio no repouso}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Equivalência Universal Massa-Energia",
-                syntax = "E = m \\cdot c^2 \\quad \\text{e} \\quad E^2 = (p \\cdot c)^2 + (m_0 \\cdot c^2)^2",
+                syntax = """E = m \\cdot c^2 \\quad \\text{e} \\quad E^2 = (p \\cdot c)^2 + (m_0 \\cdot c^2)^2""",
                 description = "Conversão mútua entre massa e energia em repouso e relação com o momento relativístico total.",
-                parametersInfo = "m: \\text{massa inercial (kg)}; \\quad c: \\text{velocidade da luz (m/s)}; \\quad E: \\text{energia em Joules (J)}"
+                parametersInfo = """m: \\text{massa inercial (kg)}; \\quad c: \\text{velocidade da luz (m/s)}; \\quad E: \\text{energia em Joules (J)}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Sobrevivência dos Múons Cósmicos",
-                codeOrFormula = "\\Delta t = \\gamma \\cdot \\Delta t_0 \\approx 16 \\times 2{,}2\\text{ }\\mu\\text{s} = 35{,}2\\text{ }\\mu\\text{s} \\implies d = v \\cdot \\Delta t \\approx 10{,}5\\text{ km}",
+                codeOrFormula = """\\Delta t = \\gamma \\cdot \\Delta t_0 \\approx 16 \\times 2{,}2\\text{ }\\mu\\text{s} = 35{,}2\\text{ }\\mu\\text{s} \\implies d = v \\cdot \\Delta t \\approx 10{,}5\\text{ km}""",
                 explanation = "A dilatação temporal relativística permite que partículas de vida efêmera cruzem a espessura inteira da atmosfera da Terra."
             ),
             LessonExample(
                 title = "Correção Relativística nos Satélites GPS",
-                codeOrFormula = "\\Delta t_{\\text{líquido}} = +45\\text{ }\\mu\\text{s (geral)} - 7\\text{ }\\mu\\text{s (restrita)} = +38\\text{ }\\mu\\text{s/dia}",
+                codeOrFormula = """\\Delta t_{\\text{líquido}} = +45\\text{ }\\mu\\text{s (geral)} - 7\\text{ }\\mu\\text{s (restrita)} = +38\\text{ }\\mu\\text{s/dia}""",
                 explanation = "O relógio do satélite adianta 38 microssegundos por dia devido à menor gravidade superando a dilatação cinética."
             )
         ),

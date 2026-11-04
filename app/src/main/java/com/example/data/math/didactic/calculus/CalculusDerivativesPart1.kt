@@ -120,13 +120,13 @@ Dada a função \( f(x) = \begin{cases} x^2 \sin(1/x), & x \neq 0 \\ 0, & x = 0 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Definição Geral da Função Derivada",
-                syntax = "f'(x) = \\lim_{h \\to 0} \\frac{f(x + h) - f(x)}{h}",
+                syntax = """f'(x) = \\lim_{h \\to 0} \\frac{f(x + h) - f(x)}{h}""",
                 description = "Limite do quociente de Newton para uma abscissa genérica x.",
                 parametersInfo = "Gera uma nova função f'(x) que mapeia cada ponto à sua inclinação."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Notação de Leibniz para Derivada",
-                syntax = "\\frac{df}{dx} = \\frac{d}{dx}[f(x)]",
+                syntax = """\\frac{df}{dx} = \\frac{d}{dx}[f(x)]""",
                 description = "Expressa a razão infinitesimal entre o diferencial df e dx.",
                 parametersInfo = "Ideal para cálculos de taxa de variação e regra da cadeia."
             )
@@ -134,7 +134,7 @@ Dada a função \( f(x) = \begin{cases} x^2 \sin(1/x), & x \neq 0 \\ 0, & x = 0 
         solvedExamples = listOf(
             LessonExample(
                 title = "Demonstração da Falha de Diferenciabilidade em |x|",
-                codeOrFormula = "\\lim_{h \\to 0^+} \\frac{h}{h} = 1 \\quad \\neq \\quad \\lim_{h \\to 0^-} \\frac{-h}{h} = -1",
+                codeOrFormula = """\\lim_{h \\to 0^+} \\frac{h}{h} = 1 \\quad \\neq \\quad \\lim_{h \\to 0^-} \\frac{-h}{h} = -1""",
                 explanation = "As derivadas laterais à direita e à esquerda discordam, provando que bicos não admitem derivada."
             )
         ),
@@ -247,19 +247,19 @@ Deduza a derivada da função \( f(x) = a^x \) (para uma base arbitrária \( a >
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Regra da Potência (Regra do Tombo)",
-                syntax = "\\frac{d}{dx}[x^n] = n x^{n-1} \\quad (n \\in \\mathbb{R})",
+                syntax = """\\frac{d}{dx}[x^n] = n x^{n-1} \\quad (n \\in \\mathbb{R})""",
                 description = "Derivada direta de qualquer potência de x.",
                 parametersInfo = "Converta raízes e frações em potências fracionárias ou negativas antes de aplicar."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Derivadas Trigonométricas Básicas",
-                syntax = "\\frac{d}{dx}[\\sin x] = \\cos x \\qquad \\frac{d}{dx}[\\cos x] = -\\sin x",
+                syntax = """\\frac{d}{dx}[\\sin x] = \\cos x \\qquad \\frac{d}{dx}[\\cos x] = -\\sin x""",
                 description = "Derivadas fundamentais das funções circulares.",
                 parametersInfo = "Lembre-se sempre do sinal negativo na derivada do cosseno."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Derivadas Exponencial e Logarítmica",
-                syntax = "\\frac{d}{dx}[e^x] = e^x \\qquad \\frac{d}{dx}[\\ln x] = \\frac{1}{x}",
+                syntax = """\\frac{d}{dx}[e^x] = e^x \\qquad \\frac{d}{dx}[\\ln x] = \\frac{1}{x}""",
                 description = "Comportamento diferencial de base e.",
                 parametersInfo = "Para ln x, supõe-se x > 0."
             )
@@ -267,7 +267,7 @@ Deduza a derivada da função \( f(x) = a^x \) (para uma base arbitrária \( a >
         solvedExamples = listOf(
             LessonExample(
                 title = "Derivada Rápida de Expressão Algébrica",
-                codeOrFormula = "\\frac{d}{dx}[4x^5 - 7x^3 + 2x - 9] = 20x^4 - 21x^2 + 2",
+                codeOrFormula = """\\frac{d}{dx}[4x^5 - 7x^3 + 2x - 9] = 20x^4 - 21x^2 + 2""",
                 explanation = "Aplicou-se a regra da potência e a linearidade termo a termo sem necessidade de limites."
             )
         ),
@@ -382,19 +382,19 @@ Deduza as regras de derivação para \( \sec x \) e \( \csc x \) expressando-as 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Regra do Produto de Leibniz",
-                syntax = "(u \\cdot v)' = u' \\cdot v + u \\cdot v'",
+                syntax = """(u \\cdot v)' = u' \\cdot v + u \\cdot v'""",
                 description = "Derivada do produto entre duas funções.",
                 parametersInfo = "Ambas as funções devem ser diferenciáveis."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Regra do Quociente",
-                syntax = "\\left(\\frac{u}{v}\\right)' = \\frac{u' \\cdot v - u \\cdot v'}{v^2}",
+                syntax = """\\left(\\frac{u}{v}\\right)' = \\frac{u' \\cdot v - u \\cdot v'}{v^2}""",
                 description = "Derivada da divisão entre duas funções.",
                 parametersInfo = "Exige que o denominador v(x) seja diferente de zero."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Regra da Cadeia (Composição)",
-                syntax = "\\frac{d}{dx}[f(g(x))] = f'(g(x)) \\cdot g'(x)",
+                syntax = """\\frac{d}{dx}[f(g(x))] = f'(g(x)) \\cdot g'(x)""",
                 description = "Derivação de fora para dentro.",
                 parametersInfo = "Multiplica-se a derivada externa pela derivada da função interna."
             )
@@ -402,7 +402,7 @@ Deduza as regras de derivação para \( \sec x \) e \( \csc x \) expressando-as 
         solvedExamples = listOf(
             LessonExample(
                 title = "Diferenciação por Regra da Cadeia",
-                codeOrFormula = "\\frac{d}{dx}[\\sin(4x^2 + 7)] = \\cos(4x^2 + 7) \\cdot \\frac{d}{dx}[4x^2 + 7] = 8x \\cos(4x^2 + 7)",
+                codeOrFormula = """\\frac{d}{dx}[\\sin(4x^2 + 7)] = \\cos(4x^2 + 7) \\cdot \\frac{d}{dx}[4x^2 + 7] = 8x \\cos(4x^2 + 7)""",
                 explanation = "A derivada externa é cos(u) e a derivada do miolo u=4x²+7 é 8x."
             )
         ),
@@ -510,13 +510,13 @@ Dada a relação implícita \( x^2 - xy + y^2 = 3 \), determine os pontos da cur
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Princípio da Derivação Implícita",
-                syntax = "\\frac{d}{dx}[g(y)] = g'(y) \\cdot \\frac{dy}{dx}",
+                syntax = """\\frac{d}{dx}[g(y)] = g'(y) \\cdot \\frac{dy}{dx}""",
                 description = "Aplicação da regra da cadeia a termos dependentes de y.",
                 parametersInfo = "Sempre que derivar um termo em y, multiplique por dy/dx."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Diferenciação Logarítmica para Potências Gerais",
-                syntax = "y = [f(x)]^{g(x)} \\implies \\ln y = g(x) \\ln f(x) \\implies y' = y \\left[g'(x) \\ln f(x) + \\frac{g(x)f'(x)}{f(x)}\\right]",
+                syntax = """y = [f(x)]^{g(x)} \\implies \\ln y = g(x) \\ln f(x) \\implies y' = y \\left[g'(x) \\ln f(x) + \\frac{g(x)f'(x)}{f(x)}\\right]""",
                 description = "Fórmula geral para derivação de potências onde base e expoente variam.",
                 parametersInfo = "Exige que f(x) > 0 no domínio considerado."
             )
@@ -524,7 +524,7 @@ Dada a relação implícita \( x^2 - xy + y^2 = 3 \), determine os pontos da cur
         solvedExamples = listOf(
             LessonExample(
                 title = "Derivação Implícita no Círculo",
-                codeOrFormula = "x^2 + y^2 = 25 \\implies 2x + 2y y' = 0 \\implies y' = -\\frac{x}{y}",
+                codeOrFormula = """x^2 + y^2 = 25 \\implies 2x + 2y y' = 0 \\implies y' = -\\frac{x}{y}""",
                 explanation = "A diferenciação membro a membro preservou a relação sem precisar dividir o círculo em metades superior e inferior."
             )
         ),

@@ -130,13 +130,13 @@ Calcule a integral \( \int \frac{x}{\sqrt{x + 1}} \, dx \) utilizando a substitu
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema da Substituição na Integral",
-                syntax = "\\int f(g(x)) g'(x) \\, dx = \\int f(u) \\, du \\quad [u = g(x), \\; du = g'(x)dx]",
+                syntax = """\\int f(g(x)) g'(x) \\, dx = \\int f(u) \\, du \\quad [u = g(x), \\; du = g'(x)dx]""",
                 description = "Transformação da integral composta em integral simples.",
                 parametersInfo = "A nova variável u deve eliminar completamente a variável x."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Integral da Tangente",
-                syntax = "\\int \\tan x \\, dx = \\ln|\\sec x| + C",
+                syntax = """\\int \\tan x \\, dx = \\ln|\\sec x| + C""",
                 description = "Deduzida pela substituição u = cos(x).",
                 parametersInfo = "Também expressa como -ln|cos(x)| + C."
             )
@@ -144,7 +144,7 @@ Calcule a integral \( \int \frac{x}{\sqrt{x + 1}} \, dx \) utilizando a substitu
         solvedExamples = listOf(
             LessonExample(
                 title = "Integração por Substituição com Balanceamento Numérico",
-                codeOrFormula = "\\int x^2 (x^3 + 4)^5 dx = \\frac{1}{3} \\int u^5 du = \\frac{1}{18}(x^3 + 4)^6 + C",
+                codeOrFormula = """\\int x^2 (x^3 + 4)^5 dx = \\frac{1}{3} \\int u^5 du = \\frac{1}{18}(x^3 + 4)^6 + C""",
                 explanation = "A derivada do miolo u=x³+4 exigia o fator 3, balanceado multiplicando por 1/3 fora da integral."
             )
         ),
@@ -262,7 +262,7 @@ Calcule a integral cíclica clássica \( I = \int e^{2x} \sin x \, dx \) aplican
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Fórmula de Integração por Partes",
-                syntax = "\\int u \\, dv = u \\cdot v - \\int v \\, du",
+                syntax = """\\int u \\, dv = u \\cdot v - \\int v \\, du""",
                 description = "Inversão analítica da regra do produto para integrais.",
                 parametersInfo = "u é diferenciada (du = u'dx) e dv é integrada (v = ∫ dv)."
             ),
@@ -276,7 +276,7 @@ Calcule a integral cíclica clássica \( I = \int e^{2x} \sin x \, dx \) aplican
         solvedExamples = listOf(
             LessonExample(
                 title = "Integração por Partes Padrão",
-                codeOrFormula = "\\int x e^x dx = x e^x - \\int e^x dx = e^x(x - 1) + C",
+                codeOrFormula = """\\int x e^x dx = x e^x - \\int e^x dx = e^x(x - 1) + C""",
                 explanation = "A escolha u=x rebaixou o polinômio para du=dx, deixando uma integral imediata em v."
             )
         ),
@@ -400,13 +400,13 @@ Calcule \( \int \frac{x^3 + 2}{x^2 - 1} \, dx \) realizando a divisão prévia d
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Decomposição em Frações Parciais",
-                syntax = "\\frac{P(x)}{(x - r_1)(x - r_2)} = \\frac{A}{x - r_1} + \\frac{B}{x - r_2}",
+                syntax = """\\frac{P(x)}{(x - r_1)(x - r_2)} = \\frac{A}{x - r_1} + \\frac{B}{x - r_2}""",
                 description = "Separação de razões racionais em termos logarítmicos.",
                 parametersInfo = "Exige que o grau do numerador seja estritamente menor que o do denominador."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Tríade de Substituições Trigonométricas",
-                syntax = "\\sqrt{a^2 - x^2} \\to x = a\\sin\\theta; \\; \\sqrt{a^2 + x^2} \\to x = a\\tan\\theta; \\; \\sqrt{x^2 - a^2} \\to x = a\\sec\\theta",
+                syntax = """\\sqrt{a^2 - x^2} \\to x = a\\sin\\theta; \\; \\sqrt{a^2 + x^2} \\to x = a\\tan\\theta; \\; \\sqrt{x^2 - a^2} \\to x = a\\sec\\theta""",
                 description = "Mapeamento geométrico para eliminação de radicais quadráticos.",
                 parametersInfo = "Utilize um triângulo retângulo auxiliar para reverter à variável x."
             )
@@ -414,7 +414,7 @@ Calcule \( \int \frac{x^3 + 2}{x^2 - 1} \, dx \) realizando a divisão prévia d
         solvedExamples = listOf(
             LessonExample(
                 title = "Decomposição por Frações Parciais",
-                codeOrFormula = "\\int \\frac{5x-4}{x^2-x-2} dx = \\int \\left(\\frac{2}{x-2} + \\frac{3}{x+1}\\right) dx = 2\\ln|x-2| + 3\\ln|x+1| + C",
+                codeOrFormula = """\\int \\frac{5x-4}{x^2-x-2} dx = \\int \\left(\\frac{2}{x-2} + \\frac{3}{x+1}\\right) dx = 2\\ln|x-2| + 3\\ln|x+1| + C""",
                 explanation = "A determinação dos coeficientes A=2 e B=3 converteu uma fração racional em dois logaritmos imediatos."
             )
         ),
@@ -535,19 +535,19 @@ Utilize o TFC Parte 1 e a propriedade de inversão de limites de integração (\
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema Fundamental do Cálculo (Parte 1)",
-                syntax = "\\frac{d}{dx} \\left[ \\int_a^x f(t) \\, dt \\right] = f(x)",
+                syntax = """\\frac{d}{dx} \\left[ \\int_a^x f(t) \\, dt \\right] = f(x)""",
                 description = "Demonstra que a derivação desfaz a acumulação integral.",
                 parametersInfo = "Se o limite for u(x), multiplique por u'(x) pela regra da cadeia."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema Fundamental do Cálculo (Parte 2)",
-                syntax = "\\int_a^b f(x) \\, dx = F(b) - F(a)",
+                syntax = """\\int_a^b f(x) \\, dx = F(b) - F(a)""",
                 description = "Fórmula de Newton-Leibniz para cálculo exato de integrais definidas.",
                 parametersInfo = "F é qualquer primitiva contínua tal que F' = f."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Cálculo de Área Entre Curvas",
-                syntax = "A = \\int_a^b [f(x) - g(x)] \\, dx \\quad (f(x) \\ge g(x))",
+                syntax = """A = \\int_a^b [f(x) - g(x)] \\, dx \\quad (f(x) \\ge g(x))""",
                 description = "Área da região delimitada pela curva superior f e inferior g.",
                 parametersInfo = "Os limites a e b são obtidos pelos pontos de interseção das curvas."
             )
@@ -555,7 +555,7 @@ Utilize o TFC Parte 1 e a propriedade de inversão de limites de integração (\
         solvedExamples = listOf(
             LessonExample(
                 title = "Cálculo de Área por Primitiva com TFC 2",
-                codeOrFormula = "\\int_0^3 x^2 dx = \\left[ \\frac{x^3}{3} \\right]_0^3 = \\frac{27}{3} - 0 = 9",
+                codeOrFormula = """\\int_0^3 x^2 dx = \\left[ \\frac{x^3}{3} \\right]_0^3 = \\frac{27}{3} - 0 = 9""",
                 explanation = "A avaliação da primitiva nos extremos substituiu completamente a soma infinita de limites de Riemann."
             )
         ),

@@ -418,13 +418,13 @@ Construa um algoritmo que determine se um número inteiro positivo fornecido na 
         functionsAndSyntax = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "range()",
-                syntax = "range(stop) \\quad | \\quad range(start, stop[, step])",
+                syntax = """range(stop) \\quad | \\quad range(start, stop[, step])""",
                 description = "Gera uma sequência aritmética imutável de inteiros no intervalo semiaberto [start, stop).",
                 parametersInfo = "stop é estritamente exclusivo. step define o incremento ou decremento."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "break e continue",
-                syntax = "break (interrupção total) \\quad | \\quad continue (salto de ciclo)",
+                syntax = """break (interrupção total) \\quad | \\quad continue (salto de ciclo)""",
                 description = "Comandos de controle de fluxo interno em laços de repetição.",
                 parametersInfo = "Utilizados dentro de estruturas condicionais no corpo do loop."
             )
@@ -571,13 +571,13 @@ Crie um cadastro de turma escolar onde a chave principal seja o nome do aluno e 
         functionsAndSyntax = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "dict e Sintaxe {}",
-                syntax = "d = {'chave': valor, ...} \\quad | \\quad d = dict()",
+                syntax = """d = {'chave': valor, ...} \\quad | \\quad d = dict()""",
                 description = "Coleção associativa mutável de pares chave-valor indexada por hashing.",
                 parametersInfo = "As chaves devem ser tipos imutáveis (strings, números, tuplas)."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = ".get() e .items()",
-                syntax = "d.get(chave, default) \\quad | \\quad for k, v in d.items():",
+                syntax = """d.get(chave, default) \\quad | \\quad for k, v in d.items():""",
                 description = "Métodos para acesso seguro sem KeyError e iteração estruturada de pares.",
                 parametersInfo = "default é retornado caso a chave não esteja presente no dicionário."
             )

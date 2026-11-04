@@ -120,7 +120,7 @@ Construa um único comando `print()` que desenhe na tela um triângulo de três 
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Caracteres de Escape",
-                syntax = "\\n (quebra de linha) \\t (tabulação) \\\\ (barra)",
+                syntax = """\\n (quebra de linha) \\t (tabulação) \\\\ (barra)""",
                 description = "Sequências especiais que representam caracteres não-imprimíveis dentro de strings.",
                 parametersInfo = "Precedidos obrigatoriamente por barra invertida."
             )
@@ -265,7 +265,7 @@ Por que a lista `a` também foi modificada, e qual a diferença entre atribuir u
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Atribuição Simples e Múltipla",
-                syntax = "x = valor \\quad | \\quad a, b = val1, val2",
+                syntax = """x = valor \\quad | \\quad a, b = val1, val2""",
                 description = "Vincula um identificador simbólico à referência de um objeto.",
                 parametersInfo = "O lado direito é avaliado completamente antes da associação das variáveis."
             )
@@ -402,7 +402,7 @@ Por que a instrução `int("3.14")` gera imediatamente um `ValueError` em Python
         functionsAndSyntax = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "int(), float(), str(), bool()",
-                syntax = "int(x) \\quad | \\quad float(x) \\quad | \\quad str(x) \\quad | \\quad bool(x)",
+                syntax = """int(x) \\quad | \\quad float(x) \\quad | \\quad str(x) \\quad | \\quad bool(x)""",
                 description = "Funções construtoras para conversão explícita de tipos.",
                 parametersInfo = "x: valor a ser convertido para a classe de destino."
             ),

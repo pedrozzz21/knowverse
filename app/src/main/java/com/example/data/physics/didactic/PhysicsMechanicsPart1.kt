@@ -128,13 +128,13 @@ Dois trens de 100 metros de comprimento cada movem-se em trilhos paralelos em se
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação de Torricelli",
-                syntax = "v^2 = v_0^2 + 2 \\cdot a \\cdot \\Delta S",
+                syntax = """v^2 = v_0^2 + 2 \\cdot a \\cdot \\Delta S""",
                 description = "Relaciona a velocidade inicial, velocidade final, aceleração e deslocamento sem depender da variável tempo.",
                 parametersInfo = "v é velocidade final (m/s), v0 é inicial (m/s), a é aceleração (m/s²) e ΔS é deslocamento (m)."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Função Horária da Posição no MRUV",
-                syntax = "S(t) = S_0 + v_0 \\cdot t + \\frac{1}{2} a \\cdot t^2",
+                syntax = """S(t) = S_0 + v_0 \\cdot t + \\frac{1}{2} a \\cdot t^2""",
                 description = "Equação parabólica que define a posição escalar em função do tempo decorrido.",
                 parametersInfo = "S0 é posição inicial, v0 é velocidade inicial e a é a taxa constante de variação da velocidade."
             )
@@ -142,7 +142,7 @@ Dois trens de 100 metros de comprimento cada movem-se em trilhos paralelos em se
         solvedExamples = listOf(
             LessonExample(
                 title = "Frenagem de Emergência com Torricelli",
-                codeOrFormula = "v^2 = v_0^2 + 2a\\Delta S \\implies 0 = 20^2 + 2(-5)\\Delta S \\implies \\Delta S = 40\\text{ m}",
+                codeOrFormula = """v^2 = v_0^2 + 2a\\Delta S \\implies 0 = 20^2 + 2(-5)\\Delta S \\implies \\Delta S = 40\\text{ m}""",
                 explanation = "Aplicando Torricelli diretamente para uma desaceleração de 5 m/s² a partir de 20 m/s (72 km/h) até a parada total."
             )
         ),
@@ -263,13 +263,13 @@ Uma esfera é solta da borda de uma mesa horizontal de altura \( H \) ao mesmo t
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Propriedade da Área no Gráfico v x t",
-                syntax = "\\Delta S \\stackrel{\\text{num}}{=} \\text{Área sob a curva do gráfico } v(t)",
+                syntax = """\\Delta S \\stackrel{\\text{num}}{=} \\text{Área sob a curva do gráfico } v(t)""",
                 description = "O cálculo da área de figuras geométricas (retângulos, trapézios) no diagrama v x t fornece o deslocamento escalar.",
                 parametersInfo = "Válido universalmente para qualquer tipo de movimento."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Decomposição do Lançamento Oblíquo",
-                syntax = "v_x = v_0 \\cos\\theta \\quad (\\text{MRU}) \\quad | \\quad v_y(t) = v_0 \\sin\\theta - g \\cdot t \\quad (\\text{MRUV})",
+                syntax = """v_x = v_0 \\cos\\theta \\quad (\\text{MRU}) \\quad | \\quad v_y(t) = v_0 \\sin\\theta - g \\cdot t \\quad (\\text{MRUV})""",
                 description = "Separação do movimento parabólico em um eixo inercial e um eixo uniformemente acelerado pela gravidade.",
                 parametersInfo = "Galileu postulou que os movimentos ortogonais não interferem na dinâmica um do outro."
             )
@@ -277,7 +277,7 @@ Uma esfera é solta da borda de uma mesa horizontal de altura \( H \) ao mesmo t
         solvedExamples = listOf(
             LessonExample(
                 title = "Cálculo de Deslocamento por Área de Trapézio",
-                codeOrFormula = "\\Delta S = \\frac{(B + b) \\cdot h}{2} = \\frac{(20 + 10) \\cdot 30}{2} = 450\\text{ m}",
+                codeOrFormula = """\\Delta S = \\frac{(B + b) \\cdot h}{2} = \\frac{(20 + 10) \\cdot 30}{2} = 450\\text{ m}""",
                 explanation = "Determinação da distância percorrida por um veículo que acelerou até 30 m/s em 10 s e manteve-se constante por mais 10 s."
             )
         ),
@@ -404,13 +404,13 @@ A Terra realiza uma rotação completa sobre seu próprio eixo em aproximadament
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Aceleração Centrípeta",
-                syntax = "a_{cp} = \\frac{v^2}{R} = \\omega^2 \\cdot R",
+                syntax = """a_{cp} = \\frac{v^2}{R} = \\omega^2 \\cdot R""",
                 description = "Aceleração perpendicular à velocidade responsável por alterar a direção da trajetória curva.",
                 parametersInfo = "v é velocidade linear (m/s), ω é velocidade angular (rad/s) e R é o raio da trajetória (m)."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Transmissão por Correia ou Engrenagem",
-                syntax = "v_1 = v_2 \\implies f_1 \\cdot R_1 = f_2 \\cdot R_2 \\iff f_1 \\cdot N_1 = f_2 \\cdot N_2",
+                syntax = """v_1 = v_2 \\implies f_1 \\cdot R_1 = f_2 \\cdot R_2 \\iff f_1 \\cdot N_1 = f_2 \\cdot N_2""",
                 description = "A velocidade linear na borda é comum, resultando em frequências inversamente proporcionais aos raios ou números de dentes.",
                 parametersInfo = "A roda menor sempre gira com maior frequência que a roda maior."
             )
@@ -418,7 +418,7 @@ A Terra realiza uma rotação completa sobre seu próprio eixo em aproximadament
         solvedExamples = listOf(
             LessonExample(
                 title = "Acoplamento de Catraca e Coroa de Bicicleta",
-                codeOrFormula = "f_{\\text{coroa}} R_{\\text{coroa}} = f_{\\text{catraca}} R_{\\text{catraca}} \\implies 2 \\times 15 = f_{\\text{cat}} \\times 5 \\implies f_{\\text{cat}} = 6\\text{ Hz}",
+                codeOrFormula = """f_{\\text{coroa}} R_{\\text{coroa}} = f_{\\text{catraca}} R_{\\text{catraca}} \\implies 2 \\times 15 = f_{\\text{cat}} \\times 5 \\implies f_{\\text{cat}} = 6\\text{ Hz}""",
                 explanation = "A corrente transmite a mesma velocidade linear periférica, multiplicando a rotação da catraca traseira."
             )
         ),
@@ -545,13 +545,13 @@ Analise as forças que atuam sobre um automóvel com tração nas rodas dianteir
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Segunda Lei de Newton",
-                syntax = "\\vec{F}_{\\text{res}} = \\sum \\vec{F} = m \\cdot \\vec{a}",
+                syntax = """\\vec{F}_{\\text{res}} = \\sum \\vec{F} = m \\cdot \\vec{a}""",
                 description = "Princípio fundamental que relaciona a aceleração vetorial adquirida pela massa à força resultante aplicada.",
                 parametersInfo = "No SI: Força em Newtons (N), massa em kg e aceleração em m/s²."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Leis do Atrito Sólido",
-                syntax = "f_{at,e} \\le \\mu_e \\cdot N \\quad | \\quad f_{at,c} = \\mu_c \\cdot N \\quad (\\mu_e > \\mu_c)",
+                syntax = """f_{at,e} \\le \\mu_e \\cdot N \\quad | \\quad f_{at,c} = \\mu_c \\cdot N \\quad (\\mu_e > \\mu_c)""",
                 description = "O atrito estático equilibra a solicitação externa até o valor máximo de destaque; o atrito cinético é constante durante o deslizamento.",
                 parametersInfo = "N é a força de compressão normal entre as superfícies e μ é o coeficiente de atrito."
             )
@@ -559,7 +559,7 @@ Analise as forças que atuam sobre um automóvel com tração nas rodas dianteir
         solvedExamples = listOf(
             LessonExample(
                 title = "Bloco com Força Abaixo do Atrito de Destaque",
-                codeOrFormula = "f_{at,e}^{\\text{máx}} = 0{,}4 \\times 100 = 40\\text{ N} \\implies F_{\\text{aplicada}} = 30\\text{ N} < 40\\text{ N} \\implies f_{at} = 30\\text{ N} \\text{ e } a = 0",
+                codeOrFormula = """f_{at,e}^{\\text{máx}} = 0{,}4 \\times 100 = 40\\text{ N} \\implies F_{\\text{aplicada}} = 30\\text{ N} < 40\\text{ N} \\implies f_{at} = 30\\text{ N} \\text{ e } a = 0""",
                 explanation = "Se a força aplicada não ultrapassa o atrito de destaque máximo, o corpo não se move e o atrito estático assume exatamente o valor da força aplicada."
             )
         ),
@@ -687,13 +687,13 @@ Analise um carrinho de mão de construção civil carregado com 100 kg de terra.
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação da Talha Exponencial",
-                syntax = "F_{\\text{potente}} = \\frac{P_{\\text{carga}}}{2^n} \\quad | \\quad d_{\\text{corda}} = 2^n \\cdot h",
+                syntax = """F_{\\text{potente}} = \\frac{P_{\\text{carga}}}{2^n} \\quad | \\quad d_{\\text{corda}} = 2^n \\cdot h""",
                 description = "Cada polia móvel adicional divide a força necessária pela metade, dobrando o percurso de corda tracionado.",
                 parametersInfo = "n é a quantidade de roldanas móveis presentes no dispositivo mecânico."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Equilíbrio Estático de Alavancas (Torque)",
-                syntax = "F_P \\cdot b_P = F_R \\cdot b_R",
+                syntax = """F_P \\cdot b_P = F_R \\cdot b_R""",
                 description = "Condição de equilíbrio rotacional onde a soma dos momentos potentes anula a soma dos momentos resistentes.",
                 parametersInfo = "bP e bR são as distâncias perpendiculares da força potente e resistente ao ponto de apoio."
             )
@@ -701,7 +701,7 @@ Analise um carrinho de mão de construção civil carregado com 100 kg de terra.
         solvedExamples = listOf(
             LessonExample(
                 title = "Alívio de Esforço com Talha de 3 Polias Móveis",
-                codeOrFormula = "F = \\frac{2.400\\text{ N}}{2^3} = \\frac{2.400}{8} = 300\\text{ N} \\quad (d = 2^3 \\times 2 = 16\\text{ m})",
+                codeOrFormula = """F = \\frac{2.400\\text{ N}}{2^3} = \\frac{2.400}{8} = 300\\text{ N} \\quad (d = 2^3 \\times 2 = 16\\text{ m})""",
                 explanation = "A carga de 2.400 N é içada aplicando apenas 300 N, demandando 16 metros de corda esticada pelo operador."
             )
         ),

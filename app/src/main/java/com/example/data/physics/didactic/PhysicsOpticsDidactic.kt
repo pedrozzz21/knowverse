@@ -134,26 +134,26 @@ Considere uma câmara escura de orifício que projeta uma imagem nítida sobre u
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação da Câmara Escura de Orifício",
-                syntax = "\\frac{i}{o} = \\frac{p'}{p}",
+                syntax = """\\frac{i}{o} = \\frac{p'}{p}""",
                 description = "Proporção geométrica direta relacionando o tamanho do objeto e da imagem com as respectivas distâncias ao orifício.",
-                parametersInfo = "i: \\text{tamanho da imagem}; \\quad o: \\text{tamanho do objeto}; \\quad p': \\text{profundidade da câmara}; \\quad p: \\text{distância do objeto}"
+                parametersInfo = """i: \\text{tamanho da imagem}; \\quad o: \\text{tamanho do objeto}; \\quad p': \\text{profundidade da câmara}; \\quad p: \\text{distância do objeto}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Semelhança de Sombras Retilíneas",
-                syntax = "\\frac{H}{S} = \\frac{h}{s} = \\tan\\theta_{\\text{solar}}",
+                syntax = """\\frac{H}{S} = \\frac{h}{s} = \\tan\\theta_{\\text{solar}}""",
                 description = "Cálculo trigonométrico de alturas acessíveis ou inacessíveis por meio do comprimento de sombras projetadas simultaneamente.",
-                parametersInfo = "H, h: \\text{alturas}; \\quad S, s: \\text{comprimentos das sombras}; \\quad \\theta: \\text{ângulo de elevação solar}"
+                parametersInfo = """H, h: \\text{alturas}; \\quad S, s: \\text{comprimentos das sombras}; \\quad \\theta: \\text{ângulo de elevação solar}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Inversão de Imagem na Câmara Escura",
-                codeOrFormula = "\\text{Orientação} = \\text{Invertida Vertical e Horizontalmente}",
+                codeOrFormula = """\\text{Orientação} = \\text{Invertida Vertical e Horizontalmente}""",
                 explanation = "O cruzamento retilíneo dos raios de luz ao passarem pelo orifício central inverte tanto o sentido vertical (topo vai para a base) quanto lateral."
             ),
             LessonExample(
                 title = "Projeção Solar em Eclipse Parcial",
-                codeOrFormula = "\\text{Região Terrestre na Penumbra} \\implies \\text{Visualização de Eclipse Solar Parcial}",
+                codeOrFormula = """\\text{Região Terrestre na Penumbra} \\implies \\text{Visualização de Eclipse Solar Parcial}""",
                 explanation = "A penumbra corresponde à região que recebe luz de apenas uma fração da superfície do disco solar extenso."
             )
         ),
@@ -284,32 +284,32 @@ Qual deve ser o comprimento vertical mínimo de um espelho plano preso a uma par
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Associação Angular de Espelhos Planos",
-                syntax = "N = \\frac{360^\\circ}{\\alpha} - 1",
+                syntax = """N = \\frac{360^\\circ}{\\alpha} - 1""",
                 description = "Cálculo do número de imagens virtuais formadas por reflexões sucessivas entre dois espelhos planos formando um ângulo alfa.",
-                parametersInfo = "N: \\text{número total de imagens}; \\quad \\alpha: \\text{ângulo entre as superfícies refletoras em graus}"
+                parametersInfo = """N: \\text{número total de imagens}; \\quad \\alpha: \\text{ângulo entre as superfícies refletoras em graus}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Distância Focal dos Espelhos Esféricos de Gauss",
-                syntax = "f = \\frac{R}{2}",
+                syntax = """f = \\frac{R}{2}""",
                 description = "Relação para pequenas calotas paraxiais onde a distância focal é exatamente a metade do raio de curvatura.",
-                parametersInfo = "f: \\text{distância focal (m ou cm)}; \\quad R: \\text{raio da calota esférica (m ou cm)}"
+                parametersInfo = """f: \\text{distância focal (m ou cm)}; \\quad R: \\text{raio da calota esférica (m ou cm)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Velocidade Relativa da Imagem no Espelho Móvel",
-                syntax = "v_{\\text{imagem/solo}} = 2 \\cdot v_{\\text{espelho/solo}}",
+                syntax = """v_{\\text{imagem/solo}} = 2 \\cdot v_{\\text{espelho/solo}}""",
                 description = "Efeito de arraste multiplicador decorrente do deslocamento translacional da superfície refletora.",
-                parametersInfo = "v_{\\text{espelho}}: \\text{velocidade de deslocamento do espelho em relação ao solo}"
+                parametersInfo = """v_{\\text{espelho}}: \\text{velocidade de deslocamento do espelho em relação ao solo}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Campo Visual do Retrovisor Convexo",
-                codeOrFormula = "\\text{Tamanho Imagem Reduzido} \\implies \\text{Maior Ângulo Sólido de Varredura Visual}",
+                codeOrFormula = """\\text{Tamanho Imagem Reduzido} \\implies \\text{Maior Ângulo Sólido de Varredura Visual}""",
                 explanation = "A formação de imagens menores e compactas no espelho convexo permite abranger uma extensão angular drasticamente maior do tráfego traseiro."
             ),
             LessonExample(
                 title = "Farol de Automóvel e Foco Côncavo",
-                codeOrFormula = "p = f \\implies p' \\to \\infty \\implies \\text{Feixe Cilíndrico de Raios Paralelos}",
+                codeOrFormula = """p = f \\implies p' \\to \\infty \\implies \\text{Feixe Cilíndrico de Raios Paralelos}""",
                 explanation = "A lâmpada montada exatamente sobre o ponto focal principal reflete todos os raios luminosos paralelamente ao eixo da pista."
             )
         ),
@@ -439,32 +439,32 @@ A luz solar cruza o vácuo interplanetário e atravessa as camadas de gases da a
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Índice de Refração Absoluto",
-                syntax = "n = \\frac{c}{v}",
+                syntax = """n = \\frac{c}{v}""",
                 description = "Razão adimensional entre a velocidade da luz no vácuo e a velocidade de fase no meio óptico.",
-                parametersInfo = "c = 3 \\times 10^8\\text{ m/s}; \\quad v: \\text{velocidade no meio (m/s)}; \\quad n \\ge 1"
+                parametersInfo = """c = 3 \\times 10^8\\text{ m/s}; \\quad v: \\text{velocidade no meio (m/s)}; \\quad n \\ge 1"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Lei de Snell-Descartes",
-                syntax = "n_1 \\cdot \\operatorname{sen}\\theta_1 = n_2 \\cdot \\operatorname{sen}\\theta_2",
+                syntax = """n_1 \\cdot \\operatorname{sen}\\theta_1 = n_2 \\cdot \\operatorname{sen}\\theta_2""",
                 description = "Equação fundamental que governa a refração angular da luz entre dois meios dielétricos isotrópicos.",
-                parametersInfo = "n_1, n_2: \\text{índices dos meios}; \\quad \\theta_1, \\theta_2: \\text{ângulos medidos em relação à reta normal}"
+                parametersInfo = """n_1, n_2: \\text{índices dos meios}; \\quad \\theta_1, \\theta_2: \\text{ângulos medidos em relação à reta normal}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Condição do Ângulo Limite para Reflexão Total",
-                syntax = "\\operatorname{sen}\\theta_L = \\frac{n_{\\text{menor}}}{n_{\\text{maior}}} \\quad (\\theta_i > \\theta_L)",
+                syntax = """\\operatorname{sen}\\theta_L = \\frac{n_{\\text{menor}}}{n_{\\text{maior}}} \\quad (\\theta_i > \\theta_L)""",
                 description = "Expressão do ângulo crítico a partir do qual ocorre reflexão interna total sem qualquer transmissão refratada.",
-                parametersInfo = "\\theta_L: \\text{ângulo limite de incidência}; \\quad n_{\\text{maior}}: \\text{meio de origem}; \\quad n_{\\text{menor}}: \\text{meio externo}"
+                parametersInfo = """\\theta_L: \\text{ângulo limite de incidência}; \\quad n_{\\text{maior}}: \\text{meio de origem}; \\quad n_{\\text{menor}}: \\text{meio externo}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Reflexão Interna Total em Fibra Óptica",
-                codeOrFormula = "n_{\\text{núcleo}} > n_{\\text{casca}} \\implies \\operatorname{sen}\\theta_L = \\frac{n_{\\text{casca}}}{n_{\\text{núcleo}}}",
+                codeOrFormula = """n_{\\text{núcleo}} > n_{\\text{casca}} \\implies \\operatorname{sen}\\theta_L = \\frac{n_{\\text{casca}}}{n_{\\text{núcleo}}}""",
                 explanation = "A contenção dos pulsos luminosos de internet de alta velocidade baseia-se na reflexão total na interface núcleo-casca."
             ),
             LessonExample(
                 title = "Profundidade Aparente no Dioptro Plano",
-                codeOrFormula = "h_{\\text{aparente}} = h_{\\text{real}} \\cdot \\frac{n_{\\text{ar}}}{n_{\\text{água}}} = \\frac{h}{1{,}33} \\approx 0{,}75 \\cdot h",
+                codeOrFormula = """h_{\\text{aparente}} = h_{\\text{real}} \\cdot \\frac{n_{\\text{ar}}}{n_{\\text{água}}} = \\frac{h}{1{,}33} \\approx 0{,}75 \\cdot h""",
                 explanation = "A refração dos raios emergentes faz o fundo da piscina ou o peixe parecer 25% mais próximo da superfície do que a realidade física."
             )
         ),
@@ -616,32 +616,32 @@ Por que os astrônomos do século XVII e XVIII construíam telescópios refrator
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação de Gauss para Lentes Delgadas",
-                syntax = "\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{p'}",
+                syntax = """\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{p'}""",
                 description = "Relação fundamental de conjugação entre a distância focal, a distância do objeto e a distância da imagem projetada.",
-                parametersInfo = "f: \\text{distância focal}; \\quad p: \\text{distância do objeto ao centro óptico}; \\quad p': \\text{distância da imagem}"
+                parametersInfo = """f: \\text{distância focal}; \\quad p: \\text{distância do objeto ao centro óptico}; \\quad p': \\text{distância da imagem}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Aumento Linear Transversal",
-                syntax = "A = \\frac{i}{o} = -\\frac{p'}{p} = \\frac{f}{f - p}",
+                syntax = """A = \\frac{i}{o} = -\\frac{p'}{p} = \\frac{f}{f - p}""",
                 description = "Relação de ampliação ou redução dimensional e inversão de orientação da imagem em relação ao objeto.",
-                parametersInfo = "i: \\text{tamanho da imagem}; \\quad o: \\text{tamanho do objeto}; \\quad A > 0 \\text{ (direita)}; \\quad A < 0 \\text{ (invertida)}"
+                parametersInfo = """i: \\text{tamanho da imagem}; \\quad o: \\text{tamanho do objeto}; \\quad A > 0 \\text{ (direita)}; \\quad A < 0 \\text{ (invertida)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Vergência ou Grau da Lente",
-                syntax = "V = \\frac{1}{f} \\quad (f \\text{ em metros})",
+                syntax = """V = \\frac{1}{f} \\quad (f \\text{ em metros})""",
                 description = "Capacidade de refração e convergência angular de uma lente óptica expressa na unidade internacional dioptria.",
-                parametersInfo = "V: \\text{vergência em dioptrias (di)}; \\quad f: \\text{distância focal em metros (m)}"
+                parametersInfo = """V: \\text{vergência em dioptrias (di)}; \\quad f: \\text{distância focal em metros (m)}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Funcionamento da Lupa Manual",
-                codeOrFormula = "p < f \\implies p' < 0 \\implies A = \\frac{f}{f - p} > 1 \\quad (\\text{Virtual, Direita e Ampliada})",
+                codeOrFormula = """p < f \\implies p' < 0 \\implies A = \\frac{f}{f - p} > 1 \\quad (\\text{Virtual, Direita e Ampliada})""",
                 explanation = "Posicionar o objeto mais próximo da lente que a sua distância focal gera uma imagem virtual ampliada no mesmo lado."
             ),
             LessonExample(
                 title = "Cálculo de Vergência em Receita Oftalmológica",
-                codeOrFormula = "V = \\frac{1}{+0{,}25\\text{ m}} = +4{,}0\\text{ dioptrias}",
+                codeOrFormula = """V = \\frac{1}{+0{,}25\\text{ m}} = +4{,}0\\text{ dioptrias}""",
                 explanation = "Uma distância focal convergente de 25 cm equivale no receituário oftálmico a uma lente positiva de 4 graus."
             )
         ),
@@ -777,32 +777,32 @@ Por que quando abrimos os olhos embaixo d'água em uma piscina limpa sem máscar
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Vergência para Correção de Miopia",
-                syntax = "V = -\\frac{1}{d_{\\text{pr}}} \\quad (d_{\\text{pr}} \\text{ em metros})",
+                syntax = """V = -\\frac{1}{d_{\\text{pr}}} \\quad (d_{\\text{pr}} \\text{ em metros})""",
                 description = "Grau negativo da lente divergente necessária para deslocar o foco de objetos no infinito para o ponto remoto do míope.",
-                parametersInfo = "V: \\text{vergência da lente (di)}; \\quad d_{\\text{pr}}: \\text{distância máxima de visão nítida do paciente (m)}"
+                parametersInfo = """V: \\text{vergência da lente (di)}; \\quad d_{\\text{pr}}: \\text{distância máxima de visão nítida do paciente (m)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Vergência para Correção de Hipermetropia",
-                syntax = "V = \\frac{1}{0{,}25} - \\frac{1}{d_{\\text{pp}}} = 4 - \\frac{1}{d_{\\text{pp}}}",
+                syntax = """V = \\frac{1}{0{,}25} - \\frac{1}{d_{\\text{pp}}} = 4 - \\frac{1}{d_{\\text{pp}}}""",
                 description = "Grau positivo da lente convergente para permitir leitura confortável na distância padrão de 25 cm.",
-                parametersInfo = "V: \\text{grau da lente convergente (di)}; \\quad d_{\\text{pp}}: \\text{ponto próximo defeituoso em metros}"
+                parametersInfo = """V: \\text{grau da lente convergente (di)}; \\quad d_{\\text{pp}}: \\text{ponto próximo defeituoso em metros}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Aumento Total do Microscópio Óptico Composto",
-                syntax = "A_{\\text{total}} = A_{\\text{objetiva}} \\cdot A_{\\text{ocular}}",
+                syntax = """A_{\\text{total}} = A_{\\text{objetiva}} \\cdot A_{\\text{ocular}}""",
                 description = "Ampliação combinada do sistema óptico composto de duas lentes convergentes coaxiais.",
-                parametersInfo = "A_{\\text{obj}}: \\text{aumento linear transversal}; \\quad A_{\\text{oc}}: \\text{aumento angular da lente ocular}"
+                parametersInfo = """A_{\\text{obj}}: \\text{aumento linear transversal}; \\quad A_{\\text{oc}}: \\text{aumento angular da lente ocular}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Correção Óptica da Miopia",
-                codeOrFormula = "\\text{Miopia} \\implies \\text{Foco Antes da Retina} \\implies \\text{Lente Divergente (Grau Negativo)}",
+                codeOrFormula = """\\text{Miopia} \\implies \\text{Foco Antes da Retina} \\implies \\text{Lente Divergente (Grau Negativo)}""",
                 explanation = "A lente divergente espalha os raios antes da córnea, fazendo com que a convergência final coincida exatamente na retina."
             ),
             LessonExample(
                 title = "Correção da Hipermetropia",
-                codeOrFormula = "\\text{Hipermetropia} \\implies \\text{Foco Atrás da Retina} \\implies \\text{Lente Convergente (Grau Positivo)}",
+                codeOrFormula = """\\text{Hipermetropia} \\implies \\text{Foco Atrás da Retina} \\implies \\text{Lente Convergente (Grau Positivo)}""",
                 explanation = "A lente convergente antecipa o cruzamento dos raios de luz para que o foco nítido se projete sobre o fundo do olho encurtado."
             )
         ),

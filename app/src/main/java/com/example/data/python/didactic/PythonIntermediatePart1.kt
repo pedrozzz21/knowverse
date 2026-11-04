@@ -148,7 +148,7 @@ Construa uma f-string que receba um dicionário representando uma cotação de m
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Especificadores :.2f, :,, :.1%",
-                syntax = "{val:.2f} (duas casas) \\quad | \\quad {val:,} (milhares) \\quad | \\quad {val:.1%} (porcentagem)",
+                syntax = """{val:.2f} (duas casas) \\quad | \\quad {val:,} (milhares) \\quad | \\quad {val:.1%} (porcentagem)""",
                 description = "Mini-linguagem de formatação numérica e tipográfica embutida.",
                 parametersInfo = "Inserido imediatamente após os dois pontos dentro das chaves."
             )
@@ -278,13 +278,13 @@ Construa um algoritmo de **Ataque de Força Bruta (Brute-Force Cracker)** que re
         functionsAndSyntax = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "ord() e chr()",
-                syntax = "ord(c) \\quad | \\quad chr(n)",
+                syntax = """ord(c) \\quad | \\quad chr(n)""",
                 description = "Conversão bidirecional entre caracteres e seus códigos numéricos Unicode/ASCII.",
                 parametersInfo = "ord('A') = 65; chr(65) = 'A'."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Aritmética Modular de Cifra",
-                syntax = "\\text{nova\\_pos} = (\\text{pos} + k) \\pmod{26}",
+                syntax = """\\text{nova\\_pos} = (\\text{pos} + k) \\pmod{26}""",
                 description = "Rotação cíclica no alfabeto de 26 letras.",
                 parametersInfo = "k é a chave inteira de deslocamento secreto."
             )

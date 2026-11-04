@@ -160,19 +160,19 @@ object BasicMathDidacticPart3 {
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Fatores Multiplicativos de Atualização",
-                syntax = "F_{\\text{aumento}} = (1 + i) \\quad \\text{e} \\quad F_{\\text{desconto}} = (1 - i)",
+                syntax = """F_{\\text{aumento}} = (1 + i) \\quad \\text{e} \\quad F_{\\text{desconto}} = (1 - i)""",
                 description = "Transformação direta de variações percentuais em operadores multiplicativos.",
                 parametersInfo = "i é a taxa percentual na forma decimal (ex: 20% -> i = 0,20)."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Variação Percentual Acumulada Sucessiva",
-                syntax = "F_{\\text{total}} = \\prod_{k=1}^n F_k \\implies \\Delta\\% = (F_{\\text{total}} - 1) \\times 100\\%",
+                syntax = """F_{\\text{total}} = \\prod_{k=1}^n F_k \\implies \\Delta\\% = (F_{\\text{total}} - 1) \\times 100\\%""",
                 description = "Composição de múltiplos aumentos e descontos sucessivos no tempo.",
                 parametersInfo = "Se F_total > 1: aumento acumulado; se F_total < 1: desconto acumulado."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Fórmula da Variação Percentual Relativa",
-                syntax = "\\Delta\\% = \\frac{V_f - V_i}{V_i} \\times 100\\%",
+                syntax = """\\Delta\\% = \\frac{V_f - V_i}{V_i} \\times 100\\%""",
                 description = "Cálculo analítico do ganho ou perda percentual relativo à base de partida.",
                 parametersInfo = "Vi é obrigatoriamente o valor anterior inicial."
             )
@@ -180,7 +180,7 @@ object BasicMathDidacticPart3 {
         solvedExamples = listOf(
             LessonExample(
                 title = "Problema ENEM: Aumento e Desconto Sucessivo no Comércio",
-                codeOrFormula = "F_{\\text{total}} = 1{,}20 \\times 0{,}85 = 1{,}02 \\implies +2\\%",
+                codeOrFormula = """F_{\\text{total}} = 1{,}20 \\times 0{,}85 = 1{,}02 \\implies +2\\%""",
                 explanation = """
                     Um produto teve seu preço reajustado em 20% no mês de outubro. Em novembro, devido à Black Friday, o comerciante concedeu um desconto de 15% sobre o preço já reajustado.
                     Qual foi a variação percentual final do preço em relação ao valor original de setembro?
@@ -351,13 +351,13 @@ object BasicMathDidacticPart3 {
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Produtos Notáveis Canônicos",
-                syntax = "(a \\pm b)^2 = a^2 \\pm 2ab + b^2 \\quad \\text{e} \\quad (a+b)(a-b) = a^2 - b^2",
+                syntax = """(a \\pm b)^2 = a^2 \\pm 2ab + b^2 \\quad \\text{e} \\quad (a+b)(a-b) = a^2 - b^2""",
                 description = "Identidades algébricas para expansão e fatoração de polinômios.",
                 parametersInfo = "Válido para quaisquer monômios a e b reais."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Fórmula de Bhaskara e Relações de Girard",
-                syntax = "x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\quad \\iff \\quad S = -\\frac{b}{a}, \\; P = \\frac{c}{a}",
+                syntax = """x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\quad \\iff \\quad S = -\\frac{b}{a}, \\; P = \\frac{c}{a}""",
                 description = "Determinação exata das raízes reais da equação quadrática ax² + bx + c = 0.",
                 parametersInfo = "Delta = b² - 4ac. Se Delta < 0, não existem raízes reais."
             )
@@ -365,7 +365,7 @@ object BasicMathDidacticPart3 {
         solvedExamples = listOf(
             LessonExample(
                 title = "Resolução de Sistema Linear com Equação de Balanço",
-                codeOrFormula = "\\begin{cases} x + y = 50 \\\\ 12x + 20y = 760 \\end{cases} \\implies x = 30, y = 20",
+                codeOrFormula = """\\begin{cases} x + y = 50 \\\\ 12x + 20y = 760 \\end{cases} \\implies x = 30, y = 20""",
                 explanation = """
                     Um evento vendeu 50 ingressos entre inteiras (R${'$'} 20) e meias-entradas (R${'$'} 12), arrecadando R${'$'} 760,00.
                     Quantas meias-entradas (x) e inteiras (y) foram vendidas?
@@ -510,13 +510,13 @@ object BasicMathDidacticPart3 {
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Média Aritmética Ponderada",
-                syntax = "\\bar{x}_p = \\frac{\\sum_{i=1}^k w_i x_i}{\\sum_{i=1}^k w_i}",
+                syntax = """\\bar{x}_p = \\frac{\\sum_{i=1}^k w_i x_i}{\\sum_{i=1}^k w_i}""",
                 description = "Média onde cada observação x_i é ponderada por sua frequência ou peso de importância w_i.",
                 parametersInfo = "A soma dos pesos no denominador não precisa somar 100."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Desvio Padrão Amostral",
-                syntax = "\\sigma = \\sqrt{\\frac{1}{n} \\sum_{i=1}^n (x_i - \\bar{x})^2}",
+                syntax = """\\sigma = \\sqrt{\\frac{1}{n} \\sum_{i=1}^n (x_i - \\bar{x})^2}""",
                 description = "Medida canônica de dispersão em relação à média aritmética.",
                 parametersInfo = "Desvio padrão zero significa que todos os elementos da lista são idênticos."
             )
@@ -524,7 +524,7 @@ object BasicMathDidacticPart3 {
         solvedExamples = listOf(
             LessonExample(
                 title = "Determinação de Mediana com Tabela de Frequências",
-                codeOrFormula = "\\text{Posições centrais de 40 dados: } 20ª \\text{ e } 21ª \\implies Me = 3",
+                codeOrFormula = """\\text{Posições centrais de 40 dados: } 20ª \\text{ e } 21ª \\implies Me = 3""",
                 explanation = """
                     Uma pesquisa com 40 famílias registrou o número de filhos:
                     0 filhos: 8 famílias (posições 1 a 8)
@@ -674,7 +674,7 @@ object BasicMathDidacticPart3 {
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Área do Círculo e Volume do Cilindro",
-                syntax = "A_{\\text{círculo}} = \\pi R^2 \\quad \\iff \\quad V_{\\text{cilindro}} = \\pi R^2 \\cdot h",
+                syntax = """A_{\\text{círculo}} = \\pi R^2 \\quad \\iff \\quad V_{\\text{cilindro}} = \\pi R^2 \\cdot h""",
                 description = "Área da base circular e volume de preenchimento do cilindro reto.",
                 parametersInfo = "R é o raio da seção transversal e h é a altura retilínea."
             )
@@ -682,7 +682,7 @@ object BasicMathDidacticPart3 {
         solvedExamples = listOf(
             LessonExample(
                 title = "Problema Clássico ENEM: Capacidade de Lata Cilíndrica",
-                codeOrFormula = "V = \\pi \\cdot 4^2 \\cdot 10 = 3{,}14 \\times 16 \\times 10 = 502{,}4\\text{ cm}^3 \\approx 502\\text{ mL}",
+                codeOrFormula = """V = \\pi \\cdot 4^2 \\cdot 10 = 3{,}14 \\times 16 \\times 10 = 502{,}4\\text{ cm}^3 \\approx 502\\text{ mL}""",
                 explanation = """
                     Uma lata de óleo possui formato de cilindro reto com diâmetro da base medindo 8 cm (raio R = 4 cm) e altura de 10 cm.
                     Qual é o volume de óleo contido na lata cheia?

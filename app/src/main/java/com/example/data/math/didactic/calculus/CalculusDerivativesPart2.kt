@@ -141,7 +141,7 @@ Deduza a fórmula geral de aproximação linear para raízes de pequenas variaç
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Propagação de Erro Relativo em Potências",
-                syntax = "y = x^k \\implies \\frac{dy}{y} = k \\frac{dx}{x}",
+                syntax = """y = x^k \\implies \\frac{dy}{y} = k \\frac{dx}{x}""",
                 description = "O erro relativo é amplificado pelo expoente k.",
                 parametersInfo = "Deduzido por diferenciação logarítmica."
             )
@@ -149,7 +149,7 @@ Deduza a fórmula geral de aproximação linear para raízes de pequenas variaç
         solvedExamples = listOf(
             LessonExample(
                 title = "Aproximação Linear de Raiz Quadrada",
-                codeOrFormula = "L(4,05) = \\sqrt{4} + \\frac{1}{2\\sqrt{4}}(4,05 - 4) = 2 + 0,25(0,05) = 2,0125",
+                codeOrFormula = """L(4,05) = \\sqrt{4} + \\frac{1}{2\\sqrt{4}}(4,05 - 4) = 2 + 0,25(0,05) = 2,0125""",
                 explanation = "A reta tangente ancorada no ponto exato a=4 estimou a raiz com precisão de 4 casas decimais."
             )
         ),
@@ -264,13 +264,13 @@ Construa o esboço completo da curva racional \( f(x) = \frac{x^2}{x^2 - 1} \), 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Condição de Ponto Crítico",
-                syntax = "f'(c) = 0 \\quad \\text{ou} \\quad f'(c) \\;\\nexists",
+                syntax = """f'(c) = 0 \\quad \\text{ou} \\quad f'(c) \\;\\nexists""",
                 description = "Candidatos fundamentais a extremos locais.",
                 parametersInfo = "O ponto c deve pertencer ao domínio de f."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Teste da Segunda Derivada",
-                syntax = "f'(c) = 0 \\implies \\begin{cases} f''(c) < 0 \\implies \\text{Máximo Local} \\\\ f''(c) > 0 \\implies \\text{Mínimo Local} \\\\ f''(c) = 0 \\implies \\text{Inconclusivo} \\end{cases}",
+                syntax = """f'(c) = 0 \\implies \\begin{cases} f''(c) < 0 \\implies \\text{Máximo Local} \\\\ f''(c) > 0 \\implies \\text{Mínimo Local} \\\\ f''(c) = 0 \\implies \\text{Inconclusivo} \\end{cases}""",
                 description = "Critério rápido para classificar pontos críticos por concavidade.",
                 parametersInfo = "Se f''(c) = 0, utilize a análise de sinal da primeira derivada."
             )
@@ -278,7 +278,7 @@ Construa o esboço completo da curva racional \( f(x) = \frac{x^2}{x^2 - 1} \), 
         solvedExamples = listOf(
             LessonExample(
                 title = "Classificação de Extremos por Segunda Derivada",
-                codeOrFormula = "f'(x) = 3x^2 - 6x - 9 = 0 \\implies x \\in \\{-1, 3\\}; \\quad f''(-1) = -12 < 0 \\text{ (Máx)}, \\quad f''(3) = 12 > 0 \\text{ (Mín)}",
+                codeOrFormula = """f'(x) = 3x^2 - 6x - 9 = 0 \\implies x \\in \\{-1, 3\\}; \\quad f''(-1) = -12 < 0 \\text{ (Máx)}, \\quad f''(3) = 12 > 0 \\text{ (Mín)}""",
                 explanation = "A concavidade negativa no ponto x=-1 confirma o topo da curva, enquanto a positiva em x=3 indica o fundo da curva."
             )
         ),
@@ -390,13 +390,13 @@ Explique por que aplicar cegamente a regra de L'Hôpital para calcular \( \lim_{
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema de L'Hôpital",
-                syntax = "\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\lim_{x \\to a} \\frac{f'(x)}{g'(x)} \\quad \\left(\\text{se } \\frac{0}{0} \\text{ ou } \\frac{\\infty}{\\infty}\\right)",
+                syntax = """\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\lim_{x \\to a} \\frac{f'(x)}{g'(x)} \\quad \\left(\\text{se } \\frac{0}{0} \\text{ ou } \\frac{\\infty}{\\infty}\\right)""",
                 description = "Cálculo de limite por razão de derivadas.",
                 parametersInfo = "Verifique SEMPRE se a indeterminação é legítima antes de aplicar."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Potência Indeterminada para L'Hôpital",
-                syntax = "y = f(x)^{g(x)} \\implies \\lim \\ln y = \\lim \\frac{\\ln f(x)}{1/g(x)} = L \\implies \\lim y = e^L",
+                syntax = """y = f(x)^{g(x)} \\implies \\lim \\ln y = \\lim \\frac{\\ln f(x)}{1/g(x)} = L \\implies \\lim y = e^L""",
                 description = "Método da exponenciação para formas 1^infinito, 0^0 e infinito^0.",
                 parametersInfo = "Lembre-se de retornar ao exponencial no passo final."
             )
@@ -404,7 +404,7 @@ Explique por que aplicar cegamente a regra de L'Hôpital para calcular \( \lim_{
         solvedExamples = listOf(
             LessonExample(
                 title = "Dupla Aplicação de L'Hôpital",
-                codeOrFormula = "\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2} \\stackrel{L'H}{=} \\lim_{x \\to 0} \\frac{e^x - 1}{2x} \\stackrel{L'H}{=} \\lim_{x \\to 0} \\frac{e^x}{2} = \\frac{1}{2}",
+                codeOrFormula = """\\lim_{x \\to 0} \\frac{e^x - 1 - x}{x^2} \\stackrel{L'H}{=} \\lim_{x \\to 0} \\frac{e^x - 1}{2x} \\stackrel{L'H}{=} \\lim_{x \\to 0} \\frac{e^x}{2} = \\frac{1}{2}""",
                 explanation = "A diferenciação sucessiva eliminou o fator de ordem quadrática do denominador de forma imediata."
             )
         ),
@@ -521,13 +521,13 @@ Um salva-vidas na praia avista um banhista se afogando a uma distância diagonal
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação de Otimização Univariada",
-                syntax = "\\frac{d}{dx}[f(x)] = 0 \\implies x^* \\text{ (ponto crítico ótimo)}",
+                syntax = """\\frac{d}{dx}[f(x)] = 0 \\implies x^* \\text{ (ponto crítico ótimo)}""",
                 description = "Busca dos pontos estacionários da grandeza após substituição do vínculo.",
                 parametersInfo = "Verifique a segunda derivada f''(x*) para confirmar máximo ou mínimo."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema de Weierstrass de Extremos Absolutos",
-                syntax = "f \\text{ contínua em } [a, b] \\implies \\exists x_\\text{mín}, x_\\text{máx} \\in [a, b]",
+                syntax = """f \\text{ contínua em } [a, b] \\implies \\exists x_\\text{mín}, x_\\text{máx} \\in [a, b]""",
                 description = "Garante a existência de extremos globais em conjuntos compactos.",
                 parametersInfo = "Compare os valores f(c) nos pontos críticos com f(a) e f(b)."
             )
@@ -535,7 +535,7 @@ Um salva-vidas na praia avista um banhista se afogando a uma distância diagonal
         solvedExamples = listOf(
             LessonExample(
                 title = "Maximização de Área Cercada",
-                codeOrFormula = "A(x) = x(100 - 2x) = 100x - 2x^2 \\implies A'(x) = 100 - 4x = 0 \\implies x = 25 \\text{ m}, \\; y = 50 \\text{ m}",
+                codeOrFormula = """A(x) = x(100 - 2x) = 100x - 2x^2 \\implies A'(x) = 100 - 4x = 0 \\implies x = 25 \\text{ m}, \\; y = 50 \\text{ m}""",
                 explanation = "A restrição 2x + y = 100 reduziu a área a uma parábola com vértice no ponto ótimo x=25m."
             )
         ),

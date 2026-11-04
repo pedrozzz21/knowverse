@@ -116,13 +116,13 @@ Explique por que a introdução de uma espécie exótica invasora (como o mexilh
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação Conceitual do Ecossistema",
-                syntax = "\\text{Ecossistema} = \\text{Fatores Bióticos (Biocenose)} + \\text{Fatores Abióticos (Biótopo)}",
+                syntax = """\\text{Ecossistema} = \\text{Fatores Bióticos (Biocenose)} + \\text{Fatores Abióticos (Biótopo)}""",
                 description = "Expressa a interação integrada entre a vida e o meio físico-químico.",
                 parametersInfo = "Base estrutural de toda a análise ecológica contemporânea."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Critério de Hotspot Global de Biodiversidade",
-                syntax = "\\text{Plantas Endêmicas} \\ge 1.500 \\quad \\land \\quad \\text{Destruição do Hábitat} \\ge 70\\%",
+                syntax = """\\text{Plantas Endêmicas} \\ge 1.500 \\quad \\land \\quad \\text{Destruição do Hábitat} \\ge 70\\%""",
                 description = "Parâmetros internacionais para definir áreas de conservação prioritária emergencial.",
                 parametersInfo = "No Brasil: Mata Atlântica e Cerrado atendem simultaneamente a ambos os critérios."
             )
@@ -130,7 +130,7 @@ Explique por que a introdução de uma espécie exótica invasora (como o mexilh
         solvedExamples = listOf(
             LessonExample(
                 title = "Diferenciação de Hábitat vs. Nicho Ecológico",
-                codeOrFormula = "\\text{Hábitat: Endereço geográfico} \\quad | \\quad \\text{Nicho: Papel funcional e uso de recursos}",
+                codeOrFormula = """\\text{Hábitat: Endereço geográfico} \\quad | \\quad \\text{Nicho: Papel funcional e uso de recursos}""",
                 explanation = "Espécies diferentes podem compartilhar o mesmo hábitat desde que seus nichos ecológicos sejam suficientemente distintos para evitar a exclusão competitiva."
             )
         ),
@@ -234,13 +234,13 @@ Justifique ecologicamente por que uma dieta humana baseada predominantemente em 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação da Produtividade Primária Líquida",
-                syntax = "\\text{PPL} = \\text{PPB} - R_{\\text{produtores}}",
+                syntax = """\\text{PPL} = \\text{PPB} - R_{\\text{produtores}}""",
                 description = "Saldo de biomassa vegetal disponível para os consumidores primários herbívoros.",
                 parametersInfo = "PPB é a fotossíntese bruta; R é a respiração gasta pelo vegetal."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Regra dos 10% de Eficiência Trófica",
-                syntax = "E_{n+1} \\approx 0{,}10 \\times E_n",
+                syntax = """E_{n+1} \\approx 0{,}10 \\times E_n""",
                 description = "Cerca de 90% da energia útil é perdida sob forma de calor e entropia a cada nível.",
                 parametersInfo = "Explica por que cadeias alimentares raramente ultrapassam 4 ou 5 níveis tróficos."
             )
@@ -248,7 +248,7 @@ Justifique ecologicamente por que uma dieta humana baseada predominantemente em 
         solvedExamples = listOf(
             LessonExample(
                 title = "Pirâmide de Energia vs. Biomassa",
-                codeOrFormula = "\\text{Pirâmide de Energia: Sempre ereta (base larga)} \\\\ \\text{Pirâmide de Biomassa Marinha: Pode ser invertida temporariamente}",
+                codeOrFormula = """\\text{Pirâmide de Energia: Sempre ereta (base larga)} \\\\ \\text{Pirâmide de Biomassa Marinha: Pode ser invertida temporariamente}""",
                 explanation = "A termodinâmica proíbe que a pirâmide de energia se inverta em qualquer ecossistema da biosfera."
             )
         ),
@@ -351,13 +351,13 @@ Diferencie plantas hemiparasitas de holoparasitas citando os tecidos vasculares 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Classificação Algébrica das Relações",
-                syntax = "\\text{Harmônica} \\implies (+,+) \\text{ ou } (+,0) \\quad ; \\quad \\text{Desarmônica} \\implies (+,-) \\text{ ou } (-,-) \\text{ ou } (0,-)",
+                syntax = """\\text{Harmônica} \\implies (+,+) \\text{ ou } (+,0) \\quad ; \\quad \\text{Desarmônica} \\implies (+,-) \\text{ ou } (-,-) \\text{ ou } (0,-)""",
                 description = "Convenção internacional dos sinais ecológicos de custo e benefício adaptativo.",
                 parametersInfo = "+ representa ganho biológico, - representa prejuízo e 0 representa neutralidade."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Tipos de Parasitismo Vegetal",
-                syntax = "\\text{Hemiparasita} \\to \\text{Xilema (Seiva Bruta)} \\quad | \\quad \\text{Holoparasita} \\to \\text{Floema (Seiva Elaborada)}",
+                syntax = """\\text{Hemiparasita} \\to \\text{Xilema (Seiva Bruta)} \\quad | \\quad \\text{Holoparasita} \\to \\text{Floema (Seiva Elaborada)}""",
                 description = "Distinção anatômica baseada no vaso condutor vegetal perfurado pelos haustórios.",
                 parametersInfo = "Erva-de-passarinho é hemiparasita; cipó-chumbo é holoparasita."
             )
@@ -365,7 +365,7 @@ Diferencie plantas hemiparasitas de holoparasitas citando os tecidos vasculares 
         solvedExamples = listOf(
             LessonExample(
                 title = "Distinção entre Mutualismo e Protocooperação",
-                codeOrFormula = "\\text{Mutualismo: (+/+) Obrigatório para sobrevivência} \\\\ \\text{Protocooperação: (+/+) Facultativo (vivem bem separados)}",
+                codeOrFormula = """\\text{Mutualismo: (+/+) Obrigatório para sobrevivência} \\\\ \\text{Protocooperação: (+/+) Facultativo (vivem bem separados)}""",
                 explanation = "A obrigatoriedade biológica da convivência é o fator que separa conceitualmente o mutualismo da protocooperação."
             )
         ),
@@ -455,13 +455,13 @@ Explique por que a enzima nitrogenase do *Rhizobium* é sensível ao oxigênio l
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Etapas Químicas da Nitrificação",
-                syntax = "NH_3 \\xrightarrow{\\text{Nitrosomonas}} NO_2^- \\xrightarrow{\\text{Nitrobacter}} NO_3^-",
+                syntax = """NH_3 \\xrightarrow{\\text{Nitrosomonas}} NO_2^- \\xrightarrow{\\text{Nitrobacter}} NO_3^-""",
                 description = "Conversão quimiossintetizante da amônia no ânion nitrato absorvível.",
                 parametersInfo = "Nitrosação gera nitrito; Nitratação gera nitrato solúvel para as plantas."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Equilíbrio Global do Ciclo do Carbono",
-                syntax = "6\\,CO_2 + 6\\,H_2O \\underset{\\text{Respiração}}{\\overset{\\text{Fotossíntese}}{\\rightleftharpoons}} C_6H_{12}O_6 + 6\\,O_2",
+                syntax = """6\\,CO_2 + 6\\,H_2O \\underset{\\text{Respiração}}{\\overset{\\text{Fotossíntese}}{\\rightleftharpoons}} C_6H_{12}O_6 + 6\\,O_2""",
                 description = "Acoplamento bioenergético planetário entre produtores e heterótrofos.",
                 parametersInfo = "A queima de combustíveis fósseis desequilibra essa balança injetando carbono fóssil antigo."
             )
@@ -469,7 +469,7 @@ Explique por que a enzima nitrogenase do *Rhizobium* é sensível ao oxigênio l
         solvedExamples = listOf(
             LessonExample(
                 title = "O Papel das Leguminosas na Agricultura",
-                codeOrFormula = "\\text{Leguminosas} + \\textit{Rhizobium} \\implies \\text{Fixação Biológica de } N_2 \\implies \\text{Adubação Verde Natural}",
+                codeOrFormula = """\\text{Leguminosas} + \\textit{Rhizobium} \\implies \\text{Fixação Biológica de } N_2 \\implies \\text{Adubação Verde Natural}""",
                 explanation = "A simbiose radicular com bactérias fixadoras dispensa o uso excessivo de adubos químicos solúveis."
             )
         ),
@@ -571,13 +571,13 @@ Explique detalhadamente por que um aterro sanitário moderno precisa conter dren
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Química da Chuva Ácida",
-                syntax = "SO_3 + H_2O \\to H_2SO_4 \\quad ; \\quad 2\\,NO_2 + H_2O \\to HNO_3 + HNO_2",
+                syntax = """SO_3 + H_2O \\to H_2SO_4 \\quad ; \\quad 2\\,NO_2 + H_2O \\to HNO_3 + HNO_2""",
                 description = "Reação de óxidos de queima com vapor de água formando ácidos inorgânicos fortes.",
                 parametersInfo = "Reduz o pH da água das chuvas para patamares inferiores a 4,5."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Relação Crítica na Eutrofização",
-                syntax = "\\uparrow [\\text{Esgoto/Adubo}] \\implies \\uparrow \\text{DBO} \\implies \\downarrow [O_2\\text{ dissolvido}] \\implies \\text{Asfixia de Peixes}",
+                syntax = """\\uparrow [\\text{Esgoto/Adubo}] \\implies \\uparrow \\text{DBO} \\implies \\downarrow [O_2\\text{ dissolvido}] \\implies \\text{Asfixia de Peixes}""",
                 description = "Cadeia causal de eventos biológicos na poluição orgânica aquática.",
                 parametersInfo = "A proliferação de decompositores aeróbios esgota o oxigênio da água."
             )
@@ -585,7 +585,7 @@ Explique detalhadamente por que um aterro sanitário moderno precisa conter dren
         solvedExamples = listOf(
             LessonExample(
                 title = "Perfil Gráfico da Eutrofização",
-                codeOrFormula = "\\text{Ponto de Descarte} \\implies \\text{Pico de DBO} + \\text{Queda do Oxigênio Dissolvido (OD)}",
+                codeOrFormula = """\\text{Ponto de Descarte} \\implies \\text{Pico de DBO} + \\text{Queda do Oxigênio Dissolvido (OD)}""",
                 explanation = "O aumento da matéria orgânica demanda mais oxigênio das bactérias, derrubando o oxigênio livre para os peixes."
             )
         ),
@@ -680,13 +680,13 @@ Explique como o degelo das banquisas polares reduz o albedo da superfície oceâ
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Química da Acidificação Oceânica",
-                syntax = "CO_2 + H_2O \\rightleftharpoons H_2CO_3 \\rightleftharpoons H^+ + HCO_3^- \\quad ; \\quad H^+ + CO_3^{2-} \\rightleftharpoons HCO_3^-",
+                syntax = """CO_2 + H_2O \\rightleftharpoons H_2CO_3 \\rightleftharpoons H^+ + HCO_3^- \\quad ; \\quad H^+ + CO_3^{2-} \\rightleftharpoons HCO_3^-""",
                 description = "O excesso de íons H+ consome os íons carbonato livres do mar.",
                 parametersInfo = "Impede a síntese e biomineralização de esqueletos calcários de CaCO3."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Potencial de Aquecimento Comparado (GWP)",
-                syntax = "\\text{GWP}(CO_2) = 1 \\quad | \\quad \\text{GWP}(CH_4) \\approx 28\\text{-}36 \\quad | \\quad \\text{GWP}(N_2O) \\approx 300",
+                syntax = """\\text{GWP}(CO_2) = 1 \\quad | \\quad \\text{GWP}(CH_4) \\approx 28\\text{-}36 \\quad | \\quad \\text{GWP}(N_2O) \\approx 300""",
                 description = "Capacidade relativa de retenção térmica infravermelha de cada gás na atmosfera.",
                 parametersInfo = "Gases como metano e óxido nitroso possuem eficiência radiativa muito mais agressiva."
             )
@@ -694,7 +694,7 @@ Explique como o degelo das banquisas polares reduz o albedo da superfície oceâ
         solvedExamples = listOf(
             LessonExample(
                 title = "O Fenômeno do Branqueamento de Corais",
-                codeOrFormula = "\\text{Água Quente} \\implies \\text{Coral expulsa Zooxantelas} \\implies \\text{Esqueleto Branco Exposto} \\implies \\text{Inanição}",
+                codeOrFormula = """\\text{Água Quente} \\implies \\text{Coral expulsa Zooxantelas} \\implies \\text{Esqueleto Branco Exposto} \\implies \\text{Inanição}""",
                 explanation = "A perda das algas fotossintetizantes mutualistas impede o coral de obter glicose para sua sobrevivência."
             )
         ),
@@ -796,13 +796,13 @@ Explique por que um país pode ter alta biocapacidade em seu território devido 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Balanço de Sustentabilidade Ecológica",
-                syntax = "\\Delta_{\\text{Ecológica}} = \\text{Biocapacidade Territorial} - \\text{Pegada Ecológica}",
+                syntax = """\\Delta_{\\text{Ecológica}} = \\text{Biocapacidade Territorial} - \\text{Pegada Ecológica}""",
                 description = "Quando o consumo ultrapassa a regeneração, opera-se em déficit ecológico.",
                 parametersInfo = "Mensurado anualmente pelo Global Footprint Network em hectares globais (gha)."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Ciclo Neutro dos Biocombustíveis",
-                syntax = "CO_2^{\\text{ar}} \\xrightarrow{\\text{Fotossíntese}} \\text{Biomassa de Cana} \\xrightarrow{\\text{Combustão}} CO_2^{\\text{ar}} \\quad (\\Delta C \\approx 0)",
+                syntax = """CO_2^{\\text{ar}} \\xrightarrow{\\text{Fotossíntese}} \\text{Biomassa de Cana} \\xrightarrow{\\text{Combustão}} CO_2^{\\text{ar}} \\quad (\\Delta C \\approx 0)""",
                 description = "Ciclagem rápida do carbono contemporâneo sem adição líquida de carbono fóssil antigo.",
                 parametersInfo = "Principal vantagem climática do etanol sobre a gasolina fóssil."
             )
@@ -810,7 +810,7 @@ Explique por que um país pode ter alta biocapacidade em seu território devido 
         solvedExamples = listOf(
             LessonExample(
                 title = "Mecanismo da Bioestimulação Petrolífera",
-                codeOrFormula = "\\text{Petróleo (Excesso de Carbono)} + \\text{Adição de Nitrogênio e Fósforo} \\implies \\text{Multiplicação Bacteriana Rápida}",
+                codeOrFormula = """\\text{Petróleo (Excesso de Carbono)} + \\text{Adição de Nitrogênio e Fósforo} \\implies \\text{Multiplicação Bacteriana Rápida}""",
                 explanation = "A remoção do nutriente limitante (N e P) permite que a microbiota nativa degrade os hidrocarbonetos aceleradamente."
             )
         ),

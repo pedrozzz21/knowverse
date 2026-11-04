@@ -137,13 +137,13 @@ Em uma montanha-russa vertical com loop circular perfeito de raio \( R \), deter
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema da Energia Cinética (TEC)",
-                syntax = "W_{\\text{res}} = \\Delta E_c = \\frac{1}{2} m v^2 - \\frac{1}{2} m v_0^2",
+                syntax = """W_{\\text{res}} = \\Delta E_c = \\frac{1}{2} m v^2 - \\frac{1}{2} m v_0^2""",
                 description = "O trabalho total realizado pela soma de todas as forças equivale à variação de energia cinética da partícula.",
                 parametersInfo = "Válido para trajetórias retilíneas ou curvilíneas e forças conservativas ou dissipativas."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Conservação da Energia Mecânica",
-                syntax = "E_{m1} = E_{m2} \\implies \\frac{1}{2} m v_1^2 + m g h_1 + \\frac{1}{2} k x_1^2 = \\frac{1}{2} m v_2^2 + m g h_2 + \\frac{1}{2} k x_2^2",
+                syntax = """E_{m1} = E_{m2} \\implies \\frac{1}{2} m v_1^2 + m g h_1 + \\frac{1}{2} k x_1^2 = \\frac{1}{2} m v_2^2 + m g h_2 + \\frac{1}{2} k x_2^2""",
                 description = "Em sistemas conservativos isolados de atrito, a energia mecânica total permanece invariante.",
                 parametersInfo = "A energia cinética converte-se continuamente em potencial gravitacional ou elástica e vice-versa."
             )
@@ -151,7 +151,7 @@ Em uma montanha-russa vertical com loop circular perfeito de raio \( R \), deter
         solvedExamples = listOf(
             LessonExample(
                 title = "Velocidade de Queda Livre por Conservação de Energia",
-                codeOrFormula = "m g H = \\frac{m v^2}{2} \\implies v = \\sqrt{2 g H} = \\sqrt{2 \\times 10 \\times 20} = 20\\text{ m/s}",
+                codeOrFormula = """m g H = \\frac{m v^2}{2} \\implies v = \\sqrt{2 g H} = \\sqrt{2 \\times 10 \\times 20} = 20\\text{ m/s}""",
                 explanation = "Determinação da velocidade na base de uma descida sem atrito de 20 metros de altura."
             )
         ),
@@ -279,13 +279,13 @@ Dois patinadores em uma pista de gelo perfeitamente polida estão inicialmente e
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema do Impulso",
-                syntax = "\\vec{I} = \\vec{F}_{\\text{res}} \\cdot \\Delta t = \\Delta \\vec{Q} = m \\vec{v} - m \\vec{v}_0",
+                syntax = """\\vec{I} = \\vec{F}_{\\text{res}} \\cdot \\Delta t = \\Delta \\vec{Q} = m \\vec{v} - m \\vec{v}_0""",
                 description = "O impulso da força resultante equivale à variação temporal do vetor quantidade de movimento.",
                 parametersInfo = "Se o tempo de contato Δt aumenta, a força de impacto F diminui na mesma proporção."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Colisão Perfeitamente Inelástica",
-                syntax = "m_A \\vec{v}_A + m_B \\vec{v}_B = (m_A + m_B) \\vec{v}'",
+                syntax = """m_A \\vec{v}_A + m_B \\vec{v}_B = (m_A + m_B) \\vec{v}'""",
                 description = "Os corpos acoplam-se e movem-se com uma velocidade compartilhada única após a colisão.",
                 parametersInfo = "Apresenta a máxima taxa percentual de dissipação de energia cinética em calor e deformação."
             )
@@ -293,7 +293,7 @@ Dois patinadores em uma pista de gelo perfeitamente polida estão inicialmente e
         solvedExamples = listOf(
             LessonExample(
                 title = "Engavetamento Inelástico de Veículos",
-                codeOrFormula = "M v_C + m v_A = (M + m)v' \\implies 3000(20) + 0 = 4000 v' \\implies v' = 15\\text{ m/s}",
+                codeOrFormula = """M v_C + m v_A = (M + m)v' \\implies 3000(20) + 0 = 4000 v' \\implies v' = 15\\text{ m/s}""",
                 explanation = "Conservação da quantidade de movimento aplicada a dois veículos que colidem e continuam grudados."
             )
         ),
@@ -417,13 +417,13 @@ Uma escada homogênea de 10 kg e 5 metros de comprimento apoia-se em uma parede 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Momento de uma Força (Torque)",
-                syntax = "M_O = \\pm F \\cdot d \\cdot \\sin\\theta",
+                syntax = """M_O = \\pm F \\cdot d \\cdot \\sin\\theta""",
                 description = "Mede a capacidade de uma força gerar rotação ao redor de um eixo ou polo O.",
                 parametersInfo = "F é força (N), d é a distância até o polo (m) e θ é o ângulo de aplicação."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Duas Condições de Equilíbrio Estático",
-                syntax = "\\sum \\vec{F} = \\vec{0} \\quad (\\text{Não translada}) \\quad \\land \\quad \\sum M_O = 0 \\quad (\\text{Não rotaciona})",
+                syntax = """\\sum \\vec{F} = \\vec{0} \\quad (\\text{Não translada}) \\quad \\land \\quad \\sum M_O = 0 \\quad (\\text{Não rotaciona})""",
                 description = "Conjunto fundamental de equações para estabilidade absoluta de estruturas e vigas.",
                 parametersInfo = "Válido para qualquer referencial inercial e qualquer polo arbitrário escolhido."
             )
@@ -431,7 +431,7 @@ Uma escada homogênea de 10 kg e 5 metros de comprimento apoia-se em uma parede 
         solvedExamples = listOf(
             LessonExample(
                 title = "Iminência de Tombamento em Prancha",
-                codeOrFormula = "\\sum M_B = 0 \\implies P_{\\text{prancha}} \\cdot d_1 = P_{\\text{pessoa}} \\cdot x_p \\implies 600(1) = 800 x_p \\implies x_p = 0{,}75\\text{ m}",
+                codeOrFormula = """\\sum M_B = 0 \\implies P_{\\text{prancha}} \\cdot d_1 = P_{\\text{pessoa}} \\cdot x_p \\implies 600(1) = 800 x_p \\implies x_p = 0{,}75\\text{ m}""",
                 explanation = "No limite de tombamento, o apoio oposto descola (N_A = 0) e a soma dos torques no pivô B determina o alcance máximo do pedestre."
             )
         ),
@@ -558,13 +558,13 @@ Um copo cilíndrico contém água pura com um cubo de gelo flutuando em repouso.
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema Fundamental de Stevin",
-                syntax = "P = P_0 + \\rho \\cdot g \\cdot h",
+                syntax = """P = P_0 + \\rho \\cdot g \\cdot h""",
                 description = "Calcula a pressão absoluta em função da profundidade do fluido.",
                 parametersInfo = "P0 é a pressão na superfície (atmosférica), ρ é a massa específica do fluido, g a gravidade e h a profundidade."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Princípio de Arquimedes (Empuxo)",
-                syntax = "E = \\rho_{\\text{líquido}} \\cdot V_{\\text{submerso}} \\cdot g",
+                syntax = """E = \\rho_{\\text{líquido}} \\cdot V_{\\text{submerso}} \\cdot g""",
                 description = "Força vertical ascendente exercida pelo fluido sobre qualquer corpo total ou parcialmente nele imerso.",
                 parametersInfo = "O empuxo depende exclusivamente da densidade do fluido e do volume de líquido deslocado, e não da massa do corpo."
             )
@@ -572,7 +572,7 @@ Um copo cilíndrico contém água pura com um cubo de gelo flutuando em repouso.
         solvedExamples = listOf(
             LessonExample(
                 title = "Fração Submersa de um Bloco Flutuante",
-                codeOrFormula = "\\frac{V_{\\text{submerso}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{corpo}}}{\\rho_{\\text{líquido}}} = \\frac{700}{1000} = 0{,}70 \\implies 70\\% \\text{ submerso}",
+                codeOrFormula = """\\frac{V_{\\text{submerso}}}{V_{\\text{total}}} = \\frac{\\rho_{\\text{corpo}}}{\\rho_{\\text{líquido}}} = \\frac{700}{1000} = 0{,}70 \\implies 70\\% \\text{ submerso}""",
                 explanation = "Determinação direta da porcentagem de volume submerso de um corpo de madeira flutuando em água pura."
             )
         ),
@@ -696,13 +696,13 @@ Explique por que um astronauta flutua no interior da Estação Espacial Internac
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Terceira Lei de Kepler (Lei dos Períodos)",
-                syntax = "\\frac{T^2}{R^3} = \\text{constante} \\implies \\frac{T_1^2}{R_1^3} = \\frac{T_2^2}{R_2^3}",
+                syntax = """\\frac{T^2}{R^3} = \\text{constante} \\implies \\frac{T_1^2}{R_1^3} = \\frac{T_2^2}{R_2^3}""",
                 description = "O quadrado do período de translação orbital é proporcional ao cubo do semieixo maior da órbita.",
                 parametersInfo = "Válido para qualquer sistema de corpos orbitando o mesmo astro atrator central."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Lei da Gravitação Universal de Newton",
-                syntax = "F_g = G \\cdot \\frac{M \\cdot m}{r^2}",
+                syntax = """F_g = G \\cdot \\frac{M \\cdot m}{r^2}""",
                 description = "Força mútua atrativa entre massas puntiformes no espaço.",
                 parametersInfo = "G é a constante gravitacional universal, M e m são as massas e r é a distância entre os centros."
             )
@@ -710,7 +710,7 @@ Explique por que um astronauta flutua no interior da Estação Espacial Internac
         solvedExamples = listOf(
             LessonExample(
                 title = "Cálculo de Período Planetário por Kepler",
-                codeOrFormula = "\\frac{T_P^2}{(4R_T)^3} = \\frac{1^2}{R_T^3} \\implies T_P^2 = 64 \\implies T_P = 8\\text{ anos}",
+                codeOrFormula = """\\frac{T_P^2}{(4R_T)^3} = \\frac{1^2}{R_T^3} \\implies T_P^2 = 64 \\implies T_P = 8\\text{ anos}""",
                 explanation = "Determinação do período de translação orbital de um planeta cuja distância média ao Sol é 4 vezes a da Terra."
             )
         ),

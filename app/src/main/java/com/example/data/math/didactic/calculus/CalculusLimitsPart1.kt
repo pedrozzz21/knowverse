@@ -112,21 +112,21 @@ Considere a função \( h(x) = \frac{|x|}{x} \). Avalie o que ocorre com os valo
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Definição Intuitiva de Limite",
-                syntax = "\\lim_{x \\to a} f(x) = L",
+                syntax = """\\lim_{x \\to a} f(x) = L""",
                 description = "Convergência dos valores de f(x) para L na vizinhança perfurada de a.",
                 parametersInfo = "Exige que x se aproxime de a por ambos os lados (pela esquerda e pela direita)."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Vizinhança Perfurada",
-                syntax = "0 < |x - a| < \\delta",
+                syntax = """0 < |x - a| < \\delta""",
                 description = "Intervalo aberto centrado em 'a', excluindo o ponto central x = a.",
-                parametersInfo = "\\delta > 0 representa o raio da vizinhança no eixo das abscissas."
+                parametersInfo = """\\delta > 0 representa o raio da vizinhança no eixo das abscissas."""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Simplificação de Fator Nulo em Racionais",
-                codeOrFormula = "\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1} = \\lim_{x \\to 1} (x + 1) = 2",
+                codeOrFormula = """\\lim_{x \\to 1} \\frac{x^2 - 1}{x - 1} = \\lim_{x \\to 1} (x + 1) = 2""",
                 explanation = "Fatora-se o numerador (x-1)(x+1) e cancela-se o termo nulo (x-1) que gera a indefinição 0/0."
             )
         ),
@@ -231,19 +231,19 @@ Considere a função maior inteiro (ou função piso) \( f(x) = \lfloor x \rfloo
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema de Existência do Limite Bilateral",
-                syntax = "\\lim_{x \\to a} f(x) = L \\iff \\lim_{x \\to a^-} f(x) = L \\text{ e } \\lim_{x \\to a^+} f(x) = L",
+                syntax = """\\lim_{x \\to a} f(x) = L \\iff \\lim_{x \\to a^-} f(x) = L \\text{ e } \\lim_{x \\to a^+} f(x) = L""",
                 description = "Condição necessária e suficiente para a existência do limite comum.",
                 parametersInfo = "Se os limites laterais divergirem entre si, o limite bilateral não existe."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Limite Lateral à Esquerda",
-                syntax = "\\lim_{x \\to a^-} f(x) = L_1",
+                syntax = """\\lim_{x \\to a^-} f(x) = L_1""",
                 description = "Aproximação considerando apenas x < a.",
                 parametersInfo = "Utilize a sentença correspondente ao intervalo à esquerda de a."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Limite Lateral à Direita",
-                syntax = "\\lim_{x \\to a^+} f(x) = L_2",
+                syntax = """\\lim_{x \\to a^+} f(x) = L_2""",
                 description = "Aproximação considerando apenas x > a.",
                 parametersInfo = "Utilize a sentença correspondente ao intervalo à direita de a."
             )
@@ -251,7 +251,7 @@ Considere a função maior inteiro (ou função piso) \( f(x) = \lfloor x \rfloo
         solvedExamples = listOf(
             LessonExample(
                 title = "Verificação do Limite de |x| / x na Origem",
-                codeOrFormula = "\\lim_{x \\to 0^+} \\frac{x}{x} = 1 \\quad \\neq \\quad \\lim_{x \\to 0^-} \\frac{-x}{x} = -1",
+                codeOrFormula = """\\lim_{x \\to 0^+} \\frac{x}{x} = 1 \\quad \\neq \\quad \\lim_{x \\to 0^-} \\frac{-x}{x} = -1""",
                 explanation = "Como os limites pela direita (+1) e pela esquerda (-1) diferem, o limite global não existe."
             )
         ),
@@ -345,13 +345,13 @@ Explique por que a lei do quociente NÃO pode ser aplicada para resolver \( \lim
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Propriedade da Substituição Direta",
-                syntax = "\\lim_{x \\to a} P(x) = P(a)",
+                syntax = """\\lim_{x \\to a} P(x) = P(a)""",
                 description = "Válida para todo polinômio e para funções contínuas em seu domínio.",
                 parametersInfo = "Se o denominador for diferente de zero, substitua x diretamente por a."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Lei do Quociente de Limites",
-                syntax = "\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{\\lim f(x)}{\\lim g(x)}",
+                syntax = """\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{\\lim f(x)}{\\lim g(x)}""",
                 description = "O limite da divisão é a divisão dos limites.",
                 parametersInfo = "Válido estritamente se o limite do denominador for diferente de 0."
             )
@@ -359,7 +359,7 @@ Explique por que a lei do quociente NÃO pode ser aplicada para resolver \( \lim
         solvedExamples = listOf(
             LessonExample(
                 title = "Cálculo de Polinômio por Substituição Direta",
-                codeOrFormula = "\\lim_{x \\to 2} (4x^3 - 3x^2 + 7x - 5) = 4(8) - 3(4) + 14 - 5 = 29",
+                codeOrFormula = """\\lim_{x \\to 2} (4x^3 - 3x^2 + 7x - 5) = 4(8) - 3(4) + 14 - 5 = 29""",
                 explanation = "Polinômios são contínuos em toda a reta real; portanto, o limite coincide com o valor numérico f(2)."
             )
         ),
@@ -462,13 +462,13 @@ Calcule \( \lim_{x \to 1} \frac{x^4 - 1}{x^3 - 1} \) fatorando completamente as 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema do Fator Polinomial",
-                syntax = "P(a) = 0 \\implies P(x) = (x - a) \\cdot Q(x)",
+                syntax = """P(a) = 0 \\implies P(x) = (x - a) \\cdot Q(x)""",
                 description = "Se 'a' é raiz do polinômio, (x - a) fatora a expressão.",
                 parametersInfo = "Permite identificar e cancelar o termo nulo responsável por 0/0."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Diferença de Quadrados e Cubos",
-                syntax = "a^2 - b^2 = (a-b)(a+b); \\quad a^3 - b^3 = (a-b)(a^2 + ab + b^2)",
+                syntax = """a^2 - b^2 = (a-b)(a+b); \\quad a^3 - b^3 = (a-b)(a^2 + ab + b^2)""",
                 description = "Identidades algébricas fundamentais para cancelamento de fatores nulos.",
                 parametersInfo = "Substitua a por x e b pela raiz correspondente."
             )
@@ -476,7 +476,7 @@ Calcule \( \lim_{x \to 1} \frac{x^4 - 1}{x^3 - 1} \) fatorando completamente as 
         solvedExamples = listOf(
             LessonExample(
                 title = "Cancelamento do Fator Nulo em 0/0",
-                codeOrFormula = "\\lim_{x \\to 2} \\frac{x^2 + x - 6}{x^2 - 4} = \\lim_{x \\to 2} \\frac{(x-2)(x+3)}{(x-2)(x+2)} = \\frac{5}{4}",
+                codeOrFormula = """\\lim_{x \\to 2} \\frac{x^2 + x - 6}{x^2 - 4} = \\lim_{x \\to 2} \\frac{(x-2)(x+3)}{(x-2)(x+2)} = \\frac{5}{4}""",
                 explanation = "Ambos os termos se anulavam em x=2. O fator comum (x-2) foi cancelado rigorosamente pois x ≠ 2."
             )
         ),
@@ -581,13 +581,13 @@ Calcule o limite irracional duplo: \( \lim_{x \to 4} \frac{\sqrt{2x + 1} - 3}{\s
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Racionalização por Conjugado Quadrático",
-                syntax = "(\\sqrt{A} - B)(\\sqrt{A} + B) = A - B^2",
+                syntax = """(\\sqrt{A} - B)(\\sqrt{A} + B) = A - B^2""",
                 description = "Elimina o radical que aprisiona a indeterminação no numerador ou denominador.",
                 parametersInfo = "Multiplique sempre numerador e denominador pela mesma expressão conjugada."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Conjugado para Raízes Cúbicas",
-                syntax = "(\\sqrt[3]{A} - \\sqrt[3]{B})(\\sqrt[3]{A^2} + \\sqrt[3]{AB} + \\sqrt[3]{B^2}) = A - B",
+                syntax = """(\\sqrt[3]{A} - \\sqrt[3]{B})(\\sqrt[3]{A^2} + \\sqrt[3]{AB} + \\sqrt[3]{B^2}) = A - B""",
                 description = "Identidade notável para eliminar raízes cúbicas em limites indeterminados.",
                 parametersInfo = "Utilizado quando o índice do radical for 3."
             )
@@ -595,7 +595,7 @@ Calcule o limite irracional duplo: \( \lim_{x \to 4} \frac{\sqrt{2x + 1} - 3}{\s
         solvedExamples = listOf(
             LessonExample(
                 title = "Racionalização com Radicais Quadrados",
-                codeOrFormula = "\\lim_{x \\to 0} \\frac{\\sqrt{x + 4} - 2}{x} = \\lim_{x \\to 0} \\frac{(x+4) - 4}{x(\\sqrt{x+4}+2)} = \\frac{1}{4}",
+                codeOrFormula = """\\lim_{x \\to 0} \\frac{\\sqrt{x + 4} - 2}{x} = \\lim_{x \\to 0} \\frac{(x+4) - 4}{x(\\sqrt{x+4}+2)} = \\frac{1}{4}""",
                 explanation = "A multiplicação pelo conjugado (sqrt(x+4)+2) desfez a raiz e gerou o fator x que cancelou o denominador."
             )
         ),

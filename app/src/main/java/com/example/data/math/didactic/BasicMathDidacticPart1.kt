@@ -139,19 +139,19 @@ object BasicMathDidacticPart1 {
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Soma e Subtração de Frações",
-                syntax = "\\frac{a}{b} \\pm \\frac{c}{d} = \\frac{\\frac{MMC}{b}\\cdot a \\pm \\frac{MMC}{d}\\cdot c}{MMC}",
+                syntax = """\\frac{a}{b} \\pm \\frac{c}{d} = \\frac{\\frac{MMC}{b}\\cdot a \\pm \\frac{MMC}{d}\\cdot c}{MMC}""",
                 description = "Homogeneização de denominadores distintos através do Mínimo Múltiplo Comum.",
                 parametersInfo = "b ≠ 0 e d ≠ 0"
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Divisão de Frações",
-                syntax = "\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\times \\frac{d}{c} = \\frac{a \\cdot d}{b \\cdot c}",
+                syntax = """\\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\times \\frac{d}{c} = \\frac{a \\cdot d}{b \\cdot c}""",
                 description = "Multiplicação do dividendo pelo inverso do divisor.",
                 parametersInfo = "c ≠ 0, b ≠ 0 e d ≠ 0"
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Fração Geratriz (Dízima Periódica Simples)",
-                syntax = "0,\\overline{p} = \\frac{p}{10^k - 1} = \\frac{p}{99\\dots9}",
+                syntax = """0,\\overline{p} = \\frac{p}{10^k - 1} = \\frac{p}{99\\dots9}""",
                 description = "Conversão de dízima simples com período de k dígitos em fração racional.",
                 parametersInfo = "k = quantidade de algarismos do período p"
             )
@@ -159,7 +159,7 @@ object BasicMathDidacticPart1 {
         solvedExamples = listOf(
             LessonExample(
                 title = "Problema Clássico do ENEM: Mistura de Combustíveis",
-                codeOrFormula = "V_{\\text{álcool}} = \\frac{27}{100} \\times 45 = 12{,}15\\text{ litros}",
+                codeOrFormula = """V_{\\text{álcool}} = \\frac{27}{100} \\times 45 = 12{,}15\\text{ litros}""",
                 explanation = """
                     Enunciado: A gasolina comum brasileira contém 27% de etanol anidro em volume. Se um motorista abastece seu tanque com exatamente 45 litros dessa gasolina, quantos litros de etanol e quantos litros de gasolina pura estão presentes?
                     
@@ -300,19 +300,19 @@ object BasicMathDidacticPart1 {
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Cálculo do MMC por Fatores Canônicos",
-                syntax = "\\text{MMC}(a, b) = \\prod p_i^{\\max(\\alpha_i, \\beta_i)}",
+                syntax = """\\text{MMC}(a, b) = \\prod p_i^{\\max(\\alpha_i, \\beta_i)}""",
                 description = "Produto de todos os fatores primos comuns e não comuns, elevados aos seus maiores expoentes.",
                 parametersInfo = "Utilizado para sincronicidade e ciclos periódicos."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Cálculo do MDC por Fatores Canônicos",
-                syntax = "\\text{MDC}(a, b) = \\prod p_i^{\\min(\\alpha_i, \\beta_i)}",
+                syntax = """\\text{MDC}(a, b) = \\prod p_i^{\\min(\\alpha_i, \\beta_i)}""",
                 description = "Produto exclusivo dos fatores primos comuns, elevados aos seus menores expoentes.",
                 parametersInfo = "Utilizado para divisão em partes iguais máximas sem resto."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Relação Fundamental entre MMC e MDC",
-                syntax = "\\text{MMC}(a, b) \\times \\text{MDC}(a, b) = a \\cdot b",
+                syntax = """\\text{MMC}(a, b) \\times \\text{MDC}(a, b) = a \\cdot b""",
                 description = "O produto do MMC pelo MDC de dois números é rigorosamente igual ao produto entre esses dois números.",
                 parametersInfo = "Válido para quaisquer a, b pertencentes aos inteiros positivos."
             )
@@ -471,19 +471,19 @@ object BasicMathDidacticPart1 {
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Conversão Raiz em Potência Fracionária",
-                syntax = "\\sqrt[n]{a^m} = a^{\\frac{m}{n}}",
+                syntax = """\\sqrt[n]{a^m} = a^{\\frac{m}{n}}""",
                 description = "Transformação fundamental de qualquer raiz em expoente fracionário.",
                 parametersInfo = "n >= 2, a > 0 se n for par."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Inverso de Potência (Expoente Negativo)",
-                syntax = "a^{-n} = \\frac{1}{a^n} \\quad \\text{e} \\quad \\left(\\frac{a}{b}\\right)^{-n} = \\left(\\frac{b}{a}\\right)^n",
+                syntax = """a^{-n} = \\frac{1}{a^n} \\quad \\text{e} \\quad \\left(\\frac{a}{b}\\right)^{-n} = \\left(\\frac{b}{a}\\right)^n""",
                 description = "O sinal negativo no expoente indica inversão da base da potência.",
                 parametersInfo = "a ≠ 0 e b ≠ 0"
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Racionalização por Conjugado",
-                syntax = "\\frac{k}{\\sqrt{a} \\pm \\sqrt{b}} = \\frac{k(\\sqrt{a} \\mp \\sqrt{b})}{a - b}",
+                syntax = """\\frac{k}{\\sqrt{a} \\pm \\sqrt{b}} = \\frac{k(\\sqrt{a} \\mp \\sqrt{b})}{a - b}""",
                 description = "Aplicação do produto notável da diferença de quadrados para eliminar raízes do denominador.",
                 parametersInfo = "a ≠ b, a > 0 e b > 0"
             )
@@ -491,7 +491,7 @@ object BasicMathDidacticPart1 {
         solvedExamples = listOf(
             LessonExample(
                 title = "Simplificação com Fator Comum em Evidência",
-                codeOrFormula = "\\frac{3^{x+2} + 3^x}{3^{x+1} - 3^x} = \\frac{3^x(9+1)}{3^x(3-1)} = \\frac{10}{2} = 5",
+                codeOrFormula = """\\frac{3^{x+2} + 3^x}{3^{x+1} - 3^x} = \\frac{3^x(9+1)}{3^x(3-1)} = \\frac{10}{2} = 5""",
                 explanation = """
                     Enunciado: Simplifique a expressão para todo x real:
                     E = (3^(x+2) + 3^x) / (3^(x+1) - 3^x)
@@ -633,13 +633,13 @@ object BasicMathDidacticPart1 {
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Forma Padrão da Notação Científica",
-                syntax = "X = N \\times 10^k \\quad (1 \\le |N| < 10, \\; k \\in \\mathbb{Z})",
+                syntax = """X = N \\times 10^k \\quad (1 \\le |N| < 10, \\; k \\in \\mathbb{Z})""",
                 description = "Representação canônica internacional de magnitudes físicas e matemáticas.",
                 parametersInfo = "N é a mantissa e k é a ordem de magnitude."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Critério da Ordem de Grandeza (O.G.)",
-                syntax = "\\text{O.G.} = \\begin{cases} 10^k, & \\text{se } N < \\sqrt{10} \\approx 3{,}16 \\\\ 10^{k+1}, & \\text{se } N \\ge \\sqrt{10} \\approx 3{,}16 \\end{cases}",
+                syntax = """\\text{O.G.} = \\begin{cases} 10^k, & \\text{se } N < \\sqrt{10} \\approx 3{,}16 \\\\ 10^{k+1}, & \\text{se } N \\ge \\sqrt{10} \\approx 3{,}16 \\end{cases}""",
                 description = "Determinação analítica da potência de 10 mais próxima baseada na média geométrica.",
                 parametersInfo = "A fronteira 3,16 decorre de 10^0.5."
             )
@@ -647,7 +647,7 @@ object BasicMathDidacticPart1 {
         solvedExamples = listOf(
             LessonExample(
                 title = "Cálculo de Densidade Populacional de Bactérias",
-                codeOrFormula = "\\text{Concentração} = \\frac{4{,}5 \\times 10^8}{1{,}5 \\times 10^{-3}} = 3{,}0 \\times 10^{11}\\text{ bactérias/L}",
+                codeOrFormula = """\\text{Concentração} = \\frac{4{,}5 \\times 10^8}{1{,}5 \\times 10^{-3}} = 3{,}0 \\times 10^{11}\\text{ bactérias/L}""",
                 explanation = """
                     Uma cultura biológica contém 4,5 × 10⁸ bactérias em um volume de 1,5 mL (1,5 × 10⁻³ L).
                     Qual é a concentração em bactérias por litro e sua ordem de grandeza?

@@ -145,7 +145,7 @@ object BasicMathDidacticPart2 {
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equivalência Fundamental Volume-Capacidade",
-                syntax = "1\\text{ dm}^3 = 1\\text{ L} \\quad \\iff \\quad 1\\text{ m}^3 = 1.000\\text{ L}",
+                syntax = """1\\text{ dm}^3 = 1\\text{ L} \\quad \\iff \\quad 1\\text{ m}^3 = 1.000\\text{ L}""",
                 description = "Ponte padrão entre o sistema métrico dimensional tridimensional e o volume de líquidos.",
                 parametersInfo = "1 cm³ = 1 mL"
             ),
@@ -159,7 +159,7 @@ object BasicMathDidacticPart2 {
         solvedExamples = listOf(
             LessonExample(
                 title = "Conversão de Vazão de Bomba de Combustível",
-                codeOrFormula = "72\\text{ m}^3/\\text{h} = \\frac{72.000\\text{ L}}{3600\\text{ s}} = 20\\text{ L/s}",
+                codeOrFormula = """72\\text{ m}^3/\\text{h} = \\frac{72.000\\text{ L}}{3600\\text{ s}} = 20\\text{ L/s}""",
                 explanation = """
                     Uma bomba de abastecimento industrial transfere combustível à taxa de 72 m³ por hora.
                     Qual é a vazão equivalente em litros por segundo?
@@ -295,13 +295,13 @@ object BasicMathDidacticPart2 {
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Propriedade Fundamental das Proporções",
-                syntax = "\\frac{a}{b} = \\frac{c}{d} \\iff a \\cdot d = b \\cdot c",
+                syntax = """\\frac{a}{b} = \\frac{c}{d} \\iff a \\cdot d = b \\cdot c""",
                 description = "Igualdade do produto cruzado em qualquer proporção válida.",
                 parametersInfo = "b ≠ 0 e d ≠ 0"
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Grandezas Diretamente vs. Inversamente Proporcionais",
-                syntax = "y = k \\cdot x \\;\\text{(GDP)} \\quad \\iff \\quad y = \\frac{k}{x} \\;\\text{(GIP)}",
+                syntax = """y = k \\cdot x \\;\\text{(GDP)} \\quad \\iff \\quad y = \\frac{k}{x} \\;\\text{(GIP)}""",
                 description = "Modelos algébricos da dependência linear direta vs. recíproca inversa.",
                 parametersInfo = "k é a constante de proporcionalidade"
             )
@@ -309,7 +309,7 @@ object BasicMathDidacticPart2 {
         solvedExamples = listOf(
             LessonExample(
                 title = "Divisão em Partes Diretamente Proporcionais",
-                codeOrFormula = "k = \\frac{180.000}{2 + 3 + 5} = 18.000 \\implies A=36k, B=54k, C=90k",
+                codeOrFormula = """k = \\frac{180.000}{2 + 3 + 5} = 18.000 \\implies A=36k, B=54k, C=90k""",
                 explanation = """
                     Três herdeiros dividiram R${'$'} 180.000,00 proporcionalmente aos seus filhos: 2, 3 e 5 filhos.
                     
@@ -447,13 +447,13 @@ object BasicMathDidacticPart2 {
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação Geral da Regra de Três Composta",
-                syntax = "\\frac{x_1}{x_2} = \\prod_{i \\in \\text{Diretas}} \\frac{d_{1,i}}{d_{2,i}} \\times \\prod_{j \\in \\text{Inversas}} \\frac{inv_{2,j}}{inv_{1,j}}",
+                syntax = """\\frac{x_1}{x_2} = \\prod_{i \\in \\text{Diretas}} \\frac{d_{1,i}}{d_{2,i}} \\times \\prod_{j \\in \\text{Inversas}} \\frac{inv_{2,j}}{inv_{1,j}}""",
                 description = "Isolamento da razão com a incógnita e produto ponderado das razões diretas e inversas.",
                 parametersInfo = "Mantenha rigorosamente as mesmas unidades em cada coluna."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Método Canônico Processo vs. Produto",
-                syntax = "\\frac{\\text{Sujeitos}_1 \\times \\text{Tempo}_1}{\\text{Obra / Efeito Final}_1} = \\frac{\\text{Sujeitos}_2 \\times \\text{Tempo}_2}{\\text{Obra / Efeito Final}_2}",
+                syntax = """\\frac{\\text{Sujeitos}_1 \\times \\text{Tempo}_1}{\\text{Obra / Efeito Final}_1} = \\frac{\\text{Sujeitos}_2 \\times \\text{Tempo}_2}{\\text{Obra / Efeito Final}_2}""",
                 description = "Relação universal direta que dispensa setas em problemas de produtividade e engenharia.",
                 parametersInfo = "A obra representa a meta física final executada."
             )
@@ -461,7 +461,7 @@ object BasicMathDidacticPart2 {
         solvedExamples = listOf(
             LessonExample(
                 title = "Construção de Pavimentação com Diferentes Máquinas",
-                codeOrFormula = "\\frac{6 \\times 10 \\times 8}{4000} = \\frac{10 \\times d \\times 6}{6000} \\implies d = 12\\text{ dias}",
+                codeOrFormula = """\\frac{6 \\times 10 \\times 8}{4000} = \\frac{10 \\times d \\times 6}{6000} \\implies d = 12\\text{ dias}""",
                 explanation = """
                     Se 6 máquinas trabalhando 8 horas por dia durante 10 dias asfaltam 4.000 m² de rodovia, quantos dias levarão 10 máquinas trabalhando 6 horas por dia para asfaltar 6.000 m²?
                     
@@ -594,13 +594,13 @@ object BasicMathDidacticPart2 {
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Escala Linear Cartográfica",
-                syntax = "E = \\frac{d}{D} = \\frac{1}{M}",
+                syntax = """E = \\frac{d}{D} = \\frac{1}{M}""",
                 description = "Razão dimensional direta entre a medida gráfica d e a distância real D.",
                 parametersInfo = "d e D devem estar estritamente na mesma unidade métrica (cm)."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema da Escala Superficial e Volumétrica",
-                syntax = "\\frac{A_{\\text{mapa}}}{A_{\\text{real}}} = E^2 = \\frac{1}{M^2} \\quad \\text{e} \\quad \\frac{V_{\\text{maquete}}}{V_{\\text{real}}} = E^3 = \\frac{1}{M^3}",
+                syntax = """\\frac{A_{\\text{mapa}}}{A_{\\text{real}}} = E^2 = \\frac{1}{M^2} \\quad \\text{e} \\quad \\frac{V_{\\text{maquete}}}{V_{\\text{real}}} = E^3 = \\frac{1}{M^3}""",
                 description = "Ampliação ou redução quadrática para áreas e cúbica para volumes.",
                 parametersInfo = "M é o denominador da escala linear."
             )
@@ -608,7 +608,7 @@ object BasicMathDidacticPart2 {
         solvedExamples = listOf(
             LessonExample(
                 title = "Problema Clássico ENEM: Capacidade de Maquete de Piscina",
-                codeOrFormula = "\\frac{V_{\\text{maquete}}}{V_{\\text{real}}} = \\left(\\frac{1}{50}\\right)^3 = \\frac{1}{125.000} \\implies V_{\\text{real}} = 400\\text{ mL} \\times 125.000 = 50.000\\text{ L}",
+                codeOrFormula = """\\frac{V_{\\text{maquete}}}{V_{\\text{real}}} = \\left(\\frac{1}{50}\\right)^3 = \\frac{1}{125.000} \\implies V_{\\text{real}} = 400\\text{ mL} \\times 125.000 = 50.000\\text{ L}""",
                 explanation = """
                     Uma maquete de condomínio é construída na escala 1 : 50. A piscina do clube na maquete possui capacidade volumétrica de 400 mL de água.
                     Qual é o volume real da piscina em litros?

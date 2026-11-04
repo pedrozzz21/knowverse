@@ -281,13 +281,13 @@ Construa uma expressão regular com grupos de captura nomeados (`(?P<nome>...)`)
         functionsAndSyntax = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "re.search() e re.findall()",
-                syntax = "re.search(r'padrao', texto) \\quad | \\quad re.findall(r'padrao', texto)",
+                syntax = """re.search(r'padrao', texto) \\quad | \\quad re.findall(r'padrao', texto)""",
                 description = "Pesquisa e extração de padrões formais de texto.",
                 parametersInfo = "Retorna um Match object (search) ou lista de strings (findall)."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Metacaracteres Principais",
-                syntax = "^ (início) ${'$'} (fim) \\d (dígito) \\w (letras/números) + (1+) * (0+)",
+                syntax = """^ (início) ${'$'} (fim) \\d (dígito) \\w (letras/números) + (1+) * (0+)""",
                 description = "Blocos construtores de padrões léxicos de expressões regulares.",
                 parametersInfo = "Utilize raw strings r'...' para evitar problemas de escape."
             )
@@ -295,8 +295,8 @@ Construa uma expressão regular com grupos de captura nomeados (`(?P<nome>...)`)
         codeExamples = listOf(
             LessonExample(
                 title = "Busca de Padrão com re.search",
-                codeOrFormula = "import re\ntexto = 'Pedido 1042 aprovado'\nm = re.search(r'\\d+', texto)\nif m: print('Código:', m.group())  # 1042",
-                explanation = "O padrão \\d+ localizou a sequência contínua de dígitos dentro da frase."
+                codeOrFormula = """import re\ntexto = 'Pedido 1042 aprovado'\nm = re.search(r'\\d+', texto)\nif m: print('Código:', m.group())  # 1042""",
+                explanation = """O padrão \\d+ localizou a sequência contínua de dígitos dentro da frase."""
             )
         ),
         goldTip = "Sempre declare suas expressões regulares com o prefixo r antes das aspas: r'\\d{3}'. Se você esquecer o r, o Python pode corromper suas barras invertidas antes mesmo da RegEx começar a rodar!"
@@ -460,7 +460,7 @@ Implemente uma função `inverter_string(texto)` que receba uma string qualquer 
         functionsAndSyntax = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Pilha (Stack) e Princípio LIFO",
-                syntax = "pilha.append(item) \\; (push) \\quad | \\quad item = pilha.pop() \\; (pop)",
+                syntax = """pilha.append(item) \\; (push) \\quad | \\quad item = pilha.pop() \\; (pop)""",
                 description = "Estrutura de dados linear com acesso exclusivo pelo topo (Last-In, First-Out).",
                 parametersInfo = "Operações no topo possuem complexidade temporal O(1)."
             ),

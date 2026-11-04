@@ -58,7 +58,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equação de Conversão de Escalas",
-                        syntax = "\\frac{T_C}{5} = \\frac{T_F - 32}{9} = \\frac{T_K - 273}{5}",
+                        syntax = """\\frac{T_C}{5} = \\frac{T_F - 32}{9} = \\frac{T_K - 273}{5}""",
                         description = "Relação de proporcionalidade entre termômetros Celsius, Fahrenheit e Kelvin.",
                         parametersInfo = "Uma variação de 1 °C equivale exatamente à variação de 1 K."
                     )
@@ -66,7 +66,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Febre Humana em Fahrenheit",
-                        codeOrFormula = "\\frac{38}{5} = \\frac{T_F - 32}{9} \\implies T_F = 100,4^\\circ\\text{F}",
+                        codeOrFormula = """\\frac{38}{5} = \\frac{T_F - 32}{9} \\implies T_F = 100,4^\\circ\\text{F}""",
                         explanation = "Uma pessoa com febre de 38 °C nos Estados Unidos tem sua temperatura lida como 100,4 °F."
                     )
                 ),
@@ -90,13 +90,13 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Dilatação Linear",
-                        syntax = "\\Delta L = L_0 \\cdot \\alpha \\cdot \\Delta T",
+                        syntax = """\\Delta L = L_0 \\cdot \\alpha \\cdot \\Delta T""",
                         description = "Expansão longitudinal de barras, vigas e trilhos metálicos.",
                         parametersInfo = "Juntas de dilatação em pontes e trilhos evitam empenamentos mecânicos."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Dilatação de Líquidos em Recipientes",
-                        syntax = "\\Delta V_{\\text{real}} = \\Delta V_{\\text{aparente}} + \\Delta V_{\\text{recipiente}}",
+                        syntax = """\\Delta V_{\\text{real}} = \\Delta V_{\\text{aparente}} + \\Delta V_{\\text{recipiente}}""",
                         description = "O líquido se expande mais do que o frasco de vidro que o contém.",
                         parametersInfo = "γ_real = γ_aparente + γ_frasco."
                     )
@@ -104,7 +104,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Lâmina Bimetálica",
-                        codeOrFormula = "\\text{Curva-se para o lado do metal de menor } \\alpha",
+                        codeOrFormula = """\\text{Curva-se para o lado do metal de menor } \\alpha""",
                         explanation = "Em termostatos de ferros elétricos, duas tiras de metais com coeficientes diferentes são soldadas. Ao aquecer, a tira de maior α estica mais, encurvando o conjunto e abrindo o circuito."
                     )
                 ),
@@ -131,13 +131,13 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equação Fundamental da Calorimetria",
-                        syntax = "Q = m \\cdot c \\cdot \\Delta T",
+                        syntax = """Q = m \\cdot c \\cdot \\Delta T""",
                         description = "Mnemônico popular: 'Que macete'.",
                         parametersInfo = "Massa m em gramas ou kg; c em cal/g°C ou J/kg°C."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equação do Calor Latente",
-                        syntax = "Q = m \\cdot L",
+                        syntax = """Q = m \\cdot L""",
                         description = "Mnemônico: 'Que moleza'.",
                         parametersInfo = "L_fusão do gelo = 80 cal/g; L_vaporização da água = 540 cal/g."
                     )
@@ -145,7 +145,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Potência Térmica de Ebulidor",
-                        codeOrFormula = "P = \\frac{Q}{\\Delta t} = \\frac{m \\cdot c \\cdot \\Delta T}{\\Delta t}",
+                        codeOrFormula = """P = \\frac{Q}{\\Delta t} = \\frac{m \\cdot c \\cdot \\Delta T}{\\Delta t}""",
                         explanation = "Para aquecer 500 g de água de 20 °C para 80 °C em 5 minutos (300 s): Q = 500 * 1 * 60 = 30.000 cal = 126.000 J (1 cal = 4,2 J). Potência = 126.000 / 300 = 420 W."
                     )
                 ),
@@ -170,7 +170,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Lei de Fourier da Condução",
-                        syntax = "\\Phi = \\frac{k \\cdot A \\cdot (T_1 - T_2)}{e}",
+                        syntax = """\\Phi = \\frac{k \\cdot A \\cdot (T_1 - T_2)}{e}""",
                         description = "Fluxo de calor através de uma parede de espessura e e condutividade térmica k.",
                         parametersInfo = "Paredes duplas e isolantes (isopor, fibra de vidro) reduzem o fluxo térmico."
                     )
@@ -210,13 +210,13 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Primeira Lei da Termodinâmica",
-                        syntax = "\\Delta U = Q - W",
+                        syntax = """\\Delta U = Q - W""",
                         description = "Balanço energético de calor, trabalho e energia interna.",
                         parametersInfo = "Em ciclos fechados, ΔU = 0, logo o trabalho líquido iguala o calor líquido: W = Q."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Rendimento de Carnot",
-                        syntax = "\\eta = 1 - \\frac{T_F}{T_Q}",
+                        syntax = """\\eta = 1 - \\frac{T_F}{T_Q}""",
                         description = "Limite termodinâmico inatingível por máquinas reais.",
                         parametersInfo = "As temperaturas T_F e T_Q DEVEM ser expressas em KELVIN!"
                     )
@@ -224,7 +224,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Rendimento Máximo de Motor",
-                        codeOrFormula = "\\eta = 1 - \\frac{300 \\text{ K}}{600 \\text{ K}} = 1 - 0,5 = 50\\%",
+                        codeOrFormula = """\\eta = 1 - \\frac{300 \\text{ K}}{600 \\text{ K}} = 1 - 0,5 = 50\\%""",
                         explanation = "Uma máquina térmica opera entre fonte fria a 27 °C (300 K) e quente a 327 °C (600 K). Seu rendimento máximo jamais ultrapassará 50%."
                     )
                 ),
@@ -255,7 +255,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Condição Ótima de Difração",
-                        syntax = "\\lambda \\approx d",
+                        syntax = """\\lambda \\approx d""",
                         description = "Comprimento de onda comparável à fenda.",
                         parametersInfo = "Quanto maior o comprimento de onda, maior a capacidade de difração."
                     )
@@ -263,7 +263,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Sinal de Wi-Fi e Sombras de Parede",
-                        codeOrFormula = "\\lambda = \\frac{v}{f} = \\frac{3 \\cdot 10^8 \\text{ m/s}}{2,4 \\cdot 10^9 \\text{ Hz}} = 0,125 \\text{ m} = 12,5 \\text{ cm}",
+                        codeOrFormula = """\\lambda = \\frac{v}{f} = \\frac{3 \\cdot 10^8 \\text{ m/s}}{2,4 \\cdot 10^9 \\text{ Hz}} = 0,125 \\text{ m} = 12,5 \\text{ cm}""",
                         explanation = "O roteador de 2,4 GHz emite ondas com comprimento de 12,5 cm, capaz de difratar facilmente por portas e corredores da residência."
                     )
                 ),
@@ -290,7 +290,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Cancelamento de Ruído por Interferência Destrutiva",
-                        syntax = "\\Delta x = \\frac{\\lambda}{2}",
+                        syntax = """\\Delta x = \\frac{\\lambda}{2}""",
                         description = "Ondas em oposição de fase de 180° anulam-se mutuamente.",
                         parametersInfo = "O microfone capta o ruído ambiente e gera uma onda invertida de mesma amplitude."
                     )
@@ -323,7 +323,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Frequência de Tubos Sonoros Abertos",
-                        syntax = "f_n = n \\frac{v}{2L} \\quad (n = 1, 2, 3 \\dots)",
+                        syntax = """f_n = n \\frac{v}{2L} \\quad (n = 1, 2, 3 \\dots)""",
                         description = "Emite todos os harmônicos inteiros.",
                         parametersInfo = "v é a velocidade do som no ar (~340 m/s) e L é o comprimento do tubo."
                     )
@@ -357,7 +357,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equação Geral do Efeito Doppler",
-                        syntax = "f_{\\text{obs}} = f_{\\text{fonte}} \\left( \\frac{v \\pm v_{\\text{obs}}}{v \\mp v_{\\text{fonte}}} \\right)",
+                        syntax = """f_{\\text{obs}} = f_{\\text{fonte}} \\left( \\frac{v \\pm v_{\\text{obs}}}{v \\mp v_{\\text{fonte}}} \\right)""",
                         description = "Relação entre a frequência real emitida e a aparente ouvida.",
                         parametersInfo = "Convenção de sinais: adota-se o sentido positivo do Observador para a Fonte."
                     )
@@ -365,7 +365,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Sirene de Virola em Aproximação",
-                        codeOrFormula = "f_{obs} > f_{fonte} \\implies \\text{O som percebido é mais agudo}",
+                        codeOrFormula = """f_{obs} > f_{fonte} \\implies \\text{O som percebido é mais agudo}""",
                         explanation = "Enquanto a ambulância corre em direção ao pedestre parado na calçada, o som da sirene é percebido em tom mais agudo constante do que o tom emitido originalmente pelo alto-falante."
                     )
                 ),
@@ -394,7 +394,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Semelhança na Câmera Escura",
-                        syntax = "\\frac{i}{o} = \\frac{p'}{p}",
+                        syntax = """\\frac{i}{o} = \\frac{p'}{p}""",
                         description = "Proporção geométrica de formação de sombras e imagens invertidas.",
                         parametersInfo = "Base conceitual das primeiras máquinas fotográficas (câmera escura de Da Vinci)."
                     )
@@ -402,7 +402,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Altura de Edifício por Sombras",
-                        codeOrFormula = "\\frac{H_{\\text{prédio}}}{S_{\\text{prédio}}} = \\frac{h_{\\text{vara}}}{s_{\\text{vara}}}",
+                        codeOrFormula = """\\frac{H_{\\text{prédio}}}{S_{\\text{prédio}}} = \\frac{h_{\\text{vara}}}{s_{\\text{vara}}}""",
                         explanation = "Como os raios solares chegam paralelos, uma estaca de 1 m que projeta 0,5 m de sombra permite deduzir que um prédio cuja sombra mede 20 m tem altura de 40 metros."
                     )
                 ),
@@ -424,13 +424,13 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equação de Gauss dos Espelhos",
-                        syntax = "\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{p'}",
+                        syntax = """\\frac{1}{f} = \\frac{1}{p} + \\frac{1}{p'}""",
                         description = "Relaciona distância focal f, distância do objeto p e da imagem p'.",
                         parametersInfo = "f = R/2. Imagem real tem p' > 0; imagem virtual tem p' < 0."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Aumento Linear Transversal",
-                        syntax = "A = \\frac{i}{o} = -\\frac{p'}{p}",
+                        syntax = """A = \\frac{i}{o} = -\\frac{p'}{p}""",
                         description = "Fator de ampliação ou redução da imagem.",
                         parametersInfo = "Se A > 0 imagem é direita; se A < 0 imagem é invertida."
                     )
@@ -468,13 +468,13 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Lei de Snell-Descartes",
-                        syntax = "n_1 \\cdot \\sin(\\theta_1) = n_2 \\cdot \\sin(\\theta_2)",
+                        syntax = """n_1 \\cdot \\sin(\\theta_1) = n_2 \\cdot \\sin(\\theta_2)""",
                         description = "Desvio angular da luz na interface de dois meios ópticos transparentes.",
                         parametersInfo = "Os ângulos são sempre medidos em relação à reta NORMAL perpendicular à fronteira."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Ângulo Limite de Reflexão Total",
-                        syntax = "\\sin(\\theta_L) = \\frac{n_{\\text{menor}}}{n_{\\text{maior}}}",
+                        syntax = """\\sin(\\theta_L) = \\frac{n_{\\text{menor}}}{n_{\\text{maior}}}""",
                         description = "Ângulo a partir do qual toda a energia luminosa é 100% refletida.",
                         parametersInfo = "Núcleo da fibra óptica tem índice n maior do que a casca."
                     )
@@ -482,7 +482,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Miragem no Asfalto Quente",
-                        codeOrFormula = "n_{\\text{ar frio}} > n_{\\text{ar quente}} \\implies \\text{Reflexão Total}",
+                        codeOrFormula = """n_{\\text{ar frio}} > n_{\\text{ar quente}} \\implies \\text{Reflexão Total}""",
                         explanation = "O asfalto aquecido torna o ar junto ao solo menos refringente. Os raios vindos do céu sofrem refrações sucessivas e reflexão total, fazendo o asfalto parecer molhado (refletindo o azul do céu)."
                     )
                 ),
@@ -509,7 +509,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equação da Vergência",
-                        syntax = "V = \\frac{1}{f} \\quad (f \\text{ em metros})",
+                        syntax = """V = \\frac{1}{f} \\quad (f \\text{ em metros})""",
                         description = "Poder de refração expresso em dioptrias (graus).",
                         parametersInfo = "Lente convergente tem V > 0 (+graus); divergente tem V < 0 (-graus)."
                     )
@@ -517,7 +517,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Lente de Grau Positivo",
-                        codeOrFormula = "f = 25 \\text{ cm} = 0,25 \\text{ m} \\implies V = \\frac{1}{0,25} = +4 \\text{ dioptrias}",
+                        codeOrFormula = """f = 25 \\text{ cm} = 0,25 \\text{ m} \\implies V = \\frac{1}{0,25} = +4 \\text{ dioptrias}""",
                         explanation = "Uma lente convergente com distância focal de 25 cm tem vergência igual a +4,0 graus."
                     )
                 ),
@@ -543,7 +543,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Ponto Remoto do Míope",
-                        syntax = "V = -\\frac{1}{d_{\\text{max}}}",
+                        syntax = """V = -\\frac{1}{d_{\\text{max}}}""",
                         description = "Vergência da lente divergente que corrige o ponto remoto do míope.",
                         parametersInfo = "Um míope que só enxerga nítido até 2 metros precisa de lente de V = -1/2 = -0,5 grau."
                     )
@@ -551,7 +551,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Receita de Oftalmologista",
-                        codeOrFormula = "\\text{Olho direito: } -2,50 \\text{ di } \\implies \\text{Miopia, lente divergente}",
+                        codeOrFormula = """\\text{Olho direito: } -2,50 \\text{ di } \\implies \\text{Miopia, lente divergente}""",
                         explanation = "O sinal negativo na receita oftalmológica identifica imediatamente que o paciente é míope e necessita de lente esférica divergente."
                     )
                 ),
@@ -582,13 +582,13 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equação do Fóton de Planck",
-                        syntax = "E = h \\cdot f = \\frac{h \\cdot c}{\\lambda}",
+                        syntax = """E = h \\cdot f = \\frac{h \\cdot c}{\\lambda}""",
                         description = "Energia quantizada do fóton individual de radiação.",
                         parametersInfo = "Frequência maior (ex: ultravioleta) carrega fótons muito mais energéticos que o infravermelho."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Balanço Energético Fotoelétrico",
-                        syntax = "E_{c,\\text{max}} = h \\cdot f - \\Phi",
+                        syntax = """E_{c,\\text{max}} = h \\cdot f - \\Phi""",
                         description = "Energia cinética excedente do fotoelétron liberado.",
                         parametersInfo = "Base operacional de sensores solares fotovoltaicos e sensores CCD de câmeras digitais."
                     )
@@ -623,7 +623,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equação do Decaimento Radioativo",
-                        syntax = "m = \\frac{m_0}{2^n} \\quad \\text{com } n = \\frac{t}{t_{1/2}}",
+                        syntax = """m = \\frac{m_0}{2^n} \\quad \\text{com } n = \\frac{t}{t_{1/2}}""",
                         description = "Massa remanescente após n períodos de meia-vida.",
                         parametersInfo = "Usada na datação por Carbono-14 em arqueologia e descarte de lixo hospitalar."
                     )
@@ -631,7 +631,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Decaimento de Iodo-131 na Medicina",
-                        codeOrFormula = "t = 24 \\text{ dias}, \\quad T_{1/2} = 8 \\text{ dias} \\implies n = 3 \\implies m = \\frac{80 \\text{ mg}}{2^3} = 10 \\text{ mg}",
+                        codeOrFormula = """t = 24 \\text{ dias}, \\quad T_{1/2} = 8 \\text{ dias} \\implies n = 3 \\implies m = \\frac{80 \\text{ mg}}{2^3} = 10 \\text{ mg}""",
                         explanation = "Uma amostra de 80 mg de Iodo-131 (usado no tratamento de tireoide) após 24 dias (3 meias-vidas) fica reduzida a 80 / 8 = 10 mg."
                     )
                 ),
@@ -662,7 +662,7 @@ object PhysicsThermalWavesOpticsModernDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equivalência Massa-Energia",
-                        syntax = "E = m \\cdot c^2 = \\Delta m \\cdot c^2",
+                        syntax = """E = m \\cdot c^2 = \\Delta m \\cdot c^2""",
                         description = "Equação mais famosa da física contemporânea.",
                         parametersInfo = "c² = (3*10^8)² = 9*10^16 m²/s². 1 grama de matéria convertida libera 90 trilhões de Joules!"
                     )

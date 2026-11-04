@@ -62,13 +62,13 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Constante de Proporcionalidade Direta",
-                        syntax = "\\frac{y_1}{x_1} = \\frac{y_2}{x_2} = k",
+                        syntax = """\\frac{y_1}{x_1} = \\frac{y_2}{x_2} = k""",
                         description = "Razão constante entre duas grandezas proporcionais.",
                         parametersInfo = "Ex: distância percorrida e consumo de combustível a velocidade constante."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Constante de Proporcionalidade Inversa",
-                        syntax = "x_1 \\cdot y_1 = x_2 \\cdot y_2 = k",
+                        syntax = """x_1 \\cdot y_1 = x_2 \\cdot y_2 = k""",
                         description = "Produto constante entre duas grandezas inversas.",
                         parametersInfo = "Ex: velocidade média e tempo de viagem para um percurso fixo."
                     )
@@ -76,7 +76,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Divisão em Partes Inversamente Proporcionais",
-                        codeOrFormula = "k/2 + k/3 + k/6 = 1200 \\implies k = 1200",
+                        codeOrFormula = """k/2 + k/3 + k/6 = 1200 \\implies k = 1200""",
                         explanation = "Um bônus de R$ 1.200,00 é dividido entre 3 operários de modo inversamente proporcional às faltas cometidas (2, 3 e 6 faltas). O operário com menos faltas (2) recebe k/2 = R$ 600,00."
                     )
                 ),
@@ -98,7 +98,7 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equação Fundamental da Regra de Três Composta",
-                        syntax = "\\frac{x_1}{x_2} = \\left(\\frac{a_1}{a_2}\\right)^{\\pm 1} \\cdot \\left(\\frac{b_1}{b_2}\\right)^{\\pm 1} \\dots",
+                        syntax = """\\frac{x_1}{x_2} = \\left(\\frac{a_1}{a_2}\\right)^{\\pm 1} \\cdot \\left(\\frac{b_1}{b_2}\\right)^{\\pm 1} \\dots""",
                         description = "Produto das razões diretas ou invertidas igualado à razão da variável procurada.",
                         parametersInfo = "Expoente 1 se diretamente proporcional; -1 se inversamente proporcional."
                     )
@@ -106,7 +106,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo: Construção de Muro",
-                        codeOrFormula = "\\frac{15}{x} = \\frac{10}{12} \\cdot \\frac{8}{6} \\cdot \\frac{200}{300} \\implies x = 20 \\text{ dias}",
+                        codeOrFormula = """\\frac{15}{x} = \\frac{10}{12} \\cdot \\frac{8}{6} \\cdot \\frac{200}{300} \\implies x = 20 \\text{ dias}""",
                         explanation = "10 operários trabalhando 8 h/dia constroem 200 m de muro em 15 dias. Quantos dias levarão 12 operários trabalhando 6 h/dia para fazer 300 m?"
                     )
                 ),
@@ -130,13 +130,13 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Escala Linear",
-                        syntax = "E = \\frac{d}{D}",
+                        syntax = """E = \\frac{d}{D}""",
                         description = "Razão entre distância no mapa e distância real na mesma unidade.",
                         parametersInfo = "1 cm no mapa 1:50.000 equivale a 50.000 cm = 500 m = 0,5 km."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Escala de Superfície",
-                        syntax = "E^2 = \\frac{A_{\\text{mapa}}}{A_{\\text{real}}}",
+                        syntax = """E^2 = \\frac{A_{\\text{mapa}}}{A_{\\text{real}}}""",
                         description = "A razão de áreas é o quadrado da escala linear.",
                         parametersInfo = "Fundamental para calcular áreas territoriais em mapas temáticos no ENEM."
                     )
@@ -182,7 +182,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Desconto após Aumento",
-                        codeOrFormula = "F_{\\text{final}} = 1,20 \\cdot 0,80 = 0,96 \\implies \\text{Redução de } 4\\%",
+                        codeOrFormula = """F_{\\text{final}} = 1,20 \\cdot 0,80 = 0,96 \\implies \\text{Redução de } 4\\%""",
                         explanation = "Um produto que sobe 20% e depois cai 20% não volta ao preço original; ele fica 4% mais barato do que o valor inicial."
                     )
                 ),
@@ -210,7 +210,7 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Cálculo da Amortização no SAC",
-                        syntax = "A = \\frac{SD_0}{n}",
+                        syntax = """A = \\frac{SD_0}{n}""",
                         description = "Amortização constante obtida pela divisão do capital pelo número de parcelas.",
                         parametersInfo = "Ex: empréstimo de 120.000 em 120 meses tem amortização mensal de R$ 1.000,00."
                     ),
@@ -248,7 +248,7 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Termo Geral de Sequência Linear",
-                        syntax = "a_n = c_1 \\cdot n + c_0",
+                        syntax = """a_n = c_1 \\cdot n + c_0""",
                         description = "Padrão de crescimento constante por passo.",
                         parametersInfo = "Corresponde algebricamente a uma Progressão Aritmética."
                     )
@@ -256,7 +256,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Padrão de Figuras com Palitos",
-                        codeOrFormula = "a_n = 3n + 1 \\implies a_{20} = 3(20) + 1 = 61 \\text{ palitos}",
+                        codeOrFormula = """a_n = 3n + 1 \\implies a_{20} = 3(20) + 1 = 61 \\text{ palitos}""",
                         explanation = "A figura 1 tem 4 palitos (quadrado). Cada nova figura contígua acrescenta 3 palitos. Para a figura de ordem 20, temos a_20 = 4 + (20 - 1)*3 = 61 palitos."
                     )
                 ),
@@ -281,13 +281,13 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Termo Geral da PA",
-                        syntax = "a_n = a_1 + (n - 1) \\cdot r",
+                        syntax = """a_n = a_1 + (n - 1) \\cdot r""",
                         description = "Calcula qualquer termo a partir do primeiro e da razão.",
                         parametersInfo = "Pode ser adaptado para quaisquer posições: a_n = a_k + (n - k)*r."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Soma dos Termos da PA",
-                        syntax = "S_n = \\frac{(a_1 + a_n) \\cdot n}{2}",
+                        syntax = """S_n = \\frac{(a_1 + a_n) \\cdot n}{2}""",
                         description = "Soma dos extremos multiplicada pela metade do número de termos.",
                         parametersInfo = "Descoberta pelo jovem Carl Friedrich Gauss."
                     )
@@ -295,7 +295,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Fileiras de um Teatro",
-                        codeOrFormula = "a_1 = 15, r = 2, n = 20 \\implies a_{20} = 53 \\implies S_{20} = \\frac{(15 + 53) \\cdot 20}{2} = 680",
+                        codeOrFormula = """a_1 = 15, r = 2, n = 20 \\implies a_{20} = 53 \\implies S_{20} = \\frac{(15 + 53) \\cdot 20}{2} = 680""",
                         explanation = "Um anfiteatro possui 20 fileiras. A 1ª tem 15 cadeiras e cada fileira seguinte tem 2 a mais. O total de lugares é a soma da PA: S_20 = 680 cadeiras."
                     )
                 ),
@@ -318,13 +318,13 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Termo Geral da PG",
-                        syntax = "a_n = a_1 \\cdot q^{n - 1}",
+                        syntax = """a_n = a_1 \\cdot q^{n - 1}""",
                         description = "Expressa o crescimento exponencial discreto da sequência.",
                         parametersInfo = "Usado em replicação celular, contaminação viral e frações sucessivas."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Soma da PG Infinita",
-                        syntax = "S_\\infty = \\frac{a_1}{1 - q} \\quad (-1 < q < 1)",
+                        syntax = """S_\\infty = \\frac{a_1}{1 - q} \\quad (-1 < q < 1)""",
                         description = "Limite da soma de infinitos termos decrescentes.",
                         parametersInfo = "Frequentemente cobrado em geratrizes de dízimas periódicas e fractais no ENEM."
                     )
@@ -332,7 +332,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Rebote de Bola",
-                        codeOrFormula = "a_1 = 4, q = 1/2 \\implies S_\\infty = \\frac{4}{1 - 1/2} = 8 \\text{ metros}",
+                        codeOrFormula = """a_1 = 4, q = 1/2 \\implies S_\\infty = \\frac{4}{1 - 1/2} = 8 \\text{ metros}""",
                         explanation = "Uma bola solta de 4 metros sobe sempre metade da altura do ressalto anterior. A soma de todas as alturas subidas nos ressaltos tende a 4 / (1 - 0,5) = 8 m."
                     )
                 ),
@@ -354,7 +354,7 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Seno, Cosseno e Tangente",
-                        syntax = "\\sin\\alpha = \\frac{CO}{H}, \\quad \\cos\\alpha = \\frac{CA}{H}, \\quad \\tan\\alpha = \\frac{CO}{CA}",
+                        syntax = """\\sin\\alpha = \\frac{CO}{H}, \\quad \\cos\\alpha = \\frac{CA}{H}, \\quad \\tan\\alpha = \\frac{CO}{CA}""",
                         description = "Definições fundamentais de trigonometria plana.",
                         parametersInfo = "Mnemônico popular: SOH - CAH - TOA."
                     )
@@ -362,7 +362,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Altura de uma Torre de Transmissão",
-                        codeOrFormula = "\\tan(30^\\circ) = \\frac{h}{60} \\implies h = 60 \\cdot \\frac{\\sqrt{3}}{3} = 20\\sqrt{3} \\approx 34,64 \\text{ m}",
+                        codeOrFormula = """\\tan(30^\\circ) = \\frac{h}{60} \\implies h = 60 \\cdot \\frac{\\sqrt{3}}{3} = 20\\sqrt{3} \\approx 34,64 \\text{ m}""",
                         explanation = "A 60 m da base de uma torre, o topo é avistado sob ângulo de 30°. Usando a tangente, encontramos a altura vertical h."
                     )
                 ),
@@ -388,7 +388,7 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Identidade Fundamental",
-                        syntax = "\\sin^2(x) + \\cos^2(x) = 1",
+                        syntax = """\\sin^2(x) + \\cos^2(x) = 1""",
                         description = "Decorrente direta do Teorema de Pitágoras no ciclo unitário.",
                         parametersInfo = "Permite calcular o cosseno a partir do seno e vice-versa."
                     )
@@ -396,7 +396,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo: Cosseno no 1º Quadrante",
-                        codeOrFormula = "\\sin(x) = 0,6 \\implies \\cos(x) = \\sqrt{1 - 0,6^2} = \\sqrt{0,64} = 0,8",
+                        codeOrFormula = """\\sin(x) = 0,6 \\implies \\cos(x) = \\sqrt{1 - 0,6^2} = \\sqrt{0,64} = 0,8""",
                         explanation = "A relação fundamental permite encontrar as demais razões quando conhecemos uma delas."
                     )
                 ),
@@ -423,13 +423,13 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Lei dos Cossenos",
-                        syntax = "a^2 = b^2 + c^2 - 2bc\\cos\\hat{A}",
+                        syntax = """a^2 = b^2 + c^2 - 2bc\\cos\\hat{A}""",
                         description = "Relação métrica geral para qualquer triângulo plano.",
                         parametersInfo = "Se o ângulo for 90°, cos(90°) = 0 e recai exatamente no Teorema de Pitágoras."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Lei dos Senos",
-                        syntax = "\\frac{a}{\\sin\\hat{A}} = \\frac{b}{\\sin\\hat{B}} = 2R",
+                        syntax = """\\frac{a}{\\sin\\hat{A}} = \\frac{b}{\\sin\\hat{B}} = 2R""",
                         description = "Proporção entre lados e senos dos vértices opostos.",
                         parametersInfo = "Permite calcular o raio da circunferência circunscrita R."
                     )
@@ -437,7 +437,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Distância entre dois barcos",
-                        codeOrFormula = "d^2 = 5^2 + 8^2 - 2(5)(8)\\cos(60^\\circ) = 25 + 64 - 40 = 49 \\implies d = 7 \\text{ km}",
+                        codeOrFormula = """d^2 = 5^2 + 8^2 - 2(5)(8)\\cos(60^\\circ) = 25 + 64 - 40 = 49 \\implies d = 7 \\text{ km}""",
                         explanation = "Dois barcos partem do mesmo porto formando ângulo de 60°. Um anda 5 km e o outro 8 km. Pela Lei dos Cossenos, a distância direta entre eles é 7 km."
                     )
                 ),
@@ -463,13 +463,13 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Conversão de Unidades Angulares",
-                        syntax = "\\frac{\\alpha^\\circ}{180^\\circ} = \\frac{\\theta \\text{ rad}}{\\pi}",
+                        syntax = """\\frac{\\alpha^\\circ}{180^\\circ} = \\frac{\\theta \\text{ rad}}{\\pi}""",
                         description = "Regra de três simples para converter graus em radianos.",
                         parametersInfo = "Essencial em física ondulatória e no movimento circular uniforme."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Sinais no Ciclo Trigonométrico",
-                        syntax = "\\sin: (+, +, -, -) \\quad \\cos: (+, -, -, +)",
+                        syntax = """\\sin: (+, +, -, -) \\quad \\cos: (+, -, -, +)""",
                         description = "Distribuição de sinais pelos quadrantes 1º, 2º, 3º e 4º.",
                         parametersInfo = "1ºQ: todos +, 2ºQ: sen +, 3ºQ: tan +, 4ºQ: cos +."
                     )
@@ -477,7 +477,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Pêndulo Simples",
-                        codeOrFormula = "s = \\theta \\cdot R = \\frac{\\pi}{6} \\cdot 1,2 = 0,2\\pi \\approx 0,628 \\text{ m}",
+                        codeOrFormula = """s = \\theta \\cdot R = \\frac{\\pi}{6} \\cdot 1,2 = 0,2\\pi \\approx 0,628 \\text{ m}""",
                         explanation = "Um pêndulo de 1,2 m oscila com amplitude angular de 30° (pi/6 rad). O arco percorrido pela extremidade é s = (pi/6) * 1,2 = 0,2 pi m."
                     )
                 ),
@@ -500,7 +500,7 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Período da Onda Senoidal",
-                        syntax = "T = \\frac{2\\pi}{|C|}",
+                        syntax = """T = \\frac{2\\pi}{|C|}""",
                         description = "Determina o intervalo temporal ou espacial de uma repetição.",
                         parametersInfo = "Se C dobra, a frequência dobra e o período cai pela metade."
                     ),
@@ -514,7 +514,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Altura da Maré Oceânica",
-                        codeOrFormula = "h(t) = 3 + 2\\cos\\left(\\frac{\\pi t}{6}\\right) \\implies P = \\frac{2\\pi}{\\pi/6} = 12 \\text{ horas}",
+                        codeOrFormula = """h(t) = 3 + 2\\cos\\left(\\frac{\\pi t}{6}\\right) \\implies P = \\frac{2\\pi}{\\pi/6} = 12 \\text{ horas}""",
                         explanation = "A altura máxima da maré é 3 + 2 = 5 metros; a mínima é 3 - 2 = 1 metro. O período entre duas marés altas consecutivas é 12 horas."
                     )
                 ),
@@ -537,7 +537,7 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Fórmula da Distância entre Dois Pontos",
-                        syntax = "d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}",
+                        syntax = """d = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}""",
                         description = "Comprimento do segmento retilíneo unindo dois pontos no plano.",
                         parametersInfo = "Independe da ordem dos pontos, pois o quadrado elimina sinais negativos."
                     )
@@ -545,7 +545,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Antena de Telecomunicações",
-                        codeOrFormula = "d = \\sqrt{(5 - 1)^2 + (7 - 4)^2} = \\sqrt{4^2 + 3^2} = \\sqrt{25} = 5 \\text{ km}",
+                        codeOrFormula = """d = \\sqrt{(5 - 1)^2 + (7 - 4)^2} = \\sqrt{4^2 + 3^2} = \\sqrt{25} = 5 \\text{ km}""",
                         explanation = "A distância entre uma torre na posição (1, 4) e uma residência na posição (5, 7) é exatamente 5 km (triângulo pitagórico 3-4-5)."
                     )
                 ),
@@ -568,13 +568,13 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Ponto Médio de Segmento",
-                        syntax = "M = \\left(\\frac{x_1 + x_2}{2}, \\frac{y_1 + y_2}{2}\\right)",
+                        syntax = """M = \\left(\\frac{x_1 + x_2}{2}, \\frac{y_1 + y_2}{2}\\right)""",
                         description = "Equidistante de ambos os extremos.",
                         parametersInfo = "Usado em problemas de rotas de entrega e posicionamento de centros de distribuição."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Baricentro do Triângulo",
-                        syntax = "G = \\left(\\frac{x_A + x_B + x_C}{3}, \\frac{y_A + y_B + y_C}{3}\\right)",
+                        syntax = """G = \\left(\\frac{x_A + x_B + x_C}{3}, \\frac{y_A + y_B + y_C}{3}\\right)""",
                         description = "Média das coordenadas dos três vértices.",
                         parametersInfo = "Centro de equilíbrio mecânico da placa triangular."
                     )
@@ -582,7 +582,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo: Ponto de Encontro em Centroide",
-                        codeOrFormula = "x_G = \\frac{2 + 6 + 4}{3} = 4, \\quad y_G = \\frac{1 + 3 + 8}{3} = 4 \\implies G(4, 4)",
+                        codeOrFormula = """x_G = \\frac{2 + 6 + 4}{3} = 4, \\quad y_G = \\frac{1 + 3 + 8}{3} = 4 \\implies G(4, 4)""",
                         explanation = "Três cidades localizadas nas coordenadas (2, 1), (6, 3) e (4, 8) desejam instalar um hospital no baricentro da região: a coordenada exata é (4, 4)."
                     )
                 ),
@@ -615,7 +615,7 @@ object MathAdvancedCurriculumDidactic {
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Área de Triângulo por Coordenadas",
-                        syntax = "A = \\frac{|D|}{2}",
+                        syntax = """A = \\frac{|D|}{2}""",
                         description = "Calcula a área de qualquer polígono triangular conhecendo apenas os vértices.",
                         parametersInfo = "Evita necessidade de calcular base e altura com Pitágoras."
                     )
@@ -623,7 +623,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Verificação de Alinhamento",
-                        codeOrFormula = "m_{AB} = \\frac{5 - 1}{4 - 2} = 2, \\quad m_{BC} = \\frac{9 - 5}{6 - 4} = 2 \\implies \\text{Alinhados}",
+                        codeOrFormula = """m_{AB} = \\frac{5 - 1}{4 - 2} = 2, \\quad m_{BC} = \\frac{9 - 5}{6 - 4} = 2 \\implies \\text{Alinhados}""",
                         explanation = "Os pontos (2, 1), (4, 5) e (6, 9) possuem a mesma inclinação m = 2, logo são estritamente colineares (D = 0)."
                     )
                 ),
@@ -657,7 +657,7 @@ object MathAdvancedCurriculumDidactic {
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Coeficiente Angular (Declividade)",
-                        syntax = "m = \\frac{\\Delta y}{\\Delta x} = \\frac{y_2 - y_1}{x_2 - x_1}",
+                        syntax = """m = \\frac{\\Delta y}{\\Delta x} = \\frac{y_2 - y_1}{x_2 - x_1}""",
                         description = "Taxa de variação média constante da reta.",
                         parametersInfo = "Se m > 0 a reta é crescente; se m < 0 é decrescente; se m = 0 é horizontal."
                     )
@@ -665,7 +665,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Reta de Tarifa de Táxi",
-                        codeOrFormula = "y - 5 = 2,5(x - 0) \\implies y = 2,5x + 5",
+                        codeOrFormula = """y - 5 = 2,5(x - 0) \\implies y = 2,5x + 5""",
                         explanation = "A bandeirada fixa é R$ 5,00 (intercepto linear q = 5) e cada km rodado custa R$ 2,50 (inclinação m = 2,5). A equação da reta é y = 2,5x + 5."
                     )
                 ),
@@ -689,13 +689,13 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Condição de Paralelismo",
-                        syntax = "m_r = m_s \\quad (q_r \\ne q_s)",
+                        syntax = """m_r = m_s \\quad (q_r \\ne q_s)""",
                         description = "Mesma inclinação e interceptos lineares distintos.",
                         parametersInfo = "Sistemas lineares com retas paralelas distintas são impossíveis (sem solução comum)."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Condição de Perpendicularismo",
-                        syntax = "m_r \\cdot m_s = -1",
+                        syntax = """m_r \\cdot m_s = -1""",
                         description = "O produto das inclinações de retas perpendiculares é sempre -1.",
                         parametersInfo = "Se a reta r tem m = 2, a reta perpendicular tem m = -1/2."
                     )
@@ -703,7 +703,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo: Reta Perpendicular",
-                        codeOrFormula = "r: y = 3x - 1 \\implies m_r = 3 \\implies m_s = -1/3 \\implies y - 2 = -1/3(x - 6)",
+                        codeOrFormula = """r: y = 3x - 1 \\implies m_r = 3 \\implies m_s = -1/3 \\implies y - 2 = -1/3(x - 6)""",
                         explanation = "A reta perpendicular à reta y = 3x - 1 passando por (6, 2) tem m = -1/3. Logo: y - 2 = -x/3 + 2 => y = -x/3 + 4."
                     )
                 ),
@@ -734,7 +734,7 @@ object MathAdvancedCurriculumDidactic {
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Identificação de Centro e Raio na Forma Geral",
-                        syntax = "a = -\\frac{D}{2}, \\quad b = -\\frac{E}{2}, \\quad R = \\sqrt{a^2 + b^2 - F}",
+                        syntax = """a = -\\frac{D}{2}, \\quad b = -\\frac{E}{2}, \\quad R = \\sqrt{a^2 + b^2 - F}""",
                         description = "Técnica de completamento de quadrados para voltar à reduzida.",
                         parametersInfo = "Para existir circunferência real, a^2 + b^2 - F > 0."
                     )
@@ -742,7 +742,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Alcance de Torre de Celular",
-                        codeOrFormula = "(x - 3)^2 + (y - 4)^2 = 25 \\implies C(3, 4) \\text{ e } R = 5 \\text{ km}",
+                        codeOrFormula = """(x - 3)^2 + (y - 4)^2 = 25 \\implies C(3, 4) \\text{ e } R = 5 \\text{ km}""",
                         explanation = "A área de cobertura de uma antena de celular tem limite dado por (x - 3)^2 + (y - 4)^2 = 25. O centro é (3, 4) e o raio de alcance máximo é 5 km."
                     )
                 ),
@@ -769,7 +769,7 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Condição de Existência do Produto Matricial",
-                        syntax = "A_{m \\times p} \\cdot B_{p \\times n} = C_{m \\times n}",
+                        syntax = """A_{m \\times p} \\cdot B_{p \\times n} = C_{m \\times n}""",
                         description = "O número de colunas da 1ª deve coincidir com o número de linhas da 2ª.",
                         parametersInfo = "A multiplicação de matrizes NÃO é comutativa em geral: A*B != B*A."
                     ),
@@ -783,7 +783,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Faturamento de Lojas",
-                        codeOrFormula = "\\begin{bmatrix} 10 & 20 \\end{bmatrix} \\cdot \\begin{bmatrix} 50 \\\\ 30 \\end{bmatrix} = 10(50) + 20(30) = 500 + 600 = R$ 1.100,00",
+                        codeOrFormula = """\\begin{bmatrix} 10 & 20 \\end{bmatrix} \\cdot \\begin{bmatrix} 50 \\\\ 30 \\end{bmatrix} = 10(50) + 20(30) = 500 + 600 = R$ 1.100,00""",
                         explanation = "A linha representa as quantidades vendidas dos produtos A e B (10 e 20 unidades) e a coluna representa os preços unitários (50 e 30 reais). O produto matricial calcula o faturamento total."
                     )
                 ),
@@ -808,13 +808,13 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Determinante 2x2",
-                        syntax = "\\det(A) = a_{11}a_{22} - a_{12}a_{21}",
+                        syntax = """\\det(A) = a_{11}a_{22} - a_{12}a_{21}""",
                         description = "Diferença entre diagonal principal e secundária.",
                         parametersInfo = "Determinante nulo indica que as linhas são linearmente dependentes."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Regra de Sarrus (Ordem 3)",
-                        syntax = "\\det(A) = (aei + bfg + cdh) - (ceg + afh + bdi)",
+                        syntax = """\\det(A) = (aei + bfg + cdh) - (ceg + afh + bdi)""",
                         description = "Algoritmo prático exclusivo para matrizes quadradas de ordem 3.",
                         parametersInfo = "Não pode ser aplicado em matrizes de ordem 4 ou superior."
                     )
@@ -822,7 +822,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo: Determinante de Matriz 2x2",
-                        codeOrFormula = "\\det \\begin{bmatrix} 4 & 3 \\\\ 2 & 5 \\end{bmatrix} = (4)(5) - (3)(2) = 20 - 6 = 14",
+                        codeOrFormula = """\\det \\begin{bmatrix} 4 & 3 \\\\ 2 & 5 \\end{bmatrix} = (4)(5) - (3)(2) = 20 - 6 = 14""",
                         explanation = "Calcula-se o produto dos elementos da diagonal principal (4 * 5 = 20) e subtrai-se o produto da diagonal secundária (3 * 2 = 6)."
                     )
                 ),
@@ -846,13 +846,13 @@ object MathAdvancedCurriculumDidactic {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Regra de Cramer",
-                        syntax = "x_i = \\frac{D_{x_i}}{D} \\quad (D \\ne 0)",
+                        syntax = """x_i = \\frac{D_{x_i}}{D} \\quad (D \\ne 0)""",
                         description = "Solução de sistemas com mesma quantidade de equações e incógnitas.",
                         parametersInfo = "D é o determinante da matriz dos coeficientes das incógnitas."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Critério de Resolução SPD",
-                        syntax = "D \\ne 0 \\iff \\text{Solução Única}",
+                        syntax = """D \\ne 0 \\iff \\text{Solução Única}""",
                         description = "Garante que as equações são linearmente independentes.",
                         parametersInfo = "Fundamental para discutir sistemas lineares com parâmetros no ENEM."
                     )
@@ -860,7 +860,7 @@ object MathAdvancedCurriculumDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Compra de Cadernos e Canetas",
-                        codeOrFormula = "\\begin{cases} 2x + 3y = 28 \\\\ 4x + y = 26 \\end{cases} \\implies x = 5, \\quad y = 6",
+                        codeOrFormula = """\\begin{cases} 2x + 3y = 28 \\\\ 4x + y = 26 \\end{cases} \\implies x = 5, \\quad y = 6""",
                         explanation = "x é o preço do caderno e y o da caneta. Multiplicando a 2ª equação por -3 e somando: -10x = -50 => x = R$ 5,00 e y = R$ 6,00."
                     )
                 ),
@@ -1023,7 +1023,7 @@ object MathAdvancedCurriculumDidactic {
                 MathExercise(
                     id = "ex_m12_a5_1",
                     title = "ENEM: Temperatura Média e Modelo Senoidal",
-                    problemStatement = "A temperatura média diária T (em °C) em uma cidade serrana ao longo dos meses do ano t (onde t = 1 representa janeiro) é modelada pela função periódica:\nT(t) = 18 + 6 \\cdot \\cos\\left(\\frac{\\pi(t - 1)}{6}\\right)\nQual é a temperatura máxima prevista para essa cidade e em qual mês do ano ela ocorre?",
+                    problemStatement = """A temperatura média diária T (em °C) em uma cidade serrana ao longo dos meses do ano t (onde t = 1 representa janeiro) é modelada pela função periódica:\nT(t) = 18 + 6 \\cdot \\cos\\left(\\frac{\\pi(t - 1)}{6}\\right)\nQual é a temperatura máxima prevista para essa cidade e em qual mês do ano ela ocorre?""",
                     options = listOf("24 °C em janeiro", "24 °C em julho", "22 °C em março", "18 °C em abril", "12 °C em outubro"),
                     correctIndex = 0,
                     hint = "O valor máximo do cosseno é +1, que ocorre quando o argumento é 0 (t = 1).",
@@ -1109,7 +1109,7 @@ object MathAdvancedCurriculumDidactic {
                 MathExercise(
                     id = "ex_m14_a1_1",
                     title = "ENEM: Matriz de Pontuação de Atletas",
-                    problemStatement = "Em um torneio, o número de vitórias (3 pontos), empates (1 ponto) e derrotas (0 ponto) de duas equipes é representado pela matriz 2x3:\n\\[ M = \\begin{bmatrix} 5 & 2 & 1 \\\\ 4 & 4 & 0 \\end{bmatrix} \\]\nMultiplicando M pela matriz coluna de pontuação P = [3, 1, 0]^t, qual é a pontuação final obtida pelas duas equipes, respectivamente?",
+                    problemStatement = """Em um torneio, o número de vitórias (3 pontos), empates (1 ponto) e derrotas (0 ponto) de duas equipes é representado pela matriz 2x3:\n\\[ M = \\begin{bmatrix} 5 & 2 & 1 \\\\ 4 & 4 & 0 \\end{bmatrix} \\]\nMultiplicando M pela matriz coluna de pontuação P = [3, 1, 0]^t, qual é a pontuação final obtida pelas duas equipes, respectivamente?""",
                     options = listOf("17 e 16 pontos", "15 e 12 pontos", "16 e 16 pontos", "17 e 12 pontos", "18 e 16 pontos"),
                     correctIndex = 0,
                     hint = "Faça a multiplicação linha por coluna: 5*3 + 2*1 + 1*0 para a 1ª equipe, e 4*3 + 4*1 + 0*0 para a 2ª.",
@@ -1121,7 +1121,7 @@ object MathAdvancedCurriculumDidactic {
                 MathExercise(
                     id = "ex_m14_a2_1",
                     title = "ENEM: Determinante e Parâmetro Linear",
-                    problemStatement = "Para que a matriz quadrada \\( A = \\begin{bmatrix} k & 6 \\\\ 2 & 3 \\end{bmatrix} \\) NÃO seja invertível (ou seja, tenha determinante igual a zero), o valor real da constante k deve ser:",
+                    problemStatement = """Para que a matriz quadrada \\( A = \\begin{bmatrix} k & 6 \\\\ 2 & 3 \\end{bmatrix} \\) NÃO seja invertível (ou seja, tenha determinante igual a zero), o valor real da constante k deve ser:""",
                     options = listOf("1", "2", "3", "4", "6"),
                     correctIndex = 3,
                     hint = "det(A) = 3k - 12 = 0.",

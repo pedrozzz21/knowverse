@@ -55,10 +55,13 @@ O trato gastrointestinal quebra macromoléculas insolúveis em monômeros absorv
 ### 2. Sistema Respiratório e Hematose
 - **Hematose Pulmonar:** Ocorre nos alvéolos pulmonares por difusão passiva simples (a favor do gradiente de pressão parcial). O \( O_2 \) sai do alvéolo para o sangue capilar e o \( CO_2 \) sai do sangue para o alvéolo.
 - **Transporte de Gases no Sangue:**
-  - **Oxigênio (\( O_2 \)):** 98,5% ligado à **hemoglobina** dentro das hemácias (\( Hb + O_2 ightleftharpoons HbO_2 \) - oxi-hemoglobina) e 1,5% dissolvido no plasma.
+  - **Oxigênio (\( O_2 \)):** 98,5% ligado à **hemoglobina** dentro das hemácias (\( Hb + O_2 
+ightleftharpoons HbO_2 \) - oxi-hemoglobina) e 1,5% dissolvido no plasma.
   - **Gás Carbônico (\( CO_2 \)):** Cerca de 70% é transportado na forma de **íon bicarbonato** (\( HCO_3^- \)) no plasma, 23% ligado à hemoglobina (carboemoglobina) e 7% dissolvido no plasma.
   - **Equilíbrio Ácido-Base e Bulbo:** A enzima anidrase carbônica nas hemácias catalisa:
-    \[ CO_2 + H_2O ightleftharpoons H_2CO_3 ightleftharpoons H^+ + HCO_3^- \]
+    \[ CO_2 + H_2O 
+ightleftharpoons H_2CO_3 
+ightleftharpoons H^+ + HCO_3^- \]
     Durante atividade física intensa, o acúmulo de \( CO_2 \) eleva \( H^+ \) (acidose respiratória, queda no pH). O bulbo raquidiano detecta o pH ácido e acelera imediatamente a frequência respiratória (hiperventilação compensatória).
 
 ### 3. Sistema Cardiovascular Integrado
@@ -125,13 +128,13 @@ Descreva a viagem completa de uma molécula de oxigênio desde a cavidade nasal 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equilíbrio Ácido-Base Respiratório",
-                syntax = "CO_2 + H_2O \rightleftharpoons H_2CO_3 \rightleftharpoons H^+ + HCO_3^-",
+                syntax = """CO_2 + H_2O \rightleftharpoons H_2CO_3 \rightleftharpoons H^+ + HCO_3^-""",
                 description = "Equilíbrio catalisado pela anidrase carbônica no interior dos eritrócitos.",
                 parametersInfo = "Se a ventilação cai, acumula-se CO2, formando íons H+ e acidificando o sangue."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Ação do Hormônio Antidiurético (ADH)",
-                syntax = "\uparrow [\text{Osmolalidade}] \implies \uparrow \text{ADH} \implies \uparrow \text{Aquaporinas} \implies \downarrow \text{Volume Urinário}",
+                syntax = """\uparrow [\text{Osmolalidade}] \implies \uparrow \text{ADH} \implies \uparrow \text{Aquaporinas} \implies \downarrow \text{Volume Urinário}""",
                 description = "O ADH aumenta a permeabilidade à água nos ductos renais.",
                 parametersInfo = "Economiza água corporal diminuindo o volume da urina e aumentando sua concentração."
             )
@@ -139,7 +142,7 @@ Descreva a viagem completa de uma molécula de oxigênio desde a cavidade nasal 
         solvedExamples = listOf(
             LessonExample(
                 title = "O Trajeto do Sangue no Ciclo Cardíaco",
-                codeOrFormula = "\text{Veias Cavas} \to \text{Átrio D} \to \text{Ventrículo D} \to \text{Artérias Pulmonares} \to \text{Pulmões} \to \text{Veias Pulmonares} \to \text{Átrio E} \to \text{Ventrículo E} \to \text{Aorta}",
+                codeOrFormula = """\text{Veias Cavas} \to \text{Átrio D} \to \text{Ventrículo D} \to \text{Artérias Pulmonares} \to \text{Pulmões} \to \text{Veias Pulmonares} \to \text{Átrio E} \to \text{Ventrículo E} \to \text{Aorta}""",
                 explanation = "O sangue venoso pobre em oxigênio entra no átrio direito, passa ao ventrículo direito, vai aos pulmões onde sofre hematose e retorna arterial pelo átrio esquerdo, de onde o ventrículo esquerdo o impulsiona pela aorta para todo o corpo."
             )
         ),
@@ -244,13 +247,13 @@ Diferencie o ciclo de contaminação e as medidas profiláticas entre a Teníase
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação da Imunização Ativa (Vacina)",
-                syntax = "\text{Vacina (Antígeno)} \to \text{Resposta Própria} + \text{Células B e T de Memória}",
+                syntax = """\text{Vacina (Antígeno)} \to \text{Resposta Própria} + \text{Células B e T de Memória}""",
                 description = "Gera imunidade duradoura e preventiva através da ativação clonal própria.",
                 parametersInfo = "Essencial em políticas de saúde pública preventivas."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação da Imunização Passiva (Soro)",
-                syntax = "\text{Soro (Anticorpos)} \to \text{Neutralização Imediata} \quad [\text{Sem Memória}]",
+                syntax = """\text{Soro (Anticorpos)} \to \text{Neutralização Imediata} \quad [\text{Sem Memória}]""",
                 description = "Fornece imunoglobulinas prontas para emergências clínicas.",
                 parametersInfo = "Não protege contra contatos futuros após o desaparecimento dos anticorpos."
             )
@@ -258,7 +261,7 @@ Diferencie o ciclo de contaminação e as medidas profiláticas entre a Teníase
         solvedExamples = listOf(
             LessonExample(
                 title = "Comparação da Resposta Primária vs. Secundária",
-                codeOrFormula = "\text{Resposta Primária: Latência 10 dias, Pico moderado} \\ \text{Resposta Secundária: Latência < 48h, Pico 100x maior}",
+                codeOrFormula = """\text{Resposta Primária: Latência 10 dias, Pico moderado} \\ \text{Resposta Secundária: Latência < 48h, Pico 100x maior}""",
                 explanation = "A presença prévia de clones de linfócitos de memória permite que a produção de anticorpos da classe IgG dispare de maneira quase instantânea no segundo contato."
             )
         ),
@@ -373,13 +376,13 @@ Explique detalhadamente por que uma mulher com insuficiência lútea (degeneraç
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Sinalização e Manutenção Gravídica",
-                syntax = "\text{Blastocisto} \xrightarrow{\text{hCG}} \text{Corpo Lúteo Ativo} \implies \uparrow \text{Progesterona} \implies \text{Endométrio Íntegro}",
+                syntax = """\text{Blastocisto} \xrightarrow{\text{hCG}} \text{Corpo Lúteo Ativo} \implies \uparrow \text{Progesterona} \implies \text{Endométrio Íntegro}""",
                 description = "O hCG embrionário mantém o corpo lúteo e bloqueia a menstruação.",
                 parametersInfo = "Base biológica dos testes de gravidez de urina e sangue."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Cálculo da Ovulação em Ciclos Regulares",
-                syntax = "\text{Dia da Ovulação} = \text{Duração Total do Ciclo} - 14",
+                syntax = """\text{Dia da Ovulação} = \text{Duração Total do Ciclo} - 14""",
                 description = "A fase lútea possui duração estável de aproximadamente 14 dias.",
                 parametersInfo = "Em um ciclo de 30 dias, a ovulação ocorre por volta do dia 16."
             )
@@ -387,7 +390,7 @@ Explique detalhadamente por que uma mulher com insuficiência lútea (degeneraç
         solvedExamples = listOf(
             LessonExample(
                 title = "Identificação das Curvas Hormonais",
-                codeOrFormula = "\text{FSH: sobe no início} \\ \text{LH: pico estrondoso no dia 14} \\ \text{Estrogênio: pico antes da ovulação} \\ \text{Progesterona: platô pós-ovulação}",
+                codeOrFormula = """\text{FSH: sobe no início} \\ \text{LH: pico estrondoso no dia 14} \\ \text{Estrogênio: pico antes da ovulação} \\ \text{Progesterona: platô pós-ovulação}""",
                 explanation = "A progesterona é o marcador absoluto da fase lútea (segunda metade do ciclo menstrual)."
             )
         ),
@@ -500,13 +503,13 @@ Explique por que um indivíduo recém-infectado pelo vírus HIV pode testar fals
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Mecanismo da Pílula Anticoncepcional",
-                syntax = "[\text{Estrogênio/Progestina}]_{\text{constante}} \implies \downarrow \text{FSH/LH} \implies \text{Inibição da Ovulação}",
+                syntax = """[\text{Estrogênio/Progestina}]_{\text{constante}} \implies \downarrow \text{FSH/LH} \implies \text{Inibição da Ovulação}""",
                 description = "Bloqueio hormonal contínuo que impede o amadurecimento folicular e o pico ovulatório.",
                 parametersInfo = "Também altera a viscosidade do muco cervical dificultando a passagem dos espermatozoides."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Vasectomia vs. Laqueadura",
-                syntax = "\text{Vasectomia: Corta Ductos Deferentes} \quad | \quad \text{Laqueadura: Corta Tubas Uterinas}",
+                syntax = """\text{Vasectomia: Corta Ductos Deferentes} \quad | \quad \text{Laqueadura: Corta Tubas Uterinas}""",
                 description = "Interrupção mecânica definitiva do encontro gamético sem alteração hormonal.",
                 parametersInfo = "Preserva plenamente a produção de hormônios sexuais nos testículos e ovários."
             )
@@ -514,7 +517,7 @@ Explique por que um indivíduo recém-infectado pelo vírus HIV pode testar fals
         solvedExamples = listOf(
             LessonExample(
                 title = "Perfil da Ejaculação Pós-Vasectomia",
-                codeOrFormula = "\text{Sêmen} = \text{Fluido Prostático/Seminal (95-99\%)} + \text{Espermatozoides (1-5\%)}",
+                codeOrFormula = """\text{Sêmen} = \text{Fluido Prostático/Seminal (95-99\%)} + \text{Espermatozoides (1-5\%)}""",
                 explanation = "A vasectomia elimina apenas os espermatozoides; o homem ejacula o mesmo volume de líquido seminal normalmente."
             )
         ),

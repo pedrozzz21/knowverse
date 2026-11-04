@@ -351,7 +351,7 @@ Construa uma hierarquia de formas geométricas onde a classe base abstrata `Form
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "isinstance() e issubclass()",
-                syntax = "isinstance(objeto, Classe) \\quad | \\quad issubclass(Sub, Super)",
+                syntax = """isinstance(objeto, Classe) \\quad | \\quad issubclass(Sub, Super)""",
                 description = "Funções de introspecção e checagem de tipos na hierarquia orientada a objetos.",
                 parametersInfo = "Retornam True ou False."
             )

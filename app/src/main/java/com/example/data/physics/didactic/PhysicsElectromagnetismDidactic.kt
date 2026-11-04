@@ -147,32 +147,32 @@ Por que ligar simultaneamente um micro-ondas, uma torradeira e uma fritadeira el
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Intensidade de Corrente Elétrica Média",
-                syntax = "i = \\frac{\\Delta Q}{\\Delta t} = \\frac{n \\cdot e}{\\Delta t}",
+                syntax = """i = \\frac{\\Delta Q}{\\Delta t} = \\frac{n \\cdot e}{\\Delta t}""",
                 description = "Taxa de transporte de carga elétrica que flui através de uma seção transversal de condutor por segundo.",
-                parametersInfo = "i: \\text{corrente (A)}; \\quad \\Delta Q: \\text{carga (C)}; \\quad n: \\text{número de elétrons}; \\quad e = 1{,}6 \\times 10^{-19}\\text{ C}"
+                parametersInfo = """i: \\text{corrente (A)}; \\quad \\Delta Q: \\text{carga (C)}; \\quad n: \\text{número de elétrons}; \\quad e = 1{,}6 \\times 10^{-19}\\text{ C}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Potência Elétrica Fundamental",
-                syntax = "P = U \\cdot i",
+                syntax = """P = U \\cdot i""",
                 description = "Relação universal conectando a taxa de conversão energética com a ddp e a corrente circulante.",
-                parametersInfo = "P: \\text{potência em Watts (W)}; \\quad U: \\text{tensão em Volts (V)}; \\quad i: \\text{corrente em Ampères (A)}"
+                parametersInfo = """P: \\text{potência em Watts (W)}; \\quad U: \\text{tensão em Volts (V)}; \\quad i: \\text{corrente em Ampères (A)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Energia Elétrica em Quilowatt-hora",
-                syntax = "E_{\\text{kWh}} = \\frac{P_{\\text{Watts}}}{1000} \\cdot \\Delta t_{\\text{horas}}",
+                syntax = """E_{\\text{kWh}} = \\frac{P_{\\text{Watts}}}{1000} \\cdot \\Delta t_{\\text{horas}}""",
                 description = "Cálculo direto da energia faturada em concessionárias de abastecimento residencial.",
-                parametersInfo = "E: \\text{energia em kWh}; \\quad 1\\text{ kWh} = 3{,}6 \\times 10^6\\text{ Joules}"
+                parametersInfo = """E: \\text{energia em kWh}; \\quad 1\\text{ kWh} = 3{,}6 \\times 10^6\\text{ Joules}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Consumo Mensal de Geladeira Frost-Free",
-                codeOrFormula = "E = P \\cdot \\Delta t \\implies E = 0{,}2\\text{ kW} \\cdot (10\\text{ h/dia} \\cdot 30\\text{ dias}) = 60\\text{ kWh}",
+                codeOrFormula = """E = P \\cdot \\Delta t \\implies E = 0{,}2\\text{ kW} \\cdot (10\\text{ h/dia} \\cdot 30\\text{ dias}) = 60\\text{ kWh}""",
                 explanation = "Considerando o fator de ciclo do compressor termostático que opera cerca de 10 horas ativas por dia."
             ),
             LessonExample(
                 title = "Corrente Nominal de Chuveiro em 127V vs 220V",
-                codeOrFormula = "i_{127} = \\frac{5500}{127} \\approx 43{,}3\\text{ A} \\quad \\text{vs} \\quad i_{220} = \\frac{5500}{220} = 25\\text{ A}",
+                codeOrFormula = """i_{127} = \\frac{5500}{127} \\approx 43{,}3\\text{ A} \\quad \\text{vs} \\quad i_{220} = \\frac{5500}{220} = 25\\text{ A}""",
                 explanation = "Instalações em 220V exigem menor corrente para a mesma potência, permitindo condutores elétricos de fiação mais fina e menor aquecimento nos cabos."
             )
         ),
@@ -314,32 +314,32 @@ Considere um cubo metálico com doze resistores idênticos de resistência \( R 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Primeira Lei de Ohm",
-                syntax = "U = R \\cdot i",
+                syntax = """U = R \\cdot i""",
                 description = "Proporcionalidade linear direta entre a tensão aplicada e a intensidade de corrente elétrica em condutores ôhmicos.",
-                parametersInfo = "U: \\text{diferença de potencial (V)}; \\quad R: \\text{resistência (}\\Omega\\text{)}; \\quad i: \\text{corrente (A)}"
+                parametersInfo = """U: \\text{diferença de potencial (V)}; \\quad R: \\text{resistência (}\\Omega\\text{)}; \\quad i: \\text{corrente (A)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Segunda Lei de Ohm",
-                syntax = "R = \\rho \\cdot \\frac{L}{A}",
+                syntax = """R = \\rho \\cdot \\frac{L}{A}""",
                 description = "Dependência geométrica e material da resistência elétrica de condutores cilíndricos.",
-                parametersInfo = "\\rho: \\text{resistividade (}\\Omega\\cdot\\text{m)}; \\quad L: \\text{comprimento (m)}; \\quad A: \\text{área da seção reta (m}^2)"
+                parametersInfo = """\\rho: \\text{resistividade (}\\Omega\\cdot\\text{m)}; \\quad L: \\text{comprimento (m)}; \\quad A: \\text{área da seção reta (m}^2)"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Associação em Paralelo (Produto pela Soma)",
-                syntax = "R_{\\text{eq}} = \\frac{R_1 \\cdot R_2}{R_1 + R_2}",
+                syntax = """R_{\\text{eq}} = \\frac{R_1 \\cdot R_2}{R_1 + R_2}""",
                 description = "Expressão simplificada da resistência equivalente para dois resistores ôhmicos associados em paralelo.",
-                parametersInfo = "R_1, R_2: \\text{resistências individuais em Ohms}"
+                parametersInfo = """R_1, R_2: \\text{resistências individuais em Ohms}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "O Paradoxo da Chave do Chuveiro",
-                codeOrFormula = "\\text{Chave Inverno} \\implies \\text{Maior Potência } P = \\frac{U^2}{R} \\implies \\text{Menor Resistência } R \\implies \\text{Fio Mais Curto}",
+                codeOrFormula = """\\text{Chave Inverno} \\implies \\text{Maior Potência } P = \\frac{U^2}{R} \\implies \\text{Menor Resistência } R \\implies \\text{Fio Mais Curto}""",
                 explanation = "Na posição inverno, o chuveiro seleciona um trecho menor de resistor para diminuir R e aumentar a potência térmica dissipada sob tensão constante."
             ),
             LessonExample(
                 title = "Três Lâmpadas em Paralelo na Residência",
-                codeOrFormula = "U_{\\text{lâmpada}} = 127\\text{ V (constante)}; \\quad i_{\\text{total}} = i_1 + i_2 + i_3",
+                codeOrFormula = """U_{\\text{lâmpada}} = 127\\text{ V (constante)}; \\quad i_{\\text{total}} = i_1 + i_2 + i_3""",
                 explanation = "A conexão em paralelo garante que cada lâmpada receba a tensão total da rede e mantenha seu brilho inalterado caso outra queime."
             )
         ),
@@ -469,32 +469,32 @@ Demonstre através do cálculo diferencial de potência (\( P(i) = \mathcal{E} \
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação do Gerador Elétrico Real",
-                syntax = "U = \\mathcal{E} - r \\cdot i",
+                syntax = """U = \\mathcal{E} - r \\cdot i""",
                 description = "Tensão útil terminal entregue à carga subtraindo a perda ôhmica na resistência interna.",
-                parametersInfo = "U: \\text{tensão nos terminais}; \\quad \\mathcal{E}: \\text{força eletromotriz}; \\quad r: \\text{resistência interna}; \\quad i: \\text{corrente}"
+                parametersInfo = """U: \\text{tensão nos terminais}; \\quad \\mathcal{E}: \\text{força eletromotriz}; \\quad r: \\text{resistência interna}; \\quad i: \\text{corrente}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Primeira Lei de Kirchhoff (Lei dos Nós)",
-                syntax = "\\sum i_{\\text{entrada}} = \\sum i_{\\text{saída}}",
+                syntax = """\\sum i_{\\text{entrada}} = \\sum i_{\\text{saída}}""",
                 description = "Princípio da conservação contínua da carga elétrica em qualquer junção ou nó de circuito.",
-                parametersInfo = "i_{\\text{in}}, i_{\\text{out}}: \\text{intensidades das correntes circulantes no nó}"
+                parametersInfo = """i_{\\text{in}}, i_{\\text{out}}: \\text{intensidades das correntes circulantes no nó}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Corrente de Curto-Circuito do Gerador",
-                syntax = "i_{\\text{cc}} = \\frac{\\mathcal{E}}{r}",
+                syntax = """i_{\\text{cc}} = \\frac{\\mathcal{E}}{r}""",
                 description = "Máxima corrente teórica drenada pelo gerador quando os terminais são conectados em resistência nula.",
-                parametersInfo = "\\mathcal{E}: \\text{fem em Volts}; \\quad r: \\text{resistência interna em Ohms}"
+                parametersInfo = """\\mathcal{E}: \\text{fem em Volts}; \\quad r: \\text{resistência interna em Ohms}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Posicionamento Correto de Multímetros",
-                codeOrFormula = "\\text{Amperímetro } (R=0) \\to \\text{SÉRIE}; \\quad \\text{Voltímetro } (R=\\infty) \\to \\text{PARALELO}",
+                codeOrFormula = """\\text{Amperímetro } (R=0) \\to \\text{SÉRIE}; \\quad \\text{Voltímetro } (R=\\infty) \\to \\text{PARALELO}""",
                 explanation = "A inserção serial do amperímetro mede todo o fluxo de elétrons, enquanto o paralelismo do voltímetro mede a ddp sem desviar corrente."
             ),
             LessonExample(
                 title = "Dimensionamento de Disjuntor Residencial",
-                codeOrFormula = "i_{\\text{nominal}} = \\frac{P_{\\text{total}}}{U} = \\frac{6600\\text{ W}}{220\\text{ V}} = 30\\text{ A} \\implies \\text{Disjuntor de } 32\\text{ A}",
+                codeOrFormula = """i_{\\text{nominal}} = \\frac{P_{\\text{total}}}{U} = \\frac{6600\\text{ W}}{220\\text{ V}} = 30\\text{ A} \\implies \\text{Disjuntor de } 32\\text{ A}""",
                 explanation = "O disjuntor deve ser ligeiramente superior à corrente nominal para evitar disparos falsos, mas inferior ao limite térmico do condutor de cobre."
             )
         ),
@@ -617,26 +617,26 @@ Duas pequenas esferas idênticas carregadas com cargas \( +q \) e \( +4q \) est�
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Lei de Coulomb da Força Eletrostática",
-                syntax = "F_e = \\frac{k_0 \\cdot |q_1 \\cdot q_2|}{d^2}",
+                syntax = """F_e = \\frac{k_0 \\cdot |q_1 \\cdot q_2|}{d^2}""",
                 description = "Força mútua vetorial de atração ou repulsão entre duas cargas puntiformes em repouso no vácuo.",
-                parametersInfo = "k_0 = 9 \\times 10^9\\text{ N}\\cdot\\text{m}^2/\\text{C}^2; \\quad q_1, q_2: \\text{cargas (C)}; \\quad d: \\text{distância (m)}"
+                parametersInfo = """k_0 = 9 \\times 10^9\\text{ N}\\cdot\\text{m}^2/\\text{C}^2; \\quad q_1, q_2: \\text{cargas (C)}; \\quad d: \\text{distância (m)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Conservação e Partição em Esferas Condutoras",
-                syntax = "q' = \\frac{q_1 + q_2 + \\dots + q_n}{n}",
+                syntax = """q' = \\frac{q_1 + q_2 + \\dots + q_n}{n}""",
                 description = "Divisão simétrica e equitativa de cargas após contato físico direto entre n esferas condutoras idênticas.",
-                parametersInfo = "q': \\text{carga final idêntica de cada esfera}; \\quad n: \\text{número de corpos em contato}"
+                parametersInfo = """q': \\text{carga final idêntica de cada esfera}; \\quad n: \\text{número de corpos em contato}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Indução com Aterramento",
-                codeOrFormula = "\\text{Indutor Negativo} \\implies \\text{Elétrons escoam para a Terra} \\implies \\text{Induzido Positivo}",
+                codeOrFormula = """\\text{Indutor Negativo} \\implies \\text{Elétrons escoam para a Terra} \\implies \\text{Induzido Positivo}""",
                 explanation = "O aterramento do induzido polarizado drena as cargas repelidas, garantindo carga líquida final de polaridade inversa à do indutor."
             ),
             LessonExample(
                 title = "Variação da Força com a Distância",
-                codeOrFormula = "d' = \\frac{d}{2} \\implies F' = \\frac{k |q_1 q_2|}{(d/2)^2} = 4 \\cdot F",
+                codeOrFormula = """d' = \\frac{d}{2} \\implies F' = \\frac{k |q_1 q_2|}{(d/2)^2} = 4 \\cdot F""",
                 explanation = "Reduzir a distância entre duas cargas pela metade quadruplica a força eletrostática mútua entre elas."
             )
         ),
@@ -765,32 +765,32 @@ Por que um pássaro consegue pousar tranquilamente sobre um cabo de alta tensão
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Relação Força-Campo Elétrico",
-                syntax = "\\vec{F}_e = q \\cdot \\vec{E}",
+                syntax = """\\vec{F}_e = q \\cdot \\vec{E}""",
                 description = "Força eletrostática vetorial exercida sobre uma carga de prova imersa em um campo elétrico.",
-                parametersInfo = "F_e: \\text{força (N)}; \\quad q: \\text{carga com sinal (C)}; \\quad E: \\text{vetor campo (N/C ou V/m)}"
+                parametersInfo = """F_e: \\text{força (N)}; \\quad q: \\text{carga com sinal (C)}; \\quad E: \\text{vetor campo (N/C ou V/m)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação do Campo Elétrico Uniforme (CEU)",
-                syntax = "U = E \\cdot d",
+                syntax = """U = E \\cdot d""",
                 description = "Relação escalar linear entre ddp, módulo do campo e espaçamento retilíneo entre placas condutoras paralelas.",
-                parametersInfo = "U: \\text{tensão (Volts)}; \\quad E: \\text{campo uniforme (V/m)}; \\quad d: \\text{distância métrica (m)}"
+                parametersInfo = """U: \\text{tensão (Volts)}; \\quad E: \\text{campo uniforme (V/m)}; \\quad d: \\text{distância métrica (m)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Campo de Carga Puntiforme no Vácuo",
-                syntax = "E = \\frac{k_0 \\cdot |Q|}{d^2}",
+                syntax = """E = \\frac{k_0 \\cdot |Q|}{d^2}""",
                 description = "Intensidade do campo decaindo com o quadrado da distância a partir de uma fonte puntiforme.",
-                parametersInfo = "k_0 = 9 \\times 10^9\\text{ N}\\cdot\\text{m}^2/\\text{C}^2; \\quad Q: \\text{carga geradora}; \\quad d: \\text{distância}"
+                parametersInfo = """k_0 = 9 \\times 10^9\\text{ N}\\cdot\\text{m}^2/\\text{C}^2; \\quad Q: \\text{carga geradora}; \\quad d: \\text{distância}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Segurança em Veículoatingido por Raio",
-                codeOrFormula = "E_{\\text{interior}} = 0 \\quad (\\text{Blindagem de Faraday})",
+                codeOrFormula = """E_{\\text{interior}} = 0 \\quad (\\text{Blindagem de Faraday})""",
                 explanation = "A carcaça condutora metálica do automóvel isola completamente o habitáculo contra qualquer campo ou corrente elétrica externa."
             ),
             LessonExample(
                 title = "Trajetória Parabólica em Campo Uniforme",
-                codeOrFormula = "a_y = \\frac{qE}{m} = \\text{constante} \\implies \\text{Movimento Análogo ao Lançamento Horizontal}",
+                codeOrFormula = """a_y = \\frac{qE}{m} = \\text{constante} \\implies \\text{Movimento Análogo ao Lançamento Horizontal}""",
                 explanation = "Partículas carregadas injetadas perpendicularmente a um CEU executam movimento parabólico uniforme de deflexão."
             )
         ),
@@ -943,32 +943,32 @@ Considere um anel circular de alumínio (metal não magnético) solto em queda l
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Força Magnética de Lorentz sobre Carga Móvel",
-                syntax = "F_{\\text{mag}} = |q| \\cdot v \\cdot B \\cdot \\operatorname{sen}\\theta",
+                syntax = """F_{\\text{mag}} = |q| \\cdot v \\cdot B \\cdot \\operatorname{sen}\\theta""",
                 description = "Força defletora perpendicular exercida por um campo magnético sobre uma partícula carregada em movimento.",
-                parametersInfo = "q: \\text{carga (C)}; \\quad v: \\text{velocidade (m/s)}; \\quad B: \\text{campo (T)}; \\quad \\theta: \\text{ângulo entre } \\vec{v} \\text{ e } \\vec{B}"
+                parametersInfo = """q: \\text{carga (C)}; \\quad v: \\text{velocidade (m/s)}; \\quad B: \\text{campo (T)}; \\quad \\theta: \\text{ângulo entre } \\vec{v} \\text{ e } \\vec{B}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Raio da Órbita Circular em MCU Magnético",
-                syntax = "R = \\frac{m \\cdot v}{|q| \\cdot B}",
+                syntax = """R = \\frac{m \\cdot v}{|q| \\cdot B}""",
                 description = "Raio de curvatura da trajetória circular gerada pela ação estritamente centrípeta da força magnética perpendicular.",
-                parametersInfo = "m: \\text{massa da partícula (kg)}; \\quad v: \\text{velocidade}; \\quad q: \\text{carga}; \\quad B: \\text{intensidade do campo (T)}"
+                parametersInfo = """m: \\text{massa da partícula (kg)}; \\quad v: \\text{velocidade}; \\quad q: \\text{carga}; \\quad B: \\text{intensidade do campo (T)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Lei da Indução de Faraday-Lenz",
-                syntax = "\\mathcal{E} = -\\frac{\\Delta \\Phi}{\\Delta t} \\quad \\text{onde } \\Phi = B \\cdot A \\cdot \\cos\\theta",
+                syntax = """\\mathcal{E} = -\\frac{\\Delta \\Phi}{\\Delta t} \\quad \\text{onde } \\Phi = B \\cdot A \\cdot \\cos\\theta""",
                 description = "Força eletromotriz induzida proporcional à taxa temporal de variação do fluxo magnético através do circuito.",
-                parametersInfo = "\\mathcal{E}: \\text{fem induzida (V)}; \\quad \\Phi: \\text{fluxo em Webers (Wb)}; \\quad t: \\text{tempo (s)}"
+                parametersInfo = """\\mathcal{E}: \\text{fem induzida (V)}; \\quad \\Phi: \\text{fluxo em Webers (Wb)}; \\quad t: \\text{tempo (s)}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Funcionamento da Usina Hidrelétrica",
-                codeOrFormula = "\\Delta \\Phi / \\Delta t \\neq 0 \\implies \\mathcal{E} = -N \\frac{\\Delta \\Phi}{\\Delta t} \\implies \\text{Geração de Eletricidade}",
+                codeOrFormula = """\\Delta \\Phi / \\Delta t \\neq 0 \\implies \\mathcal{E} = -N \\frac{\\Delta \\Phi}{\\Delta t} \\implies \\text{Geração de Eletricidade}""",
                 explanation = "A rotação forçada das bobinas pelo fluxo hídrico induz tensões elétricas alternadas contínuas de alta potência na rede elétrica."
             ),
             LessonExample(
                 title = "Transformador Elevador na Transmissão de Energia",
-                codeOrFormula = "\\frac{U_{\\text{rede}}}{U_{\\text{usina}}} = \\frac{N_2}{N_1} > 1 \\implies i_{\\text{rede}} = i_{\\text{usina}} \\cdot \\frac{U_{\\text{usina}}}{U_{\\text{rede}}} \\ll i_{\\text{usina}}",
+                codeOrFormula = """\\frac{U_{\\text{rede}}}{U_{\\text{usina}}} = \\frac{N_2}{N_1} > 1 \\implies i_{\\text{rede}} = i_{\\text{usina}} \\cdot \\frac{U_{\\text{usina}}}{U_{\\text{rede}}} \\ll i_{\\text{usina}}""",
                 explanation = "Elevar a tensão para centenas de milhares de Volts derruba a corrente circulante, reduzindo drasticamente as perdas ôhmicas por efeito Joule nos cabos."
             )
         ),

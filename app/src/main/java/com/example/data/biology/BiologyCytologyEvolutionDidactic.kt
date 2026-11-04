@@ -62,7 +62,7 @@ object BiologyCytologyEvolutionDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Salgar a Salada de Alface",
-                        codeOrFormula = "\\text{Meio extracelular hipertônico} \\implies \\text{Perda de água por osmose (Plasmólise)}",
+                        codeOrFormula = """\\text{Meio extracelular hipertônico} \\implies \\text{Perda de água por osmose (Plasmólise)}""",
                         explanation = "Ao temperar a salada com sal antes da hora, o meio externo torna-se muito concentrado (hipertônico). As células das folhas perdem água por osmose para o prato, e a alface murcha rapidamente."
                     )
                 ),
@@ -90,7 +90,7 @@ object BiologyCytologyEvolutionDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Tolerância ao Álcool e Proliferação do REL",
-                        codeOrFormula = "\\text{Consumo crônico de álcool} \\implies \\text{Hipertrofia do Retículo Liso hepático}",
+                        codeOrFormula = """\\text{Consumo crônico de álcool} \\implies \\text{Hipertrofia do Retículo Liso hepático}""",
                         explanation = "O uso contínuo de álcool e sedativos induz as células do fígado a aumentarem a quantidade de Retículo Endoplasmático Liso para acelerar a destoxificação enzimática, gerando tolerância medicamentosa."
                     )
                 ),
@@ -148,7 +148,7 @@ object BiologyCytologyEvolutionDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Intoxicação por Cianeto",
-                        codeOrFormula = "\\text{Cianeto inibe a citocromo oxidase} \\implies \\text{Paralisação da cadeia respiratória}",
+                        codeOrFormula = """\\text{Cianeto inibe a citocromo oxidase} \\implies \\text{Paralisação da cadeia respiratória}""",
                         explanation = "O cianeto impede a transferência final de elétrons para o oxigênio nas cristas mitocondriais. A célula não consegue mais sintetizar ATP por via oxidativa, provocando asfixia celular em minutos mesmo com abundância de oxigênio no sangue."
                     )
                 ),
@@ -178,7 +178,7 @@ object BiologyCytologyEvolutionDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Febre Alta Prolongada",
-                        codeOrFormula = "\\text{Temperatura acima de 41 °C} \\implies \\text{Risco de desnaturação proteica e enzimática}",
+                        codeOrFormula = """\\text{Temperatura acima de 41 °C} \\implies \\text{Risco de desnaturação proteica e enzimática}""",
                         explanation = "A febre moderada é benéfica para estimular o sistema imune. No entanto, temperaturas sustentadas acima de 41 °C colocam a vida em risco por provocarem desnaturação de enzimas vitais no sistema nervoso central."
                     )
                 ),
@@ -209,7 +209,7 @@ object BiologyCytologyEvolutionDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Tubarões e Golfinhos",
-                        codeOrFormula = "\\text{Ambiente aquático pelágico} \\implies \\text{Seleção do corpo hidrodinâmico (Convergência)}",
+                        codeOrFormula = """\\text{Ambiente aquático pelágico} \\implies \\text{Seleção do corpo hidrodinâmico (Convergência)}""",
                         explanation = "O formato aerodinâmico/hidrodinâmico de tubarões e golfinhos não prova parentesco próximo, mas sim convergência adaptativa imposta pela seleção natural no mesmo meio aquático."
                     )
                 ),
@@ -298,7 +298,7 @@ object BiologyCytologyEvolutionDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Cozimento de Alimentos e Tamanho Cerebral",
-                        codeOrFormula = "\\text{Domínio do fogo pelo } Homo erectus \\implies \\text{Maior aporte calórico para sustentar o cérebro}",
+                        codeOrFormula = """\\text{Domínio do fogo pelo } Homo erectus \\implies \\text{Maior aporte calórico para sustentar o cérebro}""",
                         explanation = "O cozimento quebra fibras e desnatura proteínas, facilitando a mastigação e digestão humana e fornecendo o excedente energético diário necessário para nutrir um encéfalo com alto consumo metabólico de glicose."
                     )
                 ),

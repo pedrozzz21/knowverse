@@ -144,32 +144,32 @@ Uma onda propaga-se da corda A para uma corda B mais grossa (maior densidade lin
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação Fundamental da Ondulatória",
-                syntax = "v = \\lambda \\cdot f",
+                syntax = """v = \\lambda \\cdot f""",
                 description = "Relação universal conectando a velocidade de propagação de qualquer onda periódica ao seu comprimento de onda e frequência.",
-                parametersInfo = "v: \\text{velocidade (m/s)}; \\quad \\lambda: \\text{comprimento de onda (m)}; \\quad f: \\text{frequência (Hz)}"
+                parametersInfo = """v: \\text{velocidade (m/s)}; \\quad \\lambda: \\text{comprimento de onda (m)}; \\quad f: \\text{frequência (Hz)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Relação Frequência-Período",
-                syntax = "f = \\frac{1}{T}",
+                syntax = """f = \\frac{1}{T}""",
                 description = "Definição matemática de frequência como o inverso do tempo de um ciclo periódico completo.",
-                parametersInfo = "f: \\text{frequência (Hertz)}; \\quad T: \\text{período (segundos)}"
+                parametersInfo = """f: \\text{frequência (Hertz)}; \\quad T: \\text{período (segundos)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Fórmula de Taylor para Ondas em Cordas",
-                syntax = "v = \\sqrt{\\frac{F}{\\mu}} \\quad \\text{onde } \\mu = \\frac{m}{L}",
+                syntax = """v = \\sqrt{\\frac{F}{\\mu}} \\quad \\text{onde } \\mu = \\frac{m}{L}""",
                 description = "Velocidade de propagação de ondas transversais em uma corda sob tração mecânica F com densidade linear mu.",
-                parametersInfo = "F: \\text{força de tração (N)}; \\quad \\mu: \\text{massa por unidade de comprimento (kg/m)}"
+                parametersInfo = """F: \\text{força de tração (N)}; \\quad \\mu: \\text{massa por unidade de comprimento (kg/m)}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Cálculo de Frequência de Estação de Rádio FM",
-                codeOrFormula = "f = 100\\text{ MHz} = 10^8\\text{ Hz} \\implies \\lambda = \\frac{3 \\times 10^8}{10^8} = 3\\text{ m}",
+                codeOrFormula = """f = 100\\text{ MHz} = 10^8\\text{ Hz} \\implies \\lambda = \\frac{3 \\times 10^8}{10^8} = 3\\text{ m}""",
                 explanation = "O comprimento de onda de emissoras de rádio FM na faixa de 100 MHz é de exatamente 3 metros no ar."
             ),
             LessonExample(
                 title = "Transição de Meio e Invariância de Frequência",
-                codeOrFormula = "\\frac{v_1}{\\lambda_1} = \\frac{v_2}{\\lambda_2} = f = \\text{constante}",
+                codeOrFormula = """\\frac{v_1}{\\lambda_1} = \\frac{v_2}{\\lambda_2} = f = \\text{constante}""",
                 explanation = "Quando uma onda passa de um meio mais rápido para um mais lento, o comprimento de onda encurta na mesma proporção em que a velocidade diminui."
             )
         ),
@@ -291,26 +291,26 @@ Por que os cabos de rede Wi-Fi de \( 5\text{ GHz} \) (\( \lambda \approx 6\text{
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Lei da Refração de Ondas",
-                syntax = "\\frac{v_1}{v_2} = \\frac{\\lambda_1}{\\lambda_2} \\quad (f = \\text{constante})",
+                syntax = """\\frac{v_1}{v_2} = \\frac{\\lambda_1}{\\lambda_2} \\quad (f = \\text{constante})""",
                 description = "Relação de refração que expressa a variação do comprimento de onda proporcionalmente à mudança de velocidade.",
-                parametersInfo = "v_1, v_2: \\text{velocidades nos meios 1 e 2}; \\quad \\lambda_1, \\lambda_2: \\text{comprimentos de onda correspondentes}"
+                parametersInfo = """v_1, v_2: \\text{velocidades nos meios 1 e 2}; \\quad \\lambda_1, \\lambda_2: \\text{comprimentos de onda correspondentes}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Condição Fundamental de Difração",
-                syntax = "\\frac{\\lambda}{d} \\ge 1 \\iff \\lambda \\ge d",
+                syntax = """\\frac{\\lambda}{d} \\ge 1 \\iff \\lambda \\ge d""",
                 description = "Critério dimensional de abertura para espalhamento angular e contorno acentuado de obstáculos.",
-                parametersInfo = "\\lambda: \\text{comprimento de onda da perturbação}; \\quad d: \\text{largura da fenda ou dimensão do obstáculo}"
+                parametersInfo = """\\lambda: \\text{comprimento de onda da perturbação}; \\quad d: \\text{largura da fenda ou dimensão do obstáculo}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Reflexão com Extremidade Fixa vs Livre",
-                codeOrFormula = "\\Delta \\phi_{\\text{fixa}} = \\pi\\text{ rad} (180^\\circ); \\quad \\Delta \\phi_{\\text{livre}} = 0",
+                codeOrFormula = """\\Delta \\phi_{\\text{fixa}} = \\pi\\text{ rad} (180^\\circ); \\quad \\Delta \\phi_{\\text{livre}} = 0""",
                 explanation = "A reação mecânica da parede rígida inverte a polaridade do pulso incidente, enquanto o engaste livre reflete mantendo crista como crista."
             ),
             LessonExample(
                 title = "Comparação de Difração entre Rádio AM e FM",
-                codeOrFormula = "\\lambda_{\\text{AM}} \\approx 300\\text{ m} \\gg \\lambda_{\\text{FM}} \\approx 3\\text{ m}",
+                codeOrFormula = """\\lambda_{\\text{AM}} \\approx 300\\text{ m} \\gg \\lambda_{\\text{FM}} \\approx 3\\text{ m}""",
                 explanation = "As ondas quilométricas do AM contornam montanhas por difração com eficiência incomensuravelmente superior à do FM."
             )
         ),
@@ -441,32 +441,32 @@ Por que em uma sala de concertos ou em um auditório é fundamental o uso de rev
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação Geral da Interferência por Diferença de Caminho",
-                syntax = "\\Delta d = |d_1 - d_2| = n \\cdot \\frac{\\lambda}{2}",
+                syntax = """\\Delta d = |d_1 - d_2| = n \\cdot \\frac{\\lambda}{2}""",
                 description = "Condição matemática para interferência entre fontes coerentes em fase.",
-                parametersInfo = "\\Delta d: \\text{diferença de caminho (m)}; \\quad n \\text{ par: construtiva}; \\quad n \\text{ ímpar: destrutiva}"
+                parametersInfo = """\\Delta d: \\text{diferença de caminho (m)}; \\quad n \\text{ par: construtiva}; \\quad n \\text{ ímpar: destrutiva}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Espaçamento Entre Nós em Onda Estacionária",
-                syntax = "d_{N-N} = \\frac{\\lambda}{2} \\quad \\text{e} \\quad d_{N-V} = \\frac{\\lambda}{4}",
+                syntax = """d_{N-N} = \\frac{\\lambda}{2} \\quad \\text{e} \\quad d_{N-V} = \\frac{\\lambda}{4}""",
                 description = "Distância geométrica fixa entre dois nós consecutivos ou entre um nó e o ventre consecutivo.",
-                parametersInfo = "\\lambda: \\text{comprimento de onda da oscilação estacionária}"
+                parametersInfo = """\\lambda: \\text{comprimento de onda da oscilação estacionária}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Lei de Malus da Polarização Luminosa",
-                syntax = "I = I_0 \\cdot \\cos^2\\theta",
+                syntax = """I = I_0 \\cdot \\cos^2\\theta""",
                 description = "Intensidade da luz transmitida através de um analisador polarizador formando um ângulo theta com o plano de polarização original.",
-                parametersInfo = "I_0: \\text{intensidade incidente}; \\quad \\theta: \\text{ângulo entre os eixos de polarização}"
+                parametersInfo = """I_0: \\text{intensidade incidente}; \\quad \\theta: \\text{ângulo entre os eixos de polarização}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Fones com Cancelamento Ativo de Ruído (ANC)",
-                codeOrFormula = "y_{\\text{ruído}} + y_{\\text{alto-falante}} = A\\operatorname{sen}(\\omega t) + A\\operatorname{sen}(\\omega t + \\pi) = 0",
+                codeOrFormula = """y_{\\text{ruído}} + y_{\\text{alto-falante}} = A\\operatorname{sen}(\\omega t) + A\\operatorname{sen}(\\omega t + \\pi) = 0""",
                 explanation = "A emissão artificial de uma onda sonora em oposição de fase exata de 180° anula o ruído de fundo por interferência puramente destrutiva."
             ),
             LessonExample(
                 title = "Filtros Polarizadores Cruzados a 90 Graus",
-                codeOrFormula = "I = I_0 \\cdot \\cos^2(90^\\circ) = I_0 \\cdot 0 = 0",
+                codeOrFormula = """I = I_0 \\cdot \\cos^2(90^\\circ) = I_0 \\cdot 0 = 0""",
                 explanation = "Dois filtros polares alinhados perpendicularmente barram totalmente a transmissão de fótons luminosos."
             )
         ),
@@ -610,32 +610,32 @@ Por que ao inalarmos gás hélio puro de um balão e falarmos imediatamente em s
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Nível Sonoro em Decibéis",
-                syntax = "\\beta = 10 \\cdot \\log_{10}\\left(\\frac{I}{I_0}\\right)",
+                syntax = """\\beta = 10 \\cdot \\log_{10}\\left(\\frac{I}{I_0}\\right)""",
                 description = "Escala logarítmica de sensação auditiva relativa ao limiar de audibilidade humana.",
-                parametersInfo = "I: \\text{intensidade sonora (W/m}^2); \\quad I_0 = 10^{-12}\\text{ W/m}^2; \\quad \\beta: \\text{nível sonoro em decibéis (dB)}"
+                parametersInfo = """I: \\text{intensidade sonora (W/m}^2); \\quad I_0 = 10^{-12}\\text{ W/m}^2; \\quad \\beta: \\text{nível sonoro em decibéis (dB)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Harmônicos em Tubos Sonoros Abertos",
-                syntax = "f_n = n \\cdot \\frac{v}{2L} \\quad (n = 1, 2, 3, \\dots)",
+                syntax = """f_n = n \\cdot \\frac{v}{2L} \\quad (n = 1, 2, 3, \\dots)""",
                 description = "Frequências dos harmônicos ressonantes em tubos acústicos abertos em ambas as extremidades.",
-                parametersInfo = "n: \\text{número do harmônico (inteiro)}; \\quad v: \\text{velocidade do som}; \\quad L: \\text{comprimento do tubo}"
+                parametersInfo = """n: \\text{número do harmônico (inteiro)}; \\quad v: \\text{velocidade do som}; \\quad L: \\text{comprimento do tubo}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Harmônicos em Tubos Sonoros Fechados",
-                syntax = "f_n = n \\cdot \\frac{v}{4L} \\quad (n = 1, 3, 5, \\dots)",
+                syntax = """f_n = n \\cdot \\frac{v}{4L} \\quad (n = 1, 3, 5, \\dots)""",
                 description = "Frequências dos harmônicos possíveis em tubos sonoros fechados em uma extremidade.",
-                parametersInfo = "n: \\text{número ímpar}; \\quad v: \\text{velocidade do som}; \\quad L: \\text{comprimento do tubo}"
+                parametersInfo = """n: \\text{número ímpar}; \\quad v: \\text{velocidade do som}; \\quad L: \\text{comprimento do tubo}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Distância Mínima para Percepção de Eco",
-                codeOrFormula = "d_{\\text{mín}} = \\frac{v \\cdot \\Delta t_{\\text{mín}}}{2} = \\frac{340 \\cdot 0{,}1}{2} = 17\\text{ m}",
+                codeOrFormula = """d_{\\text{mín}} = \\frac{v \\cdot \\Delta t_{\\text{mín}}}{2} = \\frac{340 \\cdot 0{,}1}{2} = 17\\text{ m}""",
                 explanation = "Como a persistência auditiva humana é de 0,1 s, o som precisa percorrer ida e volta em pelo menos 17 metros de distância para ser discriminado como eco."
             ),
             LessonExample(
                 title = "Aumento de Intensidade e Escala Logarítmica",
-                codeOrFormula = "I' = 100 \\cdot I \\implies \\Delta \\beta = 10 \\cdot \\log_{10}(100) = 10 \\cdot 2 = +20\\text{ dB}",
+                codeOrFormula = """I' = 100 \\cdot I \\implies \\Delta \\beta = 10 \\cdot \\log_{10}(100) = 10 \\cdot 2 = +20\\text{ dB}""",
                 explanation = "Um aumento de cem vezes na energia física de uma fonte sonora reflete em um acréscimo de exatamente 20 decibéis no nível sonoro."
             )
         ),
@@ -760,32 +760,32 @@ Dois automóveis A e B trafegam em uma mesma via no mesmo sentido com velocidade
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação Geral do Efeito Doppler Sonoro",
-                syntax = "f' = f \\cdot \\left( \\frac{v \\pm v_O}{v \\mp v_F} \\right)",
+                syntax = """f' = f \\cdot \\left( \\frac{v \\pm v_O}{v \\mp v_F} \\right)""",
                 description = "Expressão universal da frequência aparente percebida pelo observador em movimento relativo com a fonte sonora.",
-                parametersInfo = "f': \\text{frequência percebida}; \\quad f: \\text{frequência emitida}; \\quad v: \\text{vel. som}; \\quad v_O, v_F: \\text{vel. observador e fonte}"
+                parametersInfo = """f': \\text{frequência percebida}; \\quad f: \\text{frequência emitida}; \\quad v: \\text{vel. som}; \\quad v_O, v_F: \\text{vel. observador e fonte}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Comprimento de Onda Aparente na Aproximação",
-                syntax = "\\lambda' = \\frac{v - v_F}{f}",
+                syntax = """\\lambda' = \\frac{v - v_F}{f}""",
                 description = "Encurtamento espacial real das frentes de onda na direção à frente de uma fonte sonora em movimento.",
-                parametersInfo = "v: \\text{velocidade de propagação}; \\quad v_F: \\text{velocidade da fonte}; \\quad f: \\text{frequência própria}"
+                parametersInfo = """v: \\text{velocidade de propagação}; \\quad v_F: \\text{velocidade da fonte}; \\quad f: \\text{frequência própria}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Efeito Doppler Óptico Não-Relativístico",
-                syntax = "\\frac{\\Delta f}{f} \\approx \\frac{v_{\\text{rel}}}{c} \\iff \\frac{\\Delta \\lambda}{\\lambda} \\approx \\frac{v_{\\text{rel}}}{c}",
+                syntax = """\\frac{\\Delta f}{f} \\approx \\frac{v_{\\text{rel}}}{c} \\iff \\frac{\\Delta \\lambda}{\\lambda} \\approx \\frac{v_{\\text{rel}}}{c}""",
                 description = "Desvio fracionário de frequência ou comprimento de onda para ondas eletromagnéticas astronômicas com velocidades subluminais.",
-                parametersInfo = "v_{\\text{rel}}: \\text{velocidade relativa de aproximação ou afastamento}; \\quad c: \\text{velocidade da luz}"
+                parametersInfo = """v_{\\text{rel}}: \\text{velocidade relativa de aproximação ou afastamento}; \\quad c: \\text{velocidade da luz}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Sirene em Aproximação Rápida",
-                codeOrFormula = "f' = f \\cdot \\frac{v}{v - v_F} > f",
+                codeOrFormula = """f' = f \\cdot \\frac{v}{v - v_F} > f""",
                 explanation = "A compressão das frentes de onda no sentido do movimento da fonte gera um aumento nítido na frequência percebida pelo observador estacionário."
             ),
             LessonExample(
                 title = "Desvio Cosmológico para o Vermelho (Redshift)",
-                codeOrFormula = "z = \\frac{\\lambda_{\\text{obs}} - \\lambda_{\\text{emit}}}{\\lambda_{\\text{emit}}} > 0 \\implies v_{\\text{afastamento}} = z \\cdot c",
+                codeOrFormula = """z = \\frac{\\lambda_{\\text{obs}} - \\lambda_{\\text{emit}}}{\\lambda_{\\text{emit}}} > 0 \\implies v_{\\text{afastamento}} = z \\cdot c""",
                 explanation = "O estiramento das ondas de luz provenientes de galáxias distantes revela sua velocidade de afastamento cósmico."
             )
         ),

@@ -859,7 +859,7 @@ alvo = 23
                 codeSnippet = "import re\npadrao = r'???'",
                 options = listOf("\\d{4}", "[0-9]{1,4}", "\\w{4}", "\\s{4}"),
                 correctIndex = 0,
-                explanation = "\\d representa qualquer caractere numérico e {4} define a quantidade exata de 4 repetições.",
+                explanation = """\\d representa qualquer caractere numérico e {4} define a quantidade exata de 4 repetições.""",
                 conceptTag = "Expressões Regulares (Regex)",
                 recommendedLessonId = "py_a2_l2",
                 recommendedLessonTitle = "Aula 19: Expressões Regulares (re)"

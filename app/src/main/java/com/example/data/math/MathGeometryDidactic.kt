@@ -59,7 +59,7 @@ object MathGeometryDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Ângulo Interno do Hexágono Regular",
-                        codeOrFormula = "S_i = (6 - 2) \\cdot 180° = 720° -> a_i = 720° / 6 = 120°",
+                        codeOrFormula = """S_i = (6 - 2) \\cdot 180° = 720° -> a_i = 720° / 6 = 120°""",
                         explanation = "Como cada ângulo mede 120°, 3 hexágonos juntos somam exatamente 360°, explicando por que as abelhas constroem favos hexagonais econômicos."
                     )
                 ),
@@ -189,7 +189,7 @@ object MathGeometryDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Cercamento com 4 Fios de Arame",
-                        codeOrFormula = "P = 2 \\cdot (50 + 30) = 160 m -> Total = 160 \\cdot 4 = 640 m",
+                        codeOrFormula = """P = 2 \\cdot (50 + 30) = 160 m -> Total = 160 \\cdot 4 = 640 m""",
                         explanation = "Para cercar um terreno retangular de 50m por 30m com 4 voltas de arame, são necessários 640 metros."
                     )
                 ),

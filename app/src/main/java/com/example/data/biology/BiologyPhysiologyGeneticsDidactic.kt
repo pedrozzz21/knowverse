@@ -67,7 +67,7 @@ object BiologyPhysiologyGeneticsDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Controle Bulbar da Respiração",
-                        codeOrFormula = "\\text{Aumento de CO}_2 \\implies \\text{Queda do pH sanguíneo} \\implies \\text{Bulbo acelera respiração}",
+                        codeOrFormula = """\\text{Aumento de CO}_2 \\implies \\text{Queda do pH sanguíneo} \\implies \\text{Bulbo acelera respiração}""",
                         explanation = "Diferente do senso comum, o principal estímulo para o bulbo respiratório acelerar a ventilação durante o exercício físico não é a falta de oxigênio, mas sim o aumento de CO₂ que acidifica o sangue."
                     )
                 ),
@@ -217,7 +217,7 @@ object BiologyPhysiologyGeneticsDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Probabilidade de Filho com Albinismo",
-                        codeOrFormula = "Aa \\times Aa \\implies P(aa) = 1/4 \\implies P(\\text{menina albina}) = 1/4 \\cdot 1/2 = 1/8",
+                        codeOrFormula = """Aa \\times Aa \\implies P(aa) = 1/4 \\implies P(\\text{menina albina}) = 1/4 \\cdot 1/2 = 1/8""",
                         explanation = "Um casal heterozigoto para albinismo recessivo quer saber a chance de ter uma menina albina. A chance de ser albina (aa) é 1/4 e a chance de ser do sexo feminino é 1/2. Probabilidade conjunta = 1/8 (12,5%)."
                     )
                 ),
@@ -245,7 +245,7 @@ object BiologyPhysiologyGeneticsDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Mapeamento de Três Genes",
-                        codeOrFormula = "AB = 10 \\text{ cM}, \\quad BC = 6 \\text{ cM}, \\quad AC = 16 \\text{ cM} \\implies \\text{Ordem } A - B - C",
+                        codeOrFormula = """AB = 10 \\text{ cM}, \\quad BC = 6 \\text{ cM}, \\quad AC = 16 \\text{ cM} \\implies \\text{Ordem } A - B - C""",
                         explanation = "Como a maior distância é AC (16 cM), os genes A e C estão nas extremidades e B fica no meio: a distância AB (10) somada a BC (6) totaliza os 16 morganídeos de AC."
                     )
                 ),
@@ -278,7 +278,7 @@ object BiologyPhysiologyGeneticsDidactic {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Mãe Portadora de Daltonismo",
-                        codeOrFormula = "X^D X^d \\times X^D Y \\implies P(\\text{filho homem daltônico}) = 1/2 \\text{ dos meninos}",
+                        codeOrFormula = """X^D X^d \\times X^D Y \\implies P(\\text{filho homem daltônico}) = 1/2 \\text{ dos meninos}""",
                         explanation = "Uma mulher com visão normal portadora de daltonismo (X^D X^d) casada com homem com visão normal (X^D Y) tem 50% de chance de gerar um filho homem daltônico (X^d Y) e 0% de chance de ter uma filha daltônica."
                     )
                 ),

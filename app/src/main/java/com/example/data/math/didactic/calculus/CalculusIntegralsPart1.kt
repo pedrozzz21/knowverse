@@ -119,13 +119,13 @@ Dada uma partícula sob aceleração constante \( a \), deduza a equação de To
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Definição de Integral Indefinida",
-                syntax = "\\int f(x) \\, dx = F(x) + C \\iff F'(x) = f(x)",
+                syntax = """\\int f(x) \\, dx = F(x) + C \\iff F'(x) = f(x)""",
                 description = "Operador de antiderivação para funções contínuas.",
                 parametersInfo = "C é a constante arbitrária real de integração."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Problema de Valor Inicial (PVI)",
-                syntax = "F(x_0) + C = y_0 \\implies C = y_0 - F(x_0)",
+                syntax = """F(x_0) + C = y_0 \\implies C = y_0 - F(x_0)""",
                 description = "Determinação da constante particular a partir de um ponto prescrito.",
                 parametersInfo = "Garante solução única para a equação diferencial dy/dx = f(x)."
             )
@@ -133,7 +133,7 @@ Dada uma partícula sob aceleração constante \( a \), deduza a equação de To
         solvedExamples = listOf(
             LessonExample(
                 title = "Cálculo de Primitiva com Condição de Contorno",
-                codeOrFormula = "\\int (6t - 4) dt = 3t^2 - 4t + C; \\quad s(0) = 10 \\implies C = 10 \\implies s(t) = 3t^2 - 4t + 10",
+                codeOrFormula = """\\int (6t - 4) dt = 3t^2 - 4t + C; \\quad s(0) = 10 \\implies C = 10 \\implies s(t) = 3t^2 - 4t + 10""",
                 explanation = "A integração reconstruiu a posição a partir da velocidade e fixou o valor da constante com os dados iniciais."
             )
         ),
@@ -234,13 +234,13 @@ Calcule \( \int \frac{(x + 1)^3}{\sqrt{x}} \, dx \) expandindo o binômio e divi
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Regra da Potência de Integração",
-                syntax = "\\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C \\quad (n \\neq -1)",
+                syntax = """\\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C \\quad (n \\neq -1)""",
                 description = "Fórmula direta para potências reais.",
                 parametersInfo = "Se n = -1, o resultado é ln|x| + C."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Integral de Constante",
-                syntax = "\\int k \\, dx = kx + C",
+                syntax = """\\int k \\, dx = kx + C""",
                 description = "Reconstituição da função afim a partir de uma taxa constante.",
                 parametersInfo = "k é uma constante real."
             )
@@ -248,7 +248,7 @@ Calcule \( \int \frac{(x + 1)^3}{\sqrt{x}} \, dx \) expandindo o binômio e divi
         solvedExamples = listOf(
             LessonExample(
                 title = "Integração de Radical Fracionário",
-                codeOrFormula = "\\int \\sqrt{x} \\, dx = \\int x^{1/2} dx = \\frac{x^{3/2}}{3/2} + C = \\frac{2}{3}x\\sqrt{x} + C",
+                codeOrFormula = """\\int \\sqrt{x} \\, dx = \\int x^{1/2} dx = \\frac{x^{3/2}}{3/2} + C = \\frac{2}{3}x\\sqrt{x} + C""",
                 explanation = "Somou-se 1 ao expoente 1/2 resultando em 3/2 e inverteu-se a fração multiplicando por 2/3."
             )
         ),
@@ -359,19 +359,19 @@ Utilize identidades trigonométricas de arco duplo (\( \cos(2x) = 1 - 2\sin^2 x 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Integral da Função Recíproca",
-                syntax = "\\int \\frac{1}{x} \\, dx = \\ln|x| + C",
+                syntax = """\\int \\frac{1}{x} \\, dx = \\ln|x| + C""",
                 description = "Antiderivada fundamental que gera o logaritmo natural.",
                 parametersInfo = "O módulo |x| garante validade em todo o domínio não-nulo."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Integrais Trigonométricas Canônicas",
-                syntax = "\\int \\cos x \\, dx = \\sin x + C \\qquad \\int \\sin x \\, dx = -\\cos x + C",
+                syntax = """\\int \\cos x \\, dx = \\sin x + C \\qquad \\int \\sin x \\, dx = -\\cos x + C""",
                 description = "Primitivas das funções circulares básicas.",
                 parametersInfo = "Atenção ao sinal na integral do seno."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Primitiva do Arco-Tangente",
-                syntax = "\\int \\frac{1}{1 + x^2} \\, dx = \\arctan(x) + C",
+                syntax = """\\int \\frac{1}{1 + x^2} \\, dx = \\arctan(x) + C""",
                 description = "Integral algébrica que gera função transcendental inversa.",
                 parametersInfo = "Base para integração de frações parciais irredutíveis."
             )
@@ -379,7 +379,7 @@ Utilize identidades trigonométricas de arco duplo (\( \cos(2x) = 1 - 2\sin^2 x 
         solvedExamples = listOf(
             LessonExample(
                 title = "Integral de Fração Decomposta",
-                codeOrFormula = "\\int \\frac{3x^2 + 5}{x} dx = \\int (3x + 5/x) dx = \\frac{3}{2}x^2 + 5\\ln|x| + C",
+                codeOrFormula = """\\int \\frac{3x^2 + 5}{x} dx = \\int (3x + 5/x) dx = \\frac{3}{2}x^2 + 5\\ln|x| + C""",
                 explanation = "Separou-se a fração em duas parcelas independentes antes de aplicar a regra da potência e do logaritmo."
             )
         ),
@@ -485,13 +485,13 @@ Explique detalhadamente por que \( \int x \cos x \, dx \) NÃO pode ser resolvid
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Propriedade da Linearidade da Integral",
-                syntax = "\\int [\\alpha f(x) + \\beta g(x)] \\, dx = \\alpha \\int f(x) \\, dx + \\beta \\int g(x) \\, dx",
+                syntax = """\\int [\\alpha f(x) + \\beta g(x)] \\, dx = \\alpha \\int f(x) \\, dx + \\beta \\int g(x) \\, dx""",
                 description = "Preservação da soma vetorial e multiplicação escalar.",
                 parametersInfo = "α e β são constantes reais independentes de x."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Regra de Ouro da Não-Fatoração",
-                syntax = "\\int f(x) g(x) dx \\neq \\left(\\int f dx\\right) \\cdot \\left(\\int g dx\\right)",
+                syntax = """\\int f(x) g(x) dx \\neq \\left(\\int f dx\\right) \\cdot \\left(\\int g dx\\right)""",
                 description = "Alerta capital: produto sob a integral requer métodos avançados.",
                 parametersInfo = "Nunca distribua a integral sobre multiplicações de variáveis."
             )
@@ -499,7 +499,7 @@ Explique detalhadamente por que \( \int x \cos x \, dx \) NÃO pode ser resolvid
         solvedExamples = listOf(
             LessonExample(
                 title = "Integração por Expansão de Binômio",
-                codeOrFormula = "\\int (2x - 3)^2 dx = \\int (4x^2 - 12x + 9) dx = \\frac{4}{3}x^3 - 6x^2 + 9x + C",
+                codeOrFormula = """\\int (2x - 3)^2 dx = \\int (4x^2 - 12x + 9) dx = \\frac{4}{3}x^3 - 6x^2 + 9x + C""",
                 explanation = "A expansão prévia do produto notável transformou a expressão em uma soma trivial de potências."
             )
         ),

@@ -130,13 +130,13 @@ Por que os moluscos terrestres (lesmas e caracóis) morrem desidratados quando s
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equilíbrio Osmótico e Pressão de Parede",
-                syntax = "\\text{DPD} = \\text{PO} - \\text{PT} \\quad (\\text{ou } S_c = S_i - M)",
+                syntax = """\\text{DPD} = \\text{PO} - \\text{PT} \\quad (\\text{ou } S_c = S_i - M)""",
                 description = "Capacidade de sucção de água por uma célula vegetal integrando a pressão osmótica interna e a turgência elástica da parede celulósica.",
-                parametersInfo = "DPD: \\text{déficit de pressão de difusão}; \\quad PO: \\text{pressão osmótica}; \\quad PT: \\text{pressão de turgor da parede}"
+                parametersInfo = """DPD: \\text{déficit de pressão de difusão}; \\quad PO: \\text{pressão osmótica}; \\quad PT: \\text{pressão de turgor da parede}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Estequiometria da Bomba de Sódio-Potássio",
-                syntax = "1\\text{ ATP} + 3\\text{ Na}^+_{\\text{int}} + 2\\text{ K}^+_{\\text{ext}} \\to 1\\text{ ADP} + \\text{Pi} + 3\\text{ Na}^+_{\\text{ext}} + 2\\text{ K}^+_{\\text{int}}",
+                syntax = """1\\text{ ATP} + 3\\text{ Na}^+_{\\text{int}} + 2\\text{ K}^+_{\\text{ext}} \\to 1\\text{ ADP} + \\text{Pi} + 3\\text{ Na}^+_{\\text{ext}} + 2\\text{ K}^+_{\\text{int}}""",
                 description = "Ciclo eletrogênico de transporte ativo primário gerador do potencial de membrana de repouso.",
                 parametersInfo = "Gera gradiente eletroquímico celular vital para condução nervosa e transporte secundário de glicose."
             )
@@ -144,12 +144,12 @@ Por que os moluscos terrestres (lesmas e caracóis) morrem desidratados quando s
         solvedExamples = listOf(
             LessonExample(
                 title = "Hemólise de Hemácias em Água Destilada",
-                codeOrFormula = "\\text{Hemácia em Meio Hipotônico} \\implies \\text{Influxo Maciço de } \\text{H}_2\\text{O} \\implies \\text{Lise Celular (Estouro)}",
+                codeOrFormula = """\\text{Hemácia em Meio Hipotônico} \\implies \\text{Influxo Maciço de } \\text{H}_2\\text{O} \\implies \\text{Lise Celular (Estouro)}""",
                 explanation = "Sem parede celular celulósica, a membrana plasmática lipídica não resiste à pressão osmótica interna da entrada de água."
             ),
             LessonExample(
                 title = "Célula Vegetal Túrgida",
-                codeOrFormula = "\\text{PO} = \\text{PT} \\implies \\text{DPD} = 0 \\implies \\text{Célula Túrgida em Equilíbrio Dinâmico}",
+                codeOrFormula = """\\text{PO} = \\text{PT} \\implies \\text{DPD} = 0 \\implies \\text{Célula Túrgida em Equilíbrio Dinâmico}""",
                 explanation = "A resistência mecânica da parede celulósica impede que a célula vegetal rompa, garantindo a sustentação hidráulica de plantas herbáceas."
             )
         ),
@@ -281,13 +281,13 @@ Por que os girinos de sapos e rãs perdem completamente a sua cauda durante a me
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Decomposição do Peróxido de Hidrogênio pela Catalase",
-                syntax = "2\\text{ H}_2\\text{O}_2 \\xrightarrow{\\text{Catalase}} 2\\text{ H}_2\\text{O} + \\text{O}_2 \\uparrow",
+                syntax = """2\\text{ H}_2\\text{O}_2 \\xrightarrow{\\text{Catalase}} 2\\text{ H}_2\\text{O} + \\text{O}_2 \\uparrow""",
                 description = "Reação antioxidante de defesa enzimática nos peroxissomos que neutraliza radicais livres e estresse oxidativo.",
                 parametersInfo = "Ação de altíssima velocidade cinética com desprendimento visível de gás oxigênio em ferimentos."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Fluxo na Rota Secreta Clássica",
-                syntax = "\\text{Ribossomos no RER} \\xrightarrow{\\text{vesícula}} \\text{Golgi (cis} \\to \\text{trans)} \\xrightarrow{\\text{vesícula secretora}} \\text{Exocitose}",
+                syntax = """\\text{Ribossomos no RER} \\xrightarrow{\\text{vesícula}} \\text{Golgi (cis} \\to \\text{trans)} \\xrightarrow{\\text{vesícula secretora}} \\text{Exocitose}""",
                 description = "Sequência compartimentada de síntese, enovelamento, glicosilação e exportação de proteínas secretoras.",
                 parametersInfo = "Governada por sinais peptídicos de endereçamento e proteínas de revestimento COP-II e clatrina."
             )
@@ -295,12 +295,12 @@ Por que os girinos de sapos e rãs perdem completamente a sua cauda durante a me
         solvedExamples = listOf(
             LessonExample(
                 title = "Autofagia em Períodos de Restrição Nutricional",
-                codeOrFormula = "\\text{Isolamento de Mitocôndria Velha} + \\text{Lisossomo Primário} \\implies \\text{Autofagossomo} \\implies \\text{Nutrientes Reciclados}",
+                codeOrFormula = """\\text{Isolamento de Mitocôndria Velha} + \\text{Lisossomo Primário} \\implies \\text{Autofagossomo} \\implies \\text{Nutrientes Reciclados}""",
                 explanation = "O Prêmio Nobel de Medicina de 2016 (Yoshinori Ohsumi) elucidou os genes da autofagia lisossômica que mantém o fornecimento de aminoácidos durante a privação alimentar."
             ),
             LessonExample(
                 title = "Acrossomo e Fecundação",
-                codeOrFormula = "\\text{Acrossomo do Espermatozoide} \\xrightarrow{\\text{Hialuronidase}} \\text{Digestão da Corona Radiata e Zona Pelúcida}",
+                codeOrFormula = """\\text{Acrossomo do Espermatozoide} \\xrightarrow{\\text{Hialuronidase}} \\text{Digestão da Corona Radiata e Zona Pelúcida}""",
                 explanation = "A vesícula derivada do Golgi posicionada na cabeça do espermatozoide perfura os envoltórios do óvulo viabilizando o cariogamia."
             )
         ),
@@ -415,13 +415,13 @@ Por que os organismos procariontes primitivos nunca conseguiram desenvolver form
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Padrão de Transmissão da Herança Mitocondrial Materna",
-                syntax = "\\text{Mãe Mutada } (\\text{DNAmt}) \\implies \\text{100\\% dos Filhos e Filhas Afetados} \\quad | \\quad \\text{Pai Mutado} \\implies 0\\% \\text{ Afetados}",
+                syntax = """\\text{Mãe Mutada } (\\text{DNAmt}) \\implies \\text{100\\% dos Filhos e Filhas Afetados} \\quad | \\quad \\text{Pai Mutado} \\implies 0\\% \\text{ Afetados}""",
                 description = "Regra genética mandatória em heredogramas decorrente da eliminação das organelas paternas no zigoto.",
                 parametersInfo = "Utilizado no diagnóstico clínico de neuropatias, encefalopatias mitocondriais e miopatias."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Estrutura do Genoma Mitocondrial Humano",
-                syntax = "\\text{DNAmt} \\approx 16.569\\text{ pares de bases} \\implies 37\\text{ genes} \\quad (13\\text{ polipeptídeos} + 22\\text{ RNAt} + 2\\text{ RNAr})",
+                syntax = """\\text{DNAmt} \\approx 16.569\\text{ pares de bases} \\implies 37\\text{ genes} \\quad (13\\text{ polipeptídeos} + 22\\text{ RNAt} + 2\\text{ RNAr})""",
                 description = "Genoma circular compacto que não possui íntrons e codifica subunidades críticas da fosforilação oxidativa.",
                 parametersInfo = "Taxa de mutação cerca de 10 a 20 vezes superior à do genoma nuclear por falta de histonas protetoras."
             )
@@ -429,12 +429,12 @@ Por que os organismos procariontes primitivos nunca conseguiram desenvolver form
         solvedExamples = listOf(
             LessonExample(
                 title = "Herança Mitocondrial em Heredograma",
-                codeOrFormula = "\\text{Mãe (afetada)} \\times \\text{Pai (normal)} \\implies \\text{Todos os 4 filhos e filhas nascem afetados}",
+                codeOrFormula = """\\text{Mãe (afetada)} \\times \\text{Pai (normal)} \\implies \\text{Todos os 4 filhos e filhas nascem afetados}""",
                 explanation = "A transmissão universal da mãe para toda a prole independentemente do sexo biológico comprova a herança citoplasmática mitocondrial."
             ),
             LessonExample(
                 title = "DNAmt na Identificação Forense",
-                codeOrFormula = "\\text{Confronto} = \\text{DNAmt da Ossada} \\equiv \\text{DNAmt de Irmão, Mãe ou Sobrinho Matrilinear}",
+                codeOrFormula = """\\text{Confronto} = \\text{DNAmt da Ossada} \\equiv \\text{DNAmt de Irmão, Mãe ou Sobrinho Matrilinear}""",
                 explanation = "A invariância do DNAmt ao longo da linhagem feminina direta possibilita identificação criminal e histórica precisa mesmo gerações depois."
             )
         ),
@@ -568,13 +568,13 @@ O dinitrofenol (DNP) é uma substância química proibida historicamente usada e
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação Global da Respiração Celular Aeróbia",
-                syntax = "\\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{ O}_2 \\to 6\\text{ CO}_2 + 6\\text{ H}_2\\text{O} + \\Delta G^\\circ \\approx -2870\\text{ kJ/mol} \\quad (\\sim 30\\text{ a } 32\\text{ ATP})",
+                syntax = """\\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{ O}_2 \\to 6\\text{ CO}_2 + 6\\text{ H}_2\\text{O} + \\Delta G^\\circ \\approx -2870\\text{ kJ/mol} \\quad (\\sim 30\\text{ a } 32\\text{ ATP})""",
                 description = "Oxidação catabólica completa da glicose com alto rendimento energético acoplado por fosforilação oxidativa.",
                 parametersInfo = "Realizada sucessivamente no citosol (glicólise) e mitocôndria (Krebs e cristas respiratórias)."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação Geral da Fotossíntese Oxigênica",
-                syntax = "6\\text{ CO}_2 + 6\\text{ H}_2\\text{O} + \\text{Luz} \\to \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{ O}_2 \\uparrow",
+                syntax = """6\\text{ CO}_2 + 6\\text{ H}_2\\text{O} + \\text{Luz} \\to \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{ O}_2 \\uparrow""",
                 description = "Conversão anabólica de energia radiante solar em energia química estável nas ligações de açúcares.",
                 parametersInfo = "Todo o oxigênio liberado provém comprovadamente da fotólise das moléculas de água nos tilacoides."
             )
@@ -582,12 +582,12 @@ O dinitrofenol (DNP) é uma substância química proibida historicamente usada e
         solvedExamples = listOf(
             LessonExample(
                 title = "Fermentação Alcoólica na Panificação",
-                codeOrFormula = "\\text{Glicose} \\xrightarrow{\\text{Levedura}} 2\\text{ Etanol} + 2\\text{ CO}_2 \\uparrow \\implies \\text{Crescimento e Aeração da Massa do Pão}",
+                codeOrFormula = """\\text{Glicose} \\xrightarrow{\\text{Levedura}} 2\\text{ Etanol} + 2\\text{ CO}_2 \\uparrow \\implies \\text{Crescimento e Aeração da Massa do Pão}""",
                 explanation = "O desprendimento de gás carbônico pelas leveduras forma alvéolos gasosos internos que conferem maciez e volume ao pão."
             ),
             LessonExample(
                 title = "O Papel do Aceptor Final na Cadeia Respiratória",
-                codeOrFormula = "\\text{O}_2 + 4\\text{ e}^- + 4\\text{ H}^+ \\to 2\\text{ H}_2\\text{O} \\implies \\text{Manutenção da Força Próton-Motriz}",
+                codeOrFormula = """\\text{O}_2 + 4\\text{ e}^- + 4\\text{ H}^+ \\to 2\\text{ H}_2\\text{O} \\implies \\text{Manutenção da Força Próton-Motriz}""",
                 explanation = "A redução do oxigênio molecular em água no complexo IV garante o fluxo contínuo de elétrons e a geração contínua de ATP."
             )
         ),
@@ -728,26 +728,26 @@ Por que os ursos polares e esquimós que consomem uma dieta exclusivamente carn�
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Formação da Ligação Peptídica",
-                syntax = "\\text{R}_1\\text{-COOH} + \\text{R}_2\\text{-NH}_2 \\to \\text{R}_1\\text{-CO-NH-R}_2 + \\text{H}_2\\text{O} \\quad (\\text{Síntese por Desidratação})",
+                syntax = """\\text{R}_1\\text{-COOH} + \\text{R}_2\\text{-NH}_2 \\to \\text{R}_1\\text{-CO-NH-R}_2 + \\text{H}_2\\text{O} \\quad (\\text{Síntese por Desidratação})""",
                 description = "Reação de condensação covalente entre o carbono da carboxila de um aminoácido e o nitrogênio amínico do seguinte.",
                 parametersInfo = "Catalisada no sítio peptidil-transferase do ribossomo durante a tradução celular."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação Cinética de Michaelis-Menten",
-                syntax = "v = \\frac{V_{\\text{máx}} \\cdot [S]}{K_m + [S]}",
+                syntax = """v = \\frac{V_{\\text{máx}} \\cdot [S]}{K_m + [S]}""",
                 description = "Velocidade catalítica inicial da enzima em função da concentração de substrato livre disponível.",
-                parametersInfo = "V_{\\text{máx}}: \\text{velocidade de saturação}; \\quad K_m: \\text{constante de afinidade (metade de } V_{\\text{máx}})"
+                parametersInfo = """V_{\\text{máx}}: \\text{velocidade de saturação}; \\quad K_m: \\text{constante de afinidade (metade de } V_{\\text{máx}})"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Efeito do pH na Pepsina vs Tripsina",
-                codeOrFormula = "\\text{Pepsina Estomacal: pH Ótimo} \\approx 2 \\quad | \\quad \\text{Tripsina Pancreática: pH Ótimo} \\approx 8",
+                codeOrFormula = """\\text{Pepsina Estomacal: pH Ótimo} \\approx 2 \\quad | \\quad \\text{Tripsina Pancreática: pH Ótimo} \\approx 8""",
                 explanation = "A alteração brusca do quimo ácido ao entrar no duodeno neutraliza a pepsina por desnaturação e ativa a tripsina alcalina."
             ),
             LessonExample(
                 title = "Perfil Lipídico e Aterosclerose",
-                codeOrFormula = "\\uparrow [\\text{LDL Oxidado}] + \\downarrow [\\text{HDL}] \\implies \\text{Formação de Placas de Ateroma e Risco de Infarto}",
+                codeOrFormula = """\\uparrow [\\text{LDL Oxidado}] + \\downarrow [\\text{HDL}] \\implies \\text{Formação de Placas de Ateroma e Risco de Infarto}""",
                 explanation = "O balanço entre os transportadores lipoproteicos modula o risco cardiovascular e a deposição arterial de placas lipídicas."
             )
         ),

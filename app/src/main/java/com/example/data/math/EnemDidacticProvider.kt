@@ -95,13 +95,13 @@ object EnemDidacticProvider {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Propriedade Distributiva",
-                        syntax = "a \\cdot (b + c) = a \\cdot b + a \\cdot c",
+                        syntax = """a \\cdot (b + c) = a \\cdot b + a \\cdot c""",
                         description = "Permite multiplicar um fator por cada termo dentro dos parênteses.",
                         parametersInfo = "Essencial para simplificar expressões sem calcular o interior primeiro."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Divisão Euclidiana (Algoritmo da Divisão)",
-                        syntax = "D = d \\cdot q + r \\quad (0 \\le r < d)",
+                        syntax = """D = d \\cdot q + r \\quad (0 \\le r < d)""",
                         description = "Dividendo (D) é igual ao divisor (d) vezes o quociente (q) mais o resto (r).",
                         parametersInfo = "Usado em problemas de ciclos e calendários periódicos no ENEM."
                     )
@@ -109,7 +109,7 @@ object EnemDidacticProvider {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo ENEM: Orçamento Familiar",
-                        codeOrFormula = "2500 - (3 \\cdot 450 + 4 \\cdot 85 + 210) = R$ 600,00",
+                        codeOrFormula = """2500 - (3 \\cdot 450 + 4 \\cdot 85 + 210) = R$ 600,00""",
                         explanation = "Uma família tem renda de R$ 2.500,00 e gasta 3 parcelas de R$ 450,00, 4 compras de supermercado de R$ 85,00 e R$ 210,00 de luz. O saldo restante é calculado aplicando a prioridade das multiplicações antes da subtração final."
                     )
                 ),
@@ -136,13 +136,13 @@ object EnemDidacticProvider {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Soma de Frações",
-                        syntax = "\\frac{a}{b} + \\frac{c}{d} = \\frac{a \\cdot d + b \\cdot c}{b \\cdot d}",
+                        syntax = """\\frac{a}{b} + \\frac{c}{d} = \\frac{a \\cdot d + b \\cdot c}{b \\cdot d}""",
                         description = "Método da 'borboleta' para soma rápida de frações com dois termos.",
                         parametersInfo = "b ≠ 0, d ≠ 0"
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Inverso de Fração",
-                        syntax = "\\left(\\frac{a}{b}\\right)^{-1} = \\frac{b}{a}",
+                        syntax = """\\left(\\frac{a}{b}\\right)^{-1} = \\frac{b}{a}""",
                         description = "Inversão do numerador pelo denominador para efetuar divisões fracionárias.",
                         parametersInfo = "a ≠ 0, b ≠ 0"
                     )
@@ -150,7 +150,7 @@ object EnemDidacticProvider {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo Prático: Mistura de Tintas",
-                        codeOrFormula = "\\frac{2}{5} + \\frac{1}{3} = \\frac{6 + 5}{15} = \\frac{11}{15}",
+                        codeOrFormula = """\\frac{2}{5} + \\frac{1}{3} = \\frac{6 + 5}{15} = \\frac{11}{15}""",
                         explanation = "Um pintor misturou 2/5 de lata de tinta azul com 1/3 de lata de tinta branca. Para encontrar o volume combinado, encontra-se o MMC(5, 3) = 15, resultando em 11/15 de lata preenchida."
                     )
                 ),
@@ -180,7 +180,7 @@ object EnemDidacticProvider {
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Relação Fundamental entre MMC e MDC",
-                        syntax = "\\text{MMC}(a, b) \\cdot \\text{MDC}(a, b) = a \\cdot b",
+                        syntax = """\\text{MMC}(a, b) \\cdot \\text{MDC}(a, b) = a \\cdot b""",
                         description = "O produto do MMC pelo MDC de dois números é igual ao produto dos próprios números.",
                         parametersInfo = "Válido para quaisquer dois inteiros positivos a e b."
                     )
@@ -214,13 +214,13 @@ object EnemDidacticProvider {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Propriedade Fundamental da Proporção",
-                        syntax = "a \\cdot d = b \\cdot c \\quad \\Longleftrightarrow \\quad \\frac{a}{b} = \\frac{c}{d}",
+                        syntax = """a \\cdot d = b \\cdot c \\quad \\Longleftrightarrow \\quad \\frac{a}{b} = \\frac{c}{d}""",
                         description = "O produto dos extremos é igual ao produto dos meios (multiplicação cruzada).",
                         parametersInfo = "b ≠ 0, d ≠ 0"
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Escala de Superfície (Área)",
-                        syntax = "\\frac{A_{\\text{desenho}}}{A_{\\text{real}}} = \\left(\\frac{1}{k}\\right)^2 = \\frac{1}{k^2}",
+                        syntax = """\\frac{A_{\\text{desenho}}}{A_{\\text{real}}} = \\left(\\frac{1}{k}\\right)^2 = \\frac{1}{k^2}""",
                         description = "Se a escala linear é 1:k, a escala de área é 1:k².",
                         parametersInfo = "Erro clássico no ENEM: esquecer de elevar a escala ao quadrado ao calcular áreas!"
                     )
@@ -254,7 +254,7 @@ object EnemDidacticProvider {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Regra de Três Composta",
-                        syntax = "\\frac{G_1}{G_2} = \\frac{A_1}{A_2} \\cdot \\frac{B_2}{B_1}",
+                        syntax = """\\frac{G_1}{G_2} = \\frac{A_1}{A_2} \\cdot \\frac{B_2}{B_1}""",
                         description = "Compara a grandeza principal com cada uma das demais, invertendo as razões das grandezas inversamente proporcionais.",
                         parametersInfo = "Isole a grandeza com 'x' e monte a igualdade com o produto das outras razões."
                     )
@@ -262,7 +262,7 @@ object EnemDidacticProvider {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo: Velocidade e Tempo de Viagem",
-                        codeOrFormula = "60 \\cdot 4 = 80 \\cdot t \\implies t = \\frac{240}{80} = 3\\text{ horas}",
+                        codeOrFormula = """60 \\cdot 4 = 80 \\cdot t \\implies t = \\frac{240}{80} = 3\\text{ horas}""",
                         explanation = "A 60 km/h uma viagem dura 4 horas. A 80 km/h (velocidade maior, tempo menor: grandeza inversamente proporcional), o tempo será de 3 horas."
                     )
                 ),
@@ -296,13 +296,13 @@ object EnemDidacticProvider {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Variação Percentual Relativa",
-                        syntax = "\\Delta\\% = \\frac{V_{\\text{final}} - V_{\\text{inicial}}}{V_{\\text{inicial}}} \\cdot 100",
+                        syntax = """\\Delta\\% = \\frac{V_{\\text{final}} - V_{\\text{inicial}}}{V_{\\text{inicial}}} \\cdot 100""",
                         description = "Calcula o percentual de crescimento ou queda em relação ao valor original.",
                         parametersInfo = "O denominador é SEMPRE o valor de referência inicial!"
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Aumentos Sucessivos",
-                        syntax = "V_{\\text{final}} = V_0 \\cdot (1 + i_1) \\cdot (1 + i_2)",
+                        syntax = """V_{\\text{final}} = V_0 \\cdot (1 + i_1) \\cdot (1 + i_2)""",
                         description = "Um aumento de 10% seguido de 20% NÃO é 30%, mas sim 1,10 × 1,20 = 1,32 (aumento real de 32%).",
                         parametersInfo = "Regra de ouro contra pegadinhas clássicas do ENEM."
                     )
@@ -330,13 +330,13 @@ object EnemDidacticProvider {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Fórmula dos Juros Simples",
-                        syntax = "J = C \\cdot i \\cdot t",
+                        syntax = """J = C \\cdot i \\cdot t""",
                         description = "J = Juros, C = Capital Inicial, i = Taxa unitária, t = Tempo.",
                         parametersInfo = "A taxa (i) e o tempo (t) DEVEM estar na mesma unidade de tempo (ex: ao mês e meses)."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Montante Simples",
-                        syntax = "M = C + J = C \\cdot (1 + i \\cdot t)",
+                        syntax = """M = C + J = C \\cdot (1 + i \\cdot t)""",
                         description = "Montante total acumulado no final da aplicação.",
                         parametersInfo = "Representa uma função afim de 1º grau M(t) = C + (C·i)t."
                     )
@@ -344,7 +344,7 @@ object EnemDidacticProvider {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo: Aplicação em Juros Simples",
-                        codeOrFormula = "J = 5000 \\cdot 0,02 \\cdot 6 = R$ 600,00 \\implies M = R$ 5.600,00",
+                        codeOrFormula = """J = 5000 \\cdot 0,02 \\cdot 6 = R$ 600,00 \\implies M = R$ 5.600,00""",
                         explanation = "R$ 5.000,00 aplicados a 2% ao mês por 6 meses geram R$ 600,00 de juros, totalizando um montante de R$ 5.600,00."
                     )
                 ),
@@ -361,7 +361,7 @@ object EnemDidacticProvider {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Montante em Juros Compostos",
-                        syntax = "M = C \\cdot (1 + i)^t",
+                        syntax = """M = C \\cdot (1 + i)^t""",
                         description = "O capital é multiplicado repetidamente pelo fator de aumento (1 + i) a cada período t.",
                         parametersInfo = "No ENEM, se t for elevado, a prova geralmente fornece aproximações como (1,02)^12 = 1,268."
                     )
@@ -369,7 +369,7 @@ object EnemDidacticProvider {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo: Dívida de Cartão de Crédito",
-                        codeOrFormula = "M = 1000 \\cdot (1 + 0,10)^3 = 1000 \\cdot 1,331 = R$ 1.331,00",
+                        codeOrFormula = """M = 1000 \\cdot (1 + 0,10)^3 = 1000 \\cdot 1,331 = R$ 1.331,00""",
                         explanation = "Uma dívida inicial de R$ 1.000,00 sob taxa de 10% ao mês acumulada por 3 meses resulta em R$ 1.331,00."
                     )
                 ),
@@ -402,7 +402,7 @@ object EnemDidacticProvider {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo Tabela SAC: Primeira e Última Parcela",
-                        codeOrFormula = "A = \\frac{120.000}{120} = 1.000\\text{/mês} \\implies P_1 = 1000 + 1200 = 2.200",
+                        codeOrFormula = """A = \\frac{120.000}{120} = 1.000\\text{/mês} \\implies P_1 = 1000 + 1200 = 2.200""",
                         explanation = "Num financiamento SAC de R$ 120.000 em 120 meses a 1% ao mês, a amortização é fixa de R$ 1.000. No 1º mês, os juros são de 1% sobre 120 mil (R$ 1.200), gerando parcela de R$ 2.200."
                     )
                 ),

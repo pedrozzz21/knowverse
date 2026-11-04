@@ -143,19 +143,19 @@ object EnemPhysicsDidacticProvider {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Função Horária do Espaço no MRU",
-                        syntax = "S = S_0 + v \\cdot t",
+                        syntax = """S = S_0 + v \\cdot t""",
                         description = "Posição final em função da posição inicial e velocidade constante.",
                         parametersInfo = "S em metros (m), t em segundos (s), v em m/s."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Função Horária da Velocidade no MRUV",
-                        syntax = "v = v_0 + a \\cdot t",
+                        syntax = """v = v_0 + a \\cdot t""",
                         description = "Velocidade instantânea em função do tempo.",
                         parametersInfo = "v_0 = velocidade inicial, a = aceleração."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equação de Torricelli",
-                        syntax = "v^2 = v_0^2 + 2 \\cdot a \\cdot \\Delta S",
+                        syntax = """v^2 = v_0^2 + 2 \\cdot a \\cdot \\Delta S""",
                         description = "Relaciona velocidade e deslocamento sem necessidade da variável tempo.",
                         parametersInfo = "Essencial em colisões e frenagens no trânsito."
                     )
@@ -163,7 +163,7 @@ object EnemPhysicsDidacticProvider {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Exemplo Prático: Distância de Parada (Frenagem)",
-                        codeOrFormula = "v^2 = v_0^2 + 2 \\cdot a \\cdot \\Delta S",
+                        codeOrFormula = """v^2 = v_0^2 + 2 \\cdot a \\cdot \\Delta S""",
                         explanation = "Um carro a 72 km/h (20 m/s) freia com desaceleração de 4 m/s². Para parar (v = 0): 0 = 20² + 2(-4)·ΔS => 0 = 400 - 8·ΔS => 8·ΔS = 400 => ΔS = 50 metros."
                     )
                 ),
@@ -191,13 +191,13 @@ object EnemPhysicsDidacticProvider {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Componentes da Velocidade Inicial",
-                        syntax = "v_{0x} = v_0 \\cdot \\cos(\\theta) \\quad \\text{e} \\quad v_{0y} = v_0 \\cdot \\sin(\\theta)",
+                        syntax = """v_{0x} = v_0 \\cdot \\cos(\\theta) \\quad \\text{e} \\quad v_{0y} = v_0 \\cdot \\sin(\\theta)""",
                         description = "Decomposição ortogonal do vetor velocidade de lançamento.",
                         parametersInfo = "θ é o ângulo de tiro em relação ao solo horizontal."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Alcance Máximo Horizontal",
-                        syntax = "A = \\frac{v_0^2 \\cdot \\sin(2\\theta)}{g}",
+                        syntax = """A = \\frac{v_0^2 \\cdot \\sin(2\\theta)}{g}""",
                         description = "Distância horizontal total percorrida pelo projétil.",
                         parametersInfo = "O alcance é máximo quando o ângulo de lançamento é θ = 45°."
                     )
@@ -205,7 +205,7 @@ object EnemPhysicsDidacticProvider {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Tempo de Subida e Altura Máxima",
-                        codeOrFormula = "v_y = v_{0y} - g \\cdot t_{sub}",
+                        codeOrFormula = """v_y = v_{0y} - g \\cdot t_{sub}""",
                         explanation = "No topo da parábola, v_y = 0. Logo, t_sub = v_{0y} / g. O tempo total de voo é o dobro do tempo de subida (t_total = 2 · t_sub)."
                     )
                 ),
@@ -233,13 +233,13 @@ object EnemPhysicsDidacticProvider {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Intensidade de Corrente Elétrica",
-                        syntax = "I = \\frac{\\Delta Q}{\\Delta t} = \\frac{n \\cdot e}{\\Delta t}",
+                        syntax = """I = \\frac{\\Delta Q}{\\Delta t} = \\frac{n \\cdot e}{\\Delta t}""",
                         description = "Quantidade de carga líquida que atravessa a seção reta por unidade de tempo.",
                         parametersInfo = "1 Ampère (A) = 1 Coulomb por segundo (C/s)."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Potência Elétrica (Fórmula do PUI)",
-                        syntax = "P = U \\cdot I = R \\cdot I^2 = \\frac{U^2}{R}",
+                        syntax = """P = U \\cdot I = R \\cdot I^2 = \\frac{U^2}{R}""",
                         description = "Taxa de conversão de energia elétrica em trabalho ou calor por segundo.",
                         parametersInfo = "P em Watts (W), U em Volts (V), I em Ampères (A)."
                     )
@@ -247,7 +247,7 @@ object EnemPhysicsDidacticProvider {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Cálculo de Consumo de Chuveiro Elétrico",
-                        codeOrFormula = "E = P(kW) \\cdot \\Delta t(h)",
+                        codeOrFormula = """E = P(kW) \\cdot \\Delta t(h)""",
                         explanation = "Um chuveiro de 5500 W (5,5 kW) usado por 30 minutos (0,5 h) ao dia durante 30 dias consome: E = 5,5 × 0,5 × 30 = 82,5 kWh no mês."
                     )
                 ),
@@ -275,13 +275,13 @@ object EnemPhysicsDidacticProvider {
                 formulas = listOf(
                     FormulaOrSyntaxItem(
                         termOrFunction = "Equação Fundamental da Ondulatória",
-                        syntax = "v = \\lambda \\cdot f",
+                        syntax = """v = \\lambda \\cdot f""",
                         description = "Relaciona a velocidade da onda, seu comprimento e sua frequência.",
                         parametersInfo = "v em m/s, λ em metros, f em Hertz (Hz = 1/s)."
                     ),
                     FormulaOrSyntaxItem(
                         termOrFunction = "Relação Período e Frequência",
-                        syntax = "f = \\frac{1}{T} \\quad \\iff \\quad T = \\frac{1}{f}",
+                        syntax = """f = \\frac{1}{T} \\quad \\iff \\quad T = \\frac{1}{f}""",
                         description = "Período T é o tempo de um ciclo; frequência f é a quantidade de ciclos por segundo.",
                         parametersInfo = "A frequência depende exclusivamente da FONTE emissora da onda!"
                     )
@@ -289,7 +289,7 @@ object EnemPhysicsDidacticProvider {
                 solvedExamples = listOf(
                     LessonExample(
                         title = "Cálculo de Comprimento de Onda de Rádio FM",
-                        codeOrFormula = "v = \\lambda \\cdot f \\implies \\lambda = v / f",
+                        codeOrFormula = """v = \\lambda \\cdot f \\implies \\lambda = v / f""",
                         explanation = "Uma emissora emite em 100 MHz (100 × 10⁶ Hz) no vácuo (v = 3 × 10⁸ m/s). O comprimento é: λ = (3 × 10⁸) / (100 × 10⁶) = 3 metros."
                     )
                 ),

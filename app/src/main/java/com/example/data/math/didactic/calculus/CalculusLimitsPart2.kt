@@ -116,13 +116,13 @@ Considere a função de Dirichlet \( f(x) = \begin{cases} 1, & x \in \mathbb{Q} 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "As Três Condições de Continuidade",
-                syntax = "\\lim_{x \\to a} f(x) = f(a) \\quad [f(a) \\in \\mathbb{R}, \\; \\lim \\text{ existe e coincidem}]",
+                syntax = """\\lim_{x \\to a} f(x) = f(a) \\quad [f(a) \\in \\mathbb{R}, \\; \\lim \\text{ existe e coincidem}]""",
                 description = "Critério analítico de continuidade em um ponto.",
                 parametersInfo = "Se qualquer uma das condições falhar, f é descontínua em a."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema do Valor Intermediário (TVI)",
-                syntax = "f \\text{ contínua em } [a, b] \\implies \\forall N \\in (f(a), f(b)), \\; \\exists c \\in (a, b) \\text{ tal que } f(c) = N",
+                syntax = """f \\text{ contínua em } [a, b] \\implies \\forall N \\in (f(a), f(b)), \\; \\exists c \\in (a, b) \\text{ tal que } f(c) = N""",
                 description = "Garante que a função assume todos os valores entre f(a) e f(b).",
                 parametersInfo = "Exige que o intervalo seja fechado [a, b] e a função contínua."
             )
@@ -130,7 +130,7 @@ Considere a função de Dirichlet \( f(x) = \begin{cases} 1, & x \in \mathbb{Q} 
         solvedExamples = listOf(
             LessonExample(
                 title = "Garantia de Raiz por Bolzano / TVI",
-                codeOrFormula = "f(x) = x^3 - x - 1 \\implies f(1) = -1 < 0 \\text{ e } f(2) = 5 > 0 \\implies \\exists c \\in (1, 2) \\mid f(c) = 0",
+                codeOrFormula = """f(x) = x^3 - x - 1 \\implies f(1) = -1 < 0 \\text{ e } f(2) = 5 > 0 \\implies \\exists c \\in (1, 2) \\mid f(c) = 0""",
                 explanation = "Como a função polinomial é contínua e possui sinais opostos nos extremos, ela obrigatoriamente corta o eixo x."
             )
         ),
@@ -233,13 +233,13 @@ Considere a função tangente \( f(x) = \tan(x) = \frac{\sin x}{\cos x} \). Dete
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Comportamento da Forma k / 0",
-                syntax = "\\frac{k}{0^+} = +\\infty \\; (k > 0) \\quad \\text{e} \\quad \\frac{k}{0^-} = -\\infty \\; (k > 0)",
+                syntax = """\\frac{k}{0^+} = +\\infty \\; (k > 0) \\quad \\text{e} \\quad \\frac{k}{0^-} = -\\infty \\; (k > 0)""",
                 description = "Regra de sinais para limites infinitos.",
                 parametersInfo = "Se k < 0, inverta os sinais resultantes do infinito."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação da Assíntota Vertical",
-                syntax = "x = a \\iff \\lim_{x \\to a^\\pm} f(x) = \\pm\\infty",
+                syntax = """x = a \\iff \\lim_{x \\to a^\\pm} f(x) = \\pm\\infty""",
                 description = "Equação cartesiana de uma reta vertical assintótica.",
                 parametersInfo = "Basta que um único limite lateral divirja para o infinito."
             )
@@ -247,7 +247,7 @@ Considere a função tangente \( f(x) = \tan(x) = \frac{\sin x}{\cos x} \). Dete
         solvedExamples = listOf(
             LessonExample(
                 title = "Estudo de Limites Laterais Infinitos",
-                codeOrFormula = "\\lim_{x \\to 2^+} \\frac{x+1}{x-2} = \\frac{3}{0^+} = +\\infty \\quad \\text{e} \\quad \\lim_{x \\to 2^-} \\frac{x+1}{x-2} = \\frac{3}{0^-} = -\\infty",
+                codeOrFormula = """\\lim_{x \\to 2^+} \\frac{x+1}{x-2} = \\frac{3}{0^+} = +\\infty \\quad \\text{e} \\quad \\lim_{x \\to 2^-} \\frac{x+1}{x-2} = \\frac{3}{0^-} = -\\infty""",
                 explanation = "A análise minuciosa do sinal do denominador ao redor de x=2 revela o comportamento assintótico vertical em x=2."
             )
         ),
@@ -357,13 +357,13 @@ Determine as equações de todas as assíntotas (tanto verticais quanto horizont
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema Fundamental dos Limites no Infinito",
-                syntax = "\\lim_{x \\to \\pm\\infty} \\frac{1}{x^r} = 0 \\quad (r > 0)",
+                syntax = """\\lim_{x \\to \\pm\\infty} \\frac{1}{x^r} = 0 \\quad (r > 0)""",
                 description = "Base analítica para o cancelamento de potências inversas.",
                 parametersInfo = "Válido para todo expoente racional positivo."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Radical sob Infinito Negativo",
-                syntax = "\\sqrt{x^2} = |x| = -x \\quad (\\text{para } x \\to -\\infty)",
+                syntax = """\\sqrt{x^2} = |x| = -x \\quad (\\text{para } x \\to -\\infty)""",
                 description = "Propriedade obrigatória ao extrair fatores de raízes no sentido negativo.",
                 parametersInfo = "Gera a troca de sinal característica na assíntota horizontal esquerda."
             )
@@ -371,7 +371,7 @@ Determine as equações de todas as assíntotas (tanto verticais quanto horizont
         solvedExamples = listOf(
             LessonExample(
                 title = "Indeterminação Infinito Menos Infinito por Conjugado",
-                codeOrFormula = "\\lim_{x \\to +\\infty} (\\sqrt{x^2 + 4x} - x) = \\lim_{x \\to +\\infty} \\frac{4x}{\\sqrt{x^2+4x} + x} = \\frac{4}{1+1} = 2",
+                codeOrFormula = """\\lim_{x \\to +\\infty} (\\sqrt{x^2 + 4x} - x) = \\lim_{x \\to +\\infty} \\frac{4x}{\\sqrt{x^2+4x} + x} = \\frac{4}{1+1} = 2""",
                 explanation = "A multiplicação pelo conjugado converteu a subtração indeterminada em uma fração tratável pelo termo dominante."
             )
         ),
@@ -486,19 +486,19 @@ Calcule \( \lim_{x \to 0} \frac{x \sin(x)}{2 - 2\cos(x)} \) utilizando manipula�
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Teorema do Confronto (Sanduíche)",
-                syntax = "g(x) \\le f(x) \\le h(x) \\text{ e } \\lim g = \\lim h = L \\implies \\lim f(x) = L",
+                syntax = """g(x) \\le f(x) \\le h(x) \\text{ e } \\lim g = \\lim h = L \\implies \\lim f(x) = L""",
                 description = "Estrangulamento da função intermediária pelos limites extremos.",
                 parametersInfo = "Válido em toda a vizinhança perfurada de a."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Primeiro Limite Trigonométrico Notável",
-                syntax = "\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1",
+                syntax = """\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1""",
                 description = "Razão fundamental entre o seno e seu arco infinitesimal em radianos.",
                 parametersInfo = "O argumento do seno deve ser rigorosamente igual ao denominador."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Limite Notável do Cosseno",
-                syntax = "\\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2} = \\frac{1}{2}",
+                syntax = """\\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2} = \\frac{1}{2}""",
                 description = "Derivado por multiplicação do conjugado trigonométrico (1 + cos x).",
                 parametersInfo = "Se o denominador for x (em vez de x²), o limite resulta em 0."
             )
@@ -506,7 +506,7 @@ Calcule \( \lim_{x \to 0} \frac{x \sin(x)}{2 - 2\cos(x)} \) utilizando manipula�
         solvedExamples = listOf(
             LessonExample(
                 title = "Ajuste de Argumento no Limite do Seno",
-                codeOrFormula = "\\lim_{x \\to 0} \\frac{\\sin(5x)}{3x} = \\frac{5}{3} \\lim_{u \\to 0} \\frac{\\sin u}{u} = \\frac{5}{3} \\cdot 1 = \\frac{5}{3}",
+                codeOrFormula = """\\lim_{x \\to 0} \\frac{\\sin(5x)}{3x} = \\frac{5}{3} \\lim_{u \\to 0} \\frac{\\sin u}{u} = \\frac{5}{3} \\cdot 1 = \\frac{5}{3}""",
                 explanation = "Multiplica-se e divide-se por 5 para compatibilizar o denominador com o argumento do seno."
             )
         ),
@@ -619,7 +619,7 @@ Utilize o Quociente de Newton para deduzir a fórmula da inclinação da reta ta
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Inclinação da Reta Tangente (Derivada)",
-                syntax = "m = \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h} = f'(a)",
+                syntax = """m = \\lim_{h \\to 0} \\frac{f(a+h) - f(a)}{h} = f'(a)""",
                 description = "Limite do Quociente de Newton quando o acréscimo temporal/espacial tende a zero.",
                 parametersInfo = "Se o limite for finito, a reta tangente tem inclinação m."
             ),
@@ -633,7 +633,7 @@ Utilize o Quociente de Newton para deduzir a fórmula da inclinação da reta ta
         solvedExamples = listOf(
             LessonExample(
                 title = "Determinação da Reta Tangente à Parábola",
-                codeOrFormula = "m = \\lim_{h \\to 0} \\frac{(1+h)^2 - 1}{h} = \\lim_{h \\to 0} (2 + h) = 2 \\implies y - 1 = 2(x - 1)",
+                codeOrFormula = """m = \\lim_{h \\to 0} \\frac{(1+h)^2 - 1}{h} = \\lim_{h \\to 0} (2 + h) = 2 \\implies y - 1 = 2(x - 1)""",
                 explanation = "A eliminação de h no quociente de Newton forneceu o coeficiente angular exato m=2 no ponto (1,1)."
             )
         ),

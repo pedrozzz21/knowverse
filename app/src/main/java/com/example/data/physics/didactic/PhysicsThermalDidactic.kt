@@ -139,32 +139,32 @@ Dois termômetros de vidro idênticos, um preenchido com álcool tingido e outro
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Conversão Celsius-Fahrenheit-Kelvin",
-                syntax = "\\frac{\\theta_C}{5} = \\frac{\\theta_F - 32}{9} = \\frac{T_K - 273}{5}",
+                syntax = """\\frac{\\theta_C}{5} = \\frac{\\theta_F - 32}{9} = \\frac{T_K - 273}{5}""",
                 description = "Relação fundamental de equivalência entre as três principais escalas termométricas baseadas nos pontos do gelo e do vapor.",
-                parametersInfo = "\\theta_C: \\text{temp. em } ^\\circ\\text{C}; \\quad \\theta_F: \\text{temp. em } ^\\circ\\text{F}; \\quad T_K: \\text{temp. absoluta em Kelvin}"
+                parametersInfo = """\\theta_C: \\text{temp. em } ^\\circ\\text{C}; \\quad \\theta_F: \\text{temp. em } ^\\circ\\text{F}; \\quad T_K: \\text{temp. absoluta em Kelvin}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Relação entre Variações Térmicas",
-                syntax = "\\Delta \\theta_C = \\Delta T_K = \\frac{\\Delta \\theta_F}{1{,}8}",
+                syntax = """\\Delta \\theta_C = \\Delta T_K = \\frac{\\Delta \\theta_F}{1{,}8}""",
                 description = "Conversão de amplitudes térmicas: a variação de um grau Celsius tem a mesma dimensão de um Kelvin e equivale a 1,8 graus Fahrenheit.",
-                parametersInfo = "\\Delta \\theta_C, \\Delta T_K, \\Delta \\theta_F: \\text{variações de temperatura nas respectivas escalas}"
+                parametersInfo = """\\Delta \\theta_C, \\Delta T_K, \\Delta \\theta_F: \\text{variações de temperatura nas respectivas escalas}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Energia Cinética Translacional Média",
-                syntax = "E_{c,\\text{méd}} = \\frac{3}{2} k_B T",
+                syntax = """E_{c,\\text{méd}} = \\frac{3}{2} k_B T""",
                 description = "Interpretação microscópica da temperatura baseada no modelo cinético dos gases ideais.",
-                parametersInfo = "k_B = 1{,}38 \\times 10^{-23}\\text{ J/K} \\text{ (Boltzmann)}; \\quad T: \\text{temperatura absoluta (K)}"
+                parametersInfo = """k_B = 1{,}38 \\times 10^{-23}\\text{ J/K} \\text{ (Boltzmann)}; \\quad T: \\text{temperatura absoluta (K)}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Conversão Direta entre Escalas com Ponto de Fusão Corpóreo",
-                codeOrFormula = "\\frac{36{,}5}{5} = \\frac{\\theta_F - 32}{9} \\implies 7{,}3 \\cdot 9 = \\theta_F - 32 \\implies \\theta_F = 97{,}7^\\circ\\text{F}",
+                codeOrFormula = """\\frac{36{,}5}{5} = \\frac{\\theta_F - 32}{9} \\implies 7{,}3 \\cdot 9 = \\theta_F - 32 \\implies \\theta_F = 97{,}7^\\circ\\text{F}""",
                 explanation = "A temperatura média basal do corpo humano de 36,5 °C corresponde a 97,7 °F nos países que adotam a escala anglo-saxônica."
             ),
             LessonExample(
                 title = "Construção de Escala Arbitrária Linear",
-                codeOrFormula = "\\frac{Y - Y_{\\text{gelo}}}{Y_{\\text{vapor}} - Y_{\\text{gelo}}} = \\frac{\\theta_C}{100}",
+                codeOrFormula = """\\frac{Y - Y_{\\text{gelo}}}{Y_{\\text{vapor}} - Y_{\\text{gelo}}} = \\frac{\\theta_C}{100}""",
                 explanation = "A determinação de qualquer escala desconhecida baseia-se na constância da razão linear entre segmentos de dilatação."
             )
         ),
@@ -300,32 +300,32 @@ Considere um anel metálico de bronze com um coeficiente de dilatação linear \
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Dilatação Térmica Linear",
-                syntax = "\\Delta L = L_0 \\cdot \\alpha \\cdot \\Delta T",
+                syntax = """\\Delta L = L_0 \\cdot \\alpha \\cdot \\Delta T""",
                 description = "Expressão fundamental da expansão unidimensional de sólidos isotrópicos sob variação de temperatura.",
-                parametersInfo = "L_0: \\text{comprimento inicial (m)}; \\quad \\alpha: \\text{coeficiente linear } (^\\circ\\text{C}^{-1}); \\quad \\Delta T: \\text{variação térmica } (^\\circ\\text{C})"
+                parametersInfo = """L_0: \\text{comprimento inicial (m)}; \\quad \\alpha: \\text{coeficiente linear } (^\\circ\\text{C}^{-1}); \\quad \\Delta T: \\text{variação térmica } (^\\circ\\text{C})"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Relação Proporcional entre Coeficientes",
-                syntax = "\\frac{\\alpha}{1} = \\frac{\\beta}{2} = \\frac{\\gamma}{3}",
+                syntax = """\\frac{\\alpha}{1} = \\frac{\\beta}{2} = \\frac{\\gamma}{3}""",
                 description = "Isotropia geométrica relacionando os coeficientes linear, superficial e volumétrico.",
-                parametersInfo = "\\alpha: \\text{linear}; \\quad \\beta = 2\\alpha: \\text{superficial}; \\quad \\gamma = 3\\alpha: \\text{volumétrico}"
+                parametersInfo = """\\alpha: \\text{linear}; \\quad \\beta = 2\\alpha: \\text{superficial}; \\quad \\gamma = 3\\alpha: \\text{volumétrico}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Dilatação Real de Líquidos",
-                syntax = "\\Delta V_{\\text{real}} = \\Delta V_{\\text{aparente}} + \\Delta V_{\\text{recipiente}}",
+                syntax = """\\Delta V_{\\text{real}} = \\Delta V_{\\text{aparente}} + \\Delta V_{\\text{recipiente}}""",
                 description = "Balanço volumétrico corrigindo a expansão do líquido pelo transbordamento somado à dilatação do frasco.",
-                parametersInfo = "\\Delta V_{\\text{ap}}: \\text{volume que transborda}; \\quad \\Delta V_{\\text{rec}}: \\text{aumento do volume interno do recipiente}"
+                parametersInfo = """\\Delta V_{\\text{ap}}: \\text{volume que transborda}; \\quad \\Delta V_{\\text{rec}}: \\text{aumento do volume interno do recipiente}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Dilatação de Placa Metálica com Furo Central",
-                codeOrFormula = "\\Delta A_{\\text{orifício}} = A_{0,\\text{orifício}} \\cdot \\beta \\cdot \\Delta T",
+                codeOrFormula = """\\Delta A_{\\text{orifício}} = A_{0,\\text{orifício}} \\cdot \\beta \\cdot \\Delta T""",
                 explanation = "A cavidade interna expande na mesma proporção como se fosse preenchida pelo próprio metal da chapa circundante."
             ),
             LessonExample(
                 title = "Comportamento da Lâmina Bimetálica",
-                codeOrFormula = "\\alpha_A > \\alpha_B \\implies \\Delta L_A > \\Delta L_B \\implies \\text{curvatura côncava voltada para } B",
+                codeOrFormula = """\\alpha_A > \\alpha_B \\implies \\Delta L_A > \\Delta L_B \\implies \\text{curvatura côncava voltada para } B""",
                 explanation = "O metal de maior expansão alonga mais e fica na face externa convexa, fazendo a lâmina encurvar em direção ao metal de menor expansão."
             )
         ),
@@ -460,32 +460,32 @@ Em um calorímetro ideal misturam-se \( 200\text{ g} \) de gelo a \( 0^\circ\tex
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação Fundamental da Calorimetria",
-                syntax = "Q = m \\cdot c \\cdot \\Delta T",
+                syntax = """Q = m \\cdot c \\cdot \\Delta T""",
                 description = "Quantidade de calor sensível absorvida ou cedida por um corpo associada a uma variação de temperatura.",
-                parametersInfo = "m: \\text{massa (g ou kg)}; \\quad c: \\text{calor específico}; \\quad \\Delta T: \\text{variação térmica}"
+                parametersInfo = """m: \\text{massa (g ou kg)}; \\quad c: \\text{calor específico}; \\quad \\Delta T: \\text{variação térmica}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação do Calor Latente",
-                syntax = "Q = m \\cdot L",
+                syntax = """Q = m \\cdot L""",
                 description = "Calor transferido durante uma transição de fase isotérmica sob pressão constante.",
-                parametersInfo = "m: \\text{massa que muda de fase}; \\quad L: \\text{calor latente específico (cal/g ou J/kg)}"
+                parametersInfo = """m: \\text{massa que muda de fase}; \\quad L: \\text{calor latente específico (cal/g ou J/kg)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Conservação de Energia em Calorímetros",
-                syntax = "\\sum Q = 0 \\implies Q_1 + Q_2 + \\dots + Q_n = 0",
+                syntax = """\\sum Q = 0 \\implies Q_1 + Q_2 + \\dots + Q_n = 0""",
                 description = "Princípio da conservação de calor em sistemas termicamente isolados do meio ambiente.",
-                parametersInfo = "Q_k: \\text{calor trocado por cada participante (positivo se absorvido, negativo se cedido)}"
+                parametersInfo = """Q_k: \\text{calor trocado por cada participante (positivo se absorvido, negativo se cedido)}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Aquecimento de Chuveiro Elétrico e Vazão",
-                codeOrFormula = "P = \\frac{m \\cdot c \\cdot \\Delta T}{\\Delta t} \\implies P = Z \\cdot d \\cdot c \\cdot \\Delta T",
+                codeOrFormula = """P = \\frac{m \\cdot c \\cdot \\Delta T}{\\Delta t} \\implies P = Z \\cdot d \\cdot c \\cdot \\Delta T""",
                 explanation = "A potência elétrica dissipada no resistor do chuveiro relaciona-se diretamente com a vazão volumétrica Z da água e o ganho térmico obtido."
             ),
             LessonExample(
                 title = "Determinação do Calor Específico por Mistura",
-                codeOrFormula = "m_1 c_1 (T_{\\text{eq}} - T_1) + m_2 c_2 (T_{\\text{eq}} - T_2) = 0",
+                codeOrFormula = """m_1 c_1 (T_{\\text{eq}} - T_1) + m_2 c_2 (T_{\\text{eq}} - T_2) = 0""",
                 explanation = "Ao inserir um metal quente em água fria, o calor cedido pelo metal é integralmente absorvido pela água, revelando o calor específico desconhecido."
             )
         ),
@@ -607,26 +607,26 @@ Dois cubos de gelo idênticos a \( 0^\circ\text{C} \) são colocados sobre duas 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Lei de Fourier da Condução Térmica",
-                syntax = "\\Phi = \\frac{Q}{\\Delta t} = \\frac{k \\cdot A \\cdot \\Delta T}{L}",
+                syntax = """\\Phi = \\frac{Q}{\\Delta t} = \\frac{k \\cdot A \\cdot \\Delta T}{L}""",
                 description = "Taxa de fluxo de calor estacionário por condução através de uma parede plana homogênea.",
-                parametersInfo = "k: \\text{condutividade térmica}; \\quad A: \\text{área superficial}; \\quad \\Delta T: \\text{diferença de temperatura}; \\quad L: \\text{espessura}"
+                parametersInfo = """k: \\text{condutividade térmica}; \\quad A: \\text{área superficial}; \\quad \\Delta T: \\text{diferença de temperatura}; \\quad L: \\text{espessura}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Lei de Stefan-Boltzmann da Radiação",
-                syntax = "P = e \\cdot \\sigma \\cdot A \\cdot T^4",
+                syntax = """P = e \\cdot \\sigma \\cdot A \\cdot T^4""",
                 description = "Potência total de energia térmica irradiada por um corpo em função da quarta potência de sua temperatura absoluta.",
-                parametersInfo = "e: \\text{emissividade (0 a 1)}; \\quad \\sigma = 5{,}67 \\times 10^{-8}\\text{ W/(m}^2\\text{K}^4); \\quad T: \\text{temperatura em Kelvin}"
+                parametersInfo = """e: \\text{emissividade (0 a 1)}; \\quad \\sigma = 5{,}67 \\times 10^{-8}\\text{ W/(m}^2\\text{K}^4); \\quad T: \\text{temperatura em Kelvin}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Isolamento Térmico com Janela de Vidro Duplo",
-                codeOrFormula = "\\Phi = \\frac{A \\cdot \\Delta T}{\\frac{L_1}{k_1} + \\frac{L_{\\text{ar}}}{k_{\\text{ar}}} + \\frac{L_2}{k_2}}",
+                codeOrFormula = """\\Phi = \\frac{A \\cdot \\Delta T}{\\frac{L_1}{k_1} + \\frac{L_{\\text{ar}}}{k_{\\text{ar}}} + \\frac{L_2}{k_2}}""",
                 explanation = "Janelas com camada central de ar estático reduzem brutalmente a perda de calor porque o ar tem condutividade térmica dezenas de vezes menor que o vidro."
             ),
             LessonExample(
                 title = "Direção das Brisas Marítimas e Terrestres",
-                codeOrFormula = "c_{\\text{terra}} < c_{\\text{água}} \\implies T_{\\text{terra, dia}} > T_{\\text{mar, dia}} \\implies \\text{vento do mar para a terra}",
+                codeOrFormula = """c_{\\text{terra}} < c_{\\text{água}} \\implies T_{\\text{terra, dia}} > T_{\\text{mar, dia}} \\implies \\text{vento do mar para a terra}""",
                 explanation = "O aquecimento mais veloz do solo diurno eleva o ar continental e faz a brisa marítima fresca soprar para o continente."
             )
         ),
@@ -771,32 +771,32 @@ Demonstre por que, para obter um rendimento de Carnot de \( 100\% \) (\( \eta = 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação de Estado dos Gases Ideais",
-                syntax = "P \\cdot V = n \\cdot R \\cdot T",
+                syntax = """P \\cdot V = n \\cdot R \\cdot T""",
                 description = "Equação de Clapeyron relacionando as variáveis de estado de uma amostra de gás ideal.",
-                parametersInfo = "P: \\text{pressão (Pa)}; \\quad V: \\text{volume (m}^3); \\quad n: \\text{mols}; \\quad R = 8{,}31\\text{ J/(mol}\\cdot\\text{K)}; \\quad T: \\text{Kelvin}"
+                parametersInfo = """P: \\text{pressão (Pa)}; \\quad V: \\text{volume (m}^3); \\quad n: \\text{mols}; \\quad R = 8{,}31\\text{ J/(mol}\\cdot\\text{K)}; \\quad T: \\text{Kelvin}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Primeira Lei da Termodinâmica",
-                syntax = "\\Delta U = Q - W",
+                syntax = """\\Delta U = Q - W""",
                 description = "Balanço energético onde a variação da energia interna de um sistema gasoso iguala o calor trocado menos o trabalho realizado.",
-                parametersInfo = "\\Delta U: \\text{variação de energia interna (J)}; \\quad Q: \\text{calor (J)}; \\quad W: \\text{trabalho mecânico (J)}"
+                parametersInfo = """\\Delta U: \\text{variação de energia interna (J)}; \\quad Q: \\text{calor (J)}; \\quad W: \\text{trabalho mecânico (J)}"""
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Rendimento Máximo do Ciclo de Carnot",
-                syntax = "\\eta_C = 1 - \\frac{T_F}{T_Q}",
+                syntax = """\\eta_C = 1 - \\frac{T_F}{T_Q}""",
                 description = "Limite teórico máximo de rendimento para qualquer máquina térmica cíclica operando entre dois reservatórios térmicos.",
-                parametersInfo = "T_F: \\text{temperatura absoluta da fonte fria (K)}; \\quad T_Q: \\text{temperatura da fonte quente (K)}"
+                parametersInfo = """T_F: \\text{temperatura absoluta da fonte fria (K)}; \\quad T_Q: \\text{temperatura da fonte quente (K)}"""
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Trabalho Geométrico em Ciclo Termodinâmico Retangular",
-                codeOrFormula = "W_{\\text{ciclo}} = (P_{\\text{máx}} - P_{\\text{mín}}) \\cdot (V_{\\text{máx}} - V_{\\text{mín}})",
+                codeOrFormula = """W_{\\text{ciclo}} = (P_{\\text{máx}} - P_{\\text{mín}}) \\cdot (V_{\\text{máx}} - V_{\\text{mín}})""",
                 explanation = "A área interna delimitada no diagrama PxV fornece diretamente o trabalho mecânico líquido realizado pelo gás durante uma volta completa no ciclo."
             ),
             LessonExample(
                 title = "Rendimento Real de Motor a Gasolina",
-                codeOrFormula = "\\eta = \\frac{W}{Q_Q} = \\frac{P_{\\text{mecânica}}}{\\text{Consumo de Combustível} \\cdot \\text{Poder Calorífico}}",
+                codeOrFormula = """\\eta = \\frac{W}{Q_Q} = \\frac{P_{\\text{mecânica}}}{\\text{Consumo de Combustível} \\cdot \\text{Poder Calorífico}}""",
                 explanation = "Determinação do rendimento real comparando a potência entregue no eixo do veículo com a taxa de combustão química liberada por segundo."
             )
         ),

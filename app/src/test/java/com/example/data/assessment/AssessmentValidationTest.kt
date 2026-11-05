@@ -9,7 +9,7 @@ import org.junit.Test
 class AssessmentValidationTest {
 
     @Test
-    fun `every lesson has 8 to 15 validated questions and 30-45-25 difficulty balance`() {
+    fun testEveryLessonHasValidatedQuestionsAndDifficultyBalance() {
         val lessons = QuestionBankRepository.getAllLessons()
         assertEquals("Expected all 193 curriculum lessons", 193, lessons.size)
 
@@ -47,7 +47,7 @@ class AssessmentValidationTest {
     }
 
     @Test
-    fun `all 8 question formats are present and have required quality fields`() {
+    fun testAllEightQuestionFormatsAndQualityFields() {
         val allNew = QuestionBankRepository.getAuthoredQuestions()
         val formats = allNew.map { it.question.format }.toSet()
         assertEquals(
@@ -72,7 +72,7 @@ class AssessmentValidationTest {
     }
 
     @Test
-    fun `evaluator validates all 8 formats and produces intelligent feedback`() {
+    fun testEvaluatorValidatesAllFormatsAndIntelligentFeedback() {
         val allNew = QuestionBankRepository.getAuthoredQuestions()
 
         // 1. Multiple Choice
@@ -136,9 +136,22 @@ class AssessmentValidationTest {
         // 8. Python Code (Automated test suite + anti-fragile check)
         val codeQ = allNew.first { it.question.format == QuestionFormat.CODE }.question
         val spec = codeQ.code!!
-        val codePassStub = AnswerEvaluator.evaluate(codeQ, UserAnswer.Text(spec.starter))
+        val pyRunner: suspend (String) -> AnswerEvaluator.CodeRunResult = { script ->
+            val proc = ProcessBuilder("python", "-X", "utf8", "-c", script)
+                .redirectErrorStream(false)
+                .start()
+            val out = proc.inputStream.bufferedReader(Charsets.UTF_8).readText()
+            val err = proc.errorStream.bufferedReader(Charsets.UTF_8).readText()
+            val code = proc.waitFor()
+            AnswerEvaluator.CodeRunResult(code == 0, out, err.ifBlank { null })
+        }
+        val codePassStub = kotlinx.coroutines.runBlocking {
+            AnswerEvaluator.evaluateCode(codeQ, spec.starter, pyRunner)
+        }
         assertFalse("Starter stub with pass must fail automated tests", codePassStub.isCorrect)
-        val codeSolution = AnswerEvaluator.evaluate(codeQ, UserAnswer.Text(spec.reference))
+        val codeSolution = kotlinx.coroutines.runBlocking {
+            AnswerEvaluator.evaluateCode(codeQ, spec.reference, pyRunner)
+        }
         assertTrue(
             "Reference solution for ${codeQ.id} must pass all automated tests: ${codeSolution.reasoning}",
             codeSolution.isCorrect
@@ -146,25 +159,37 @@ class AssessmentValidationTest {
     }
 
     @Test
-    fun `all 34 Python CODE questions pass their reference solutions against automated tests`() {
+    fun testAllPythonCodeQuestionsPassAutomatedTests() {
         val codeQuestions = QuestionBankRepository.getAuthoredQuestions()
             .map { it.question }
             .filter { it.format == QuestionFormat.CODE }
-        assertEquals(34, codeQuestions.size)
+        assertEquals(68, codeQuestions.size)
+
+        val pyRunner: suspend (String) -> AnswerEvaluator.CodeRunResult = { script ->
+            val proc = ProcessBuilder("python", "-X", "utf8", "-c", script)
+                .redirectErrorStream(false)
+                .start()
+            val out = proc.inputStream.bufferedReader(Charsets.UTF_8).readText()
+            val err = proc.errorStream.bufferedReader(Charsets.UTF_8).readText()
+            val code = proc.waitFor()
+            AnswerEvaluator.CodeRunResult(code == 0, out, err.ifBlank { null })
+        }
 
         codeQuestions.forEach { q ->
             val spec = q.code
             assertNotNull("CodeSpec required for ${q.id}", spec)
-            val fb = AnswerEvaluator.evaluate(q, UserAnswer.Text(spec!!.reference))
+            val fb = kotlinx.coroutines.runBlocking {
+                AnswerEvaluator.evaluateCode(q, spec!!.reference, pyRunner)
+            }
             assertTrue(
-                "Python reference solution failed for ${q.id}: ${fb.reasoning} (${fb.details})",
+                "Python reference solution failed for ${q.id}: ${fb.headline} (${fb.details})",
                 fb.isCorrect
             )
         }
     }
 
     @Test
-    fun `simulado generator enforces max 45 and cumulative retrieval across prior modules`() {
+    fun testSimuladoGeneratorEnforcesMax45AndCumulativeRetrieval() {
         // Max 45 cap even if 100 requested
         val bigConfig = SimuladoConfig(
             subject = "Matemática",
@@ -172,7 +197,7 @@ class AssessmentValidationTest {
             questionCount = 100,
             includeLegacy = false
         )
-        val cappedSimulado = QuestionBankRepository.generateSimulado(bigConfig, seed = 42L)
+        val cappedSimulado = QuestionBankRepository.generateSimulado(bigConfig, random = kotlin.random.Random(42L))
         assertEquals(QuestionBankRepository.MAX_SIMULADO_QUESTIONS, cappedSimulado.size)
 
         // Module assessment mixes lessons inside the chosen module
@@ -185,7 +210,7 @@ class AssessmentValidationTest {
             questionCount = 20,
             includeLegacy = false
         )
-        val modSimulado = QuestionBankRepository.generateSimulado(modConfig, seed = 7L)
+        val modSimulado = QuestionBankRepository.generateSimulado(modConfig, random = kotlin.random.Random(7L))
         assertEquals(20, modSimulado.size)
         assertTrue(modSimulado.all { it.lesson.moduleId == targetFisMod })
         assertTrue("Should mix multiple lessons from $targetFisMod", modSimulado.map { it.question.lessonId }.distinct().size >= 3)
@@ -200,7 +225,7 @@ class AssessmentValidationTest {
             questionCount = 25,
             includeLegacy = false
         )
-        val cumSimulado = QuestionBankRepository.generateSimulado(cumConfig, seed = 99L)
+        val cumSimulado = QuestionBankRepository.generateSimulado(cumConfig, random = kotlin.random.Random(99L))
         assertEquals(25, cumSimulado.size)
         val modulesCovered = cumSimulado.map { it.lesson.moduleId }.toSet()
         assertTrue("Cumulative simulado up to module 4 must include questions from earlier modules", modulesCovered.size >= 2)

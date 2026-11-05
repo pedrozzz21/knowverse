@@ -1,0 +1,218 @@
+package com.example.data.assessment
+
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertTrue
+import org.junit.Test
+
+class AssessmentValidationTest {
+
+    @Test
+    fun `every lesson has 8 to 15 validated questions and 30-45-25 difficulty balance`() {
+        val lessons = QuestionBankRepository.getAllLessons()
+        assertEquals("Expected all 193 curriculum lessons", 193, lessons.size)
+
+        val allNew = QuestionBankRepository.getAuthoredQuestions()
+        assertEquals("Expected 1930 per-lesson questions across 6 subjects", 1930, allNew.size)
+
+        lessons.forEach { lesson ->
+            val perLesson = QuestionBankRepository.getQuestionsForLesson(
+                lessonId = lesson.lessonId,
+                includeLegacy = false
+            )
+            assertTrue(
+                "Lesson ${lesson.lessonId} should have 8..15 questions, got ${perLesson.size}",
+                perLesson.size in 8..15
+            )
+            val easyCount = perLesson.count { it.question.difficulty == QDifficulty.EASY }
+            val medCount = perLesson.count { it.question.difficulty == QDifficulty.MEDIUM }
+            val hardCount = perLesson.count { it.question.difficulty == QDifficulty.HARD }
+            assertTrue("Lesson ${lesson.lessonId} should have EASY questions", easyCount >= 2)
+            assertTrue("Lesson ${lesson.lessonId} should have MEDIUM questions", medCount >= 3)
+            assertTrue("Lesson ${lesson.lessonId} should have HARD questions", hardCount >= 2)
+        }
+
+        val totalEasy = allNew.count { it.question.difficulty == QDifficulty.EASY }
+        val totalMedium = allNew.count { it.question.difficulty == QDifficulty.MEDIUM }
+        val totalHard = allNew.count { it.question.difficulty == QDifficulty.HARD }
+
+        val easyPct = totalEasy.toDouble() / allNew.size * 100.0
+        val medPct = totalMedium.toDouble() / allNew.size * 100.0
+        val hardPct = totalHard.toDouble() / allNew.size * 100.0
+
+        assertEquals(30.0, easyPct, 3.0)
+        assertEquals(45.0, medPct, 3.0)
+        assertEquals(25.0, hardPct, 3.0)
+    }
+
+    @Test
+    fun `all 8 question formats are present and have required quality fields`() {
+        val allNew = QuestionBankRepository.getAuthoredQuestions()
+        val formats = allNew.map { it.question.format }.toSet()
+        assertEquals(
+            "All 8 formats must be present",
+            QuestionFormat.entries.toSet(),
+            formats
+        )
+
+        allNew.forEach { bq ->
+            val q = bq.question
+            assertTrue("Question id must not be blank", q.id.isNotBlank())
+            assertTrue("Question statement must not be blank (${q.id})", q.statement.length >= 20)
+            assertTrue("Question explanation must not be blank (${q.id})", q.explanation.length >= 20)
+            assertTrue("Question skill must not be blank (${q.id})", q.skill.isNotBlank())
+            assertTrue("Question lessonId must not be blank (${q.id})", q.lessonId.isNotBlank())
+            assertTrue("Question retryGuidance must not be blank (${q.id})", q.retryGuidance.isNotBlank())
+            assertTrue(
+                "Authored question ${q.id} must never be marked as official INEP_ENEM",
+                q.source != QuestionSource.INEP_ENEM
+            )
+        }
+    }
+
+    @Test
+    fun `evaluator validates all 8 formats and produces intelligent feedback`() {
+        val allNew = QuestionBankRepository.getAuthoredQuestions()
+
+        // 1. Multiple Choice
+        val mc = allNew.first { it.question.format == QuestionFormat.MULTIPLE_CHOICE }.question
+        val mcCorrect = AnswerEvaluator.evaluate(mc, UserAnswer.Choice(mc.answerIndex))
+        assertTrue(mcCorrect.isCorrect)
+        assertTrue(mcCorrect.reasoning.length >= 20)
+
+        val wrongIdx = (mc.answerIndex + 1) % mc.options.size
+        val mcWrong = AnswerEvaluator.evaluate(mc, UserAnswer.Choice(wrongIdx))
+        assertFalse(mcWrong.isCorrect)
+        assertNotNull("Wrong answer must identify misunderstood concept", mcWrong.misunderstoodConcept)
+        assertTrue(mcWrong.misunderstoodConcept!!.isNotBlank())
+        assertTrue("Wrong answer must provide retryTip", !mcWrong.retryTip.isNullOrBlank())
+
+        // 2. True/False
+        val tf = allNew.first { it.question.format == QuestionFormat.TRUE_FALSE }.question
+        val tfExpected = tf.answerBool ?: true
+        val tfCorrect = AnswerEvaluator.evaluate(tf, UserAnswer.Bool(tfExpected))
+        assertTrue(tfCorrect.isCorrect)
+        val tfFlipped = AnswerEvaluator.evaluate(tf, UserAnswer.Bool(!tfExpected))
+        assertFalse(tfFlipped.isCorrect)
+        assertNotNull(tfFlipped.misunderstoodConcept)
+
+        // 3. Matching
+        val matchQ = allNew.first { it.question.format == QuestionFormat.MATCHING }.question
+        val correctPairsMap = matchQ.pairs.toMap()
+        val matchCorrect = AnswerEvaluator.evaluate(matchQ, UserAnswer.Pairs(correctPairsMap))
+        assertTrue(matchCorrect.isCorrect)
+
+        // 4. Fill Blank
+        val fillQ = allNew.first { it.question.format == QuestionFormat.FILL_BLANK }.question
+        val fillCorrect = AnswerEvaluator.evaluate(fillQ, UserAnswer.Text(fillQ.answers.first()))
+        assertTrue(fillCorrect.isCorrect)
+        val fillWrong = AnswerEvaluator.evaluate(fillQ, UserAnswer.Text("resposta_invalida_xyz"))
+        assertFalse(fillWrong.isCorrect)
+        assertNotNull(fillWrong.misunderstoodConcept)
+
+        // 5. Numeric
+        val numQ = allNew.first { it.question.format == QuestionFormat.NUMERIC }.question
+        val ansVal = numQ.answerNumber ?: 0.0
+        val numCorrect = AnswerEvaluator.evaluate(numQ, UserAnswer.Text(ansVal.toString()))
+        assertTrue(numCorrect.isCorrect)
+        val numWrong = AnswerEvaluator.evaluate(numQ, UserAnswer.Text((ansVal + 999.0).toString()))
+        assertFalse(numWrong.isCorrect)
+        assertNotNull(numWrong.misunderstoodConcept)
+
+        // 6. Chart
+        val chartQ = allNew.first { it.question.format == QuestionFormat.CHART }.question
+        assertNotNull(chartQ.chart)
+        val chartCorrect = AnswerEvaluator.evaluate(chartQ, UserAnswer.Choice(chartQ.answerIndex))
+        assertTrue(chartCorrect.isCorrect)
+
+        // 7. Essay (Rubric validation + anti-fragile check)
+        val essayQ = allNew.first { it.question.format == QuestionFormat.ESSAY }.question
+        val essayModel = AnswerEvaluator.evaluate(essayQ, UserAnswer.Text(essayQ.modelAnswer))
+        assertTrue("Model answer should pass essay rubric (${essayQ.id})", essayModel.isCorrect)
+        val essayFragile = AnswerEvaluator.evaluate(essayQ, UserAnswer.Text("sim porque sim"))
+        assertFalse("Fragile short text must be rejected", essayFragile.isCorrect)
+
+        // 8. Python Code (Automated test suite + anti-fragile check)
+        val codeQ = allNew.first { it.question.format == QuestionFormat.CODE }.question
+        val spec = codeQ.code!!
+        val codePassStub = AnswerEvaluator.evaluate(codeQ, UserAnswer.Text(spec.starter))
+        assertFalse("Starter stub with pass must fail automated tests", codePassStub.isCorrect)
+        val codeSolution = AnswerEvaluator.evaluate(codeQ, UserAnswer.Text(spec.reference))
+        assertTrue(
+            "Reference solution for ${codeQ.id} must pass all automated tests: ${codeSolution.reasoning}",
+            codeSolution.isCorrect
+        )
+    }
+
+    @Test
+    fun `all 34 Python CODE questions pass their reference solutions against automated tests`() {
+        val codeQuestions = QuestionBankRepository.getAuthoredQuestions()
+            .map { it.question }
+            .filter { it.format == QuestionFormat.CODE }
+        assertEquals(34, codeQuestions.size)
+
+        codeQuestions.forEach { q ->
+            val spec = q.code
+            assertNotNull("CodeSpec required for ${q.id}", spec)
+            val fb = AnswerEvaluator.evaluate(q, UserAnswer.Text(spec!!.reference))
+            assertTrue(
+                "Python reference solution failed for ${q.id}: ${fb.reasoning} (${fb.details})",
+                fb.isCorrect
+            )
+        }
+    }
+
+    @Test
+    fun `simulado generator enforces max 45 and cumulative retrieval across prior modules`() {
+        // Max 45 cap even if 100 requested
+        val bigConfig = SimuladoConfig(
+            subject = "Matemática",
+            mode = SimuladoMode.BY_SUBJECT,
+            questionCount = 100,
+            includeLegacy = false
+        )
+        val cappedSimulado = QuestionBankRepository.generateSimulado(bigConfig, seed = 42L)
+        assertEquals(QuestionBankRepository.MAX_SIMULADO_QUESTIONS, cappedSimulado.size)
+
+        // Module assessment mixes lessons inside the chosen module
+        val fisModules = QuestionBankRepository.getModulesForSubject("Física")
+        val targetFisMod = fisModules[1].moduleId
+        val modConfig = SimuladoConfig(
+            subject = "Física",
+            mode = SimuladoMode.BY_MODULE,
+            moduleId = targetFisMod,
+            questionCount = 20,
+            includeLegacy = false
+        )
+        val modSimulado = QuestionBankRepository.generateSimulado(modConfig, seed = 7L)
+        assertEquals(20, modSimulado.size)
+        assertTrue(modSimulado.all { it.lesson.moduleId == targetFisMod })
+        assertTrue("Should mix multiple lessons from $targetFisMod", modSimulado.map { it.question.lessonId }.distinct().size >= 3)
+
+        // Cumulative assessment requires retrieval of previous modules, not just repeating the last module
+        val bioModules = QuestionBankRepository.getModulesForSubject("Biologia")
+        val fourthBioMod = bioModules[3]
+        val cumConfig = SimuladoConfig(
+            subject = "Biologia",
+            mode = SimuladoMode.CUMULATIVE,
+            moduleId = fourthBioMod.moduleId,
+            questionCount = 25,
+            includeLegacy = false
+        )
+        val cumSimulado = QuestionBankRepository.generateSimulado(cumConfig, seed = 99L)
+        assertEquals(25, cumSimulado.size)
+        val modulesCovered = cumSimulado.map { it.lesson.moduleId }.toSet()
+        assertTrue("Cumulative simulado up to module 4 must include questions from earlier modules", modulesCovered.size >= 2)
+        assertTrue("Cumulative simulado up to module 4 must include target module", modulesCovered.contains(fourthBioMod.moduleId))
+        assertTrue("Cumulative simulado must not include lessons after target module maxOrder", cumSimulado.all { it.lesson.order <= fourthBioMod.maxOrder })
+
+        // Subtopic filtering
+        val subtopics = QuestionBankRepository.getSubtopicsForSubject("Matemática")
+        assertTrue(subtopics.isNotEmpty())
+        val chosenSub = subtopics.first()
+        val filtered = QuestionBankRepository.filterQuestions(subject = "Matemática", subtopic = chosenSub, includeLegacy = false)
+        assertTrue(filtered.isNotEmpty())
+        assertTrue(filtered.all { it.lesson.subtopic.equals(chosenSub, ignoreCase = true) })
+    }
+}

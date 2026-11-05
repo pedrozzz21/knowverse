@@ -52,6 +52,9 @@ import com.example.ui.components.StepByStepSolutionView
 import com.example.ui.components.CalculusTheoryRenderer
 import com.example.ui.components.GeoGebraMathGraphView
 import com.example.ui.components.DidacticImageView
+import com.example.ui.components.QuestionRendererCard
+import com.example.data.assessment.QuestionBankRepository
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -1493,6 +1496,57 @@ fun CalculusLessonScreen(
                                     }
                                 }
                             }
+                        }
+                    }
+
+                    // Banco Específico da Aula (8 formatos • 30% Fácil / 45% Média / 25% Difícil)
+                    val ctx = LocalContext.current
+                    val multiformatBank = remember(lesson.id) {
+                        try {
+                            QuestionBankRepository.getQuestionsForLesson(
+                                lessonId = lesson.id,
+                                includeLegacy = false,
+                                context = ctx
+                            )
+                        } catch (_: Throwable) {
+                            emptyList()
+                        }
+                    }
+
+                    if (multiformatBank.isNotEmpty()) {
+                        Spacer(modifier = Modifier.height(6.dp))
+                        Surface(
+                            color = SurfaceElevated,
+                            shape = RoundedCornerShape(10.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, PrimaryViolet.copy(alpha = 0.45f)),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Column(modifier = Modifier.padding(14.dp)) {
+                                Text(
+                                    text = "Banco de Avaliação da Aula (${multiformatBank.size} questões multiformato)",
+                                    style = MaterialTheme.typography.titleSmall.copy(
+                                        fontWeight = FontWeight.Bold,
+                                        color = TextPrimary
+                                    )
+                                )
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text(
+                                    text = "Múltipla escolha, V/F, Associação, Preenchimento, Numérica, Gráficos e Discursivas com feedback inteligente.",
+                                    style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary)
+                                )
+                            }
+                        }
+
+                        multiformatBank.forEachIndexed { mfIdx, bq ->
+                            QuestionRendererCard(
+                                bankQuestion = bq,
+                                questionNumber = exercises.size + mfIdx + 1,
+                                onEvaluated = { _, fb ->
+                                    if (!fb.isCorrect) {
+                                        progressRepository.markLessonForReview(lesson.id)
+                                    }
+                                }
+                            )
                         }
                     }
                 }

@@ -72,6 +72,7 @@ enum class NavigationTab {
     HOME,
     TRAIL,
     EXERCISES,
+    SIMULADOS,
     LEADERBOARD,
     PROFILE
 }
@@ -278,6 +279,34 @@ fun MainAppScreen(
                                 modifier = Modifier.testTag("tab_exercises")
                             )
 
+                            // Tab 4: Simulados (Aba exclusiva para geração e realização de simulados - máx. 45 questões)
+                            NavigationBarItem(
+                                selected = currentTab == NavigationTab.SIMULADOS,
+                                onClick = { currentTab = NavigationTab.SIMULADOS },
+                                icon = {
+                                    Icon(
+                                        imageVector = KnowverseIcons.SimuladoExam,
+                                        contentDescription = "Simulados",
+                                        modifier = Modifier.size(24.dp)
+                                    )
+                                },
+                                label = {
+                                    Text(
+                                        text = "Simulados",
+                                        style = MaterialTheme.typography.labelSmall,
+                                        fontWeight = if (currentTab == NavigationTab.SIMULADOS) FontWeight.Bold else FontWeight.Medium
+                                    )
+                                },
+                                colors = NavigationBarItemDefaults.colors(
+                                    selectedIconColor = PrimaryViolet,
+                                    selectedTextColor = TextPrimary,
+                                    indicatorColor = PrimaryViolet.copy(alpha = 0.25f),
+                                    unselectedIconColor = TextTertiary,
+                                    unselectedTextColor = TextTertiary
+                                ),
+                                modifier = Modifier.testTag("tab_simulados")
+                            )
+
                             // Tab 4: Ranking / Leaderboard
                             NavigationBarItem(
                                 selected = currentTab == NavigationTab.LEADERBOARD,
@@ -394,7 +423,16 @@ fun MainAppScreen(
                                         userPhotoUrl = currentUser?.photoUrl,
                                         onNavigateToEssayLab = { showEssayLab = true },
                                         isFocusModeActive = isExerciseFocusMode,
-                                        onFocusModeChange = { isExerciseFocusMode = it }
+                                        onFocusModeChange = { isExerciseFocusMode = it },
+                                        pythonEngine = pythonEngine
+                                    )
+                                }
+
+                                NavigationTab.SIMULADOS -> {
+                                    SimuladosScreen(
+                                        progressRepository = progressRepository,
+                                        pythonEngine = pythonEngine,
+                                        userPhotoUrl = currentUser?.photoUrl
                                     )
                                 }
 

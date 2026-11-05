@@ -92,6 +92,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.data.assessment.Feedback
+import com.example.data.assessment.QDifficulty
+import com.example.data.assessment.QuestionBankRepository
+import com.example.data.assessment.QuestionFormat
 import com.example.data.enem.EnemFirebaseManager
 import com.example.data.enem.EnemQuestion
 import com.example.data.enem.EnemQuestionRepository
@@ -100,11 +104,13 @@ import com.example.data.exercise.UniversalExercise
 import com.example.data.exercise.UniversalExerciseBank
 import com.example.data.exercise.VisualTable
 import com.example.data.local.UserProgressRepository
+import com.example.data.python.PythonEngine
 import com.example.ui.components.GeoGebraMathGraphView
 import com.example.ui.components.DidacticImageView
 import com.example.ui.components.KnowverseIcons
 import com.example.ui.components.MathFormattedText
 import com.example.ui.components.MathNotationHelper
+import com.example.ui.components.QuestionRendererCard
 import com.example.ui.components.TopUserStatsBar
 import com.example.ui.theme.BorderSubtle
 import com.example.ui.theme.CodeTextStyle
@@ -241,6 +247,7 @@ fun ExerciseSolverScreen(
     onNavigateToEssayLab: (() -> Unit)? = null,
     isFocusModeActive: Boolean = false,
     onFocusModeChange: ((Boolean) -> Unit)? = null,
+    pythonEngine: PythonEngine? = null,
     modifier: Modifier = Modifier
 ) {
     val userProgress by progressRepository.progressState.collectAsState()
@@ -257,6 +264,11 @@ fun ExerciseSolverScreen(
     var selectedYear by remember { mutableStateOf<Int?>(null) }
     var onlyVisuals by remember { mutableStateOf(false) }
     var showAdvancedFilters by remember { mutableStateOf(false) }
+    var showMultiformatBank by remember { mutableStateOf(true) }
+    var selectedLessonSubject by remember { mutableStateOf("Todas") }
+    var selectedLessonSubtopic by remember { mutableStateOf("all") }
+    var selectedQuestionFormat by remember { mutableStateOf<QuestionFormat?>(null) }
+    val multiformatFeedbacks = remember { mutableStateMapOf<String, Feedback>() }
 
     // Estado do Modo Foco (Tela Cheia)
     var activeFocusExercise by remember { mutableStateOf<UniversalExercise?>(null) }
@@ -273,6 +285,7 @@ fun ExerciseSolverScreen(
     LaunchedEffect(Unit) {
         withContext(Dispatchers.IO) {
             try {
+                QuestionBankRepository.ensureLoaded(context)
                 val list = enemRepo.getAsUniversalExercises()
                 UniversalExerciseBank.registerEnemExercises(list)
                 val bank = UniversalExerciseBank.getAllExercises().distinctBy { it.id }
@@ -611,6 +624,47 @@ fun ExerciseSolverScreen(
                     .fillMaxWidth()
                     .padding(horizontal = 14.dp, vertical = 10.dp)
             ) {
+                // 0. Seletor de Modo: Banco Multiformato por Aula (Etapa 5) vs. Banco Clássico / ENEM Oficial
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 8.dp)
+                ) {
+                    listOf(
+                        true to "Por Aula & Subtópico (8 Formatos)",
+                        false to "Banco Geral & Provas ENEM"
+                    ).forEach { (isMulti, tabTitle) ->
+                        val active = showMultiformatBank == isMulti
+                        Surface(
+                            color = if (active) PrimaryViolet.copy(alpha = 0.22f) else SurfaceCard,
+                            shape = RoundedCornerShape(8.dp),
+                            border = androidx.compose.foundation.BorderStroke(
+                                1.dp,
+                                if (active) PrimaryViolet else BorderSubtle
+                            ),
+                            modifier = Modifier
+                                .weight(1f)
+                                .clickable {
+                                    showMultiformatBank = isMulti
+                                    visibleItemCount = 40
+                                }
+                        ) {
+                            Box(
+                                contentAlignment = Alignment.Center,
+                                modifier = Modifier.padding(vertical = 8.dp, horizontal = 8.dp)
+                            ) {
+                                Text(
+                                    text = tabTitle,
+                                    style = MaterialTheme.typography.labelSmall,
+                                    fontWeight = if (active) FontWeight.Bold else FontWeight.Medium,
+                                    color = if (active) TextPrimary else TextSecondary
+                                )
+                            }
+                        }
+                    }
+                }
+
                 // 1. Barra de Busca Simples
                 OutlinedTextField(
                     value = searchQuery,
@@ -659,7 +713,73 @@ fun ExerciseSolverScreen(
 
                 Spacer(modifier = Modifier.height(8.dp))
 
-                // 2. Menus Suspensos Minimalistas (Disciplina e Tópico)
+                // 2. Menus Suspensos Minimalistas (Disciplina e Subtópico/Módulo)
+                if (showMultiformatBank) {
+                    val lessonSubjects = remember(isQuestionsLoading) {
+                        listOf("Todas" to "Todas as Matérias") +
+                            QuestionBankRepository.getSubjects(context).map { it to it }
+                    }
+                    val lessonSubtopics = remember(selectedLessonSubject, isQuestionsLoading) {
+                        listOf("all" to "Todos os Subtópicos das Aulas") +
+                            QuestionBankRepository.getSubtopicsForSubject(selectedLessonSubject, null, context)
+                                .map { it to it }
+                    }
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        MinimalDropdown(
+                            label = "Disciplina",
+                            selectedValue = selectedLessonSubject,
+                            options = lessonSubjects,
+                            onSelect = { key ->
+                                selectedLessonSubject = key
+                                selectedLessonSubtopic = "all"
+                            },
+                            modifier = Modifier.weight(1f)
+                        )
+                        val subLabel = lessonSubtopics.find { it.first == selectedLessonSubtopic }?.second
+                            ?: "Todos os Subtópicos"
+                        MinimalDropdown(
+                            label = "Subtópico da Aula",
+                            selectedValue = subLabel,
+                            options = lessonSubtopics,
+                            onSelect = { key -> selectedLessonSubtopic = key },
+                            modifier = Modifier.weight(1f)
+                        )
+                    }
+                    Spacer(modifier = Modifier.height(6.dp))
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        val fmtOptions = remember {
+                            listOf("all" to "Todos os 8 Formatos") +
+                                QuestionFormat.entries.map { it.name to it.label }
+                        }
+                        MinimalDropdown(
+                            label = "Formato",
+                            selectedValue = selectedQuestionFormat?.label ?: "Todos os 8 Formatos",
+                            options = fmtOptions,
+                            onSelect = { key ->
+                                selectedQuestionFormat = if (key == "all") null else QuestionFormat.valueOf(key)
+                            },
+                            modifier = Modifier.weight(1f)
+                        )
+                        MinimalDropdown(
+                            label = "Dificuldade",
+                            selectedValue = if (selectedDifficulty == "all") "Todas (30/45/25%)" else selectedDifficulty,
+                            options = listOf(
+                                "all" to "Todas as Dificuldades",
+                                "Fácil" to "Fácil (30%)",
+                                "Média" to "Média (45%)",
+                                "Difícil" to "Difícil (25%)"
+                            ),
+                            onSelect = { selectedDifficulty = it },
+                            modifier = Modifier.weight(1f)
+                        )
+                    }
+                } else {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(8.dp)
@@ -696,6 +816,7 @@ fun ExerciseSolverScreen(
                         onSelect = { key -> selectedSubtopic = key },
                         modifier = Modifier.weight(1f)
                     )
+                }
                 }
 
                 Spacer(modifier = Modifier.height(6.dp))
@@ -886,6 +1007,81 @@ fun ExerciseSolverScreen(
                         text = "Carregando banco de questões...",
                         style = MaterialTheme.typography.bodyMedium.copy(color = TextSecondary)
                     )
+                }
+            }
+        } else if (showMultiformatBank) {
+            val diffEnum = when (selectedDifficulty) {
+                "Fácil" -> QDifficulty.EASY
+                "Média", "Médio", "Mediano" -> QDifficulty.MEDIUM
+                "Difícil" -> QDifficulty.HARD
+                else -> null
+            }
+            val multiList = remember(
+                selectedLessonSubject,
+                selectedLessonSubtopic,
+                selectedQuestionFormat,
+                diffEnum,
+                searchQuery,
+                isQuestionsLoading
+            ) {
+                QuestionBankRepository.filterQuestions(
+                    subject = selectedLessonSubject,
+                    subtopic = selectedLessonSubtopic,
+                    format = selectedQuestionFormat,
+                    difficulty = diffEnum,
+                    query = searchQuery,
+                    includeLegacy = false,
+                    context = context
+                )
+            }
+            val displayedMulti = remember(multiList, visibleItemCount) {
+                multiList.take(visibleItemCount)
+            }
+            LazyColumn(
+                contentPadding = PaddingValues(horizontal = 14.dp, vertical = 10.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+                modifier = Modifier.fillMaxSize()
+            ) {
+                itemsIndexed(displayedMulti, key = { _, item -> item.id }) { idx, bq ->
+                    QuestionRendererCard(
+                        bankQuestion = bq,
+                        questionNumber = idx + 1,
+                        pythonEngine = pythonEngine,
+                        existingFeedback = multiformatFeedbacks[bq.id],
+                        onEvaluated = { _, fb ->
+                            multiformatFeedbacks[bq.id] = fb
+                            if (fb.isCorrect) {
+                                progressRepository.recordCheckIn()
+                                progressRepository.addBonusXp(30)
+                            }
+                        }
+                    )
+                }
+                if (displayedMulti.size < multiList.size) {
+                    item(key = "load_more_multi") {
+                        Surface(
+                            color = SurfaceElevated,
+                            shape = RoundedCornerShape(8.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable { visibleItemCount += 40 }
+                                .padding(vertical = 4.dp)
+                        ) {
+                            Box(
+                                contentAlignment = Alignment.Center,
+                                modifier = Modifier.padding(14.dp)
+                            ) {
+                                Text(
+                                    text = "Carregar mais questões (${multiList.size - displayedMulti.size} restantes)",
+                                    style = MaterialTheme.typography.bodySmall.copy(
+                                        color = PrimaryViolet,
+                                        fontWeight = FontWeight.Bold
+                                    )
+                                )
+                            }
+                        }
+                    }
                 }
             }
         } else if (filteredList.isEmpty()) {

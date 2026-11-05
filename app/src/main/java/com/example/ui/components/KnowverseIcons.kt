@@ -498,5 +498,45 @@ object KnowverseIcons {
             }
         }.build()
     }
+
+    val SimuladoExam: ImageVector by lazy {
+        ImageVector.Builder(
+            name = "SimuladoExamIcon",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f
+        ).apply {
+            path(fill = SolidColor(Color(0xFF60A5FA))) {
+                moveTo(19f, 3f)
+                horizontalLineTo(14.82f)
+                curveTo(14.4f, 1.84f, 13.3f, 1f, 12f, 1f)
+                curveTo(10.7f, 1f, 9.6f, 1.84f, 9.18f, 3f)
+                horizontalLineTo(5f)
+                curveTo(3.9f, 3f, 3f, 3.9f, 3f, 5f)
+                verticalLineTo(19f)
+                curveTo(3f, 20.1f, 3.9f, 21f, 5f, 21f)
+                horizontalLineTo(19f)
+                curveTo(20.1f, 21f, 21f, 20.1f, 21f, 19f)
+                verticalLineTo(5f)
+                curveTo(21f, 3.9f, 20.1f, 3f, 19f, 3f)
+                close()
+                moveTo(12f, 3f)
+                curveTo(12.55f, 3f, 13f, 3.45f, 13f, 4f)
+                curveTo(13f, 4.55f, 12.55f, 5f, 12f, 5f)
+                curveTo(11.45f, 5f, 11f, 4.55f, 11f, 4f)
+                curveTo(11f, 3.45f, 11.45f, 3f, 12f, 3f)
+                close()
+                moveTo(10.5f, 16.5f)
+                lineTo(7f, 13f)
+                lineTo(8.41f, 11.59f)
+                lineTo(10.5f, 13.67f)
+                lineTo(15.59f, 8.59f)
+                lineTo(17f, 10f)
+                lineTo(10.5f, 16.5f)
+                close()
+            }
+        }.build()
+    }
 }
 

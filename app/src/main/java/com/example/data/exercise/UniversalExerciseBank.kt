@@ -1498,8 +1498,8 @@ print(f"Área do Quadrado: {q.area()} cm²")""",
             val matchesDiscipline = when (discipline) {
                 ExerciseDiscipline.ALL -> true
                 ExerciseDiscipline.ENEM -> item.discipline == ExerciseDiscipline.ENEM ||
-                        item.source.contains("ENEM", ignoreCase = true) ||
-                        item.category.contains("ENEM", ignoreCase = true)
+                        item.source.contains("INEP", ignoreCase = true) ||
+                        item.source.startsWith("ENEM 20", ignoreCase = true)
                 else -> item.discipline == discipline
             }
 

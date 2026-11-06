@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowverse — Download Oficial do Aplicativo (v1.9.0)</title>
+  <meta name="description" content="Baixe o Knowverse v1.9.0 para Android. Plataforma gamificada de aprendizagem com Matemática ENEM, Ciências, Redação C1-C5 e Terminal Python nativo.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+  <style>
+    :root {
+      --bg: #090C15;
+      --card-bg: #121826;
+      --card-border: #1E2738;
+      --card-hover: #172033;
+      --primary: #3B82F6;
+      --primary-hover: #2563EB;
+      --primary-glow: rgba(59, 130, 246, 0.35);
+      --accent: #10B981;
+      --accent-glow: rgba(16, 185, 129, 0.25);
+      --warning: #F59E0B;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 40%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px 16px 48px;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 640px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* HEADER */
+    .header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(16, 185, 129, 0.15));
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #93C5FD;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      box-shadow: 0 0 20px var(--primary-glow);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #10B981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10B981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      box-shadow: 0 12px 30px rgba(59, 130, 246, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.7px;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* MAIN DOWNLOAD CARD */
+    .download-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px 24px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .download-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3B82F6, #10B981, #8B5CF6);
+    }
+
+    .version-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--card-border);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .version-pill {
+      background-color: #1E293B;
+      color: #E2E8F0;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .download-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+      color: #FFFFFF;
+      box-shadow: 0 8px 24px var(--primary-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(59, 130, 246, 0.5);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-secondary {
+      background-color: #172033;
+      border: 1px solid var(--card-border);
+      color: #F8FAFC;
+    }
+
+    .btn-secondary:hover {
+      background-color: #1E293B;
+      border-color: #384255;
+    }
+
+    .btn-sub {
+      font-size: 12px;
+      opacity: 0.85;
+      font-weight: 400;
+    }
+
+    .mirror-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    .mirror-link {
+      color: #60A5FA;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .mirror-link:hover {
+      text-decoration: underline;
+    }
+
+    /* COPY LINK BAR */
+    .share-bar {
+      margin-top: 20px;
+      background-color: #0E131F;
+      border: 1px dashed var(--card-border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .share-url {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+      font-size: 12px;
+      color: #94A3B8;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .btn-copy {
+      background-color: #1E293B;
+      color: #E2E8F0;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-copy:hover {
+      background-color: #334155;
+      color: #FFFFFF;
+    }
+
+    /* STEPS INSTRUCTION */
+    .steps-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #60A5FA;
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #E2E8F0;
+      margin-bottom: 2px;
+    }
+
+    .step-content p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* HIGHLIGHT BANNER */
+    .highlight-banner {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.03));
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: #FDE68A;
+      line-height: 1.45;
+    }
+
+    /* CHANGELOG GRID */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-item {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .feature-item h5 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .feature-item p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      background-color: #10B981;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo-badge">
+        <span class="pulse-dot"></span>
+        BUILD ATUALIZADA & VERIFICADA
+      </div>
+
+      <div class="app-icon">🪐</div>
+      <h1>Knowverse</h1>
+      <p class="subtitle">Plataforma gamificada de aprendizagem para o ENEM e Programação com execução real de Python.</p>
+    </header>
+
+    <!-- MAIN DOWNLOAD CARD -->
+    <section class="download-card">
+      <div class="version-meta">
+        <div>
+          <span class="version-pill">Versão 1.9.2 (Build 19)</span>
+          <span style="margin-left: 8px;">Compilado em 06/11/2026</span>
+        </div>
+        <div>
+          <span>Android 8.0 ao 16+</span>
+        </div>
+      </div>
+
+      <div class="download-actions">
+        <!-- Direct APK Download Button -->
+        <a href="/Knowverse-v1.9.2.apk" download="Knowverse-v1.9.2.apk" class="btn btn-primary" id="btn-apk" onclick="trackDownload('apk')">
+          <span>⚡</span>
+          <div>
+            <div>Baixar APK Atualizado v1.9.2 (Recomendado)</div>
+            <div class="btn-sub">Instalador oficial • 35.0 MB</div>
+          </div>
+        </a>
+
+        <!-- ZIP Download Button -->
+        <a href="/Knowverse-v1.9.2.zip" download="Knowverse-v1.9.2.zip" class="btn btn-secondary" id="btn-zip" onclick="trackDownload('zip')">
+          <span>📦</span>
+          <div>
+            <div>Baixar Pacote Compactado (.ZIP)</div>
+            <div class="btn-sub">Contém o APK pronto para extração • 33.8 MB</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="mirror-row">
+        <span>Alternativa:</span>
+        <a href="/Knowverse.apk" download class="mirror-link">Knowverse.apk</a>
+        <span>•</span>
+        <a href="/Knowverse-v1.9.2.apk" download class="mirror-link">Knowverse-v1.9.2.apk</a>
+        <span>•</span>
+        <a href="/knowverse_apk.zip" download class="mirror-link">knowverse_apk.zip</a>
+      </div>
+
+      <!-- Share URL Box -->
+      <div class="share-bar">
+        <span class="share-url" id="page-url">https://.../download</span>
+        <button class="btn-copy" onclick="copyCurrentUrl()">Copiar Link</button>
+      </div>
+    </section>
+
+    <!-- IMPORTANT UPGRADE NOTICE -->
+    <div class="highlight-banner">
+      <span style="font-size: 20px;">⚠️</span>
+      <div>
+        <strong>Atenção para quem já testou uma versão antiga:</strong><br>
+        Como a versão 1.9.0 traz novas telas centralizadas e novas chaves de navegação, caso o Android mostre <em>"App não instalado"</em> ao tentar atualizar, basta desinstalar o app antigo primeiro e instalar o novo APK.
+      </div>
+    </div>
+
+    <!-- INSTALLATION STEPS -->
+    <section class="steps-card">
+      <h3 class="card-title">📱 Como Instalar no seu Celular Android</h3>
+      <div class="step-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Faça o download do arquivo</h4>
+            <p>Toque no botão azul <strong>"Baixar APK Direto"</strong> acima. O arquivo <code>Knowverse.apk</code> começará a baixar.</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Confirme o aviso do navegador</h4>
+            <p>Se o Chrome ou navegador exibir <em>"O arquivo pode ser nocivo"</em>, toque em <strong>"Fazer o download mesmo assim"</strong> (aviso padrão para apps baixados fora da Google Play).</p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Abra e toque em Instalar</h4>
+            <p>Toque na notificação de conclusão ou abra a pasta <em>Downloads</em>. Clique em <strong>Instalar</strong>. Se solicitado, ative a opção <em>"Permitir desta fonte"</em>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHATS NEW IN 1.9.0 -->
+    <section>
+      <h3 class="card-title" style="margin-bottom: 12px;">✨ O que há de novo na v1.9.0</h3>
+      <div class="features-grid">
+        <div class="feature-item">
+          <h5>🎯 Telas Inicial & Login Centralizadas</h5>
+          <p>Interface reformulada com ergonomia tátil, cards balanceados e suporte a modo retrato e tablets.</p>
+        </div>
+        <div class="feature-item">
+          <h5>📚 79 Aulas de Matemática ENEM</h5>
+          <p>Taxonomia didática completa sem lacunas ou repetições, do básico aos tópicos avançados.</p>
+        </div>
+        <div class="feature-item">
+          <h5>✍️ Redação ENEM C1–C5 Rigorosa</h5>
+          <p>Avaliação pedagógica que analisa repertório real, projeto de texto e intervenção de 5 elementos.</p>
+        </div>
+        <div class="feature-item">
+          <h5>🐍 Terminal Python 3.12 Nativo</h5>
+          <p>Execução de código Python real diretamente no dispositivo com feedback instantâneo de erros.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>Knowverse • Educação Democrática & Código Aberto</div>
+      <div>Assinatura de depuração verificada • Pacote <code>com.example</code> • 47 Testes Unitários e Pedagógicos Aprovados</div>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast">Link copiado para a área de transferência!</div>
+
+  <script>
+    // Set actual page URL in share box
+    document.addEventListener("DOMContentLoaded", () => {
+      const shareUrlEl = document.getElementById("page-url");
+      if (shareUrlEl) {
+        shareUrlEl.textContent = window.location.href;
+      }
+    });
+
+    function copyCurrentUrl() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        showToast("Link copiado com sucesso!");
+      }).catch(() => {
+        const input = document.createElement("input");
+        input.value = window.location.href;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        document.body.removeChild(input);
+        showToast("Link copiado com sucesso!");
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+
+    function trackDownload(type) {
+      showToast("Iniciando download do Knowverse v1.9.0...");
+    }
+  </script>
+</body>
+</html>

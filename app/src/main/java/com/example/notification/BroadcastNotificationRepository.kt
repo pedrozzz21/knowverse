@@ -75,8 +75,8 @@ class BroadcastNotificationRepository(private val context: Context) {
         const val DEV_EMAIL = "contatopedro21g@gmail.com"
         const val DEFAULT_APK_DOWNLOAD_URL = "https://ais-dev-yo6mgemrmiadtta4aeltxe-590033031823.us-west2.run.app/Knowverse.apk"
         const val FALLBACK_APK_DOWNLOAD_URL = "https://ais-pre-yo6mgemrmiadtta4aeltxe-590033031823.us-west2.run.app/Knowverse.apk"
-        const val CURRENT_APP_VERSION = "1.8.0"
-        const val CURRENT_APP_VERSION_CODE = 10
+        const val CURRENT_APP_VERSION = "1.9.2"
+        const val CURRENT_APP_VERSION_CODE = 19
     }
 
     init {

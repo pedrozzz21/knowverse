@@ -797,7 +797,8 @@ Retorne sua análise estritamente neste formato Markdown:
 
         val c5Score = when {
             isSingleParagraph && elementsCount <= 2 -> 40
-            elementsCount >= 4 -> 160 // Heurístico não atribui 200: viabilidade e direitos humanos exigem semântica
+            elementsCount == 5 -> 200
+            elementsCount == 4 -> 160
             elementsCount in 2..3 -> 120
             elementsCount == 1 -> 80
             else -> 40

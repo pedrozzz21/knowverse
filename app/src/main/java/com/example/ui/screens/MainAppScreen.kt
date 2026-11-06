@@ -403,6 +403,7 @@ fun MainAppScreen(
                                         onNavigateToRanking = { currentTab = NavigationTab.LEADERBOARD },
                                         onNavigateToExercises = { currentTab = NavigationTab.EXERCISES },
                                         onNavigateToEssayLab = { showEssayLab = true },
+                                        onNavigateToSimulados = { currentTab = NavigationTab.SIMULADOS },
                                         onStartFinalTest = { module -> activeKahoot = module }
                                     )
                                 }

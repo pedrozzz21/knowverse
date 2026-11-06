@@ -136,8 +136,9 @@ class AssessmentValidationTest {
         // 8. Python Code (Automated test suite + anti-fragile check)
         val codeQ = allNew.first { it.question.format == QuestionFormat.CODE }.question
         val spec = codeQ.code!!
+        val pyCmd = if (java.io.File("/usr/bin/python").exists()) "python" else "python3"
         val pyRunner: suspend (String) -> AnswerEvaluator.CodeRunResult = { script ->
-            val proc = ProcessBuilder("python", "-X", "utf8", "-c", script)
+            val proc = ProcessBuilder(pyCmd, "-X", "utf8", "-c", script)
                 .redirectErrorStream(false)
                 .start()
             val out = proc.inputStream.bufferedReader(Charsets.UTF_8).readText()
@@ -165,8 +166,9 @@ class AssessmentValidationTest {
             .filter { it.format == QuestionFormat.CODE }
         assertEquals(68, codeQuestions.size)
 
+        val pyCmd = if (java.io.File("/usr/bin/python").exists()) "python" else "python3"
         val pyRunner: suspend (String) -> AnswerEvaluator.CodeRunResult = { script ->
-            val proc = ProcessBuilder("python", "-X", "utf8", "-c", script)
+            val proc = ProcessBuilder(pyCmd, "-X", "utf8", "-c", script)
                 .redirectErrorStream(false)
                 .start()
             val out = proc.inputStream.bufferedReader(Charsets.UTF_8).readText()

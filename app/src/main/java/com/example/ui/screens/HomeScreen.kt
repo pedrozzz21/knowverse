@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -96,6 +97,7 @@ fun HomeScreen(
     onNavigateToRanking: () -> Unit = {},
     onNavigateToExercises: () -> Unit = {},
     onNavigateToEssayLab: () -> Unit = {},
+    onNavigateToSimulados: () -> Unit = {},
     onStartFinalTest: (KahootModule) -> Unit,
     unreadNotificationsCount: Int = 0,
     onNotificationsClick: () -> Unit = {},
@@ -143,56 +145,69 @@ fun HomeScreen(
     }
     val userRankPosition = (rankingList.indexOfFirst { it.first == currentUserId }.takeIf { it >= 0 } ?: 0) + 1
 
-    Column(
+    // Container Raiz Centralizado Adaptativo (Mobile e Tablet/Desktop)
+    Box(
         modifier = modifier
             .fillMaxSize()
-            .background(DeepNavy)
-            .statusBarsPadding()
-            .verticalScroll(scrollState)
+            .background(DeepNavy),
+        contentAlignment = Alignment.TopCenter
     ) {
-        // Barra global de estatísticas de topo (XP, Sequência, Moedas, Perfil)
-        TopUserStatsBar(
-            userProgress = userProgress,
-            userPhotoUrl = userPhotoUrl,
-            onStatsClick = onNavigateToRanking
-        )
-
         Column(
             modifier = Modifier
-                .padding(horizontal = 16.dp, vertical = 12.dp)
-                .fillMaxWidth(),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+                .fillMaxWidth()
+                .widthIn(max = 600.dp)
+                .statusBarsPadding()
+                .verticalScroll(scrollState),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // 1. Cabeçalho Minimalista Consolidado (Otto + Saudação + Sequência + Notificações)
-            com.example.ui.components.home.HeroHeader(
-                userName = userName,
-                currentStreak = userProgress.currentStreak,
-                hasStudiedToday = hasStudiedToday,
-                unreadNotificationsCount = unreadNotificationsCount,
-                onNotificationsClick = onNotificationsClick,
-                onStreakClick = onNavigateToRanking
-            )
-
-            // 2. Painel de Ações Assimétrico estilo "Bento Box"
-            com.example.ui.components.home.ActionBentoGrid(
-                nextLesson = nextLesson,
-                userRankPosition = userRankPosition,
-                totalXp = userProgress.totalXp,
-                onContinueLearningClick = onContinueLearningClick,
-                onNavigateToTrail = onStartNewLearning,
-                onNavigateToExercises = onNavigateToExercises,
-                onNavigateToEssayLab = onNavigateToEssayLab,
-                onNavigateToRanking = onNavigateToRanking
-            )
-
-            // 3. Widgets Secundários (Teste Final do Módulo + Convite / Compartilhar)
-            com.example.ui.components.home.GamificationWidgets(
+            // Barra global de estatísticas de topo (XP, Sequência, Nível, Perfil)
+            TopUserStatsBar(
                 userProgress = userProgress,
-                onStartFinalTest = onStartFinalTest,
-                context = context
+                userPhotoUrl = userPhotoUrl,
+                onStatsClick = onNavigateToRanking
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp, vertical = 14.dp),
+                verticalArrangement = Arrangement.spacedBy(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                // 1. Cabeçalho Consolidado com Otto Mentor + Boas-vindas + Notificações
+                com.example.ui.components.home.HeroHeader(
+                    userName = userName,
+                    currentStreak = userProgress.currentStreak,
+                    hasStudiedToday = hasStudiedToday,
+                    unreadNotificationsCount = unreadNotificationsCount,
+                    onNotificationsClick = onNotificationsClick,
+                    onStreakClick = onNavigateToRanking
+                )
+
+                // 2. Painel Central de Atividades & Disciplinas do Knowverse
+                com.example.ui.components.home.ActionBentoGrid(
+                    nextLesson = nextLesson,
+                    userRankPosition = userRankPosition,
+                    totalXp = userProgress.totalXp,
+                    hasStudiedToday = hasStudiedToday,
+                    currentStreak = userProgress.currentStreak,
+                    onContinueLearningClick = onContinueLearningClick,
+                    onNavigateToTrail = onStartNewLearning,
+                    onNavigateToExercises = onNavigateToExercises,
+                    onNavigateToEssayLab = onNavigateToEssayLab,
+                    onNavigateToRanking = onNavigateToRanking,
+                    onNavigateToSimulados = onNavigateToSimulados
+                )
+
+                // 3. Widgets Secundários (Teste Final do Módulo + Convidar Colegas)
+                com.example.ui.components.home.GamificationWidgets(
+                    userProgress = userProgress,
+                    onStartFinalTest = onStartFinalTest,
+                    context = context
+                )
+
+                Spacer(modifier = Modifier.height(24.dp))
+            }
         }
     }
 }

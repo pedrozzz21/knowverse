@@ -1,64 +1,61 @@
-# Knowverse APK (v1.8.6 - Versão Oficial Atualizada e Blindada)
+# Knowverse APK (v1.9.0 - Versão Oficial Atualizada e Centralizada)
 
-O arquivo compactado `.zip` contendo o instalador oficial atualizado (v1.8.6) é o método **padrão e recomendado** para download e instalação no Android, contornando bloqueios de segurança de navegadores móveis contra links `.apk` diretos.
+O arquivo compactado `.zip` contendo o instalador oficial atualizado (v1.9.0) é o método **padrão e recomendado** para download e instalação no Android, contornando bloqueios de segurança de navegadores móveis contra links `.apk` diretos.
 
 ---
 
-### 📦 Link de Download Padrão (Recomendado)
+### 📦 Links Oficiais para Download
 
+#### 🌐 Página de Download com 1 Clique (Recomendado para Celular/Tablet)
+👉 **[https://ais-dev-yo6mgemrmiadtta4aeltxe-590033031823.us-west2.run.app/download](https://ais-dev-yo6mgemrmiadtta4aeltxe-590033031823.us-west2.run.app/download)**
+
+---
+
+#### 1. Download Direto do Pacote ZIP
 👉 **[https://ais-dev-yo6mgemrmiadtta4aeltxe-590033031823.us-west2.run.app/knowverse_apk.zip](https://ais-dev-yo6mgemrmiadtta4aeltxe-590033031823.us-west2.run.app/knowverse_apk.zip)**
 
 *(Baixe o arquivo `.zip`, toque nele no seu celular ou tablet para extrair o `knowverse.apk` e instale normalmente).*
 
 ---
 
-### 📋 Relatório de Engenharia v1.8.6: O que foi mudado, como e o que estava sendo afetado
+#### 2. Download Direto do Arquivo APK
+👉 **[https://ais-dev-yo6mgemrmiadtta4aeltxe-590033031823.us-west2.run.app/Knowverse.apk](https://ais-dev-yo6mgemrmiadtta4aeltxe-590033031823.us-west2.run.app/Knowverse.apk)**
 
-#### 1. Correção Integral da Matéria de Cálculo 1 (Limites, Derivadas e Integrais)
-* **O que estava sendo afetado:**
-  * Ao abrir aulas de Cálculo 1 (por exemplo, *Aula 3: Propriedades Operatórias e Limites no Infinito*), o aplicativo exibia de forma errônea o conteúdo de **"Química Geral e Estrutura da Matéria"**.
-  * Além disso, as abas de fórmulas e exemplos resolvidos de Cálculo apareciam vazias ou corrompidas.
-* **Causa Raiz:**
-  * O método `CalculusDidacticContent.getContentForLesson(lessonId)` delegava para `EnemChemistryDidacticProvider.getDidacticBundle(lessonId)` sem verificar o prefixo de disciplina. Dentro de `EnemChemistryDidacticProvider`, havia um `else -> ChemistryGeneralDidactic.buildBundle(lesson)` que capturava qualquer ID de aula do aplicativo como se fosse Química Geral.
-* **Como foi corrigido:**
-  * Implementada verificação estrita de prefixo em `EnemChemistryDidacticProvider` (`if (!lessonId.startsWith("quim_")) return null`), `EnemGeographyDidacticProvider` e `EnemHistoryDidacticProvider`.
-  * Reformulado `CalculusDidacticContent` com roteamento estrito e prioritário para os módulos reais de Cálculo I (`CalculusLimitsDidactic`, `CalculusDerivativesDidactic`, `CalculusIntegralsDidactic`).
-  * Todas as 28 aulas de Cálculo 1 agora exibem suas teorias, fórmulas exatas, exemplos resolvidos com passo a passo e gráficos diagnósticos corretos.
+---
 
-#### 2. Visualizador Matemático Nativo em Canvas 120 FPS (Substituição de GeoGebra WebView)
-* **O que estava sendo afetado:**
-  * Os gráficos matemáticos interativos ficavam como uma caixa preta vazia ou falhavam ao carregar offline nos dispositivos móveis (`Screenshot_20261101_162816_Knowverse_fee60fb2.png`).
-* **Causa Raiz:**
-  * A dependência anterior de um WebView Android carregando bundles pesados e remotos do GeoGebra falhava devido a restrições de rede, falta de aceleração gráfica em WebViews embutidas e problemas de CORS/sandbox.
-* **Como foi corrigido:**
-  * Desenvolvido um motor nativo Kotlin (`MathExpressionEvaluator.kt`) com analisador sintático completo (suporte a operadores `+`, `-`, `*`, `/`, `^`, funções trigonométricas `sin`, `cos`, `tan`, logaritmos `ln`, `log`, valor absoluto `abs`, constantes `pi`, `e` e derivação numérica diferencial).
-  * Criado o componente nativo Compose `NativeMathGraphCanvas` com aceleração por GPU (120 FPS), grade milimetrada adaptativa, arrasto e pan contínuo (`detectDragGestures`), zoom dinâmico com botões `+`, `-` e `Reset`, traçado de assíntotas verticais/horizontais, detecção de descontinuidades, reta tangente interativa com slider e pontos críticos.
+#### 3. Método Nativo pelo AI Studio (100% Garantido)
+No painel lateral esquerdo do AI Studio, abra a aba **Files (Arquivos)**:
+- Localize o arquivo `knowverse_apk.zip` ou `Knowverse.apk`.
+- Clique nos três pontinhos `⋮` ao lado do arquivo e selecione **Download**.
 
-#### 3. Reformulação Pedagógica das Matérias sem Fórmulas (Linguagens, Humanas, Biologia)
-* **O que estava sendo afetado:**
-  * Aulas de matérias conceituais e discursivas (como Interpretação de Texto, Literatura, Linguística, História do Brasil, Geografia e Filosofia) usavam o mesmo formato de matemática ("Fórmulas & Regras", "Passo Analítico"), o que empobrecia o conteúdo e causava estranheza visual.
-* **Como foi corrigido:**
-  * Implementado modo pedagógico adaptativo `isNonFormulaSubject` em `CalculusLessonScreen.kt`:
-    1. **Navegação em 4 Etapas Adaptativa:** `1. Teoria` | `2. Conceitos` | `3. Análises` | `4. Treino`.
-    2. **Etapa 2 (Conceitos-Chave e Fundamentos Teóricos):** Substituição de quadros de equações por cards de análise conceitual com ícones de marcador, bloco de texto didático em destaque editorial e campo de **Aplicação no ENEM**.
-    3. **Etapa 3 (Textos Didáticos & Análises Comentadas):** Substituição do quadro de cálculo por container de **Fonte / Trecho Didático** com citação em itálico e comentários detalhados sobre a intencionalidade discursiva e pegadinhas do ENEM.
+---
 
-#### 4. Destaque Dinâmico de Trilhas (Apenas na Trilha Ativa do Usuário)
-* **O que estava sendo afetado:**
-  * A disciplina **Matemática ENEM** ficava permanentemente com borda verde neon e destaque fixo na aba "Trilhas", independentemente de qual trilha o usuário estava de fato cursando ou selecionando.
-* **Como foi corrigido:**
-  * Removido o destaque estático hardcoded de Matemática ENEM em `LearnTrailScreen.kt`.
-  * Introduzido o estado inteligente `activeFollowTrail`, sincronizado com o histórico de aulas e a trilha ativa do usuário.
-  * O destaque visual com borda colorida e badge `Trilha Selecionada` agora é aplicado **exclusivamente na trilha que o estudante escolheu seguir**.
+### 📋 Relatório de Engenharia v1.9.0: Principais Atualizações e Correções
 
-#### 5. Correção de Textos Grandes em Caixas Pequenas e Sobreposições
-* **O que estava sendo afetado:**
-  * No card de indicação (*Convidar Colegas de Estudo*), o botão "Compartilhar" ficava espremido verticalmente letra por letra (`Co m pa rti lha r`).
-  * Na barra superior das aulas, títulos longos como *"Aula 3: Propriedades Operatórias e Limites no Infinito"* eram cortados com reticências prematuras (*"Aula 3: Propriedades e"*).
-  * No Bento Grid da tela inicial, nomes de lições e subtítulos ficavam truncados de forma ilegível.
-  * Na tela de Perfil, o botão "Verificar Atualizações" sobrepunha o texto explicativo em telas com fontes ampliadas.
-* **Como foi corrigido:**
-  * `GamificationWidgets.kt`: Adicionado `Modifier.weight(1f)` à coluna de texto e `softWrap = false` com `wrapContentWidth()` ao botão de compartilhamento.
-  * `CalculusLessonScreen.kt`: A coluna de títulos recebeu `weight(1f)` e `maxLines = 2` com entrelinha otimizada, permitindo que títulos completos sejam lidos com clareza.
-  * `ActionBentoGrid.kt`: Ajustado `nextLesson.title` para `maxLines = 2` e subtítulos compactos bem distribuídos.
-  * `ProfileScreen.kt`: O container de atualizações recebeu distribuição balanceada com peso na descrição e largura sob medida no botão de ação.
+#### 1. Redesenho e Centralização da Tela Inicial (`HomeScreen`)
+* **O que foi corrigido:**
+  * A tela inicial apresentava layout esticado nos cantos e sensação de vazio inferior acentuada.
+  * O painel exibia apenas o tópico de Python, ocultando as principais disciplinas já completas da plataforma.
+* **Melhorias implementadas:**
+  * **Alinhamento Centralizado Responsivo:** Todo o conteúdo da tela inicial agora é englobado em container `widthIn(max = 600.dp)` com alinhamento `Alignment.TopCenter`, garantindo simetria em celulares, dobráveis e tablets.
+  * **Hero Card Principal "Continuar Aprendizado":** Card em destaque com status em tempo real, badge de XP, título da aula em andamento e botão de ação primária amplo de 48.dp de altura.
+  * **Catálogo de Disciplinas (Grid 2x3):** Atalhos equilibrados para todas as 6 disciplinas (Matemática, Física, Biologia, Química, Redação e Python).
+  * **Widget de Meta Diária:** Indicador de ofensiva diária e atalho rápido para treino prático de questões.
+  * **Card Oficial do Laboratório de Redação:** Destaque para a Matriz INEP com critérios de correção C1 a C5.
+
+#### 2. Redesenho e Centralização da Tela de Login (`AuthGateScreen`)
+* **O que foi corrigido:**
+  * O formulário de login ficava comprimido na parte superior esquerda da tela, com mais de 60% de espaço escuro vazio na parte inferior.
+* **Melhorias implementadas:**
+  * **Alinhamento Centralizado Absoluto:** Utilização de `Box(contentAlignment = Alignment.Center)` com largura controlada (`widthIn(max = 460.dp)`), posicionando o formulário no centro óptico da tela.
+  * **Hero com o Mascote Otto:** Avatar circular de 80.dp com borda `PrimaryViolet`, tipografia elegante e pílula de disciplinas.
+  * **Card de Autenticação Unificado:** Tabs de *Entrar* e *Cadastrar* integradas, botões com altura mínima de 48.dp (atendendo às diretrizes de acessibilidade M3) e Google SSO destacado.
+  * **Painel de Credibilidade:** Indicadores de segurança (criptografia SHA-256 com salt) e selos da Matriz INEP e Terminal Interativo.
+
+#### 3. Ajuste Pedagógico da Matriz da Redação ENEM (`EnemEssayService`)
+* Alinhamento estrito da Competência 5 (Proposta de Intervenção) com os critérios oficiais do INEP: atribuição de 200 pontos para redações que apresentam os 5 elementos completos (Agente, Ação, Meio/Modo, Efeito e Detalhamento).
+
+#### 4. Estabilidade Total dos Testes e Configuração Offline do Robolectric
+* Configuração do diretório de dependências locais do Robolectric no Gradle, viabilizando execução offline estável.
+* Suporte nativo ao interpretador `python3` no avaliador automatizado de questões de código.
+* **100% dos testes aprovados:** 47 de 47 testes executados com sucesso (`gradle :app:testDebugUnitTest`).

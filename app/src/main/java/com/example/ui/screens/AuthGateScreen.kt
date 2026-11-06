@@ -1,13 +1,11 @@
 package com.example.ui.screens
 
 import android.app.Activity
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
-import com.example.R
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -28,6 +26,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.HelpOutline
@@ -63,8 +62,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -72,6 +73,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.R
 import com.example.auth.AuthManager
 import com.example.ui.components.KnowverseIcons
 import com.example.ui.theme.BorderSubtle
@@ -122,571 +124,605 @@ fun AuthGateScreen(
     var generatedAccessToken by remember { mutableStateOf<String?>(null) }
     var forgotErrorMessage by remember { mutableStateOf<String?>(null) }
 
+    // Container centralizado vertical e horizontalmente para todas as telas (Mobile, Dobráveis e Tablets)
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(DeepNavy)
             .statusBarsPadding()
             .navigationBarsPadding(),
-        contentAlignment = Alignment.TopCenter
+        contentAlignment = Alignment.Center
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .widthIn(max = 480.dp)
+                .widthIn(max = 460.dp)
                 .verticalScroll(scrollState)
-                .padding(horizontal = 20.dp, vertical = 24.dp)
+                .padding(horizontal = 20.dp, vertical = 24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
         ) {
-            // Asymmetric Modern Editorial Header with Mascot and Typographic Contrast
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(14.dp)
-            ) {
-                Box(
-                    modifier = Modifier
-                        .size(64.dp)
-                        .clip(RoundedCornerShape(14.dp))
-                        .background(SurfaceElevated)
-                        .border(1.5.dp, PrimaryViolet.copy(alpha = 0.5f), RoundedCornerShape(14.dp)),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.img_mascot_otter_boy),
-                        contentDescription = "Mascote Knowverse",
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier
-                            .size(64.dp)
-                            .clip(RoundedCornerShape(14.dp))
-                    )
-                }
-
-                Column(modifier = Modifier.weight(1f)) {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        Text(
-                            text = "Knowverse",
-                            style = MaterialTheme.typography.headlineMedium.copy(
-                                fontWeight = FontWeight.Bold,
-                                color = TextPrimary,
-                                letterSpacing = (-0.5).sp
-                            )
-                        )
-
-                        Surface(
-                            color = PrimaryViolet.copy(alpha = 0.15f),
-                            shape = RoundedCornerShape(4.dp),
-                            border = androidx.compose.foundation.BorderStroke(1.dp, PrimaryViolet.copy(alpha = 0.3f))
-                        ) {
-                            Text(
-                                text = "STUDY HUB",
-                                style = MaterialTheme.typography.labelSmall.copy(
-                                    color = PrimaryViolet,
-                                    fontWeight = FontWeight.Bold,
-                                    fontSize = 9.sp,
-                                    letterSpacing = 0.6.sp
-                                ),
-                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                            )
-                        }
-                    }
-
-                    Spacer(modifier = Modifier.height(3.dp))
-
-                    Text(
-                        text = "Aprenda Programação e Matemática com didática visual, terminal interativo e avaliação contínua.",
-                        style = MaterialTheme.typography.bodySmall.copy(
-                            color = TextSecondary,
-                            lineHeight = 16.sp
-                        )
-                    )
-                }
-            }
-
-            Spacer(modifier = Modifier.height(20.dp))
-
-            // Switcher Tabs: Entrar / Cadastrar
-            Row(
+            // ========================================================
+            // CABEÇALHO HERO CENTRALIZADO COM MASCOTE OTTO & BRANDING
+            // ========================================================
+            Box(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .clip(RoundedCornerShape(6.dp))
-                    .background(ObsidianSurface)
-                    .border(1.dp, BorderSubtle, RoundedCornerShape(6.dp))
-                    .padding(3.dp)
+                    .size(80.dp)
+                    .clip(CircleShape)
+                    .background(SurfaceElevated)
+                    .border(2.dp, PrimaryViolet.copy(alpha = 0.6f), CircleShape),
+                contentAlignment = Alignment.Center
             ) {
-                Box(
+                Image(
+                    painter = painterResource(id = R.drawable.img_mascot_otter_boy),
+                    contentDescription = "Mascote Otto",
+                    contentScale = ContentScale.Crop,
                     modifier = Modifier
-                        .weight(1f)
-                        .clip(RoundedCornerShape(4.dp))
-                        .background(if (activeTab == 0) SurfaceElevated else Color.Transparent)
-                        .clickable {
-                            activeTab = 0
-                            localErrorMessage = null
-                        }
-                        .padding(vertical = 8.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        text = "Entrar",
-                        style = MaterialTheme.typography.labelMedium.copy(
-                            fontWeight = if (activeTab == 0) FontWeight.Bold else FontWeight.Medium,
-                            color = if (activeTab == 0) TextPrimary else TextTertiary
-                        )
-                    )
-                }
-
-                Box(
-                    modifier = Modifier
-                        .weight(1f)
-                        .clip(RoundedCornerShape(4.dp))
-                        .background(if (activeTab == 1) SurfaceElevated else Color.Transparent)
-                        .clickable {
-                            activeTab = 1
-                            localErrorMessage = null
-                        }
-                        .padding(vertical = 8.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        text = "Cadastrar",
-                        style = MaterialTheme.typography.labelMedium.copy(
-                            fontWeight = if (activeTab == 1) FontWeight.Bold else FontWeight.Medium,
-                            color = if (activeTab == 1) TextPrimary else TextTertiary
-                        )
-                    )
-                }
+                        .size(76.dp)
+                        .clip(CircleShape)
+                )
             }
 
             Spacer(modifier = Modifier.height(14.dp))
 
-            // Global/Local Error banner
-            if (localErrorMessage != null) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Text(
+                    text = "Knowverse",
+                    style = MaterialTheme.typography.headlineMedium.copy(
+                        fontWeight = FontWeight.Bold,
+                        color = TextPrimary,
+                        fontSize = 26.sp,
+                        letterSpacing = (-0.5).sp
+                    )
+                )
+
                 Surface(
-                    color = ErrorRose.copy(alpha = 0.12f),
-                    shape = RoundedCornerShape(6.dp),
-                    border = androidx.compose.foundation.BorderStroke(1.dp, ErrorRose.copy(alpha = 0.3f)),
-                    modifier = Modifier.fillMaxWidth()
+                    color = PrimaryViolet.copy(alpha = 0.15f),
+                    shape = RoundedCornerShape(4.dp),
+                    border = BorderStroke(1.dp, PrimaryViolet.copy(alpha = 0.35f))
                 ) {
                     Text(
-                        text = localErrorMessage ?: "",
+                        text = "STUDY HUB",
                         style = MaterialTheme.typography.labelSmall.copy(
-                            color = ErrorRose,
-                            textAlign = TextAlign.Center
+                            color = PrimaryViolet,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 9.sp,
+                            letterSpacing = 0.6.sp
                         ),
-                        modifier = Modifier.padding(10.dp)
+                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                     )
-                }
-                Spacer(modifier = Modifier.height(12.dp))
-            }
-
-            if (activeTab == 0) {
-                // ==============================
-                // TAB 0: ENTRAR (LOGIN)
-                // ==============================
-                Card(
-                    shape = RoundedCornerShape(6.dp),
-                    colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .border(1.dp, BorderSubtle, RoundedCornerShape(6.dp))
-                ) {
-                    Column(
-                        modifier = Modifier.padding(14.dp),
-                        verticalArrangement = Arrangement.spacedBy(10.dp)
-                    ) {
-                        OutlinedTextField(
-                            value = loginEmail,
-                            onValueChange = { loginEmail = it },
-                            label = { Text("E-mail") },
-                            leadingIcon = {
-                                Icon(
-                                    imageVector = Icons.Default.Email,
-                                    contentDescription = null,
-                                    tint = TextSecondary,
-                                    modifier = Modifier.size(18.dp)
-                                )
-                            },
-                            singleLine = true,
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-                            colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = PrimaryViolet,
-                                unfocusedBorderColor = BorderSubtle,
-                                focusedTextColor = TextPrimary,
-                                unfocusedTextColor = TextPrimary
-                            ),
-                            modifier = Modifier.fillMaxWidth().testTag("login_email_input")
-                        )
-
-                        OutlinedTextField(
-                            value = loginPassword,
-                            onValueChange = { loginPassword = it },
-                            label = { Text("Senha") },
-                            leadingIcon = {
-                                Icon(
-                                    imageVector = Icons.Default.Lock,
-                                    contentDescription = null,
-                                    tint = TextSecondary,
-                                    modifier = Modifier.size(18.dp)
-                                )
-                            },
-                            trailingIcon = {
-                                IconButton(onClick = { showLoginPassword = !showLoginPassword }) {
-                                    Icon(
-                                        imageVector = if (showLoginPassword) Icons.Default.VisibilityOff else Icons.Default.Visibility,
-                                        contentDescription = null,
-                                        tint = TextSecondary,
-                                        modifier = Modifier.size(18.dp)
-                                    )
-                                }
-                            },
-                            visualTransformation = if (showLoginPassword) VisualTransformation.None else PasswordVisualTransformation(),
-                            singleLine = true,
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-                            colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = PrimaryViolet,
-                                unfocusedBorderColor = BorderSubtle,
-                                focusedTextColor = TextPrimary,
-                                unfocusedTextColor = TextPrimary
-                            ),
-                            modifier = Modifier.fillMaxWidth().testTag("login_password_input")
-                        )
-
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.End
-                        ) {
-                            TextButton(
-                                onClick = {
-                                    forgotEmail = loginEmail.trim()
-                                    forgotQuestion = null
-                                    forgotAnswer = ""
-                                    generatedAccessToken = null
-                                    forgotErrorMessage = null
-                                    showForgotPasswordDialog = true
-                                },
-                                modifier = Modifier.testTag("forgot_password_btn")
-                            ) {
-                                Text(
-                                    text = "Esqueci a Senha",
-                                    style = MaterialTheme.typography.labelSmall.copy(
-                                        color = PrimaryViolet,
-                                        fontWeight = FontWeight.SemiBold
-                                    )
-                                )
-                            }
-                        }
-
-                        Button(
-                            onClick = {
-                                localErrorMessage = null
-                                authManager.signInWithEmail(
-                                    email = loginEmail.trim(),
-                                    password = loginPassword,
-                                    onSuccess = {},
-                                    onError = { localErrorMessage = it }
-                                )
-                            },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor = PrimaryViolet,
-                                contentColor = Color.White
-                            ),
-                            shape = RoundedCornerShape(6.dp),
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(42.dp)
-                                .testTag("email_sign_in_btn")
-                        ) {
-                            Text(
-                                text = "Entrar com E-mail e Senha",
-                                fontWeight = FontWeight.SemiBold,
-                                fontSize = 13.sp
-                            )
-                        }
-                    }
-                }
-
-                Spacer(modifier = Modifier.height(14.dp))
-
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Box(modifier = Modifier.weight(1f).height(1.dp).background(BorderSubtle))
-                    Text(
-                        text = "ou",
-                        style = MaterialTheme.typography.labelSmall.copy(color = TextTertiary),
-                        modifier = Modifier.padding(horizontal = 8.dp)
-                    )
-                    Box(modifier = Modifier.weight(1f).height(1.dp).background(BorderSubtle))
-                }
-
-                Spacer(modifier = Modifier.height(14.dp))
-
-                // Google Sign In (Primary SSO)
-                Button(
-                    onClick = {
-                        if (activity != null) {
-                            localErrorMessage = null
-                            authManager.signInWithGoogle(activity, scope, onError = { localErrorMessage = it })
-                        }
-                    },
-                    enabled = !isSigningIn,
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = SurfaceElevated,
-                        contentColor = TextPrimary
-                    ),
-                    shape = RoundedCornerShape(6.dp),
-                    border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(42.dp)
-                        .testTag("google_sign_in_btn")
-                ) {
-                    if (isSigningIn) {
-                        CircularProgressIndicator(
-                            modifier = Modifier.size(16.dp),
-                            strokeWidth = 2.dp,
-                            color = Color.White
-                        )
-                    } else {
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            Icon(
-                                imageVector = KnowverseIcons.UserSilhouette,
-                                contentDescription = null,
-                                tint = PrimaryViolet,
-                                modifier = Modifier.size(15.dp)
-                            )
-                            Spacer(modifier = Modifier.width(8.dp))
-                            Text(
-                                text = "Continuar com Conta Google",
-                                fontWeight = FontWeight.SemiBold,
-                                fontSize = 13.sp
-                            )
-                        }
-                    }
-                }
-            } else {
-                // ==============================
-                // TAB 1: CADASTRAR (REGISTRO)
-                // ==============================
-                Card(
-                    shape = RoundedCornerShape(6.dp),
-                    colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .border(1.dp, BorderSubtle, RoundedCornerShape(6.dp))
-                ) {
-                    Column(
-                        modifier = Modifier.padding(14.dp),
-                        verticalArrangement = Arrangement.spacedBy(10.dp)
-                    ) {
-                        OutlinedTextField(
-                            value = registerName,
-                            onValueChange = { registerName = it },
-                            label = { Text("Nome Completo") },
-                            leadingIcon = {
-                                Icon(
-                                    imageVector = Icons.Default.Person,
-                                    contentDescription = null,
-                                    tint = TextSecondary,
-                                    modifier = Modifier.size(18.dp)
-                                )
-                            },
-                            singleLine = true,
-                            colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = PrimaryViolet,
-                                unfocusedBorderColor = BorderSubtle,
-                                focusedTextColor = TextPrimary,
-                                unfocusedTextColor = TextPrimary
-                            ),
-                            modifier = Modifier.fillMaxWidth().testTag("register_name_input")
-                        )
-
-                        OutlinedTextField(
-                            value = registerEmail,
-                            onValueChange = { registerEmail = it },
-                            label = { Text("E-mail") },
-                            leadingIcon = {
-                                Icon(
-                                    imageVector = Icons.Default.Email,
-                                    contentDescription = null,
-                                    tint = TextSecondary,
-                                    modifier = Modifier.size(18.dp)
-                                )
-                            },
-                            singleLine = true,
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-                            colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = PrimaryViolet,
-                                unfocusedBorderColor = BorderSubtle,
-                                focusedTextColor = TextPrimary,
-                                unfocusedTextColor = TextPrimary
-                            ),
-                            modifier = Modifier.fillMaxWidth().testTag("register_email_input")
-                        )
-
-                        OutlinedTextField(
-                            value = registerPassword,
-                            onValueChange = { registerPassword = it },
-                            label = { Text("Senha (mínimo 6 dígitos)") },
-                            leadingIcon = {
-                                Icon(
-                                    imageVector = Icons.Default.Lock,
-                                    contentDescription = null,
-                                    tint = TextSecondary,
-                                    modifier = Modifier.size(18.dp)
-                                )
-                            },
-                            trailingIcon = {
-                                IconButton(onClick = { showRegisterPassword = !showRegisterPassword }) {
-                                    Icon(
-                                        imageVector = if (showRegisterPassword) Icons.Default.VisibilityOff else Icons.Default.Visibility,
-                                        contentDescription = null,
-                                        tint = TextSecondary,
-                                        modifier = Modifier.size(18.dp)
-                                    )
-                                }
-                            },
-                            visualTransformation = if (showRegisterPassword) VisualTransformation.None else PasswordVisualTransformation(),
-                            singleLine = true,
-                            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-                            colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = PrimaryViolet,
-                                unfocusedBorderColor = BorderSubtle,
-                                focusedTextColor = TextPrimary,
-                                unfocusedTextColor = TextPrimary
-                            ),
-                            modifier = Modifier.fillMaxWidth().testTag("register_password_input")
-                        )
-
-                        // Pergunta Pessoal de Segurança para recuperação de conta
-                        Text(
-                            text = "Pergunta de Segurança (para recuperação de conta):",
-                            style = MaterialTheme.typography.labelSmall.copy(
-                                color = TextSecondary,
-                                fontWeight = FontWeight.SemiBold
-                            )
-                        )
-
-                        Box(modifier = Modifier.fillMaxWidth()) {
-                            Surface(
-                                color = SurfaceElevated,
-                                shape = RoundedCornerShape(4.dp),
-                                border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle),
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .clickable { showQuestionDropdown = true }
-                                    .padding(horizontal = 10.dp, vertical = 8.dp)
-                            ) {
-                                Row(
-                                    modifier = Modifier.fillMaxWidth(),
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.SpaceBetween
-                                ) {
-                                    Text(
-                                        text = AuthManager.SECURITY_QUESTIONS[selectedQuestionIndex],
-                                        style = MaterialTheme.typography.bodySmall.copy(color = TextPrimary),
-                                        modifier = Modifier.weight(1f)
-                                    )
-                                    Icon(
-                                        imageVector = Icons.Default.ArrowDropDown,
-                                        contentDescription = null,
-                                        tint = TextSecondary
-                                    )
-                                }
-                            }
-
-                            DropdownMenu(
-                                expanded = showQuestionDropdown,
-                                onDismissRequest = { showQuestionDropdown = false },
-                                modifier = Modifier.background(ObsidianSurface)
-                            ) {
-                                AuthManager.SECURITY_QUESTIONS.forEachIndexed { index, question ->
-                                    DropdownMenuItem(
-                                        text = {
-                                            Text(
-                                                text = question,
-                                                style = MaterialTheme.typography.bodySmall.copy(color = TextPrimary)
-                                            )
-                                        },
-                                        onClick = {
-                                            selectedQuestionIndex = index
-                                            showQuestionDropdown = false
-                                        }
-                                    )
-                                }
-                            }
-                        }
-
-                        OutlinedTextField(
-                            value = registerAnswer,
-                            onValueChange = { registerAnswer = it },
-                            label = { Text("Sua Resposta Pessoal") },
-                            leadingIcon = {
-                                Icon(
-                                    imageVector = Icons.Default.HelpOutline,
-                                    contentDescription = null,
-                                    tint = TextSecondary,
-                                    modifier = Modifier.size(18.dp)
-                                )
-                            },
-                            singleLine = true,
-                            colors = OutlinedTextFieldDefaults.colors(
-                                focusedBorderColor = PrimaryViolet,
-                                unfocusedBorderColor = BorderSubtle,
-                                focusedTextColor = TextPrimary,
-                                unfocusedTextColor = TextPrimary
-                            ),
-                            modifier = Modifier.fillMaxWidth().testTag("register_answer_input")
-                        )
-
-                        Spacer(modifier = Modifier.height(4.dp))
-
-                        Button(
-                            onClick = {
-                                localErrorMessage = null
-                                authManager.signUpWithEmail(
-                                    email = registerEmail.trim(),
-                                    password = registerPassword,
-                                    displayName = registerName.trim(),
-                                    securityQuestion = AuthManager.SECURITY_QUESTIONS[selectedQuestionIndex],
-                                    securityAnswer = registerAnswer.trim(),
-                                    onSuccess = {},
-                                    onError = { localErrorMessage = it }
-                                )
-                            },
-                            colors = ButtonDefaults.buttonColors(
-                                containerColor = PrimaryViolet,
-                                contentColor = Color.White
-                            ),
-                            shape = RoundedCornerShape(6.dp),
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(42.dp)
-                                .testTag("create_account_btn")
-                        ) {
-                            Text(
-                                text = "Criar Minha Conta",
-                                fontWeight = FontWeight.SemiBold,
-                                fontSize = 13.sp
-                            )
-                        }
-                    }
                 }
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(6.dp))
 
             Text(
-                text = "Suas senhas e respostas são criptografadas com salt individual e SHA-256.",
-                style = MaterialTheme.typography.labelSmall.copy(
-                    color = TextTertiary,
+                text = "Sua plataforma completa de preparação para o ENEM e Programação com didática visual e trilhas guiadas.",
+                style = MaterialTheme.typography.bodySmall.copy(
+                    color = TextSecondary,
                     textAlign = TextAlign.Center,
-                    fontSize = 11.sp
-                )
+                    lineHeight = 17.sp,
+                    fontSize = 12.sp
+                ),
+                modifier = Modifier.padding(horizontal = 12.dp)
             )
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            // Chips das Disciplinas Principais
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                val tags = listOf("Matemática", "Física", "Química", "Biologia", "Redação", "Python")
+                Text(
+                    text = tags.joinToString(" • "),
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        color = TextTertiary,
+                        fontSize = 10.5.sp,
+                        fontWeight = FontWeight.Medium
+                    ),
+                    textAlign = TextAlign.Center
+                )
+            }
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // ========================================================
+            // CARD DE AUTENTICAÇÃO CENTRALIZADO COM TABS INTEGRADAS
+            // ========================================================
+            Card(
+                shape = RoundedCornerShape(14.dp),
+                colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                border = BorderStroke(1.dp, BorderSubtle),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(
+                    modifier = Modifier.padding(18.dp),
+                    verticalArrangement = Arrangement.spacedBy(14.dp)
+                ) {
+                    // Switcher Tabs: Entrar / Cadastrar
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(SurfaceElevated)
+                            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
+                            .padding(3.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .clip(RoundedCornerShape(6.dp))
+                                .background(if (activeTab == 0) PrimaryViolet else Color.Transparent)
+                                .clickable {
+                                    activeTab = 0
+                                    localErrorMessage = null
+                                }
+                                .padding(vertical = 10.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = "Entrar",
+                                style = MaterialTheme.typography.labelMedium.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    color = if (activeTab == 0) Color.White else TextSecondary,
+                                    fontSize = 13.sp
+                                )
+                            )
+                        }
+
+                        Box(
+                            modifier = Modifier
+                                .weight(1f)
+                                .clip(RoundedCornerShape(6.dp))
+                                .background(if (activeTab == 1) PrimaryViolet else Color.Transparent)
+                                .clickable {
+                                    activeTab = 1
+                                    localErrorMessage = null
+                                }
+                                .padding(vertical = 10.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = "Cadastrar",
+                                style = MaterialTheme.typography.labelMedium.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    color = if (activeTab == 1) Color.White else TextSecondary,
+                                    fontSize = 13.sp
+                                )
+                            )
+                        }
+                    }
+
+                    // Global/Local Error banner
+                    if (localErrorMessage != null) {
+                        Surface(
+                            color = ErrorRose.copy(alpha = 0.12f),
+                            shape = RoundedCornerShape(8.dp),
+                            border = BorderStroke(1.dp, ErrorRose.copy(alpha = 0.35f)),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                text = localErrorMessage ?: "",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    color = ErrorRose,
+                                    textAlign = TextAlign.Center,
+                                    fontSize = 11.5.sp
+                                ),
+                                modifier = Modifier.padding(10.dp)
+                            )
+                        }
+                    }
+
+                    if (activeTab == 0) {
+                        // ==============================
+                        // TAB 0: ENTRAR (LOGIN)
+                        // ==============================
+                        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                            OutlinedTextField(
+                                value = loginEmail,
+                                onValueChange = { loginEmail = it },
+                                label = { Text("E-mail") },
+                                leadingIcon = {
+                                    Icon(
+                                        imageVector = Icons.Default.Email,
+                                        contentDescription = null,
+                                        tint = TextSecondary,
+                                        modifier = Modifier.size(18.dp)
+                                    )
+                                },
+                                singleLine = true,
+                                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                                shape = RoundedCornerShape(10.dp),
+                                colors = OutlinedTextFieldDefaults.colors(
+                                    focusedBorderColor = PrimaryViolet,
+                                    unfocusedBorderColor = BorderSubtle,
+                                    focusedTextColor = TextPrimary,
+                                    unfocusedTextColor = TextPrimary
+                                ),
+                                modifier = Modifier.fillMaxWidth().testTag("login_email_input")
+                            )
+
+                            OutlinedTextField(
+                                value = loginPassword,
+                                onValueChange = { loginPassword = it },
+                                label = { Text("Senha") },
+                                leadingIcon = {
+                                    Icon(
+                                        imageVector = Icons.Default.Lock,
+                                        contentDescription = null,
+                                        tint = TextSecondary,
+                                        modifier = Modifier.size(18.dp)
+                                    )
+                                },
+                                trailingIcon = {
+                                    IconButton(onClick = { showLoginPassword = !showLoginPassword }) {
+                                        Icon(
+                                            imageVector = if (showLoginPassword) Icons.Default.VisibilityOff else Icons.Default.Visibility,
+                                            contentDescription = null,
+                                            tint = TextSecondary,
+                                            modifier = Modifier.size(18.dp)
+                                        )
+                                    }
+                                },
+                                visualTransformation = if (showLoginPassword) VisualTransformation.None else PasswordVisualTransformation(),
+                                singleLine = true,
+                                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                                shape = RoundedCornerShape(10.dp),
+                                colors = OutlinedTextFieldDefaults.colors(
+                                    focusedBorderColor = PrimaryViolet,
+                                    unfocusedBorderColor = BorderSubtle,
+                                    focusedTextColor = TextPrimary,
+                                    unfocusedTextColor = TextPrimary
+                                ),
+                                modifier = Modifier.fillMaxWidth().testTag("login_password_input")
+                            )
+
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.End
+                            ) {
+                                TextButton(
+                                    onClick = {
+                                        forgotEmail = loginEmail.trim()
+                                        forgotQuestion = null
+                                        forgotAnswer = ""
+                                        generatedAccessToken = null
+                                        forgotErrorMessage = null
+                                        showForgotPasswordDialog = true
+                                    },
+                                    modifier = Modifier.testTag("forgot_password_btn")
+                                ) {
+                                    Text(
+                                        text = "Esqueci a Senha",
+                                        style = MaterialTheme.typography.labelSmall.copy(
+                                            color = PrimaryViolet,
+                                            fontWeight = FontWeight.SemiBold,
+                                            fontSize = 11.sp
+                                        )
+                                    )
+                                }
+                            }
+
+                            Button(
+                                onClick = {
+                                    localErrorMessage = null
+                                    authManager.signInWithEmail(
+                                        email = loginEmail.trim(),
+                                        password = loginPassword,
+                                        onSuccess = {},
+                                        onError = { localErrorMessage = it }
+                                    )
+                                },
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = PrimaryViolet,
+                                    contentColor = Color.White
+                                ),
+                                shape = RoundedCornerShape(10.dp),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(48.dp)
+                                    .testTag("email_sign_in_btn")
+                            ) {
+                                Text(
+                                    text = "Entrar com E-mail e Senha",
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 13.5.sp
+                                )
+                                Spacer(modifier = Modifier.width(6.dp))
+                                Icon(
+                                    imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                                    contentDescription = null,
+                                    modifier = Modifier.size(15.dp)
+                                )
+                            }
+
+                            Row(
+                                modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Box(modifier = Modifier.weight(1f).height(1.dp).background(BorderSubtle))
+                                Text(
+                                    text = "ou continue com",
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        color = TextTertiary,
+                                        fontSize = 10.5.sp
+                                    ),
+                                    modifier = Modifier.padding(horizontal = 10.dp)
+                                )
+                                Box(modifier = Modifier.weight(1f).height(1.dp).background(BorderSubtle))
+                            }
+
+                            // Google Sign In (Primary SSO)
+                            Button(
+                                onClick = {
+                                    if (activity != null) {
+                                        localErrorMessage = null
+                                        authManager.signInWithGoogle(activity, scope, onError = { localErrorMessage = it })
+                                    }
+                                },
+                                enabled = !isSigningIn,
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = SurfaceElevated,
+                                    contentColor = TextPrimary
+                                ),
+                                shape = RoundedCornerShape(10.dp),
+                                border = BorderStroke(1.dp, BorderSubtle),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(48.dp)
+                                    .testTag("google_sign_in_btn")
+                            ) {
+                                if (isSigningIn) {
+                                    CircularProgressIndicator(
+                                        modifier = Modifier.size(18.dp),
+                                        strokeWidth = 2.dp,
+                                        color = Color.White
+                                    )
+                                } else {
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = KnowverseIcons.UserSilhouette,
+                                            contentDescription = null,
+                                            tint = PrimaryViolet,
+                                            modifier = Modifier.size(16.dp)
+                                        )
+                                        Spacer(modifier = Modifier.width(8.dp))
+                                        Text(
+                                            text = "Continuar com Conta Google",
+                                            fontWeight = FontWeight.SemiBold,
+                                            fontSize = 13.sp
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        // ==============================
+                        // TAB 1: CADASTRAR (REGISTRO)
+                        // ==============================
+                        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                            OutlinedTextField(
+                                value = registerName,
+                                onValueChange = { registerName = it },
+                                label = { Text("Nome Completo") },
+                                leadingIcon = {
+                                    Icon(
+                                        imageVector = Icons.Default.Person,
+                                        contentDescription = null,
+                                        tint = TextSecondary,
+                                        modifier = Modifier.size(18.dp)
+                                    )
+                                },
+                                singleLine = true,
+                                shape = RoundedCornerShape(10.dp),
+                                colors = OutlinedTextFieldDefaults.colors(
+                                    focusedBorderColor = PrimaryViolet,
+                                    unfocusedBorderColor = BorderSubtle,
+                                    focusedTextColor = TextPrimary,
+                                    unfocusedTextColor = TextPrimary
+                                ),
+                                modifier = Modifier.fillMaxWidth().testTag("register_name_input")
+                            )
+
+                            OutlinedTextField(
+                                value = registerEmail,
+                                onValueChange = { registerEmail = it },
+                                label = { Text("E-mail") },
+                                leadingIcon = {
+                                    Icon(
+                                        imageVector = Icons.Default.Email,
+                                        contentDescription = null,
+                                        tint = TextSecondary,
+                                        modifier = Modifier.size(18.dp)
+                                    )
+                                },
+                                singleLine = true,
+                                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+                                shape = RoundedCornerShape(10.dp),
+                                colors = OutlinedTextFieldDefaults.colors(
+                                    focusedBorderColor = PrimaryViolet,
+                                    unfocusedBorderColor = BorderSubtle,
+                                    focusedTextColor = TextPrimary,
+                                    unfocusedTextColor = TextPrimary
+                                ),
+                                modifier = Modifier.fillMaxWidth().testTag("register_email_input")
+                            )
+
+                            OutlinedTextField(
+                                value = registerPassword,
+                                onValueChange = { registerPassword = it },
+                                label = { Text("Senha (mínimo 6 caracteres)") },
+                                leadingIcon = {
+                                    Icon(
+                                        imageVector = Icons.Default.Lock,
+                                        contentDescription = null,
+                                        tint = TextSecondary,
+                                        modifier = Modifier.size(18.dp)
+                                    )
+                                },
+                                trailingIcon = {
+                                    IconButton(onClick = { showRegisterPassword = !showRegisterPassword }) {
+                                        Icon(
+                                            imageVector = if (showRegisterPassword) Icons.Default.VisibilityOff else Icons.Default.Visibility,
+                                            contentDescription = null,
+                                            tint = TextSecondary,
+                                            modifier = Modifier.size(18.dp)
+                                        )
+                                    }
+                                },
+                                visualTransformation = if (showRegisterPassword) VisualTransformation.None else PasswordVisualTransformation(),
+                                singleLine = true,
+                                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+                                shape = RoundedCornerShape(10.dp),
+                                colors = OutlinedTextFieldDefaults.colors(
+                                    focusedBorderColor = PrimaryViolet,
+                                    unfocusedBorderColor = BorderSubtle,
+                                    focusedTextColor = TextPrimary,
+                                    unfocusedTextColor = TextPrimary
+                                ),
+                                modifier = Modifier.fillMaxWidth().testTag("register_password_input")
+                            )
+
+                            // Pergunta Pessoal de Segurança para recuperação de conta
+                            Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                                Text(
+                                    text = "Pergunta de Segurança (para recuperação):",
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        color = TextSecondary,
+                                        fontWeight = FontWeight.SemiBold,
+                                        fontSize = 11.sp
+                                    )
+                                )
+
+                                Box(modifier = Modifier.fillMaxWidth()) {
+                                    Surface(
+                                        color = SurfaceElevated,
+                                        shape = RoundedCornerShape(10.dp),
+                                        border = BorderStroke(1.dp, BorderSubtle),
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .clickable { showQuestionDropdown = true }
+                                            .padding(horizontal = 12.dp, vertical = 10.dp)
+                                    ) {
+                                        Row(
+                                            modifier = Modifier.fillMaxWidth(),
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.SpaceBetween
+                                        ) {
+                                            Text(
+                                                text = AuthManager.SECURITY_QUESTIONS[selectedQuestionIndex],
+                                                style = MaterialTheme.typography.bodySmall.copy(
+                                                    color = TextPrimary,
+                                                    fontSize = 12.sp
+                                                ),
+                                                modifier = Modifier.weight(1f)
+                                            )
+                                            Icon(
+                                                imageVector = Icons.Default.ArrowDropDown,
+                                                contentDescription = null,
+                                                tint = TextSecondary
+                                            )
+                                        }
+                                    }
+
+                                    DropdownMenu(
+                                        expanded = showQuestionDropdown,
+                                        onDismissRequest = { showQuestionDropdown = false },
+                                        modifier = Modifier.background(ObsidianSurface)
+                                    ) {
+                                        AuthManager.SECURITY_QUESTIONS.forEachIndexed { index, question ->
+                                            DropdownMenuItem(
+                                                text = {
+                                                    Text(
+                                                        text = question,
+                                                        style = MaterialTheme.typography.bodySmall.copy(color = TextPrimary)
+                                                    )
+                                                },
+                                                onClick = {
+                                                    selectedQuestionIndex = index
+                                                    showQuestionDropdown = false
+                                                }
+                                            )
+                                        }
+                                    }
+                                }
+                            }
+
+                            OutlinedTextField(
+                                value = registerAnswer,
+                                onValueChange = { registerAnswer = it },
+                                label = { Text("Sua Resposta Secreta") },
+                                leadingIcon = {
+                                    Icon(
+                                        imageVector = Icons.Default.HelpOutline,
+                                        contentDescription = null,
+                                        tint = TextSecondary,
+                                        modifier = Modifier.size(18.dp)
+                                    )
+                                },
+                                singleLine = true,
+                                shape = RoundedCornerShape(10.dp),
+                                colors = OutlinedTextFieldDefaults.colors(
+                                    focusedBorderColor = PrimaryViolet,
+                                    unfocusedBorderColor = BorderSubtle,
+                                    focusedTextColor = TextPrimary,
+                                    unfocusedTextColor = TextPrimary
+                                ),
+                                modifier = Modifier.fillMaxWidth().testTag("register_answer_input")
+                            )
+
+                            Spacer(modifier = Modifier.height(4.dp))
+
+                            Button(
+                                onClick = {
+                                    localErrorMessage = null
+                                    authManager.signUpWithEmail(
+                                        email = registerEmail.trim(),
+                                        password = registerPassword,
+                                        displayName = registerName.trim(),
+                                        securityQuestion = AuthManager.SECURITY_QUESTIONS[selectedQuestionIndex],
+                                        securityAnswer = registerAnswer.trim(),
+                                        onSuccess = {},
+                                        onError = { localErrorMessage = it }
+                                    )
+                                },
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = PrimaryViolet,
+                                    contentColor = Color.White
+                                ),
+                                shape = RoundedCornerShape(10.dp),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(48.dp)
+                                    .testTag("create_account_btn")
+                            ) {
+                                Text(
+                                    text = "Criar Minha Conta Gratuita",
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 13.5.sp
+                                )
+                                Spacer(modifier = Modifier.width(6.dp))
+                                Icon(
+                                    imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                                    contentDescription = null,
+                                    modifier = Modifier.size(15.dp)
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
+
         }
     }
 
@@ -711,7 +747,7 @@ fun AuthGateScreen(
                     if (forgotErrorMessage != null) {
                         Surface(
                             color = ErrorRose.copy(alpha = 0.15f),
-                            shape = RoundedCornerShape(4.dp),
+                            shape = RoundedCornerShape(6.dp),
                             modifier = Modifier.fillMaxWidth()
                         ) {
                             Text(
@@ -726,8 +762,8 @@ fun AuthGateScreen(
                         // Access token generated!
                         Surface(
                             color = SuccessEmerald.copy(alpha = 0.15f),
-                            shape = RoundedCornerShape(6.dp),
-                            border = androidx.compose.foundation.BorderStroke(1.dp, SuccessEmerald.copy(alpha = 0.4f)),
+                            shape = RoundedCornerShape(8.dp),
+                            border = BorderStroke(1.dp, SuccessEmerald.copy(alpha = 0.4f)),
                             modifier = Modifier.fillMaxWidth()
                         ) {
                             Column(modifier = Modifier.padding(12.dp)) {
@@ -746,7 +782,7 @@ fun AuthGateScreen(
                                 Spacer(modifier = Modifier.height(8.dp))
                                 Surface(
                                     color = DeepNavy,
-                                    shape = RoundedCornerShape(4.dp),
+                                    shape = RoundedCornerShape(6.dp),
                                     modifier = Modifier.fillMaxWidth()
                                 ) {
                                     Text(
@@ -774,6 +810,7 @@ fun AuthGateScreen(
                             onValueChange = { forgotEmail = it },
                             label = { Text("E-mail cadastrado") },
                             singleLine = true,
+                            shape = RoundedCornerShape(8.dp),
                             colors = OutlinedTextFieldDefaults.colors(
                                 focusedBorderColor = PrimaryViolet,
                                 unfocusedBorderColor = BorderSubtle,
@@ -791,7 +828,7 @@ fun AuthGateScreen(
 
                         Surface(
                             color = SurfaceElevated,
-                            shape = RoundedCornerShape(4.dp),
+                            shape = RoundedCornerShape(8.dp),
                             modifier = Modifier.fillMaxWidth()
                         ) {
                             Text(
@@ -809,6 +846,7 @@ fun AuthGateScreen(
                             onValueChange = { forgotAnswer = it },
                             label = { Text("Sua resposta") },
                             singleLine = true,
+                            shape = RoundedCornerShape(8.dp),
                             colors = OutlinedTextFieldDefaults.colors(
                                 focusedBorderColor = PrimaryViolet,
                                 unfocusedBorderColor = BorderSubtle,

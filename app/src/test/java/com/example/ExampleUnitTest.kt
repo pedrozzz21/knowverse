@@ -148,24 +148,24 @@ class ExampleUnitTest {
 
         val expectedLessonCounts = listOf(
             10, // Módulo 1: Matemática Básica
-            3,  // Módulo 2: Matemática Financeira
-            6,  // Módulo 3: Estatística
-            9,  // Módulo 4: Geometria Plana
-            9,  // Módulo 5: Geometria Espacial
-            6,  // Módulo 6: Funções
-            5,  // Módulo 7: Álgebra e Equações
+            5,  // Módulo 2: Álgebra e Equações
+            6,  // Módulo 3: Funções
+            3,  // Módulo 4: Sequências e Progressões
+            3,  // Módulo 5: Logaritmos
+            3,  // Módulo 6: Matemática Financeira
+            6,  // Módulo 7: Estatística
             5,  // Módulo 8: Análise Combinatória
             6,  // Módulo 9: Probabilidade
-            3,  // Módulo 10: Sequências e Progressões
-            3,  // Módulo 11: Logaritmos
-            5,  // Módulo 12: Trigonometria
+            9,  // Módulo 10: Geometria Plana
+            5,  // Módulo 11: Trigonometria
+            9,  // Módulo 12: Geometria Espacial
             6,  // Módulo 13: Geometria Analítica
             3   // Módulo 14: Matrizes e Sistemas Lineares
         )
 
         val allLessons = com.example.data.math.EnemMathCurriculum.getAllLessons()
-        val totalExpected = expectedLessonCounts.sum() // 81
-        assertEquals("Total de aulas na trilha deve ser exatamente 81", totalExpected, allLessons.size)
+        val totalExpected = expectedLessonCounts.sum() // 79
+        assertEquals("Total de aulas na trilha deve ser exatamente 79", totalExpected, allLessons.size)
 
         modules.forEachIndexed { index, module ->
             assertEquals(index + 1, module.moduleNumber)

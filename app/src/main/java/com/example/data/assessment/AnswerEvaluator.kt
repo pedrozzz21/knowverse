@@ -28,51 +28,94 @@ object AnswerEvaluator {
             .replace(spaces, " ")
             .trim()
 
+    const val DEFAULT_RELATIVE_TOLERANCE = 0.01 // Tolerância relativa padrão de 1% (0,01)
+
     /**
-     * Converte texto digitado em números candidatos (aceita vírgula decimal, milhar com ponto,
-     * frações `a/b`, notação científica `3e8`, prefixos de moeda e unidades após o número).
-     * Retorna mais de um candidato quando o ponto é ambíguo (ex.: "2.500" = 2,5 ou 2500).
+     * Converte texto digitado em números candidatos com validação estrita.
+     * Suporta:
+     * - Vírgula decimal ("0,5") e ponto decimal ("0.5")
+     * - Frações irredutíveis e equivalentes ("1/2", "2/4", "-7/2")
+     * - Notação científica ("1.5e-3", "1,5 * 10^-3", "3e8")
+     * - Números negativos e com sinais explícitos
+     * - Rejeita com segurança divisões por zero ("1/0") e entradas inválidas.
      */
     fun parseNumberCandidates(raw: String): List<Double> {
         val t = raw.replace('−', '-').replace("\u2212", "-").trim()
-        Regex("""(-?\d+(?:[.,]\d+)?)\s*/\s*(\d+(?:[.,]\d+)?)""").find(t)?.let { m ->
-            val a = m.groupValues[1].replace(',', '.').toDoubleOrNull()
-            val b = m.groupValues[2].replace(',', '.').toDoubleOrNull()
-            if (a != null && b != null && b != 0.0) return listOf(a / b)
+        if (t.isBlank()) return emptyList()
+
+        // 1. Frações: a/b, -a/b, a/-b (ex.: "1/2", "2/4", "-7/2", "3 / 6")
+        val fractionRegex = Regex("""^([+-]?\d+(?:[.,]\d+)?)\s*/\s*([+-]?\d+(?:[.,]\d+)?)$""")
+        fractionRegex.find(t)?.let { m ->
+            val num = m.groupValues[1].replace(',', '.').toDoubleOrNull()
+            val den = m.groupValues[2].replace(',', '.').toDoubleOrNull()
+            if (num != null && den != null) {
+                // Divisão por zero: entrada matematicamente inválida, rejeita sem fallback para numerador
+                if (abs(den) < 1e-12) return emptyList()
+                val result = num / den
+                if (!result.isNaN() && !result.isInfinite()) return listOf(result)
+            }
+            return emptyList()
         }
-        Regex("""(-?\d+(?:[.,]\d+)?)\s*[eE]\s*([-+]?\d+)""").find(t)?.let { m ->
+        // Se a entrada contém '/' mas não casou com fração válida (ex.: "1/0/2" ou texto), não prossegue
+        if (t.contains('/')) return emptyList()
+
+        // 2. Notação científica padrão: 1.5e-3, -2.4E4, 3e8, 1,5e-3
+        val sciRegex = Regex("""^([+-]?\d+(?:[.,]\d+)?)\s*[eE]\s*([+-]?\d+)$""")
+        sciRegex.find(t)?.let { m ->
             val base = m.groupValues[1].replace(',', '.').toDoubleOrNull()
             val exp = m.groupValues[2].toIntOrNull()
-            if (base != null && exp != null) return listOf(base * Math.pow(10.0, exp.toDouble()))
+            if (base != null && exp != null) {
+                val result = base * Math.pow(10.0, exp.toDouble())
+                if (!result.isNaN() && !result.isInfinite()) return listOf(result)
+            }
+            return emptyList()
         }
-        Regex("""(-?\d+(?:[.,]\d+)?)\s*(?:x|×|\*)\s*10\s*\^?\s*\(?\s*([-+]?\d+)\)?""").find(t)?.let { m ->
+
+        // 3. Notação científica com potência de 10: 1,5 * 10^-3, 2 x 10^4, 3 × 10^8
+        val powerRegex = Regex("""^([+-]?\d+(?:[.,]\d+)?)\s*(?:x|×|\*)\s*10\s*\^?\s*\(?\s*([+-]?\d+)\)?$""")
+        powerRegex.find(t)?.let { m ->
             val base = m.groupValues[1].replace(',', '.').toDoubleOrNull()
             val exp = m.groupValues[2].toIntOrNull()
-            if (base != null && exp != null) return listOf(base * Math.pow(10.0, exp.toDouble()))
+            if (base != null && exp != null) {
+                val result = base * Math.pow(10.0, exp.toDouble())
+                if (!result.isNaN() && !result.isInfinite()) return listOf(result)
+            }
+            return emptyList()
         }
-        val tok = Regex("""-?\d[\d.,]*""").find(t)?.value?.trimEnd('.', ',') ?: return emptyList()
+
+        // 4. Extração de número decimal simples ou com unidade
+        val tok = Regex("""^[+-]?\d[\d.,]*$""").find(t)?.value?.trimEnd('.', ',')
+        val targetToken = if (tok != null) {
+            tok
+        } else {
+            // Permite número com unidade no final (ex.: "62,5 m/s", "100 km/h", "R$ 50,00")
+            val tokenWithUnit = Regex("""^([+-]?\d[\d.,]*)\s*([a-zA-Z/°%Ωμ\^0-9\s]*)$""").find(t)
+            tokenWithUnit?.groupValues?.getOrNull(1)?.trimEnd('.', ',') ?: return emptyList()
+        }
+
         val out = mutableListOf<Double>()
-        val hasDot = tok.contains('.')
-        val hasComma = tok.contains(',')
+        val hasDot = targetToken.contains('.')
+        val hasComma = targetToken.contains(',')
         when {
             hasDot && hasComma -> {
-                val decimalIsComma = tok.lastIndexOf(',') > tok.lastIndexOf('.')
-                val cleaned = if (decimalIsComma) tok.replace(".", "").replace(',', '.')
-                else tok.replace(",", "")
+                val decimalIsComma = targetToken.lastIndexOf(',') > targetToken.lastIndexOf('.')
+                val cleaned = if (decimalIsComma) targetToken.replace(".", "").replace(',', '.')
+                else targetToken.replace(",", "")
                 cleaned.toDoubleOrNull()?.let(out::add)
             }
             hasComma -> {
-                if (tok.count { it == ',' } > 1) tok.replace(",", "").toDoubleOrNull()?.let(out::add)
-                else tok.replace(',', '.').toDoubleOrNull()?.let(out::add)
+                if (targetToken.count { it == ',' } > 1) targetToken.replace(",", "").toDoubleOrNull()?.let(out::add)
+                else targetToken.replace(',', '.').toDoubleOrNull()?.let(out::add)
             }
             hasDot -> {
-                tok.toDoubleOrNull()?.let(out::add)
-                // "1.000" pode ser milhar pt-BR
-                if (Regex("""-?\d{1,3}(\.\d{3})+""").matches(tok)) tok.replace(".", "").toDoubleOrNull()?.let(out::add)
+                targetToken.toDoubleOrNull()?.let(out::add)
+                if (Regex("""^[+-]?\d{1,3}(\.\d{3})+$""").matches(targetToken)) {
+                    targetToken.replace(".", "").toDoubleOrNull()?.let(out::add)
+                }
             }
-            else -> tok.toDoubleOrNull()?.let(out::add)
+            else -> targetToken.toDoubleOrNull()?.let(out::add)
         }
-        return out.distinct()
+        return out.filter { !it.isNaN() && !it.isInfinite() }.distinct()
     }
 
     // ---------------------------------------------------------------- entrada principal
@@ -207,8 +250,15 @@ object AnswerEvaluator {
             return wrong(q, q.concept, "Resposta não reconhecida",
                 listOf("Digite apenas um número (ex.: 62,5)."), "Informe um valor numérico; a unidade é opcional.")
         }
-        val tol = max(q.tolerance, abs(expected) * 1e-9)
-        if (candidates.any { abs(it - expected) <= tol }) return correct(q)
+        // Fórmula de tolerância:
+        // Se a questão declara tolerância explícita > 0, usa q.tolerance;
+        // caso contrário, aplica a tolerância relativa padrão de 1% (0,01 * |esperado|), com piso de 1e-6 para o zero.
+        val allowedTol = if (q.tolerance > 0.0) {
+            q.tolerance
+        } else {
+            max(1e-6, abs(expected) * DEFAULT_RELATIVE_TOLERANCE)
+        }
+        if (candidates.any { abs(it - expected) <= allowedTol }) return correct(q)
         val v = candidates.first()
         val diagnostics = mutableListOf("Você respondeu ${formatNum(v)}${unitSuffix(q)}; o valor correto é ${formatNum(expected)}${unitSuffix(q)}.")
         var concept: String? = null

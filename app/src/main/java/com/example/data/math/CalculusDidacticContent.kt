@@ -3,6 +3,12 @@ package com.example.data.math
 import com.example.data.model.FormulaOrSyntaxItem
 import com.example.data.model.LessonExample
 
+enum class DidacticContentStatus(val label: String, val badgeColorHex: String) {
+    REVIEWED("Conteúdo Completo & Revisado", "#10B981"),
+    PARTIALLY_REVIEWED("Parcialmente Revisado", "#F59E0B"),
+    PENDING_CURATION("Pendente de Curadoria", "#64748B")
+}
+
 data class CalculusDidacticBundle(
     val theoryMarkdown: String,
     val formulas: List<FormulaOrSyntaxItem> = emptyList(),
@@ -13,7 +19,8 @@ data class CalculusDidacticBundle(
     val assetImagePath: String? = null,
     val formulasAndSyntax: List<FormulaOrSyntaxItem> = emptyList(),
     val practicalExamples: List<LessonExample> = emptyList(),
-    val interactiveChallenge: String = ""
+    val interactiveChallenge: String = "",
+    val status: DidacticContentStatus = DidacticContentStatus.REVIEWED
 )
 
 object CalculusDidacticContent {

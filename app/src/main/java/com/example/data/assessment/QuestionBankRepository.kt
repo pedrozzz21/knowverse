@@ -46,10 +46,20 @@ data class SimuladoConfig(
     val includeLegacy: Boolean = true
 )
 
+data class QuarantinedQuestion(
+    val questionId: String,
+    val discipline: String,
+    val module: String,
+    val subtopic: String,
+    val reason: String,
+    val timestamp: Long = System.currentTimeMillis(),
+    val origin: String = "UniversalExerciseBank"
+)
+
 /**
  * Repositório unificado de questões e gerador de simulados (Etapa 5).
  * Carrega os 6 bancos JSON validados (1.930 questões distribuídas nas 193 aulas)
- * e preserva todos os exercícios legados do aplicativo.
+ * e preserva todos os exercícios legados do aplicativo devidamente associados.
  */
 object QuestionBankRepository {
 
@@ -72,6 +82,16 @@ object QuestionBankRepository {
 
     @Volatile
     private var cachedLegacyQuestions: List<BankQuestion>? = null
+
+    private val _quarantinedQuestions = mutableListOf<QuarantinedQuestion>()
+
+    fun getQuarantinedQuestions(): List<QuarantinedQuestion> = synchronized(this) {
+        _quarantinedQuestions.toList()
+    }
+
+    fun getQuarantineCount(): Int = synchronized(this) {
+        _quarantinedQuestions.size
+    }
 
     private fun readAssetText(context: Context?, relativePath: String): String {
         if (context != null) {
@@ -112,61 +132,98 @@ object QuestionBankRepository {
 
     private fun buildLegacyBridge(lessons: List<LessonRef>): List<BankQuestion> {
         val bySubject = lessons.groupBy { it.subject }
-        val fallbackLesson = lessons.firstOrNull() ?: return emptyList()
-        return try {
-            UniversalExerciseBank.getAllExercises().map { ex ->
-                val subj = mapDisciplineToSubject(ex.discipline, ex.category)
-                val subjectLessons = bySubject[subj].orEmpty()
-                val matchedLesson = subjectLessons.firstOrNull { l ->
-                    l.subtopic.equals(ex.subtopic, ignoreCase = true) ||
-                        l.subtopic.contains(ex.subtopic, ignoreCase = true) ||
-                        ex.subtopic.contains(l.subtopic, ignoreCase = true) ||
-                        l.title.contains(ex.subtopic, ignoreCase = true)
-                } ?: subjectLessons.firstOrNull() ?: fallbackLesson
+        val results = mutableListOf<BankQuestion>()
+        _quarantinedQuestions.clear()
 
-                val diff = when {
-                    ex.difficulty.contains("Fácil", ignoreCase = true) ||
-                        ex.difficulty.contains("Básico", ignoreCase = true) -> QDifficulty.EASY
-                    ex.difficulty.contains("Difícil", ignoreCase = true) ||
-                        ex.difficulty.contains("Desafiador", ignoreCase = true) -> QDifficulty.HARD
-                    else -> QDifficulty.MEDIUM
-                }
-
-                val isOfficialEnem = ex.discipline == ExerciseDiscipline.ENEM ||
-                    ex.source.contains("INEP", ignoreCase = true) ||
-                    ex.source.startsWith("ENEM 20", ignoreCase = true)
-
-                val explanationText = ex.solutionSteps.joinToString("\n").ifBlank {
-                    "Aplique o método '${ex.keyMethod}' aos dados do enunciado para chegar à alternativa correta."
-                }
-
-                val distractorList = ex.options.indices.map { idx ->
-                    if (idx == ex.correctIndex) ""
-                    else ex.pedagogicalAlert.ifBlank { "Revisar aplicação de ${ex.keyMethod} em ${ex.subtopic}" }
-                }
-
-                val q = Question(
-                    id = "legacy_${ex.id}",
-                    lessonId = matchedLesson.lessonId,
-                    format = QuestionFormat.MULTIPLE_CHOICE,
-                    difficulty = diff,
-                    skill = ex.keyMethod.ifBlank { "Resolver problema de ${ex.subtopic}" },
-                    concept = ex.subtopic.ifBlank { matchedLesson.subtopic },
-                    statement = ex.problemStatement,
-                    explanation = explanationText,
-                    retryGuidance = ex.pedagogicalAlert.ifBlank {
-                        "Revise o método '${ex.keyMethod}' na aula '${matchedLesson.title}' e refaça o cálculo."
-                    },
-                    source = if (isOfficialEnem) QuestionSource.INEP_ENEM else QuestionSource.LEGACY,
-                    options = ex.options,
-                    answerIndex = ex.correctIndex.coerceIn(0, (ex.options.size - 1).coerceAtLeast(0)),
-                    distractorConcepts = distractorList
-                )
-                BankQuestion(question = q, lesson = matchedLesson)
-            }
-        } catch (_: Throwable) {
-            emptyList()
+        val allExercises = try {
+            UniversalExerciseBank.getAllExercises()
+        } catch (e: Exception) {
+            android.util.Log.e("QuestionBankRepository", "Erro crítico ao carregar exercícios legados", e)
+            return emptyList()
         }
+
+        for (ex in allExercises) {
+            val subj = mapDisciplineToSubject(ex.discipline, ex.category)
+            val subjectLessons = bySubject[subj].orEmpty()
+            if (subjectLessons.isEmpty()) {
+                _quarantinedQuestions.add(
+                    QuarantinedQuestion(
+                        questionId = ex.id,
+                        discipline = ex.discipline.name,
+                        module = ex.category,
+                        subtopic = ex.subtopic,
+                        reason = "Disciplina '$subj' não possui aulas cadastradas no índice de aulas",
+                        origin = "UniversalExerciseBank:${ex.discipline.name}"
+                    )
+                )
+                continue
+            }
+
+            // Associação estrita: correspondência exata ou substantiva sem recorrer a fallback arbitrário
+            val matchedLesson = subjectLessons.firstOrNull { l ->
+                l.subtopic.equals(ex.subtopic, ignoreCase = true) ||
+                    (ex.subtopic.length >= 4 && l.subtopic.contains(ex.subtopic, ignoreCase = true)) ||
+                    (l.subtopic.length >= 4 && ex.subtopic.contains(l.subtopic, ignoreCase = true)) ||
+                    (ex.subtopic.length >= 4 && l.title.contains(ex.subtopic, ignoreCase = true))
+            }
+
+            if (matchedLesson == null) {
+                _quarantinedQuestions.add(
+                    QuarantinedQuestion(
+                        questionId = ex.id,
+                        discipline = ex.discipline.name,
+                        module = ex.category,
+                        subtopic = ex.subtopic,
+                        reason = "Subtópico '${ex.subtopic}' da disciplina '$subj' não corresponde a nenhuma aula mapeada",
+                        origin = "UniversalExerciseBank:${ex.discipline.name}"
+                    )
+                )
+                // Não adiciona aos simulados: preserva integridade pedagógica
+                continue
+            }
+
+            val diff = when {
+                ex.difficulty.contains("Fácil", ignoreCase = true) ||
+                    ex.difficulty.contains("Básico", ignoreCase = true) -> QDifficulty.EASY
+                ex.difficulty.contains("Difícil", ignoreCase = true) ||
+                    ex.difficulty.contains("Desafiador", ignoreCase = true) -> QDifficulty.HARD
+                else -> QDifficulty.MEDIUM
+            }
+
+            val isOfficialEnem = ex.discipline == ExerciseDiscipline.ENEM ||
+                ex.source.contains("INEP", ignoreCase = true) ||
+                ex.source.startsWith("ENEM 20", ignoreCase = true)
+
+            val explanationText = ex.solutionSteps.joinToString("\n").ifBlank {
+                "Aplique o método '${ex.keyMethod}' aos dados do enunciado para chegar à alternativa correta."
+            }
+
+            val distractorList = ex.options.indices.map { idx ->
+                if (idx == ex.correctIndex) ""
+                else ex.pedagogicalAlert.ifBlank { "Revisar aplicação de ${ex.keyMethod} em ${ex.subtopic}" }
+            }
+
+            val q = Question(
+                id = "legacy_${ex.id}",
+                lessonId = matchedLesson.lessonId,
+                format = QuestionFormat.MULTIPLE_CHOICE,
+                difficulty = diff,
+                skill = ex.keyMethod.ifBlank { "Resolver problema de ${ex.subtopic}" },
+                concept = ex.subtopic.ifBlank { matchedLesson.subtopic },
+                statement = ex.problemStatement,
+                explanation = explanationText,
+                retryGuidance = ex.pedagogicalAlert.ifBlank {
+                    "Revise o método '${ex.keyMethod}' na aula '${matchedLesson.title}' e refaça o cálculo."
+                },
+                source = if (isOfficialEnem) QuestionSource.INEP_ENEM else QuestionSource.LEGACY,
+                options = ex.options,
+                answerIndex = ex.correctIndex.coerceIn(0, (ex.options.size - 1).coerceAtLeast(0)),
+                distractorConcepts = distractorList
+            )
+            results.add(BankQuestion(question = q, lesson = matchedLesson))
+        }
+
+        return results
     }
 
     private fun mapDisciplineToSubject(discipline: ExerciseDiscipline, category: String): String {

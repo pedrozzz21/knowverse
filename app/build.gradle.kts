@@ -67,8 +67,13 @@ android {
     unitTests {
       isIncludeAndroidResources = true
       all {
-        it.systemProperty("robolectric.offline", "true")
-        it.systemProperty("robolectric.dependency.dir", "/home/appuser/.m2/repository/org/robolectric/android-all-instrumented/16-robolectric-13921718-i7")
+        val customRobolectricDir = System.getenv("ROBOLECTRIC_DEPENDENCY_DIR")
+          ?: (project.findProperty("robolectric.dependency.dir") as? String)
+          ?: "/home/appuser/.m2/repository/org/robolectric/android-all-instrumented/16-robolectric-13921718-i7"
+        if (file(customRobolectricDir).exists()) {
+          it.systemProperty("robolectric.offline", "true")
+          it.systemProperty("robolectric.dependency.dir", customRobolectricDir)
+        }
       }
     }
   }

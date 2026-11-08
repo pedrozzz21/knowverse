@@ -1,7 +1,7 @@
 package com.example.data.math
 
 /**
- * Ponto de interesse matemático a ser plotado no GeoGebra (ex: buracos de descontinuidade removível,
+ * Ponto notável ou de interesse matemático a ser plotado no gráfico (ex: buracos de descontinuidade removível,
  * raízes, máximos/mínimos ou ponto de tangência).
  */
 data class GeoGebraPoint(
@@ -14,14 +14,14 @@ data class GeoGebraPoint(
 )
 
 /**
- * Configuração analítica do GeoGebra Applet para cada aula de Cálculo.
- * Conecta-se diretamente à API GeoGebra (deployggb.js / GGBApplet) para renderizar
- * gráficos dinâmicos de alta precisão, permitindo manipulação de funções, zoom e exploração.
+ * Configuração analítica do Visualizador Matemático Interativo do Knowverse.
+ * Fornece parâmetros completos para renderização vetorial de alta precisão em Jetpack Compose Canvas,
+ * permitindo manipulação dinâmica de funções, zoom contínuo, tangentes, integrais e descontinuidades.
  */
 data class GeoGebraGraphConfig(
     val title: String,
     val functionExpression: String,
-    val commands: List<String>,
+    val commands: List<String> = emptyList(),
     val xMin: Double = -5.0,
     val xMax: Double = 5.0,
     val yMin: Double = -5.0,
@@ -34,5 +34,11 @@ data class GeoGebraGraphConfig(
     val showAsymptotes: Boolean = false,
     val showAreaUnderCurve: Boolean = false,
     val integralA: Double = 0.0,
-    val integralB: Double = 2.0
+    val integralB: Double = 2.0,
+    // Recursos Avançados Expandidos (100% retrocompatíveis)
+    val secondaryFunctionExpression: String? = null,
+    val showRiemannSum: Boolean = false,
+    val riemannPartitions: Int = 8,
+    val showRoots: Boolean = false,
+    val showExtrema: Boolean = false
 )

@@ -59,6 +59,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableDoubleStateOf
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
@@ -130,6 +131,8 @@ class MathGraphLabState(config: GeoGebraGraphConfig) {
     var showExtremaOverlay by mutableStateOf(config.showExtrema)
     var showInflectionOverlay by mutableStateOf(false)
     var showAsymptotesOverlay by mutableStateOf(config.showAsymptotes)
+    var showDerivativeCurve by mutableStateOf(false)
+    val extraFunctions = mutableStateListOf<UserPlottedFunction>()
 
     fun resetToDefault(config: GeoGebraGraphConfig) {
         activeExpression = config.functionExpression
@@ -148,6 +151,8 @@ class MathGraphLabState(config: GeoGebraGraphConfig) {
         showExtremaOverlay = config.showExtrema
         showInflectionOverlay = false
         showAsymptotesOverlay = config.showAsymptotes
+        showDerivativeCurve = false
+        extraFunctions.clear()
     }
 }
 
@@ -170,9 +175,46 @@ fun GeoGebraMathGraphView(
     }
     var isFullScreenDialogVisible by remember { mutableStateOf(false) }
 
-    // Primitivas geométricas extraídas de config.commands (cacheadas por config)
-    val commandPrimitives = remember(config.commands, labState.activeExpression) {
+    // Primitivas geométricas extraídas de config.commands + funções extras + curva derivada simbólica f'(x)
+    val baseCommandPrimitives = remember(config.commands, labState.activeExpression) {
         GeoGebraCommandParser.parse(config.commands, labState.activeExpression)
+    }
+    val symbolicDerivInfo = remember(labState.activeExpression, labState.showDerivativeCurve) {
+        if (labState.showDerivativeCurve) {
+            com.example.data.math.engine.SymbolicAndNumericalAnalyzer.differentiate(labState.activeExpression)
+        } else null
+    }
+    val commandPrimitives = remember(
+        baseCommandPrimitives,
+        labState.extraFunctions.toList(),
+        labState.showDerivativeCurve,
+        symbolicDerivInfo
+    ) {
+        buildList {
+            addAll(baseCommandPrimitives)
+            for (uf in labState.extraFunctions) {
+                if (uf.isVisible) {
+                    add(
+                        GeoGebraCommandPrimitive.ExtraFunction(
+                            id = uf.id,
+                            expression = uf.expression,
+                            colorHex = uf.colorHex,
+                            isDashed = false
+                        )
+                    )
+                }
+            }
+            if (labState.showDerivativeCurve && symbolicDerivInfo?.isSymbolicExact == true) {
+                add(
+                    GeoGebraCommandPrimitive.ExtraFunction(
+                        id = "deriv_fx",
+                        expression = symbolicDerivInfo.derivativeExpression,
+                        colorHex = "#EAB308",
+                        isDashed = true
+                    )
+                )
+            }
+        }
     }
 
     // Verifica se a expressão principal é apenas o eixo neutro "0*x" usado em figuras puramente geométricas
@@ -808,11 +850,16 @@ fun GeoGebraMathGraphView(
                         .testTag("native_math_canvas")
                 )
 
-                // Tooltip de inspeção flutuante com coordenadas e derivada instantânea
+                // Tooltip de inspeção flutuante com coordenadas, derivada instantânea e classificação de ponto notável
                 if (labState.inspectedX != null && !isPureGeometryScene) {
                     val ix = labState.inspectedX!!
                     val iy = MathExpressionEvaluator.evaluate(labState.activeExpression, ix)
                     val iSlope = MathExpressionEvaluator.derivative(labState.activeExpression, ix)
+                    val pointBadge = when {
+                        !iy.isNaN() && kotlin.math.abs(iy) < 0.08 -> "Raiz aproximada"
+                        !iSlope.isNaN() && kotlin.math.abs(iSlope) < 0.08 -> "Ponto crítico (f'≈0)"
+                        else -> null
+                    }
                     Surface(
                         color = Color(0xEE0F172A),
                         shape = RoundedCornerShape(6.dp),
@@ -822,47 +869,55 @@ fun GeoGebraMathGraphView(
                             .padding(8.dp)
                             .testTag("graph_inspect_tooltip")
                     ) {
-                        Row(
-                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Box(
-                                modifier = Modifier
-                                    .size(6.dp)
-                                    .clip(CircleShape)
-                                    .background(Color(0xFF38BDF8))
-                            )
-                            Spacer(modifier = Modifier.width(6.dp))
-                            Text(
-                                text = buildString {
-                                    append("x = ${String.format(Locale.US, "%.3f", ix)}")
-                                    append("  |  y = ${if (iy.isNaN()) "Indef." else String.format(Locale.US, "%.3f", iy)}")
-                                    if (!iSlope.isNaN()) {
-                                        append("  |  f'(x) = ${String.format(Locale.US, "%.2f", iSlope)}")
-                                    }
-                                },
-                                color = Color(0xFFF8FAFC),
-                                fontFamily = FontFamily.Monospace,
-                                fontSize = 10.5.sp,
-                                fontWeight = FontWeight.Bold
-                            )
+                        Column(modifier = Modifier.padding(horizontal = 8.dp, vertical = 5.dp)) {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(6.dp)
+                                        .clip(CircleShape)
+                                        .background(Color(0xFF38BDF8))
+                                )
+                                Spacer(modifier = Modifier.width(6.dp))
+                                Text(
+                                    text = buildString {
+                                        append("x = ${String.format(Locale.US, "%.3f", ix)}")
+                                        append("  |  f(x) = ${if (iy.isNaN()) "Indef." else String.format(Locale.US, "%.3f", iy)}")
+                                        if (!iSlope.isNaN()) {
+                                            append("  |  f'(x) = ${String.format(Locale.US, "%.2f", iSlope)}")
+                                        }
+                                    },
+                                    color = Color(0xFFF8FAFC),
+                                    fontFamily = FontFamily.Monospace,
+                                    fontSize = 11.sp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            }
+                            if (pointBadge != null) {
+                                Text(
+                                    text = pointBadge,
+                                    color = GoldXp,
+                                    fontSize = 10.5.sp,
+                                    fontWeight = FontWeight.SemiBold,
+                                    modifier = Modifier.padding(start = 12.dp, top = 2.dp)
+                                )
+                            }
                         }
                     }
                 }
 
-                // Toolbar flutuante com botões de Zoom e Reset (Canto Superior Direito)
+                // Toolbar flutuante com botões de Zoom, Auto-Ajuste de Escala Y e Reset (Canto Superior Direito)
                 Row(
                     modifier = Modifier
                         .align(Alignment.TopEnd)
                         .padding(8.dp),
-                    horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    horizontalArrangement = Arrangement.spacedBy(6.dp)
                 ) {
                     Surface(
                         color = Color(0xD91E293B),
                         shape = RoundedCornerShape(6.dp),
                         border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x3394A3B8)),
                         modifier = Modifier
-                            .size(28.dp)
+                            .size(34.dp)
                             .testTag("graph_zoom_in_btn")
                             .clickable {
                                 val xSpan = labState.curXMax - labState.curXMin
@@ -876,7 +931,7 @@ fun GeoGebraMathGraphView(
                             }
                     ) {
                         Box(contentAlignment = Alignment.Center) {
-                            Icon(Icons.Default.Add, contentDescription = "Zoom In", tint = Color(0xFF94A3B8), modifier = Modifier.size(14.dp))
+                            Icon(Icons.Default.Add, contentDescription = "Zoom In", tint = Color(0xFF94A3B8), modifier = Modifier.size(16.dp))
                         }
                     }
 
@@ -885,7 +940,7 @@ fun GeoGebraMathGraphView(
                         shape = RoundedCornerShape(6.dp),
                         border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x3394A3B8)),
                         modifier = Modifier
-                            .size(28.dp)
+                            .size(34.dp)
                             .testTag("graph_zoom_out_btn")
                             .clickable {
                                 val xSpan = labState.curXMax - labState.curXMin
@@ -899,7 +954,48 @@ fun GeoGebraMathGraphView(
                             }
                     ) {
                         Box(contentAlignment = Alignment.Center) {
-                            Icon(Icons.Default.Remove, contentDescription = "Zoom Out", tint = Color(0xFF94A3B8), modifier = Modifier.size(14.dp))
+                            Icon(Icons.Default.Remove, contentDescription = "Zoom Out", tint = Color(0xFF94A3B8), modifier = Modifier.size(16.dp))
+                        }
+                    }
+
+                    if (!isPureGeometryScene) {
+                        Surface(
+                            color = Color(0xD91E293B),
+                            shape = RoundedCornerShape(6.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x3394A3B8)),
+                            modifier = Modifier
+                                .size(34.dp)
+                                .testTag("graph_autoscale_btn")
+                                .clickable {
+                                    val samples = 120
+                                    val step = (labState.curXMax - labState.curXMin) / samples
+                                    var minY = Double.POSITIVE_INFINITY
+                                    var maxY = Double.NEGATIVE_INFINITY
+                                    val compiled = MathExpressionEvaluator.compile(labState.activeExpression)
+                                    for (i in 0..samples) {
+                                        val sx = labState.curXMin + i * step
+                                        val sy = compiled.evaluate(sx)
+                                        if (sy.isFinite() && kotlin.math.abs(sy) < 1e4) {
+                                            if (sy < minY) minY = sy
+                                            if (sy > maxY) maxY = sy
+                                        }
+                                    }
+                                    if (minY.isFinite() && maxY.isFinite()) {
+                                        val span = (maxY - minY).coerceAtLeast(2.0)
+                                        val pad = span * 0.18
+                                        labState.curYMin = minY - pad
+                                        labState.curYMax = maxY + pad
+                                    }
+                                }
+                        ) {
+                            Box(contentAlignment = Alignment.Center) {
+                                Icon(
+                                    imageVector = KnowverseIcons.AutoScale,
+                                    contentDescription = "Auto-ajustar escala Y",
+                                    tint = Color(0xFF38BDF8),
+                                    modifier = Modifier.size(16.dp)
+                                )
+                            }
                         }
                     }
 
@@ -908,7 +1004,7 @@ fun GeoGebraMathGraphView(
                         shape = RoundedCornerShape(6.dp),
                         border = androidx.compose.foundation.BorderStroke(1.dp, Color(0x3394A3B8)),
                         modifier = Modifier
-                            .size(28.dp)
+                            .size(34.dp)
                             .testTag("graph_reset_canvas_btn")
                             .clickable {
                                 labState.curXMin = config.xMin
@@ -919,10 +1015,106 @@ fun GeoGebraMathGraphView(
                             }
                     ) {
                         Box(contentAlignment = Alignment.Center) {
-                            Icon(Icons.Default.RestartAlt, contentDescription = "Reset", tint = Color(0xFF94A3B8), modifier = Modifier.size(14.dp))
+                            Icon(Icons.Default.RestartAlt, contentDescription = "Reset", tint = Color(0xFF94A3B8), modifier = Modifier.size(16.dp))
                         }
                     }
                 }
+            }
+
+            // 6b. Barra de Legenda Visual das Curvas e Janela Cartesiana
+            if (!isPureGeometryScene) {
+                Spacer(modifier = Modifier.height(6.dp))
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .horizontalScroll(rememberScrollState()),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Box(
+                            modifier = Modifier
+                                .size(10.dp, 3.dp)
+                                .clip(RoundedCornerShape(1.5.dp))
+                                .background(Color(0xFF38BDF8))
+                        )
+                        Spacer(modifier = Modifier.width(5.dp))
+                        Text(
+                            text = "f(x)",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = TextPrimary,
+                            fontFamily = FontFamily.Monospace
+                        )
+                    }
+
+                    if (config.showTangentSlider) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Box(
+                                modifier = Modifier
+                                    .size(10.dp, 3.dp)
+                                    .clip(RoundedCornerShape(1.5.dp))
+                                    .background(GoldXp)
+                            )
+                            Spacer(modifier = Modifier.width(5.dp))
+                            Text("Tangente", style = MaterialTheme.typography.labelSmall, color = TextSecondary)
+                        }
+                    }
+
+                    Text(
+                        text = String.format(
+                            Locale.US,
+                            "Janela: x ∈ [%.1f, %.1f] • y ∈ [%.1f, %.1f]",
+                            labState.curXMin,
+                            labState.curXMax,
+                            labState.curYMin,
+                            labState.curYMax
+                        ),
+                        style = MaterialTheme.typography.labelSmall,
+                        color = TextSecondary,
+                        fontFamily = FontFamily.Monospace
+                    )
+                }
+
+                Spacer(modifier = Modifier.height(8.dp))
+
+                // 6c. Painel Interativo da Etapa 3 (Múltiplas Funções, Derivada Simbólica, Integrais, Polares, Geometria e Estatística)
+                InteractiveMathWorkbenchPanel(
+                    primaryExpression = labState.activeExpression,
+                    xMin = labState.curXMin,
+                    xMax = labState.curXMax,
+                    yMin = labState.curYMin,
+                    yMax = labState.curYMax,
+                    extraFunctions = labState.extraFunctions,
+                    showDerivativeCurve = labState.showDerivativeCurve,
+                    onToggleDerivativeCurve = { labState.showDerivativeCurve = it },
+                    onAddExtraFunction = { expr, hex ->
+                        val nextIdx = labState.extraFunctions.size + 1
+                        val labelName = "g$nextIdx"
+                        labState.extraFunctions.add(
+                            UserPlottedFunction(
+                                id = "uf_${System.currentTimeMillis()}_$nextIdx",
+                                label = labelName,
+                                expression = expr,
+                                colorHex = hex,
+                                isVisible = true
+                            )
+                        )
+                    },
+                    onToggleExtraFunctionVisibility = { id ->
+                        val idx = labState.extraFunctions.indexOfFirst { it.id == id }
+                        if (idx >= 0) {
+                            val cur = labState.extraFunctions[idx]
+                            labState.extraFunctions[idx] = cur.copy(isVisible = !cur.isVisible)
+                        }
+                    },
+                    onRemoveExtraFunction = { id ->
+                        labState.extraFunctions.removeAll { it.id == id }
+                    },
+                    onApplyExpressionToPrimary = { newExpr ->
+                        labState.activeExpression = newExpr
+                        labState.customInputText = newExpr
+                    }
+                )
             }
 
             Spacer(modifier = Modifier.height(10.dp))
@@ -1227,6 +1419,52 @@ fun NativeMathGraphCanvas(
         config.secondaryFunctionExpression?.let { MathExpressionEvaluator.compile(it) }
     }
 
+    val numPaint = remember {
+        android.graphics.Paint().apply {
+            color = 0xAA94A3B8.toInt()
+            textSize = 21f
+            typeface = android.graphics.Typeface.MONOSPACE
+            isAntiAlias = true
+        }
+    }
+    val axisLabelPaint = remember {
+        android.graphics.Paint().apply {
+            color = 0xFF67E8F9.toInt()
+            textSize = 25f
+            typeface = android.graphics.Typeface.DEFAULT_BOLD
+            isAntiAlias = true
+        }
+    }
+    val ptPaint = remember {
+        android.graphics.Paint().apply {
+            color = 0xFFF8FAFC.toInt()
+            textSize = 20f
+            typeface = android.graphics.Typeface.DEFAULT_BOLD
+            isAntiAlias = true
+        }
+    }
+    val allPointsToRender = remember(config.analysisPoints, detectedRoots, detectedExtrema, detectedInflections) {
+        buildList {
+            addAll(config.analysisPoints)
+            detectedRoots.forEach { rx ->
+                if (none { abs(it.x - rx) < 1e-2 && abs(it.y) < 1e-2 }) {
+                    add(GeoGebraPoint("R", rx, 0.0, "Raiz", isOpenCircle = false, colorHex = "#10B981"))
+                }
+            }
+            detectedExtrema.forEach { ex ->
+                if (none { abs(it.x - ex.x) < 1e-2 && abs(it.y - ex.y) < 1e-2 }) {
+                    val hex = if (ex.type == CriticalPointType.LOCAL_MAXIMUM) "#34D399" else "#F59E0B"
+                    add(GeoGebraPoint("E", ex.x, ex.y, ex.label, isOpenCircle = false, colorHex = hex))
+                }
+            }
+            detectedInflections.forEach { inf ->
+                if (none { abs(it.x - inf.x) < 1e-2 && abs(it.y - inf.y) < 1e-2 }) {
+                    add(GeoGebraPoint("I", inf.x, inf.y, inf.label, isOpenCircle = false, colorHex = "#C084FC"))
+                }
+            }
+        }
+    }
+
     Canvas(
         modifier = modifier
             .fillMaxSize()
@@ -1393,13 +1631,6 @@ fun NativeMathGraphCanvas(
 
             // 6. Rótulos numéricos dos eixos
             drawIntoCanvas { canvas ->
-                val numPaint = android.graphics.Paint().apply {
-                    color = 0xAA94A3B8.toInt()
-                    textSize = 21f
-                    typeface = android.graphics.Typeface.MONOSPACE
-                    isAntiAlias = true
-                }
-
                 var lx = floor(curXMin / xStep) * xStep
                 while (lx <= curXMax) {
                     if (abs(lx) > 1e-4) {
@@ -1428,12 +1659,6 @@ fun NativeMathGraphCanvas(
                     canvas.nativeCanvas.drawText("0", p0X - 14f, p0Y + 18f, numPaint)
                 }
 
-                val axisLabelPaint = android.graphics.Paint().apply {
-                    color = 0xFF67E8F9.toInt()
-                    textSize = 25f
-                    typeface = android.graphics.Typeface.DEFAULT_BOLD
-                    isAntiAlias = true
-                }
                 canvas.nativeCanvas.drawText("x", w - 18f, xAxisY - 7f, axisLabelPaint)
                 canvas.nativeCanvas.drawText("y", yAxisX + 10f, 22f, axisLabelPaint)
             }
@@ -1689,7 +1914,23 @@ fun NativeMathGraphCanvas(
                         )
                     }
 
-                    is GeoGebraCommandPrimitive.NamedPoint -> Unit
+                    is GeoGebraCommandPrimitive.NamedPoint -> {
+                        if (primitive.x in curXMin..curXMax && primitive.y in curYMin..curYMax) {
+                            val pX = toPxX(primitive.x)
+                            val pY = toPxY(primitive.y)
+                            val ptColor = parseSafeColor(primitive.colorHex, Color(0xFFF59E0B))
+                            drawCircle(
+                                color = Color(0xFF090D16),
+                                radius = 5.2.dp.toPx(),
+                                center = Offset(pX, pY)
+                            )
+                            drawCircle(
+                                color = ptColor,
+                                radius = 4.0.dp.toPx(),
+                                center = Offset(pX, pY)
+                            )
+                        }
+                    }
                 }
             }
 
@@ -1798,27 +2039,6 @@ fun NativeMathGraphCanvas(
             // 14. Pontos Notáveis (analysisPoints + Raízes + Extremos + Inflexão) com Rótulos Anti-Colisão
             val occupiedLabelRects = mutableListOf<Rect>()
 
-            // Combina os pontos configurados com os detectados dinamicamente
-            val allPointsToRender = buildList {
-                addAll(config.analysisPoints)
-                detectedRoots.forEach { rx ->
-                    if (none { abs(it.x - rx) < 1e-2 && abs(it.y) < 1e-2 }) {
-                        add(GeoGebraPoint("R", rx, 0.0, "Raiz", isOpenCircle = false, colorHex = "#10B981"))
-                    }
-                }
-                detectedExtrema.forEach { ex ->
-                    if (none { abs(it.x - ex.x) < 1e-2 && abs(it.y - ex.y) < 1e-2 }) {
-                        val hex = if (ex.type == CriticalPointType.LOCAL_MAXIMUM) "#34D399" else "#F59E0B"
-                        add(GeoGebraPoint("E", ex.x, ex.y, ex.label, isOpenCircle = false, colorHex = hex))
-                    }
-                }
-                detectedInflections.forEach { inf ->
-                    if (none { abs(it.x - inf.x) < 1e-2 && abs(it.y - inf.y) < 1e-2 }) {
-                        add(GeoGebraPoint("I", inf.x, inf.y, inf.label, isOpenCircle = false, colorHex = "#C084FC"))
-                    }
-                }
-            }
-
             allPointsToRender.forEach { pt ->
                 if (pt.x in curXMin..curXMax && pt.y in curYMin..curYMax) {
                     val pX = toPxX(pt.x)
@@ -1852,12 +2072,6 @@ fun NativeMathGraphCanvas(
 
                     // Posicionamento inteligente anti-colisão do rótulo
                     drawIntoCanvas { canvas ->
-                        val ptPaint = android.graphics.Paint().apply {
-                            color = 0xFFF8FAFC.toInt()
-                            textSize = 20f
-                            typeface = android.graphics.Typeface.DEFAULT_BOLD
-                            isAntiAlias = true
-                        }
                         val label = "${pt.label} (${formatCoord(pt.x)}, ${formatCoord(pt.y)})"
                         val textWidth = ptPaint.measureText(label)
                         val textHeight = 22f

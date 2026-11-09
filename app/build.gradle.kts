@@ -93,6 +93,24 @@ secrets {
 
 googleServices { missingGoogleServicesStrategy = MissingGoogleServicesStrategy.WARN }
 
+// Garante que builds limpos em novas máquinas ou CI funcionem sem falha na task
+// processDebugGoogleServices / processReleaseGoogleServices caso google-services.json
+// não esteja presente localmente, copiando o template de desenvolvimento versionado.
+val ensureGoogleServicesConfig = tasks.register("ensureGoogleServicesConfig") {
+  val targetFile = file("google-services.json")
+  val templateFile = file("google-services.example.json")
+  outputs.file(targetFile)
+  onlyIf { !targetFile.exists() && templateFile.exists() }
+  doLast {
+    templateFile.copyTo(targetFile, overwrite = false)
+    logger.lifecycle("KnowVerse Build: google-services.json gerado a partir de google-services.example.json para build local.")
+  }
+}
+
+tasks.matching { it.name.startsWith("process") && it.name.endsWith("GoogleServices") }.configureEach {
+  dependsOn(ensureGoogleServicesConfig)
+}
+
 // Some unused dependencies are commented out below instead of being removed.
 // This makes it easy to add them back in the future if needed.
 dependencies {
@@ -151,4 +169,10 @@ dependencies {
   debugImplementation(libs.androidx.compose.ui.tooling)
   "ksp"(libs.androidx.room.compiler)
   "ksp"(libs.moshi.kotlin.codegen)
+}
+
+tasks.withType<Test>().configureEach {
+  val kotlinClasses = layout.buildDirectory.dir("intermediates/built_in_kotlinc/debugUnitTest/compileDebugUnitTestKotlin/classes")
+  testClassesDirs = testClassesDirs + files(kotlinClasses)
+  classpath = classpath + files(kotlinClasses)
 }

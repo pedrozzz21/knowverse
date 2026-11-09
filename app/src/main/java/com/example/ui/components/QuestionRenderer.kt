@@ -95,17 +95,29 @@ fun QuestionRendererCard(
     bankQuestion: BankQuestion,
     questionNumber: Int? = null,
     pythonEngine: PythonEngine? = null,
+    existingAnswer: UserAnswer? = null,
     existingFeedback: Feedback? = null,
+    onAnswerDraftChanged: (UserAnswer) -> Unit = {},
     onEvaluated: (UserAnswer, Feedback) -> Unit = { _, _ -> }
 ) {
     val q = bankQuestion.question
     val lesson = bankQuestion.lesson
     val scope = rememberCoroutineScope()
 
-    var selectedOption by remember(q.id) { mutableIntStateOf(-1) }
-    var selectedBool by remember(q.id) { mutableStateOf<Boolean?>(null) }
-    var textAnswer by remember(q.id) { mutableStateOf(q.code?.starter ?: "") }
-    val pairSelections = remember(q.id) { mutableStateMapOf<String, String>() }
+    var selectedOption by remember(q.id, existingAnswer) {
+        mutableIntStateOf((existingAnswer as? UserAnswer.Choice)?.index ?: -1)
+    }
+    var selectedBool by remember(q.id, existingAnswer) {
+        mutableStateOf((existingAnswer as? UserAnswer.Bool)?.value)
+    }
+    var textAnswer by remember(q.id, existingAnswer) {
+        mutableStateOf((existingAnswer as? UserAnswer.Text)?.value ?: (q.code?.starter ?: ""))
+    }
+    val pairSelections = remember(q.id, existingAnswer) {
+        mutableStateMapOf<String, String>().apply {
+            (existingAnswer as? UserAnswer.Pairs)?.mapping?.let { putAll(it) }
+        }
+    }
     var activeLeftKey by remember(q.id) { mutableStateOf<String?>(null) }
     val shuffledRights = remember(q.id) {
         q.pairs.map { it.second }.shuffled()
@@ -219,7 +231,10 @@ fun QuestionRendererCard(
                                     .clip(RoundedCornerShape(10.dp))
                                     .background(bgColor)
                                     .border(1.dp, borderColor, RoundedCornerShape(10.dp))
-                                    .clickable(enabled = feedback == null) { selectedOption = idx }
+                                    .clickable(enabled = feedback == null) {
+                                        selectedOption = idx
+                                        onAnswerDraftChanged(UserAnswer.Choice(idx))
+                                    }
                                     .padding(12.dp)
                             ) {
                                 Box(
@@ -263,7 +278,10 @@ fun QuestionRendererCard(
                                     .clip(RoundedCornerShape(10.dp))
                                     .background(bgColor)
                                     .border(1.dp, borderColor, RoundedCornerShape(10.dp))
-                                    .clickable(enabled = feedback == null) { selectedBool = boolVal }
+                                    .clickable(enabled = feedback == null) {
+                                        selectedBool = boolVal
+                                        onAnswerDraftChanged(UserAnswer.Bool(boolVal))
+                                    }
                                     .padding(vertical = 14.dp, horizontal = 12.dp)
                             ) {
                                 Text(
@@ -338,6 +356,7 @@ fun QuestionRendererCard(
                                             ?: q.pairs.firstOrNull()?.first
                                         if (targetKey != null) {
                                             pairSelections[targetKey] = rightOption
+                                            onAnswerDraftChanged(UserAnswer.Pairs(pairSelections.toMap()))
                                             val nextUnassigned = q.pairs.firstOrNull { !pairSelections.containsKey(it.first) }?.first
                                             activeLeftKey = nextUnassigned
                                         }
@@ -362,7 +381,12 @@ fun QuestionRendererCard(
                 QuestionFormat.FILL_BLANK -> {
                     OutlinedTextField(
                         value = textAnswer,
-                        onValueChange = { if (feedback == null) textAnswer = it },
+                        onValueChange = {
+                            if (feedback == null) {
+                                textAnswer = it
+                                onAnswerDraftChanged(UserAnswer.Text(it))
+                            }
+                        },
                         label = { Text("Preencha o termo da lacuna") },
                         singleLine = true,
                         colors = textFieldColors(),
@@ -374,7 +398,12 @@ fun QuestionRendererCard(
                     val unitHint = if (q.unit.isNotBlank()) " (Unidade esperada: ${q.unit})" else ""
                     OutlinedTextField(
                         value = textAnswer,
-                        onValueChange = { if (feedback == null) textAnswer = it },
+                        onValueChange = {
+                            if (feedback == null) {
+                                textAnswer = it
+                                onAnswerDraftChanged(UserAnswer.Text(it))
+                            }
+                        },
                         label = { Text("Resposta numérica$unitHint") },
                         placeholder = { Text("Ex.: 12,5") },
                         singleLine = true,
@@ -413,7 +442,12 @@ fun QuestionRendererCard(
                         }
                         OutlinedTextField(
                             value = textAnswer,
-                            onValueChange = { if (feedback == null) textAnswer = it },
+                            onValueChange = {
+                                if (feedback == null) {
+                                    textAnswer = it
+                                    onAnswerDraftChanged(UserAnswer.Text(it))
+                                }
+                            },
                             label = { Text("Redija sua justificativa conceitual e analítica") },
                             minLines = 4,
                             maxLines = 8,
@@ -447,7 +481,12 @@ fun QuestionRendererCard(
                         }
                         OutlinedTextField(
                             value = textAnswer,
-                            onValueChange = { if (feedback == null) textAnswer = it },
+                            onValueChange = {
+                                if (feedback == null) {
+                                    textAnswer = it
+                                    onAnswerDraftChanged(UserAnswer.Text(it))
+                                }
+                            },
                             textStyle = CodeTextStyle.copy(fontSize = 13.sp, color = TextPrimary),
                             minLines = 6,
                             maxLines = 14,

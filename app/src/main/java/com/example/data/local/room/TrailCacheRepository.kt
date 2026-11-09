@@ -1,6 +1,9 @@
 package com.example.data.local.room
 
 import android.content.Context
+import com.example.data.local.assets.CurriculumAssetLoader
+import com.example.data.local.assets.CurriculumPage
+import com.example.data.local.assets.SubjectAssetManifestEntry
 import com.example.data.math.CalculusCurriculum
 import com.example.data.model.DifficultyTier
 import com.example.data.model.FormulaOrSyntaxItem
@@ -341,6 +344,56 @@ class TrailCacheRepository(
             }
         }
 
+        // 7. Matemática ENEM Trail
+        val enemMathTrailId = "trail_enem_matematica"
+        val enemMathModules = com.example.data.math.EnemMathCurriculum.getAllModules()
+        val totalEnemMathLessons = enemMathModules.sumOf { it.lessons.size }
+
+        trailsToInsert.add(
+            CachedTrailEntity(
+                id = enemMathTrailId,
+                title = "Matemática e suas Tecnologias ENEM",
+                description = "Trilha oficial com Proporcionalidade, Funções, Geometria Plana/Espacial, Estatística e Probabilidade.",
+                category = "Matemática",
+                subject = "Matemática ENEM",
+                tierOrModule = "ENEM",
+                totalLessons = totalEnemMathLessons,
+                estimatedHours = "${totalEnemMathLessons * 25 / 60}h",
+                isAvailable = true
+            )
+        )
+
+        for (module in enemMathModules) {
+            val unitId = "unit_${module.id}"
+            val unitEntity = CachedUnitEntity(
+                id = unitId,
+                trailId = enemMathTrailId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                tier = "BASIC",
+                category = "Matemática",
+                subject = "Matemática ENEM",
+                lessonCount = module.lessons.size
+            )
+            unitsToInsert.add(unitEntity)
+
+            val unitModel = LearningUnit(
+                id = unitId,
+                unitNumber = module.moduleNumber,
+                title = module.title,
+                description = module.summary,
+                lessons = emptyList(),
+                category = "Matemática",
+                subject = "Matemática ENEM"
+            )
+
+            for (enemLesson in module.lessons) {
+                val appLesson = enemLesson.toAppLesson()
+                lessonsToInsert.add(mapLessonToEntity(appLesson, enemMathTrailId, unitModel))
+            }
+        }
+
         // 8. Química ENEM Trail
         val quimTrailId = "trail_enem_quimica"
         val quimModules = com.example.data.chemistry.EnemChemistryCurriculum.getAllModules()
@@ -519,6 +572,35 @@ class TrailCacheRepository(
         return dao.getLessonsForTrail(trailId).map { list ->
             list.map { mapEntityToLesson(it) }
         }
+    }
+
+    /**
+     * Retorna o manifesto leve de trilhas a partir dos assets JSON (`assets/curricula/manifest.json`).
+     */
+    suspend fun getCurriculumManifest(): List<SubjectAssetManifestEntry> = withContext(Dispatchers.IO) {
+        CurriculumAssetLoader.loadManifest(context)
+    }
+
+    /**
+     * Carrega uma página de módulos (`LearningUnit`) sob demanda via `CurriculumAssetLoader`.
+     */
+    suspend fun getUnitsPageForSubject(
+        subjectId: String,
+        page: Int,
+        pageSize: Int = 2
+    ): CurriculumPage<LearningUnit> = withContext(Dispatchers.IO) {
+        CurriculumAssetLoader.loadUnitsPage(context, subjectId, page, pageSize)
+    }
+
+    /**
+     * Carrega uma página de aulas (`Lesson`) sob demanda via `CurriculumAssetLoader`.
+     */
+    suspend fun getLessonsPageForSubject(
+        subjectId: String,
+        page: Int,
+        pageSize: Int = 5
+    ): CurriculumPage<Lesson> = withContext(Dispatchers.IO) {
+        CurriculumAssetLoader.loadLessonsPage(context, subjectId, page, pageSize)
     }
 
     // --- JSON Converters ---

@@ -928,7 +928,7 @@ object MathExpressionEvaluator {
                     val word = sb.toString().lowercase()
                     splitImplicitIdentifier(word, rawTokens)
                 }
-                c in "+-*/^(),<>!=%?:" -> {
+                c in "+-*/^(),<>!=%?:|&" -> {
                     if (i < s.length - 1) {
                         val next = s[i + 1]
                         val two = "$c$next"
@@ -937,6 +937,9 @@ object MathExpressionEvaluator {
                             i += 2
                             continue
                         }
+                    }
+                    if (c == '|' || c == '&') {
+                        throw IllegalArgumentException("Operador lógico incompleto: '$c'")
                     }
                     rawTokens.add(c.toString())
                     i++
@@ -1003,11 +1006,19 @@ object MathExpressionEvaluator {
         if (!input.contains('|')) return input
         val sb = StringBuilder()
         var barDepth = 0
-        for (i in input.indices) {
+        var i = 0
+        while (i < input.length) {
             val c = input[i]
             if (c == '|') {
-                // Uma barra '|' abre um módulo se está no início ou logo após um operador/parêntese de abertura/vírgula
                 val prevChar = if (i > 0) input[i - 1] else ' '
+                val isAfterOperatorOrStart = i == 0 || prevChar in "+-*/^(,<>=!&?:"
+                // Preserva o operador lógico OR '||' quando estamos fora de barras de módulo após um operando
+                if (barDepth == 0 && !isAfterOperatorOrStart && i + 1 < input.length && input[i + 1] == '|') {
+                    sb.append("||")
+                    i += 2
+                    continue
+                }
+                // Uma barra '|' abre um módulo se está no início ou logo após um operador/parêntese de abertura/vírgula
                 val isOpening = barDepth == 0 || prevChar in "+-*/^(,<>=!&|?:"
                 if (isOpening) {
                     sb.append("abs(")
@@ -1019,6 +1030,7 @@ object MathExpressionEvaluator {
             } else {
                 sb.append(c)
             }
+            i++
         }
         if (barDepth != 0) {
             throw IllegalArgumentException("Barras de módulo '|' desbalanceadas")
@@ -1111,7 +1123,7 @@ object MathExpressionEvaluator {
         }
 
         private fun parseMulDiv(): MathAstNode {
-            var node = parsePower()
+            var node = parseUnary()
             while (pos < tokens.size) {
                 val opToken = tokens[pos]
                 val op = when (opToken) {
@@ -1121,20 +1133,10 @@ object MathExpressionEvaluator {
                     else -> null
                 } ?: break
                 pos++
-                val right = parsePower()
+                val right = parseUnary()
                 node = MathAstNode.BinaryOp(op, node, right)
             }
             return node
-        }
-
-        private fun parsePower(): MathAstNode {
-            val base = parseUnary()
-            if (pos < tokens.size && tokens[pos] == "^") {
-                pos++
-                val exponent = parsePower() // Associatividade à direita: 2^3^2 = 2^(3^2)
-                return MathAstNode.BinaryOp(BinaryOperator.POW, base, exponent)
-            }
-            return base
         }
 
         private fun parseUnary(): MathAstNode {
@@ -1150,7 +1152,17 @@ object MathExpressionEvaluator {
                 pos++
                 return parseUnary()
             }
-            return parsePrimary()
+            return parsePower()
+        }
+
+        private fun parsePower(): MathAstNode {
+            val base = parsePrimary()
+            if (pos < tokens.size && tokens[pos] == "^") {
+                pos++
+                val exponent = parseUnary() // Associatividade à direita: 2^3^2 = 2^(3^2) e expoente unário: 2^-3
+                return MathAstNode.BinaryOp(BinaryOperator.POW, base, exponent)
+            }
+            return base
         }
 
         private fun parsePrimary(): MathAstNode {

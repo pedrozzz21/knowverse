@@ -17,14 +17,7 @@ object EnemHistoryDidacticProvider {
 
     fun getDidacticBundle(lessonId: String): CalculusDidacticBundle? {
         if (!lessonId.startsWith("hist_")) return null
-        val lesson = EnemHistoryCurriculum.findLesson(lessonId)
-            ?: com.example.data.model.EnemTrailLesson(
-                id = lessonId,
-                moduleId = "mod_hist_01_colonia",
-                lessonIndex = 1,
-                title = "Aula de História",
-                subtopic = "História Geral e do Brasil"
-            )
+        val lesson = EnemHistoryCurriculum.findLesson(lessonId) ?: return null
         return when {
             lessonId.startsWith("hist_col_") -> HistoryColonialDidactic.buildBundle(lesson)
             lessonId.startsWith("hist_imp_") -> HistoryEmpireDidactic.buildBundle(lesson)
@@ -32,20 +25,13 @@ object EnemHistoryDidacticProvider {
             lessonId.startsWith("hist_ant_") -> HistoryAncientMedievalDidactic.buildBundle(lesson)
             lessonId.startsWith("hist_mod_") -> HistoryModernDidactic.buildBundle(lesson)
             lessonId.startsWith("hist_cont_") -> HistoryContemporaryDidactic.buildBundle(lesson)
-            else -> HistoryColonialDidactic.buildBundle(lesson)
+            else -> null
         }
     }
 
     fun getExercisesForLesson(lessonId: String): List<MathExercise> {
         if (!lessonId.startsWith("hist_")) return emptyList()
-        val lesson = EnemHistoryCurriculum.findLesson(lessonId)
-            ?: com.example.data.model.EnemTrailLesson(
-                id = lessonId,
-                moduleId = "mod_hist_01_colonia",
-                lessonIndex = 1,
-                title = "Aula de História",
-                subtopic = "História Geral e do Brasil"
-            )
+        val lesson = EnemHistoryCurriculum.findLesson(lessonId) ?: return emptyList()
         val exercises = when {
             lessonId.startsWith("hist_col_") -> HistoryColonialDidactic.buildExercises(lesson)
             lessonId.startsWith("hist_imp_") -> HistoryEmpireDidactic.buildExercises(lesson)
@@ -53,7 +39,7 @@ object EnemHistoryDidacticProvider {
             lessonId.startsWith("hist_ant_") -> HistoryAncientMedievalDidactic.buildExercises(lesson)
             lessonId.startsWith("hist_mod_") -> HistoryModernDidactic.buildExercises(lesson)
             lessonId.startsWith("hist_cont_") -> HistoryContemporaryDidactic.buildExercises(lesson)
-            else -> HistoryColonialDidactic.buildExercises(lesson)
+            else -> emptyList()
         }
         return exercises.map { it.randomized() }
     }

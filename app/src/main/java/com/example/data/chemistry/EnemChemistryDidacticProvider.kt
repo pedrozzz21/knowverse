@@ -16,39 +16,25 @@ object EnemChemistryDidacticProvider {
 
     fun getDidacticBundle(lessonId: String): CalculusDidacticBundle? {
         if (!lessonId.startsWith("quim_")) return null
-        val lesson = EnemChemistryCurriculum.findLesson(lessonId)
-            ?: EnemTrailLesson(
-                id = lessonId,
-                moduleId = "mod_quim_01_geral",
-                lessonIndex = 1,
-                title = "Aula de Química",
-                subtopic = "Química Geral e Ambiental"
-            )
+        val lesson = EnemChemistryCurriculum.findLesson(lessonId) ?: return null
         return when {
             lessonId.startsWith("quim_ger_") -> ChemistryGeneralDidactic.buildBundle(lesson)
             lessonId.startsWith("quim_fis_") -> ChemistryPhysicalDidactic.buildBundle(lesson)
             lessonId.startsWith("quim_org_") -> ChemistryOrganicDidactic.buildBundle(lesson)
             lessonId.startsWith("quim_amb_") -> ChemistryEnvironmentalDidactic.buildBundle(lesson)
-            else -> ChemistryGeneralDidactic.buildBundle(lesson)
+            else -> null
         }
     }
 
     fun getExercisesForLesson(lessonId: String): List<MathExercise> {
         if (!lessonId.startsWith("quim_")) return emptyList()
-        val lesson = EnemChemistryCurriculum.findLesson(lessonId)
-            ?: EnemTrailLesson(
-                id = lessonId,
-                moduleId = "mod_quim_01_geral",
-                lessonIndex = 1,
-                title = "Aula de Química",
-                subtopic = "Química Geral e Ambiental"
-            )
+        val lesson = EnemChemistryCurriculum.findLesson(lessonId) ?: return emptyList()
         val exercises = when {
             lessonId.startsWith("quim_ger_") -> ChemistryGeneralDidactic.buildExercises(lesson)
             lessonId.startsWith("quim_fis_") -> ChemistryPhysicalDidactic.buildExercises(lesson)
             lessonId.startsWith("quim_org_") -> ChemistryOrganicDidactic.buildExercises(lesson)
             lessonId.startsWith("quim_amb_") -> ChemistryEnvironmentalDidactic.buildExercises(lesson)
-            else -> ChemistryGeneralDidactic.buildExercises(lesson)
+            else -> emptyList()
         }
         return exercises.map { it.randomized() }
     }

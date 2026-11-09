@@ -866,8 +866,102 @@ fun ProfileScreen(
                         Text("Lições Concluídas:", color = TextSecondary, style = MaterialTheme.typography.bodySmall)
                         Text("${userProgress.completedLessonIds.size} aulas", color = SuccessEmerald, fontWeight = FontWeight.SemiBold)
                     }
+                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Text("Exercícios Resolvidos com Sucesso:", color = TextSecondary, style = MaterialTheme.typography.bodySmall)
+                        Text("${userProgress.totalSolvedExercises} questões", color = com.example.ui.theme.AccentCyan, fontWeight = FontWeight.SemiBold)
+                    }
                 }
             }
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            // Calendário Visual de Atividade dos Últimos 28 Dias (4 semanas)
+            com.example.ui.components.KvActivityCalendarGrid(
+                activeStudyDates = userProgress.activeStudyDates.toList(),
+                currentStreak = userProgress.currentStreak
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            // Painel Comparativo de Domínio por Disciplina
+            val profileSubjectStats = remember(userProgress.completedLessonIds) {
+                val doneSet = userProgress.completedLessonIds
+                val mathLessons = (
+                    com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "basic_math").flatMap { it.lessons } +
+                        com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "enem_math").flatMap { it.lessons } +
+                        com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "calculus").flatMap { it.lessons }
+                    )
+                val physLessons = com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "physics").flatMap { it.lessons }
+                val bioLessons = com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "biology").flatMap { it.lessons }
+                val chemLessons = com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "chemistry").flatMap { it.lessons }
+                val humLessons = (
+                    com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "history").flatMap { it.lessons } +
+                        com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "geography").flatMap { it.lessons }
+                    )
+                val langLessons = com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "languages").flatMap { it.lessons }
+                val pyLessons = com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "python").flatMap { it.lessons }
+
+                listOf(
+                    Triple("Matemática & Cálculo", KnowverseIcons.Math to Color(0xFF3B82F6), mathLessons.count { it.id in doneSet } to mathLessons.size),
+                    Triple("Física ENEM", KnowverseIcons.PhysicsAtom to Color(0xFF06B6D4), physLessons.count { it.id in doneSet } to physLessons.size),
+                    Triple("Biologia ENEM", KnowverseIcons.BiologyLeaf to Color(0xFF10B981), bioLessons.count { it.id in doneSet } to bioLessons.size),
+                    Triple("Química ENEM", KnowverseIcons.ChemistryFlask to Color(0xFFF59E0B), chemLessons.count { it.id in doneSet } to chemLessons.size),
+                    Triple("História & Geografia", KnowverseIcons.GeographyGlobe to Color(0xFFFBBF24), humLessons.count { it.id in doneSet } to humLessons.size),
+                    Triple("Linguagens & Códigos", KnowverseIcons.LanguagesBook to Color(0xFF818CF8), langLessons.count { it.id in doneSet } to langLessons.size),
+                    Triple("Programação Python", KnowverseIcons.Python to Color(0xFF8B5CF6), pyLessons.count { it.id in doneSet } to pyLessons.size)
+                )
+            }
+
+            Card(
+                shape = RoundedCornerShape(10.dp),
+                colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .border(1.dp, BorderSubtle, RoundedCornerShape(10.dp))
+            ) {
+                Column(
+                    modifier = Modifier.padding(14.dp),
+                    verticalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    com.example.ui.components.KvSectionHeader(
+                        title = "Evolução por Disciplina",
+                        subtitle = "Progresso real calculado sobre as 284 aulas do currículo",
+                        accentColor = PrimaryViolet
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
+                    profileSubjectStats.forEach { (subjTitle, iconAndColor, counts) ->
+                        com.example.ui.components.KvSubjectProgressRow(
+                            subjectName = subjTitle,
+                            icon = iconAndColor.first,
+                            accentColor = iconAndColor.second,
+                            completedCount = counts.first,
+                            totalCount = counts.second
+                        )
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            // Orientação Contextual com Mascote Oficial do KnowVerse
+            com.example.ui.components.KvMascotCalloutCard(
+                title = if (userProgress.reviewLessonIds.isNotEmpty()) {
+                    "Dica do Prof. Quelônio: Revisão Espaçada"
+                } else {
+                    "Análise de Ritmo do Prof. Quelônio"
+                },
+                message = if (userProgress.reviewLessonIds.isNotEmpty()) {
+                    "Você possui ${userProgress.reviewLessonIds.size} tópico(s) sinalizado(s) para reforço. Resolver simulados cumulativos consolida a retenção de longo prazo."
+                } else {
+                    "Mantenha sessões diárias de estudo com pelo menos ${userProgress.dailyGoalXp} XP e alterne entre teoria e bateria de questões comentadas."
+                },
+                mascotResId = R.drawable.img_mascot_otter_boy,
+                accentColor = com.example.ui.theme.AccentCyan
+            )
 
             Spacer(modifier = Modifier.height(10.dp))
 

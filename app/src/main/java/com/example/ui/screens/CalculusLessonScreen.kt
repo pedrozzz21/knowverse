@@ -130,6 +130,13 @@ fun CalculusLessonScreen(
     val nextLesson = remember(lesson.id) {
         try {
             when {
+                lesson.id.startsWith("tp_") -> {
+                    val allTp = com.example.data.transpetro.TranspetroCurriculum.getAllLessons()
+                    val currIdx = allTp.indexOfFirst { it.id == lesson.id }
+                    if (currIdx in 0 until allTp.size - 1) {
+                        allTp[currIdx + 1].toAppLesson()
+                    } else null
+                }
                 lesson.id.startsWith("quim_") -> {
                     val allQuim = com.example.data.chemistry.EnemChemistryCurriculum.getAllModules().flatMap { it.lessons }
                     val currIdx = allQuim.indexOfFirst { it.id == lesson.id }
@@ -179,6 +186,13 @@ fun CalculusLessonScreen(
                         allEnem[currIdx + 1].toAppLesson()
                     } else null
                 }
+                lesson.id.startsWith("mb_") -> {
+                    val allBasicMath = com.example.data.math.BasicMathCurriculum.basicMathUnit.lessons
+                    val currIdx = allBasicMath.indexOfFirst { it.id == lesson.id }
+                    if (currIdx in 0 until allBasicMath.size - 1) {
+                        allBasicMath[currIdx + 1]
+                    } else null
+                }
                 else -> CalculusCurriculum.findNextLesson(lesson.id)
             }
         } catch (_: Throwable) {
@@ -189,6 +203,7 @@ fun CalculusLessonScreen(
     val didacticBundle: CalculusDidacticBundle = remember(lesson.id) {
         try {
             val bundle = when {
+                lesson.id.startsWith("tp_") -> com.example.data.transpetro.TranspetroDidacticProvider.getDidacticBundle(lesson.id)
                 lesson.id.startsWith("quim_") -> com.example.data.chemistry.EnemChemistryDidacticProvider.getDidacticBundle(lesson.id)
                 lesson.id.startsWith("geo_") -> com.example.data.geography.EnemGeographyDidacticProvider.getBundleForLesson(lesson.id)
                 lesson.id.startsWith("hist_") -> com.example.data.history.EnemHistoryDidacticProvider.getDidacticBundle(lesson.id)
@@ -205,7 +220,7 @@ fun CalculusLessonScreen(
         }
     }
 
-    var currentStage by remember(lesson.id) { mutableStateOf(CalculusStage.THEORY) }
+    var currentStage by androidx.compose.runtime.saveable.rememberSaveable(lesson.id) { mutableStateOf(CalculusStage.THEORY) }
 
     val userProgress = progressRepository.progressState.value
     val isInitiallyCompleted = userProgress.completedLessonIds.contains(lesson.id)
@@ -218,6 +233,7 @@ fun CalculusLessonScreen(
                 lesson.mathExercises
             } else {
                 when {
+                    lesson.id.startsWith("tp_") -> com.example.data.transpetro.TranspetroDidacticProvider.getExercisesForLesson(lesson.id)
                     lesson.id.startsWith("quim_") -> com.example.data.chemistry.EnemChemistryDidacticProvider.getExercisesForLesson(lesson.id)
                     lesson.id.startsWith("geo_") -> com.example.data.geography.EnemGeographyDidacticProvider.getExercisesForLesson(lesson.id)
                     lesson.id.startsWith("hist_") -> com.example.data.history.EnemHistoryDidacticProvider.getExercisesForLesson(lesson.id)
@@ -251,14 +267,16 @@ fun CalculusLessonScreen(
 
     val scrollState = rememberScrollState()
 
-    // Automatically record daily check-in if not checked in yet today
+    // Automatically record daily check-in if not checked in yet today and track current lesson
     LaunchedEffect(lesson.id) {
+        progressRepository.setCurrentLesson(lesson.id)
         val prog = progressRepository.progressState.value
         if (!prog.hasCheckedInToday()) {
             progressRepository.recordCheckIn(awardBonusXp = true)
         }
     }
 
+    val isTranspetroLesson = lesson.id.startsWith("tp_")
     val isChemistryLesson = lesson.id.startsWith("quim_")
     val isGeographyLesson = lesson.id.startsWith("geo_")
     val isHistoryLesson = lesson.id.startsWith("hist_")
@@ -267,7 +285,8 @@ fun CalculusLessonScreen(
     val isPhysicsLesson = lesson.id.startsWith("fis_")
     val isEnemLesson = lesson.id.startsWith("enem_")
     val isBasicMath = lesson.id.startsWith("mb_") || lesson.unitId.contains("basic_math")
-    val isNonFormulaSubject = isLanguagesLesson || isHistoryLesson || isGeographyLesson
+    val isNonFormulaSubject = isLanguagesLesson || isHistoryLesson || isGeographyLesson || 
+        (isTranspetroLesson && !lesson.id.startsWith("tp_mat_") && !lesson.id.startsWith("tp_fin_"))
     val isIntegralsUnit = lesson.unitId.contains("integral") || 
         lesson.id.startsWith("calc_l19") || lesson.id.startsWith("calc_l20") ||
         lesson.id.startsWith("calc_l21") || lesson.id.startsWith("calc_l22") ||
@@ -282,6 +301,10 @@ fun CalculusLessonScreen(
         lesson.id.startsWith("calc_l17") || lesson.id.startsWith("calc_l18")
 
     val disciplineTitle = when {
+        isTranspetroLesson -> {
+            val disc = com.example.data.transpetro.TranspetroCurriculum.findDisciplineByLessonId(lesson.id)
+            "Transpetro • ${disc?.name ?: "Administração e Controle"}"
+        }
         isChemistryLesson -> "Química • Natureza ENEM"
         isGeographyLesson -> "Geografia • Humanas ENEM"
         isHistoryLesson -> "História • Humanas ENEM"
@@ -294,6 +317,7 @@ fun CalculusLessonScreen(
     }
 
     val subjectAccentColor = when {
+        isTranspetroLesson -> Color(0xFFF59E0B) // Amber / Ouro Industrial
         isChemistryLesson -> Color(0xFF06B6D4)
         isGeographyLesson -> Color(0xFF2A9D8F)
         isHistoryLesson -> Color(0xFFE07A5F)
@@ -305,6 +329,12 @@ fun CalculusLessonScreen(
     }
 
     val moduleSubtitle = when {
+        isTranspetroLesson -> {
+            val mod = com.example.data.transpetro.TranspetroCurriculum.allDisciplines
+                .flatMap { it.modules }
+                .firstOrNull { it.id == lesson.unitId || it.lessons.any { l -> l.id == lesson.id } }
+            mod?.title ?: "Concurso Transpetro - ADM e Controle"
+        }
         isChemistryLesson -> {
             val mod = com.example.data.chemistry.EnemChemistryCurriculum.getAllModules().firstOrNull { it.id == lesson.unitId }
             mod?.title ?: "Química Geral e Ambiental"
@@ -1083,7 +1113,7 @@ fun CalculusLessonScreen(
                         val selectedOpt = selectedOptions[index]
                         val isChecked = exerciseResults[index]
                         val wrongCount = wrongAttempts[index] ?: 0
-                        val isSolutionUnlocked = (isChecked == true) || (wrongCount >= 2) || isLessonCompletedLocal
+                        val isSolutionUnlocked = (isChecked != null) || (wrongCount >= 1) || isLessonCompletedLocal
                         val showHint = showHints[index] == true
                         val showSolution = showSolutions[index] == true && isSolutionUnlocked
                         val isExpanded = expandedExercises[index] ?: (index == 0)
@@ -1386,15 +1416,15 @@ fun CalculusLessonScreen(
                                                     val choice = selectedOptions[index]
                                                     if (choice != null) {
                                                         val isCorrect = (choice == ex.correctIndex)
+                                                        val exKey = ex.id.ifBlank { "${lesson.id}_ex_${index + 1}" }
                                                         exerciseResults[index] = isCorrect
                                                         if (!isCorrect) {
                                                             val nextWrong = (wrongAttempts[index] ?: 0) + 1
                                                             wrongAttempts[index] = nextWrong
-                                                            progressRepository.markLessonForReview(lesson.id)
-                                                            if (nextWrong >= 2) {
-                                                                showSolutions[index] = true
-                                                            }
+                                                            progressRepository.recordWrongQuestion(exKey, lesson.id)
+                                                            showSolutions[index] = true
                                                         } else {
+                                                            progressRepository.recordSolvedExercise(exKey, 25)
                                                             showSolutions[index] = true
                                                         }
                                                     }
@@ -1537,13 +1567,29 @@ fun CalculusLessonScreen(
                             }
                         }
 
+                        val mfAnswers = remember(lesson.id) {
+                            mutableStateMapOf<String, com.example.data.assessment.UserAnswer>()
+                        }
+                        val mfFeedbacks = remember(lesson.id) {
+                            mutableStateMapOf<String, com.example.data.assessment.Feedback>()
+                        }
+
                         multiformatBank.forEachIndexed { mfIdx, bq ->
                             QuestionRendererCard(
                                 bankQuestion = bq,
                                 questionNumber = exercises.size + mfIdx + 1,
-                                onEvaluated = { _, fb ->
-                                    if (!fb.isCorrect) {
-                                        progressRepository.markLessonForReview(lesson.id)
+                                existingAnswer = mfAnswers[bq.id],
+                                existingFeedback = mfFeedbacks[bq.id],
+                                onAnswerDraftChanged = { ans ->
+                                    mfAnswers[bq.id] = ans
+                                },
+                                onEvaluated = { ans, fb ->
+                                    mfAnswers[bq.id] = ans
+                                    mfFeedbacks[bq.id] = fb
+                                    if (fb.isCorrect) {
+                                        progressRepository.recordSolvedExercise(bq.id, 30)
+                                    } else {
+                                        progressRepository.recordWrongQuestion(bq.id, lesson.id)
                                     }
                                 }
                             )

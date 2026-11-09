@@ -268,7 +268,13 @@ fun ExerciseSolverScreen(
     var selectedLessonSubject by remember { mutableStateOf("Todas") }
     var selectedLessonSubtopic by remember { mutableStateOf("all") }
     var selectedQuestionFormat by remember { mutableStateOf<QuestionFormat?>(null) }
+    var onlyWrongQuestions by remember { mutableStateOf(false) }
+    val multiformatAnswers = remember { mutableStateMapOf<String, com.example.data.assessment.UserAnswer>() }
     val multiformatFeedbacks = remember { mutableStateMapOf<String, Feedback>() }
+    var wrongQuestionsTick by remember { mutableIntStateOf(0) }
+    val wrongQuestionIds = remember(userProgress, wrongQuestionsTick) {
+        progressRepository.getWrongQuestionIds()
+    }
 
     // Estado do Modo Foco (Tela Cheia)
     var activeFocusExercise by remember { mutableStateOf<UniversalExercise?>(null) }
@@ -447,8 +453,40 @@ fun ExerciseSolverScreen(
     val allExercises = allExercisesList
 
     // Redefine paginação ao alterar qualquer filtro
-    LaunchedEffect(searchQuery, selectedDiscipline, selectedSubtopic, selectedDifficulty, selectedYear, onlyVisuals) {
+    LaunchedEffect(searchQuery, selectedDiscipline, selectedSubtopic, selectedDifficulty, selectedYear, onlyVisuals, onlyWrongQuestions, selectedLessonSubject, selectedLessonSubtopic, selectedQuestionFormat) {
         visibleItemCount = 40
+    }
+
+    val diffEnum = when (selectedDifficulty) {
+        "Fácil" -> QDifficulty.EASY
+        "Média", "Médio", "Mediano" -> QDifficulty.MEDIUM
+        "Difícil" -> QDifficulty.HARD
+        else -> null
+    }
+    val multiList = remember(
+        selectedLessonSubject,
+        selectedLessonSubtopic,
+        selectedQuestionFormat,
+        diffEnum,
+        searchQuery,
+        onlyWrongQuestions,
+        wrongQuestionIds,
+        isQuestionsLoading
+    ) {
+        val base = QuestionBankRepository.filterQuestions(
+            subject = selectedLessonSubject,
+            subtopic = selectedLessonSubtopic,
+            format = selectedQuestionFormat,
+            difficulty = diffEnum,
+            query = searchQuery,
+            includeLegacy = false,
+            context = context
+        )
+        if (onlyWrongQuestions) {
+            base.filter { it.id in wrongQuestionIds }
+        } else {
+            base
+        }
     }
 
     val filteredList = remember(
@@ -458,10 +496,13 @@ fun ExerciseSolverScreen(
         selectedDifficulty,
         selectedYear,
         onlyVisuals,
+        onlyWrongQuestions,
+        wrongQuestionIds,
         allExercises
     ) {
         val q = searchQuery.trim().lowercase()
         val baseList = allExercises.filter { item ->
+            val matchesWrong = !onlyWrongQuestions || (item.id in wrongQuestionIds)
             val matchesDiscipline = when (selectedDiscipline) {
                 ExerciseDiscipline.ALL -> true
                 ExerciseDiscipline.ENEM -> item.discipline == ExerciseDiscipline.ENEM ||
@@ -499,7 +540,7 @@ fun ExerciseSolverScreen(
                 (item.codeSnippet?.lowercase()?.contains(q) == true) ||
                 item.options.any { it.lowercase().contains(q) }
             }
-            matchesDiscipline && matchesSubtopic && matchesDifficulty && matchesVisuals && matchesQuery
+            matchesWrong && matchesDiscipline && matchesSubtopic && matchesDifficulty && matchesVisuals && matchesQuery
         }
 
         if (selectedYear != null && selectedYear != 0) {
@@ -552,10 +593,13 @@ fun ExerciseSolverScreen(
                     if (!isSolved) {
                         solvedExercises[exercise.id] = true
                         progressRepository.recordCheckIn()
-                        progressRepository.addBonusXp(exercise.xpReward)
                     }
+                    progressRepository.recordSolvedExercise(exercise.id, exercise.xpReward)
+                    wrongQuestionsTick += 1
                 } else {
                     focusStreak = 0
+                    progressRepository.recordWrongQuestion(exercise.id)
+                    wrongQuestionsTick += 1
                 }
 
                 // Registra telemetria no Firebase se for ENEM
@@ -791,6 +835,7 @@ fun ExerciseSolverScreen(
                         options = listOf(
                             ExerciseDiscipline.ALL.name to "Todas as Matérias",
                             ExerciseDiscipline.ENEM.name to "Banco ENEM Oficial",
+                            ExerciseDiscipline.CHEMISTRY.name to "Química ENEM",
                             ExerciseDiscipline.GEOGRAPHY.name to "Geografia • Humanas",
                             ExerciseDiscipline.HISTORY.name to "História • Humanas",
                             ExerciseDiscipline.LANGUAGES.name to "Linguagens e Códigos",
@@ -821,43 +866,68 @@ fun ExerciseSolverScreen(
 
                 Spacer(modifier = Modifier.height(6.dp))
 
-                // 3. Botão Expansível "Filtros avançados"
+                // Filtro Rápido "Revisar Questões Erradas" + Filtros Avançados
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable { showAdvancedFilters = !showAdvancedFilters }
-                        .padding(vertical = 4.dp),
+                        .padding(vertical = 2.dp),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Icon(
-                            imageVector = Icons.Default.FilterList,
-                            contentDescription = null,
-                            tint = PrimaryViolet,
-                            modifier = Modifier.size(15.dp)
-                        )
-                        Spacer(modifier = Modifier.width(6.dp))
-                        Text(
-                            text = if (showAdvancedFilters) "Ocultar filtros avançados" else "Filtros avançados",
-                            style = MaterialTheme.typography.labelSmall.copy(
-                                color = PrimaryViolet,
-                                fontWeight = FontWeight.Bold,
-                                fontSize = 11.sp
+                    Surface(
+                        color = if (onlyWrongQuestions) ErrorRose.copy(alpha = 0.2f) else SurfaceElevated,
+                        shape = RoundedCornerShape(6.dp),
+                        border = androidx.compose.foundation.BorderStroke(
+                            1.dp,
+                            if (onlyWrongQuestions) ErrorRose else BorderSubtle
+                        ),
+                        modifier = Modifier
+                            .clickable { onlyWrongQuestions = !onlyWrongQuestions }
+                            .testTag("filter_wrong_questions_toggle")
+                    ) {
+                        Row(
+                            modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Refresh,
+                                contentDescription = null,
+                                tint = if (onlyWrongQuestions) ErrorRose else GoldXp,
+                                modifier = Modifier.size(13.dp)
                             )
-                        )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(
+                                text = "Revisar Erradas (${wrongQuestionIds.size})",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    color = if (onlyWrongQuestions) ErrorRose else TextPrimary,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 10.5.sp
+                                )
+                            )
+                        }
                     }
 
-                    Row(verticalAlignment = Alignment.CenterVertically) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.clickable { showAdvancedFilters = !showAdvancedFilters }
+                    ) {
                         Text(
-                            text = "${filteredList.size} questões",
+                            text = "${if (showMultiformatBank) multiList.size else filteredList.size} questões",
                             style = MaterialTheme.typography.labelSmall.copy(
                                 color = GoldXp,
                                 fontWeight = FontWeight.SemiBold,
                                 fontSize = 11.sp
                             )
                         )
-                        Spacer(modifier = Modifier.width(4.dp))
+                        Spacer(modifier = Modifier.width(6.dp))
+                        Text(
+                            text = if (showAdvancedFilters) "Ocultar filtros" else "Mais filtros",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = PrimaryViolet,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 11.sp
+                            )
+                        )
                         Icon(
                             imageVector = if (showAdvancedFilters) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
                             contentDescription = null,
@@ -1010,53 +1080,78 @@ fun ExerciseSolverScreen(
                 }
             }
         } else if (showMultiformatBank) {
-            val diffEnum = when (selectedDifficulty) {
-                "Fácil" -> QDifficulty.EASY
-                "Média", "Médio", "Mediano" -> QDifficulty.MEDIUM
-                "Difícil" -> QDifficulty.HARD
-                else -> null
-            }
-            val multiList = remember(
-                selectedLessonSubject,
-                selectedLessonSubtopic,
-                selectedQuestionFormat,
-                diffEnum,
-                searchQuery,
-                isQuestionsLoading
-            ) {
-                QuestionBankRepository.filterQuestions(
-                    subject = selectedLessonSubject,
-                    subtopic = selectedLessonSubtopic,
-                    format = selectedQuestionFormat,
-                    difficulty = diffEnum,
-                    query = searchQuery,
-                    includeLegacy = false,
-                    context = context
-                )
-            }
             val displayedMulti = remember(multiList, visibleItemCount) {
                 multiList.take(visibleItemCount)
             }
-            LazyColumn(
-                contentPadding = PaddingValues(horizontal = 14.dp, vertical = 10.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp),
-                modifier = Modifier.fillMaxSize()
-            ) {
-                itemsIndexed(displayedMulti, key = { _, item -> item.id }) { idx, bq ->
-                    QuestionRendererCard(
-                        bankQuestion = bq,
-                        questionNumber = idx + 1,
-                        pythonEngine = pythonEngine,
-                        existingFeedback = multiformatFeedbacks[bq.id],
-                        onEvaluated = { _, fb ->
-                            multiformatFeedbacks[bq.id] = fb
-                            if (fb.isCorrect) {
-                                progressRepository.recordCheckIn()
-                                progressRepository.addBonusXp(30)
-                            }
+            if (multiList.isEmpty()) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(32.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Icon(
+                            imageVector = Icons.Default.FilterList,
+                            contentDescription = null,
+                            tint = TextTertiary,
+                            modifier = Modifier.size(36.dp)
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+                        Text(
+                            text = if (onlyWrongQuestions) {
+                                "Você não possui questões erradas pendentes de revisão nesta seleção."
+                            } else {
+                                "Nenhuma questão encontrada com esses filtros."
+                            },
+                            style = MaterialTheme.typography.bodyMedium.copy(color = TextSecondary)
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                        Button(
+                            onClick = {
+                                searchQuery = ""
+                                selectedLessonSubject = "Todas"
+                                selectedLessonSubtopic = "all"
+                                selectedQuestionFormat = null
+                                selectedDifficulty = "all"
+                                onlyWrongQuestions = false
+                            },
+                            colors = ButtonDefaults.buttonColors(containerColor = PrimaryViolet),
+                            shape = RoundedCornerShape(6.dp)
+                        ) {
+                            Text("Resetar Filtros", fontSize = 12.sp)
                         }
-                    )
+                    }
                 }
+            } else {
+                LazyColumn(
+                    contentPadding = PaddingValues(horizontal = 14.dp, vertical = 10.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp),
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    itemsIndexed(displayedMulti, key = { _, item -> item.id }) { idx, bq ->
+                        QuestionRendererCard(
+                            bankQuestion = bq,
+                            questionNumber = idx + 1,
+                            pythonEngine = pythonEngine,
+                            existingAnswer = multiformatAnswers[bq.id],
+                            existingFeedback = multiformatFeedbacks[bq.id],
+                            onAnswerDraftChanged = { ans ->
+                                multiformatAnswers[bq.id] = ans
+                            },
+                            onEvaluated = { ans, fb ->
+                                multiformatAnswers[bq.id] = ans
+                                multiformatFeedbacks[bq.id] = fb
+                                if (fb.isCorrect) {
+                                    progressRepository.recordCheckIn()
+                                    progressRepository.recordSolvedExercise(bq.id, 30)
+                                } else {
+                                    progressRepository.recordWrongQuestion(bq.id, bq.lesson.lessonId)
+                                }
+                                wrongQuestionsTick += 1
+                            }
+                        )
+                    }
                 if (displayedMulti.size < multiList.size) {
                     item(key = "load_more_multi") {
                         Surface(
@@ -1082,6 +1177,7 @@ fun ExerciseSolverScreen(
                             }
                         }
                     }
+                }
                 }
             }
         } else if (filteredList.isEmpty()) {

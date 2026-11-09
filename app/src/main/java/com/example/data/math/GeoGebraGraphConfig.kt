@@ -40,7 +40,7 @@ object GeoGebraCommandParser {
 
         val pointsMap = mutableMapOf<String, Pair<Double, Double>>()
         val colorsMap = mutableMapOf<String, String>()
-        val dashedSet = mutableSetOf<String>()
+        val lineStyleMap = mutableMapOf<String, Int>()
         val rawPrimitives = mutableListOf<GeoGebraCommandPrimitive>()
 
         val normalizedPrimary = primaryExpression.replace(" ", "")
@@ -61,12 +61,12 @@ object GeoGebraCommandParser {
                 continue
             }
 
-            // SetLineStyle(obj, style) -> style > 0 é tracejado
+            // SetLineStyle(obj, style) -> style == 0 sólido, style > 0 tracejado
             val styleMatch = Regex("""^SetLineStyle\(\s*([A-Za-z0-9_]+)\s*,\s*(\d+)\s*\)$""", RegexOption.IGNORE_CASE).find(cmd)
             if (styleMatch != null) {
                 val id = styleMatch.groupValues[1]
                 val st = styleMatch.groupValues[2].toIntOrNull() ?: 0
-                if (st > 0) dashedSet.add(id)
+                lineStyleMap[id] = st
                 continue
             }
 
@@ -85,7 +85,25 @@ object GeoGebraCommandParser {
         // 2ª Passada: Construir primitivas geométricas e analíticas
         for (rawCmd in commands) {
             val cmd = rawCmd.trim()
-            if (cmd.startsWith("Set", ignoreCase = true) || cmd.startsWith("Integral(", ignoreCase = true)) continue
+            if (cmd.isEmpty() || cmd.startsWith("Set", ignoreCase = true) || cmd.startsWith("Integral(", ignoreCase = true)) continue
+
+            // 0. Ponto nomeado: A = (2, 4)
+            val ptMatch = Regex("""^([A-Za-z][A-Za-z0-9_]*)\s*=\s*\(\s*([^,]+)\s*,\s*([^)]+)\s*\)$""").find(cmd)
+            if (ptMatch != null) {
+                val id = ptMatch.groupValues[1]
+                val pt = pointsMap[id]
+                if (pt != null) {
+                    rawPrimitives.add(
+                        GeoGebraCommandPrimitive.NamedPoint(
+                            id = id,
+                            x = pt.first,
+                            y = pt.second,
+                            colorHex = colorsMap[id] ?: "#F59E0B"
+                        )
+                    )
+                }
+                continue
+            }
 
             // 1. Polygon(A, B, C, ...)
             val polyMatch = Regex("""^(?:([A-Za-z0-9_]+)\s*=\s*)?Polygon\(\s*([^)]+)\s*\)$""", RegexOption.IGNORE_CASE).find(cmd)
@@ -114,17 +132,21 @@ object GeoGebraCommandParser {
                     val p1 = resolvePointArg(ends[0], pointsMap)
                     val p2 = resolvePointArg(ends[1], pointsMap)
                     if (p1 != null && p2 != null) {
-                        rawPrimitives.add(
-                            GeoGebraCommandPrimitive.Segment2D(
-                                id = id,
-                                x1 = p1.first,
-                                y1 = p1.second,
-                                x2 = p2.first,
-                                y2 = p2.second,
-                                colorHex = colorsMap[id] ?: "#EAB308",
-                                isDashed = id in dashedSet
+                        val dx = p2.first - p1.first
+                        val dy = p2.second - p1.second
+                        if (kotlin.math.abs(dx) > 1e-7 || kotlin.math.abs(dy) > 1e-7) {
+                            rawPrimitives.add(
+                                GeoGebraCommandPrimitive.Segment2D(
+                                    id = id,
+                                    x1 = p1.first,
+                                    y1 = p1.second,
+                                    x2 = p2.first,
+                                    y2 = p2.second,
+                                    colorHex = colorsMap[id] ?: "#EAB308",
+                                    isDashed = (lineStyleMap[id] ?: 0) > 0
+                                )
                             )
-                        )
+                        }
                     }
                 }
                 continue
@@ -141,13 +163,16 @@ object GeoGebraCommandParser {
                     if (p1 != null && p2 != null) {
                         val dx = p2.first - p1.first
                         val dy = p2.second - p1.second
-                        if (kotlin.math.abs(dx) < 1e-7) {
+                        val isLineDashed = (lineStyleMap[id] ?: 0) > 0
+                        if (kotlin.math.abs(dx) < 1e-7 && kotlin.math.abs(dy) < 1e-7) {
+                            // Pontos coincidentes não definem uma reta
+                        } else if (kotlin.math.abs(dx) < 1e-7) {
                             rawPrimitives.add(
                                 GeoGebraCommandPrimitive.VerticalLine(
                                     id = id,
                                     x = p1.first,
                                     colorHex = colorsMap[id] ?: "#EF4444",
-                                    isDashed = id in dashedSet || true
+                                    isDashed = isLineDashed
                                 )
                             )
                         } else if (kotlin.math.abs(dy) < 1e-7) {
@@ -156,7 +181,7 @@ object GeoGebraCommandParser {
                                     id = id,
                                     y = p1.second,
                                     colorHex = colorsMap[id] ?: "#EAB308",
-                                    isDashed = id in dashedSet || true
+                                    isDashed = isLineDashed
                                 )
                             )
                         } else {
@@ -171,7 +196,7 @@ object GeoGebraCommandParser {
                                     b = b,
                                     c = c,
                                     colorHex = colorsMap[id] ?: "#38BDF8",
-                                    isDashed = id in dashedSet
+                                    isDashed = isLineDashed
                                 )
                             )
                         }
@@ -193,7 +218,7 @@ object GeoGebraCommandParser {
                             centerY = 0.0,
                             radius = kotlin.math.sqrt(rSq),
                             colorHex = colorsMap[id] ?: "#38BDF8",
-                            isDashed = id in dashedSet
+                            isDashed = (lineStyleMap[id] ?: 0) > 0
                         )
                     )
                 }
@@ -232,7 +257,7 @@ object GeoGebraCommandParser {
                             id = id,
                             x = xVal,
                             colorHex = colorsMap[id] ?: "#EF4444",
-                            isDashed = true
+                            isDashed = lineStyleMap[id]?.let { it > 0 } ?: true
                         )
                     )
                 }
@@ -250,7 +275,7 @@ object GeoGebraCommandParser {
                             id = id,
                             y = yVal,
                             colorHex = colorsMap[id] ?: "#EAB308",
-                            isDashed = true
+                            isDashed = lineStyleMap[id]?.let { it > 0 } ?: true
                         )
                     )
                 }
@@ -268,7 +293,7 @@ object GeoGebraCommandParser {
                             id = id,
                             expression = expr,
                             colorHex = colorsMap[id] ?: "#10B981",
-                            isDashed = id in dashedSet
+                            isDashed = (lineStyleMap[id] ?: 0) > 0
                         )
                     )
                 }
@@ -293,7 +318,7 @@ object GeoGebraCommandParser {
                             b = b,
                             c = c,
                             colorHex = colorsMap[id] ?: "#38BDF8",
-                            isDashed = id in dashedSet
+                            isDashed = (lineStyleMap[id] ?: 0) > 0
                         )
                     )
                 }
@@ -311,7 +336,7 @@ object GeoGebraCommandParser {
                             id = id,
                             expression = expr,
                             colorHex = colorsMap[id] ?: "#C084FC",
-                            isDashed = id in dashedSet
+                            isDashed = (lineStyleMap[id] ?: 0) > 0
                         )
                     )
                 }

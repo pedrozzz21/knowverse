@@ -22,7 +22,7 @@ object EnemLanguagesDidacticProvider {
             lessonId.startsWith("ling_lit_") -> LanguagesLiteratureDidactic.buildBundle(lesson)
             lessonId.startsWith("ling_gram_") -> LanguagesGrammarDidactic.buildBundle(lesson)
             lessonId.startsWith("ling_art_") -> LanguagesArtsBodyDidactic.buildBundle(lesson)
-            else -> LanguagesInterpretationDidactic.buildBundle(lesson)
+            else -> null
         }
     }
 
@@ -34,7 +34,7 @@ object EnemLanguagesDidacticProvider {
             lessonId.startsWith("ling_lit_") -> LanguagesLiteratureDidactic.buildExercises(lesson)
             lessonId.startsWith("ling_gram_") -> LanguagesGrammarDidactic.buildExercises(lesson)
             lessonId.startsWith("ling_art_") -> LanguagesArtsBodyDidactic.buildExercises(lesson)
-            else -> LanguagesInterpretationDidactic.buildExercises(lesson)
+            else -> emptyList()
         }
         return exercises.map { it.randomized() }
     }

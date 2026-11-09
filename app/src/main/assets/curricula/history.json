@@ -1,0 +1,1401 @@
+{
+  "subjectId": "history",
+  "title": "História • Ciências Humanas ENEM",
+  "category": "História",
+  "unitCount": 6,
+  "lessonCount": 26,
+  "units": [
+    {
+      "id": "mod_hist_01_colonia",
+      "unitNumber": 1,
+      "tier": "BASIC",
+      "title": "História do Brasil: Colônia",
+      "description": "Sociedades originárias e violência colonial, economia da plantation e mineração, escravidão e resistências, e as revoltas emancipacionistas.",
+      "category": "História",
+      "subject": "Ciências Humanas",
+      "lessons": [
+        {
+          "id": "hist_col_01",
+          "unitId": "mod_hist_01_colonia",
+          "title": "1. A Conquista e os Povos Originários",
+          "conceptTitle": "Sociedades indígenas pré-cabralinas, choque cultural e a violência da colonização",
+          "explanation": "# A Conquista e os Povos Originários no ENEM\n\nNo ENEM, o contato inicial entre colonizadores europeus e as populações nativas não é tratado como uma \"descoberta pacífica\", mas como um violento processo de conquista, etnocentrismo e choque cultural que reconfigurou radicalmente as estruturas demográficas e ecológicas do continente.\n\n### 1. Diversidade Pré-Cabralina\nAntes de 1500, o território brasileiro abrigava entre 3 e 5 milhões de indígenas distribuídos em centenas de etnias distintas (troncos linguísticos Tupi-Guarani, Macro-Jê, Aruak e Karib):\n• **Organização Social:** Ausência de Estado centralizado, de propriedade privada da terra e de moeda mercantil. A terra pertencia à coletividade.\n• **Divisão do Trabalho:** Baseada estritamente no gênero e na idade (homens na caça, guerra e derrubada de matas; mulheres na agricultura, coleta e cerâmica).\n• **Cosmovisão e Antropofagia:** A guerra entre tribos não visava à acumulação de territórios para lucro, mas ao prestígio, equilíbrio de forças e vingança honrosa. A antropofagia ritualística (ex: entre os Tupinambás) consistia na assimilação simbólica da coragem e das virtudes do guerreiro inimigo capturado.\n\n### 2. Choque Cultural e a Lente Etnocêntrica\nOs primeiros relatos coloniais, como a famosa *Carta de Pero Vaz de Caminha* (1500), revelam o etnocentrismo europeu:\n• **O Mito da 'Falta de Fé, Lei e Rei':** Caminha escreveu que a língua nativa não possuía as letras F, L e R, interpretando a diferença cultural como carência institucional e moral (ausência de Fé católica, Lei civil e Rei absolutista).\n• **O Indígena Idealizado vs. O 'Selvagem':** Oscilava entre a visão paradisíaca do bom selvagem dócil e a estigmatização do nativo como canibal herético quando este recusava a submissão aos interesses da Coroa.\n\n### 3. As Engrenagens da Violência Colonial\n• **Escambo Inicial (1500–1530):** Troca de pau-brasil por machados, espelhos e facas. Funcionou enquanto o indígena viu interesse nas ferramentas metálicas.\n• **Tentativa de Escravização e 'Guerra Justa':** Com a montagem dos engenhos, a Coroa e os colonos tentaram escravizar os nativos. Diante da resistência, justificavam ataques violentos sob a doutrina da \"Guerra Justa\" (ataques autorizados contra tribos que recusassem a fé católica ou atacassem portugueses).\n• **Papel Ambíguo dos Jesuítas:** A Companhia de Jesus aldeava indígenas para catequizá-los, protegendo-os parcialmente da escravização direta dos bandeirantes, mas destruindo sua cosmovisão, impondo sedentarismo e facilitando epidemias.\n• **O Genocídio Biológico:** As \"armas invisíveis\" (varíola, gripe, sarampo e tuberculose) dizimaram até 90% de aldeias inteiras desprovidas de imunidade biológica aos patógenos euroasiáticos.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_col_01_a",
+              "title": "ENEM: Etnocentrismo e Contato Cultural",
+              "problemStatement": "Na famosa carta enviada a D. Manuel I em 1500, Pero Vaz de Caminha descreve os habitantes da terra recém-avistada afirmando que eles 'parece-me gente de tal inocência que, se homem os entendesse e eles a nós, seriam logo cristãos, porque eles não têm nem entendem em nenhuma crença'.\n\nSob a ótica da historiografia crítica contemporânea avaliada no ENEM, esse trecho expressa:",
+              "options": [
+                "Uma recusa explícita em catequizar os nativos diante da constatação de que eles já possuíam leis e monarquia.",
+                "Um diagnóstico científico baseado em estudos linguísticos avançados da família linguística Tupi-Guarani.",
+                "Um reconhecimento tolerante da diversidade e da complexidade espiritual das cosmologias originárias.",
+                "Uma percepção etnocêntrica que interpretava a diferença cultural como ausência moral e justificava a tutela civilizatória europeia.",
+                "Uma proposta diplomática de convivência entre reinos soberanos em regime de igualdade jurídica internacional."
+              ],
+              "correctIndex": 3,
+              "hint": "Repare na palavra 'inocência' e na suposta 'falta de crença': o colonizador toma seus próprios referenciais religiosos como padrão universal de civilização.",
+              "stepByStepSolution": "A alternativa B está correta. A carta de Pero Vaz de Caminha é um clássico exemplo de documento etnocêntrico: o colonizador europeu, ao não encontrar igrejas, templos cristãos ou dogmas monoteístas nos moldes ocidentais, deduz equivocadamente que os indígenas 'não têm fé nem crença'. Essa deslegitimação da cultura e da espiritualidade nativa serviu como justificativa ideológica para a catequese forçada e a submissão dos povos originários à Coroa e à Igreja."
+            },
+            {
+              "id": "hist_ex_col_01_b",
+              "title": "ENEM: A Violência e o Impacto Epidemiológico",
+              "problemStatement": "Durante os primeiros cem anos de colonização no litoral brasileiro, estima-se que a população indígena sofreu uma redução demográfica vertiginosa, calculada por historiadores em perdas superiores a 80% dos habitantes das aldeias litorâneas.\n\nAssinale o fator que, aliado aos confrontos militares e à escravização, desempenhou o papel mais devastador nesse processo de dizimação:",
+              "options": [
+                "A perda de territórios de caça provocada unicamente pelo esgotamento natural das árvores de pau-brasil sem intervenção humana.",
+                "A transmigração voluntária das comunidades indígenas para a Europa em busca de salários nos portos metropolitanos.",
+                "O choque biológico decorrente da introdução de patógenos euroasiáticos (como varíola e gripe) para os quais os nativos não possuíam imunidade prévia.",
+                "A adoção espontânea do catolicismo que proibia qualquer forma de reprodução biológica nas aldeias nativas.",
+                "A escassez generalizada de alimentos provocada pela recusa dos colonos em praticar o escambo de facas de ferro."
+              ],
+              "correctIndex": 2,
+              "hint": "Pense no conceito de 'armas invisíveis da conquista': o isolamento milenar das Américas deixou as populações nativas biologicamente vulneráveis a vírus comuns no Velho Mundo.",
+              "stepByStepSolution": "A alternativa B está correta. As populações das Américas estiveram biologicamente isoladas da Eurásia e África por milênios. A introdução de patógenos como a varíola, o sarampo, a gripe e a tuberculose causou verdadeiras hecatombes demográficas (o 'genocídio biológico'), dizimando aldeias inteiras antes mesmo que houvesse confronto bélico direto."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_col_02",
+          "unitId": "mod_hist_01_colonia",
+          "title": "2. Economia e Sociedade Colonial",
+          "conceptTitle": "Ciclo do açúcar, engenhos, plantation, pecuária no interior e a mineração no século XVIII",
+          "explanation": "# Economia e Sociedade Colonial: Açúcar, Pecuária e Mineração\n\nA colonização do Brasil estruturou-se sob a lógica do **Antigo Sistema Colonial**, cuja finalidade central era a complementariedade à economia metropolitana mercantilista através do monopólio do comércio (o *Pacto Colonial* ou *Exclusivo Metropolitano*).\n\n### 1. A Plantation Açucareira (Séculos XVI e XVII)\nO açúcar foi a primeira mercadoria de alto valor a viabilizar a ocupação territorial efetiva:\n• **O Tripé da Plantation:** Latifúndio (grandes extensões de terra concedidas por sesmarias), monocultura voltada à exportação e trabalho escravo compulsório.\n• **A Aliança Luso-Flamenga:** Portugal detinha a terra e o monopólio da navegação; os holandeses financiavam os maquinários dos engenhos, compravam o açúcar bruto, refinavam-no em Amsterdã e distribuíam na Europa.\n• **Sociedade Patriarcal e Polarizada:** Estrutura estamental com mobilidade social quase nula. No topo, os \"senhores de engenho\" detinham poder econômico, militar e político (através das Câmaras Municipais). Na base desumanizada, a grande massa de escravizados.\n\n### 2. A Pecuária e a Interiorização do Território\nEnquanto a cana ocupava a faixa litorânea fértil de massapê, a Coroa proibiu a criação de gado a menos de 10 léguas da costa (Carta Régia de 1701) para preservar terras para a exportação:\n• O gado avançou pelo sertão nordestino seguindo o curso do Rio São Francisco (\"Rio dos Currais\") e também pelos pampas sulistas.\n• A pecuária utilizou primordialmente mão de obra livre e mestiça (vaqueiros pagos pelo sistema de *quarteação* — recebiam 1 de cada 4 bezerros).\n\n### 3. A Mineração no Século XVIII e a Reconfiguração Colonial\nA descoberta de ouro nos sertões das Gerais gerou uma profunda transformação socioeconômica:\n• **Deslocamento do Eixo:** A capital foi transferida de Salvador para o Rio de Janeiro (1763) para facilitar o escoamento e a fiscalização do ouro.\n• **Urbanização e Sociedade Multifacetada:** Surgimento de cidades como Vila Rica (Ouro Preto), Mariana e Diamantina. Formação de classes médias urbanas (letrados, artesãos, tropeiros, pequenos comerciantes e clérigos).\n• **Integração do Mercado Interno:** Pela primeira vez, regiões distantes da colônia se conectaram economicamente (o Sul fornecia gado e mulas, o Nordeste abastecia com carne-seca e açúcar, o Sudeste consumia).\n• **Artes e Barroco Mineiro:** O apogeu cultural expresso nas esculturas e igrejas de Aleijadinho e nas pinturas de Mestre Ataíde, mesclando religiosidade e ironia crioula.\n• **O Fiscalismo Régio Agressivo:** A Intendência das Minas cobrava o *Quinto* (20% do ouro retido nas Casas de Fundição). Diante do declínio das jazidas na segunda metade do século, a Coroa instituiu a cota de 100 arrobas anuais e ameaçou com a *Derrama* (cobrança forçada de dívidas fiscais confiscando bens da população), estopim para a Inconfidência Mineira.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_col_02_a",
+              "title": "ENEM: Economia do Açúcar e Estrutura Social",
+              "problemStatement": "O sistema produtivo do açúcar implantado pela Coroa portuguesa no Nordeste colonial estruturou-se sob a base da 'plantation'. As principais características dessa estrutura produtiva e social correspondiam a:",
+              "options": [
+                "Indústrias têxteis estatais financiadas pela Companhia das Índias Orientais com mão de obra assalariada.",
+                "Pequenas propriedades familiares policultoras com produção voltada ao abastecimento dos centros urbanos locais.",
+                "Propriedades cooperativas com distribuição paritária do lucro entre senhores de engenho e trabalhadores cativos.",
+                "Grandes propriedades monocultoras (latifúndios), trabalho escravo compulsório e produção prioritariamente voltada à exportação mercantil.",
+                "Sistemas comunais de cultivo de trigo e uva para o consumo de colônias vizinhas do Prata."
+              ],
+              "correctIndex": 3,
+              "hint": "Lembre-se da fórmula da plantation: Latifúndio + Monocultura + Mão de obra Escrava + Mercado Externo.",
+              "stepByStepSolution": "A alternativa B está correta. A montagem da plantation açucareira exigia grandes extensões de terra (latifúndios concedidos via sesmarias), a especialização em um gênero de alto valor no mercado internacional europeu (monocultura da cana-de-açúcar) e a utilização massiva de mão de obra compulsoriamente escravizada, resultando em uma sociedade rural, patriarcal e profundamente desigual."
+            },
+            {
+              "id": "hist_ex_col_02_b",
+              "title": "ENEM: Mineração e a Integração do Espaço Colonial",
+              "problemStatement": "No século XVIII, a descoberta de jazidas de ouro e diamantes na região das Minas Gerais desencadeou profundas transformações socioespaciais na colônia. Dentre essas transformações, destaca-se:",
+              "options": [
+                "A proliferação de centros urbanos com maior complexidade social e a articulação de um inédito mercado interno abastecido por tropas de mulas.",
+                "A dissolução das divisões sociais coloniais em favor de uma república parlamentarista autônoma em Ouro Preto.",
+                "A proibição do tráfico transatlântico de escravizados africanos para substituir toda a mão de obra mineira por artesãos assalariados europeus.",
+                "O esvaziamento total do Rio de Janeiro e a fixação definitiva da capital colonial em Salvador para proteger as rotas da prata.",
+                "O abandono completo de qualquer cobrança tributária por parte da Coroa para estimular a livre iniciativa dos garimpeiros."
+              ],
+              "correctIndex": 0,
+              "hint": "Ao contrário do isolamento dos engenhos de açúcar no litoral, a mineração atraiu multidões para o interior, exigindo comida, vestimentas e transporte vindos de outras capitanias.",
+              "stepByStepSolution": "A alternativa B está correta. A atividade mineradora, por ser eminentemente urbana e concentrada no interior, impulsionou a vida nas cidades (Vila Rica, Mariana), gerou uma classe média de letrados e prestadores de serviços e, fundamentalmente, integrou economicamente a colônia: o Sul passou a fornecer mulas e charque, enquanto o Nordeste enviava açúcar e aguardente para alimentar a população mineira através dos tropeiros."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_col_03",
+          "unitId": "mod_hist_01_colonia",
+          "title": "3. A Escravidão Negra e as Resistências",
+          "conceptTitle": "Tráfico negreiro, a vida nas senzalas, quilombos (Palmares) e a cultura afro-brasileira como forma de resistência",
+          "explanation": "# A Escravidão Negra e as Múltiplas Formas de Resistência\n\nA escravidão negra foi a instituição estruturante da formação socioeconômica, política e cultural do Brasil durante mais de 350 anos. No ENEM, as questões abordam a violência sistêmica do cativeiro combinada necessariamente com o protagonismo e a agência histórica dos escravizados.\n\n### 1. O Tráfico Transatlântico como Grande Negócio\nEntre os séculos XVI e XIX, mais de 4,8 milhões de africanos escravizados foram desembarcados no Brasil (o país que mais importou pessoas escravizadas nas Américas):\n• **Comércio Triangular e Lucro Burguês:** O tráfico transatlântico de escravizados não existia por 'falta de opção', mas porque gerava gigantescos lucros tributários para a Coroa e acumulava capital para os traficantes luso-brasileiros.\n• **A Travessia nos Tumbeiros:** Condições desumanas a bordo dos navios negreiros, superlotação, desnutrição, doenças e taxa de mortalidade de até 25% na travessia oceânica.\n\n### 2. A Vida nas Senzalas e a Lógica da Desumanização\n• O escravizado era reduzido juridicamente à condição de *res* (coisa/mercadoria sem direitos civis).\n• Jornadas de trabalho de até 18 horas nos períodos de safra e moagem de cana; expectativa de vida média de um escravizado no engenho inferior a 10 anos após o desembarque.\n• Punições exemplares no pelourinho, uso de máscaras de flandres e correntes para manter o terror psicológico e disciplinar os corpos.\n\n### 3. A Resistência Escrava: Ativa, Cotidiana e Cultural\nA historiografia contemporânea e o ENEM rejeitam a ideia de submissão passiva. Os cativos resistiram por múltiplos caminhos:\n• **Resistências Diretas e Conflitivas:** Revoltas armadas, assassinatos de feitores violentos, suicídio ritualístico (como negação do valor da mercadoria ao senhor) e fugas individuais ou em bando.\n• **Os Quilombos e Mocambos:** Espaços de liberdade e recomposição comunitária em matas fechadas. O **Quilombo dos Palmares** (na Serra da Barriga, Alagoas), liderado por Ganga Zumba, Dandara e Zumbi, resistiu por quase um século reunindo mais de 20 mil pessoas com agricultura policultora e metalurgia própria.\n• **Negociações e Brechas Camponesas:** A concessão do cultivo de pequenas roças aos domingos ('brecha camponesa') permitia a venda de excedentes na feira e, eventualmente, a compra da carta de alforria.\n• **Resistência Cultural e Religiosa:** O sincretismo religioso (associação de Orixás a santos católicos para burlar a vigilância da Igreja), a formação de irmandades leigas (como a Irmandade do Rosário dos Homens Pretos), a capoeira, as cantigas de trabalho e a transmissão oral dos saberes ancestrais africanos.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_col_03_a",
+              "title": "ENEM: A Agência e as Resistências Escravas",
+              "problemStatement": "A historiografia recente enfatiza que os escravizados africanos e seus descendentes no Brasil não foram receptores passivos da opressão senhorial, mas sim agentes históricos que articularam variadas estratégias de sobrevivência e enfrentamento.\n\nConstitui um exemplo dessa resistência por vias socioculturais e de negociação:",
+              "options": [
+                "A recusa em fugir para os quilombos em razão da crença generalizada na benevolência dos capitães do mato.",
+                "A assinatura de contratos de trabalho assalariado registrados nos cartórios coloniais antes de cada jornada nas lavouras.",
+                "A submissão incontestável às determinações do pelourinho como ritual de aceitação da condição de mercadoria.",
+                "A renúncia voluntária de suas línguas, rituais e crenças para adotar a ideologia senhorial sem qualquer atrito.",
+                "A criação de irmandades religiosas leigas (como a do Rosário) e a manutenção de práticas de sincretismo para preservar laços identitários e comunitários."
+              ],
+              "correctIndex": 4,
+              "hint": "As irmandades leigas católicas e os terreiros eram espaços onde negros forros e cativos se organizavam para manter solidariedade, comprar alforrias e honrar seus antepassados.",
+              "stepByStepSolution": "A alternativa B está correta. A resistência à escravidão operou tanto de forma violenta e de ruptura (quilombos, revoltas) quanto de forma cotidiana e simbólica. As irmandades religiosas de negros, sob a aparência de devoção cristã, funcionavam como importantes redes de solidariedade, apoio mútuo, ajuda para compra de cartas de alforria e preservação camuflada de tradições religiosas de matriz africana (sincretismo)."
+            },
+            {
+              "id": "hist_ex_col_03_b",
+              "title": "ENEM: Significado Histórico do Quilombo dos Palmares",
+              "problemStatement": "O Quilombo dos Palmares, que floresceu ao longo de quase todo o século XVII na região da Serra da Barriga, representou para a ordem colonial escravocrata uma ameaça constante porque:",
+              "options": [
+                "Exigia que a Coroa aumentasse os impostos sobre o gado para financiar o exército real contra os bandeirantes paulistas.",
+                "Era formado exclusivamente por mercadores ingleses contrários ao consumo de açúcar refinado.",
+                "Constituía uma experiência de organização social, política e econômica autônoma, provando a viabilidade de uma sociedade fora do cativeiro e do exclusivo metropolitano.",
+                "Defendia a restauração da Coroa holandesa no Nordeste em troca da concessão de sesmarias açucareiras para nobres batavos.",
+                "Contava com frotas de navios de guerra para bloquear o comércio marítimo português em Lisboa."
+              ],
+              "correctIndex": 2,
+              "hint": "Palmares não era apenas um refúgio: abrigava milhares de pessoas, produzia alimentos diversos, forjava metais e desafiava o mito de que o negro só podia viver na condição de escravo.",
+              "stepByStepSolution": "A alternativa B está correta. Palmares abrigou mais de 20 mil pessoas e sobreviveu por quase um século. Sua existência desmistificava o discurso colonial de submissão do negro, praticava agricultura diversificada (milho, feijão, mandioca) e desafiava a autoridade da Coroa e dos senhores de engenho, funcionando como um polo constante de atração para cativos fugidos de todo o Nordeste."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_col_04",
+          "unitId": "mod_hist_01_colonia",
+          "title": "4. Revoltas Coloniais e Crise do Sistema",
+          "conceptTitle": "Movimentos nativistas (Emboabas, Mascates) versus movimentos emancipacionistas (Inconfidência Mineira e Conjuração Baiana)",
+          "explanation": "# Revoltas Coloniais e a Crise do Antigo Sistema Colonial\n\nNo final do século XVII e ao longo do século XVIII, a colônia foi palco de dois grupos fundamentais de rebeliões. O ENEM cobra com frequência cirúrgica a **diferença estrutural entre movimentos nativistas e movimentos emancipacionistas**.\n\n### 1. Movimentos Nativistas (Séculos XVII e Início do XVIII)\nRevoltas provocadas por atritos locais, disputas comerciais ou descontentamento com monopólios da Coroa, **sem projeto de independência ou separação de Portugal**:\n• **Guerra dos Emboabas (1707–1709, MG):** Conflito violento entre bandeirantes paulistas (descobridores do ouro) e os \"emboabas\" (forasteiros vindos de Portugal e de outras capitanias). Resultou no massacre do Capão da Traição e na criação da Capitania de São Paulo e Minas de Ouro.\n• **Guerra dos Mascates (1710–1711, PE):** Disputa política entre os decadentes aristocratas senhores de engenho de Olinda e os prósperos comerciantes portugueses (\"mascates\") do Recife, que conquistaram a elevação da povoação a vila independente.\n• **Revolta de Beckman (1684, MA):** Revolta contra os abusos da Companhia de Comércio do Maranhão e contra a atuação dos jesuítas no controle da mão de obra indígena.\n• **Revolta de Filipe dos Santos (1720, MG):** Protesto popular contra a criação das Casas de Fundição e a proibição da circulação do ouro em pó.\n\n### 2. A Crise do Sistema e os Movimentos Emancipacionistas\nNo final do século XVIII, a difusão dos ideais do **Iluminismo**, a Independência dos Estados Unidos (1776) e a Revolução Francesa (1789) inspiraram movimentos com **projeto explícito de ruptura colonial e proclamação da República**:\n\n### 3. Inconfidência Mineira (1789) vs. Conjuração Baiana (1798)\nO ENEM frequentemente confronta esses dois marcos para analisar as diferenças de classe social, objetivos e desfechos:\n\n| Critério | Inconfidência Mineira (1789) | Conjuração Baiana / Búzios (1798) |\n| :--- | :--- | :--- |\n| **Composição** | Elitista: poetas, magistrados, mineradores endividados e militares graduados | Popular: alfaiates, soldados rasos, artesãos, negros forros e escravizados |\n| **Influência** | Iluminismo moderado e Independência dos EUA (1776) | Iluminismo radical da fase jacobina francesa e Revolução do Haiti (1791) |\n| **Objetivos** | República em Minas, universidade em Vila Rica, perdão das dívidas tributárias | República democrática, abertura comercial, igualdade racial e salários justos |\n| **Escravidão** | Sem consenso; a maioria dos líderes era dona de escravos e não propunha abolição | Defesa intransigente da **abolição imediata da escravidão** |\n| **Desfecho** | Traição de Silvério dos Reis; penas brandas/degredo para a elite rica; pena capital apenas para Tiradentes | Enforcamento e esquartejamento de líderes populares (Lucas Dantas, Manuel Faustino, João de Deus) |",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_col_04_a",
+              "title": "ENEM: Nativismo vs Emancipacionismo",
+              "problemStatement": "A historiografia tradicional e as provas do ENEM diferenciam com rigor os movimentos nativistas dos movimentos emancipacionistas ocorridos no Brasil colonial. A diferença fundamental entre essas duas categorias de revoltas reside no fato de que:",
+              "options": [
+                "Ambos os movimentos tinham a mesma pauta única: exigir da Coroa portuguesa o aumento dos impostos cobrados nas Casas de Fundição.",
+                "Os movimentos nativistas contavam exclusivamente com a participação de negros escravizados, enquanto os emancipacionistas eram liderados unicamente por jesuítas estrangeiros.",
+                "As revoltas nativistas pretendiam a anexação do território brasileiro à Coroa espanhola, ao passo que as emancipacionistas queriam manter o pacto colonial com Portugal.",
+                "As revoltas nativistas questionavam apenas atritos regionais e monopólios fiscais específicos sem propor a independência, enquanto as emancipacionistas propunham a ruptura com a metrópole e a proclamação republicana.",
+                "As revoltas nativistas obtiveram a independência imediata de São Paulo e Pernambuco, enquanto as emancipacionistas foram todas pacificadas sem qualquer punição."
+              ],
+              "correctIndex": 3,
+              "hint": "Pense no objetivo final: revoltas como Emboabas e Mascates queriam resolver questões locais com a metrópole; a Inconfidência Mineira e a Conjuração Baiana queriam romper os laços coloniais.",
+              "stepByStepSolution": "A alternativa B está correta. Os movimentos nativistas (Guerra dos Emboabas, Guerra dos Mascates, Beckman) eram circunscritos a descontentamentos locais e privilégios de grupos regionais, mantendo lealdade ao Rei. Já as conjurações do final do século XVIII (Inconfidência Mineira de 1789 e Conjuração Baiana de 1798) eram emancipacionistas: influenciadas pelas Revoluções Atlânticas e pelo Iluminismo, questionavam a própria existência do sistema colonial e propunham a independência política e a formação de repúblicas."
+            },
+            {
+              "id": "hist_ex_col_04_b",
+              "title": "ENEM: Comparação Social nas Conjurações do Século XVIII",
+              "problemStatement": "Ao comparar a Inconfidência Mineira (1789) com a Conjuração Baiana ou Revolta dos Búzios (1798), percebe-se uma distinção basilar quanto à sua base social e às suas reivindicações populares. Essa distinção evidencia-se no fato de que a Conjuração Baiana:",
+              "options": [
+                "Apresentou composição predominantemente popular (alfaiates, soldados rasos e forros) e defendeu com firmeza a abolição imediata da escravidão e a igualdade de direitos civis.",
+                "Foi liderada exclusivamente por latifundiários que pretendiam manter intacta a escravidão e expandir o latifúndio açucareiro.",
+                "Recusou os ideais da Revolução Francesa e se inspirou apenas na teologia escolástica medieval da Contrarreforma.",
+                "Foi perdoada integralmente pela Coroa, diferentemente de Minas Gerais, onde todos os inconfidentes ricos foram executados na forca.",
+                "Defendeu a manutenção da monarquia absolutista portuguesa desde que D. Maria I concedesse títulos de nobreza a todos os baianos."
+              ],
+              "correctIndex": 0,
+              "hint": "Lembre-se do nome 'Revolta dos Alfaiates': seus líderes eram homens pobres, artesãos e negros livres como Lucas Dantas e Manuel Faustino, que colocaram a luta contra a escravidão e o preconceito racial no centro da pauta.",
+              "stepByStepSolution": "A alternativa B está correta. Enquanto a Inconfidência Mineira foi um movimento de elite (mineradores, poetas e magistrados) sem consenso sobre o fim da escravidão, a Conjuração Baiana de 1798 teve forte corte popular, influenciada pela fase radical jacobina da Revolução Francesa e pela Revolução Haitiana. Seus líderes reivindicavam a proclamação da República, o aumento do soldo militar, o livre comércio e a abolição incondicional da escravidão, sofrendo uma repressão desproporcional e violenta por parte das autoridades coloniais."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_hist_02_imperio",
+      "unitNumber": 2,
+      "tier": "BASIC",
+      "title": "História do Brasil: Império",
+      "description": "Abertura dos portos, Constituição de 1824 com Poder Moderador, rebeliões regenciais, economia cafeeira no Segundo Reinado e a abolição/República.",
+      "category": "História",
+      "subject": "Ciências Humanas",
+      "lessons": [
+        {
+          "id": "hist_imp_01",
+          "unitId": "mod_hist_02_imperio",
+          "title": "1. Processo de Independência e Primeiro Reinado",
+          "conceptTitle": "Vinda da família real em 1808, o 7 de setembro e a Constituição outorgada de 1824",
+          "explanation": "# Independência e Primeiro Reinado: A Construção do Estado Imperial\n\nO processo de Independência do Brasil (1822) e a configuração do Primeiro Reinado (1822–1831) são compreendidos no ENEM como uma transição conservadora liderada pela própria elite agrária em torno do herdeiro da dinastia de Bragança, assegurando a continuidade do latifúndio, da escravidão e da centralização monárquica.\n\n### 1. A Vinda da Família Real (1808) e a Abertura dos Portos\nEm 1807, fugindo das tropas napoleônicas sob escolta da marinha britânica, D. João VI transferiu a sede da Coroa para o Rio de Janeiro (\"interiorização da metrópole\"):\n• **Abertura dos Portos às Nações Amigas (1808):** Rompeu na prática o Pacto Colonial, beneficiando amplamente a Inglaterra industrial.\n• **Tratados de 1810:** Estabeleceram taxas alfandegárias ultrapreferenciais para mercadorias inglesas (15%), enquanto produtos portugueses pagavam 16% e das demais nações pagavam 24%.\n• **Elevação a Reino Unido (1815):** Consolidou o status político e administrativo da colônia, mas gerou ressentimento em Portugal.\n\n### 2. O 7 de Setembro e a 'Independência Conservadora'\nA Revolução Liberal do Porto (1820) exigia o retorno do rei a Lisboa e a tentativa de 'recolonizar' o Brasil:\n• Em resposta à pressão das Cortes portuguesas, o \"Partido Brasileiro\" (grandes proprietários de terras do Sudeste) articulou a permanência de D. Pedro (Dia do Fico, 9 de janeiro de 1822).\n• Ao proclamar a independência às margens do Ipiranga, D. Pedro I evitou o fracionamento territorial (ocorrido na América espanhola) e garantiu que a estrutura social escravocrata permanecesse intacta, sem participação popular nas decisões.\n\n### 3. A Constituição Outorgada de 1824 e o Poder Moderador\nEm 1823, diante de um projeto liberal da Constituinte que limitava os poderes do monarca (\"Constituição da Mandioca\"), D. Pedro I dissolveu o parlamento à força militar (a *Noite da Agonia*):\n• **Constituição de 1824:** Primeira constituição brasileira, imposta (outorgada) por decreto imperial.\n• **O Poder Moderador (Art. 98):** \"A chave de toda a organização política\", exclusivo do Imperador, ficava acima dos poderes Executivo, Legislativo e Judiciário, permitindo vetar leis, dissolver a Câmara dos Deputados e nomear senadores vitalícios.\n• **Voto Censitário e Indireto:** Apenas homens livres com renda líquida anual mínima comprovada (em moeda corrente) podiam votar. A grande maioria da população (escravizados, mulheres e homens pobres) ficou desprovida de direitos políticos.\n• **Padroado Régio:** A Igreja Católica foi subordinada ao Estado imperial; o imperador nomeava bispos e autorizava bulas papais.\n• **Reações:** A Confederação do Equador (1824) em Pernambuco, liderada por Frei Caneca, eclodiu em repúdio ao autoritarismo outorgado da Constituição de 1824, defendendo uma República liberal federativa.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_imp_01_a",
+              "title": "ENEM: A Constituição de 1824 e a Cidadania Censitária",
+              "problemStatement": "A Constituição outorgada de 1824 estruturou o sistema político do Império do Brasil introduzindo o Poder Moderador e definindo os critérios para o exercício dos direitos políticos.\n\nEm relação ao corpo de cidadãos com direito a voto no Primeiro Reinado, a Constituição estabeleceu que:",
+              "options": [
+                "As eleições eram dispensadas porque todos os deputados eram nomeados vitaliciamente pela Assembleia Constituinte.",
+                "O sufrágio era universal, permitindo a homens, mulheres e libertos a escolha direta do Imperador.",
+                "Apenas os membros das ordens religiosas jesuíticas e oficiais militares tinham o direito de votar nas províncias.",
+                "O voto era censitário e indireto, exigindo uma renda financeira mínima comprovada que excluía grande parte da população pobre e os escravizados.",
+                "O voto era facultativo e restrito aos cidadãos com diploma universitário obtido na Europa."
+              ],
+              "correctIndex": 3,
+              "hint": "Lembre-se do critério 'censitário': o direito ao voto estava condicionado à posse de riqueza (renda líquida anual mínima).",
+              "stepByStepSolution": "A alternativa B está correta. A Constituição de 1824 estabeleceu o voto censitário e indireto (em dois graus). Para ser votante ou eleitor de paróquia e província, era obrigatório comprovar uma renda mínima anual em dinheiro (ou alqueires de farinha). Essa barreira censitária marginalizou juridicamente os escravizados (que não tinham condição de cidadão), as mulheres e a maioria dos homens livres pobres, concentrando o poder nas mãos dos grandes proprietários de terras e comerciantes ricos."
+            },
+            {
+              "id": "hist_ex_imp_01_b",
+              "title": "ENEM: O Poder Moderador e o Autoritarismo Imperial",
+              "problemStatement": "O artigo 98 da Constituição de 1824 declarava: 'O Poder Moderador é a chave de toda a organização política, e é delegado privativamente ao Imperador, como Chefe Supremo da Nação'.\n\nNa prática política do Império brasileiro, a função desse quarto poder correspondia a:",
+              "options": [
+                "Garantir a autonomia irrestrita aos municípios para declararem independência sempre que julgassem necessário.",
+                "Garantir que a Igreja Católica pudesse revogar qualquer lei aprovada pelo parlamento imperial.",
+                "Subordinar a figura do Imperador às decisões do Supremo Tribunal de Justiça em todos os atos civis.",
+                "Permitir ao monarca intervir nos outros três poderes, dissolvendo a Câmara dos Deputados e nomeando senadores vitalícios para assegurar a supremacia da Coroa.",
+                "Transferir o comando das Forças Armadas para o Primeiro-Ministro eleito pela bancada de oposição."
+              ],
+              "correctIndex": 3,
+              "hint": "O Poder Moderador foi idealizado pelo pensador suíço Benjamin Constant, mas no Brasil de D. Pedro I serviu como instrumento de controle absolutista sobre o Legislativo e o Judiciário.",
+              "stepByStepSolution": "A alternativa B está correta. O Poder Moderador concedia a D. Pedro I (e posteriormente a D. Pedro II) amplos poderes constitucionais para interferir diretamente nas deliberações do Legislativo, dissolver a Câmara dos Deputados quando esta entrava em atrito com o imperador, vetar leis, nomear senadores vitalícios (a partir de uma lista tríplice) e destituir juízes, consolidando o caráter centralizador e autoritário do Estado imperial."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_imp_02",
+          "unitId": "mod_hist_02_imperio",
+          "title": "2. Período Regencial e as Revoltas",
+          "conceptTitle": "A ausência de D. Pedro II, instabilidade política e revoltas populares/separatistas (Cabanagem, Farroupilha, Balaiada e Revolta dos Malês)",
+          "explanation": "# O Período Regencial (1831–1840) e as Revoltas Populares\n\nCom a abdicação de D. Pedro I em 1831 e a minoridade do herdeiro Pedro de Alcântara (com apenas 5 anos), o Brasil foi governado por regentes. A historiografia define este período como a **\"experiência republicana de fato\"** do Império, marcada por descentralização política e intensos levantes provinciais e separatistas.\n\n### 1. As Correntes Políticas e as Reformas Institucionais\nTrês grupos disputavam o controle do aparelho de Estado no Rio de Janeiro:\n• **Restauradores (Caramurus):** Defendiam o retorno de D. Pedro I ao trono (extintos com a morte de D. Pedro em 1834).\n• **Liberais Moderados (Chimangos):** Grandes proprietários de terras do Sudeste, favoráveis a uma monarquia centralizada com reformas moderadas.\n• **Liberais Exaltados (Farroupilhas / Jurujubas):** Defendiam a federação provincial autônoma e até a República.\n• **O Ato Adicional de 1834:** Reforma liberal na Constituição de 1824 que criou as Assembleias Legislativas Provinciais (descentralização) e a Regência Una.\n• **A Guarda Nacional (1831):** Criada pelo ministro Padre Diogo Feijó como força militar civil leal aos proprietários rurais locais. O comando era entregue aos grandes fazendeiros (\"coronéis\"), embrião do coronelismo brasileiro.\n\n### 2. O Mosaico das Revoltas Regenciais no ENEM\nDiante da crise econômica e do vácuo de poder imperial, explodiram revoltas de naturezas distintas:\n\n• **Cabanagem (1835–1840, Pará):**\n  - Base: População paupérrima de ribeirinhos, indígenas e tapuios que habitavam cabanas à beira dos rios.\n  - Destaque: **Única revolta em que os revoltosos populares conseguiram tomar a capital provincial (Belém) e o poder político**.\n  - Repressão: Extrema violência das tropas legalistas, resultando na morte de cerca de 30 mil pessoas (30% da população da província).\n\n• **Guerra dos Farrapos / Farroupilha (1835–1845, Rio Grande do Sul e Santa Catarina):**\n  - Base: Elite estancieira criadora de gado do Sul (Bento Gonçalves, David Canabarro) e apoio de Giuseppe Garibaldi.\n  - Motivação: Revolta fiscal contra as tarifas impostas pelo governo imperial sobre o charque gaúcho, que era mais caro do que o charque platino importado do Uruguai e da Argentina.\n  - Destaque: Proclamação da República Rio-Grandense (Piratini) e República Juliana. Durou 10 anos e terminou com anistia ampla e integração de oficiais rebeldes ao Exército imperial pelo Tratado de Ponche Verde (1845).\n\n• **Revolta dos Malês (1835, Salvador, Bahia):**\n  - Base: Escravizados e negros libertos urbanos de origem iorubá e haussá de fé islâmica (*malês*).\n  - Destaque: **Líderes alfabetizados em árabe que planejaram uma insurreição urbana na noite do Ramadã contra a opressão senhorial e a imposição católica**.\n  - Consequência: Instaurou o \"medo do haitianismo\" (pânico das elites brasileiras de uma revolução negra como a do Haiti de 1791), resultando em açoites, deportações e endurecimento do controle sobre escravizados urbanos.\n\n• **Balaiada (1838–1841, Maranhão):**\n  - Base: Confronto popular entre vaqueiros, artesãos (fabricantes de balaios liderados por Manuel dos Balaios) e o quilombo de Cosme Bento com mais de 3 mil cativos fugidos.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_imp_02_a",
+              "title": "ENEM: As Revoltas do Período Regencial",
+              "problemStatement": "Durante a década de 1830, o Brasil viveu uma onda de rebeliões provinciais (Cabanagem, Farroupilha, Sabinada, Balaiada e Revolta dos Malês). A eclosão simultânea desses conflitos decorreu principalmente:",
+              "options": [
+                "Da decisão do regente Feijó de abolir sumariamente a escravidão e distribuir terras para todas as famílias do Norte.",
+                "Da crise econômica gerada pelo vácuo de poder centralizado com a abdicação de D. Pedro I e da insatisfação com a cobrança de impostos e a exclusão social.",
+                "Da tentativa de invasão da marinha francesa para restabelecer a colônia no Rio de Janeiro.",
+                "Do fechamento de todas as rotas comerciais marítimas pelos imperadores da Tríplice Aliança platina.",
+                "Da recusa dos governadores provinciais em aceitar a proclamação da República promovida pelo imperador D. Pedro II aos cinco anos."
+              ],
+              "correctIndex": 1,
+              "hint": "Com a renúncia de D. Pedro I em 1831, o governo regencial não detinha a legitimidade monárquica plena, estimulando tanto as elites regionais quanto as massas marginalizadas a se insurgirem.",
+              "stepByStepSolution": "A alternativa B está correta. O Período Regencial foi marcado por uma profunda crise de legitimidade do poder central. A ausência de um imperador coroado, somada às disputas entre facções políticas no Rio de Janeiro, à miséria das camadas populares no interior e aos pesados impostos cobrados das províncias, criou o cenário propício para revoltas tanto de caráter popular e identitário (Cabanagem, Malês) quanto de protesto das elites regionais (Farroupilha)."
+            },
+            {
+              "id": "hist_ex_imp_02_b",
+              "title": "ENEM: A Especificidade da Revolta dos Malês (1835)",
+              "problemStatement": "Em janeiro de 1835, eclodiu em Salvador a Revolta dos Malês. Este levante urbano é considerado singular na história das resistências escravas no Brasil porque:",
+              "options": [
+                "Contou com o apoio financeiro integral da aristocracia cafeeira paulista para desestabilizar o Império.",
+                "Foi articulado por africanos islamizados (iorubás e haussás), muitos alfabetizados em língua árabe, que contestavam a escravidão e a imposição da religião católica oficial.",
+                "Defendia a manutenção do cativeiro no campo e a libertação apenas dos trabalhadores domésticos da capital.",
+                "Pretendia transformar a Bahia em uma monarquia constitucional chefiada por D. Pedro I após seu retorno de Portugal.",
+                "Resultou na libertação pacífica e imediata de todos os escravizados da província baiana com anistia do governo regencial."
+              ],
+              "correctIndex": 1,
+              "hint": "Observe o termo 'Malês', derivado de 'imalê' (muçulmano em iorubá). Seus líderes utilizavam amuletos com versículos do Alcorão escritos em árabe para organizar o movimento.",
+              "stepByStepSolution": "A alternativa B está correta. A Revolta dos Malês em 1835 foi liderada por escravizados e negros forros urbanos convertidos ao Islã. Ao contrário do estereótipo colonial de ignorância dos escravizados, muitos dos rebeldes malês sabiam ler e escrever em árabe fluente, utilizando cartas cifradas para planejar o levante contra a opressão senhorial e as restrições religiosas católicas impostas pelo Estado imperial."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_imp_03",
+          "unitId": "mod_hist_02_imperio",
+          "title": "3. Segundo Reinado",
+          "conceptTitle": "A política do café no Sudeste, a Guerra do Paraguai e o parlamentarismo às avessas",
+          "explanation": "# O Segundo Reinado: Café, Guerra do Paraguai e Hegemonia Oligárquica\n\nO longo reinado de D. Pedro II (1840–1889) representou a consolidação institucional do Estado imperial centralizado, alicerçado no sucesso da lavoura cafeeira no Sudeste e no equilíbrio controlado entre as elites políticas.\n\n### 1. O Golpe da Maioridade e o 'Parlamentarismo às Avessas'\nPara encerrar as revoltas regenciais e unificar a nação sob uma figura de autoridade, os Liberais lideraram a antecipação da coroação de D. Pedro II aos 14 anos de idade em 1840:\n• **Luzias (Liberais) vs. Saquaremas (Conservadores):** Partidos que se revezavam no governo sem discrepâncias de fundo ideológico. Ambas as agremiações defendiam a grande propriedade e o regime escravocrata (*'Nada mais parecido com um saquarema do que um luzia no poder'*).\n• **O Sistema Parlamentarista às Avessas:**\n  - *Modelo Britânico:* O eleitorado vota no Parlamento -> o Parlamento escolhe o Primeiro-Ministro -> se o gabinete perde maioria, o governo cai.\n  - *Modelo Brasileiro Imperial:* O **Imperador** (via Poder Moderador) escolhia o Primeiro-Ministro (Presidente do Conselho) -> o Primeiro-Ministro organizava as eleições através de fraudes e coerção local (\"eleições do cacete\") -> a Câmara recém-eleita invariavelmente possuía maioria a favor do gabinete indicado pelo Imperador.\n  - D. Pedro II atuava como um árbitro neutro que alternava os partidos para evitar a hegemonia excessiva de qualquer facção.\n\n### 2. A Economia do Café e a Modernização Conservadora\nO café tornou-se o principal produto da pauta de exportações brasileiras, respondendo por mais de 50% das receitas cambiais:\n• **Vale do Paraíba (RJ e SP):** Região pioneira da cafeicultura. Solo exaurido por práticas agrícolas predatórias, relevo montanhoso, forte mentalidade aristocrática tradicional e apego irredutível à escravidão. Entrou em decadência acelerada a partir de 1870.\n• **Oeste Paulista (Campinas, Ribeirão Preto):** Solo fértil de *terra roxa*, planaltos propícios a ferrovias (São Paulo Railway) e cafeicultores com visão empresarial e financeira. Foi a vanguarda na substituição do escravo pela mão de obra imigrante europeia e na defesa da República.\n• **A 'Era Mauá':** Curto ciclo de investimentos industriais, estaleiros, ferrovias e iluminação a gás liderado pelo Barão de Mauá, após a extinção do tráfico negreiro liberar capitais ociosos.\n\n### 3. A Guerra da Tríplice Aliança / Guerra do Paraguai (1864–1870)\nMaior conflito armado da história da América do Sul, opondo a Tríplice Aliança (Brasil, Argentina e Uruguai, com apoio financeiro britânico) contra o Paraguai de Solano López:\n• **Os 'Voluntários da Pátria':** O Brasil recrutou homens pobres e prometeu liberdade a escravizados que aceitassem lutar no front de batalha.\n• **Consequências Decisivas para o Brasil:**\n  1. *Destruição do Paraguai:* Arrasou a infraestrutura e dizimou grande parte da população masculina paraguaia.\n  2. *Endividamento Financeiro:* O Império contraiu gigantescas dívidas com bancos britânicos (como a Casa Rothschild).\n  3. *O Fortalecimento Político do Exército:* A corporação militar retornou profissionalizada, coesa e com sentimento de identidade nacional, abraçando o ideário positivista (\"Ordem e Progresso\") e o abolicionismo, entrando em rota direta de colisão com a elite política civil monárquica.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_imp_03_a",
+              "title": "ENEM: A Dinâmica do Parlamentarismo às Avessas",
+              "problemStatement": "O arranjo político que vigorou no Segundo Reinado sob o reinado de D. Pedro II ficou conhecido historiograficamente como 'Parlamentarismo às Avessas'. Esse modelo se caracterizava pelo fato de que:",
+              "options": [
+                "O Parlamento tinha o poder exclusivo de destituir a monarquia e proclamar a república a qualquer momento.",
+                "O povo elegia diretamente o Primeiro-Ministro, e este decidia se o Imperador continuaria no trono.",
+                "O poder legislativo era chefiado pelo bispo do Rio de Janeiro, sem qualquer interferência de deputados ou senadores civis.",
+                "O Imperador utilizava o Poder Moderador para nomear o Presidente do Conselho de Ministros, que posteriormente forjava as eleições para obter maioria no Parlamento.",
+                "Os partidos Liberal e Conservador foram banidos, permitindo apenas a eleição de generais veteranos do Exército."
+              ],
+              "correctIndex": 3,
+              "hint": "Pense na ordem inversa: na Inglaterra, o Parlamento vem antes do Primeiro-Ministro. No Brasil imperial, o Imperador vinha antes de tudo.",
+              "stepByStepSolution": "A alternativa B está correta. No parlamentarismo clássico britânico, o poder emana do parlamento eleito pelos cidadãos. No Brasil do Segundo Reinado, ocorria a inversão ('às avessas'): D. Pedro II escolhia discricionariamente o Primeiro-Ministro com base no Poder Moderador. Uma vez empossado, esse ministro organizava as eleições através de fraudes, coronéis locais e coerção policial, garantindo a maioria dos assentos na Câmara para a sua legenda política."
+            },
+            {
+              "id": "hist_ex_imp_03_b",
+              "title": "ENEM: As Transformações do Café e o Oeste Paulista",
+              "problemStatement": "A partir da segunda metade do século XIX, a expansão cafeeira no Oeste Paulista diferenciou-se estruturalmente da cafeicultura tradicional do Vale do Paraíba por apresentar:",
+              "options": [
+                "A presença de solos férteis de terra roxa, investimentos em redes ferroviárias e a substituição progressiva do trabalho escravo pelo braço imigrante assalariado.",
+                "A destruição de todas as linhas de trem em prol do transporte manual de sacas por tropeiros montados.",
+                "O cultivo exclusivo em pequenas terras comunais sem latifúndio e sem fins de exportação internacional.",
+                "A proibição do ingresso de imigrantes italianos e alemães em razão da lealdade exclusiva aos senhores de engenho de açúcar.",
+                "O abandono total do cultivo do café para se dedicar exclusivamente à mineração e à metalurgia pesada."
+              ],
+              "correctIndex": 0,
+              "hint": "O Oeste Paulista (região de Campinas e Ribeirão Preto) tinha topografia favorável a trilhos de trem, terras vulcânicas férteis e fazendeiros voltados para o mercado financeiro e a imigração.",
+              "stepByStepSolution": "A alternativa B está correta. Enquanto o Vale do Paraíba entrou em colapso devido à erosão dos morros e ao apego irracional à escravidão tradicional, o Oeste Paulista emergiu como um polo dinâmico. Beneficiando-se do solo riquíssimo de terra roxa e do relevo plano, os fazendeiros investiram nas ferrovias (como a Santos-Jundiaí) e patrocinaram o sistema de colonato com imigrantes europeus assalariados, liderando a posterior proclamação da República."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_imp_04",
+          "unitId": "mod_hist_02_imperio",
+          "title": "4. A Crise do Império e o Fim da Escravidão",
+          "conceptTitle": "As leis abolicionistas graduais, imigração europeia, movimento republicano e o Golpe de 1889",
+          "explanation": "# A Crise do Império e o Fim da Escravidão no Brasil\n\nA queda do Império e a Proclamação da República (1889) resultaram da ruptura simultânea dos três pilares fundamentais que sustentavam o trono de D. Pedro II: a Igreja, o Exército e os grandes proprietários escravistas.\n\n### 1. O Fim do Tráfico Negreiro e a Lei de Terras (1850)\nSob severa pressão naval inglesa (a *Bill Aberdeen* de 1845 autorizava a Real Marinha britânica a afundar e capturar navios negreiros em qualquer oceano), o Brasil aprovou a **Lei Eusébio de Queirós (1850)**, encerrando a entrada de novos escravizados:\n• **Tráfico Interprovincial:** Os cafeicultores ricos do Sudeste passaram a comprar massivamente escravizados do decadente Norte e Nordeste açucareiro.\n• **A Lei de Terras de 1850:** Promulgada apenas duas semanas após o fim do tráfico, determinou que terras devolutas do Estado só poderiam ser adquiridas por **compra em dinheiro à vista**, e nunca mais por simples ocupação ou posse.\n• *Objetivo no ENEM:* Impedir que imigrantes pobres e negros alforriados tivessem acesso à terra própria, garantindo que fossem forçados a vender sua força de trabalho aos latifúndios cafeeiros.\n\n### 2. O Processo Abolicionista Lento e a Resistência Negra\nA elite parlamentar tentou protelar a abolição com uma legislação paliativa e gradual:\n• **Lei do Ventre Livre (1871):** Declarava livres os filhos de mulheres escravizadas nascidos a partir daquela data, mas deixava-os sob tutela senhorial até os 8 anos (com indenização do Estado) ou até os 21 anos (trabalhando gratuitamente para o senhor).\n• **Lei dos Sexagenários / Saraiva-Cotegipe (1885):** Libertava escravizados com mais de 60 anos, obrigando-os a prestar mais 3 anos de serviços ao senhor para indenizá-lo. Na prática, desobrigava o fazendeiro de alimentar idosos doentes.\n• **O Movimento Abolicionista Popular:** Longe de ser um 'favor da princesa', a abolição foi arrancada pela mobilização de advogados negros e jornalistas (Luiz Gama, André Rebouças, José do Patrocínio), comícios públicos de massa, revoltas armadas e fugas maciças de senzalas inteiras para o Quilombo do Jabaquara em Santos.\n• **Lei Áurea (13 de maio de 1888):** Aprovada no parlamento e assinada pela Princesa Isabel, aboliu formalmente a escravidão com apenas dois artigos.\n• *A Ausência de Inclusão Cidadã:* A Lei Áurea **não concedeu terras, escolas, moradia ou indenização aos ex-escravizados**, empurrando centenas de milhares de homens e mulheres negras para o subemprego, a informalidade e a segregação espacial nas periferias e favelas.\n\n### 3. A Queda do Trono: O Rompimento do Tripé de Sustentação\nA monarquia ruiu porque perdeu seus aliados históricos:\n• **A Questão Religiosa (1872–1875):** Conflito em que o imperador prendeu dois bispos católicos que cumpriam ordens papais antimassônicas, alienando o clero.\n• **A Questão Militar (1884–1889):** Militares proibidos pelo governo imperial civil de manifestar opiniões políticas nos jornais. Aderiram ao positivismo de Benjamin Constant (\"progresso guiado pela ciência e pelo exército\").\n• **A Questão Escravocrata (Os 'Republicanos de 13 de Maio'):** Os barões do café do Vale do Paraíba, furiosos com a Lei Áurea promulgada sem indenização financeira pela perda de suas 'propriedades humanas', abandonaram a monarquia e aderiram ao Partido Republicano por pura vingança.\n• **O Golpe de 15 de Novembro de 1889:** Liderado pelo Marechal Deodoro da Fonseca, cercou o Ministério da Guerra e depôs D. Pedro II.\n• *A Afastamento Popular:* Conforme registrou o jornalista Aristides Lobo na época: *\"O povo assistiu àquilo tudo bestializado, atônito, surpreso, sem saber o que significava; julgou ver um desfile militar\"*.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_imp_04_a",
+              "title": "ENEM: A Lei de Terras de 1850 e o Fechamento Social",
+              "problemStatement": "Aprovada no mesmo ano em que a Lei Eusébio de Queirós extinguiu o tráfico transatlântico de escravizados, a Lei de Terras de 1850 estabeleceu novas regras para a posse do solo brasileiro. A finalidade sociopolítica central dessa lei consistiu em:",
+              "options": [
+                "Determinar que as terras públicas só poderiam ser obtidas por compra em dinheiro à vista, impedindo o acesso à terra aos trabalhadores livres e imigrantes pobres.",
+                "Distribuir pequenas propriedades rurais gratuitas para todos os negros libertos e imigrantes pobres que chegassem ao país.",
+                "Restituir todas as sesmarias da Coroa às comunidades indígenas originárias do interior de São Paulo.",
+                "Proibir terminantemente que qualquer proprietário de terras pudesse vender café para o mercado externo britânico.",
+                "Estatizar todos os latifúndios de café e transformá-los em cooperativas agrícolas geridas pelo Ministério da Justiça."
+              ],
+              "correctIndex": 0,
+              "hint": "Com o fim iminente da escravidão, como os grandes fazendeiros de café garantiriam que imigrantes e ex-escravizados trabalhassem em suas fazendas em vez de cultivarem sua própria terra?",
+              "stepByStepSolution": "A alternativa B está correta. A Lei de Terras de 1850 foi uma manobra conservadora da elite agrária imperial. Sabendo que o fim do tráfico de escravizados exigiria a atração de trabalhadores livres (imigrantes e forros), a lei aboliu a posse tradicional e determinou que a terra só podia ser comprada por altos valores em dinheiro à vista. Dessa forma, impossibilitou que os pobres se tornassem donos de terra, forçando-os a trabalhar como empregados mal remunerados nos cafezais dos barões da elite."
+            },
+            {
+              "id": "hist_ex_imp_04_b",
+              "title": "ENEM: A Queda do Império e o Golpe de 1889",
+              "problemStatement": "O colapso da monarquia brasileira em 15 de novembro de 1889 é amplamente analisado pelos historiadores como resultado da quebra dos laços de sustentação política do trono com a Igreja, o Exército e os cafeicultores escravistas. A esse respeito, a famosa expressão do jornalista Aristides Lobo — 'O povo assistiu àquilo tudo bestializado' — sintetiza:",
+              "options": [
+                "O caráter cupular e militar do movimento republicano, conduzido sem a participação efetiva ou a mobilização das camadas populares, que viram a proclamação como um mero desfile militar.",
+                "A tristeza generalizada da população que derrotou os militares golpistas e reinstalou D. Pedro II no trono no dia seguinte.",
+                "O caráter de insurreição popular armada com massas operárias ocupando as ruas do Rio de Janeiro para derrubar a família real.",
+                "O apoio irrestrito dos camponeses pobres à restauração imediata do absolutismo português sob o comando do Papa Pio IX.",
+                "A alegria incontrolável dos escravizados recém-libertos que elegeram Marechal Deodoro como o primeiro presidente socialista do continente."
+              ],
+              "correctIndex": 0,
+              "hint": "A República no Brasil não foi fruto de uma revolução popular nas ruas (como na França), mas de um golpe palaciano orquestrado pela cúpula militar positivista aliada aos cafeicultores paulistas.",
+              "stepByStepSolution": "A alternativa B está correta. A Proclamação da República não contou com mobilização ou participação popular ativa. Tratou-se de um movimento de cúpula (golpe cívico-militar) articulado por oficiais positivistas do Exército e pelos cafeicultores do Oeste Paulista, descontentes com o Império. O povo pobre do Rio de Janeiro observou a marcha das tropas de Deodoro da Fonseca como se fosse uma parada militar comemorativa ('bestializado'), sendo excluído das decisões fundadoras da nova ordem republicana."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_hist_03_republica",
+      "unitNumber": 3,
+      "tier": "BASIC",
+      "title": "História do Brasil: República",
+      "description": "Da República Velha oligárquica à Nova República: coronelismo, Era Vargas, nacional-desenvolvimentismo, Ditadura Militar e a Constituição de 1988.",
+      "category": "História",
+      "subject": "Ciências Humanas",
+      "lessons": [
+        {
+          "id": "hist_rep_01",
+          "unitId": "mod_hist_03_republica",
+          "title": "1. República Velha (1889–1930)",
+          "conceptTitle": "Coronelismo, política do café com leite, revoltas populares (Canudos, Chibata, Vacina, Contestado) e o Tenentismo",
+          "explanation": "# República Velha (1889–1930): Oligarquias e Resistências Populares\n\nA Primeira República no Brasil estruturou-se como um arranjo político entre as elites agrárias regionais, excluindo a ampla maioria da população trabalhadora através de práticas coercitivas e fraudes eleitorais.\n\n### 1. A Engrenagem das Oligarquias\n• **Coronelismo e Voto de Cabresto:** O voto era aberto (não secreto), permitindo que os fazendeiros e chefes políticos locais (\"coronéis\") controlassem o voto dos eleitores dependentes por meio de favores, violência física (jagunços) e fraudes nas atas eleitorais (\"degola\").\n• **Política dos Governadores:** Articulada pelo presidente Campos Sales, consistia em uma troca de favores mútua: o presidente apoiava as oligarquias estaduais dominantes e, em contrapartida, as bancadas dos governadores no Congresso aprovavam os projetos do Executivo federal.\n• **Política do Café com Leite:** Alternância na Presidência da República entre as oligarquias cafeeira de São Paulo e leiteira/agrária de Minas Gerais.\n\n### 2. O Caldeirão de Revoltas Sociais\nDiante do abandono estatal, da carestia e do autoritarismo, explodiram revoltas urbanas e rurais de grande repercussão no ENEM:\n• **Guerra de Canudos (1896–1897, BA):** Comunidade messiânica liderada por Antônio Conselheiro em Belo Monte, reunindo sertanejos, ex-escravizados e sertanejos sem-terra. Destruída pelo Exército após quatro expedições militares.\n• **Guerra do Contestado (1912–1916, SC/PR):** Revolta de camponeses expulsos de suas terras para a construção da ferrovia *Brazil Railway Company* e a exploração madeireira por empresas estrangeiras.\n• **Revolta da Vacina (1904, RJ):** Insurreição popular no Rio de Janeiro contra a vacinação antivariólica obrigatória conduzida por Oswaldo Cruz e a violenta reforma urbana do prefeito Pereira Passos (política do \"bota-abaixo\", que demoliu cortiços e empurrou as camadas populares para os morros, gerando as favelas).\n• **Revolta da Chibata (1910, RJ):** Marinheiros negros da Armada, liderados por João Cândido (\"o Almirante Negro\"), rebelaram-se contra os castigos corporais (chibatadas), o racismo institucional e a má alimentação nos navios de guerra.\n\n### 3. A Crise dos Anos 1920 e o Tenentismo\n• **Movimento Tenentista:** Oficiais de baixa patente do Exército (tenentes e capitães) rebelaram-se contra as oligarquias cafeeiras, exigindo voto secreto, moralização política e criação da Justiça Eleitoral (Revolta dos 18 do Forte de Copacabana em 1922 e a Coluna Prestes).\n• **A Semana de Arte Moderna de 1922:** Ruptura estética no Teatro Municipal de São Paulo, defendendo a antropofagia cultural e uma arte genuinamente brasileira contra o academicismo parnasiano.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_rep_01_a",
+              "title": "ENEM: Coronelismo e a Política dos Governadores",
+              "problemStatement": "Na Primeira República brasileira (1889–1930), a sustentação do poder oligárquico apoiava-se na articulação entre o plano municipal e o governo federal. Essa dinâmica estruturava-se a partir de:",
+              "options": [
+                "Monopólio absoluto do Partido Republicano Gaúcho, que governou ininterruptamente de 1889 a 1930 sem a participação de São Paulo.",
+                "Financiamento estatal obrigatório de comícios para incentivar o voto espontâneo dos trabalhadores rurais analfabetos.",
+                "Eleições secretas e auditadas pela Justiça Eleitoral, garantindo a alternância pacífica dos partidos de esquerda.",
+                "Supressão total das Câmaras Municipais e nomeação direta de generais do exército para governar todos os municípios cafeeiros.",
+                "Controle do voto aberto pelos coronéis locais ('voto de cabresto'), integrado à troca de favores com as oligarquias estaduais e o presidente ('política dos governadores')."
+              ],
+              "correctIndex": 4,
+              "hint": "Lembre-se da rede de favores: o coronel coagia o eleitor no município, o governador elegia deputados federais leais, e o presidente protegia a oligarquia estadual.",
+              "stepByStepSolution": "A alternativa B está correta. O sistema de poder da República Velha articulava o coronelismo na base municipal (onde o voto aberto permitia o 'voto de cabresto' e a perseguição a oposicionistas) com a 'política dos governadores' no plano federal concebida por Campos Sales. Esse arranjo garantia a estabilidade das oligarquias estaduais e o domínio alternado de São Paulo e Minas Gerais ('café com leite')."
+            },
+            {
+              "id": "hist_ex_rep_01_b",
+              "title": "ENEM: A Revolta da Vacina e o Higienismo",
+              "problemStatement": "A Revolta da Vacina, ocorrida no Rio de Janeiro em 1904, não pode ser reduzida a um simples obscurantismo popular contra a ciência. Sob a ótica das tensões sociais urbanas da época, o levante foi provocado:",
+              "options": [
+                "Pelo apoio entusiasta dos revoltosos à invasão da marinha alemã na Baía de Guanabara.",
+                "Pela imposição de vacinas vindas da França que exigiam a renúncia do direito de voto dos operários de fábrica.",
+                "Pela insatisfação generalizada contra as reformas urbanas autoritárias do 'bota-abaixo' de Pereira Passos, que demoliram cortiços e expulsaram as classes populares do centro para as favelas.",
+                "Pela proibição do comércio de café no porto carioca imposta pelo sanitarista Oswaldo Cruz.",
+                "Pela recusa da população de classe alta em aceitar o fim da monarquia absolutista e a proclamação da república."
+              ],
+              "correctIndex": 2,
+              "hint": "A vacinação obrigatória foi a gota d'água em um contexto de demolição de moradias populares e higienismo autoritário que violentava a privacidade das famílias.",
+              "stepByStepSolution": "A alternativa B está correta. A historiografia consolidada no ENEM compreende a Revolta da Vacina de 1904 como uma explosão social contra o autoritarismo e a exclusão da reforma urbana de Pereira Passos. As demolições em massa de cortiços e habitações coletivas no centro da capital ('bota-abaixo') empurraram a população pobre para os morros sem assistência. A invasão dos lares por agentes sanitários armados para a vacinação obrigatória funcionou como o estopim de uma revolta contra o desprezo do Estado republicano pelas camadas populares."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_rep_02",
+          "unitId": "mod_hist_03_republica",
+          "title": "2. Era Vargas (1930–1945)",
+          "conceptTitle": "A Revolução de 30, a CLT e as leis trabalhistas, o Estado Novo e a propaganda de massas",
+          "explanation": "# Era Vargas (1930–1945): Centralização, Trabalho e Cidadania Regulada\n\nA Revolução de 1930 encerrou a hegemonia da República do Café com Leite e levou Getúlio Vargas ao poder. O período varguista redefiniu as relações entre Estado, classe trabalhadora e desenvolvimento industrial no Brasil.\n\n### 1. As Três Fases da Era Vargas\n• **Governo Provisório (1930–1934):** Dissolução do Congresso, nomeação de interventores nos estados (gerando a Revolução Constitucionalista de 1932 em SP) e promulgação da Constituição de 1934 (que garantiu o voto feminino, voto secreto e direitos trabalhistas básicos).\n• **Governo Constitucional (1934–1937):** Polarização ideológica entre a AIB (Ação Integralista Brasileira, de inspiração fascista) e a ANL (Aliança Nacional Libertadora, de esquerda anti-imperialista, liderada por Luís Carlos Prestes). O pretexto do fictício \"Plano Cohen\" (suposta ameaça comunista) justificou o fechamento das instituições democráticas.\n• **O Estado Novo (1937–1945):** Ditadura aberta com a Constituição \"Polaca\" de 1937, censura prévia através do DIP (Departamento de Imprensa e Propaganda), repressão política a opositores e culto personalista à figura de Vargas como o \"Pai dos Pobres\".\n\n### 2. A Legislação Trabalhista e o Corporativismo\n• **Cidadania Regulada:** A sociologia histórica (Wanderley Guilherme dos Santos) demonstra que a cidadania no varguismo dependia da vinculação do indivíduo a uma profissão reconhecida em carteira de trabalho (CLT de 1943).\n• **Controle Sindical:** A estrutura sindical era atrelada ao Ministério do Trabalho através da cobrança do imposto sindical obrigatório e da proibição de greves livres, cooptando a liderança operária (sindicatos \"pelegos\").\n• **Industrialização de Base:** Criação das indústrias estatais estratégicas com recursos da neutralidade diplomática na Segunda Guerra Mundial (CSN em Volta Redonda, Vale do Rio Doce, Fábrica Nacional de Motores).\n\n### 3. A Contradição da Segunda Guerra e o Fim do Estado Novo\nO envio da FEB (Força Expedicionária Brasileira) à Itália para lutar contra o nazifascismo gerou uma contradição insustentável: soldados brasileiros lutavam pela democracia no exterior enquanto viviam sob uma ditadura em casa, culminando na deposição de Vargas em 1945 pelo Exército.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_rep_02_a",
+              "title": "ENEM: Cidadania Regulada e Corporativismo Varguista",
+              "problemStatement": "A criação da Consolidação das Leis do Trabalho (CLT) em 1943 e a política sindical do governo Vargas são caracterizadas pelos sociólogos pela noção de 'cidadania regulada'. Esse conceito expressa o fato de que:",
+              "options": [
+                "O usufruto dos direitos sociais e previdenciários estava condicionado à vinculação formal a uma ocupação reconhecida pelo Estado e ao controle sindical ministerial.",
+                "Apenas os latifundiários e cafeicultores podiam filiar-se a sindicatos e negociar salários.",
+                "As greves foram incentivadas e legalizadas como principal instrumento de formulação de políticas econômicas pelo presidente.",
+                "O Estado brasileiro abriu mão de intervir na economia para permitir a livre negociação capital-trabalho sem nenhuma lei estatal.",
+                "Todos os brasileiros, mesmo sem profissão ou residência, tinham acesso automático a todos os direitos sociais e políticos."
+              ],
+              "correctIndex": 0,
+              "hint": "Para ter direitos varguistas, o trabalhador precisava ter 'carteira assinada' em profissão reconhecida, sob a fiscalização do Ministério do Trabalho.",
+              "stepByStepSolution": "A alternativa B está correta. A 'cidadania regulada', formulada pelo sociólogo Wanderley Guilherme dos Santos, define o modelo varguista em que o acesso a direitos trabalhistas e aposentadoria dependia estritamente de o cidadão pertencer a uma categoria profissional legalmente reconhecida pelo Estado. Em troca das concessões trabalhistas da CLT, o Estado tutelava e atrelava os sindicatos ao Ministério do Trabalho, neutralizando mobilizações autônomas e proibindo greves."
+            },
+            {
+              "id": "hist_ex_rep_02_b",
+              "title": "ENEM: A Propaganda do Estado Novo e o DIP",
+              "problemStatement": "Durante o Estado Novo (1937–1945), o Departamento de Imprensa e Propaganda (DIP) exerceu um papel determinante na legitimação do regime autoritário de Getúlio Vargas por meio de:",
+              "options": [
+                "Fechamento de todas as emissoras de rádio do país para evitar que o povo tivesse acesso a músicas e noticiários.",
+                "Incentivo financeiro irrestrito à circulação de jornais comunistas e anarquistas que criticassem abertamente as leis trabalhistas.",
+                "Exercício da censura sistemática sobre os meios de comunicação aliada à propaganda oficial do culto à figura de Vargas como líder protetor e educador da nação.",
+                "Defesa pública da anexação de territórios da Argentina e do Paraguai como missão sagrada do povo brasileiro.",
+                "Proibição do ensino da língua portuguesa nas escolas primárias para favorecer o dialeto regional gaúcho."
+              ],
+              "correctIndex": 2,
+              "hint": "O DIP combinava duas armas: a tesoura da censura prévia para calar opositores e a buzina da propaganda oficial ('Hora do Brasil') para promover o governante.",
+              "stepByStepSolution": "A alternativa B está correta. O DIP funcionou como a máquina de controle ideológico do Estado Novo: censurava previamente notícias, letras de música e peças de teatro que destoassem da narrativa oficial e, ao mesmo tempo, produzia cartilhas infantis, programas radiofônicos ('A Hora do Brasil') e desfiles patrióticos que construíam a mística de Getúlio Vargas como o 'Pai dos Pobres' e arquiteto da nova identidade nacional."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_rep_03",
+          "unitId": "mod_hist_03_republica",
+          "title": "3. República Populista (1945–1964)",
+          "conceptTitle": "O nacional-desenvolvimentismo de JK (Brasília e a indústria automobilística), crises políticas e as Reformas de Base de Jango",
+          "explanation": "# República Populista (1945–1964): Desenvolvimentismo e Crise Social\n\nO intervalo democrático entre o fim do Estado Novo e o golpe de 1964 foi marcado pela redemocratização, disputa de projetos econômicos (nacionalismo vs. liberalismo) e pela intensa mobilização popular.\n\n### 1. O Retorno de Vargas (1951–1954) e o Debate do Petróleo\n• Eleito pelo voto popular, Vargas adotou um nacionalismo econômico estratégico.\n• **Criação da Petrobras (1953):** Fruto da grande campanha popular \"O Petróleo é Nosso\", garantindo o monopólio estatal da exploração do petróleo.\n• **Crise Política e Suicídio:** Diante da forte oposição da UDN (liderada pelo jornalista Carlos Lacerda) e da pressão militar após o atentado da Rua Tonelero, Vargas cometeu suicídio em agosto de 1954, deixando a célebre Carta-Testamento (\"Saio da vida para entrar na História\"), adiando o golpe militar em uma década.\n\n### 2. O Governo JK (1956–1961): O Nacional-Desenvolvimentismo\n• **Plano de Metas:** Slogan \"50 anos em 5\", priorizando energia, transporte e indústrias pesadas.\n• **Abertura ao Capital Multinacional:** Instalação das montadoras de automóveis estrangeiras (Volkswagen, Ford) no ABC Paulista, consagrando a opção pelo rodoviarismo em detrimento das ferrovias.\n• **Construção de Brasília (1960):** Transferência da capital federal para o planalto central como símbolo de integração geopolítica e modernidade arquitetônica (Oscar Niemeyer e Lúcio Costa), erguida com o suor dos candangos nordestinos.\n• **O Custo Oculto:** Explosão da dívida externa, inflação galopante e aprofundamento das desigualdades regionais.\n\n### 3. A Crise de Jânio Quadros e o Governo Jango (1961–1964)\n• **Jânio Quadros:** Governo errático de apenas 7 meses, marcado por medidas folclóricas (proibição de biquínis e brigas de galo) e pela Política Externa Independente (condecoração do revolucionário Che Guevara), culminando em sua renúncia inesperada.\n• **João Goulart (Jango) e as Reformas de Base:** Jango propôs reformas estruturais de inclusão social: reforma agrária no campo (atendendo às Ligas Camponesas de Francisco Julião), reforma tributária progressiva, educacional (método Paulo Freire) e eleitoral (voto para os analfabetos).\n• **O Golpe de 1964:** As elites empresariais (IPES, IBAD), grandes latifundiários, a cúpula das Forças Armadas e o apoio do governo dos Estados Unidos (Operação Brother Sam) articularam o golpe civil-militar de 31 de março de 1964 sob o falso pretexto de impedir uma \"ameaça comunista\".",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_rep_03_a",
+              "title": "ENEM: As Reformas de Base e o Golpe de 1964",
+              "problemStatement": "O governo de João Goulart (1961–1964) foi marcado pela radicalização do debate político em torno das 'Reformas de Base'. A reação dos setores conservadores que culminou no golpe civil-militar deveu-se principalmente ao fato de que essas reformas:",
+              "options": [
+                "Pretendiam transformar o Brasil em uma monarquia absolutista dinástica sob o comando da família real portuguesa.",
+                "Extinguiam todos os direitos trabalhistas conquistados na CLT para baratear a mão de obra industrial.",
+                "Visavam a alterações estruturais distributivas (reforma agrária, fiscal e educacional) que contrariavam os interesses do latifúndio tradicional e das elites empresariais.",
+                "Propunham a entrega de todas as reservas de petróleo brasileiras para empresas multinacionais petrolíferas dos Estados Unidos.",
+                "Defendiam a invasão militar imediata de Cuba e a prisão de todos os estudantes universitários brasileiros."
+              ],
+              "correctIndex": 2,
+              "hint": "Pense na palavra 'agrária': mexer na propriedade da terra no Brasil sempre foi o maior tabu para as elites dominantes.",
+              "stepByStepSolution": "A alternativa B está correta. As Reformas de Base de Jango propunham desapropriações de terras improdutivas para reforma agrária, controle de remessa de lucros para o exterior, reforma tributária progressiva e extensão do direito de voto aos analfabetos. Essas propostas distributivas e democratizantes ameaçavam os privilégios da oligarquia agrária, de grandes empresários e de multinacionais, que se articularam com a cúpula militar e o governo norte-americano para derrubar o presidente legítimo em 1964."
+            },
+            {
+              "id": "hist_ex_rep_03_b",
+              "title": "ENEM: O Modelo Desenvolvimentista de JK",
+              "problemStatement": "O Plano de Metas do presidente Juscelino Kubitschek (1956–1961), sintetizado no lema '50 anos em 5', promoveu uma acelerada modernização da economia brasileira. Uma das consequências estruturais dessa política desenvolvimentista foi:",
+              "options": [
+                "O abandono do transporte rodoviário em favor de uma gigantesca e moderna malha ferroviária que cobriu todo o território nacional.",
+                "A eliminação definitiva da dívida externa brasileira por meio do corte de todos os gastos em infraestrutura energética.",
+                "A proibição do ingresso de capitais estrangeiros e a estatização total de todos os bancos comerciais e indústrias leves.",
+                "A consolidação do modelo rodoviarista com a atração de multinacionais automotivas e o aumento das disparidades regionais e da inflação.",
+                "A fixação da sede administrativa do governo brasileiro na cidade de Salvador para priorizar a exportação de cana-de-açúcar."
+              ],
+              "correctIndex": 3,
+              "hint": "Lembre-se da montagem da fábrica da Volkswagen no ABC e das grandes rodovias abertas para ligar o país a Brasília.",
+              "stepByStepSolution": "A alternativa B está correta. O governo JK consolidou a opção pelo modelo rodoviário através da atração de montadoras estrangeiras de veículos e da construção de rodovias de integração nacional. Embora tenha modernizado o parque fabril e construído Brasília, essa estratégia gerou um pesado endividamento externo, disparou as taxas de inflação e aprofundou a dependência nacional do transporte por caminhões e do petróleo."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_rep_04",
+          "unitId": "mod_hist_03_republica",
+          "title": "4. Ditadura Civil-Militar (1964–1985)",
+          "conceptTitle": "Atos Institucionais (AI-5), repressão, censura, o Milagre Econômico, movimentos de resistência e as Diretas Já",
+          "explanation": "# Ditadura Civil-Militar (1964–1985): Autoritarismo, Repressão e Resistências\n\nDurante 21 anos, o Brasil viveu sob um regime militar caracterizado pela suspensão dos direitos políticos fundamentais, perseguição a opositores e aprofundamento das desigualdades econômicas.\n\n### 1. O Recrudescimento Institucional e o AI-5\n• **Atos Institucionais (AIs):** Mecanismos jurídicos de exceção que sobrepunham a vontade dos generais-presidentes à Constituição:\n  - *AI-1 (1964):* Cassação de mandatos e suspensão de direitos políticos de parlamentares.\n  - *AI-2 (1965):* Extinção dos partidos políticos e criação do bipartidarismo artificial: ARENA (governista) e MDB (oposição consentida).\n  - *AI-5 (13 de dezembro de 1968):* O ápice do terrorismo de Estado. Fechamento do Congresso Nacional por tempo indeterminado, suspensão do *habeas corpus* para crimes políticos, censura prévia generalizada a jornais, músicas, filmes e teatro, e carta branca para prisões arbitrárias e tortura sistemática no DOI-CODI e OBAN.\n\n### 2. O 'Milagre Econômico' (1969–1973) e a Concentração de Renda\nSob o governo de Emílio Médici, o PIB cresceu a taxas de 10% ao ano, impulsionado por obras faraônicas (Ponte Rio-Niterói, Transamazônica, Usina de Itaipu):\n• **A Ilusão do Crescimento:** O crescimento foi financiado por endividamento externo bilionário e arrocho salarial sobre a classe trabalhadora.\n• **A Metáfora do Bolo de Delfim Netto:** O ministro da Fazenda afirmava que era preciso *'fazer o bolo crescer para depois dividir'*. O bolo cresceu, mas nunca foi dividido: os ricos ficaram mais ricos e os trabalhadores sofreram queda brutal no poder de compra, gerando extrema concentração de renda.\n\n### 3. A Luta contra a Ditadura e as Diretas Já\n• **Resistências Culturais:** O Tropicalismo (Caetano Veloso, Gilberto Gil), as canções de protesto de Chico Buarque e Geraldo Vandré, o teatro engajado e o Cinema Novo.\n• **Luta Armada e Guerrilha:** Movimentos de esquerda urbana (ALN de Carlos Marighella, MR-8) e a Guerrilha do Araguaia na Amazônia.\n• **O Novo Sindicalismo do ABC Paulista (1978–1980):** Greves operárias lideradas por metalúrgicos como Lula, que desafiaram a Lei de Segurança Nacional e inauguraram uma nova era de mobilização popular independente.\n• **A Transição 'Lenta, Gradual e Segura' (Geisel e Figueiredo):** Lei da Anistia de 1979 (que libertou presos políticos e permitiu o retorno dos exilados, mas anistiou preventivamente os agentes estatais torturadores).\n• **Campanha das Diretas Já (1984):** O maior movimento popular de massas da história republicana, que levou milhões de brasileiros às ruas vestindo amarelo para exigir eleições presidenciais diretas através da Emenda Dante de Oliveira.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 45,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_rep_04_a",
+              "title": "ENEM: O Significado Autoritário do AI-5",
+              "problemStatement": "O Ato Institucional nº 5 (AI-5), baixado em 13 de dezembro de 1968 durante o governo do general Costa e Silva, é considerado pelos historiadores o marco mais sombrio da Ditadura Civil-Militar brasileira porque:",
+              "options": [
+                "Proibiu a presença de qualquer militar em cargos da administração pública federal e estadual.",
+                "Decretou o fim imediato das Forças Armadas e transferiu o governo nacional para a Assembleia Geral da ONU.",
+                "Convocou eleições presidenciais diretas imediatas com a participação de todos os partidos de oposição clandestinos.",
+                "Institucionalizou o terrorismo de Estado ao suspender o habeas corpus para crimes políticos, fechar o Congresso e instaurar a censura prévia irrestrita.",
+                "Concedeu anistia ampla e irrestrita a todos os estudantes e operários presos durante os protestos de rua de 1968."
+              ],
+              "correctIndex": 3,
+              "hint": "Pense no que acontecia se você fosse preso sob o AI-5: não havia advogado ou juiz que pudesse pedir sua soltura via habeas corpus.",
+              "stepByStepSolution": "A alternativa B está correta. O AI-5 conferiu poderes quase absolutos ao Poder Executivo militar, permitindo fechar o Congresso, cassar mandatos de opositores, demitir juízes, suspender a garantia de habeas corpus para acusados de crimes contra a segurança nacional e censurar previamente a imprensa e as artes. Na prática, abriu caminho para a atuação clandestina dos órgãos de repressão (DOI-CODI, OBAN), legitimando prisões ilegais, torturas sistemáticas e assassinatos políticos cometidos por agentes do Estado."
+            },
+            {
+              "id": "hist_ex_rep_04_b",
+              "title": "ENEM: O Milagre Econômico e a Distribuição de Renda",
+              "problemStatement": "Durante os anos do chamado 'Milagre Econômico' (1969–1973), o Brasil registrou taxas recordes de crescimento do Produto Interno Bruto (PIB). No entanto, sob o ponto de vista social e da cidadania avaliado no ENEM, esse período caracterizou-se:",
+              "options": [
+                "Pelo arrocho dos salários dos trabalhadores, expansão da dívida externa e drástico agravamento da concentração de renda no país.",
+                "Por uma política de pleno emprego que erradicou o analfabetismo funcional nas capitais do Nordeste.",
+                "Pela extinção de todos os bancos privados para transformar o crédito em um serviço comunal gerido por sindicatos operários.",
+                "Pela triplicação do poder de compra do salário mínimo e pela concessão de terras na Amazônia para indígenas sem desmatamento.",
+                "Por uma expressiva redução da miséria e distribuição equitativa das riquezas entre todas as camadas sociais."
+              ],
+              "correctIndex": 0,
+              "hint": "Lembre-se da metáfora do bolo: 'Fazer o bolo crescer para depois dividir'. Quem comeu o bolo foram as classes mais ricas.",
+              "stepByStepSolution": "A alternativa B está correta. O crescimento acelerado do PIB no Milagre Econômico foi obtido às custas da repressão violenta aos sindicatos, do arrocho salarial imposto à classe trabalhadora e de pesados empréstimos internacionais. O resultado foi um dos momentos de maior aumento da desigualdade social e da concentração de renda da história brasileira, enquanto o custo de vida aumentava e os serviços públicos básicos de saúde e educação eram negligenciados."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_rep_05",
+          "unitId": "mod_hist_03_republica",
+          "title": "5. Nova República (1985 até os dias atuais)",
+          "conceptTitle": "A Constituição Cidadã de 1988, estabilização econômica (Plano Real) e as conquistas dos movimentos sociais contemporâneos",
+          "explanation": "# Nova República (1985–Dias Atuais): A Constituição Cidadã e a Democracia\n\nA redemocratização restabeleceu o Estado Democrático de Direito no Brasil, mas enfrentou o desafio de conciliar a conquista de direitos civis com a estabilização econômica e o combate à herança de desigualdades históricas.\n\n### 1. A Constituição Cidadã de 1988\nPromulgada após ampla mobilização popular e emendas populares na Assembleia Nacional Constituinte presidida por Ulysses Guimarães:\n• **Ampliação da Cidadania:** Definição do racismo como crime inafiançável e imprescritível; garantia de direitos territoriais às comunidades indígenas e quilombolas (Artigos 231 e 68 do ADCT); criminalização da tortura; igualdade formal entre homens e mulheres.\n• **Seguridade Social Universal:** Criação do SUS (Sistema Único de Saúde), da Previdência Social pública e do conceito de Assistência Social como dever do Estado e direito do cidadão.\n• **Universalização do Voto:** Concessão do direito de voto aos analfabetos e facultativo aos jovens de 16 e 17 anos.\n\n### 2. A Batalha contra a Hiperinflação e o Plano Real (1994)\nDurante os governos Sarney e Collor, o Brasil viveu uma espiral inflacionária devastadora (hiperinflação superior a 1000% ao ano) que corroía diariamente o salário dos trabalhadores:\n• **O Impeachment de Collor (1992):** O escândalo de corrupção do esquema PC Farias levou milhares de jovens com rostos pintados de verde e amarelo às ruas (os \"Caras-Pintadas\"), resultando no primeiro afastamento de um presidente por impeachment na história do país.\n• **O Plano Real (1994):** Conduzido no governo Itamar Franco pelo ministro Fernando Henrique Cardoso, utilizou a URV (Unidade Real de Valor) para estabilizar os preços, ancorou a nova moeda (o Real) e encerrou décadas de inflação descontrolada.\n\n### 3. As Políticas Sociais e as Lutas Contemporâneas no Século XXI\n• **Afirmação de Direitos Coletivos:** Nos anos 2000, o fortalecimento das políticas distributivas de combate à extrema pobreza (Bolsa Família, valorização do salário mínimo) e das políticas de ações afirmativas (Lei de Cotas Raciais e Sociais nas universidades federais em 2012).\n• **O Papel dos Movimentos Sociais:** O protagonismo do MST (Movimento dos Trabalhadores Rurais Sem Terra), MTST (Trabalhadores Sem Teto), movimento negro, feminista e indígena na cobrança pela efetivação das garantias da Constituição de 1988.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_rep_05_a",
+              "title": "ENEM: A Constituição Cidadã de 1988 e os Direitos Sociais",
+              "problemStatement": "A Constituição Federal de 1988, apelidada por Ulysses Guimarães de 'Constituição Cidadã', representou uma ruptura com a tradição autoritária brasileira ao consagrar:",
+              "options": [
+                "A extinção do Ministério Público e a proibição da previdência social pública para trabalhadores do campo.",
+                "A concessão de poderes plenipotenciários ao Presidente da República para governar por meio de atos institucionais sem intervenção judicial.",
+                "A ampliação histórica dos direitos fundamentais, estabelecendo a saúde como dever do Estado (SUS), tipificando o racismo como crime inafiançável e reconhecendo os direitos originários dos povos indígenas e quilombolas.",
+                "A restauração do voto censitário baseado na renda financeira e a subordinação das leis civis ao direito canônico católico.",
+                "A proibição do voto feminino e a criminalização de qualquer manifestação pública de trabalhadores grevistas."
+              ],
+              "correctIndex": 2,
+              "hint": "A Carta de 1988 é o pilar do Estado Democrático de Direito brasileiro contemporâneo e universalizou a saúde e a cidadania.",
+              "stepByStepSolution": "A alternativa B está correta. A Constituição de 1988 ampliou substantivamente a cidadania e os direitos sociais no Brasil. Criou o Sistema Único de Saúde (SUS) universal e público, declarou o racismo crime inafiançável e imprescritível, proibiu a tortura, assegurou o direito de greve e a liberdade sindical, garantiu direitos territoriais ancestrais a indígenas e remanescentes de quilombos e instituiu o voto facultativo para jovens de 16 e 17 anos e analfabetos."
+            },
+            {
+              "id": "hist_ex_rep_05_b",
+              "title": "ENEM: A Luta pela Efetivação dos Direitos Contemporâneos",
+              "problemStatement": "Apesar dos avanços formais e jurídicos trazidos pela Constituição de 1988 e pelos governos democráticos da Nova República, a realidade social brasileira ainda se depara com o desafio de:",
+              "options": [
+                "Efetivar na prática cotidiana as garantias de dignidade humana, combatendo as históricas desigualdades socioespaciais, a violência policial seletiva e a lentidão na demarcação de terras e na reforma agrária.",
+                "Impedir que os cidadãos pobres tenham acesso gratuito ao ensino superior público e ao voto secreto.",
+                "Restabelecer a censura prévia nos jornais para garantir a moralização da administração pública.",
+                "Extinguir o uso de moedas fiduciárias em prol do retorno ao escambo de açúcar nos centros urbanos.",
+                "Superar a monarquia parlamentarista que ainda comanda as Forças Armadas a partir de Petrópolis."
+              ],
+              "correctIndex": 0,
+              "hint": "Existe um abismo entre o texto da lei ('a lei no papel') e a vida concreta de milhões de brasileiros nas periferias e no campo.",
+              "stepByStepSolution": "A alternativa B está correta. O ENEM frequentemente aborda o descompasso entre a igualdade jurídica formal prometida pela Constituição de 1988 e as contradições da realidade brasileira contemporânea. A luta dos movimentos sociais (indígenas, negros, camponeses, sem-teto e LGBTQIA+) concentra-se na concretização desses direitos no dia a dia, enfrentando o racismo estrutural, a concentração de terras, a violência do Estado e a precarização dos serviços essenciais de saúde, moradia e educação."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_hist_04_antiguidade_media",
+      "unitNumber": 4,
+      "tier": "BASIC",
+      "title": "História Geral: Antiguidade e Idade Média",
+      "description": "Democracia ateniense e militarismo espartano, República e Império Romano, Feudalismo e hegemonia cristã, e o Mundo Islâmico.",
+      "category": "História",
+      "subject": "Ciências Humanas",
+      "lessons": [
+        {
+          "id": "hist_ant_01",
+          "unitId": "mod_hist_04_antiguidade_media",
+          "title": "1. Grécia Antiga",
+          "conceptTitle": "A invenção da Democracia em Atenas, o modelo militarista em Esparta e a cidadania restrita",
+          "explanation": "# Grécia Antiga no ENEM: Democracia, Cidadania Restrita e Modelos Sociais\n\nNo ENEM, a Grécia Antiga não é cobrada como uma cronologia mitológica, mas pela análise comparativa dos modelos sociopolíticos das *póleis* (cidades-estado independentes), com ênfase na natureza excludente da cidadania clássica.\n\n### 1. Atenas e a Invenção da Democracia Direta\n• **Evolução Política:** De Drácon e Sólon às reformas de Clístenes (508 a.C.), considerado o \"pai da democracia\".\n• **Democracia Direta na Ágora:** Os cidadãos reuniam-se na praça pública (*Ágora* ou *Eclésia*) para debater e votar as leis diretamente, sem representantes eleitos.\n• **Princípios Fundamentais:**\n  - *Isegoria:* Igualdade no direito à palavra na assembleia.\n  - *Isonomia:* Igualdade perante a lei para todos os cidadãos.\n  - *Ostracismo:* Banimento temporário por 10 anos de qualquer cidadão suspeito de conspirar contra o regime democrático.\n• **O Limite Estrutural da Cidadania Ateniense:** A cidadania era privilégio de uma minoria ínfima. Eram cidadãos apenas **homens adultos, livres, filhos de pai e mãe atenienses**. Estavam excluídos:\n  - *Mulheres:* Confinadas ao espaço doméstico (*gineceu*), sem direitos políticos.\n  - *Metecos:* Estrangeiros livres que viviam em Atenas, pagavam tributos e atuavam no comércio, mas sem voto.\n  - *Escravizados:* A ampla maioria da força produtiva (prisioneiros de guerra ou dívida), cuja exploração laboral garantia o ócio necessário (*otium*) para os cidadãos debaterem filosofia e política.\n\n### 2. Esparta: Militarismo, Oligarquia e Coerção\n• **Sociedade Militarizada:** Voltada para a guerra terrestre e a disciplina física incondicional. Desde os 7 anos, os meninos eram entregues ao Estado (*agoge*).\n• **Estrutura Social Rígida:**\n  - *Espartíatas (Iguais):* Elite guerreira descendente dos invasores dórios, proprietários das terras férteis.\n  - *Periecos:* Homens livres periféricos, comerciantes e artesãos desprovidos de direitos de comando político.\n  - *Hilotas:* População autóctone dominada e reduzida à servidão estatal coletiva, submetida a massacres anuais de terror ritualístico (*Criptia*) para evitar revoltas.\n• **Regime Político:** Oligarquia aristocrática chefiada por uma diarquia (dois reis), a *Gerúsia* (conselho de 28 anciãos aristocratas) e os *Éforos*.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_ant_01_a",
+              "title": "ENEM: A Natureza Excludente da Democracia Ateniense",
+              "problemStatement": "Na famosa oração fúnebre pronunciada por Péricles no século V a.C., ele celebrava: 'Nossa constituição política não copia as leis dos países vizinhos; antes, nós é que servimos de modelo a alguns deles. Seu nome é Democracia, porque o governo pertence não a uma minoria, mas à maioria'.\n\nNo entanto, ao analisar a organização socioespacial de Atenas à luz da crítica histórica do ENEM, constata-se que a democracia ateniense era caracterizada por:",
+              "options": [
+                "Uma república feudal camponesa sem moeda e sem comércio marítimo com o mar Mediterrâneo.",
+                "Um sufrágio universal irrestrito que concedia plenos direitos eleitorais a homens, mulheres e estrangeiros residentes.",
+                "Uma monarquia absolutista em que o rei de Atenas concentrava todo o poder legislativo e religioso sem assembleias.",
+                "Um modelo direto de deliberação na Ágora sustentado pelo trabalho compulsório de uma maioria desprovida de direitos de cidadania (escravizados, mulheres e metecos).",
+                "Um sistema representativo em que apenas sacerdotes do templo de Delfos podiam se candidatar ao parlamento ateniense."
+              ],
+              "correctIndex": 3,
+              "hint": "Lembre-se de quem ficava de fora da praça pública: mulheres, estrangeiros e a enorme população escravizada que realizava o trabalho produtivo.",
+              "stepByStepSolution": "A alternativa B está correta. A democracia clássica em Atenas era direta para os cidadãos, mas radicalmente excludente: os considerados cidadãos (homens adultos, livres e filhos de pais atenienses) somavam menos de 10% a 15% da população total da pólis. A ampla maioria — mulheres, estrangeiros residentes (metecos) e a massa de trabalhadores escravizados — não possuía qualquer direito de voto ou participação nas decisões políticas."
+            },
+            {
+              "id": "hist_ex_ant_01_b",
+              "title": "ENEM: Modelos Sociopolíticos em Atenas e Esparta",
+              "problemStatement": "A Grécia Clássica caracterizava-se pela coexistência de diversas cidades-estado (póleis) que, embora compartilhassem a mesma matriz linguística e religiosa, desenvolveram estruturas institucionais profundamente distintas.\n\nA comparação entre Esparta e Atenas revela que a sociedade espartana diferenciava-se pelo predomínio de:",
+              "options": [
+                "Uma democracia participativa de vanguarda artística e grande tolerância às liberdades individuais.",
+                "Uma organização aristocrática militarizada, onde a formação do cidadão-guerreiro priorizava a disciplina física e a submissão dos servos hilotas ao Estado.",
+                "Uma confederação de marinheiros mercantes dedicados exclusivamente à colonização do oceano Pacífico.",
+                "Uma economia exclusivamente financeira baseada na emissão de papel-moeda e no livre comércio com a Pérsia.",
+                "Um governo teocrático comandado por imperadores divinizados que proibiam a posse de escudos e lanças."
+              ],
+              "correctIndex": 1,
+              "hint": "Pense na educação guerreira espartana (a 'agoge') e no papel dos hilotas como população escravizada pelo Estado.",
+              "stepByStepSolution": "A alternativa B está correta. Esparta era uma pólis oligárquica e guerreira, governada por dois reis e pela Gerúsia. Os espartíatas (iguais) dedicavam-se com exclusividade ao treinamento militar desde os 7 anos de idade. Essa máquina bélica destinava-se a manter a segurança territorial e, internamente, policiar e reprimir a imensa população de hilotas (servos coletivos do Estado espartano), submetidos a regimes anuais de intimidação armada."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_ant_02",
+          "unitId": "mod_hist_04_antiguidade_media",
+          "title": "2. Roma Antiga",
+          "conceptTitle": "Da República ao Império, o Direito Romano, a política de pão e circo e a crise do escravismo",
+          "explanation": "# Roma Antiga: Da República ao Império, Direito e Crise Escravista\n\nRoma legou à civilização ocidental matrizes fundamentais: o Direito codificado, as técnicas de engenharia e a estrutura administrativa de um império multiétnico sustentado pelo modo de produção escravista.\n\n### 1. A República Romana (509 a.C.–27 a.C.) e as Lutas Plebeias\n• **Conflito Social:** Tensão perene entre os *Patrícios* (aristocracia latifundiária que monopolizava o Senado) e os *Plebeus* (maioria livre de artesãos, camponeses e soldados sem representação).\n• **Conquistas Plebeias por Greves:** Após ameaçarem abandonar Roma desguarnecida militarmente (Secessão da Plebe no Monte Sagrado), os plebeus conquistaram:\n  - *Tribunos da Plebe:* Magistrados invioláveis com poder de vetar leis que prejudicassem a plebe.\n  - *Lei das Doze Tábuas (450 a.C.):* Primeira codificação escrita das leis, impedindo interpretações arbitrárias dos patrícios.\n  - *Lei Canuleia:* Autorização do casamento misto entre patrícios e plebeus ricos.\n  - *Fim da escravidão por dívidas.*\n\n### 2. O Império Romano e a Política de 'Pão e Circo'\n• **A Expansão Militar e o Mare Nostrum:** A vitória sobre Cartago nas Guerras Púnicas transformou o Mar Mediterrâneo em lago romano (*Mare Nostrum*), inundando Roma de riquezas e milhões de escravizados prisioneiros de guerra.\n• **Ruína da Pequena Propriedade:** Os camponeses plebeus empobreceram por não competirem com as grandes fazendas escravistas (*latifundia*), migrando para Roma e formando uma massa ociosa e empobrecida.\n• **Pão e Circo (Panem et Circenses):** Estratégia de apaziguamento social: o Estado distribuía trigo e promovia espetáculos de gladiadores no Coliseu e corridas de bigas no Circo Máximo para alienar as massas e prevenir rebeliões.\n\n### 3. A Crise do Império e a Transição para o Feudalismo (Século III ao V d.C.)\n• **O Fim da Expansão e a Crise do Escravismo:** Com a fixação das fronteiras (*Pax Romana*), cessou o fluxo de prisioneiros de guerra. A escassez de escravizados encareceu a produção agrícola.\n• **O Colonato (Ruralização):** Grandes latifundiários acolheram plebeus falidos e ex-escravizados na terra em troca de proteção e de parte substantiva da colheita (origem da servidão medieval).\n• **Divisão do Império (395 d.C.):** Império Romano do Ocidente (capital Roma/Ravena) e Império Romano do Oriente (Bizantino, capital Constantinopla). As invasões dos povos germânicos (\"bárbaros\") fragmentaram o Ocidente em 476 d.C.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_ant_02_a",
+              "title": "ENEM: A Luta entre Patrícios e Plebeus na Roma Republicana",
+              "problemStatement": "Durante a República Romana, as tensões entre a aristocracia patrícia e a massa plebeia deflagraram intensas lutas sociais. Dentre as principais conquistas alcançadas pelos plebeus a partir dessas lutas, destaca-se:",
+              "options": [
+                "A transformação de Roma em um feudo autossuficiente isolado de qualquer contato com o Mar Mediterrâneo.",
+                "A submissão voluntária dos plebeus à escravidão perpétua em troca do direito de assistir às corridas do Circo Máximo.",
+                "A abolição imediata da propriedade privada da terra e a fundação de um Estado socialista comandado por gladiadores.",
+                "A criação do tribunato da plebe com poder de veto legislativo e a publicação da Lei das Doze Tábuas, conferindo publicidade e impessoalidade às leis escritas.",
+                "A proibição do Senado romano e a expulsão imediata de todos os proprietários de terras da península itálica."
+              ],
+              "correctIndex": 3,
+              "hint": "Lembre-se da Lei das Doze Tábuas e do poder dos Tribunos da Plebe de dizer 'Veto!' aos senadores.",
+              "stepByStepSolution": "A alternativa B está correta. Diante da ameaça plebeia de não servir no exército e abandonar Roma (Secessão no Monte Sagrado), os patrícios foram forçados a ceder. Criaram-se os Tribunos da Plebe (magistrados invioláveis defensores dos direitos populares com poder de veto) e foi redigida a Lei das Doze Tábuas (450 a.C.), fundamental por registrar o direito por escrito, rompendo o monopólio oral dos patrícios sobre a justiça."
+            },
+            {
+              "id": "hist_ex_ant_02_b",
+              "title": "ENEM: A Política do Pão e Circo e a Crise do Império",
+              "problemStatement": "No período imperial romano, a política de 'Pão e Circo' (panem et circenses) consistia na distribuição gratuita de trigo e na organização de combates de gladiadores no Coliseu. No contexto sociopolítico de Roma, essa política funcionava como:",
+              "options": [
+                "Um tratado de paz assinado com os reis bárbaros para desmilitarizar as legiões das fronteiras imperiais.",
+                "Um mecanismo de apaziguamento e controle social para desmobilizar a massa de plebeus desempregados e prevenir insurreições urbanas contra o imperador.",
+                "Uma punição civil para cidadãos que se recusassem a cultuar as divindades pagãs tradicionais.",
+                "Um projeto de escolarização universal para capacitar os escravizados a exercerem funções científicas.",
+                "Um modelo democrático de escolha do imperador com base no aplauso popular aos gladiadores vitoriosos."
+              ],
+              "correctIndex": 1,
+              "hint": "População faminta e sem emprego é perigosa para o poder imperial: comida grátis e entretenimento violento mantêm o povo ocupado e dócil.",
+              "stepByStepSolution": "A alternativa B está correta. A política de 'Pão e Circo' era uma estratégia calculada dos imperadores romanos para neutralizar as tensões da plebe marginalizada. A concentração de terras e a expansão do escravismo haviam expulsado os pequenos camponeses do campo, criando em Roma uma massa de centenas de milhares de desocupados. Distribuindo rações periódicas de trigo e oferecendo diversão pública alienante (gladiadores e corridas), o governo impedia rebeliões populares."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_ant_03",
+          "unitId": "mod_hist_04_antiguidade_media",
+          "title": "3. Mundo Medieval",
+          "conceptTitle": "O Feudalismo (economia de subsistência e ordens sociais), a hegemonia da Igreja Católica, as Cruzadas e o renascimento comercial/urbano",
+          "explanation": "# O Mundo Medieval: Feudalismo, Poder Católico e Renascimento Urbano\n\nA Idade Média (séculos V a XV) na Europa Ocidental é analisada pelo ENEM superando o preconceito oitocentista de 'Idade das Trevas'. Trata-se de uma sociedade com profunda coesão cultural, descentralização política e dinâmica própria de transformações.\n\n### 1. A Estrutura do Feudalismo\nFruto da fusão entre elementos romanos (*colonato*, *vilae*) e tradições germânicas (*comitatus*, laços de honra pessoal):\n• **Economia Feudal:** Agrária, voltada para a subsistência local no senhorio rural (feudo), com escassa circulação monetária e baixa divisão técnica do trabalho.\n• **Sociedade Estamental Tripartite:** Legitimada pela teologia medieval como vontade divina imutável:\n  - *Clero (Os que rezam - Oratores):* Monopólio cultural, salvação espiritual e grandes proprietários de terras.\n  - *Nobreza (Os que lutam - Bellatores):* Senhores das armas, castelos e cavalarias.\n  - *Servos (Os que trabalham - Laboratores):* Camponeses presos à terra, desprovidos de direitos de comando.\n• **Obrigações Servis:** *Corveia* (trabalho compulsório nas terras senhoriais), *Talha* (entrega de parte da produção servil), *Banalidades* (tributo pelo uso do moinho e forno do senhor) e *Tostão de Pedro / Dízimo* (para a Igreja).\n• **Relações de Suserania e Vassalagem:** Alianças militares e de honra horizontais *exclusivas entre nobres*, celebradas pelo rito da homenagem e investidura (concessão de um feudo pelo suserano ao vassalo leal).\n\n### 2. A Hegemonia da Igreja Católica\n• A Igreja era a instituição mais rica e poderosa do Ocidente medieval, detentora de um terço das terras agricultáveis.\n• Monopolizava o saber letrado, os mosteiros preservavam manuscritos antigos, e a visão de mundo era estritamente **teocêntrica** (Deus no centro de todas as explicações da realidade).\n\n### 3. As Cruzadas e o Renascimento Comercial e Urbano (Século XI ao XIV)\n• **As Cruzadas (1095–1291):** Expedições militares de cunho religioso convocadas pelo Papa Urbano II para reconquistar a Terra Santa (Jerusalém) dos muçulmanos.\n• **Consequências Econômicas e Culturais:**\n  - Reabertura do Mar Mediterrâneo ao comércio ocidental.\n  - Ressurgimento das rotas terrestres de comércio (Feiras de Champanhe) e florescimento das cidades comerciais italianas (Gênova e Veneza) e da Liga Hanseática no Norte europeu.\n  - **Surgimento da Burguesia:** Habitantes dos *burgos* (cidades muradas) dedicados ao comércio, às trocas monetárias e à produção artesanal organizada em corporações de ofício.\n  - A Crise do Século XIV: Fome generalizada, a devastação da Peste Negra (1347–1351) e a Guerra dos Cem Anos aceleraram a dissolução dos laços feudais.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_ant_03_a",
+              "title": "ENEM: Estrutura Social e Relações de Trabalho no Feudalismo",
+              "problemStatement": "Na sociedade feudal da Europa Ocidental, as relações de produção e de poder eram caracterizadas por:",
+              "options": [
+                "Uma economia estritamente capitalista com indústrias automatizadas e salários pagos semanalmente aos camponeses.",
+                "Uma sociedade de consumo de massas com importação contínua de trigo e café das colônias americanas.",
+                "Uma forte mobilidade social ascendente viabilizada pela aprovação em concursos públicos organizados pelo rei.",
+                "Uma organização estamental fundamentada na posse da terra, onde os servos estavam presos ao feudo e sustentavam a nobreza e o clero por meio de pesadas obrigações servis (como a corveia e a talha).",
+                "Um governo democrático direto onde os servos votavam anualmente para escolher quem seria o papa católico."
+              ],
+              "correctIndex": 3,
+              "hint": "Lembre-se da divisão tripartite (os que oram, os que guerreiam e os que trabalham) e dos tributos feudais em trabalho e produtos.",
+              "stepByStepSolution": "A alternativa B está correta. O feudalismo caracterizou-se pela descentralização política, economia agrária de subsistência e uma rígida estrutura social estamental legitimada pela Igreja Católica. Na base dessa pirâmide estavam os servos, camponeses vinculados juridicamente à terra dos senhores feudais, obrigados a trabalhar de graça vários dias na semana na reserva senhorial (corveia) e a entregar porcentagens expressivas de suas colheitas (talha e banalidades)."
+            },
+            {
+              "id": "hist_ex_ant_03_b",
+              "title": "ENEM: As Cruzadas e o Renascimento Comercial",
+              "problemStatement": "Convocadas a partir do final do século XI pelo papado sob a justificativa de libertar os lugares sagrados do Cristianismo, as Cruzadas produziram impactos econômicos e socioculturais decisivos no Ocidente, entre os quais se destaca:",
+              "options": [
+                "A reabertura das rotas marítimas no Mediterrâneo ao comércio europeu, estimulando o renascimento urbano, as feiras comerciais e a ascensão da burguesia mercantil.",
+                "A proibição definitiva da circulação de moedas na Europa e o fechamento do mar Mediterrâneo por mais mil anos.",
+                "A destruição total de todas as cidades portuárias italianas e o retorno definitivo ao isolamento primitivo das florestas.",
+                "A conversão de toda a população de Paris e Londres à fé islâmica e o fim do Sacro Império Romano-Germânico.",
+                "A abolição pacífica e universal de todos os tributos cobrados pelos nobres e o desarmamento dos exércitos reais."
+              ],
+              "correctIndex": 0,
+              "hint": "As Cruzadas levaram multidões ao Oriente Médio e restabeleceram o comércio de sedas, especiarias e tecidos finos, enriquecendo cidades como Veneza e Gênova.",
+              "stepByStepSolution": "A alternativa B está correta. Embora tenham falhado em seu objetivo religioso e militar permanente em Jerusalém, as Cruzadas reabriram o Mar Mediterrâneo ao comércio ocidental. Cidades italianas (Gênova e Veneza) acumularam fortunas transportando cruzados e mercadorias orientais (especiarias, perfumes, tecidos de seda). Esse fluxo comercial reanimou a circulação monetária, revitalizou as cidades (burgos) e fortaleceu a nova classe burguesa, abalando as bases tradicionais do isolamento feudal."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_ant_04",
+          "unitId": "mod_hist_04_antiguidade_media",
+          "title": "4. O Mundo Islâmico e as Rotas Comerciais",
+          "conceptTitle": "Expansão árabe, avanços científicos e conexões comerciais e culturais com o Ocidente",
+          "explanation": "# O Mundo Islâmico e as Rotas Comerciais Afro-Asiáticas\n\nO surgimento do Islã no século VII na Península Arábica unificou tribos beduínas e forjou uma das mais brilhantes civilizações da história, atuando como ponte mercantil, científica e cultural entre Ásia, África e Europa.\n\n### 1. Maomé e os Fundamentos do Islã\n• Em 622 d.C., Maomé realizou a *Hégira* (fuga de Meca para Medina), fundando a comunidade de fiéis muçulmanos (*Ummah*) e inaugurando o calendário islâmico.\n• **Os Cinco Pilares:** Profissão de fé em Alá como único Deus e Maomé seu profeta, cinco orações diárias, esmola aos necessitados (*zakat*), jejum no mês do Ramadã e peregrinação a Meca (*hajj*) ao menos uma vez na vida.\n• **Linguagem e Cultura:** O Alcorão em árabe serviu como instrumento de padronização linguística e unificação de povos distintos (árabes, persas, berberes).\n\n### 2. A Expansão Islâmica e a Conexão Global\n• Em menos de um século, os califados muçulmanos expandiram-se da Península Ibérica (Al-Andalus) até o Norte da África, Oriente Médio e Índia.\n• **As Cidades e as Rotas:** Damasco, Bagdá, Cairo e Córdoba tornaram-se metrópoles cosmopolitas e centros vibrantes de trocas comerciais (Rota da Seda e Rotas Transaarianas de ouro, sal e tecidos finos).\n\n### 3. A Vanguarda Científica e Filosófica Islâmica\nEnquanto a Europa feudal vivia em isolamento rural, o mundo islâmico viveu uma idade de ouro do conhecimento:\n• **Matemática e Astronomia:** Desenvolvimento da Álgebra (Al-Khwarizmi, de onde vem a palavra 'algoritmo'), popularização dos algarismos indo-arábicos (incluindo o número zero), trigonometria e cálculo de órbitas celestes com astrolábios aprimorados.\n• **Medicina:** Avicena (*Ibn Sina*) escreveu o *Cânone da Medicina*, obra de referência que ensinou a Europa durante séculos sobre anatomia, contágio e cirurgia.\n• **Preservação e Tradução Clássica:** Os sábios islâmicos traduziram, comentaram e salvaram do esquecimento os textos da filosofia clássica grega (Aristóteles e Platão), que posteriormente reingressaram na Europa renascentista através de Córdoba e Toledo.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_ant_04_a",
+              "title": "ENEM: A Idade de Ouro Científica do Mundo Islâmico",
+              "problemStatement": "Durante a Idade Média, enquanto a Europa Ocidental vivia em um ambiente cultural marcadamente ruralizado e teocêntrico, os grandes centros urbanos do mundo islâmico (como Bagdá, Cairo e Córdoba) floresciam como polos de produção intelectual, caracterizados por:",
+              "options": [
+                "Avanços extraordinários na astronomia, óptica, medicina e matemática (introdução do zero e desenvolvimento da álgebra), combinados à preservação e tradução de textos clássicos.",
+                "A submissão voluntária de todos os califas à autoridade espiritual exclusiva do Papa católico de Roma.",
+                "A proibição do comércio marítimo e das trocas mercantis com mercadores europeus e asiáticos.",
+                "Uma rejeição violenta a qualquer forma de conhecimento clássico grego ou romano, com a destruição sistemática de todas as bibliotecas antigas.",
+                "A imposição de uma economia puramente nômade que proibia o cultivo agrícola e a edificação de cidades e hospitais."
+              ],
+              "correctIndex": 0,
+              "hint": "Pense na palavra 'Álgebra', no uso do número zero e nas obras de medicina de Avicena que ensinaram a Europa.",
+              "stepByStepSolution": "A alternativa B está correta. A civilização islâmica medieval alcançou um extraordinário apogeu científico e intelectual. Os sábios muçulmanos preservaram, traduziram e ampliaram a herança filosófica grega de Aristóteles e Platão, criaram a Álgebra, consolidaram os algarismos arábicos com o zero, aperfeiçoaram o astrolábio e produziram compêndios médicos avançados (como os de Avicena) que revolucionaram o conhecimento ocidental séculos mais tarde."
+            },
+            {
+              "id": "hist_ex_ant_04_b",
+              "title": "ENEM: Rotas Comerciais e Conexões Transculturais",
+              "problemStatement": "A rápida expansão islâmica a partir do século VII articulou um vasto espaço geográfico que interligava o Oriente Médio, o Norte da África, a Ásia Central e a Península Ibérica. Essa articulação proporcionou:",
+              "options": [
+                "A formação de uma rede mercantil e cultural cosmopolita que integrou as rotas transaarianas de ouro e sal às rotas marítimas asiáticas de especiarias e tecidos.",
+                "A obrigatoriedade de que todos os produtos comercializados fossem doados gratuitamente às autoridades de Meca.",
+                "A decadência definitiva da navegação astronômica e o retorno ao uso exclusivo de carruagens terrestres na África.",
+                "A unificação de todas as monarquias europeias sob o comando militar direto dos generais persas.",
+                "O isolamento total das civilizações asiáticas, que deixaram de manter qualquer comércio com o continente africano."
+              ],
+              "correctIndex": 0,
+              "hint": "Lembre-se da Rota da Seda e das caravanas pelo deserto do Saara: o Islã era uma civilização de mercadores urbanos que ligavam o mundo.",
+              "stepByStepSolution": "A alternativa B está correta. O mundo islâmico funcionou como o grande elo de conexão global medieval. Através de uma rede integrada de rotas terrestres (caravanas de camelos pelo Saara comercializando ouro dos reinos de Mali e Gana) e rotas marítimas no Oceano Índico e Mediterrâneo, os mercadores muçulmanos conectavam os mercados da China, Índia, África e Europa, promovendo intensa circulação de bens materiais, tecnologias e ideias científicas."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_hist_05_moderna",
+      "unitNumber": 5,
+      "tier": "BASIC",
+      "title": "História Geral: Idade Moderna",
+      "description": "Renascimento cultural e humanismo, Reforma Protestante e Contrarreforma, Absolutismo e Mercantilismo, e as Grandes Navegações.",
+      "category": "História",
+      "subject": "Ciências Humanas",
+      "lessons": [
+        {
+          "id": "hist_mod_01",
+          "unitId": "mod_hist_05_moderna",
+          "title": "1. Renascimento Cultural e Científico",
+          "conceptTitle": "O humanismo, o antropocentrismo e a ruptura com o teocentrismo medieval",
+          "explanation": "# Renascimento Cultural e Científico (Séculos XIV a XVI)\n\nO Renascimento marcou a transição da mentalidade medieval para a modernidade ocidental. No ENEM, o movimento não é visto como uma recusa a Deus (os renascentistas eram profundamente religiosos), mas sim como uma reconfiguração do lugar do ser humano no cosmos e uma nova postura crítica diante da natureza.\n\n### 1. Pilares Filosóficos do Renascimento\n• **Humanismo:** Valorização das potencialidades, da dignidade e da capacidade intelectual e criativa do ser humano, inspirado no resgate dos clássicos greco-romanos.\n• **Antropocentrismo:** O ser humano como centro das reflexões e artífice de seu próprio destino, em oposição ao *Teocentrismo* medieval (onde todos os fenômenos eram explicados passivamente como desígnios inquestionáveis de Deus).\n• **Racionalismo e Empirismo:** A verdade deve ser buscada pelo uso da razão crítica, da observação direta dos fenômenos naturais e da experimentação científica, e não pela cega submissão ao princípio de autoridade da Igreja.\n• **Individualismo e Hedonismo:** Afirmação dos talentos individuais, da assinatura autoral das obras (rompendo o anonimato artesanal medieval) e da valorização dos prazeres terrenos legítimos.\n\n### 2. O Berço Italiano e o Mecenato\n• Cidades como Florença, Veneza e Roma enriqueceram com o comércio mediterrâneo e abrigavam os **Mecenas** (burgueses ricos, banqueiros como a família Médici e papas que financiavam pintores, escultores e cientistas em busca de prestígio social).\n• **Grandes Mestres:** Leonardo da Vinci (o homem universal polímata: pintura, anatomia, engenharia), Michelangelo (o teto da Capela Sistina, escultura de David), Rafael Sanzio e Botticelli.\n• **Inovações Técnicas nas Artes:** A invenção da **perspectiva linear** (profundidade tridimensional geométrica), o chiaroscuro (jogo de luz e sombra) e o realismo anatômico minucioso.\n\n### 3. A Revolução Científica\n• **Heliocentrismo:** Nicolau Copérnico e Galileu Galilei demonstraram cientificamente que o Sol é o centro do sistema e a Terra gira ao seu redor, demolindo o *Geocentrismo* ptolomaico defendido pelo dogma eclesiástico.\n• **A Imprensa de Gutenberg (c. 1450):** O aperfeiçoamento dos tipos móveis permitiu a impressão em massa de livros, barateando a circulação de ideias e quebrando o monopólio católico dos monges copistas.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_mod_01_a",
+              "title": "ENEM: Antropocentrismo e o Pensamento Renascentista",
+              "problemStatement": "O Renascimento cultural e científico dos séculos XV e XVI operou uma profunda inflexão na história do pensamento ocidental. Essa inflexão caracterizou-se pela:",
+              "options": [
+                "Imposição de uma visão puramente rural que proibia o comércio monetário e a vida urbana nas cidades portuárias.",
+                "Substituição da matriz exclusivamente teocêntrica medieval pelo antropocentrismo humanista, valorizando a capacidade da razão e da observação empírica para decifrar a natureza.",
+                "Defesa intransigente do modelo geocêntrico de Ptolomeu como única verdade científica autorizada pelos sábios humanistas.",
+                "Proclamação do ateísmo universal e pela destruição violenta de todos os templos e imagens católicas da Itália.",
+                "Rejeição completa de qualquer texto ou escultura da Antiguidade Clássica greco-romana."
+              ],
+              "correctIndex": 1,
+              "hint": "Lembre-se do Humanismo: o ser humano passa a ser visto como dotado de razão, inteligência e criatividade para investigar o mundo.",
+              "stepByStepSolution": "A alternativa B está correta. O Renascimento não significou uma negação da religiosidade, mas uma ruptura com o teocentrismo estéril medieval. Ao colocar o ser humano no centro das investigações (antropocentrismo humanista) e resgatar a herança clássica greco-romana, os renascentistas valorizaram o racionalismo, a experimentação e a observação da natureza, abrindo as portas para a Revolução Científica moderna (Copérnico, Galileu, Da Vinci)."
+            },
+            {
+              "id": "hist_ex_mod_01_b",
+              "title": "ENEM: A Revolução da Imprensa de Gutenberg",
+              "problemStatement": "A invenção e o aperfeiçoamento da prensa de tipos móveis por Johannes Gutenberg por volta de 1450 gerou impactos socioculturais revolucionários na Europa porque:",
+              "options": [
+                "Foi prontamente proibida por todos os monarcas absolutistas da Europa até o século XIX.",
+                "Permitiu a reprodução em escala inédita de obras impressas, democratizando a circulação de novas ideias científicas e teológicas e enfraquecendo o monopólio clerical sobre a cultura letrada.",
+                "Substituiu a leitura de textos escritos por rituais tribais transmitidos unicamente por via oral.",
+                "Elevou em dez vezes o custo financeiro dos livros, impedindo que a burguesia mercantil tivesse acesso a compêndios cartográficos.",
+                "Proibiu terminantemente a publicação de qualquer livro que não estivesse escrito em latim eclesiástico."
+              ],
+              "correctIndex": 1,
+              "hint": "Antes de Gutenberg, monges levavam meses copiando um único livro à mão. Com a prensa, centenas de bíblias e tratados científicos podiam ser impressos rapidamente.",
+              "stepByStepSolution": "A alternativa B está correta. A tecnologia da prensa de tipos móveis de Gutenberg revolucionou a comunicação e a circulação do saber: barateou a produção de livros, acelerou a difusão dos clássicos humanistas renascentistas e, crucialmente, permitiu que a Bíblia traduzida para as línguas locais por Lutero fosse lida por milhares de fiéis, quebrando o monopólio milenar que a Igreja Católica exercia sobre a cópia e a interpretação dos textos."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_mod_02",
+          "unitId": "mod_hist_05_moderna",
+          "title": "2. Reformas Religiosas",
+          "conceptTitle": "A Reforma Protestante de Lutero e Calvino e a Contrarreforma Católica (Companhia de Jesus e a Inquisição)",
+          "explanation": "# As Reformas Religiosas: Protestantismo e a Contrarreforma Católica\n\nNo século XVI, a Igreja Católica romana perdeu o monopólio da fé na Europa Ocidental. O ENEM aborda a Reforma não apenas por disputas teológicas, mas pelas profundas transformações sociopolíticas e econômicas ligadas à ascensão burguesa e ao fortalecimento das monarquias nacionais.\n\n### 1. Causas e Crise Moral da Igreja Medieval\n• **Venda de Indulgências:** Cobrança de dinheiro para conceder o perdão dos pecados e garantir a redução da pena da alma no Purgatório.\n• **Simonia:** Venda descarada de relíquias sagradas falsificadas (pedaços de madeira supostamente da cruz de Cristo) e de cargos eclesiásticos (bispados para nobres ricos).\n• **Nicolaísmo:** Descumprimento sistemático do celibato clerical por sacerdotes e papas.\n\n### 2. As Principais Correntes da Reforma Protestante\n• **Luteranismo (Alemanha, 1517):** O monge Martinho Lutero afixou as *95 Teses* na porta da igreja de Wittenberg:\n  - *Salvação pela Fé (Sola Fide):* A salvação da alma é uma graça gratuita de Deus obtida unicamente pela fé pessoal sincera, e não por boas obras ou pagamento de indulgências.\n  - *Livre Interpretação da Bíblia (Sola Scriptura):* Tradução das Escrituras do latim para as línguas vernáculas (Lutero traduziu para o alemão), extinguindo a necessidade da intermediação sacerdotal e do Papa.\n  - Redução dos sacramentos a apenas dois bíblicos: Batismo e Eucaristia.\n• **Calvinismo (Suíça):** João Calvino formulou a doutrina da **Predestinação Absoluta**:\n  - Deus já havia escolhido, desde o início dos tempos, quem seria salvo e quem seria condenado.\n  - *A Ética Protestante e o Espírito do Capitalismo (Max Weber):* O sucesso no trabalho árduo, na disciplina e na poupança material era visto como um sinal visível da graça divina, justificando teologicamente o lucro burguês (condenado como pecado de usura pela Igreja Católica).\n• **Anglicanismo (Inglaterra, 1534):** Motivado por razões de Estado: o rei Henrique VIII rompeu com o Papa pelo *Ato de Supremacia*, fundou a Igreja Anglicana (da qual se tornou chefe político e espiritual) e confiscou as vastas terras da Igreja para a nobreza inglesa.\n\n### 3. A Contrarreforma ou Reforma Católica\nReunida no **Concílio de Trento (1545–1563)** para frear o avanço protestante:\n• **Reafirmação Dogmática:** Manutenção dos sete sacramentos, do celibato clerical e da autoridade infalível do Papa.\n• **Instrumentos de Combate:**\n  - *Companhia de Jesus (Jesuítas):* Ordem militarmente disciplinada fundada por Inácio de Loyola para expandir a fé católica através da catequese nas terras coloniais recém-conquistadas da América e Ásia.\n  - *Tribunal do Santo Ofício (Inquisição):* Perseguição implacável, tortura e condenação à fogueira (*auto de fé*) de hereges, judeus e cientistas.\n  - *Index Librorum Prohibitorum:* Lista oficial de livros de leitura proibida aos católicos (incluindo obras científicas de Galileu, Copérnico e filósofos iluministas).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_mod_02_a",
+              "title": "ENEM: Luteranismo e o Rompimento Teológico",
+              "problemStatement": "Em 1517, ao publicar as 95 Teses contra a venda de indulgências pela Igreja Católica, Martinho Lutero inaugurou a Reforma Protestante, cujo núcleo doutrinário estabelecia:",
+              "options": [
+                "A obrigação de que todos os fiéis realizassem peregrinações anuais a Roma para serem batizados pessoalmente pelo Papa.",
+                "A doutrina da justificação pela fé, pela qual a salvação da alma é uma graça divina individual que prescinde da compra de indulgências e da mediação sacerdotal romana.",
+                "A necessidade de que o Papa tivesse poder imperial sobre todos os reis da Europa e cobrasse dízimos em dobro.",
+                "A extinção do Cristianismo e o retorno ao politeísmo clássico grego de Zeus e Atena.",
+                "A proibição do casamento dos pastores protestantes e a obrigatoriedade da reclusão de todos os fiéis em mosteiros fechados."
+              ],
+              "correctIndex": 1,
+              "hint": "Lembre-se dos dois grandes pilares de Lutero: Sola Fide (só a fé salva) e Sola Scriptura (só a Bíblia como autoridade de fé).",
+              "stepByStepSolution": "A alternativa B está correta. A ruptura de Martinho Lutero contestou a mercantilização da fé (venda de indulgências para financiar a Basílica de São Pedro). Lutero sustentava a tese da 'justificação pela fé': o fiel é salvo pela graça divina mediante sua fé sincera, e não por pagamentos pecuniários à Igreja ou por ritos eclesiásticos. Ao pregar a livre interpretação da Bíblia e traduzi-la para a língua do povo, retirou do clero católico o monopólio da salvação."
+            },
+            {
+              "id": "hist_ex_mod_02_b",
+              "title": "ENEM: A Ética Calvinista e o Espírito Capitalista",
+              "problemStatement": "Na clássica obra 'A Ética Protestante e o Espírito do Capitalismo', o sociólogo Max Weber analisa como a teologia calvinista da Predestinação Absoluta favoreceu a expansão do capitalismo moderno. Segundo essa análise, isso ocorreu porque o calvinismo:",
+              "options": [
+                "Restabeleceu a condenação medieval da usura e do lucro com penas de prisão perpétua para comerciantes de tecidos.",
+                "Interpretava a disciplina, o trabalho árduo e o enriquecimento lícito como sinais visíveis da bênção e da eleição divina, legitimando moralmente a acumulação e o reinvestimento burguês.",
+                "Proibiu o trabalho assalariado e determinou que os lucros comerciais fossem queimados em fogueiras públicas.",
+                "Exigia a devolução de todas as propriedades privadas à Coroa católica de Portugal.",
+                "Defendia que a preguiça e a mendicância eram virtudes sagradas que garantiam o paraíso imediato aos homens de negócios."
+              ],
+              "correctIndex": 1,
+              "hint": "Para Calvino, o sucesso material honesto não era pecado (como dizia o catolicismo medieval), mas a confirmação de que Deus abençoou seu trabalho diário.",
+              "stepByStepSolution": "A alternativa B está correta. O calvinismo operou uma revolução ética fundamental: ao pregar que a salvação era predestinada por Deus e que a dedicação metódica ao trabalho e a prosperidade material sem ostentação eram indícios da graça divina, retirou o estigma de pecado do lucro e do empréstimo a juros. Essa moral do dever profissional (ascese laica) casou-se perfeitamente com os interesses de poupança e reinvestimento produtivo da burguesia mercantil europeia."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_mod_03",
+          "unitId": "mod_hist_05_moderna",
+          "title": "3. Absolutismo e Mercantilismo",
+          "conceptTitle": "A concentração do poder real, o pacto colonial e a busca por metais preciosos",
+          "explanation": "# Absolutismo Monárquico e as Práticas do Mercantilismo\n\nNa Idade Moderna europeia (séculos XVI a XVIII), a consolidação dos Estados Nacionais gerou uma aliança estratégica entre o rei e a burguesia mercantil, culminando na concentração de poderes na figura monárquica e na política mercantilista.\n\n### 1. O Absolutismo Monárquico\nSistema político em que o soberano exercia o controle centralizado das leis, da arrecadação de impostos, da justiça e do monopólio da violência legítima (exército nacional permanente):\n• **O Auge Francês:** Luís XIV, o \"Rei Sol\" (*'L'État, c'est moi'* — o Estado sou eu), governando do monumental Palácio de Versalhes, onde a nobreza foi domesticada e mantida sob pensões e cortesias reais.\n• **Teorias de Legitimação do Poder Absoluto:**\n  - *Nicolau Maquiavel (O Príncipe):* A política desvinculada da moral religiosa tradicional. A razão de Estado está acima de qualquer escrúpulo; para manter a estabilidade do poder, \"os fins justificam os meios\" e \"é melhor ser temido do que amado\".\n  - *Thomas Hobbes (Leviatã):* No estado de natureza primitivo, o homem é o lobo do próprio homem (*homo homini lupus*), vivendo em guerra de todos contra todos. Para sobreviver, os indivíduos firmam um pacto social irrevogável entregando sua liberdade a um soberano absolutista (o Leviatã) em troca de paz e segurança civil.\n  - *Jacques Bossuet (Teoria do Direito Divino dos Reis):* O rei é o representante direto de Deus na Terra; rebelar-se contra o monarca é cometer pecado mortal contra o Criador.\n\n### 2. O Mercantilismo: A Prática Econômica da Idade Moderna\nConjunto de práticas econômicas estatais com o objetivo primordial de fortalecer as finanças da monarquia absolutista:\n• **Metalismo (Bulionismo):** A riqueza de um Estado era medida pela quantidade de ouro e prata acumulada em seus cofres (adotado intensamente pela Espanha nas minas de Potosí).\n• **Balança Comercial Favorável:** Exportar mais mercadorias (receber ouro) do que importar (evitar a saída de moeda).\n• **Protecionismo Alfandegário:** Aplicação de pesadas taxas sobre a entrada de produtos manufaturados estrangeiros para proteger a produção interna.\n• **Colbertismo / Manufaturas:** Política francesa de estímulo estatal à produção de artigos manufaturados de luxo de alto valor agregado (tapeçarias, perfumes, cristais).\n• **O Sistema Colonial (Pacto Colonial):** As colônias na América funcionavam como áreas de exploração exclusivas: só podiam fornecer matérias-primas baratas à metrópole e eram obrigadas a consumir os produtos manufaturados metropolitanos a preços monopolistas.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_mod_03_a",
+              "title": "ENEM: O Mercantilismo e a Balança Comercial",
+              "problemStatement": "O mercantilismo caracterizou a política econômica das monarquias absolutistas na Europa Moderna. O princípio basilar dessa política, voltado para assegurar a riqueza e a soberania do Estado, consistia em:",
+              "options": [
+                "Extinguir todas as taxas alfandegárias para promover o livre-comércio mundial desregulado.",
+                "Manter uma balança comercial favorável (exportar mais e importar menos) para reter metais preciosos (ouro e prata) dentro do reino.",
+                "Proibir o comércio das metrópoles com suas possessões coloniais na América.",
+                "Distribuir a totalidade das reservas de ouro do tesouro real aos camponeses pobres das aldeias.",
+                "Estimular as importações de tecidos ingleses para desvalorizar a moeda nacional."
+              ],
+              "correctIndex": 1,
+              "hint": "Lembre-se da fórmula: Exportações > Importações = superávit comercial e acúmulo de metais nos cofres do rei (metalismo).",
+              "stepByStepSolution": "A alternativa B está correta. A lógica do mercantilismo partia da premissa do metalismo: a força de uma monarquia absolutista media-se pela quantidade de metais preciosos (ouro e prata) retidos em seus cofres. Para conseguir esse acúmulo, o Estado adotava o protecionismo alfandegário e buscava manter uma balança comercial favorável (vendendo produtos manufaturados caros e comprando apenas o indispensável), apoiando-se no exclusivo do pacto colonial."
+            },
+            {
+              "id": "hist_ex_mod_03_b",
+              "title": "ENEM: Teóricos do Absolutismo e a Justificação do Poder",
+              "problemStatement": "Na Inglaterra do século XVII, Thomas Hobbes publicou o 'Leviatã', justificando a existência de um poder monárquico absolutista centralizado. Segundo a teoria contratualista de Hobbes, a legitimidade do soberano repousa no fato de que:",
+              "options": [
+                "O poder político emana do comando exclusivo dos bispos católicos de Roma.",
+                "As leis devem ser votadas diretamente por plebiscito popular semanal sem a existência de nenhum chefe de Estado.",
+                "O povo tem o direito constitucional de destituir e enforcar o rei toda vez que houver aumento de impostos sobre o gado.",
+                "O rei é um anjo divino sem corpo carnal que desceu do céu para governar sem necessitar de súditos.",
+                "Os indivíduos, vivendo em um estado de natureza de medo constante e guerra de todos contra todos, renunciaram à sua liberdade irrestrita através de um pacto social para que um governante forte garantisse a ordem e a sobrevivência coletiva."
+              ],
+              "correctIndex": 4,
+              "hint": "Lembre-se da célebre frase: 'O homem é o lobo do próprio homem'. Sem um poder forte para impor a lei, a humanidade se autodestrói.",
+              "stepByStepSolution": "A alternativa B está correta. Thomas Hobbes fundamenta o absolutismo em uma perspectiva laica e contratualista: no estado de natureza primitivo, sem autoridade constituída, prevalecia o egoísmo, o medo violento e a guerra civil permanente ('o homem é o lobo do homem'). Para escapar dessa barbárie autodestrutiva, os seres humanos celebram um contrato social irrevogável, transferindo o monopólio da força ao Estado/monarca (o Leviatã), que impõe a ordem, a paz e a segurança jurídica."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_mod_04",
+          "unitId": "mod_hist_05_moderna",
+          "title": "4. Expansão Marítima Europeia",
+          "conceptTitle": "As grandes navegações, a rota para as Índias e a colonização das Américas",
+          "explanation": "# A Expansão Marítima Europeia e a Conquista dos Mares\n\nNos séculos XV e XVI, os países da Península Ibérica inauguraram a era das Grandes Navegações, reconfigurando a geopolítica mundial e integrando pela primeira vez a economia do globo no chamado \"sistema-mundo moderno\".\n\n### 1. Fatores do Pioneirismo Português\nPortugal foi o primeiro país europeu a lançar-se no Atlântico desconhecido (\"Mar Tenebroso\") devido à conjunção pioneira de fatores:\n• **Precocidade da Centralização Monárquica:** A Revolução de Avis (1385) consolidou uma monarquia nacional centralizada aliada à burguesia mercantil mercantilista séculos antes de Espanha, França ou Inglaterra.\n• **Posição Geográfica Estratégica:** Extensa costa voltada para o Oceano Atlântico e proximidade com as correntes marítimas favoráveis.\n• **Desenvolvimento Técnico:** Escola de Sagres (infante D. Henrique), desenvolvimento da caravela de velas latinas triangulares (que permitia navegar contra o vento \"bolinando\"), aperfeiçoamento da bússola, astrolábio e da cartografia.\n• **A Queda de Constantinopla (1453):** A tomada da cidade pelo Império Turco-Otomano bloqueou a rota terrestre tradicional para o Oriente, forçando os europeus a buscarem um caminho alternativo para as ricas especiarias da Índia contornando a África (*Périplo Africano*).\n\n### 2. Os Dois Projetos Ibéricos de Navegação\n• **A Rota Portuguesa (Périplo Africano):** Navegação costeira ao redor do continente africano: Ceuta (1415), Cabo das Tormentas/Boa Esperança (Bartolomeu Dias, 1488) e chegada a Calicute na Índia (Vasco da Gama, 1498).\n• **A Rota Espanhola (Circunavegação):** Cristóvão Colombo propôs alcançar o Oriente navegando em linha reta para o Ocidente, partindo da premissa da esfericidade da Terra. Desembarcou nas Bahamas em 1492, acreditando ter chegado às Índias.\n\n### 3. A Partilha do Mundo e o Choque Colonial\n• **Tratado de Tordesilhas (1494):** Acordo diplomático intermediado pelo papa que dividiu o mundo não europeu entre Portugal e Espanha através de um meridiano a 370 léguas a oeste das ilhas de Cabo Verde.\n• **O Encontro e a Destruição:** A chegada dos conquistadores espanhóis (Hernán Cortés no Império Asteca e Francisco Pizarro no Império Inca) combinou superioridade bélica (armas de fogo, cavalos, armaduras de aço), alianças com tribos rivais e, fundamentalmente, o choque epidemiológico de vírus letais.\n• **A Riqueza e a 'Revolução dos Preços':** A extração de toneladas de prata em Potosí (Bolívia) e Zacatecas (México) gerou uma inflação galopante na Europa, enriquecendo mercadores e empobrecendo trabalhadores assalariados.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_mod_04_a",
+              "title": "ENEM: O Pioneirismo Português nas Navegações",
+              "problemStatement": "Portugal foi a primeira nação europeia a empreender com sucesso as Grandes Navegações no Oceano Atlântico ao longo do século XV. O fator fundamental que explica esse pioneirismo lusitano foi:",
+              "options": [
+                "A precoce centralização monárquica consolidada com a Revolução de Avis (1385), articulando os interesses da Coroa com a experiência e os capitais da burguesia mercantil lusa.",
+                "A abundância de jazidas de prata encontradas nas margens do Rio Tejo em Lisboa.",
+                "A crença unânime entre os sábios renascentistas de que a Terra era plana e quadrada.",
+                "A vitória militar sobre a Inglaterra na Guerra dos Cem Anos, que obrigou os britânicos a cederem suas frotas a Portugal.",
+                "A renúncia voluntária do Império Otomano em cobrar qualquer pedágio sobre o comércio de especiarias no mar Mediterrâneo."
+              ],
+              "correctIndex": 0,
+              "hint": "Enquanto Espanha, França e Inglaterra guerreavam ou enfrentavam disputas dinásticas internas, Portugal já tinha um Estado unificado e focado no mar desde o século XIV.",
+              "stepByStepSolution": "A alternativa B está correta. O pioneirismo português decorreu de uma combinação favorável de fatores: posição geográfica atlantica, paz interna e conhecimento náutico (Escola de Sagres, bússola, caravelas). O fator político decisivo foi a Revolução de Avis (1385), que unificou precocemente o Estado Nacional em torno do rei D. João I, forjando uma aliança indissolúvel entre a Coroa e os mercadores lisboetas em busca de novas rotas mercantis e lucros ultramarinos."
+            },
+            {
+              "id": "hist_ex_mod_04_b",
+              "title": "ENEM: A Conquista da América e o Choque Colonial",
+              "problemStatement": "A conquista dos grandes impérios pré-colombianos (Astecas e Incas) pelos espanhóis no início do século XVI resultou na rápida subjugação de civilizações que contavam com exércitos de centenas de milhares de guerreiros. O fator decisivo para a vitória dos conquistadores europeus foi:",
+              "options": [
+                "O uso de frotas de submarinos modernos que bombardearam as pirâmides de Machu Picchu e Tenochtitlán.",
+                "A combinação de alianças militares com povos indígenas subjugados pelos impérios locais, a superioridade de armamentos e o impacto demográfico devastador das epidemias trazidas da Europa.",
+                "A recusa pacífica dos imperadores Montezuma e Atahualpa em utilizar qualquer tipo de arma em confrontos armados.",
+                "A superioridade numérica esmagadora dos soldados espanhóis em relação à população nativa americana.",
+                "A conversão voluntária e imediata de todos os guerreiros astecas ao luteranismo alemão antes das batalhas."
+              ],
+              "correctIndex": 1,
+              "hint": "Poucos espanhóis conquistaram impérios gigantescos porque exploraram rivalidades étnicas locais e contaram com o auxílio letal de vírus como a varíola.",
+              "stepByStepSolution": "A alternativa B está correta. A queda de impérios complexos como o Asteca e o Inca não ocorreu por magia ou heroísmo isolado: Hernán Cortés e Francisco Pizarro exploraram com astúcia as divisões e rivalidades étnicas locais, aliando-se a povos subjugados pelos astecas que queriam se libertar dos tributos imperiais. Isso foi potencializado pelo terror das armas de fogo, dos cavalos e, sobretudo, pelo choque biológico das epidemias (como a varíola e o sarampo), que causaram hecatombes demográficas dizimando as estruturas militares e políticas nativas."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_hist_06_contemporanea",
+      "unitNumber": 6,
+      "tier": "BASIC",
+      "title": "História Geral: Idade Contemporânea",
+      "description": "Iluminismo, Revoluções Industriais e ideologias trabalhistas, Imperialismo, Guerras Mundiais/Totalitarismos e a Guerra Fria.",
+      "category": "História",
+      "subject": "Ciências Humanas",
+      "lessons": [
+        {
+          "id": "hist_cont_01",
+          "unitId": "mod_hist_06_contemporanea",
+          "title": "1. Iluminismo e a Era das Revoluções",
+          "conceptTitle": "As ideias liberais, a Revolução Francesa e a Independência dos Estados Unidos",
+          "explanation": "# Iluminismo e a Era das Revoluções (Século XVIII)\n\nO Iluminismo (\"Século das Luzes\") demoliu as bases ideológicas do Antigo Regime (Absolutismo, Mercantilismo e Privilégios Feudais do Clero e da Nobreza), inaugurando a era dos direitos civis e das democracias representativas liberais.\n\n### 1. Os Grandes Filósofos Iluministas\n• **John Locke:** Pai do Liberalismo Político. Defendia que os homens possuem **direitos naturais inalienáveis** (Vida, Liberdade e Propriedade). O governo existe para proteger esses direitos; se falhar, o povo tem o direito legítimo de rebelião.\n• **Montesquieu (O Espírito das Leis):** Formulação da **Divisão dos Três Poderes** (Executivo, Legislativo e Judiciário). Para evitar a tirania absolutista, \"só o poder freia o poder\" (*sistema de freios e contrapesos*).\n• **Voltaire:** Campeão intransigente da **liberdade de expressão**, tolerância religiosa e crítica contundente ao fanatismo da Igreja Católica.\n• **Jean-Jacques Rousseau (O Contrato Social):** Diferenciava-se dos demais liberais por defender a **Democracia Popular** e a soberania do povo (*vontade geral*). Apontou a invenção da propriedade privada como a raiz histórica das desigualdades.\n• **Adam Smith (A Riqueza das Nações):** Liberalismo Econômico. Crítica ao protecionismo mercantilista; a economia é guiada por leis naturais de oferta e procura (*mão invisível do mercado*); o Estado deve adotar o princípio do *laissez-faire* (deixar fazer, deixar passar).\n\n### 2. A Independência dos Estados Unidos (1776)\n• Primeiro movimento a concretizar na prática as ideias iluministas de Locke contra a tirania colonial inglesa (Lei do Selo, Lei do Chá e Leis Intoleráveis).\n• **Declaração de 4 de Julho de 1776:** Redigida por Thomas Jefferson, afirmando a igualdade natural e a busca da felicidade.\n• **A Contradição Estrutural:** Proclamou a liberdade e a República mantendo intocada a **escravidão negra** no Sul e o massacre dos povos indígenas no avanço para o Oeste.\n\n### 3. A Revolução Francesa (1789)\nMarco divisor que encerrou a Idade Moderna e iniciou a Idade Contemporânea:\n• **Sociedade de Ordens:** Primeiro Estado (Clero) e Segundo Estado (Nobreza) isentos de impostos e detentores de terras; Terceiro Estado (Burguesia, operários urbanos/sans-culottes e camponeses — 98% da população) pagava todos os impostos.\n• **Queda da Bastilha (14 de julho de 1789):** Símbolo da destruição do absolutismo popular.\n• **Declaração dos Direitos do Homem e do Cidadão:** Consagrou a tríade *Liberdade, Igualdade e Fraternidade*.\n• **Fases:** Assembleia Nacional (1789-1792), Convenção Nacional/Fase Jacobina do Terror com Robespierre (1792-1794, abolição da escravidão nas colônias, voto universal masculino, tabelamento de preços), Reação Termidoriana (Girondinos ricos) e o Golpe do 18 Brumário de Napoleão Bonaparte (1799).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_cont_01_a",
+              "title": "ENEM: A Teoria dos Três Poderes de Montesquieu",
+              "problemStatement": "Na obra 'O Espírito das Leis' (1748), o filósofo iluminista Montesquieu propôs a célebre separação dos poderes do Estado. A finalidade política dessa formulação era:",
+              "options": [
+                "Fortalecer a autoridade absoluta do rei sobre a Igreja para permitir a cobrança irrestrita de tributos sobre a nobreza.",
+                "Restaurar a democracia direta ateniense com a proibição de qualquer eleição representativa.",
+                "Subordinar os juízes civis aos tribunais eclesiásticos da Santa Inquisição católica em todas as causas penais.",
+                "Garantir a liberdade civil e evitar o despotismo através de um sistema de freios e contrapesos em que o poder controle o próprio poder.",
+                "Extinguir os parlamentos nacionais e transferir a soberania das leis para os sindicatos operários."
+              ],
+              "correctIndex": 3,
+              "hint": "Lembre-se da célebre máxima: 'Para que não se possa abusar do poder, é preciso que, pela disposição das coisas, o poder freie o poder'.",
+              "stepByStepSolution": "A alternativa B está correta. Montesquieu visava desmontar o modelo absolutista, no qual o monarca concentrava em suas mãos as atribuições de fazer a lei (Legislativo), aplicá-la (Executivo) e julgar seus opositores (Judiciário). Ao propor três esferas autônomas e harmônicas com prerrogativas mútuas de fiscalização (freios e contrapesos), estabeleceu a base jurídica que protege a sociedade contra governantes autoritários."
+            },
+            {
+              "id": "hist_ex_cont_01_b",
+              "title": "ENEM: O Significado da Declaração dos Direitos de 1789",
+              "problemStatement": "Aprovada pela Assembleia Nacional francesa em agosto de 1789, a Declaração dos Direitos do Homem e do Cidadão estabeleceu princípios universais que abalaram as estruturas do Antigo Regime ao consagrar:",
+              "options": [
+                "A igualdade jurídica de todos os homens perante a lei, a liberdade de opinião e a consagração da propriedade como um direito inviolável e sagrado.",
+                "A obrigatoriedade de que todos os cidadãos franceses se convertessem ao protestantismo calvinista.",
+                "A dissolução do exército nacional e a entrega da cidade de Paris aos reis da Áustria e da Prússia.",
+                "O direito hereditário da nobreza de nascer isenta de impostos e de ocupar com exclusividade os postos de comando militar.",
+                "A abolição total de qualquer forma de propriedade privada e a estatização das oficinas artesanais de Paris."
+              ],
+              "correctIndex": 0,
+              "hint": "A Declaração de 1789 destruiu os privilégios medievais de nascimento: a lei passou a ser igual para todos, independentemente de ser nobre ou plebeu.",
+              "stepByStepSolution": "A alternativa B está correta. A Declaração de 1789 foi o manifesto supremo da vitória burguesa na Revolução Francesa. Ao proclamar que 'os homens nascem e permanecem livres e iguais em direitos', sepultou a sociedade de ordens do feudalismo absolutista, consolidou as liberdades individuais e garantiu o direito à propriedade privada como base do novo ordenamento jurídico ocidental."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_cont_02",
+          "unitId": "mod_hist_06_contemporanea",
+          "title": "2. Revoluções Industriais",
+          "conceptTitle": "As mudanças nas relações de trabalho, a exploração do proletariado, ludismo, cartismo e o surgimento do Socialismo e Anarquismo",
+          "explanation": "# As Revoluções Industriais e as Novas Ideologias Trabalhistas\n\nA transição da manufatura artesanal para a maquinofatura no século XVIII transformou radicalmente a relação do ser humano com a natureza, com o tempo e com o trabalho, gerando a moderna polarização entre burguesia industrial e proletariado.\n\n### 1. A Primeira Revolução Industrial (Inglaterra, c. 1760)\n• **Pioneirismo Inglês:** Acumulação primitiva de capitais pelo comércio marítimo colonial; reservas abundantes de **carvão mineral e ferro**; marinha mercante hegemônica; e a **Lei dos Cercamentos dos Campos (Enclosure Acts)**, que expulsou os camponeses da terra e forneceu uma massa de mão de obra barata e faminta para as fábricas urbanas (Manchester, Londres).\n• **A Máquina a Vapor (James Watt) e o Tear Mecânico:** Substituição da força humana e animal pela energia do vapor alimentado por carvão, multiplicando a produtividade.\n\n### 2. A Realidade Desumana do Proletariado\n• Jornadas de trabalho extenuantes de 14 a 16 horas diárias em galpões insalubres e poluídos.\n• Exploração massiva do **trabalho infantil e feminino**, remunerados com salários até 70% inferiores aos dos homens adultos.\n• Inexistência de qualquer direito trabalhista (sem descanso semanal, férias, aposentadoria ou proteção contra mutilações em maquinários).\n\n### 3. As Reações Operárias e o Surgimento das Novas Ideologias\n• **Ludismo (Os Quebradores de Máquinas):** Movimento de rebelião espontânea liderado pelo mítico Ned Ludd que destruía as máquinas industriais, vistas como responsáveis diretas pelo desemprego e pela miséria salarial.\n• **Cartismo (Inglaterra, 1838):** Movimento que enviou ao parlamento britânico a *Carta do Povo*, exigindo reformas políticas: sufrágio universal masculino e voto secreto, compreendendo que as leis só mudariam com deputados operários.\n• **Socialismo Científico (Karl Marx e Friedrich Engels):**\n  - *Materialismo Histórico:* O motor da história é a luta de classes (senhor x escravo, nobre x servo, burguês x proletário).\n  - *Mais-Valia:* A riqueza burguesa origina-se da apropriação do valor excedente produzido pelo trabalhador e não remunerado no salário.\n  - *Revolução Proletária:* A classe trabalhadora deve tomar o Estado pela via revolucionária, instaurar a ditadura do proletariado e caminhar para a sociedade sem classes e sem Estado (Comunismo).\n• **Anarquismo (Bakunin e Kropotkin):** Defendia a destruição imediata de toda forma de autoridade e hierarquia (Estado, Igreja, Exército, Capital), sem passar por nenhuma fase de transição estatal.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_cont_02_a",
+              "title": "ENEM: As Condições de Trabalho na Revolução Industrial",
+              "problemStatement": "Durante as primeiras décadas da Revolução Industrial na Inglaterra, o cotidiano das fábricas de tecidos e das minas de carvão caracterizou-se:",
+              "options": [
+                "Por jornadas reduzidas de seis horas diárias e ampla concessão de férias remuneradas custeadas pelos proprietários de tear.",
+                "Pela distribuição paritária das ações das companhias industriais entre patrões e operários através de assembleias fabris.",
+                "Pela proibição do uso de máquinas a vapor para preservar a saúde e a integridade física dos trabalhadores rurais.",
+                "Por jornadas extenuantes que superavam catorze horas diárias em ambientes insalubres, acompanhadas pela exploração maciça do trabalho infantil e feminino com salários rebaixados.",
+                "Pelo monopólio do trabalho concedido exclusivamente a nobres arruinados que recebiam aposentadoria integral da Coroa britânica."
+              ],
+              "correctIndex": 3,
+              "hint": "Lembre-se dos relatos de crianças de 8 anos limpando engrenagens de teares em movimento e de mulheres trabalhando 16 horas sem direitos.",
+              "stepByStepSolution": "A alternativa B está correta. A fase pioneira da industrialização capitalista operou em um vácuo de regulamentação estatal. A burguesia impunha jornadas brutais de 14 a 16 horas sem intervalos de descanso, recorrendo intensivamente ao trabalho de crianças e mulheres devido à sua docilidade de disciplina e para pagar salários de miséria, resultando em mutilações frequentes e expectativa de vida operária que mal ultrapassava os 20 anos de idade em cidades industriais como Manchester."
+            },
+            {
+              "id": "hist_ex_cont_02_b",
+              "title": "ENEM: A Crítica de Marx e o Conceito de Mais-Valia",
+              "problemStatement": "No século XIX, Karl Marx e Friedrich Engels formularam o 'Socialismo Científico', apresentando uma crítica radical à economia política liberal. Na análise marxista, o conceito de 'mais-valia' refere-se:",
+              "options": [
+                "Ao imposto cobrado pelo rei sobre a venda de grãos nas feiras medievais de Champanhe.",
+                "À parcela do valor do trabalho executado pelo operário que não é remunerada pelo salário e é apropriada privadamente pelo proprietário dos meios de produção como lucro.",
+                "À doação voluntária feita pelos sindicatos para a compra de matérias-primas importadas das colônias.",
+                "À perda financeira sofrida pelos capitalistas quando as máquinas industriais quebram por desgaste mecânico.",
+                "Ao bônus de produtividade pago em dinheiro aos artesãos mais eficientes das corporações de ofício."
+              ],
+              "correctIndex": 1,
+              "hint": "O operário trabalha 8 horas, mas seu salário equivale a apenas 2 horas do que ele produziu. As 6 horas restantes vão para o bolso do patrão.",
+              "stepByStepSolution": "A alternativa B está correta. A teoria da mais-valia é o alicerce da crítica econômica de Marx: demonstra que a fonte do lucro burguês não nasce da simples revenda de mercadorias no mercado, mas da exploração direta do proletariado no processo produtivo. O trabalhador gera um montante de valor muito superior à quantia que recebe na forma de salário; essa diferença (a mais-valia) é retida pelo capitalista, alimentando a acumulação e aprofundando a desigualdade entre as classes sociais."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_cont_03",
+          "unitId": "mod_hist_06_contemporanea",
+          "title": "3. Imperialismo e Neocolonialismo no Século XIX",
+          "conceptTitle": "A Partilha da África e a dominação da Ásia justificadas pelo Darwinismo Social",
+          "explanation": "# Imperialismo e Neocolonialismo no Século XIX\n\nNa esteira da Segunda Revolução Industrial (aço, eletricidade, petróleo e química), as grandes potências capitalistas europeias partilharam violentamente a África e subjugaram a Ásia para alimentar sua produção fabril.\n\n### 1. Causas Econômicas da Corrida Imperialista\n• **Busca de Mercados Consumidores:** A superprodução industrial europeia exigia novos mercados cativos fora do continente.\n• **Fontes de Matérias-Primas Estratégicas:** Necessidade voraz de borracha, petróleo, cobre, algodão e minérios preciosos.\n• **Exportação de Capitais Excedentes:** Os bancos e trustes monopolistas precisavam investir capitais na construção de ferrovias e portos em territórios ultramarinos.\n\n### 2. A Justificativa Ideológica: O Racismo Científico\nPara mascarar a pilhagem econômica e a violência armada, as potências forjaram discursos pseudocientíficos:\n• **Darwinismo Social (Herbert Spencer):** A apropriação distorcida da teoria da evolução das espécies de Darwin para afirmar que a \"raça branca caucasiana\" era biologicamente superior e mais evoluída que negros e asiáticos.\n• **O 'Fardo do Homem Branco' (Rudyard Kipling):** O dever civilizatório altruísta do europeu de levar a ciência, a fé cristã e a tecnologia aos povos supostamente \"selvagens, infantis e bárbaros\".\n\n### 3. A Partilha da África e a Dominação da Ásia\n• **Conferência de Berlim (1884–1885):** Convocada por Otto von Bismarck, retalhou o mapa do continente africano com réguas sobre mesas diplomáticas europeias, criando **fronteiras artificiais** que reuniram etnias historicamente inimigas no mesmo território e dividiram comunidades ancestrais.\n• **O Genocídio no Congo:** O rei Leopoldo II da Bélgica transformou o Congo em sua propriedade privada de extração de borracha e marfim, provocando a morte e mutilação de mais de 10 milhões de congoleses.\n• **Guerra do Ópio (1839–1860, China):** A marinha britânica impôs militarmente o comércio de ópio (droga alucinógena que destruía a população chinesa), forçando a assinatura dos \"Tratados Desiguais\" (Tratado de Nanquim: cessão de Hong Kong à Inglaterra e abertura de portos).\n• **Guerra dos Cipaios (1857, Índia):** Revolta de soldados indianos contra o domínio colonial da Coroa britânica (que transformou a Índia na \"Jóia da Coroa\").",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_cont_03_a",
+              "title": "ENEM: A Conferência de Berlim e as Fronteiras Artificiais",
+              "problemStatement": "A Conferência de Berlim (1884–1885), realizada na Alemanha com a presença exclusiva de potências imperialistas europeias e dos Estados Unidos, produziu consequências históricas devastadoras para o continente africano ao determinar:",
+              "options": [
+                "A devolução pacífica de todas as colônias aos reinos tradicionais da África Ocidental sob supervisão do Vaticano.",
+                "A unificação de toda a África em uma única república federativa chefiada por generais etíopes.",
+                "A independência imediata de todas as nações africanas com ajuda financeira da rainha Vitória.",
+                "A proibição definitiva da extração de ouro e diamantes na África do Sul e no Congo belga.",
+                "A partilha arbitrária do território africano em fronteiras artificiais desenhadas para atender aos interesses de exploração colonial, desrespeitando identidades étnicas e culturais ancestrais."
+              ],
+              "correctIndex": 4,
+              "hint": "Diplomatas europeus traçaram linhas retas no mapa da África com régua e caneta, forçando povos rivais a viverem juntos e separando famílias.",
+              "stepByStepSolution": "A alternativa B está correta. A Conferência de Berlim consagrou o princípio da ocupação efetiva da África pelas potências neocoloniais. O retalhamento do continente traçou fronteiras artificiais sem qualquer consulta aos povos originários, agrupando nações historicamente hostis sob a mesma autoridade colonial e dividindo etnias com laços ancestrais profundos. Essa herança perversa gerou guerras civis sangrentas e instabilidade crônica que se estendem até a África contemporânea."
+            },
+            {
+              "id": "hist_ex_cont_03_b",
+              "title": "ENEM: O Darwinismo Social como Legitimador do Imperialismo",
+              "problemStatement": "Para justificar a conquista e a espoliação violenta da África e da Ásia no século XIX, ideólogos europeus formularam teorias como o 'Darwinismo Social'. Esse discurso ideológico sustentava que:",
+              "options": [
+                "O uso de armas de fogo contra qualquer ser humano constituía um pecado mortal que impedia a salvação da alma.",
+                "A Europa deveria submeter-se à liderança militar e religiosa dos imperadores chineses da Dinastia Qing.",
+                "Todas as culturas humanas possuem o mesmo valor moral e devem ser preservadas do contato com a tecnologia moderna.",
+                "A miscigenação entre todas as raças era a única garantia de progresso e inteligência para as futuras gerações.",
+                "A civilização branca ocidental representava o ápice da evolução biológica e social, possuindo o 'dever natural' de colonizar e civilizar os povos considerados inferiores e atrasados."
+              ],
+              "correctIndex": 4,
+              "hint": "Pense no conceito de 'O Fardo do Homem Branco': a ideia racista de que os brancos tinham a obrigação de 'civilizar' os povos negros e indígenas.",
+              "stepByStepSolution": "A alternativa B está correta. O Darwinismo Social de Herbert Spencer foi uma apropriação pseudocientífica da biologia de Darwin aplicada à sociologia. Defendia que a vitória imperialista das nações europeias era a comprovação da 'sobrevivência do mais apto' e da superioridade inata da raça branca. Essa falácia eugênica conferiu uma roupagem de missão humanitária e civilizatória ('o fardo do homem branco') ao massacre militar e à pilhagem sistemática de matérias-primas e vidas na África e Ásia."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_cont_04",
+          "unitId": "mod_hist_06_contemporanea",
+          "title": "4. As Guerras Mundiais e os Totalitarismos",
+          "conceptTitle": "Primeira Guerra, Revolução Russa de 1917, Crise de 1929, Fascismo, Nazismo e o Holocausto na Segunda Guerra",
+          "explanation": "# As Guerras Mundiais e os Regimes Totalitários (1914–1945)\n\nA primeira metade do século XX foi marcada pela barbárie industrializada: duas guerras mundiais devastadoras, a quebra da economia liberal em 1929 e a ascensão de ditaduras totalitárias fascistas que culminaram no Holocausto.\n\n### 1. A Primeira Guerra Mundial (1914–1918)\n• **Causas Profundas:** Rivalidades imperialistas da Partilha da África e Ásia; nacionalismos exacerbados (Pan-eslavismo e Revanchismo Francês pela perda da Alsácia-Lorena para a Alemanha); e a política de **Paz Armada e Alianças Secretas** (Tríplice Aliança: Alemanha, Áustria-Hungria e Itália vs. Tríplice Entente: Inglaterra, França e Rússia).\n• **Guerra de Trincheiras:** O uso de metralhadoras, gases venenosos (mostarda), tanques e aviões transformou a guerra em uma carnificina estática e desumanizadora.\n• **O Tratado de Versalhes (1919):** Impôs condições humilhantes e vingativas à Alemanha derrotada (perda de colônias, pagamento de reparações astronômicas e desmilitarização), gerando o ressentimento nacionalista que abriu caminho para o nazismo.\n\n### 2. A Revolução Russa de 1917 e a Crise de 1929\n• **Revolução Russa (1917):** Derrubou a autocracia czarista e levou os Bolcheviques de Lênin e Trotsky ao poder sob o lema \"Paz, Pão e Terra\", criando a União Soviética (URSS), primeiro Estado socialista da história.\n• **A Quebra da Bolsa de Nova York (1929):** Crise de superprodução do capitalismo liberal americano; falência de bancos, desemprego em massa global e falência da tese liberal da autorregulação dos mercados. Superada nos EUA através do **New Deal** de Franklin Roosevelt (intervenção do Estado em obras públicas e seguridade social, inspirado em Keynes).\n\n### 3. A Ascensão do Nazifascismo e a Segunda Guerra Mundial (1939–1945)\n• **Características do Totalitarismo Fascista (Itália de Mussolini e Alemanha de Hitler):**\n  - Nacionalismo chauvinista fanático e militarismo expansionista (*Espaço Vital / Lebensraum*).\n  - Culto messiânico à figura do líder incontestável (*Duce / Führer*).\n  - Partido único, censura violenta e terrorismo policial (Gestapo, SS).\n  - **Antissemitismo de Estado e Racismo Eugênico:** A ideologia de uma suposta 'raça ariana' pura que culminou na **Solução Final** — o Holocausto, assassinato industrializado e planejado de 6 milhões de judeus, além de ciganos, homossexuais, comunistas e pessoas com deficiência em campos de extermínio como Auschwitz.\n• **O Desfecho da Guerra:** A Batalha de Stalingrado (1943) marcou a virada contra o exército nazista pelas tropas soviéticas; o Dia D na Normandia (1944) libertou a Europa Ocidental; e o bombardeio atômico norte-americano sobre Hiroshima e Nagasaki em agosto de 1945 inaugurou a era nuclear.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 45,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_cont_04_a",
+              "title": "ENEM: O Tratado de Versalhes e a Germinação do Nazismo",
+              "problemStatement": "O Tratado de Versalhes (1919), imposto à Alemanha ao término da Primeira Guerra Mundial, é considerado pelos historiadores um dos fatores determinantes para a ascensão do Partido Nazista na década de 1930 porque:",
+              "options": [
+                "Proibiu a circulação de jornais e obrigou todos os generais alemães a se tornarem operários industriais na França.",
+                "Exigiu que todos os cidadãos alemães adotassem o catolicismo romano como religião compulsória de Estado.",
+                "Premiou a Alemanha com territórios coloniais abundantes no Pacífico e empréstimos a juros nulos dos Estados Unidos.",
+                "Extinguiu a propriedade privada e instaurou uma ditadura comunista sob a liderança direta de Leon Trotsky em Berlim.",
+                "Impôs cláusulas de humilhação e pesadas indenizações econômicas que destruíram a economia alemã, alimentando o sentimento de revanchismo chauvinista explorado por Adolf Hitler."
+              ],
+              "correctIndex": 4,
+              "hint": "A chamada 'paz punitiva': a Alemanha perdeu terras, foi obrigada a desarmar seu exército e a pagar quantias astronômicas, gerando ódio e orgulho ferido.",
+              "stepByStepSolution": "A alternativa B está correta. O Tratado de Versalhes impôs à Alemanha a 'cláusula de culpa da guerra' (Artigo 231), confiscando suas colônias, retirando a Alsácia-Lorena, desmilitarizando a Renânia e exigindo reparações financeiras impagáveis. A crise socioeconômica decorrente dessa punição gerou humilhação nacional e hiperinflação, terreno fértil que foi habilmente explorado pela propaganda nazista de Hitler para canalizar o rancor popular contra a democracia liberal de Weimar e os judeus."
+            },
+            {
+              "id": "hist_ex_cont_04_b",
+              "title": "ENEM: A Singularidade do Holocausto no Nazismo",
+              "problemStatement": "O Holocausto (Shoah), perpetrado pelo regime nazista durante a Segunda Guerra Mundial e que resultou no assassinato de seis milhões de judeus, é compreendido pela filosofia e história contemporâneas como um marco inédito da barbárie moderna porque:",
+              "options": [
+                "Foi fruto exclusivo de combates militares acidentais ocorridos no front russo durante os invernos rigorosos.",
+                "Atingiu exclusivamente generais ricos que possuíam fábricas de aviões e tanques na Alemanha.",
+                "Ocorreu sem o conhecimento ou a autorização de Adolf Hitler e da cúpula da SS em Berlim.",
+                "Mobilizou todo o aparato burocrático, tecnológico e industrial do Estado para planejar e executar o extermínio sistemático de um grupo humano com base em preceitos racistas.",
+                "Foi liderado pela Cruz Vermelha Internacional como método de combate a epidemias de cólera nos campos de refugiados."
+              ],
+              "correctIndex": 3,
+              "hint": "Lembre-se dos trens pontuais, das câmaras de gás, da contabilidade macabra e da cumplicidade da burocracia estatal: o genocídio como linha de produção industrial.",
+              "stepByStepSolution": "A alternativa B está correta. A singularidade histórica do Holocausto reside no fato de que o extermínio de seres humanos foi planejado e executado com frieza burocrática e tecnologia fabril moderna ('a Solução Final'). Médicos, engenheiros, operadores de trens, contadores e administradores de Estado foram mobilizados pelo regime nazista para classificar, transportar e assassinar milhões de judeus, ciganos e dissidentes em escala industrial em câmaras de gás (Auschwitz, Treblinka), revelando os perigos da razão instrumental despida de ética humana."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "hist_cont_05",
+          "unitId": "mod_hist_06_contemporanea",
+          "title": "5. Guerra Fria e Descolonização",
+          "conceptTitle": "A bipolaridade mundial (EUA x URSS), Corrida Espacial, Guerra do Vietnã e os processos de libertação na África e na Ásia",
+          "explanation": "# Guerra Fria e os Processos de Descolonização Afro-Asiática\n\nA ordem mundial pós-1945 caracterizou-se pela **bipolaridade ideológica e geopolítica** entre duas superpotências armadas com arsenais nucleares: os Estados Unidos (líder do bloco capitalista) e a União Soviética (líder do bloco socialista).\n\n### 1. A Dinâmica da Guerra Fria (1947–1991)\nConflito sem confronto militar direto entre as superpotências (\"Fria\"), devido à certeza de destruição mútua assegurada por armas termonucleares, mas com disputas violentas em guerras por procuração (*proxy wars*):\n• **Doutrina Truman e Plano Marshall (EUA):** Contenção do comunismo e financiamento bilionário da reconstrução da Europa Ocidental capitalista.\n• **Alianças Militares:** OTAN (liderada pelos EUA) versus Pacto de Varsóvia (liderado pela URSS).\n• **A Corrida Espacial e Tecnológica:** Lançamento do satélite soviético Sputnik (1957), primeiro homem no espaço (Yuri Gagarin, 1961) e chegada norte-americana à Lua na missão Apollo 11 (1969).\n• **Principais Conflitos Periféricos:**\n  - *Guerra da Coreia (1950–1953):* Divisão da península no Paralelo 38 (Coreia do Norte comunista e Coreia do Sul capitalista).\n  - *Crise dos Mísseis em Cuba (1962):* O momento em que o planeta esteve a minutos de uma guerra nuclear aberta.\n  - *Guerra do Vietnã (1959–1975):* A humilhante derrota militar norte-americana diante da guerrilha comunista dos vietcongues, impulsionada pelo movimento pacifista de contracultura (Maio de 68 e festival de Woodstock).\n\n### 2. A Descolonização da África e da Ásia\nO enfraquecimento financeiro e militar das potências coloniais europeias após a Segunda Guerra Mundial abriu caminho para os movimentos de libertação nacional afro-asiáticos:\n• **A Conferência de Bandung (Indonésia, 1955):** Reunião histórica de líderes de países recém-independentes da África e Ásia (como Nehru da Índia e Nasser do Egito) proclamando a condenação do imperialismo e fundando o **Movimento dos Países Não Alinhados** (\"Terceiro Mundo\"), recusando o alinhamento cego a Washington ou Moscou.\n• **Caminhos da Independência:**\n  - *Via Pacífica e Desobediência Civil:* A Índia de Mahatma Gandhi (resistência não violenta, greves de fome e a Marcha do Sal em 1947).\n  - *Via Revolucionária Armada e Sangrenta:* A Guerra de Libertação da Argélia contra a França (1954–1962) e as guerras de independência das colônias portuguesas (Angola, Moçambique e Guiné-Bissau nos anos 1970).\n• **O Fim da Guerra Fria (1989–1991):** As reformas de Mikhail Gorbachev na URSS (*Glasnost* — transparência política; e *Perestroika* — reestruturação econômica), a Queda do Muro de Berlim (1989) e a dissolução formal da União Soviética em 1991 consagraram a transição para a multipolaridade contemporânea.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "hist_ex_cont_05_a",
+              "title": "ENEM: A Bipolaridade da Guerra Fria e as Guerras por Procuração",
+              "problemStatement": "A ordem geopolítica da Guerra Fria (1947–1991) caracterizou-se pela rivalidade ideológica e estratégica entre os Estados Unidos e a União Soviética. Embora nunca tenha ocorrido um confronto bélico direto entre as duas potências nucleares, essa rivalidade manifestou-se:",
+              "options": [
+                "Na paz absoluta em todos os continentes e na dissolução espontânea de todos os exércitos nacionais da Ásia e da América Latina.",
+                "Na renúncia de ambas as superpotências em produzir armas atômicas em prol de acordos ecológicos de preservação da floresta amazônica.",
+                "Em intensos conflitos regionais por procuração (como as Guerras da Coreia e do Vietnã), na corrida armamentista e espacial e no apoio a ditaduras alinhadas.",
+                "No boicote conjunto de EUA e URSS contra o comércio de petróleo dos países do Oriente Médio.",
+                "Na unificação de Washington e Moscou sob uma única constituição republicana presidida pelo secretário-geral da ONU."
+              ],
+              "correctIndex": 2,
+              "hint": "A guerra foi 'fria' apenas entre Washington e Moscou por medo da bomba atômica; na periferia (Coreia, Vietnã, América Latina), ela foi quente e sangrenta.",
+              "stepByStepSolution": "A alternativa B está correta. O equilíbrio do terror nuclear (destruição mútua assegurada) impediu que Estados Unidos e União Soviética se enfrentassem diretamente. Contudo, a Guerra Fria foi pontuada por sangrentos conflitos periféricos ('guerras por procuração'), nos quais cada superpotência financiava e armava facções rivais (como na Guerra da Coreia, Guerra do Vietnã e guerras civis africanas), combinados à espionagem (CIA e KGB), à corrida espacial e ao suporte ativo a golpes militares na América Latina."
+            },
+            {
+              "id": "hist_ex_cont_05_b",
+              "title": "ENEM: A Conferência de Bandung e o Movimento Não Alinhado",
+              "problemStatement": "Realizada em 1955 na Indonésia, a Conferência de Bandung reuniu representantes de 29 nações recém-independentes da Ásia e da África. A importância histórica dessa conferência consistiu em:",
+              "options": [
+                "Consolidar a condenação formal ao colonialismo e ao racismo, inaugurando o conceito de 'Terceiro Mundo' e a política do Não Alinhamento ativo diante da bipolaridade da Guerra Fria.",
+                "Exigir a recolonização imediata do continente africano por frotas navais britânicas e portuguesas.",
+                "Declarar guerra nuclear contra a França e os Estados Unidos para forçar a exportação obrigatória de arroz.",
+                "Aprovar a criação de uma monarquia imperial absolutista unificada entre a Índia e o Egito.",
+                "Subordinar formalmente todos os países participantes à liderança militar e financeira do Pacto de Varsóvia soviético."
+              ],
+              "correctIndex": 0,
+              "hint": "Bandung foi o grito do Sul Global: os países da África e Ásia disseram 'não' ao imperialismo e recusaram ser peões no jogo entre EUA e URSS.",
+              "stepByStepSolution": "A alternativa B está correta. A Conferência de Bandung (1955) foi o grande marco diplomático e político da descolonização afro-asiática. Seus líderes (como Nehru da Índia, Sukarno da Indonésia e Zhou Enlai da China) repudiaram o racismo colonialista e afirmaram a soberania dos povos que acabavam de conquistar sua liberdade. Ao formularem o princípio do 'Não Alinhamento' ativo, recusaram a subordinação automática a qualquer dos blocos hegemônicos da Guerra Fria, forjando a identidade política do chamado 'Terceiro Mundo'."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    }
+  ]
+}

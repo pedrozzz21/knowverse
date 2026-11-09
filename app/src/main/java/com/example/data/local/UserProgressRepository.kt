@@ -202,7 +202,10 @@ class UserProgressRepository(context: Context) {
                     val remoteXp = snapshot.getLong("totalXp")?.toInt() ?: 0
                     val remoteStreak = snapshot.getLong("currentStreak")?.toInt() ?: 0
                     val remoteActiveDays = snapshot.getLong("activeDays")?.toInt() ?: 0
+                    val remoteExercises = snapshot.getLong("totalSolvedExercises")?.toInt() ?: 0
                     val remoteLessons = (snapshot.get("completedLessonIds") as? List<*>)
+                        ?.filterIsInstance<String>()?.toSet() ?: emptySet()
+                    val remoteReviews = (snapshot.get("reviewLessonIds") as? List<*>)
                         ?.filterIsInstance<String>()?.toSet() ?: emptySet()
 
                     @Suppress("UNCHECKED_CAST")
@@ -221,6 +224,8 @@ class UserProgressRepository(context: Context) {
                     val remoteLastCheckIn = snapshot.getString("lastCheckInDate") ?: ""
                     val remoteVerifiedCheckIn = snapshot.getString("verifiedCheckInDate") ?: ""
                     val remoteLastQualifying = snapshot.getString("lastQualifyingStudyDate") ?: ""
+                    val remoteCurrentLessonId = snapshot.getString("currentLessonId")?.takeIf { it.isNotBlank() }
+                    val remoteFavoriteAreaId = snapshot.getString("favoriteAreaId")?.takeIf { it.isNotBlank() }
 
                     val remotePhoto = snapshot.getString("photoUrl")?.takeIf { it.isNotBlank() && it != "mascot_sealion" }
                     if (remotePhoto != null) {
@@ -260,9 +265,10 @@ class UserProgressRepository(context: Context) {
                         current.verifiedCheckInDate.ifBlank { remoteVerifiedCheckIn }
                     }
 
+                    val mergedExercises = maxOf(current.totalSolvedExercises, remoteExercises)
                     val isZeroActivityUser = maxOf(current.totalXp, remoteXp) == 0 &&
                             (current.completedLessonIds + remoteLessons).isEmpty() &&
-                            current.totalSolvedExercises == 0
+                            mergedExercises == 0
 
                     val finalStreak = if (isZeroActivityUser) 0 else validatedStreak
                     val finalDates = if (isZeroActivityUser) emptySet() else unionDates
@@ -277,12 +283,21 @@ class UserProgressRepository(context: Context) {
                         lastCheckInDate = finalCheckIn,
                         verifiedCheckInDate = finalVerifiedCheckIn,
                         lastQualifyingStudyDate = finalLastQualifying,
+                        totalSolvedExercises = mergedExercises,
                         completedLessonIds = current.completedLessonIds + remoteLessons,
+                        reviewLessonIds = current.reviewLessonIds + remoteReviews,
                         completedKahootScores = current.completedKahootScores + remoteKahoot,
                         perfectTestModules = current.perfectTestModules + remotePerfect,
-                        unlockedBadges = current.unlockedBadges + remoteBadges
+                        unlockedBadges = current.unlockedBadges + remoteBadges,
+                        currentLessonId = if (current.currentLessonId != "py_b1_l1" || remoteCurrentLessonId == null) current.currentLessonId else remoteCurrentLessonId,
+                        favoriteAreaId = if (current.favoriteAreaId != "py_b1" && current.favoriteAreaId.isNotBlank()) current.favoriteAreaId else (remoteFavoriteAreaId ?: current.favoriteAreaId)
                     )
-                    val needsRemoteCorrection = isZeroActivityUser && (remoteStreak > 0 || remoteActiveDays > 0)
+                    val hasPendingSync = prefs.getBoolean("pending_remote_sync_${userId}", false)
+                    val hasLocalOfflineGain = current.totalXp > remoteXp ||
+                            current.completedLessonIds.size > remoteLessons.size ||
+                            current.totalSolvedExercises > remoteExercises
+                    val needsRemoteCorrection = (isZeroActivityUser && (remoteStreak > 0 || remoteActiveDays > 0)) ||
+                            hasPendingSync || hasLocalOfflineGain
                     saveProgress(merged, pushToRemote = needsRemoteCorrection)
                     // Trigger asynchronous cleanup of any cloned/duplicate documents
                     cleanupDuplicateUserDocuments(userId, cleanEmail)
@@ -613,10 +628,13 @@ class UserProgressRepository(context: Context) {
             "lastCheckInDate" to current.lastCheckInDate,
             "verifiedCheckInDate" to current.verifiedCheckInDate,
             "completedLessonIds" to current.completedLessonIds.toList(),
+            "reviewLessonIds" to current.reviewLessonIds.toList(),
             "completedKahootScores" to current.completedKahootScores,
             "perfectTestModules" to current.perfectTestModules.toList(),
             "unlockedBadges" to current.unlockedBadges.toList(),
             "totalSolvedExercises" to current.totalSolvedExercises,
+            "currentLessonId" to current.currentLessonId,
+            "favoriteAreaId" to current.favoriteAreaId,
             "lastActiveDate" to current.lastActiveDate,
             "lastQualifyingStudyDate" to current.lastQualifyingStudyDate,
             "updatedAt" to FieldValue.serverTimestamp()
@@ -625,10 +643,14 @@ class UserProgressRepository(context: Context) {
             docData["photoUrl"] = resolvedPhoto
         }
 
+        prefs.edit().putBoolean("pending_remote_sync_${userId}", true).apply()
         scope.launch {
             try {
                 db?.collection("users")?.document(userId)
                     ?.set(docData, SetOptions.merge())
+                    ?.addOnSuccessListener {
+                        prefs.edit().putBoolean("pending_remote_sync_${userId}", false).apply()
+                    }
             } catch (e: Exception) {
                 Log.w("UserProgressRepo", "Failed to sync user doc to Firestore: ${e.message}")
             }
@@ -800,8 +822,11 @@ class UserProgressRepository(context: Context) {
 
         val updatedBadges = current.unlockedBadges.toMutableSet()
         var bonusBadgeXp = 0
-        fun checkSubjectBadge(badgeId: String, prefix: String, required: Int, bonus: Int) {
-            if (!updatedBadges.contains(badgeId) && newCompleted.count { it.startsWith(prefix) || it.contains(prefix) } >= required) {
+        fun checkSubjectBadge(badgeId: String, prefixes: List<String>, required: Int, bonus: Int) {
+            val matchCount = newCompleted.count { id ->
+                prefixes.any { p -> id.startsWith(p) || id.contains(p) }
+            }
+            if (!updatedBadges.contains(badgeId) && matchCount >= required) {
                 updatedBadges.add(badgeId)
                 bonusBadgeXp += bonus
                 val badgeObj = TrackBadgesCatalog.findBadge(badgeId)
@@ -817,14 +842,15 @@ class UserProgressRepository(context: Context) {
             }
         }
 
-        checkSubjectBadge("badge_enem_chemistry", "ch_", 3, 400)
-        checkSubjectBadge("badge_enem_geography", "geo_", 3, 350)
-        checkSubjectBadge("badge_enem_history", "hist_", 3, 350)
-        checkSubjectBadge("badge_enem_languages", "ling_", 3, 350)
-        checkSubjectBadge("badge_enem_physics", "fis_", 3, 400)
-        checkSubjectBadge("badge_enem_biology", "bio_", 3, 400)
-        checkSubjectBadge("badge_enem_math", "mat_", 4, 500)
+        checkSubjectBadge("badge_enem_chemistry", listOf("quim_", "ch_", "quimica"), 3, 400)
+        checkSubjectBadge("badge_enem_geography", listOf("geo_", "geografia"), 3, 350)
+        checkSubjectBadge("badge_enem_history", listOf("hist_", "historia"), 3, 350)
+        checkSubjectBadge("badge_enem_languages", listOf("ling_", "linguagens"), 3, 350)
+        checkSubjectBadge("badge_enem_physics", listOf("fis_", "fisica"), 3, 400)
+        checkSubjectBadge("badge_enem_biology", listOf("bio_", "biologia"), 3, 400)
+        checkSubjectBadge("badge_enem_math", listOf("enem_", "mb_", "mat_", "matematica"), 4, 500)
 
+        val inferredArea = inferAreaIdFromLessonId(lessonId)
         val updated = current.copy(
             totalXp = current.totalXp + actualXp + bonusBadgeXp,
             dailyXp = current.dailyXp + actualXp + bonusBadgeXp,
@@ -835,6 +861,8 @@ class UserProgressRepository(context: Context) {
             completedLessonIds = newCompleted,
             reviewLessonIds = newReviews,
             unlockedBadges = updatedBadges,
+            currentLessonId = lessonId,
+            favoriteAreaId = inferredArea ?: current.favoriteAreaId,
             totalSolvedExercises = if (isFirstTime) current.totalSolvedExercises + 1 else current.totalSolvedExercises
         )
         saveProgress(updated)
@@ -844,6 +872,33 @@ class UserProgressRepository(context: Context) {
 
         updateAchievements(_progressState.value)
         return actualXp
+    }
+
+    fun setCurrentLesson(lessonId: String, favoriteAreaId: String? = null) {
+        val cleanId = lessonId.trim()
+        if (cleanId.isBlank()) return
+        val current = _progressState.value
+        val inferredArea = favoriteAreaId ?: inferAreaIdFromLessonId(cleanId) ?: current.favoriteAreaId
+        if (current.currentLessonId != cleanId || current.favoriteAreaId != inferredArea) {
+            val updated = current.copy(
+                currentLessonId = cleanId,
+                favoriteAreaId = inferredArea
+            )
+            saveProgress(updated)
+        }
+    }
+
+    private fun inferAreaIdFromLessonId(lessonId: String): String? {
+        return when {
+            lessonId.startsWith("py_") -> "python"
+            lessonId.startsWith("mb_") || lessonId.startsWith("enem_") || lessonId.startsWith("calc_") -> "matematica"
+            lessonId.startsWith("fis_") -> "fisica"
+            lessonId.startsWith("bio_") -> "biologia"
+            lessonId.startsWith("quim_") -> "quimica"
+            lessonId.startsWith("geo_") || lessonId.startsWith("hist_") -> "humanas"
+            lessonId.startsWith("ling_") -> "linguagens"
+            else -> null
+        }
     }
 
     /**
@@ -1079,14 +1134,67 @@ class UserProgressRepository(context: Context) {
         updateAchievements(_progressState.value)
     }
 
-    fun recordSolvedExercise(exerciseId: String, xpEarned: Int) {
-        addBonusXp(xpEarned, "Exercício: $exerciseId")
+    fun recordSolvedExercise(exerciseId: String, xpEarned: Int): Boolean {
+        val cleanId = exerciseId.trim()
+        if (cleanId.isNotEmpty()) {
+            clearWrongQuestion(cleanId)
+            val userKey = activeUserId ?: "guest"
+            val solvedKey = "solved_exercise_ids_$userKey"
+            val solvedSet = (prefs.getStringSet(solvedKey, emptySet()) ?: emptySet()).toMutableSet()
+            if (!solvedSet.add(cleanId)) {
+                // Exercício já contabilizado anteriormente para este usuário: evita duplicação de XP
+                return false
+            }
+            prefs.edit().putStringSet(solvedKey, solvedSet).apply()
+        }
+        addBonusXp(xpEarned, "Exercício: $cleanId")
+        return true
+    }
+
+    fun recordWrongQuestion(questionId: String, lessonId: String? = null) {
+        val cleanQId = questionId.trim()
+        if (cleanQId.isNotEmpty()) {
+            val userKey = activeUserId ?: "guest"
+            val wrongKey = "wrong_question_ids_$userKey"
+            val wrongSet = (prefs.getStringSet(wrongKey, emptySet()) ?: emptySet()).toMutableSet()
+            if (wrongSet.add(cleanQId)) {
+                prefs.edit().putStringSet(wrongKey, wrongSet).apply()
+            }
+        }
+        if (!lessonId.isNullOrBlank()) {
+            markLessonForReview(lessonId.trim())
+        }
+    }
+
+    fun clearWrongQuestion(questionId: String) {
+        val cleanQId = questionId.trim()
+        if (cleanQId.isEmpty()) return
+        val userKey = activeUserId ?: "guest"
+        val wrongKey = "wrong_question_ids_$userKey"
+        val wrongSet = (prefs.getStringSet(wrongKey, emptySet()) ?: emptySet()).toMutableSet()
+        if (wrongSet.remove(cleanQId)) {
+            prefs.edit().putStringSet(wrongKey, wrongSet).apply()
+        }
+    }
+
+    fun getWrongQuestionIds(): Set<String> {
+        val userKey = activeUserId ?: "guest"
+        val wrongKey = "wrong_question_ids_$userKey"
+        return prefs.getStringSet(wrongKey, emptySet()) ?: emptySet()
     }
 
     fun markLessonForReview(lessonId: String) {
         val current = _progressState.value
         if (!current.reviewLessonIds.contains(lessonId)) {
             val updated = current.copy(reviewLessonIds = current.reviewLessonIds + lessonId)
+            saveProgress(updated)
+        }
+    }
+
+    fun clearLessonReview(lessonId: String) {
+        val current = _progressState.value
+        if (current.reviewLessonIds.contains(lessonId)) {
+            val updated = current.copy(reviewLessonIds = current.reviewLessonIds - lessonId)
             saveProgress(updated)
         }
     }
@@ -1351,13 +1459,13 @@ class UserProgressRepository(context: Context) {
             if (savedStreak >= 30) badges.add("badge_streak_30")
 
             // Auto-desbloqueio por matérias concluídas
-            if (completed.count { it.startsWith("ch_") || it.contains("quimica") } >= 3) badges.add("badge_enem_chemistry")
+            if (completed.count { it.startsWith("quim_") || it.startsWith("ch_") || it.contains("quimica") } >= 3) badges.add("badge_enem_chemistry")
             if (completed.count { it.startsWith("geo_") || it.contains("geografia") } >= 3) badges.add("badge_enem_geography")
             if (completed.count { it.startsWith("hist_") || it.contains("historia") } >= 3) badges.add("badge_enem_history")
             if (completed.count { it.startsWith("ling_") || it.contains("linguagens") } >= 3) badges.add("badge_enem_languages")
             if (completed.count { it.startsWith("fis_") || it.contains("fisica") } >= 3) badges.add("badge_enem_physics")
             if (completed.count { it.startsWith("bio_") || it.contains("biologia") } >= 3) badges.add("badge_enem_biology")
-            if (completed.count { it.startsWith("mat_") || it.contains("matematica") } >= 4) badges.add("badge_enem_math")
+            if (completed.count { it.startsWith("enem_") || it.startsWith("mb_") || it.startsWith("mat_") || it.contains("matematica") } >= 4) badges.add("badge_enem_math")
 
             val reviews = mutableSetOf<String>()
             val reviewArr = json.optJSONArray("reviewLessonIds")
@@ -1812,8 +1920,8 @@ class UserProgressRepository(context: Context) {
                 title = "Alquimista do ENEM",
                 description = "Conclua aulas e exercícios da Trilha Oficial de Química.",
                 xpBonus = 350,
-                isUnlocked = lessons.any { it.startsWith("ch_") || it.contains("quimica") },
-                progress = if (lessons.any { it.startsWith("ch_") || it.contains("quimica") }) 1f else 0f,
+                isUnlocked = lessons.any { it.startsWith("quim_") || it.startsWith("ch_") || it.contains("quimica") },
+                progress = if (lessons.any { it.startsWith("quim_") || it.startsWith("ch_") || it.contains("quimica") }) 1f else 0f,
                 iconKey = "TROPHY"
             ),
             Achievement(
@@ -1866,8 +1974,8 @@ class UserProgressRepository(context: Context) {
                 title = "Estrategista dos Números",
                 description = "Conclua aulas e exercícios da Trilha de Matemática ENEM.",
                 xpBonus = 400,
-                isUnlocked = lessons.any { it.startsWith("mat_") || it.contains("matematica") },
-                progress = if (lessons.any { it.startsWith("mat_") || it.contains("matematica") }) 1f else 0f,
+                isUnlocked = lessons.any { it.startsWith("enem_") || it.startsWith("mb_") || it.startsWith("mat_") || it.contains("matematica") },
+                progress = if (lessons.any { it.startsWith("enem_") || it.startsWith("mb_") || it.startsWith("mat_") || it.contains("matematica") }) 1f else 0f,
                 iconKey = "TROPHY"
             ),
 

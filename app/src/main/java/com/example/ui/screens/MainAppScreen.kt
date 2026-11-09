@@ -37,6 +37,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -114,15 +115,31 @@ fun MainAppScreen(
     val broadcastRepository = remember { BroadcastNotificationRepository(context) }
     val unreadNotificationsCount by broadcastRepository.unreadCount.collectAsState()
     val activeBanner by broadcastRepository.activeBanner.collectAsState()
-    var showNotificationCenterModal by remember { mutableStateOf(false) }
+    var showNotificationCenterModal by rememberSaveable { mutableStateOf(false) }
 
-    var currentTab by remember { mutableStateOf(NavigationTab.HOME) }
-    var selectedTrailTier by remember { mutableStateOf(DifficultyTier.BASIC) }
-    var activeLesson by remember { mutableStateOf<Lesson?>(null) }
+    var currentTab by rememberSaveable { mutableStateOf(NavigationTab.HOME) }
+    var selectedTrailTier by rememberSaveable { mutableStateOf(DifficultyTier.BASIC) }
+    var activeLessonId by rememberSaveable { mutableStateOf<String?>(null) }
+    var cachedActiveLesson by remember { mutableStateOf<Lesson?>(null) }
+    val activeLesson: Lesson? = remember(activeLessonId, cachedActiveLesson) {
+        val id = activeLessonId
+        when {
+            id == null -> null
+            cachedActiveLesson?.id == id -> cachedActiveLesson
+            else -> resolveLessonById(id)
+        }
+    }
+    fun setActiveLesson(lesson: Lesson?) {
+        cachedActiveLesson = lesson
+        activeLessonId = lesson?.id
+        if (lesson != null) {
+            progressRepository.setCurrentLesson(lesson.id)
+        }
+    }
     var activeKahoot by remember { mutableStateOf<KahootModule?>(null) }
-    var showDevDashboard by remember { mutableStateOf(false) }
-    var showEssayLab by remember { mutableStateOf(false) }
-    var isExerciseFocusMode by remember { mutableStateOf(false) }
+    var showDevDashboard by rememberSaveable { mutableStateOf(false) }
+    var showEssayLab by rememberSaveable { mutableStateOf(false) }
+    var isExerciseFocusMode by rememberSaveable { mutableStateOf(false) }
 
     LaunchedEffect(currentTab) {
         isExerciseFocusMode = false
@@ -156,22 +173,22 @@ fun MainAppScreen(
             }
 
             activeLesson != null -> {
-                val currentLesson = activeLesson!!
+                val currentLesson = activeLesson
                 if (currentLesson.id.startsWith("py_")) {
                     LessonActivityScreen(
                         lesson = currentLesson,
                         pythonEngine = pythonEngine,
                         evaluator = evaluator,
                         progressRepository = progressRepository,
-                        onNavigateBack = { activeLesson = null },
-                        onNavigateToLesson = { next -> activeLesson = next }
+                        onNavigateBack = { setActiveLesson(null) },
+                        onNavigateToLesson = { next -> setActiveLesson(next) }
                     )
                 } else {
                     CalculusLessonScreen(
                         lesson = currentLesson,
                         progressRepository = progressRepository,
-                        onNavigateBack = { activeLesson = null },
-                        onNavigateToNextLesson = { next -> activeLesson = next }
+                        onNavigateBack = { setActiveLesson(null) },
+                        onNavigateToNextLesson = { next -> setActiveLesson(next) }
                     )
                 }
             }
@@ -397,7 +414,7 @@ fun MainAppScreen(
                                         progressRepository = progressRepository,
                                         unreadNotificationsCount = unreadNotificationsCount,
                                         onNotificationsClick = { showNotificationCenterModal = true },
-                                        onContinueLearningClick = { lesson -> activeLesson = lesson },
+                                        onContinueLearningClick = { lesson -> setActiveLesson(lesson) },
                                         onStartNewLearning = { currentTab = NavigationTab.TRAIL },
                                         onNavigateToTrail = { currentTab = NavigationTab.TRAIL },
                                         onNavigateToRanking = { currentTab = NavigationTab.LEADERBOARD },
@@ -413,7 +430,7 @@ fun MainAppScreen(
                                         userProgress = userProgress,
                                         initialTier = selectedTrailTier,
                                         userPhotoUrl = currentUser?.photoUrl,
-                                        onSelectLesson = { lesson -> activeLesson = lesson },
+                                        onSelectLesson = { lesson -> setActiveLesson(lesson) },
                                         onStartFinalTest = { module -> activeKahoot = module }
                                     )
                                 }
@@ -481,5 +498,33 @@ fun MainAppScreen(
 
         // Floating In-App Achievement Notification Banner across all screens
         InAppAchievementNotificationBanner()
+    }
+}
+
+internal fun resolveLessonById(lessonId: String): Lesson? {
+    return try {
+        when {
+            lessonId.startsWith("tp_") -> com.example.data.transpetro.TranspetroCurriculum.findLesson(lessonId)?.toAppLesson()
+            lessonId.startsWith("py_") -> com.example.data.python.PythonCurriculum.findLesson(lessonId)
+            lessonId.startsWith("mb_") -> com.example.data.math.BasicMathCurriculum.basicMathUnit.lessons
+                .firstOrNull { it.id == lessonId }
+            lessonId.startsWith("quim_") -> com.example.data.chemistry.EnemChemistryCurriculum.getAllModules()
+                .asSequence().flatMap { it.lessons.asSequence() }.firstOrNull { it.id == lessonId }?.toAppLesson()
+            lessonId.startsWith("geo_") -> com.example.data.geography.EnemGeographyCurriculum.getAllModules()
+                .asSequence().flatMap { it.lessons.asSequence() }.firstOrNull { it.id == lessonId }?.toAppLesson()
+            lessonId.startsWith("hist_") -> com.example.data.history.EnemHistoryCurriculum.getAllModules()
+                .asSequence().flatMap { it.lessons.asSequence() }.firstOrNull { it.id == lessonId }?.toAppLesson()
+            lessonId.startsWith("ling_") -> com.example.data.languages.EnemLanguagesCurriculum.getAllModules()
+                .asSequence().flatMap { it.lessons.asSequence() }.firstOrNull { it.id == lessonId }?.toAppLesson()
+            lessonId.startsWith("bio_") -> com.example.data.biology.EnemBiologyCurriculum.discipline.modules
+                .asSequence().flatMap { it.lessons.asSequence() }.firstOrNull { it.id == lessonId }?.toAppLesson()
+            lessonId.startsWith("fis_") -> com.example.data.physics.EnemPhysicsCurriculum.getAllModules()
+                .asSequence().flatMap { it.lessons.asSequence() }.firstOrNull { it.id == lessonId }?.toAppLesson()
+            lessonId.startsWith("enem_") -> com.example.data.math.EnemMathCurriculum.getAllLessons()
+                .firstOrNull { it.id == lessonId }?.toAppLesson()
+            else -> com.example.data.math.CalculusCurriculum.findLesson(lessonId)
+        }
+    } catch (_: Throwable) {
+        null
     }
 }

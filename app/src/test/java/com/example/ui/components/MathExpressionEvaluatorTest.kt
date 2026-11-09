@@ -334,4 +334,99 @@ class MathExpressionEvaluatorTest {
             assertTrue("Expressão de ${ex.id} ('${cfg.functionExpression}') deve compilar", compiled.isValid)
         }
     }
+
+    @Test
+    fun testUnaryMinusAndPowerPrecedence() {
+        // -x^2 deve ser interpretado como -(x^2), portanto em x = 2 resulta em -4.0 (parábola côncava)
+        assertEquals(-4.0, MathExpressionEvaluator.evaluate("-x^2", 2.0), 1e-6)
+        assertEquals(-4.0, MathExpressionEvaluator.evaluate("-x^2", -2.0), 1e-6)
+        assertEquals(-4.0, MathExpressionEvaluator.evaluate("-2^2", 0.0), 1e-6)
+
+        // (-x)^2 deve aplicar o quadrado sobre o sinal negativo, resultando em +4.0
+        assertEquals(4.0, MathExpressionEvaluator.evaluate("(-x)^2", 2.0), 1e-6)
+        assertEquals(4.0, MathExpressionEvaluator.evaluate("(-2)^2", 0.0), 1e-6)
+
+        // Parábola côncava com termo linear: -x^2 + 4*x em x = 2 -> -4 + 8 = 4.0; em x = 4 -> -16 + 16 = 0.0
+        assertEquals(4.0, MathExpressionEvaluator.evaluate("-x^2 + 4*x", 2.0), 1e-6)
+        assertEquals(0.0, MathExpressionEvaluator.evaluate("-x^2 + 4*x", 4.0), 1e-6)
+
+        // Expoente negativo unário e associatividade à direita
+        assertEquals(0.125, MathExpressionEvaluator.evaluate("2^-3", 0.0), 1e-6)
+        assertEquals(-0.25, MathExpressionEvaluator.evaluate("-2^-2", 0.0), 1e-6)
+        assertEquals(512.0, MathExpressionEvaluator.evaluate("2^3^2", 0.0), 1e-6)
+    }
+
+    @Test
+    fun testLogicalOrAndNestedModulusCoexistence() {
+        // Operador lógico || dentro de condicional if(...)
+        val exprOr = "if(x < -1 || x > 1, 10, -10)"
+        assertEquals(10.0, MathExpressionEvaluator.evaluate(exprOr, -2.0), 1e-6)
+        assertEquals(-10.0, MathExpressionEvaluator.evaluate(exprOr, 0.0), 1e-6)
+        assertEquals(10.0, MathExpressionEvaluator.evaluate(exprOr, 3.0), 1e-6)
+
+        // Combinação de barras de valor absoluto |x| e operador lógico ||
+        val exprAbsOr = "if(|x| > 2 || x == 0, 5, -5)"
+        assertEquals(5.0, MathExpressionEvaluator.evaluate(exprAbsOr, 0.0), 1e-6)
+        assertEquals(-5.0, MathExpressionEvaluator.evaluate(exprAbsOr, 1.5), 1e-6)
+        assertEquals(5.0, MathExpressionEvaluator.evaluate(exprAbsOr, -3.0), 1e-6)
+
+        // Módulos aninhados ||x| - 3|
+        assertEquals(1.0, MathExpressionEvaluator.evaluate("||x| - 3|", -2.0), 1e-6)
+    }
+
+    @Test
+    fun testGeoGebraCommandParserLineStylesAndNamedPoints() {
+        val commands = listOf(
+            "A = (2, 1)",
+            "B = (2, 5)",
+            "C = (6, 1)",
+            "D = (2, 1)",
+            "rVert = Line(A, B)",
+            "rHoriz = Line(A, C)",
+            "rDashedVert = Line((4, 0), (4, 3))",
+            "SetLineStyle(rDashedVert, 2)",
+            "rSolidAsymp: x = -3",
+            "SetLineStyle(rSolidAsymp, 0)",
+            "rDefaultAsymp: y = 4",
+            "rDegenerate = Line(A, D)",
+            "sDegenerate = Segment(A, D)"
+        )
+        val primitives = GeoGebraCommandParser.parse(commands, "x")
+
+        // Pontos nomeados emitidos
+        val namedPoints = primitives.filterIsInstance<GeoGebraCommandPrimitive.NamedPoint>()
+        assertEquals(4, namedPoints.size)
+        assertEquals("A", namedPoints.first().id)
+
+        // Line(A, B) vertical sem SetLineStyle deve ser sólida (isDashed == false)
+        val vLines = primitives.filterIsInstance<GeoGebraCommandPrimitive.VerticalLine>()
+        val rVert = vLines.firstOrNull { it.id == "rVert" }
+        assertNotNull(rVert)
+        assertFalse("Line(A, B) vertical deve ser sólida por padrão", rVert!!.isDashed)
+
+        // Line((4,0), (4,3)) com SetLineStyle(..., 2) deve ser tracejada
+        val rDashedVert = vLines.firstOrNull { it.id == "rDashedVert" }
+        assertNotNull(rDashedVert)
+        assertTrue("Line vertical com SetLineStyle(2) deve ser tracejada", rDashedVert!!.isDashed)
+
+        // v: x = -3 com SetLineStyle(rSolidAsymp, 0) deve respeitar o estilo sólido
+        val rSolidAsymp = vLines.firstOrNull { it.id == "rSolidAsymp" }
+        assertNotNull(rSolidAsymp)
+        assertFalse("x = -3 com SetLineStyle(0) deve ser sólida", rSolidAsymp!!.isDashed)
+
+        // Line(A, C) horizontal sem SetLineStyle deve ser sólida (isDashed == false)
+        val hLines = primitives.filterIsInstance<GeoGebraCommandPrimitive.HorizontalLine>()
+        val rHoriz = hLines.firstOrNull { it.id == "rHoriz" }
+        assertNotNull(rHoriz)
+        assertFalse("Line(A, C) horizontal deve ser sólida por padrão", rHoriz!!.isDashed)
+
+        // y = 4 sem SetLineStyle deve ser tracejada por padrão (assíntota)
+        val rDefaultAsymp = hLines.firstOrNull { it.id == "rDefaultAsymp" }
+        assertNotNull(rDefaultAsymp)
+        assertTrue("y = 4 deve ser tracejada por padrão", rDefaultAsymp!!.isDashed)
+
+        // Pontos coincidentes A == D não devem gerar reta nem segmento degenerado
+        assertTrue(vLines.none { it.id == "rDegenerate" })
+        assertTrue(primitives.filterIsInstance<GeoGebraCommandPrimitive.Segment2D>().none { it.id == "sDegenerate" })
+    }
 }

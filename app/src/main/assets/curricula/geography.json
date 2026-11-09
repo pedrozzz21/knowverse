@@ -1,0 +1,835 @@
+{
+  "subjectId": "geography",
+  "title": "Geografia • Ciências Humanas ENEM",
+  "category": "Geografia",
+  "unitCount": 5,
+  "lessonCount": 21,
+  "units": [
+    {
+      "id": "mod_geo_01_fisica",
+      "unitNumber": 1,
+      "tier": "BASIC",
+      "title": "Geografia Física e Meio Ambiente",
+      "description": "Cartografia, geomorfologia, dinâmica climática, bacias hidrográficas e os impactos socioambientais contemporâneos.",
+      "category": "Geografia",
+      "subject": "Ciências Humanas",
+      "lessons": [
+        {
+          "id": "geo_fis_01",
+          "unitId": "mod_geo_01_fisica",
+          "title": "1. Cartografia e Orientação",
+          "conceptTitle": "Escalas, projeções cilíndricas, cônicas e azimutais, coordenadas geográficas e fusos horários",
+          "explanation": "# Cartografia e Orientação: A Linguagem do Espaço\n\nA cartografia no ENEM não é tratada como mera técnica de desenho, mas como um **instrumento de poder, comunicação e interpretação geopolítica**. Todo mapa é uma representação seletiva da superfície curva da Terra em um plano bidimensional, o que inevitavelmente produz distorções matemáticas e opções ideológicas.\n\n### 1. Escala Cartográfica: Proporção e Nível de Detalhamento\nA escala estabelece a relação matemática entre a distância gráfica no mapa (d) e a distância real no terreno (D):\n$$\\text{Escala} = \\frac{d}{D}$$\n\n- **Grande Escala (ex: 1:500 a 1:25.000):** Denominador pequeno. Representa áreas menores (bairros, cidades, plantas cadastrais) com alto nível de detalhe e riqueza visual.\n- **Pequena Escala (ex: 1:1.000.000 a 1:50.000.000):** Denominador gigantesco. Representa áreas imensas (países, continentes, planisférios) com baixo nível de detalhe, generalizando os traçados.\n\n### 2. Projeções Cartográficas: A Geopolítica da Representação\nComo é matematicamente impossível planificar uma esfera sem deformá-la, cada projeção preserva uma propriedade geométrica sacrificando outras:\n- **Projeção de Mercator (1569 - Conforme):** Preserva as formas exatas dos continentes, mas distorce severamente as áreas nas altas latitudes. Eurocêntrica, ampliou o Hemisfério Norte para favorecer as Grandes Navegações.\n- **Projeção de Peters (1973 - Equivalente):** Preserva a proporção real das áreas territoriais, sacrificando a forma (continentes alongados verticalmente). Destaca o Terceiro Mundo e os países do Sul Global.\n- **Projeção Azimutal / Polar (Equidistante):** O ponto focal é o polo (como no emblema da ONU). Muito cobrada no contexto da Guerra Fria para ilustrar rotas intercontinentais de mísseis e a proximidade entre EUA e URSS pelo Ártico.\n\n### 3. Fusos Horários e Coordenadas Geográficas\n- A Terra completa uma rotação de 360° em aproximadamente 24 horas, resultando em 24 fusos horários de 15° de longitude cada.\n- Movimento de Rotação (Oeste para Leste): a leste as horas adiantam (+), a oeste as horas atrasam (-).\n- **Fusos Horários do Brasil:** O Brasil possui 4 fusos horários oficiais, todos a oeste de Greenwich (UTC-2, UTC-3 horário de Brasília, UTC-4 e UTC-5 no Acre e sudoeste do Amazonas).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_fis_01_a",
+              "title": "ENEM: Análise Crítica de Projeções Cartográficas",
+              "problemStatement": "A projeção de Mercator, concebida no século XVI durante a expansão marítima europeia, mantém os ângulos e as formas exatas dos continentes, mas apresenta distorções significativas de área. Do ponto de vista geopolítico e ideológico, essa projeção foi criticada no século XX porque:",
+              "options": [
+                "Eliminou a linha do Equador e os meridianos para dificultar as rotas de navegação comercial.",
+                "Inverteu os polos magnéticos para favorecer os países recém-descolonizados da África.",
+                "Representou a Antártica como o centro econômico e político do planeta Terra.",
+                "Subestimou o tamanho da Europa e da América do Norte em benefício dos continentes tropicais.",
+                "Hipertrofiou as massas continentais do Hemisfério Norte, reforçando uma visão eurocêntrica do mundo."
+              ],
+              "correctIndex": 4,
+              "hint": "Mercator preserva formas, mas exagera áreas nas proximidades dos polos (altas latitudes), fazendo a Groenlândia parecer maior que a América do Sul.",
+              "stepByStepSolution": "A alternativa A está correta. A projeção cilíndrica conforme de Mercator preserva as formas e os ângulos para facilitar a navegação em linha reta, mas distorce desproporcionalmente as áreas conforme se afasta do Equador. Com isso, a Europa e as potências do Norte aparecem gigantescas em comparação aos países do Sul Global, consolidando uma perspectiva eurocêntrica."
+            },
+            {
+              "id": "geo_ex_fis_01_b",
+              "title": "ENEM: Relação entre Escala e Nível de Detalhe",
+              "problemStatement": "Um pesquisador precisa analisar a distribuição dos lotes urbanos e das redes de saneamento de um determinado bairro, enquanto outro estuda as bacias hidrográficas em escala continental. Para suas respectivas pesquisas, os mapas mais adequados devem possuir:",
+              "options": [
+                "A mesma escala reduzida em ambos os estudos para assegurar comparabilidade métrica.",
+                "Nenhuma escala numérica, utilizando apenas escalas gráficas sem unidades de medida.",
+                "Pequena escala para o estudo do bairro e grande escala para o estudo continental.",
+                "Escala 1:1.000.000 para o bairro e escala 1:1.000 para o continente.",
+                "Grande escala para o estudo do bairro e pequena escala para o estudo continental."
+              ],
+              "correctIndex": 4,
+              "hint": "Grande escala = denominador menor = riqueza de detalhes (ideal para bairros). Pequena escala = denominador gigante = visão panorâmica (continentes).",
+              "stepByStepSolution": "A alternativa A está correta. O estudo de um bairro exige grande riqueza de detalhes e pouco nível de redução (grande escala, ex: 1:5.000). Já a análise continental abrange uma área imensa e exige alta generalização gráfica com grande redução (pequena escala, ex: 1:5.000.000)."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_fis_02",
+          "unitId": "mod_geo_01_fisica",
+          "title": "2. Geomorfologia e Relevo",
+          "conceptTitle": "Tectonismo, placas litosféricas, agentes endógenos/exógenos e classificação do relevo brasileiro de Jurandyr Ross",
+          "explanation": "# Geomorfologia e Relevo: A Estrutura da Litosfera\n\nO relevo terrestre resulta da interação contínua entre forças endógenas (internas) que criam e erguem as formas e forças exógenas (externas) que modelam, desgastam e sedimentam.\n\n### 1. Tectônica de Placas e Agentes Internos\n- **Limites Divergentes:** Separação de placas e formação de dorsais oceânicas (ex: Dorsal Mesoatlântica).\n- **Limites Convergentes:** Colisão e subducção de placas litosféricas, gerando dobramentos modernos, fossas abissais e intenso vulcanismo/sismicidade (ex: Cordilheira dos Andes e Círculo de Fogo do Pacífico).\n- **Limites Transformantes:** Deslizamento lateral entre placas (ex: Falha de San Andreas na Califórnia).\n\n### 2. Características Geológicas do Território Brasileiro\n- **Estabilidade Tectônica:** O Brasil está localizado no centro da Placa Sul-Americana, longe de zonas ativas de borda de placa. Por isso não possui dobramentos modernos, vulcões ativos ou terremotos de grande magnitude.\n- **Estruturas Geológicas:** Crátons/Escudos Cristalinos antigos (36% do território, ricos em minerais metálicos como ferro e manganês) e Bacias Sedimentares (64% do território, ricas em combustíveis fósseis como petróleo e gás).\n- **Classificação do Relevo segundo Jurandyr Ross:** Dividido em Planaltos (processos de erosão superam sedimentação), Depressões (áreas rebaixadas em relação ao relevo circundante) e Planícies (processos de sedimentação superam a erosão).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_fis_02_a",
+              "title": "ENEM: Estrutura Geológica e Mineração no Brasil",
+              "problemStatement": "As grandes jazidas de minério de ferro exploradas no Quadrilátero Ferrífero (Minas Gerais) e na Serra dos Carajás (Pará) estão geologicamente associadas a qual estrutura do relevo brasileiro?",
+              "options": [
+                "Bacias sedimentares jovens do período Terciário, ricas em hidrocarbonetos e xisto betuminoso.",
+                "Escudos cristalinos e crátons de idade pré-cambriana, formados por rochas magmáticas e metamórficas antigas.",
+                "Zonas de dobramentos modernos originadas pela convergência entre a Placa de Nazca e a Placa Sul-Americana.",
+                "Planícies aluviais litorâneas formadas exclusivamente por sedimentos marinhos recentes do Quaternário.",
+                "Dorsais mesoceânicas de vulcanismo ativo localizadas no interior do continente."
+              ],
+              "correctIndex": 1,
+              "hint": "Minerais metálicos (ferro, manganês, ouro) ocorrem em terrenos cristalinos muito antigos (Pré-Cambriano). Combustíveis fósseis (petróleo, carvão) ocorrem em bacias sedimentares.",
+              "stepByStepSolution": "A alternativa A está correta. Os minerais metálicos encontram-se nos escudos cristalinos ou crátons (cerca de 36% do relevo brasileiro), formados nas eras Arqueozoica e Proterozoica há bilhões de anos, onde a atuação de calor e pressão metamorfoseou a litosfera originando expressivas jazidas minerais."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_fis_03",
+          "unitId": "mod_geo_01_fisica",
+          "title": "3. Climatologia",
+          "conceptTitle": "Fatores e elementos do clima, climas do Brasil, massas de ar e anomalias climáticas (El Niño e La Niña)",
+          "explanation": "# Climatologia: Dinâmica Atmosférica e Fenômenos Climáticos\n\nO clima no ENEM exige a compreensão da circulação geral da atmosfera, das massas de ar e dos fatores geográficos que condicionam as temperaturas e chuvas.\n\n### 1. Elementos vs. Fatores do Clima\n- **Elementos:** Grandezas meteorológicas variáveis (Temperatura, Umidade, Pressão Atmosférica, Precipitação).\n- **Fatores:** Condições geográficas estáveis que atuam sobre os elementos (Latitude, Altitude, Maritimidade, Continentalidade, Correntes Marítimas, Relevo e Vegetação).\n\n### 2. As 5 Massas de Ar no Brasil\n- **mEc (Equatorial Continental):** Quente e muito úmida (exceção à regra de massas continentais secas, devido à intensa evapotranspiração da Floresta Amazônica).\n- **mEa (Equatorial Atlântica):** Quente e úmida, atua no litoral norte e nordestino.\n- **mTa (Tropical Atlântica):** Quente e úmida, responsável pelas chuvas frontais e orográficas no litoral leste e sudeste.\n- **mTc (Tropical Continental):** Quente e seca, originada na depressão do Chaco, associada aos veranicos no Centro-Sul.\n- **mPa (Polar Atlântica):** Fria e úmida, causa quedas bruscas de temperatura, geadas no Sul, chuvas de inverno no litoral nordestino e a friagem na Amazônia Ocidental.\n\n### 3. Fenômenos ENOS: El Niño e La Niña\n- **El Niño:** Aquecimento anômalo das águas superficiais do Oceano Pacífico Equatorial. Efeitos no Brasil: secas severas no Semiárido e norte da Amazônia; chuvas torrenciais e inundações no Sul.\n- **La Niña:** Resfriamento anômalo das águas do Pacífico Equatorial. Efeitos no Brasil: aumento das chuvas no Norte/Nordeste e estiagens no Sul.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_fis_03_a",
+              "title": "ENEM: Mecanismo dos Rios Voadores e Clima no Brasil",
+              "problemStatement": "A Floresta Amazônica desempenha papel determinante na dinâmica das chuvas nas regiões Centro-Oeste e Sudeste do Brasil através do fenômeno conhecido como 'Rios Voadores'. Esse mecanismo baseia-se fundamentalmente na:",
+              "options": [
+                "Incineração de biomassa vegetal que produz núcleos de condensação artificiais em larga escala no outono.",
+                "Descarga subterrânea do Aquífero Alter do Chão que escoa diretamente para a bacia do Rio Tietê.",
+                "Elevada evapotranspiração da floresta que alimenta a massa Equatorial Continental (mEc), cujo vapor é bloqueado e defletido pela Cordilheira dos Andes.",
+                "Infiltração de correntes marinhas frias vindas do Oceano Pacífico que transpõem os Andes em altas altitudes.",
+                "Atuação exclusiva da massa Tropical Continental (mTc), que carrega umidade do Deserto do Atacama para o Brasil."
+              ],
+              "correctIndex": 2,
+              "hint": "A floresta bombeia vapor d'água para a atmosfera (mEc). Esse vapor viaja para oeste, esbarra na Cordilheira dos Andes e faz uma curva em direção ao Centro-Sul.",
+              "stepByStepSolution": "A alternativa A está correta. A massa de ar Equatorial Continental (mEc), aquecida e ultraúmida pela intensa evapotranspiração das árvores amazônicas, transporta gigantescos volumes de vapor d'água para o oeste. Ao encontrar a barreira orográfica dos Andes, o fluxo de ar é desviado para o Centro-Oeste e Sudeste, regulando o regime hídrico e a agricultura do país."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_fis_04",
+          "unitId": "mod_geo_01_fisica",
+          "title": "4. Hidrografia",
+          "conceptTitle": "Bacias hidrográficas brasileiras, ciclo hidrológico, aquíferos subterrâneos e matriz hidrelétrica",
+          "explanation": "# Hidrografia e Bacias Hidrográficas do Brasil\n\nO Brasil abriga cerca de 12% da água doce superficial do planeta, caracterizando-se por rios de regime predominantemente pluvial tropical e drenagem exorreica (que deságua no oceano).\n\n### 1. Perfil Hidrográfico Brasileiro\n- Predomínio de rios caudalosos de planalto (com grande potencial de geração hidrelétrica).\n- Poucos rios navegáveis próximos aos grandes centros consumidores (necessidade de eclusas).\n- Foz em estuário na maioria dos rios (com exceção do Rio Parnaíba em delta).\n\n### 2. Principais Bacias Hidrográficas\n- **Bacia Amazônica:** Maior bacia hidrográfica do mundo em volume e extensão. Rio Amazonas de planície, mas com afluentes de planalto de alto potencial hidrelétrico (Belo Monte no Rio Xingu, Jirau e Santo Antônio no Rio Madeira).\n- **Bacia do Tocantins-Araguaia:** Maior bacia inteiramente em território brasileiro. Abriga a Usina de Tucuruí e a Ilha do Bananal (maior ilha fluvial do mundo).\n- **Bacia do Paraná (Platina):** Principal bacia em aproveitamento hidrelétrico e transporte hidroviário (Hidrovia Tietê-Paraná). Abriga Itaipu Binacional.\n- **Bacia do São Francisco (\"O Rio da Integração Nacional\"):** Nasce na Serra da Canastra (MG) e atravessa o Polígono das Secas. É um rio perene crucial para geração de energia (Sobradinho, Xingó), irrigação de fruticultura (Petrolina/Juazeiro) e transposição hídrica.\n\n### 3. Águas Subterrâneas: Aquíferos Estratégicos\n- **Aquífero Guarani:** Bacia sedimentar do Paraná, compartilhado por Brasil, Argentina, Paraguai e Uruguai.\n- **Sistema Aquífero Grande Amazônia (SAGA/Alter do Chão):** Maior reserva de água subterrânea potável em volume do planeta.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_fis_04_a",
+              "title": "ENEM: Importância do Rio São Francisco",
+              "problemStatement": "O Rio São Francisco é historicamente denominado 'Rio da Integração Nacional'. Apesar de atravessar uma das áreas mais secas do país (o Polígono das Secas), ele mantém sua perenidade ao longo do ano inteiro porque:",
+              "options": [
+                "Suas nascentes estão situadas na Serra da Canastra (MG), sob o clima tropical úmido com altos índices de pluviosidade.",
+                "Atravessa áreas desérticas onde a evaporação superficial foi totalmente neutralizada por barramentos.",
+                "Alimenta-se exclusivamente de água salobra vinda da evaporação do Oceano Atlântico em sua foz.",
+                "Recebe água canalizada do Rio Amazonas através de eclusas transcontinentais artificiais.",
+                "Seu leito está totalmente localizado em uma fossa tectônica com degelo regular no inverno."
+              ],
+              "correctIndex": 0,
+              "hint": "As cabeceiras do São Francisco ficam em Minas Gerais, região com estações chuvosas fartas que alimentam o curso d'água antes de ele adentrar o Semiárido.",
+              "stepByStepSolution": "A alternativa A está correta. O São Francisco é um rio perene alóctone (cruza o Semiárido sem secar) porque suas cabeceiras e principais afluentes da margem esquerda drenam áreas de relevo planáltico em Minas Gerais, caracterizadas por chuvas abundantes e regulares no verão."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_fis_05",
+          "unitId": "mod_geo_01_fisica",
+          "title": "5. Questões Ambientais e Sustentabilidade",
+          "conceptTitle": "Desmatamento e queimadas nos biomas, poluição de solos e águas, ilhas de calor, inversão térmica e aquecimento global",
+          "explanation": "# Questões Ambientais e Sustentabilidade no ENEM\n\nO tema ambiental é um dos mais interdisciplinares e frequentes do ENEM, conectando geografia física, biologia, química e cidadania ecológica.\n\n### 1. Impactos nos Biomas Brasileiros\n- **Amazônia:** Arco do desmatamento (expansão da soja e pecuária bovina), garimpo ilegal com contaminação por mercúrio e grilagem de terras públicas.\n- **Cerrado (\"A Caixa D'água do Brasil\"):** Savana mais biodiversa do mundo, devastada pela expansão do agronegócio em larga escala (região do MATOPIBA). Perda da capacidade de recarga hídrica dos aquíferos.\n- **Mata Atlântica:** Reduzida a menos de 12% de sua cobertura original pela ocupação histórica litorânea e urbanização.\n- **Caatinga:** Único bioma exclusivamente brasileiro, sob risco crescente de desertificação devido ao sobrepastoreio, desmatamento para lenha e práticas agrícolas inadequadas.\n\n### 2. Problemas Ambientais Urbanos\n- **Ilhas de Calor:** Aumento da temperatura média nas áreas centrais das metrópoles provocado pelo concreto, asfalto, verticalização e escassez de áreas verdes.\n- **Inversão Térmica:** Fenômeno meteorológico natural de inverno no qual uma camada de ar quente retém o ar frio próximo à superfície, aprisionando poluentes atmosféricos e agravando doenças respiratórias.\n- **Enchentes e Inundações:** Agravadas pela impermeabilização excessiva do solo urbano e canalização de rios de planície.\n\n### 3. Aquecimento Global e Geopolítica do Clima\n- Intensificação antrópica do efeito estufa pela queima de combustíveis fósseis e queimadas.\n- Acordos Internacionais: Protocolo de Kyoto, Acordo de Paris (meta de 1,5°C) e transição energética para fontes renováveis (solar, eólica, biomassa e hidrogênio verde).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_fis_05_a",
+              "title": "ENEM: Dinâmica da Inversão Térmica nas Cidades",
+              "problemStatement": "Em grandes centros urbanos industrializados, nas manhãs frias de inverno, verifica-se com frequência o fenômeno da inversão térmica. Esse fenômeno gera graves problemas de saúde pública para a população urbana porque:",
+              "options": [
+                "A umidade relativa do ar atinge 100%, dissolvendo o asfalto e gerando gases de combustão espontânea.",
+                "A radiação ultravioleta é totalmente extinta, provocando o resfriamento permanente de todos os edifícios.",
+                "O aumento descontrolado dos ventos alísios dispersa os poluentes para as áreas rurais vizinhas.",
+                "Uma camada superior de ar quente bloqueia a ascensão do ar frio superficial, aprisionando poluentes tóxicos junto ao nível do solo.",
+                "A pressão atmosférica cai a zero, impedindo a oxigenação dos pulmões e a circulação de pedestres."
+              ],
+              "correctIndex": 3,
+              "hint": "Normalmente o ar frio fica em cima e o quente embaixo (que sobe). Na inversão térmica, o ar frio fica preso embaixo com a poluição, sob uma tampa de ar quente.",
+              "stepByStepSolution": "A alternativa A está correta. A inversão térmica ocorre quando a superfície esfria rapidamente à noite e resfria a camada inferior de ar. O ar frio, sendo mais denso, não consegue subir, enquanto a camada superior mais quente atua como uma 'tampa', impedindo a convecção e aprisionando material particulado e gases tóxicos na troposfera inferior."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_geo_02_agraria",
+      "unitNumber": 2,
+      "tier": "BASIC",
+      "title": "Geografia Agrária (O Espaço Rural)",
+      "description": "Estrutura fundiária histórica, dualidade agronegócio vs. agricultura familiar, Revolução Verde e conflitos socioespaciais.",
+      "category": "Geografia",
+      "subject": "Ciências Humanas",
+      "lessons": [
+        {
+          "id": "geo_agr_01",
+          "unitId": "mod_geo_02_agraria",
+          "title": "1. Estrutura Fundiária",
+          "conceptTitle": "Concentração de terras no Brasil, índice de Gini rural, Lei de Terras de 1850, estatuto da terra e reforma agrária",
+          "explanation": "# Estrutura Fundiária e Concentração de Terras no Brasil\n\nA questão agrária no Brasil é caracterizada por uma das maiores concentrações de terra do mundo, cujas raízes históricas remontam ao período colonial e foram consolidadas pelas legislações do século XIX.\n\n### 1. Evolução Histórica da Posse da Terra\n- **Regime de Sesmarias (1530–1822):** Doação de imensas glebas de terra da Coroa portuguesa a fidalgos coloniais com capital para montagem de engenhos e currais de gado, inaugurando o latifúndio monocultor.\n- **Período de Posse Livre (1822–1850):** Vazio legal após a Independência, onde a terra era apropriada pela simples ocupação de posseiros e grileiros.\n- **Lei de Terras de 1850 (Lei nº 601):** Marco regulatório que determinou que as terras públicas (devolutas) só poderiam ser adquiridas por **compra em leilão público à vista**, proibindo o apossamento por ocupação.\n- **Consequência Crucial no ENEM:** A Lei de Terras de 1850 foi promulgada no mesmo ano da extinção do tráfico negreiro (Lei Eusébio de Queirós) e bloqueou deliberadamente o acesso à terra para os futuros libertos e para os imigrantes europeus empobrecidos, transformando a terra em mercadoria inacessível aos trabalhadores e garantindo mão de obra cativa para os cafezais paulistas.\n\n### 2. O Índice de Gini da Estrutura Fundiária\n- O Índice de Gini mede a desigualdade de uma distribuição (0 = igualdade perfeita, 1 = concentração máxima).\n- No campo brasileiro, o Gini da terra permanece consistentemente acima de 0,85: cerca de 1% dos proprietários detém quase metade da área agrícola do país, enquanto milhões de pequenos agricultores disputam parcelas minúsculas.\n\n### 3. Estatuto da Terra (1964) e Módulo Fiscal\n- Criado durante a Ditadura Militar como resposta às Ligas Camponesas de Francisco Julião no Nordeste.\n- **Módulo Fiscal:** Unidade de medida agrária fixada pelo INCRA em hectares para cada município, correspondendo à área mínima necessária para o sustento de uma família em determinada região econômica.\n- **Classificação dos Imóveis:**\n  • Minifúndio: Área inferior a 1 módulo fiscal (inviabilidade econômica familiar).\n  • Pequena e Média Propriedade: Entre 1 e 15 módulos fiscais.\n  • Latifúndio por Dimensão: Propriedade com área superior a 600 vezes o módulo fiscal.\n  • Latifúndio por Exploração: Terra de qualquer dimensão mantida improdutiva para especulação imobiliária.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_agr_01_a",
+              "title": "ENEM: A Lei de Terras de 1850 e a Concentração Fundiária",
+              "problemStatement": "Promulgada no mesmo ano em que o Brasil extinguiu formalmente o tráfico transatlântico de escravizados (1850), a Lei de Terras (Lei nº 601) estabeleceu que as terras devolutas só poderiam ser adquiridas por compra em dinheiro à vista. O impacto social direto dessa legislação para a estrutura agrária brasileira foi:",
+              "options": [
+                "Entregar as terras públicas aos povos indígenas do interior como forma de reparação histórica.",
+                "Promover a desapropriação imediata de todas as fazendas cafeeiras do Vale do Paraíba.",
+                "Extinguir os impostos sobre exportação de café e açúcar para estimular a agricultura familiar.",
+                "Garantir a divisão equitativa de todos os latifúndios entre as famílias camponesas sem terra.",
+                "Bloquear o acesso dos trabalhadores livres, libertos e imigrantes pobres à propriedade legal da terra, assegurando mão de obra cativa para os latifúndios."
+              ],
+              "correctIndex": 4,
+              "hint": "Ao exigir compra à vista em leilão público, a lei proibiu a posse por ocupação e impediu que escravizados libertos e imigrantes pobres se tornassem pequenos proprietários.",
+              "stepByStepSolution": "A alternativa A está correta. A Lei de Terras de 1850 foi concebida pela elite senhorial cafeeira para transformar a terra em mercadoria cara e inacessível às classes populares. Sem recursos para comprar terras em leilão, os trabalhadores empobrecidos ficavam subjugados ao trabalho assalariado ou de parceria nas grandes fazendas."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_agr_02",
+          "unitId": "mod_geo_02_agraria",
+          "title": "2. Sistemas Agrícolas",
+          "conceptTitle": "Agricultura familiar e segurança alimentar versus agronegócio patronal exportador de commodities",
+          "explanation": "# Sistemas Agrícolas: Agricultura Familiar vs Agronegócio\n\nNo espaço agrário brasileiro contemporâneo coexistem dois modelos socioeconômicos antagônicos, complementares e em constante disputa política e territorial.\n\n### 1. Agricultura Familiar e Camponesa\n- **Base Social e Produtiva:** Propriedades de pequeno e médio porte onde a gestão e a mão de obra são predominantemente dos membros da família.\n- **Papel Econômico Estratégico:** Segundo o Censo Agropecuário do IBGE, a agricultura familiar responde por mais de 70% dos postos de trabalho no campo e fornece a maior parte dos alimentos básicos consumidos na mesa brasileira (mandioca, feijão, leite, hortaliças, milho e carne suína/aves).\n- **Práticas de Cultivo:** Maior diversidade de culturas (policultura), rotação de cultivos e preservação do solo, com menor dependência de pacotes químicos pesados.\n\n### 2. O Agronegócio (Agribusiness)\n- **Base Produtiva:** Grandes latifúndios altamente capitalizados e mecanizados (Complexos Agroindustriais - CAIs).\n- **Foco em Commodities:** Produção em larga escala voltada ao mercado internacional exportador (soja em grão, milho transgênico, café, cana-de-açúcar para etanol/açúcar, algodão e carne bovina).\n- **Tecnologia Intensiva:** Utilização intensiva de tratores guiados por satélite (agricultura de precisão), drones, sementes transgênicas patenteadas e adubos químicos importados.\n- **Impacto Social:** Baixa geração de empregos diretos por hectare em razão da intensa mecanização das colheitas, favorecendo a migração forçada para as periferias urbanas.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_agr_02_a",
+              "title": "ENEM: Agricultura Familiar e Segurança Alimentar",
+              "problemStatement": "Dados sucessivos do Censo Agropecuário demonstram que, embora ocupe menos de um quarto da área agricultável do país, a agricultura familiar desempenha um papel socioeconômico vital no Brasil porque:",
+              "options": [
+                "Concentra 95% do volume financeiro das exportações brasileiras de soja e minério de ferro.",
+                "Recebe a totalidade dos subsídios estatais de crédito rural oferecidos pelo Plano Safra.",
+                "Responde pela maioria dos postos de trabalho no campo e fornece a maior parte dos alimentos básicos consumidos pela população no mercado interno.",
+                "Utiliza colheitadeiras autônomas guiadas por satélite com eliminação completa do emprego humano.",
+                "Opera exclusivamente com monoculturas de eucalipto voltadas à indústria de celulose internacional."
+              ],
+              "correctIndex": 2,
+              "hint": "Pense no prato de comida do brasileiro: feijão, arroz, mandioca, leite, hortaliças e ovos vêm prioritariamente da agricultura familiar e camponesa.",
+              "stepByStepSolution": "A alternativa A está correta. A agricultura familiar e camponesa é o esteio da segurança alimentar do Brasil, respondendo pela maior fatia dos alimentos que abastecem os lares e feiras livres, além de fixar o homem no campo gerando a maioria absoluta dos empregos do meio rural."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_agr_03",
+          "unitId": "mod_geo_02_agraria",
+          "title": "3. A Revolução Verde",
+          "conceptTitle": "Modernização conservadora do campo, mecanização, sementes transgênicas, agrotóxicos e impactos ecológicos",
+          "explanation": "# A Revolução Verde: Modernização e Dependência Tecnológica\n\nIniciada na década de 1960 nos Estados Unidos e expandida para os países periféricos com o discurso de 'acabar com a fome mundial', a Revolução Verde transformou as bases técnicas da agricultura mundial.\n\n### 1. Os Pilares do Pacote Tecnológico\n- Sementes geneticamente selecionadas e organismos geneticamente modificados (OGMs / transgênicos).\n- Maquinários agrícolas pesados (tratores, colheitadeiras combinadas e pulverizadores aéreos).\n- Insumos químicos industriais: fertilizantes químicos sintéticos (NPK) e defensivos agrícolas (agrotóxicos / pesticidas).\n- Irrigação artificial intensiva por pivô central.\n\n### 2. A Realidade no Brasil: A 'Modernização Conservadora'\n- A tecnologia ingressou no Brasil durante a ditadura militar através de subsídios de crédito rural e fundação da EMBRAPA (1973).\n- **Por que 'Conservadora'?** Porque modernizou o padrão técnico das grandes propriedades sem alterar a estrutura arcaica e concentrada de propriedade da terra.\n- Em vez de acabar com a fome, a produção voltou-se para ração animal na Europa e na China (soja), concentrando ainda mais as terras e expulsando trabalhadores rurais (êxodo rural).\n\n### 3. Impactos Socioambientais da Revolução Verde\n- **Perda de Biodiversidade:** Monoculturas homogêneas vulneráveis a superpragas.\n- **Contaminação Hídrica e do Solo:** Lixiviação de agrotóxicos para os lençóis freáticos e eutrofização de rios.\n- **Intoxicação de Comunidades:** Pulverização aérea de pesticidas sobre comunidades rurais, quilombolas e aldeias indígenas.\n- **Dependência Biotecnológica:** Agricultores obrigados a pagar royalties anuais a multinacionais de sementes transgênicas (ex: sementes resistentes ao glifosato).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_agr_03_a",
+              "title": "ENEM: A Modernização Conservadora da Revolução Verde",
+              "problemStatement": "A introdução do pacote tecnológico da Revolução Verde no Brasil a partir dos anos 1970 é frequentemente descrita pelos geógrafos como uma 'modernização conservadora' porque:",
+              "options": [
+                "Proibiu o cultivo de soja e milho no Centro-Oeste para proteger os cerrados e florestas.",
+                "Priorizou o cultivo de alimentos orgânicos com adubação exclusivamente natural.",
+                "Distribuiu terras para todos os camponeses e baniu o uso de agrotóxicos em território nacional.",
+                "Promoveu intensa tecnificação e mecanização das fazendas sem alterar a estrutura desigual de concentração de terras.",
+                "Eliminou as multinacionais do setor de sementes e nacionalizou os frigoríficos."
+              ],
+              "correctIndex": 3,
+              "hint": "Modernizou a técnica (tratores, veneno, sementes transgênicas), mas conservou a estrutura social arcaica (o latifúndio concentrador).",
+              "stepByStepSolution": "A alternativa A está correta. O termo 'modernização conservadora' designa a modernização da base técnica produtiva das lavouras (tratores, fertilizantes, defensivos químicos) mantendo intacta e até aprofundando a secular concentração fundiária e a exclusão social no campo."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_agr_04",
+          "unitId": "mod_geo_02_agraria",
+          "title": "4. Fronteiras Agrícolas e Conflitos",
+          "conceptTitle": "Avanço da soja e pecuária no Cerrado e Amazônia (Arco do Desmatamento e MATOPIBA), grilagem e violência contra povos originários",
+          "explanation": "# Fronteiras Agrícolas e Conflitos no Campo Brasileiro\n\nO avanço espacial da agropecuária industrializada sobre áreas de vegetação nativa define as chamadas 'fronteiras agrícolas', marcadas por tensões ecológicas e confrontos violentos por terra.\n\n### 1. A Marcha Histórica da Soja e do Gado\n- Nas décadas de 1970 e 1980, com o desenvolvimento de técnicas de calagem pela EMBRAPA para corrigir a acidez do solo do Cerrado, a soja expandiu-se do Sul para o Centro-Oeste (Mato Grosso e Goiás).\n- A pecuária extensiva atua como 'pioneira': desmata, queima a mata nativa, planta capim para gado de corte e, anos depois, vende a terra desmatada e valorizada para produtores de grãos.\n\n### 2. As Regiões de Conflito Atual no ENEM\n- **Arco do Desmatamento:** Faixa que se estende do leste do Pará, norte de Mato Grosso, Rondônia e Acre, onde o bioma amazônico é pressionado pelo desmatamento ilegal, fogo e grilagem.\n- **MATOPIBA:** Fronteira agrícola formada por partes do Maranhão, Tocantins, Piauí e Bahia. Área de Cerrado intensamente disputada por megaempresas transnacionais do agronegócio contra populações tradicionais (gerazeiros, quebradeiras de coco babaçu e posseiros).\n\n### 3. Conflitos Sociais e Violência no Campo\n- Dados da Comissão Pastoral da Terra (CPT) registram anualmente centenas de assassinatos de lideranças camponesas, indígenas e ambientalistas (como Chico Mendes em 1988 e Dorothy Stang em 2005).\n- **Marco Temporal:** Tese jurídica refutada pelo STF que tentava limitar as demarcações de terras indígenas apenas àquelas ocupadas na data da promulgação da Constituição de 1988, ignorando expulsões forçadas anteriores.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_agr_04_a",
+              "title": "ENEM: Conflitos Territoriais na Região do MATOPIBA",
+              "problemStatement": "A região do MATOPIBA (confluência de Maranhão, Tocantins, Piauí e Bahia) consolidou-se como a mais recente fronteira agrícola de expansão da soja e do milho no Brasil. Essa expansão tem gerado intensos conflitos territoriais motivados principalmente por:",
+              "options": [
+                "Migração em massa de fazendeiros da Europa que compraram todas as terras devolutas sem intermediários.",
+                "Disputas diplomáticas entre os quatro estados pela posse de jazidas de petróleo marítimo no interior do país.",
+                "Tentativa do governo federal de proibir a exportação de grãos produzidos fora do estado de São Paulo.",
+                "Queda dos preços internacionais dos grãos que provocou o abandono total das lavouras pelos grandes produtores.",
+                "Apropriação de terras e avanço do agronegócio sobre territórios tradicionalmente ocupados por comunidades geraizeiras, quilombolas e posseiros."
+              ],
+              "correctIndex": 4,
+              "hint": "O avanço de grandes corporações do agronegócio sobre o Cerrado pressiona populações que vivem há gerações na terra sem títulos formalizados em cartório.",
+              "stepByStepSolution": "A alternativa A está correta. A expansão do agronegócio no MATOPIBA avança sobre áreas de chapada e vales do Cerrado, gerando desmatamento acelerado e conflitos contra comunidades tradicionais (geraizeiros, quilombolas e pequenos posseiros), que frequentemente sofrem ameaças e violência decorrentes da grilagem e pistolagem."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_geo_03_urbana",
+      "unitNumber": 3,
+      "tier": "BASIC",
+      "title": "Geografia Urbana e Demografia",
+      "description": "Transição demográfica, fluxos migratórios, redes urbanas, metropolização e as contradições da segregação socioespacial.",
+      "category": "Geografia",
+      "subject": "Ciências Humanas",
+      "lessons": [
+        {
+          "id": "geo_urb_01",
+          "unitId": "mod_geo_03_urbana",
+          "title": "1. Dinâmica Populacional (Demografia)",
+          "conceptTitle": "Fases da transição demográfica, análise de pirâmides etárias, queda da fecundidade, envelhecimento e bônus demográfico",
+          "explanation": "# Dinâmica Populacional: Transição Demográfica e Pirâmides Etárias\n\nA demografia no ENEM aborda as transformações estruturais no crescimento vegetativo, fecundidade, expectativa de vida e estrutura etária das sociedades.\n\n### 1. Fases da Transição Demográfica\n- **Fase 1 (Pré-Transição):** Altas taxas de natalidade e mortalidade (população jovem com crescimento vegetativo lento e instável por epidemias e guerras).\n- **Fase 2 (Explosão Demográfica / Transição Inicial):** Queda acentuada da mortalidade (avanços no saneamento, antibióticos e vacinas) mantendo a natalidade alta.\n- **Fase 3 (Desaceleração do Crescimento):** Queda acelerada da taxa de fecundidade e natalidade, provocada pela urbanização, entrada da mulher no mercado de trabalho e métodos contraceptivos.\n- **Fase 4 (Estabilização / Envelhecimento):** Baixa natalidade e baixa mortalidade. Crescimento vegetativo próximo a zero ou negativo.\n\n### 2. A Transição Demográfica no Brasil\n- O Brasil passou de uma taxa de fecundidade de 6,3 filhos por mulher na década de 1960 para menos de 1,6 filho por mulher atualmente (abaixo da taxa de reposição populacional de 2,1).\n- **Evolução da Pirâmide Etária Brasileira:**\n  • Década de 1970: Base larga (muitas crianças e jovens) e topo estreito (poucos idosos).\n  • Atualidade: Base em estreitamento rápido, corpo alargado (adultos) e topo em forte expansão (envelhecimento populacional acelerado).\n\n### 3. O 'Bônus Demográfico' (Janela de Oportunidade)\n- Momento histórico em que a População em Idade Ativa (PIA - 15 a 64 anos) é proporcionalmente maior que a população dependente (crianças e idosos).\n- **O Desafio no ENEM:** O bônus demográfico é temporário. Se o país não investir pesadamente em educação de qualidade, ciência e geração de empregos qualificados enquanto a maioria é jovem, enfrentará o envelhecimento populacional antes de atingir o desenvolvimento socioeconômico.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_urb_01_a",
+              "title": "ENEM: O Bônus Demográfico e seus Desafios",
+              "problemStatement": "O Brasil vivencia nas primeiras décadas do século XXI o chamado 'bônus demográfico', fase da transição demográfica caracterizada por:",
+              "options": [
+                "Aumento desenfreado da taxa de fecundidade que atingiu mais de 7 filhos por mulher.",
+                "Igualdade matemática perfeita entre o número de nascimentos e o número de óbitos em todas as capitais.",
+                "Extinção completa da população economicamente ativa devido ao avanço da inteligência artificial.",
+                "Redução imediata e definitiva de todos os gastos públicos com saúde e educação básica.",
+                "Maior proporção de pessoas em idade ativa e produtiva em relação ao número de crianças e idosos dependentes."
+              ],
+              "correctIndex": 4,
+              "hint": "O bônus demográfico acontece quando a maior parte da população está entre 15 e 64 anos, pronta para trabalhar e impulsionar a economia do país.",
+              "stepByStepSolution": "A alternativa A está correta. O bônus demográfico (ou janela de oportunidade) é o período em que a razão de dependência cai ao seu nível mínimo, ou seja, a fatia da população em idade ativa (PIA - 15 a 64 anos) é significativamente maior do que a soma de crianças e idosos, criando condições ideais para a geração de riqueza e acúmulo previdenciário."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_urb_02",
+          "unitId": "mod_geo_03_urbana",
+          "title": "2. Movimentos Migratórios",
+          "conceptTitle": "Êxodo rural brasileiro, migração nordestina para o Sudeste, migrações pendulares, transumância e refugiados globais",
+          "explanation": "# Movimentos Migratórios e a Crise Global de Refugiados\n\nAs migrações humanas refletem desigualdades econômicas, transformações tecnológicas, conflitos bélicos e perseguições políticas e ambientais.\n\n### 1. Migrações Históricas Internas no Brasil\n- **Nordestinos para o Sudeste (1950–1980):** O maior fluxo migratório interno do país. Motivado pelo êxodo rural decorrente das secas no Sertão, concentração fundiária e atração pela rápida industrialização em São Paulo e Rio de Janeiro.\n- **A 'Marcha para o Oeste' (décadas de 1970–1990):** Migração de agricultores do Sul do Brasil para o Centro-Oeste e Norte para abertura da fronteira agrícola da soja e pecuária.\n- **Construção de Brasília (1956–1960):** Os 'candangos' (trabalhadores predominantemente nordestinos) ergueram a nova capital no Planalto Central.\n\n### 2. Tendências Migratórias Contemporâneas no Brasil\n- **Migração de Retorno:** Redução dos fluxos para o Sudeste e retorno de muitos migrantes nordestinos para suas regiões de origem, impulsionados pela desconcentração industrial e investimentos no Nordeste.\n- **Crescimento das Cidades Médias:** Redução do crescimento das grandes metrópoles e dinamização de municípios do interior com melhor qualidade de vida.\n- **Migração Pendular:** Deslocamento diário e regular de ida e volta entre o município de moradia e o município de trabalho/estudo em regiões metropolitanas.\n\n### 3. A Crise Global de Refugiados no ENEM\n- **Diferença Conceitual Crucial:**\n  • Migrante Econômico: Desloca-se voluntariamente em busca de melhores condições de vida e trabalho.\n  • Refugiado (Convenção de Genebra de 1951): Pessoa que foge de seu país por fundado temor de perseguição por motivo de raça, religião, nacionalidade, grupo social, opinião política ou grave violação generalizada de direitos humanos.\n- **Xenofobia e Muros no Século XXI:** Discursos de ódio e políticas anti-imigração em países desenvolvidos, criminalizando requerentes de asilo e construindo barreiras físicas e navais.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_urb_02_a",
+              "title": "ENEM: A Natureza da Migração Pendular",
+              "problemStatement": "Em grandes regiões metropolitanas, como a de São Paulo, Rio de Janeiro e Belo Horizonte, milhões de trabalhadores realizam diariamente deslocamentos pendulares. Esse fenômeno é caracterizado por:",
+              "options": [
+                "Êxodo permanente de moradores das capitais para trabalhar exclusivamente no extrativismo da Amazônia.",
+                "Viagens de férias turísticas realizadas por aposentados que se transferem para o litoral.",
+                "Mudança definitiva de cidade motivada exclusivamente por desastres ambientais e cheias de rios.",
+                "Deslocamentos regulares de ida e volta entre o município de residência e o município de trabalho ou estudo, sem mudança definitiva de domicílio.",
+                "Migração forçada de trabalhadores que passam 6 meses no corte de cana e depois migram para a Europa."
+              ],
+              "correctIndex": 3,
+              "hint": "Pendular lembra o movimento do pêndulo do relógio: vai de manhã para o trabalho e volta à noite para casa na cidade dormitório.",
+              "stepByStepSolution": "A alternativa A está correta. A migração pendular é o movimento diário ou periódico realizado por trabalhadores e estudantes que moram em municípios periféricos (muitas vezes denominados 'cidades dormitório') e se deslocam para os polos centrais da metrópole em busca de emprego ou formação, retornando ao final do dia para suas residências."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_urb_03",
+          "unitId": "mod_geo_03_urbana",
+          "title": "3. Processo de Urbanização",
+          "conceptTitle": "Urbanização acelerada nos países do Sul global, hierarquia e redes urbanas, metrópoles, megacidades, cidades globais e conurbação",
+          "explanation": "# Processo de Urbanização: Redes Urbanas e Metropolização\n\nA urbanização ocorre quando o crescimento da população urbana supera o crescimento da população rural, transformando o espaço geográfico em um meio predominantemente técnico e edificado.\n\n### 1. Fatores do Êxodo Rural e Urbanização Brasileira\n- **Urbanização Rápida e Concentrada:** O Brasil passou de um país agrário na década de 1940 para um país com mais de 85% de sua população vivendo em cidades atualmente.\n- **Fatores Repulsivos no Campo:** Mecanização das lavouras pela Revolução Verde, desemprego estrutural e concentração secular de terras.\n- **Fatores Atrativos na Cidade:** Concentração das indústrias, comércio, serviços e a promessa de mobilidade social e acesso a hospitais e escolas.\n\n### 2. Conceitos Centrais da Rede Urbana\n- **Hierarquia Urbana:** A relação de influência e dependência entre vilas, centros locais, centros sub-regionais, capitais regionais, metrópoles e metrópoles nacionais (São Paulo e Rio de Janeiro).\n- **Conurbação:** Encontro e fusão física de duas ou mais cidades vizinhas decorrente de seu crescimento horizontal, compartilhando avenidas e serviços urbanos.\n- **Metrópole e Região Metropolitana (RM):** Conjunto de municípios conurbados e integrados socioeconomicamente a uma cidade polo que lidera a prestação de serviços de alta complexidade.\n- **Megacidade:** Critério estritamente quantitativo da ONU (aglomerações urbanas com população superior a 10 milhões de habitantes, ex: São Paulo, Tóquio, Mumbai).\n- **Cidade Global (Metrópole Mundial):** Critério qualitativo de comando e poder financeiro na economia global (bolsas de valores, sedes de multinacionais, aeroportos internacionais, ex: São Paulo, Nova York, Londres).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_urb_03_a",
+              "title": "ENEM: O Fenômeno Urbano da Conurbação",
+              "problemStatement": "O intenso crescimento horizontal das metrópoles provocou em muitas regiões metropolitanas o fenômeno da conurbação. Esse conceito geográfico designa:",
+              "options": [
+                "A unificação física e espacial das áreas urbanas de dois ou mais municípios vizinhos em decorrência de sua expansão contínua.",
+                "A construção de muralhas divisórias entre bairros ricos e periferias sob fiscalização do exército.",
+                "A criação de capitais planejadas no interior do país para desconcentrar as indústrias litorâneas.",
+                "A perda total de população de uma metrópole que é abandonada por seus moradores em direção ao campo.",
+                "O aumento desordenado da taxa de natalidade exclusivo em áreas rurais isoladas."
+              ],
+              "correctIndex": 0,
+              "hint": "Pense no limite entre cidades vizinhas onde você cruza uma rua e já está no outro município sem perceber nenhuma área rural entre eles.",
+              "stepByStepSolution": "A alternativa A está correta. Conurbação é o processo pelo qual a expansão urbana contínua de duas ou mais cidades vizinhas faz com que suas manchas urbanas se encontrem e se fundam territorialmente, tornando imperceptível a fronteira geográfica entre os municípios no dia a dia da população."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_urb_04",
+          "unitId": "mod_geo_03_urbana",
+          "title": "4. Problemas Sociais e Infraestrutura Urbana",
+          "conceptTitle": "Segregação socioespacial, gentrificação, periferização, favelização, mobilidade precarizada e déficit de saneamento básico",
+          "explanation": "# Problemas Sociais Urbanos e Infraestrutura\n\nA rápida urbanização brasileira sem reformas estruturais aprofundou a segregação socioespacial e gerou graves déficits de infraestrutura pública.\n\n### 1. Segregação Socioespacial e a Cidade Bipartida\n- **Periferização:** A população de baixa renda é empurrada para as bordas periféricas desprovidas de infraestrutura, saneamento básico, áreas de lazer e transporte público de massa.\n- **Gentrificação:** Processo de reforma e valorização imobiliária de bairros históricos ou degradados que resulta na elevação dos custos de vida e aluguel, expulsando os moradores tradicionais pobres para dar lugar a classes abastadas e comércio gourmet.\n- **Autossegregação:** Condomínios fechados e enclaves fortificados das elites que se isolam do tecido urbano público.\n\n### 2. Mobilidade Urbana e o Modelo Rodoviarista\n- A opção histórica brasileira pelo transporte automotivo individual (carros) e ônibus em detrimento do transporte sobre trilhos (trens e metrôs) provocou congestionamentos crônicos, poluição atmosférica e perda diária de horas de vida da classe trabalhadora no trânsito.\n- Desigualdade no tempo de deslocamento: trabalhadores da periferia gastam frequentemente mais de 3 a 4 horas por dia em transportes coletivos precários.\n\n### 3. Saneamento Básico e Moradia Digna\n- Déficit habitacional crônico: milhões de famílias vivem em ocupações irregulares, favelas e encostas de morro sob risco iminente de deslizamento em temporais de verão.\n- Esgoto a céu aberto e contaminação de mananciais, expondo as populações mais vulneráveis a doenças de veiculação hídrica (leptospirose, diarreia infecciosa, cólera).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_urb_04_a",
+              "title": "ENEM: O Processo de Gentrificação Urbana",
+              "problemStatement": "O processo de gentrificação, observado em diversas áreas centrais ou portuárias de metrópoles globais e brasileiras, tem como consequência social mais evidente:",
+              "options": [
+                "A distribuição gratuita de apartamentos reformados para toda a população de baixa renda da cidade.",
+                "A perda de investimentos públicos e o esvaziamento comercial permanente da região revitalizada.",
+                "A proibição do tráfego de automóveis importados para incentivar o transporte hidroviário público.",
+                "A demolição total dos edifícios históricos para construção exclusiva de favelas populares.",
+                "A valorização imobiliária que encarece o custo de vida no bairro e força a expulsão das famílias populares tradicionais para as periferias distantes."
+              ],
+              "correctIndex": 4,
+              "hint": "Revitalizar uma área sem política habitacional aumenta o valor do metro quadrado e dos aluguéis, expulsando os moradores pobres que não conseguem pagar os novos preços.",
+              "stepByStepSolution": "A alternativa A está correta. A gentrificação ocorre quando uma intervenção urbanística valoriza esteticamente um bairro histórico ou degradado, atraindo empreendimentos imobiliários e comércio de elite. Com a alta exponencial dos aluguéis, preços de serviços e impostos, a população de menor renda residente histórica é forçada a deixar o local por não conseguir arcar com o novo custo de vida."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_geo_04_economica",
+      "unitNumber": 4,
+      "tier": "BASIC",
+      "title": "Geografia Econômica e Globalização",
+      "description": "Evolução do capitalismo, o meio técnico-científico-informacional, DIT e os modelos de industrialização mundial e brasileira.",
+      "category": "Geografia",
+      "subject": "Ciências Humanas",
+      "lessons": [
+        {
+          "id": "geo_eco_01",
+          "unitId": "mod_geo_04_economica",
+          "title": "1. Fases do Capitalismo",
+          "conceptTitle": "Do mercantilismo ao capitalismo industrial, financeiro-monopolista e informacional-cognitivo",
+          "explanation": "# As Fases do Capitalismo e a Transformação do Espaço\n\nO sistema capitalista evoluiu historicamente ao longo de quatro grandes fases, alterando progressivamente a relação entre os Estados nacionais, os mercados globais e o espaço geográfico.\n\n### 1. Capitalismo Comercial ou Mercantil (Séculos XV a XVIII)\n- **Contexto:** Grandes Navegações e colonização das Américas e costas da África e Ásia.\n- **Lógica Econômica:** Acumulação primitiva de capitais baseada no comércio de especiarias, ouro, prata e produtos tropicais das plantations escravistas.\n- **Doutrina:** Mercantilismo (metalismo, balança comercial favorável e protecionismo da Coroa através do pacto colonial).\n\n### 2. Capitalismo Industrial (Séculos XVIII e XIX)\n- **Contexto:** Primeira e Segunda Revoluções Industriais (Inglaterra, França, Alemanha e EUA).\n- **Lógica Econômica:** O motor da acumulação desloca-se do comércio para a produção industrial fabril e exploração do trabalho assalariado.\n- **Doutrina:** Liberalismo econômico clássico (Adam Smith, livre concorrência e a teoria da 'mão invisível' do mercado).\n\n### 3. Capitalismo Financeiro ou Monopolista (Final do Séc. XIX até meados do Séc. XX)\n- **Contexto:** Fusão do capital industrial com o capital bancário, originando gigantescas corporações e trustes.\n- **Práticas Concorrenciais:** Formação de cartéis, monopólios, oligopólios e holdings.\n- **Geopolítica:** Corrida imperialista e partilha colonial da África e da Ásia (Conferência de Berlim de 1884).\n\n### 4. Capitalismo Informacional ou Cognitivo (Pós-Segunda Guerra / Anos 1970 até hoje)\n- **Contexto:** Terceira Revolução Industrial (Revolução Técnico-Científica-Informacional) e Quarta Revolução Industrial (Indústria 4.0).\n- **Lógica Econômica:** O valor central reside no conhecimento, pesquisa e desenvolvimento (P&D), softwares, algoritmos, dados e finanças especulativas globais instantâneas.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_eco_01_a",
+              "title": "ENEM: As Mudanças do Capitalismo Informacional",
+              "problemStatement": "O capitalismo informacional ou cognitivo, consolidado a partir do final do século XX, distingue-se das fases industriais anteriores porque a geração de riqueza e a liderança de mercado deslocaram-se prioritariamente para:",
+              "options": [
+                "A extração manual de carvão mineral em minas subterrâneas para alimentar fornos a lenha.",
+                "O controle de dados, pesquisa científica, desenvolvimento de softwares e serviços financeiros automatizados.",
+                "A produção artesanal de tecidos de lã sem o uso de qualquer ferramenta mecânica.",
+                "A proibição do comércio internacional de patentes para estimular o artesanato doméstico.",
+                "O monopólio exclusivo do transporte marítimo por navios a vela de madeira."
+              ],
+              "correctIndex": 1,
+              "hint": "Pense no que move as maiores empresas do mundo hoje (Google, Apple, Microsoft, Nvidia): não são chaminés de aço, mas dados, chips e algoritmos.",
+              "stepByStepSolution": "A alternativa A está correta. No capitalismo informacional, o conhecimento, a pesquisa e desenvolvimento (P&D), os fluxos de informação em tempo real e os algoritmos tornaram-se os principais vetores de produtividade e poder geopolítico mundial, superando a mera posse física de maquinários pesados da fase fordista."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_eco_02",
+          "unitId": "mod_geo_04_economica",
+          "title": "2. Globalização",
+          "conceptTitle": "O meio técnico-científico-informacional, compressão espaço-tempo, empresas transnacionais e exclusão digital",
+          "explanation": "# Globalização e Redes Globais: A Compressão do Espaço-Tempo\n\nA globalização é o estágio contemporâneo de integração econômica, financeira, tecnológica e cultural do planeta, impulsionada pelo avanço das redes de transporte e telecomunicações.\n\n### 1. A Compressão Espaço-Tempo (David Harvey)\n- A velocidade dos aviões a jato, dos navios porta-contêineres e a transmissão de dados por cabos submarinos de fibra óptica reduziram virtualmente as distâncias territoriais.\n- 'A aldeia global': Eventos econômicos ou culturais em uma parte do mundo repercutem em tempo real no restante do globo.\n\n### 2. A Fragmentação Espacial da Produção\n- As corporações transnacionais (multinacionais) deixaram de produzir o produto inteiro em uma única fábrica.\n- **Fábrica Global:** O design e o desenvolvimento do produto ocorrem nos países sede ricos (EUA, Alemanha, Japão); a produção de peças e montagem é terceirizada para países asiáticos e periféricos em busca de mão de obra barata, incentivos fiscais e leis ambientais flexíveis; as vendas e publicidade operam no mundo inteiro.\n\n### 3. A Crítica de Milton Santos: A Globalização como Fábula e como Perversidade\n- **A Globalização como Fábula:** O discurso das elites globais de que o mundo é uma aldeia conectada onde todos têm as mesmas oportunidades e liberdade de circulação.\n- **A Globalização como Perversidade:** A realidade dos fatos: enquanto os capitais e mercadorias circulam livremente sem fronteiras, os seres humanos pobres têm sua circulação criminalizada por muros e xenofobia. Aumenta o desemprego estrutural e aprofunda-se a desigualdade entre Norte e Sul global.\n- **Por uma Outra Globalização:** A possibilidade de utilizar as tecnologias de informação para a solidariedade e emancipação popular.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_eco_02_a",
+              "title": "ENEM: A Crítica de Milton Santos à Globalização",
+              "problemStatement": "Em sua obra seminal 'Por uma outra globalização', o geógrafo Milton Santos afirma que a globalização nos é apresentada como uma 'fábula', mas funciona concretamente como uma 'perversidade'. Essa perversidade manifesta-se principalmente pelo fato de que:",
+              "options": [
+                "Todos os países do mundo passaram a usufruir da mesma renda per capita e qualidade de vida.",
+                "Os sindicatos operários assumiram o controle de todas as empresas multinacionais americanas.",
+                "A desigualdade social desapareceu completamente devido à expansão da internet de alta velocidade.",
+                "A tecnologia digital extinguiu a pobreza em todos os países da África e da América Latina.",
+                "Enquanto os fluxos de mercadorias e capitais financeiros circulam livremente pelo mundo, a circulação de trabalhadores pobres é barrada por fronteiras vigiadas e xenofobia."
+              ],
+              "correctIndex": 4,
+              "hint": "Livre circulação para o dinheiro e produtos caros, mas repressão violenta e muros contra imigrantes e refugiados pobres.",
+              "stepByStepSolution": "A alternativa A está correta. A crítica de Milton Santos expõe a assimetria da globalização: o discurso apregoa um mundo sem fronteiras para corporações, capitais especulativos e elites turísticas, mas impõe severas barreiras, muros de isolamento, precarização do trabalho e criminalização contra os trabalhadores e refugiados do Sul Global."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_eco_03",
+          "unitId": "mod_geo_04_economica",
+          "title": "3. Divisão Internacional do Trabalho (DIT)",
+          "conceptTitle": "Evolução da DIT clássica à nova DIT: centros de inovação tecnológica vs. periferias exportadoras de commodities",
+          "explanation": "# Divisão Internacional do Trabalho (DIT)\n\nA Divisão Internacional do Trabalho (DIT) designa a especialização produtiva dos países no mercado mundial e expressa a hierarquia de poder econômico entre nações ao longo da história.\n\n### 1. A DIT Clássica (Séculos XVI ao XIX)\n- **Colônias e Países Periféricos:** Exportadores de matérias-primas, produtos agrícolas tropicais e metais preciosos.\n- **Metrópoles e Países Centrais:** Importadores de matérias-primas e exportadores exclusivos de produtos manufaturados industriais com alto valor agregado.\n\n### 2. A DIT Tradicional da Guerra Fria (Pós-Segunda Guerra)\n- Países subdesenvolvidos que iniciaram industrialização tardia por substituição de importações (como Brasil, México e Argentina).\n- Países desenvolvidos forneciam maquinários pesados, tecnologias patenteadas e empréstimos financeiros em troca de matérias-primas e lucros repatriados de filiais multinacionais.\n\n### 3. A Nova Divisão Internacional do Trabalho (Nova DIT)\n- **Países Desenvolvidos (Centro):** Controle acionário das transnacionais, geração de tecnologia de ponta, patentes, marcas e serviços financeiros globais.\n- **Países Emergentes (como China, Tigres Asiáticos, Índia, México):** Grandes parques industriais voltados à exportação de produtos manufaturados e bens eletrônicos (mão de obra barata e disciplinada).\n- **Países Periféricos e Primário-Exportadores (como grande parte da América do Sul e África):** Exportação massiva de commodities agropecuárias e minerais, sofrendo com a deterioração dos termos de troca quando os preços internacionais caem.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_eco_03_a",
+              "title": "ENEM: A Nova Divisão Internacional do Trabalho (Nova DIT)",
+              "problemStatement": "Na Nova Divisão Internacional do Trabalho (Nova DIT), países em desenvolvimento e emergentes, como China e México, passaram a ocupar qual posição central na hierarquia da produção global?",
+              "options": [
+                "Países importadores de lixo atômico europeu sem capacidade de produzir artigos manufaturados.",
+                "Centros mundiais de emissão de moeda de reserva internacional e controle das patentes de inteligência artificial.",
+                "Monopolizadores exclusivos de todas as bolsas de valores e bancos centrais do G7.",
+                "Plataformas fabris de manufatura voltadas à exportação de mercadorias de consumo e montagem industrial com custos baixos de produção.",
+                "Economias exclusivamente de subsistência indígena sem nenhuma relação com o comércio exterior."
+              ],
+              "correctIndex": 3,
+              "hint": "Muitos países do Sul deixaram de exportar apenas soja ou ferro para se tornarem a 'fábrica do mundo', montando roupas, tênis, peças e eletrônicos para as marcas do Norte.",
+              "stepByStepSolution": "A alternativa A está correta. Na Nova DIT, os países centrais concentram a concepção, o design, o marketing e o controle de patentes (alto valor agregado), enquanto países emergentes e periféricos recebem fábricas montadoras de transnacionais atraídas por baixos salários, incentivos tributários e facilidades de exportação."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_eco_04",
+          "unitId": "mod_geo_04_economica",
+          "title": "4. Modelos Produtivos e Industrialização",
+          "conceptTitle": "Taylorismo, Fordismo e Toyotismo (acumulação flexível), e as fases da industrialização brasileira por substituição de importações",
+          "explanation": "# Modelos Produtivos Industriais e a Industrialização Brasileira\n\nA organização fabril do trabalho evoluiu para maximizar a produtividade e a taxa de lucro, moldando diretamente os sindicatos e as classes operárias.\n\n### 1. Modelos Produtivos Clássicos\n- **Taylorismo (Administração Científica):** Separação rigorosa entre concepção e execução do trabalho. Cronometragem dos movimentos do operário para eliminar 'tempos mortos'.\n- **Fordismo (Produção e Consumo em Massa):** Introdução da esteira rolante mecanizada, operário ultraespecializado em uma única tarefa repetitiva, estoques gigantescos de peças e produtos idênticos e padronizados. Política salarial voltada à formação de um mercado consumidor de massa.\n- **Toyotismo (Produção Flexível / Just-in-Time):** Desenvolvido no Japão pós-Segunda Guerra. Produção sob demanda (sem grandes estoques para não imobilizar capital), operário polivalente/multifuncional, controle rigoroso de qualidade (círculos de qualidade) e terceirização de etapas fabris.\n\n### 2. A Trajetória da Industrialização Brasileira\n- **Fase Primário-Exportadora (Até 1930):** Economia do café. O café gerou infraestrutura portuária (Porto de Santos), ferrovias, imigração e o primeiro mercado consumidor de trabalhadores assalariados em São Paulo.\n- **Era Vargas (1930–1945):** Industrialização por Substituição de Importações decorrente da quebra das economias centrais na Crise de 1929 e Segunda Guerra Mundial. Criação da indústria de base estatal: Companhia Siderúrgica Nacional (CSN), Vale do Rio Doce e fábrica de motores (FNM).\n- **Plano de Metas de Juscelino Kubitschek (1956–1961):** Tripé econômico ('50 anos em 5'): capital estatal na infraestrutura e energia, capital nacional privado nos bens de consumo não duráveis e capital transnacional estrangeiro na indústria automobilística e química pesada.\n- **Desconcentração Industrial Recente:** A partir da década de 1990, indústrias deixam o ABC paulista para fugir de altos salários e forte atuação sindical, migrando para o interior de SP, Sul e Nordeste atraídas por guerra fiscal (isenção de impostos) e mão de obra mais barata.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_eco_04_a",
+              "title": "ENEM: A Lógica Produtiva do Toyotismo",
+              "problemStatement": "O modelo de produção flexível toyotista, consolidado nas últimas décadas do século XX em substituição ao modelo fordista tradicional, tem como uma de suas características fundamentais:",
+              "options": [
+                "A produção just-in-time, voltada para atender à demanda imediata do mercado consumidor sem acumulação de estoques caros.",
+                "A proibição do controle de qualidade para acelerar o ritmo de saída dos produtos das fábricas.",
+                "A obrigatoriedade de estocar peças suficientes para dez anos de produção ininterrupta.",
+                "A recusa em utilizar qualquer tipo de computador ou robô nas linhas de produção.",
+                "A contratação de trabalhadores para desempenhar apenas uma única função mecânica durante toda a carreira."
+              ],
+              "correctIndex": 0,
+              "hint": "Just-in-time significa 'na hora certa': produz apenas o que já está vendido ou encomendado, evitando desperdício de capital em depósitos cheios de carros encalhados.",
+              "stepByStepSolution": "A alternativa A está correta. O toyotismo opera na lógica da produção enxuta e flexível: a fábrica só adquire matéria-prima e produz os lotes de acordo com as encomendas reais do mercado (sistema just-in-time e kanban), exigindo trabalhadores polivalentes e eliminação de desperdícios operacionais."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_geo_05_geopolitica",
+      "unitNumber": 5,
+      "tier": "BASIC",
+      "title": "Geopolítica e Ordem Mundial",
+      "description": "Transição da ordem bipolar para a multipolaridade, blocos econômicos, BRICS, conflitos territoriais e recursos estratégicos.",
+      "category": "Geografia",
+      "subject": "Ciências Humanas",
+      "lessons": [
+        {
+          "id": "geo_pol_01",
+          "unitId": "mod_geo_05_geopolitica",
+          "title": "1. A Ordem Mundial",
+          "conceptTitle": "Bipolaridade na Guerra Fria, momento unipolar dos EUA e a emergência da ordem multipolar com a ascensão chinesa",
+          "explanation": "# A Ordem Mundial: Da Guerra Fria à Multipolaridade\n\nA geopolítica mundial estuda as relações de poder, hegemonia, disputas territoriais e estratégias de influência entre os Estados nacionais na arena internacional.\n\n### 1. A Velha Ordem Mundial: A Bipolaridade da Guerra Fria (1945–1991)\n- Divisão ideológica, militar e política do planeta em dois blocos rivais:\n  • Bloco Capitalista: Liderado pelos Estados Unidos (OTAN, Doutrina Truman, Plano Marshall).\n  • Bloco Socialista: Liderado pela União Soviética (Pacto de Varsóvia, COMECON).\n- **Equilíbrio do Terror (MAD - Destruição Mútua Assegurada):** A posse de arsenais atômicos maciços impediu o confronto militar direto entre as superpotências, canalizando as tensões para guerras por procuração (Guerra da Coreia, Guerra do Vietnã, Guerra do Afeganistão).\n- Queda do Muro de Berlim (1989) e desintegração da URSS (1991): Fim da bipolaridade.\n\n### 2. A Nova Ordem Mundial: Unimultipolaridade\n- **Unipolaridade Militar:** Os Estados Unidos permanecem como a única superpotência bélica global indiscutível, com bases militares distribuídas por todos os oceanos e orçamento de defesa superior à soma das nações seguintes.\n- **Multipolaridade Econômica e Geopolítica:** Emergência de múltiplos polos de poder econômico e comercial:\n  • União Europeia (euro e mercado integrado).\n  • Japão e Tigres Asiáticos.\n  • China (ascensão vertiginosa como potência industrial, comercial e tecnológica).\n  • Os BRICS (Brasil, Rússia, Índia, China, África do Sul e novos membros ampliados), defendendo a desdolarização do comércio e uma governança global menos ocidentalizada.\n\n### 3. A Divisão Norte-Sul\n- Substituiu a antiga divisão Leste-Oeste da Guerra Fria.\n- Linha Norte-Sul socioeconômica: Não segue a linha do Equador geográfico (Austrália e Nova Zelândia, embora no Hemisfério Sul geográfico, pertencem ao 'Norte desenvolvido').\n- Separa os países desenvolvidos (ricos, exportadores de tecnologia e credores mundiais) dos países em desenvolvimento e subdesenvolvidos do Sul Global.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_pol_01_a",
+              "title": "ENEM: A Natureza da Unimultipolaridade Contemporânea",
+              "problemStatement": "A geopolítica mundial pós-Guerra Fria é frequentemente caracterizada pelos analistas como 'unimultipolar'. Esse conceito descreve uma ordem internacional na qual:",
+              "options": [
+                "O comércio internacional de petróleo foi totalmente substituído pelo escambo de produtos agrícolas tradicionais.",
+                "A Organização das Nações Unidas aboliu todos os exércitos nacionais e instituiu uma moeda única planetária.",
+                "Todos os países do planeta possuem exatamente o mesmo número de ogivas nucleares e mísseis hipersônicos.",
+                "Os Estados Unidos exercem hegemonia bélica e militar incontestada (unipolar), enquanto na economia e comércio o poder é dividido entre múltiplos polos como a União Europeia, China e BRICS (multipolar).",
+                "A União Soviética recuperou o controle sobre todo o Leste Europeu e restabeleceu o Pacto de Varsóvia."
+              ],
+              "correctIndex": 3,
+              "hint": "Unipolar no poder militar (EUA gastam mais que todos os outros juntos), mas multipolar na riqueza e comércio (China, UE, Japão, emergentes).",
+              "stepByStepSolution": "A alternativa A está correta. A ordem unimultipolar sintetiza a contradição da geopolítica atual: no campo estratégico-militar, os EUA permanecem como superpotência solitária com alcance global sem paralelo; todavia, no campo econômico, financeiro e diplomático, o poder mundial é compartilhado com gigantes industriais e comerciais como a China, a União Europeia e as economias emergentes do Sul Global."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_pol_02",
+          "unitId": "mod_geo_05_geopolitica",
+          "title": "2. Blocos Econômicos e Fóruns Multilaterais",
+          "conceptTitle": "Graus de integração econômica (zona de livre comércio a união monetária), Mercosul, União Europeia, USMCA e o papel dos BRICS",
+          "explanation": "# Blocos Econômicos Regionais e a Integração dos Mercados\n\nComo resposta à globalização e para fortalecer a competitividade das empresas nacionais, os países formaram blocos econômicos com diferentes níveis de integração.\n\n### 1. Os 4 Estágios de Integração Econômica\n- **1. Zona de Livre Comércio:** Eliminação ou redução gradual de tarifas alfandegárias para mercadorias produzidas dentro do bloco. Cada país mantém sua tarifa externa independente para países de fora (Ex: USMCA / antigo NAFTA).\n- **2. União Aduaneira:** Além do livre comércio interno, os países adotam uma **Tarifa Externa Comum (TEC)** para produtos importados de países de fora do bloco (Ex: MERCOSUL).\n- **3. Mercado Comum:** Além de livre comércio e TEC, garante a livre circulação de pessoas, serviços e capitais (mão de obra e investimentos circulam sem visto ou barreiras bancárias).\n- **4. União Econômica e Monetária:** Nível máximo de integração. Abriga todas as etapas anteriores, adota políticas fiscais e macroeconômicas harmonizadas, um Banco Central compartilhado e uma moeda única (Ex: União Europeia com a Zona do Euro).\n\n### 2. O MERCOSUL (Mercado Comum do Sul)\n- Criado em 1991 pelo Tratado de Assunção por Brasil, Argentina, Paraguai e Uruguai.\n- **Estágio Atual:** Embora tenha 'Mercado Comum' no nome, o Mercosul é tecnicamente uma **União Aduaneira imperfeita ou incompleta**, pois ainda possui exceções à Tarifa Externa Comum e não assegura plena integração de serviços e pessoas.\n- **Importância para o Brasil:** Destino prioritário das exportações de produtos manufaturados industriais brasileiros de alto valor agregado (especialmente automóveis e máquinas para a Argentina).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_pol_02_a",
+              "title": "ENEM: Os Níveis de Integração dos Blocos Econômicos",
+              "problemStatement": "O MERCOSUL (Mercado Comum do Sul) e a União Europeia representam diferentes estágios do processo de integração regional de mercados. A diferença fundamental entre eles reside no fato de que:",
+              "options": [
+                "A União Europeia atingiu o estágio de união econômica e monetária com moeda única (euro) e livre circulação de pessoas, enquanto o Mercosul opera essencialmente como uma união aduaneira imperfeita com tarifa externa comum.",
+                "O Mercosul proíbe a exportação de produtos agrícolas entre seus membros para não competir com a indústria paulista.",
+                "A União Europeia é apenas uma zona de livre comércio onde cada país cobra impostos alfandegários diferentes sobre seus vizinhos.",
+                "Ambos os blocos extinguiram totalmente suas fronteiras políticas e transformaram-se em um único Estado nacional soberano.",
+                "O Mercosul já unificou todos os bancos centrais e adotou uma moeda única obrigatória em toda a América do Sul."
+              ],
+              "correctIndex": 0,
+              "hint": "A Europa tem o Euro, livre circulação de pessoas (Schengen) e Parlamento Europeu. O Mercosul tem a TEC (Tarifa Externa Comum), mas ainda não possui moeda única nem integração monetária plena.",
+              "stepByStepSolution": "A alternativa A está correta. A União Europeia é o bloco mais integrado do planeta (União Econômica e Monetária), com livre circulação de capitais, mercadorias, serviços e cidadãos, além de um Banco Central compartilhado e a moeda comum (Euro). Já o Mercosul estacionou no estágio de União Aduaneira imperfeita, mantendo a Tarifa Externa Comum (TEC), mas com diversas listas de exceção nacional e sem unificação monetária."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_pol_03",
+          "unitId": "mod_geo_05_geopolitica",
+          "title": "3. Conflitos e Tensões Contemporâneas",
+          "conceptTitle": "Questão palestina-israelense no Oriente Médio, Guerra na Ucrânia e tensões OTAN-Rússia, e disputas no Mar do Sul da China",
+          "explanation": "# Conflitos e Tensões Contemporâneas no Mundo\n\nO pós-Guerra Fria não inaugurou uma era de paz perpétua, mas fragmentou as tensões em guerras civis, disputas étnico-religiosas, separatismos e conflitos interimperialistas.\n\n### 1. A Questão Palestina e o Oriente Médio\n- **Origens:** Partilha da Palestina pela ONU (1947), criação do Estado de Israel (1948) e a *Nakba* (expulsão de centenas de milhares de civis palestinos).\n- **Guerra dos Seis Dias (1967):** Israel ocupou militarmente a Cisjordânia, a Faixa de Gaza, Jerusalém Oriental e as Colinas de Golã sírias.\n- **Pontos Centrais de Disputa no ENEM:**\n  • A expansão de assentamentos judaicos ilegais na Cisjordânia (que fragmentam o território palestino inviabilizando a Solução de Dois Estados).\n  • O controle de Jerusalém (sagrada para judeus, muçulmanos e cristãos).\n  • O direito de retorno dos refugiados palestinos.\n  • A disputa vital pelo controle dos aquíferos e das águas da bacia do Rio Jordão.\n\n### 2. O Conflito Rússia vs Ucrânia\n- **Raízes Geopolíticas:** Expansão contínua da OTAN para o leste europeu após o colapso soviético, cercando as fronteiras ocidentais da Rússia.\n- **Anexação da Crimeia (2014) e Invasão de 2022:** A Rússia busca impedir a entrada da Ucrânia na aliança militar ocidental e assegurar o controle do Mar Negro e de suas rotas gasíferas.\n- **Impactos Globais:** Inflação mundial de alimentos (trigo e fertilizantes) e transição acelerada da matriz energética da Europa para substituir o gás russo.\n\n### 3. A Guerra Civil na Síria e a Crise Curda\n- Primavera Árabe de 2011 e a desintegração do regime de Bashar al-Assad, com intervenção russa, iraniana e americana.\n- **Os Curdos:** Maior nação sem Estado do mundo (mais de 30 milhões de pessoas espalhadas por Turquia, Síria, Iraque e Irã), historicamente perseguidos e combatentes centrais contra o Estado Islâmico (ISIS).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_pol_03_a",
+              "title": "ENEM: A Condição do Povo Curdo no Oriente Médio",
+              "problemStatement": "Os curdos, população estimada em mais de 30 milhões de pessoas distribuída territorialmente entre a Turquia, Síria, Iraque e Irã, constituem o exemplo clássico de:",
+              "options": [
+                "Uma colônia europeia ultramarina que se recusa a adotar a religião islâmica para manter laços com a Coroa britânica.",
+                "Uma nação sem Estado que luta há décadas por autonomia e pelo reconhecimento internacional de seu território soberano (o Curdistão).",
+                "Um Estado imperialista que invadiu os países vizinhos para construir ferrovias até o Mar Cáspio.",
+                "Um grupo terrorista financiado pela OTAN para desestabilizar todas as refinarias de petróleo do Catar.",
+                "Um povo nômade do deserto que não possui idioma próprio e depende exclusivamente do turismo religioso na Arábia Saudita."
+              ],
+              "correctIndex": 1,
+              "hint": "Nação sem Estado: possuem povo, língua, história e cultura compartilhadas, mas não possuem um país independente demarcado no mapa político.",
+              "stepByStepSolution": "A alternativa A está correta. Os curdos representam a maior nação sem Estado soberano do mundo. Apesar de possuírem forte identidade cultural, idioma e coesão étnica milenar, suas terras natais foram retalhadas entre quatro Estados nacionais modernos no pós-Primeira Guerra Mundial, sofrendo constantes perseguições e repressão em suas reivindicações de autodeterminação."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "geo_pol_04",
+          "unitId": "mod_geo_05_geopolitica",
+          "title": "4. Disputas por Território e Recursos Estratégicos",
+          "conceptTitle": "Geopolítica da energia (petróleo e gás), chokepoints navais (Ormuz, Malaca, Suez), água doce e a corrida pelos recursos do Ártico",
+          "explanation": "# Disputas Territoriais e Recursos Estratégicos Globais\n\nNo século XXI, as tensões geopolíticas estão diretamente conectadas à garantia de segurança energética, mineral, hídrica e alimentar das grandes potências industriais.\n\n### 1. Recursos Energéticos e Chokepoints Marítimos\n- **O Petróleo como Arma Geopolítica:** O controle das reservas do Golfo Pérsico, Mar do Norte, Bacia de Santos (Pré-Sal) e Venezuela.\n- **Chokepoints (Gargalos Estratégicos de Navegação):**\n  • Estreito de Ormuz: Por onde passa cerca de um quinto de todo o petróleo consumido no mundo diariamente.\n  • Estreito de Malaca: Ponto nevrálgico entre os oceanos Índico e Pacífico por onde transita o petróleo que abastece a China e o Japão.\n  • Canal de Suez e Canal do Panamá: Artérias vitais do comércio marítimo global que reduzem viagens continentais.\n\n### 2. Minerais Críticos e a Transição Energética\n- A substituição dos combustíveis fósseis por baterias e carros elétricos desencadeou a 'corrida pelos minerais da transição':\n  • **Lítio (\"O Ouro Branco\"):** O Triângulo do Lítio na América do Sul (Bolívia, Argentina e Chile) e as reservas do Vale do Jequitinhonha em Minas Gerais.\n  • **Terras Raras:** Minerais indispensáveis para chips, ímãs de turbinas eólicas e mísseis teleguiados, cujo processamento mundial é amplamente monopolizado pela China (> 70%).\n  • **Cobalto e Níquel:** Riqueza mineral concentrada na República Democrática do Congo, marcada por conflitos armados e exploração de trabalho infantil.\n\n### 3. A Geopolítica da Água e Terras Estrangeiras (Land Grabbing)\n- Aquisição ou arrendamento de milhões de hectares de terras agrícolas em países africanos e latino-americanos por fundos soberanos da China e dos Emirados Árabes para garantir sua segurança alimentar futura.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "geo_ex_pol_04_a",
+              "title": "ENEM: Chokepoints Marítimos e a Geopolítica do Petróleo",
+              "problemStatement": "O Estreito de Ormuz, passagem marítima estratégica que conecta o Golfo Pérsico ao Mar da Arábia e ao Oceano Índico, é considerado um dos pontos mais críticos da geopolítica mundial ('chokepoint') porque:",
+              "options": [
+                "Por suas águas estreitas transita diariamente cerca de 20% de todo o petróleo comercializado no mercado global, tornando o abastecimento das potências vulnerável a conflitos na região.",
+                "Constitui uma zona de proteção ambiental rigorosa onde é terminantemente proibida a navegação de qualquer navio a motor.",
+                "Abriga o canal artificial mais longo do mundo, construído para impedir que a marinha chinesa acesse o Mediterrâneo.",
+                "É a única passagem marítima aberta que permite o escoamento do gelo potável da Antártica para o hemisfério norte.",
+                "Concentra a totalidade das reservas de ouro e diamantes do continente africano sob tutela da marinha americana."
+              ],
+              "correctIndex": 0,
+              "hint": "Ormuz é a 'garganta' por onde saem os superpetroleiros da Arábia Saudita, Irã, Iraque, Emirados e Kuwait em direção aos mercados da Ásia, Europa e Américas.",
+              "stepByStepSolution": "A alternativa A está correta. O Estreito de Ormuz é o gargalo (chokepoint) energético mais estratégico do planeta. Como grande parte do petróleo extraído nos países exportadores do Golfo Pérsico precisa necessariamente atravessar essa estreita faixa de água vigiada pelo Irã, qualquer bloqueio ou tensão militar tem o poder imediato de disparar as cotações globais de energia e causar desabastecimento internacional."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    }
+  ]
+}

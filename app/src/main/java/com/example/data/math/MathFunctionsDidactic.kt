@@ -117,7 +117,15 @@ object MathFunctionsDidactic {
 
             // Módulo 7: Álgebra e Equações
             "enem_m7_a1" -> CalculusDidacticBundle(
-                theoryMarkdown = "# Expressões Algébricas e Substituição Numérica\nCálculo de valor numérico em fórmulas de física, economia e medicina.",
+                theoryMarkdown = """
+                    # Expressões Algébricas e Substituição Numérica
+                    
+                    No ENEM, fórmulas de física, economia, ecologia e medicina são apresentadas no enunciado para que o estudante substitua as variáveis pelos valores fornecidos e determine a incógnita restante.
+                    
+                    ### Regras Fundamentais de Substituição
+                    • **Uso de Parênteses:** Sempre envolva números negativos ou frações entre parênteses antes de elevar a um expoente.
+                    • **Unidades Compatíveis:** Confira se todas as grandezas estão nas mesmas unidades exigidas pela fórmula antes de calcular.
+                """.trimIndent(),
                 formulas = listOf(FormulaOrSyntaxItem("Valor Numérico", "f(x) em x = c", "Substituição direta da incógnita pelo valor fornecido")),
                 solvedExamples = listOf(LessonExample("Cálculo de IMC", "IMC = peso / altura²", "Pessoa com 80 kg e 2 m: IMC = 80 / 4 = 20 kg/m².")),
                 goldTip = "Cuidado com parênteses ao substituir números negativos em potências: (-3)² = +9, mas -3² = -9!"
@@ -138,7 +146,15 @@ object MathFunctionsDidactic {
             )
 
             "enem_m7_a3" -> CalculusDidacticBundle(
-                theoryMarkdown = "# Equações e Inequações do 1º Grau\nIsolamento de incógnitas e interpretação de restrições de orçamento no ENEM.",
+                theoryMarkdown = """
+                    # Equações e Inequações do 1º Grau
+                    
+                    Equações e inequações lineares traduzem problemas de comparação de planos tarifários, metas de vendas e restrições de orçamento no ENEM.
+                    
+                    ### Propriedades Operatórias
+                    • Isola-se a incógnita aplicando operações inversas em ambos os membros da igualdade ou desigualdade.
+                    • Nas inequações (\( <, \le, >, \ge \)), multiplicar ou dividir ambos os lados por um número negativo inverte obrigatoriamente o sinal da desigualdade.
+                """.trimIndent(),
                 formulas = listOf(FormulaOrSyntaxItem("Equação do 1º Grau", "ax + b = 0 -> x = -b/a", "Solução única")),
                 solvedExamples = listOf(LessonExample("Plano de Celular", "30 + 0,50x <= 50 -> 0,50x <= 20 -> x <= 40 minutos", "Limite de uso dentro do saldo.")),
                 goldTip = "Ao multiplicar ou dividir uma inequação por um número negativo, INVERTA o sentido da desigualdade!"
@@ -147,7 +163,10 @@ object MathFunctionsDidactic {
             "enem_m7_a4" -> CalculusDidacticBundle(
                 theoryMarkdown = """
                     # Equações do 2º Grau e Relações de Girard
-                    Resolução por Bhaskara ou Soma e Produto (\( S = -b/a \) e \( P = c/a \)).
+                    
+                    Uma equação quadrática completa \( ax^2 + bx + c = 0 \) (com \( a \neq 0 \)) possui até duas raízes reais, que podem ser determinadas pela Fórmula de Bhaskara ou pelas Relações de Girard (Soma e Produto):
+                    • Soma das raízes: \( S = x_1 + x_2 = -\frac{b}{a} \)
+                    • Produto das raízes: \( P = x_1 \cdot x_2 = \frac{c}{a} \)
                 """.trimIndent(),
                 formulas = listOf(FormulaOrSyntaxItem("Soma e Produto", "x_1 + x_2 = -b/a \\quad | \\quad x_1 \\cdot x_2 = c/a", "Raízes diretas")),
                 solvedExamples = listOf(LessonExample("x² - 5x + 6 = 0", "Soma 5 e Produto 6 -> raízes 2 e 3", "Solução instantânea sem Bhaskara.")),
@@ -155,7 +174,15 @@ object MathFunctionsDidactic {
             )
 
             "enem_m7_a5" -> CalculusDidacticBundle(
-                theoryMarkdown = "# Sistemas Lineares 2x2 no Cotidiano\nProblemas clássicos de mistura de ingressos (adultos e crianças) ou contagem de rodas de veículos.",
+                theoryMarkdown = """
+                    # Sistemas Lineares 2x2 no Cotidiano
+                    
+                    Sistemas de duas equações e duas incógnitas resolvem problemas clássicos do ENEM envolvendo misturas de produtos, bilheteria (ingressos inteiros e meia-entrada) e contagem de rodas ou patas em estacionamentos e fazendas.
+                    
+                    ### Métodos de Resolução
+                    • **Substituição:** Isole uma variável na equação mais simples e substitua na outra.
+                    • **Adição:** Multiplique uma equação por uma constante conveniente para cancelar uma das incógnitas ao somar as duas linhas.
+                """.trimIndent(),
                 formulas = listOf(FormulaOrSyntaxItem("Sistema Linear", "a1 x + b1 y = c1 e a2 x + b2 y = c2", "Método da adição ou substituição")),
                 solvedExamples = listOf(LessonExample("Carros e Motos em Estacionamento", "x + y = 20 e 4x + 2y = 60 -> x = 10 carros e y = 10 motos", "Multiplicação da primeira equação por -2.")),
                 goldTip = "Multiplique uma das equações para que os coeficientes de uma das variáveis fiquem opostos (ex: +2y e -2y), somando as linhas em seguida!"

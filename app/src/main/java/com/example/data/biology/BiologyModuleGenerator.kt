@@ -21,11 +21,11 @@ object BiologyModuleGenerator {
         BiologyCytologyEvolutionDidactic.buildBundle(lesson)?.let { return it }
 
         return when {
-            lesson.moduleId == "mod_bio_02_fisiologia" -> buildPhysiologyBundle(lesson)
-            lesson.moduleId == "mod_bio_03_genetica" -> buildGeneticsBundle(lesson)
-            lesson.moduleId == "mod_bio_04_citologia" -> buildCytologyBundle(lesson)
-            lesson.moduleId == "mod_bio_05_evolucao" -> buildEvolutionBundle(lesson)
-            else -> buildGeneralBiologyBundle(lesson)
+            lesson.moduleId == "mod_bio_02_fisiologia" -> buildPhysiologyBundle(lesson).copy(status = com.example.data.math.DidacticContentStatus.PENDING_CURATION)
+            lesson.moduleId == "mod_bio_03_genetica" -> buildGeneticsBundle(lesson).copy(status = com.example.data.math.DidacticContentStatus.PENDING_CURATION)
+            lesson.moduleId == "mod_bio_04_citologia" -> buildCytologyBundle(lesson).copy(status = com.example.data.math.DidacticContentStatus.PENDING_CURATION)
+            lesson.moduleId == "mod_bio_05_evolucao" -> buildEvolutionBundle(lesson).copy(status = com.example.data.math.DidacticContentStatus.PENDING_CURATION)
+            else -> buildGeneralBiologyBundle(lesson).copy(status = com.example.data.math.DidacticContentStatus.PENDING_CURATION)
         }
     }
 

@@ -13,11 +13,23 @@ val BorderSubtle = Color(0xFF232834)    // Default subtle 1px border
 val BorderGlow = Color(0xFF384255)      // Focused / selected border state
 val BorderActive = Color(0xFF2563EB)    // Active keyboard focus border
 
-// Brand Accents: Subdued Modern Slate Blue & Monochrome (No garish neon purples)
-val PrimaryViolet = Color(0xFF3B82F6)        // Clean SaaS Royal/Blue accent
+// Brand Accents: Subdued Modern Slate Blue, AI Purple & Cyan Highlights
+val PrimaryViolet = Color(0xFF3B82F6)        // Clean SaaS Royal/Blue accent (actions & interactive)
 val PrimaryVioletLight = Color(0xFF60A5FA)   // Secondary text/active icon tint
-val AccentCyan = Color(0xFF0EA5E9)           // Informational highlight
+val AccentAiPurple = Color(0xFF8B5CF6)       // Semantic Violet for AI Tutor & advanced engines
+val AccentAiPurpleContainer = Color(0xFF2E1065)
+val AccentCyan = Color(0xFF0EA5E9)           // Informational highlight & secondary metrics
 val AccentCyanDark = Color(0xFF0284C7)
+
+// Semantic Subject Accents (Controlled, accessible contrast)
+val SubjectMathBlue = Color(0xFF3B82F6)
+val SubjectCalcViolet = Color(0xFF8B5CF6)
+val SubjectPhysicsCyan = Color(0xFF06B6D4)
+val SubjectChemEmerald = Color(0xFF10B981)
+val SubjectBioTeal = Color(0xFF14B8A6)
+val SubjectHumanitiesAmber = Color(0xFFF59E0B)
+val SubjectLanguagesIndigo = Color(0xFF6366F1)
+val SubjectPythonBlue = Color(0xFF60A5FA)
 
 // Feedback & Status Badges (Restrained, precise, functional)
 val SuccessEmerald = Color(0xFF10B981)
@@ -27,6 +39,7 @@ val ErrorRoseContainer = Color(0xFF450A0A)
 val WarningAmber = Color(0xFFF59E0B)
 val WarningAmberContainer = Color(0xFF451A03)
 val GoldXp = Color(0xFFEAB308)
+val GoldXpContainer = Color(0xFF422006)
 val StreakFire = Color(0xFFF97316)
 
 // Code Syntax Tokens (Subdued Tokyo Night / GitHub Dark theme)
@@ -42,3 +55,11 @@ val TerminalBg = Color(0xFF0B0D12)     // Pure dark console background
 val TextPrimary = Color(0xFFF8FAFC)    // Slate 50
 val TextSecondary = Color(0xFF94A3B8)  // Slate 400
 val TextTertiary = Color(0xFF64748B)   // Slate 500
+
+// Light Theme Semantic Surfaces (Accessible high-contrast daytime reading)
+val LightCanvasBg = Color(0xFFF8FAFC)
+val LightSurface = Color(0xFFFFFFFF)
+val LightSurfaceElevated = Color(0xFFF1F5F9)
+val LightBorderSubtle = Color(0xFFE2E8F0)
+val LightTextPrimary = Color(0xFF0F172A)
+val LightTextSecondary = Color(0xFF475569)

@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "subjects": [
+    {
+      "subjectId": "python",
+      "title": "Programação Python",
+      "category": "Programação",
+      "assetPath": "curricula/python.json",
+      "moduleCount": 8,
+      "lessonCount": 17
+    },
+    {
+      "subjectId": "basic_math",
+      "title": "Matemática Básica & Fundamentos",
+      "category": "Matemática",
+      "assetPath": "curricula/basic_math.json",
+      "moduleCount": 1,
+      "lessonCount": 12
+    },
+    {
+      "subjectId": "calculus",
+      "title": "Cálculo I (Limites, Derivadas e Integrais)",
+      "category": "Matemática",
+      "assetPath": "curricula/calculus.json",
+      "moduleCount": 3,
+      "lessonCount": 26
+    },
+    {
+      "subjectId": "enem_math",
+      "title": "Matemática e suas Tecnologias ENEM",
+      "category": "Matemática",
+      "assetPath": "curricula/enem_math.json",
+      "moduleCount": 14,
+      "lessonCount": 79
+    },
+    {
+      "subjectId": "physics",
+      "title": "Física • Ciências da Natureza ENEM",
+      "category": "Física",
+      "assetPath": "curricula/physics.json",
+      "moduleCount": 6,
+      "lessonCount": 34
+    },
+    {
+      "subjectId": "chemistry",
+      "title": "Química • Ciências da Natureza ENEM",
+      "category": "Química",
+      "assetPath": "curricula/chemistry.json",
+      "moduleCount": 4,
+      "lessonCount": 21
+    },
+    {
+      "subjectId": "biology",
+      "title": "Biologia • Ciências da Natureza ENEM",
+      "category": "Biologia",
+      "assetPath": "curricula/biology.json",
+      "moduleCount": 5,
+      "lessonCount": 25
+    },
+    {
+      "subjectId": "history",
+      "title": "História • Ciências Humanas ENEM",
+      "category": "História",
+      "assetPath": "curricula/history.json",
+      "moduleCount": 6,
+      "lessonCount": 26
+    },
+    {
+      "subjectId": "geography",
+      "title": "Geografia • Ciências Humanas ENEM",
+      "category": "Geografia",
+      "assetPath": "curricula/geography.json",
+      "moduleCount": 5,
+      "lessonCount": 21
+    },
+    {
+      "subjectId": "languages",
+      "title": "Linguagens, Códigos e suas Tecnologias ENEM",
+      "category": "Linguagens",
+      "assetPath": "curricula/languages.json",
+      "moduleCount": 5,
+      "lessonCount": 23
+    }
+  ]
+}

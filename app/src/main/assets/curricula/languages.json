@@ -1,0 +1,907 @@
+{
+  "subjectId": "languages",
+  "title": "Linguagens, Códigos e suas Tecnologias ENEM",
+  "category": "Linguagens",
+  "unitCount": 5,
+  "lessonCount": 23,
+  "units": [
+    {
+      "id": "mod_ling_01_interpretacao",
+      "unitNumber": 1,
+      "tier": "BASIC",
+      "title": "Interpretação de Texto e Semântica",
+      "description": "Tipologias textuais, intertextualidade, figuras de linguagem, ambiguidade, charges/tirinhas e estratégias argumentativas.",
+      "category": "Linguagens",
+      "subject": "Linguagens e Códigos",
+      "lessons": [
+        {
+          "id": "ling_sem_01",
+          "unitId": "mod_ling_01_interpretacao",
+          "title": "1. Tipologias e Gêneros Textuais",
+          "conceptTitle": "Narrativo, dissertativo, injuntivo, jornalístico e digital",
+          "explanation": "# Tipologias e Gêneros Textuais no ENEM\n\nNo ENEM, a distinção entre **Tipologia Textual** (estrutura linguística finita) e **Gênero Textual** (práticas comunicativas infinitas e sociocomunicativas) é um dos pilares mais frequentes da prova.\n\n### 1. Tipologia Textual (Forma Estrutural)\nRefere-se à natureza linguística e aos traços gramaticais predominantes no texto:\n• **Narrativa:** Foco no tempo, espaço, narrador, personagens e sequência de ações (verbos no pretérito).\n• **Dissertativa-Argumentativa:** Defesa de ponto de vista com tese, fundamentação lógica e repertório sociocultural.\n• **Descritiva:** Caracterização de seres, ambientes ou objetos (predomínio de adjetivos e verbos de estado).\n• **Injuntiva (Instrucional):** Prescrição de comportamento ou instrução passo a passo (verbos no imperativo ou infinitivo, ex: receitas, editais, bulas).\n• **Expositiva:** Transmissão neutra e objetiva de informações e dados, sem defesa de tese.\n\n### 2. Gêneros Textuais (Função Social e Circulação)\nSão padrões sociocomunicativos que surgem da necessidade social:\n• **Jornalísticos:** Notícia (relato objetivo de fato recente), reportagem (análise aprofundada com múltiplas fontes), artigo de opinião (autoria expressa e tese clara), crônica (olhar poético ou crítico sobre o cotidiano).\n• **Digitais e Contemporâneos:** Posts de redes sociais, tweets, podcasts, memes e fóruns virtuais, marcados por concisão, hipertextualidade e multimodalidade.\n\n### 3. Matriz de Habilidades do ENEM\nO Inep cobra o reconhecimento da **intenção comunicativa** e da **esfera de circulação**: por que o autor escolheu aquele gênero específico para produzir determinado efeito no leitor?",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_sem_01_q1",
+              "title": "Tipologia e Gênero Textual no ENEM",
+              "problemStatement": "Considere um folheto governamental com o título: 'Campanha Nacional de Vacinação contra a Gripe'. O texto traz: 'Dirija-se ao posto mais próximo de sua residência entre os dias 10 e 30 deste mês. Apresente seu cartão do SUS e vacine seus filhos com menos de 5 anos.' O predomínio tipológico e o objetivo comunicativo deste texto caracterizam-se por:",
+              "options": [
+                "dissertativo, com objetivo de debater as causas econômicas da produção de imunizantes.",
+                "descritivo, com objetivo de detalhar minuciosamente a fórmula bioquímica da vacina.",
+                "narrativo, com objetivo de relatar a história da erradicação da gripe no país.",
+                "expositivo, com objetivo de apresentar conceitos acadêmicos neutros sobre virologia.",
+                "injuntivo, com objetivo de prescrever condutas preventivas e orientar a ação do cidadão."
+              ],
+              "correctIndex": 4,
+              "hint": "Repare nos verbos 'dirija-se', 'apresente', 'vacine': são comandos dirigidos ao interlocutor.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. **Análise dos Verbos:** As formas 'dirija-se', 'apresente' e 'vacine' estão no modo imperativo, característico da tipologia injuntiva/instrucional.\n2. **Função Social:** Campanhas de utilidade pública buscam intervir diretamente no comportamento social coletivo para adesão a uma medida de saúde.\n3. **Por que as outras alternativas estão incorretas?**\n   • A (narrativo): não há enredo, personagens nem progressão temporal.\n   • C (dissertativo): o texto não debate teses filosóficas ou econômicas.\n   • D (descritivo): não há caracterização física de componentes da vacina.\n   • E (expositivo): vai além de expor fatos; conclama ativamente à vacinação.\nAlternativa correta: E"
+            },
+            {
+              "id": "ling_sem_01_q2",
+              "title": "Gênero Notícia vs Artigo de Opinião",
+              "problemStatement": "Em um jornal de grande circulação, a notícia e o artigo de opinião cumprem funções distintas. Enquanto a notícia preza pela impessoalidade e pelo relato objetivo de fatos, o artigo de opinião destaca-se por:",
+              "options": [
+                "adotar sempre a ficcionalização e o verso rimado para sensibilizar o público.",
+                "assumir autoria declarada com defesa explícita de um ponto de vista amparado em argumentos.",
+                "limitar-se à transcrição de dados do censo sem qualquer juízo de valor.",
+                "evitar qualquer adjetivação ou marca de subjetividade para manter neutralidade científica.",
+                "utilizar a primeira pessoa exclusivamente para narrar memórias infantis do articulista."
+              ],
+              "correctIndex": 1,
+              "hint": "O artigo de opinião traz a assinatura do articulista expressando seu julgamento crítico sobre um tema polêmico.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. O artigo de opinião pertence à esfera dissertativo-argumentativa com autoria explicitada, permitindo marcas de subjetividade e emprego de estratégias retóricas para convencer a sociedade sobre determinada tomada de posição.\nAlternativa correta: B"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_sem_02",
+          "unitId": "mod_ling_01_interpretacao",
+          "title": "2. Intertextualidade e Interdiscursividade",
+          "conceptTitle": "Paródia, paráfrase, epígrafe e alusão",
+          "explanation": "# Intertextualidade e Interdiscursividade\n\nA comunicação nunca nasce do vácuo: todo texto dialoga com textos anteriores e com ideologias em circulação na sociedade.\n\n### 1. Intertextualidade (Relação entre Textos Concretos)\nOcorre quando um texto faz referência explícita ou implícita a outra obra:\n• **Paródia:** Releitura subversiva e crítica, alterando o sentido original para produzir humor, ironia ou contestação política.\n• **Paráfrase:** Reescrita que mantém o sentido e a ideologia da mensagem original com outras palavras (homenagem, confirmação ou reforço).\n• **Epígrafe e Citação:** Menção direta entre aspas com indicação do autor original como argumento de autoridade.\n• **Alusão:** Menção indireta a fatos históricos, bíblicos ou literários que exige repertório cultural compartilhado.\n\n### 2. Interdiscursividade (Diálogo entre Discursos e Ideologias)\nÉ o cruzamento de vozes sociais no mesmo enunciado (discurso religioso, médico, jurídico e popular). Ocorre quando um anúncio de produto utiliza a estética de um laudo médico ou de um sermão religioso para persuadir.\n\n### 3. Atenção no ENEM\nMuitas questões comparam a *Canção do Exílio* de Gonçalves Dias com poemas modernistas de Oswald de Andrade ou Murilo Mendes. Identifique se o texto recria reverenciando (paráfrase) ou subvertendo ironicamente (paródia).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_sem_02_q1",
+              "title": "Paródia e Intertextualidade",
+              "problemStatement": "Ao confrontar o célebre verso de Gonçalves Dias ('Minha terra tem palmeiras / Onde canta o sabiá') com o poema modernista de Oswald de Andrade ('Minha terra tem palmares / onde gorjeia o mar'), percebe-se um processo de intertextualidade marcado por:",
+              "options": [
+                "paráfrase, pois o autor moderno reforça o ufanismo ingênuo da era imperial.",
+                "citação direta literal, preservando rigorosamente as rimas e métricas da poesia canônica.",
+                "plágio inconsciente, já que não há intenção de dialogar com o texto de Gonçalves Dias.",
+                "paródia, pois a troca de 'palmeiras' por 'palmares' evoca a luta contra a escravidão e ressignifica a brasilidade criticamente.",
+                "tradução intersemiótica, pois converteu um texto literário em linguagem puramente visual."
+              ],
+              "correctIndex": 3,
+              "hint": "A referência ao Quilombo dos Palmares introduz crítica e ruptura com a visão romântica paradisíaca.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A alusão à palavra 'palmares' altera o foco ecológico e ufanista da palmeira para a dimensão histórica da resistência negra e do Quilombo dos Palmares.\n2. Esse procedimento de subversão crítica do texto original configura paródia e desmistificação das narrativas oficiais.\nAlternativa correta: D"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_sem_03",
+          "unitId": "mod_ling_01_interpretacao",
+          "title": "3. Figuras de Linguagem",
+          "conceptTitle": "Metáfora, metonímia, ironia, antítese e paradoxo",
+          "explanation": "# Figuras de Linguagem e Recursos Expressivos\n\nAs figuras de linguagem são desvios intencionais da norma denotativa para gerar efeitos estéticos, persuasivos ou emocionais.\n\n### 1. Figuras de Palavras ou Pensamento Mais Cobradas\n• **Metáfora:** Comparação implícita sem conectivo comparativo direto ('Seus olhos são dois faróis no nevoeiro').\n• **Metonímia:** Substituição fundada na relação de proximidade lógica (o autor pela obra: 'Li Machado de Assis'; a parte pelo todo: 'Mil cabeças de gado'; o recipiente pelo conteúdo: 'Bebi um copo d'água').\n• **Ironia:** Afirmação cujo sentido real é o oposto do literal, percebido pelo contexto e tom ('Que inteligência rara!', dito a quem cometeu um disparate).\n• **Antítese:** Aproximação de palavras ou ideias de sentidos opostos sem que se anulem ('A vida e a morte; a tristeza e a alegria').\n• **Paradoxo (Oxímoro):** Junção de ideias aparentemente contraditórias e irreconciliáveis na lógica formal ('Amor é fogo que arde sem se ver; é ferida que dói e não se sente').\n• **Hipérbole:** Exagero intencional para dar ênfase ('Estou morrendo de sede').\n• **Eufemismo:** Suavização de ideia desagradável ou dolorosa ('Ele partiu para o andar de cima').\n\n### 2. No ENEM: Foco no Efeito de Sentido\nO ENEM nunca pede apenas 'qual é a figura'. A prova pergunta: **qual é o efeito expressivo** gerado pelo paradoxo ou pela ironia no contexto social do texto?",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_sem_03_q1",
+              "title": "Identificação de Figuras de Linguagem",
+              "problemStatement": "No soneto de Luís de Camões, os versos 'Amor é fogo que arde sem se ver; / É ferida que dói e não se sente; / É um descontentamento descontente;' estruturam sua força expressiva prioritariamente mediante o uso de:",
+              "options": [
+                "prosopopeia estrita, ao conceder voz humana aos animais da floresta.",
+                "paradoxo, ao associar termos e sensações cujos significados lógicos se contradizem mutuamente no mesmo enunciado.",
+                "pleonasmo e elipse, que enxugam o texto até torná-lo incompreensível.",
+                "eufemismo, ao abrandar a tragédia do término de um relacionamento amoroso.",
+                "metonímia, ao trocar a parte pelo todo em todas as orações."
+              ],
+              "correctIndex": 1,
+              "hint": "Sentir dor sem dor e ardor sem fogo visível são contradições lógicas simultâneas.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. Como uma ferida pode doer e não se sentir? Na lógica estrita, isso é uma contradição insolúvel.\n2. A junção dessas ideias aparentemente inconciliáveis constitui o paradoxo (ou oxímoro), figura primordial para representar a complexidade das paixões humanas.\nAlternativa correta: B"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_sem_04",
+          "unitId": "mod_ling_01_interpretacao",
+          "title": "4. Ambiguidade, Duplo Sentido e Humor em Tirinhas/Charges",
+          "conceptTitle": "Polissemia, quebra de expectativa e ironia gráfica",
+          "explanation": "# Ambiguidade, Duplo Sentido e Humor em Tirinhas e Charges\n\nTirinhas, charges e cartoons são presenças garantidas em todas as edições do ENEM, unindo linguagem verbal e visual (multimodalidade).\n\n### 1. Polissemia e Duplo Sentido\n• **Polissemia:** Propriedade de uma palavra possuir múltiplos sentidos conforme o contexto (ex: 'rede' de pesca, 'rede' social, 'rede' elétrica).\n• **Duplo Sentido Intencional:** Recurso humorístico em que o enunciador explora a polissemia propositalmente para causar estranhamento ou crítica.\n• **Ambiguidade Viciosa:** Defeito de redação que gera dúvida não intencional na interpretação da frase.\n\n### 2. A Construção do Humor e da Crítica\n• **Quebra de Expectativa:** A tirinha constrói uma narrativa lógica nos primeiros quadros e introduz um elemento surpreendente no desfecho.\n• **Ironia Visual e Não Verbal:** Expressões faciais, postura corporal, enquadramento e metáforas visuais (como lâmpada sobre a cabeça, fumaça indicando fúria).\n• **Diferença entre Charge e Tirinha:** A charge é vinculada a um acontecimento político ou social contemporâneo específico (temporalmente datada); a tirinha foca nas relações humanas e cotidianas (atemporal).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_sem_04_q1",
+              "title": "Humor e Polissemia em Tirinhas",
+              "problemStatement": "Em uma tirinha satírica, um náufrago em uma ilha deserta avista uma garrafa com uma mensagem trazida pelas ondas e comemora: 'Finalmente um contato com a civilização!'. Ao abrir o bilhete, lê: 'Sua fatura do cartão está vencida'. O humor e a crítica social da tirinha resultam de:",
+              "options": [
+                "confirmação integral do final feliz esperado para um herói náufrago.",
+                "emprego de linguagem arcaica de difícil compreensão para o leitor comum.",
+                "uma descrição geográfica realista dos métodos de navegação marítima moderna.",
+                "quebra de expectativa, ao contrapor o anseio humano por socorro à onipresença da cobrança financeira nas sociedades de consumo.",
+                "uso da ambiguidade não intencional gerada por erros ortográficos na mensagem da garrafa."
+              ],
+              "correctIndex": 3,
+              "hint": "Esperava-se socorro ou palavras humanas de acolhimento; veio uma cobrança bancária corporativa.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A expectativa construída é a chegada de auxílio humanitário ou conexão afetiva.\n2. O desfecho revela a implacabilidade do sistema financeiro, que alcança o indivíduo até nos confins do planeta, constituindo sátira social por quebra de expectativa.\nAlternativa correta: D"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_sem_05",
+          "unitId": "mod_ling_01_interpretacao",
+          "title": "5. Estratégias Argumentativas",
+          "conceptTitle": "Tese, persuasão, falácias e progressão temática",
+          "explanation": "# Estratégias Argumentativas e Progressão Temática\n\nO texto dissertativo-argumentativo busca convencer o leitor mediante a sustentação de uma **tese** estruturada em argumentos legítimos.\n\n### 1. Tipos de Argumentos Válidos\n• **Argumento de Autoridade:** Citação de pensadores, cientistas, filósofos ou instituições de pesquisa renomadas (ex: IBGE, OMS).\n• **Argumento por Evidência / Dados Estatísticos:** Apresentação de dados empíricos e percentuais que comprovam a gravidade do problema.\n• **Argumento por Exemplificação:** Narrativa de casos reais emblemáticos que ilustram o padrão defendido.\n• **Argumento por Raciocínio Lógico (Causa e Consequência):** Demonstração da cadeia causal que conecta a origem ao impacto social.\n• **Contra-argumentação:** Antecipação de objeção do oponente para refutá-la em seguida, demonstrando solidez crítica.\n\n### 2. Falácias Argumentativas (O que o ENEM condena)\n• **Generalização Apressada:** Concluir uma regra universal a partir de um caso isolado.\n• **Apelo à Emoção (Ad Misericordiam):** Substituir justificativas lógicas por chantagem emocional.\n• **Ataque Pessoal (Ad Hominem):** Desqualificar o argumento atacando a pessoa que o formulou, e não a ideia.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_sem_05_q1",
+              "title": "Estratégia Argumentativa no ENEM",
+              "problemStatement": "Em um ensaio sobre inclusão educacional, o autor escreve: 'De acordo com dados do Censo Escolar divulgados pelo Inep em 2023, mais de 1,2 milhão de estudantes com deficiência estão matriculados na rede pública, um avanço de 14% em quatro anos. Contudo, menos de 30% das escolas possuem rampas de acesso ou banheiros adaptados.' Ao combinar dados do Inep e a conjunção adversativa 'Contudo', o articulista mobiliza como estratégia:",
+              "options": [
+                "ironia sarcástica para ridicularizar as conquistas das pessoas com deficiência.",
+                "apelo emocional irracional sem fundamentação factual.",
+                "argumento por evidência em contraste adversativo, evidenciando o abismo entre o avanço de matrículas e o déficit estrutural de acessibilidade.",
+                "ataque pessoal aos diretores escolares para desqualificar suas gestões individuais.",
+                "generalização apressada baseada em relato anedótico de uma única cidade."
+              ],
+              "correctIndex": 2,
+              "hint": "Os dados dão sustentação confiável e a adversativa confronta a quantidade de alunos com a precariedade dos prédios.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A presença de estatísticas oficiais do Inep confere autoridade e factualidade à tese (argumento por evidência).\n2. O conectivo 'Contudo' introduz um contraponto crítico crucial: ter matrícula garantida não significa ter cidadania espacial assegurada se faltam rampas e instalações físicas adequadas.\nAlternativa correta: C"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_ling_02_linguistica",
+      "unitNumber": 2,
+      "tier": "BASIC",
+      "title": "Linguística e Comunicação",
+      "description": "Funções da linguagem de Jakobson, variação e preconceito linguístico, tecnologias na comunicação e coesão/coerência.",
+      "category": "Linguagens",
+      "subject": "Linguagens e Códigos",
+      "lessons": [
+        {
+          "id": "ling_com_01",
+          "unitId": "mod_ling_02_linguistica",
+          "title": "1. Funções da Linguagem",
+          "conceptTitle": "Referencial, emotiva, fática, conativa, metalinguística e poética",
+          "explanation": "# As 6 Funções da Linguagem (Roman Jakobson)\n\nNo modelo de comunicação de Jakobson, todo ato comunicativo envolve seis elementos: **Emissor**, **Receptor**, **Mensagem**, **Código**, **Canal** e **Referente (Contexto)**. A predominância de um desses elementos define a Função da Linguagem.\n\n### 1. Quadro Sistemático das Funções\n• **Função Referencial (Denotativa / Informativa):** Foco no **Referente/Contexto**. Transmissão objetiva e impessoal de informações da realidade (jornais, livros didáticos, artigos científicos). Terceira pessoa gramatical.\n• **Função Emotiva (Expressiva):** Foco no **Emissor**. Manifestação de sentimentos, opiniões, emoções e impressões pessoais. Primeira pessoa ('eu'), pontos de exclamação e adjetivos valorativos.\n• **Função Conativa (Apelativa):** Foco no **Receptor**. Busca influenciar, persuadir, convencer ou ordenar o leitor. Verbos no imperativo, pronomes de segunda pessoa ('você', 'tu') e vocativos (propaganda, sermões, discursos políticos).\n• **Função Metalinguística:** Foco no **Código**. A linguagem explica a própria linguagem (o dicionário definindo palavras, o poema falando sobre o ato de escrever poesia, um filme sobre cinema).\n• **Função Fática:** Foco no **Canal**. Manutenção, teste ou encerramento do contato comunicativo ('Alô?', 'Está me ouvindo?', 'Entende?', cumprimentos e saudações).\n• **Função Poética:** Foco na **Mensagem**. Valorização estética da forma do texto, exploração da sonoridade, rimas, trocadilhos, ritmo e metáforas (literatura, slogans publicitários, letras de música).\n\n### 2. A Pegadinha do ENEM\nRaramente um texto possui apenas uma função isolada. O ENEM sempre pergunta pela função **predominante**, isto é, aquela que orienta o propósito comunicativo principal.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_com_01_q1",
+              "title": "Identificação de Função da Linguagem",
+              "problemStatement": "Analise o trecho de um poema contemporâneo: 'Gastei trinta dias para encontrar o verso exato / Rasguei papéis, descartei rimas / A poesia se faz com palavras, não com sentimentos'. Ao tematizar o próprio processo artesanal de elaboração do poema através da própria poesia, predomina no texto a função:",
+              "options": [
+                "conativa, apelando para que o leitor adquira imediatamente a antologia do poeta.",
+                "exotérica, que se propõe a transmitir fórmulas mágicas da alquimia clássica.",
+                "metalinguística, pois o código poético é utilizado para refletir criticamente sobre o próprio código e a produção lírica.",
+                "fática, com o objetivo exclusivo de testar a eficiência sonora do microfone.",
+                "referencial pura, relatando de maneira imparcial uma notícia jornalística sobre a venda de papel."
+              ],
+              "correctIndex": 2,
+              "hint": "Quando o poema fala de fazer versos, a linguagem explica a própria linguagem.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A função metalinguística ocorre quando a mensagem tem por foco central o próprio código linguístico utilizado.\n2. O eu lírico discute o ato de selecionar palavras e descartar rimas, explicando a criação poética com os próprios recursos da poesia.\nAlternativa correta: C"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_com_02",
+          "unitId": "mod_ling_02_linguistica",
+          "title": "2. Variação Linguística",
+          "conceptTitle": "Variações regionais, sociais, históricas, de estilo e preconceito linguístico",
+          "explanation": "# Variação Linguística e Combate ao Preconceito\n\nA língua não é homogênea nem estática. Ela varia dinamicamente segundo fatores geográficos, históricos, socioculturais e situacionais.\n\n### 1. Eixos de Variação Linguística\n• **Diatópica (Geográfica / Regional):** Diferenças de vocabulário, pronúncia e sintaxe conforme a região geográfica (sotaques e regionalismos: 'mandioca', 'aipim', 'macaxeira'; 'tu vai', 'ocê').\n• **Diastrática (Social):** Variações entre diferentes grupos sociais, faixas etárias, profissões (jargões técnicos de médicos, advogados, marinheiros; gírias juvenis ou comunitárias).\n• **Diacrônica (Histórica):** Transformação da língua através do tempo (ex: 'Vossa Mercê' -> 'Vosmecê' -> 'Você' -> 'Cê').\n• **Diafásica (Estilística / Situacional):** Adequação do registro ao contexto de uso: **Registro Formal / Culto** (em entrevistas de emprego, tribunais, redação do ENEM) versus **Registro Informal / Coloquial** (entre amigos, família, mensagens instantâneas).\n\n### 2. Postura Ética e Científica do ENEM: Preconceito Linguístico\nO ENEM se baseia na Sociolinguística moderna (Marcos Bagno e outros):\n• **Não existe 'falar errado' na fala espontânea:** Existem variedades adequadas e inadequadas ao contexto comunicativo.\n• **Preconceito Linguístico:** Discriminação social mascarada de julgamento gramatical, que marginaliza falantes das classes populares ou do interior do país.\n• A escola deve ensinar a norma-padrão como ferramenta de ampliação de cidadania e acesso ao poder, sem desvalorizar as variantes maternas.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_com_02_q1",
+              "title": "Variação Linguística e Adequação",
+              "problemStatement": "Um estudante do interior de Minas Gerais utiliza a expressão 'uai, sô, esse trem tá bão demais' durante uma conversa descontraída com seus primos no final de semana. Contudo, ao redigir a redação dissertativo-argumentativa do ENEM, opta por 'o fenômeno revela-se extremamente profícuo para a comunidade'. A atitude do estudante revela:",
+              "options": [
+                "violação das diretrizes do Inep, que proíbem o emprego de vocabulário culto na prova escrita.",
+                "preconceito linguístico contra os habitantes das grandes metrópoles brasileiras.",
+                "competência sociolinguística, reconhecendo que a variedade regional informal é legítima no ambiente familiar, ao passo que a redação oficial exige a norma-padrão formal.",
+                "vergonha injustificável de suas origens culturais que o leva a renegar suas tradições.",
+                "completa ignorância gramatical por misturar falares incompatíveis ao longo da vida."
+              ],
+              "correctIndex": 2,
+              "hint": "O domínio da linguagem reside na capacidade de transitar com adequação entre os diversos contextos sociais.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. Um falante proficiente é aquele que sabe adequar seu registro (diafásico) à situação comunicativa.\n2. No convívio familiar, a variante regional mineira reforça laços afetivos e identidade; no vestibular oficial, a norma culta é exigência do edital. Saber alternar conforme o contexto é a essência da competência linguística.\nAlternativa correta: C"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_com_03",
+          "unitId": "mod_ling_02_linguistica",
+          "title": "3. Impacto das Tecnologias na Comunicação",
+          "conceptTitle": "Hipertexto, internetês, memes e redes sociais",
+          "explanation": "# Impacto das Tecnologias na Comunicação\n\nA revolução digital e a internet transformaram os modos de produção, leitura e circulação do texto.\n\n### 1. Hipertexto e Multimodalidade\n• **Hipertexto:** Estrutura de leitura não linear em que links levam o leitor a novos nós de informação, permitindo que cada usuário construa sua própria rota de aprendizagem.\n• **Multimodalidade:** Integração simultânea de códigos semióticos (texto verbal escrito, áudio, infográficos, gifs, vídeos e ícones interativos).\n\n### 2. O 'Internetês', Memes e Redes Sociais\n• O internetês não é a 'destruição' da língua, mas uma adaptação comunicativa pautada pela velocidade e economia de toques no teclado (abreviações como 'vc', 'tb', emojis complementando o tom de voz).\n• **Memes:** Unidades culturais de humor e crítica que se propagam viralmente, exigindo rápida decodificação de repertório visual e contemporâneo compartilhado.\n• **Bolhas de Informação e Desinformação:** Algoritmos que priorizam engajamento emocional e radicalização, desafiando a leitura crítica dos cidadãos.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_com_03_q1",
+              "title": "Hipertexto e Leitura Digital",
+              "problemStatement": "Ao navegar por uma enciclopédia virtual ou portal de notícias, o usuário depara-se com links em azul sublinhados que o conduzem a vídeos, notas biográficas e dados estatísticos complementares. Essa arquitetura textual, denominada hipertexto, caracteriza-se por:",
+              "options": [
+                "destruir os padrões de coerência textual em qualquer circunstância comunicativa.",
+                "impor uma leitura estritamente linear, obrigando o leitor a percorrer o texto do primeiro ao último caractere sem desvios.",
+                "eliminar a necessidade de pensamento crítico ou interpretação dos dados expostos.",
+                "limitar o acesso à informação a quem possui formação técnica especializada em programação web.",
+                "proporcionar uma experiência de leitura multilinear e interativa, na qual o leitor participa ativamente da definição de sua rota informativa."
+              ],
+              "correctIndex": 4,
+              "hint": "O hiperlink rompe a linearidade do livro impresso tradicional, dando autonomia ao leitor.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. O hipertexto é estruturado em rede (nós e links), permitindo que cada leitor trace caminhos individuais conforme seu interesse e necessidade momentânea.\nAlternativa correta: E"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_com_04",
+          "unitId": "mod_ling_02_linguistica",
+          "title": "4. Coesão e Coerência",
+          "conceptTitle": "Uso de conectivos, anáforas e catáforas para ligação de ideias",
+          "explanation": "# Coesão e Coerência Textual\n\nA **coesão** é a costura gramatical e lexical explícita do texto; a **coerência** é a harmonia de sentido global e a não contradição das ideias.\n\n### 1. Mecanismos de Coesão Referencial\n• **Anáfora:** Retomada de um termo que já foi mencionado anteriormente no texto ('Machado de Assis nasceu no Rio. O escritor publicou obras-primas. Ele revolucionou as letras.').\n• **Catáfora:** Antecipação de um termo que só será apresentado depois ('Só desejo isto: a sua aprovação.').\n• **Elipse (Coesão por Omissão):** Apagamento de termo recuperável pelo contexto ('Os alunos estudaram muito; foram aprovados [eles]').\n• **Substituição Lexical:** Uso de sinônimos, hiperônimos (termo geral) ou expressões nominais qualificadoras para evitar repetições cansativas.\n\n### 2. Coesão Sequencial (O Papel das Conjunções)\nEstabelece relações lógico-discursivas fundamentais entre as orações:\n• **Adversativa (Contraste):** Mas, porém, contudo, todavia, no entanto.\n• **Concessiva (Quebra de expectativa sem anular o fato):** Embora, apesar de, ainda que, mesmo que.\n• **Causal (Motivo):** Porque, já que, visto que, como (no início da frase).\n• **Conclusiva (Desfecho lógico):** Portanto, logo, por conseguinte, destarte.\n• **Explicativa:** Pois (anteposto ao verbo), que, porque.\n• **Conformativa:** Conforme, segundo, consoante.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_com_04_q1",
+              "title": "Coesão Referencial e Conectivos",
+              "problemStatement": "Considere o período: 'Embora a legislação brasileira preveja sanções severas aos crimes de racismo, muitos casos ainda são registrados cotidianamente nas delegacias do país.' O conectivo 'Embora' estabelece entre as orações uma relação semântica de:",
+              "options": [
+                "finalidade expressa, sinalizando o objetivo almejado pelas autoridades policiais.",
+                "causa evidente, demonstrando que a existência da lei é o motivo do surgimento do crime.",
+                "consequência direta, mostrando o resultado previsível da promulgação do código penal.",
+                "concessão, introduzindo um fato real que contrasta com a quebra de expectativa expressa na oração principal sem anulá-la.",
+                "conclusão formal deduzida a partir de premissas silogísticas clássicas."
+              ],
+              "correctIndex": 3,
+              "hint": "A existência de uma lei severa criaria a expectativa de diminuição dos crimes; contudo, eles continuam ocorrendo.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A conjunção subordinativa 'embora' introduz oração adverbial concessiva.\n2. A concessão expressa uma ideia de contrariedade ou oposição que não é suficiente para impedir o cumprimento da ação principal: a lei existe (fato 1), mas não tem impedido o registro de novos casos (fato 2).\nAlternativa correta: D"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_ling_03_literatura",
+      "unitNumber": 3,
+      "tier": "BASIC",
+      "title": "Literatura Brasileira (e bases de Portugal)",
+      "description": "Do Quinhentismo ao Contemporâneo: Barroco, Romantismo, Realismo com Machado de Assis, Pré-Modernismo, Modernismo de 22 e Poesia Marginal.",
+      "category": "Linguagens",
+      "subject": "Linguagens e Códigos",
+      "lessons": [
+        {
+          "id": "ling_lit_01",
+          "unitId": "mod_ling_03_literatura",
+          "title": "1. Era Colonial",
+          "conceptTitle": "Quinhentismo, Barroco e Arcadismo",
+          "explanation": "# Era Colonial: Quinhentismo, Barroco e Arcadismo\n\nA literatura produzida no Brasil antes da Independência (1822) reflete as tensões coloniais, a catequese jesuítica, o dilema espiritual da Contrarreforma e o Iluminismo mineiro.\n\n### 1. Quinhentismo (Século XVI)\n• **Literatura Informativa / de Viagem:** A *Carta de Pero Vaz de Caminha* ao rei D. Manuel I. Visão do colonizador europeu: fascínio pelo exotismo da terra, espanto com a nudez indígena e ambição econômica mercantil.\n• **Literatura Jesuítica / Catequética:** Padre José de Anchieta e seus autos teatrais bilíngues (tupi-português) com função doutrinária católica.\n\n### 2. Barroco (Século XVII)\n• **Dualismo e Conflito:** Espírito contra Matéria, Céu contra Inferno, Deus contra o Pecado. Crise existencial gerada pela Contrarreforma católica.\n• **Gregório de Matos ('Boca do Inferno'):** Primeiro grande poeta brasileiro. Poesia lírico-amorosa (pecado e perdão), poesia religiosa (conflito espiritual) e poesia satírica (crítica mordaz à corrupção da nobreza e do clero na Bahia colonial).\n• **Padre Antônio Vieira:** *Sermões* com extraordinário rigor retórico argumentativo, combatendo a hipocrisia dos colonos e a escravização indígena.\n\n### 3. Arcadismo (Século XVIII)\n• **Iluminismo e Neoclassicismo:** Razão, clareza, harmonia e simplicidade pastoril em oposição aos exageros barrocos.\n• **Lemas Latinos:** *Fugere urbem* (fugir da cidade), *Locus amoenus* (lugar agradável e sereno), *Carpe diem* (aproveitar o dia passageiro), *Aurea mediocritas* (equilíbrio material dourado).\n• **Autores Mineiros e Inconfidência:** Tomás Antônio Gonzaga (*Marília de Dirceu* e as *Cartas Chilenas*, sátira política ao governador de Minas Gerais) e Cláudio Manuel da Costa.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_lit_01_q1",
+              "title": "Gregório de Matos e a Sátira Barroca",
+              "problemStatement": "Ao escrever sobre a cidade de Salvador no século XVII, Gregório de Matos sentencia: 'Que falta nesta cidade? Verdade. / Que mais por sua desonra? Honra. / Falta mais que se lhe ponha? Vergonha.' Esse trecho da poesia satírica do 'Boca do Inferno' caracteriza-se por:",
+              "options": [
+                "celebração ingênua das belezas botânicas e florestais do Recôncavo Baiano.",
+                "crítica mordaz e corrosiva à degradação moral, política e administrativa da capital da colônia sob domínio português.",
+                "versos de temática estritamente mística dedicados à exaltação das freiras enclausuradas.",
+                "defesa das práticas idílicas do bucolismo pastoril e lemas latinos neoclássicos.",
+                "ufanismo desmedido e louvor incondicional à honestidade dos magistrados coloniais."
+              ],
+              "correctIndex": 1,
+              "hint": "O poeta ataca os vícios das autoridades locais, denunciando a ausência de verdade, honra e vergonha.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A vertente satírica de Gregório de Matos expôs sem meias-palavras as negociatas e a corrupção do governo da Bahia colonial, valendo-lhe o apelido de 'Boca do Inferno' e o posterior degredo para Angola.\nAlternativa correta: B"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_lit_02",
+          "unitId": "mod_ling_03_literatura",
+          "title": "2. Romantismo",
+          "conceptTitle": "As 3 gerações da poesia e a prosa romântica",
+          "explanation": "# O Romantismo Brasileiro: Poesia e Prosa\n\nApós a Independência de 1822, o Romantismo foi o projeto estético e político encarregado de forjar uma **identidade nacional brasileira**.\n\n### 1. As Três Gerações da Poesia Romântica\n• **1ª Geração (Nacionalista / Indianista):** Gonçalves Dias (*Canção do Exílio*, *I-Juca Pirama*). O indígena é idealizado como o 'bom selvagem' e herói cavaleiresco nacional; natureza tropical exuberante e ufanismo patriótico.\n• **2ª Geração (Ultrarromântica / Mal do Século / Byroniana):** Álvares de Azevedo (*Noite na Taverna*, *Lira dos Vinte Anos*), Fagundes Varela. Fuga da realidade pelo sonho, morte e devaneio mórbido; melancolia profunda, pessimismo, tédio e idealização inatingível da mulher virgem.\n• **3ª Geração (Condoreira / Social / Hugoana):** Castro Alves (*O Navio Negreiro*, *Espumas Flutuantes*). O poeta assume o papel social do 'condor' que sobrevoa a história: denúncia indignada da escravidão, poesia grandiloquente e amor carnal/sensual consumado.\n\n### 2. A Prosa Romântica de José de Alencar\nAlencar buscou cobrir todas as facetas do território e da alma nacional:\n• **Romance Indianista:** *O Guarani*, *Iracema* (o indígena mítico na gênese da nação).\n• **Romance Urbano:** *Senhora*, *Lucíola* (os costumes e casamentos por interesse da burguesia carioca).\n• **Romance Regionalista:** *O Gaúcho*, *O Sertanejo* (costumes do interior do país).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_lit_02_q1",
+              "title": "Castro Alves e a Poesia Condoreira",
+              "problemStatement": "Nos versos de 'O Navio Negreiro', de Castro Alves: 'Era um sonho dantesco... o tombadilho / Que das luzernas avermelha o brilho, / Em sangue a se banhar. / Tinir de ferros... estalar do açoite... / Legiões de homens negros como a noite, / Horrendos a dançar...', a estética condoreira manifesta-se através de:",
+              "options": [
+                "grandiloquência verbal e apelo sensorial dramático para mobilizar a comoção pública contra a desumanidade da escravidão.",
+                "idealização heroica de guerreiros indígenas no molde das novelas de cavalaria medievais.",
+                "culto formal à métrica parnasiana impassível, desprovida de engajamento social.",
+                "fuga introspectiva para o mundo da morte por tédio burguês existencial.",
+                "elogio resignado ao sofrimento dos cativos como caminho exclusivo para a salvação espiritual."
+              ],
+              "correctIndex": 0,
+              "hint": "Castro Alves emprega imagens visuais e sonoras impactantes para despertar indignação política na sociedade.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A terceira geração romântica (condoreira) é marcada pelo engajamento cívico abolicionista e republicano.\n2. O uso de adjetivação vigorosa ('sonho dantesco', 'banhar em sangue') e efeitos auditivos ('tinir de ferros', 'estalar do açoite') constrói uma cena teatral grandiosa capaz de abalar as consciências contra o cativeiro.\nAlternativa correta: A"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_lit_03",
+          "unitId": "mod_ling_03_literatura",
+          "title": "3. Realismo, Naturalismo e Parnasianismo",
+          "conceptTitle": "Foco absoluto em Machado de Assis e Aluísio Azevedo",
+          "explanation": "# Realismo, Naturalismo e Parnasianismo\n\nNa segunda metade do século XIX, sob impacto do Positivismo, Evolucionismo e Cientificismo, os autores rompem com a idealização romântica para dissecar a sociedade nua e crua.\n\n### 1. Realismo: Machado de Assis (O Maior Clássico do ENEM)\nEm 1881, com *Memórias Póstumas de Brás Cubas*, Machado inaugura o Realismo brasileiro:\n• **Características Machadianas:** Narrador não confiável (primeira pessoa egoísta e cínica), quebra da linearidade cronológica, metalinguagem e diálogo sarcástico com o leitor.\n• **Pessimismo e Desilusão:** Desnudamento das máscaras sociais; o amor, a religião e a filantropia revelam-se calculismos de classe.\n• **Obras Canônicas no ENEM:** *Dom Casmurro* (a dúvida insolúvel sobre Capitu, construída pela ótica ciumenta e possessiva de Bentinho), *Quincas Borba* (o delírio do Humanitismo: 'Ao vencedor, as batatas!').\n\n### 2. Naturalismo: Aluísio Azevedo e o Determinismo\n• O ser humano reduzido ao seu instinto animal (**zoomorfização**).\n• **Determinismo Rígido de Taine:** O indivíduo é produto fatal de sua raça (biologia), meio (ambiente social) e momento histórico.\n• **O Cortiço (1890):** O próprio cortiço é o protagonista coletivo, degradando os indivíduos (a transformação do português trabalhador Jerônimo sob o calor e sensualidade do meio tropical).\n\n### 3. Parnasianismo: Olavo Bilac\n• 'Arte pela arte': busca da perfeição métrica, rimas ricas e raras, temática greco-latina e culto à forma pura do soneto, recusando temas sociais engajados.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_lit_03_q1",
+              "title": "Realismo de Machado de Assis",
+              "problemStatement": "Em 'Memórias Póstumas de Brás Cubas', o protagonista inicia sua narrativa esclarecendo ao leitor que não é um autor defunto, mas um defunto autor, para quem a cova foi outro berço. Essa escolha narrativa permite a Machado de Assis:",
+              "options": [
+                "libertar o narrador das convenções e hipocrisias sociais, permitindo um olhar cínico, irônico e desmascarador sobre a elite de seu tempo.",
+                "exaltar a bondade inata do ser humano e a pureza de sentimentos desinteressados na corte imperial.",
+                "garantir neutralidade jornalística absoluta sem emitir nenhum juízo de valor pessoal.",
+                "produzir uma novela de terror sobrenatural aos moldes góticos de Edgar Allan Poe.",
+                "aderir à crença no espiritismo kardecista como verdade doutrinária dogmática."
+              ],
+              "correctIndex": 0,
+              "hint": "Um defunto não deve satisfações aos vivos, podendo expor sem pudor suas próprias mesquinharias e as da sociedade.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A condição de defunto autor outorga a Brás Cubas total liberdade enunciativa: ele não teme a opinião pública, o tribunal da moral ou a reprovação de classe.\n2. Com isso, Machado constrói a mais afiada radiografia das vaidades e cinismos da aristocracia patriarcal e escravista do Rio de Janeiro.\nAlternativa correta: A"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_lit_04",
+          "unitId": "mod_ling_03_literatura",
+          "title": "4. Simbolismo e Pré-Modernismo",
+          "conceptTitle": "Euclides da Cunha, Lima Barreto e Monteiro Lobato",
+          "explanation": "# Simbolismo e Pré-Modernismo (A Virada do Século)\n\nO período de transição entre 1900 e 1922 revela as fraturas de um Brasil republicano excludente e arcaico.\n\n### 1. Simbolismo (Fim do Século XIX)\n• Cruz e Sousa ('O Cisne Negro') e Alphonsus de Guimaraens.\n• Misticismo, espiritualidade transcendental, sinestesia (cruzamento de sensações sensoriais: 'som doce', 'luz gélida'), musicalidade e predomínio da cor branca.\n• Dor existencial e reflexo da condição negra no Brasil pós-abolição em Cruz e Sousa.\n\n### 2. Pré-Modernismo (1902–1922): Não é uma Escola, é uma Transição\nAutores com formas linguísticas ainda tradicionais, mas com **olhar crítico inédito para o Brasil profundo e esquecido**:\n• **Euclides da Cunha (*Os Sertões*, 1902):** A Guerra de Canudos. Tríptico 'A Terra, O Homem, A Luta'. A denúncia do massacre da população sertaneja de Antônio Conselheiro pelo Exército republicano ('O sertanejo é, antes de tudo, um forte').\n• **Lima Barreto (*Triste Fim de Policarpo Quaresma*):** Crítica feroz ao nacionalismo ingênuo, à burocracia do Estado e ao racismo estrutural da Primeira República. Linguagem fluida, jornalística e antielitista.\n• **Monteiro Lobato (*Urupês*):** Criação do Jeca Tatu, símbolo do caboclo doente e abandonado pelo poder público ('O Jeca não é assim: está assim').\n• **Augusto dos Anjos (*Eu*):** Fusão única de Simbolismo, Parnasianismo e vocabulário científico-biológico da decomposição cadavérica.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_lit_04_q1",
+              "title": "Pré-Modernismo: Triste Fim de Policarpo Quaresma",
+              "problemStatement": "Em 'Triste Fim de Policarpo Quaresma', de Lima Barreto, o protagonista é um funcionário público apaixonado pelo Brasil que envia um requerimento ao Congresso propondo a adoção da língua tupi-guarani como idioma oficial do país. O desfecho trágico e incompreendido de Policarpo simboliza:",
+              "options": [
+                "a prova irrefutável de que as línguas indígenas são biologicamente inviáveis na modernidade.",
+                "a denúncia da insensibilidade e intolerância das instituições do Estado perante a dissidência crítica e os idealismos patrióticos genuínos.",
+                "o triunfo espetacular do positivismo militar republicano nos sertões brasileiros.",
+                "uma apologia ao imperialismo europeu contra as culturas locais sul-americanas.",
+                "o conformismo pacífico da classe média carioca com os desmandos da ditadura florianista."
+              ],
+              "correctIndex": 1,
+              "hint": "Policarpo dedica sua vida à pátria e termina fuzilado pelo próprio governo que tentou defender com paixão ingênua.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. Lima Barreto constrói Policarpo como o quixote brasileiro cuja dedicação sincera à identidade nacional colide com o autoritarismo militar e a mediocridade da burocracia estatal da República Velha.\nAlternativa correta: B"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_lit_05",
+          "unitId": "mod_ling_03_literatura",
+          "title": "5. Modernismo Brasileiro",
+          "conceptTitle": "A Semana de Arte Moderna de 1922 e as 3 fases modernistas",
+          "explanation": "# O Modernismo Brasileiro: Da Semana de 22 às Três Fases\n\nO Modernismo é o movimento mais cobrado em toda a história do ENEM.\n\n### 1. A Semana de Arte Moderna (Fevereiro de 1922 - Teatro Municipal de SP)\n• Rompimento com o academicismo parnasiano e com a cópia submissa de modelos europeus.\n• Busca por uma arte genuinamente brasileira, integrando a cultura popular, a oralidade e a vanguarda.\n\n### 2. 1ª Fase (1922–1930): Fase Heroica e Destrutiva\n• **Oswald de Andrade:** *Manifesto Antropófago* (1928) — devorar a cultura europeia colonizadora e digeri-la, mesclando-a com a força nativa e africana para criar uma arte brasileira autônoma. Poema-pílula, humor, quebra sintática.\n• **Mário de Andrade:** *Macunaíma* (1928) — o 'herói sem nenhum caráter', síntese mítica da identidade fragmentada do brasileiro.\n• **Manuel Bandeira:** *Os Sapos* (sátira avassaladora ao Parnasianismo) e a 'poética do cotidiano'.\n\n### 3. 2ª Fase (1930–1945): Fase de Consolidação e Maturidade\n• **Poesia Social e Filosófica:** Carlos Drummond de Andrade (*Sentimento do Mundo*, *A Rosa do Povo* — engajamento político antifascista, solidariedade e pessimismo existencial) e Vinicius de Moraes.\n• **Romance de 30 (Neorregionalismo Social):** Graciliano Ramos (*Vidas Secas* — a desumanização de Fabiano e sua família pela seca e pela opressão dos poderosos), Jorge Amado (*Capitães da Areia* — meninos de rua em Salvador), Rachel de Queiroz (*O Quinze*).\n\n### 4. 3ª Fase (1945 em diante): Geração Neoclássica e Sondagem Existencial\n• **Clarice Lispector (*A Hora da Estrela*, *Laços de Família*):** Epifania, fluxo de consciência interior, ruptura do tempo linear, o drama de Macabéa no Rio de Janeiro.\n• **João Guimarães Rosa (*Grande Sertão: Veredas*):** Recriação neológica da língua portuguesa sertaneja: 'O sertão é do tamanho do mundo'; o sertão como espelho universal da alma humana.\n• **João Cabral de Melo Neto (*Morte e Vida Severina*):** O 'poeta-engenheiro' da secura, avesso ao sentimentalismo fácil.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_lit_05_q1",
+              "title": "Vidas Secas de Graciliano Ramos",
+              "problemStatement": "No capítulo 'Baleia' do romance 'Vidas Secas', de Graciliano Ramos, a cadela da família de retirantes, ao agonizar após ser alvejada por Fabiano, sonha com um mundo cheio de preás gordos. Por sua vez, Fabiano muitas vezes se define como 'um bicho'. Esse recurso literário tem como propósito fundamental:",
+              "options": [
+                "evidenciar o processo de desumanização imposto pela seca extrema e pela opressão fundiária, que rebaixa o sertanejo ao nível de bicho e confere à cadela a humanidade negada aos retirantes.",
+                "defender que os problemas do Nordeste decorrem unicamente da preguiça de seus habitantes.",
+                "demonstrar que animais possuem raciocínio matemático superior ao dos seres humanos.",
+                "apresentar uma fábula infantil inocente destinada a divertir crianças nas escolas rurais.",
+                "fazer propaganda da pecuária extensiva no semiárido nordestino."
+              ],
+              "correctIndex": 0,
+              "hint": "A miséria e o abandono social privam o ser humano de sua dignidade e da própria linguagem.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A animalização de Fabiano e a humanização poética de Baleia constituem a denúncia mais pungente de Graciliano Ramos sobre a violência estrutural do latifúndio e da seca, que despoja os trabalhadores rurais de sua humanidade básica.\nAlternativa correta: A"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_lit_06",
+          "unitId": "mod_ling_03_literatura",
+          "title": "6. Literatura Contemporânea",
+          "conceptTitle": "Poesia marginal, concretismo e tropicalismo",
+          "explanation": "# Literatura Contemporânea: Ditadura, Concretismo e Vozes Plurais\n\nA literatura a partir dos anos 1960 reage às violências do regime militar, fragmenta o cânone e incorpora as periferias e as minorias sociais.\n\n### 1. Poesia Concreta (Década de 1950/60)\n• Irmãos Augusto e Haroldo de Campos, Décio Pignatari.\n• Fim do verso tradicional; valorização do espaço em branco da página, do aspecto visual-gráfico, da decomposição fonética e dos jogos verbo-visuais (ex: poema 'Beba Coca Cola / Beba Cola / Caco / Caco / Cola / Caco / Cloaca').\n\n### 2. Poesia Marginal (Geração Mimeógrafo - Década de 1970)\n• Ana Cristina Cesar, Chacal, Cacaso.\n• Produção independente e artesanal rodada em mimeógrafo, distribuída de mão em mão em bares e portas de cinema para driblar a censura da Ditadura Militar.\n• Tom coloquial, intimista, despojado, direto e bem-humorado.\n\n### 3. Tropicalismo e Canção Popular\n• Caetano Veloso, Gilberto Gil, Torquato Neto.\n• Fusão da antropofagia oswaldiana com guitarras elétricas do rock e ritmos folclóricos brasileiros (baião, samba), desafiando a moral conservadora.\n\n### 4. Prosa e Poesia Contemporânea das Periferias\n• Carolina Maria de Jesus (*Quarto de Despejo* — a literatura viva da favela do Canindé nos anos 1960).\n• Conceição Evaristo (o conceito de **'Escrevivência'** — literatura brotada da vivência de mulheres negras).\n• Geovani Martins, Ferréz, Itamar Vieira Junior (*Torto Arado* — as marcas da escravidão na luta pela terra na Chapada Diamantina).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_lit_06_q1",
+              "title": "Literatura Contemporânea e Escrevivência",
+              "problemStatement": "A escritora Conceição Evaristo cunhou o termo 'escrevivência' para caracterizar sua produção literária, afirmando: 'Nossa escrevivência não é para adormecer os da casa-grande, e sim para acordá-los de seus sonos injustos'. Essa perspectiva autoral manifesta-se através de:",
+              "options": [
+                "imitação servil dos sonetos parnasianos de autores franceses do século XIX.",
+                "alienação voluntária em relação às desigualdades raciais e de gênero no país.",
+                "uma escrita comprometida e enraizada nas vivências e memórias coletivas da população negra e periférica, desafiando a hegemonia das narrativas coloniais tradicionais.",
+                "desejo de agradar as elites dominantes em troca de patrocínio institucional.",
+                "recusa categórica ao uso de recursos literários ficcionais na produção em prosa."
+              ],
+              "correctIndex": 2,
+              "hint": "A escrevivência une escrita e vivência para romper silenciamentos históricos e despertar consciências.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. O conceito de escrevivência coloca a experiência subjetiva, histórica e corpórea das mulheres negras e faveladas no centro do fazer literário, transformando a palavra em instrumento de afirmação, dignidade e justiça social.\nAlternativa correta: C"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_ling_04_gramatica",
+      "unitNumber": 4,
+      "tier": "BASIC",
+      "title": "Gramática Aplicada ao Texto",
+      "description": "Classes de palavras em contexto semântico, sintaxe e sentido em orações coordenadas/subordinadas, regência e pontuação expressiva.",
+      "category": "Linguagens",
+      "subject": "Linguagens e Códigos",
+      "lessons": [
+        {
+          "id": "ling_gram_01",
+          "unitId": "mod_ling_04_gramatica",
+          "title": "1. Classes de Palavras em Contexto",
+          "conceptTitle": "Valor semântico de preposições, conjunções e pronomes",
+          "explanation": "# Classes de Palavras em Contexto Semântico\n\nO ENEM **não cobra decoreba** ou classificação morfológica mecânica. A prova investiga como a escolha de uma classe gramatical constrói sentidos específicos no texto.\n\n### 1. Preposições e Seus Valores Semânticos\nA preposição não é apenas um conectivo vazio; ela expressa relações conceituais ricas:\n• **Posse:** 'O carro *de* Maria'.\n• **Matéria / Origem:** 'Mesa *de* madeira'; 'Veio *de* Minas'.\n• **Causa:** 'Tremia *de* frio'; 'Morreu *de* desgosto'.\n• **Instrumento:** 'Feriu-se *com* a faca'; 'Escreveu *a* lápis'.\n• **Modo:** 'Saiu *às* pressas'; 'Vive *com* dignidade'.\n• **Finalidade:** 'Estudou *para* vencer'.\n• **Companhia:** 'Passeou *com* os amigos'.\n\n### 2. Conjunções e Conectores Argumentativos\nSão os tijolos da progressão textual e coesão sequencial:\n• **Conjunções Coordenativas:** Aditivas (*e, nem*), Adversativas (*mas, porém, todavia*), Alternativas (*ou... ou*), Conclusivas (*portanto, logo*), Explicativas (*pois, que*).\n• **Conjunções Subordinativas:** Causais (*porque, visto que*), Concessivas (*embora, ainda que*), Condicionais (*se, caso*), Consecutivas (*tanto que*), Comparativas (*como, tal qual*), Temporais (*quando, assim que*), Finais (*a fim de que, para que*), Proporcionais (*à proporção que*), Conformativas (*conforme, segundo*).\n\n### 3. Pronomes e Referenciação Discursiva\n• **Pronomes Demonstrativos no Texto:**\n  - **Este / Esta / Isto:** Refere-se ao que vai ser dito a seguir (**catáfora**) ou ao presente imediato.\n  - **Esse / Essa / Isso:** Retoma o que acabou de ser dito (**anáfora**) ou ao passado/futuro próximo.\n  - **Aquele / Aquela / Aquilo:** Retoma o elemento mais distante temporal ou espacialmente.\n• **Pronomes Relativos (*que, cujo, onde*):**\n  - '*Cujo*' indica posse entre dois substantivos e nunca aceita artigo posterior (*cujo filho*, jamais *cujo o filho*).\n  - '*Onde*' só deve ser utilizado para indicar **lugar físico palpável** ('a cidade onde moro', e NÃO 'a reunião onde debatemos').",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_gram_01_q1",
+              "title": "Valor Semântico de Preposições",
+              "problemStatement": "Analise o fragmento: 'O jovem cientista tremia de entusiasmo ao receber o prêmio internacional conquistado com muito esforço individual'. As preposições destacadas 'de' e 'com' expressam, no contexto, respectivamente as relações semânticas de:",
+              "options": [
+                "oposição e concessão.",
+                "origem geográfica e companhia.",
+                "posse e matéria.",
+                "finalidade e tempo.",
+                "causa e instrumento/modo."
+              ],
+              "correctIndex": 4,
+              "hint": "O que causou o tremor? O entusiasmo (causa). De que forma ou por qual meio ele conquistou o prêmio? Com esforço (modo/meio).",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. 'Tremia de entusiasmo': a preposição 'de' introduz o motivo gerador ou causa do tremor físico involuntário.\n2. 'Conquistado com muito esforço': a preposição 'com' indica o modo ou meio pelo qual o resultado foi alcançado.\nAlternativa correta: E"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_gram_02",
+          "unitId": "mod_ling_04_gramatica",
+          "title": "2. Sintaxe e Sentido",
+          "conceptTitle": "Orações coordenadas e subordinadas no texto",
+          "explanation": "# Sintaxe e Sentido: Coordenação e Subordinação\n\nA organização sintática das orações reflete a intenção persuasiva e a hierarquia de ideias pretendida pelo autor.\n\n### 1. Coordenação (Independência Sintática)\nAs orações coordenadas têm sentido completo e são justapostas ou ligadas por conjunções coordenativas:\n• 'O candidato estudou muito [oração 1 independentemente estruturada], **mas** não obteve a vaga [oração 2 coordenada adversativa].'\n• A coordenação confere ritmo dinâmico, paratático e direto ao texto.\n\n### 2. Subordinação (Hierarquia e Dependência Sintática)\nA oração subordinada desempenha uma função sintática (sujeito, objeto, adjunto) em relação à oração principal:\n• **Substantivas:** Exercem papel de núcleo nominal ('É necessário **que você vença**' -> 'É necessária **sua vitória**').\n• **Adjetivas:** Funcionam como adjunto adnominal, introduzidas por pronome relativo:\n  - **Explicativas (Entre vírgulas):** Referem-se à totalidade do conjunto ('Os seres humanos, **que são mortais**, buscam o sentido da vida').\n  - **Restritivas (Sem vírgulas):** Delimitam uma parcela específica do conjunto ('Os candidatos **que estudaram com seriedade** foram aprovados' -> apenas essa fração foi aprovada).\n• **Adverbiais:** Expressam as circunstâncias lógicas de causa, consequência, tempo, condição, concessão e finalidade da ação principal.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_gram_02_q1",
+              "title": "Efeito Semântico da Oração Adjetiva",
+              "problemStatement": "Considere os dois enunciados abaixo extraídos de um relatório de trânsito: \nI. 'Os motoristas de aplicativo que respeitam o limite de velocidade diminuem o risco de colisões graves.'\nII. 'Os motoristas de aplicativo, que respeitam o limite de velocidade, diminuem o risco de colisões graves.'\nA análise comparativa das orações adjetivas permite concluir que:",
+              "options": [
+                "em I, a oração restringe o benefício apenas à parcela dos motoristas que cumprem a norma; em II, a oração afirma categoricamente que todos os motoristas de aplicativo respeitam a velocidade.",
+                "o enunciado II indica que apenas os motoristas infratores evitam acidentes.",
+                "o enunciado I está gramaticalmente incorreto por ausência injustificada de pontuação.",
+                "o uso das vírgulas em II transforma a oração adjetiva em uma oração adverbial causal.",
+                "os dois enunciados expressam rigorosamente o mesmo sentido sem qualquer alteração interpretativa."
+              ],
+              "correctIndex": 0,
+              "hint": "A presença de vírgulas torna a oração adjetiva explicativa (abrangendo a totalidade do grupo).",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A oração adjetiva restritiva (sem vírgula) delimita uma parte do conjunto dos motoristas (somente aqueles que respeitam a velocidade).\n2. A oração adjetiva explicativa (entre vírgulas) atribui a característica a todo o grupo de motoristas de aplicativo como uma qualidade geral de todos eles.\nAlternativa correta: A"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_gram_03",
+          "unitId": "mod_ling_04_gramatica",
+          "title": "3. Concordância e Regência",
+          "conceptTitle": "Concordância verbal/nominal e regência aplicada à norma-padrão",
+          "explanation": "# Concordância e Regência na Norma-Padrão\n\nA harmonia entre os termos da oração garante precisão semântica e atendimento aos critérios da Competência 1 da Redação e das questões de Linguagens.\n\n### 1. Concordância Verbal Crítica no ENEM\n• **Verbo HAVER no sentido de existir ou tempo decorrido:** É impessoal, **não tem sujeito** e deve ficar rigorosamente na **3ª pessoa do singular** ('Havia muitas pessoas na praça', e NUNCA 'Haviam muitas pessoas').\n• **Verbo FAZER indicando tempo decorrido ou clima:** Também impessoal ('Faz dez anos que não o vejo', e NUNCA 'Fazem dez anos').\n• **Partícula SE (Apassivadora vs Indeterminadora):**\n  - **Pronome Apassivador (VTD + SE + Sujeito Paciente):** O verbo concorda com o sujeito ('Vende-se uma casa' / 'Vendem-se casas').\n  - **Índice de Indeterminação do Sujeito (VTI/VI + SE + Preposição):** Verbo obrigatoriamente no singular ('Precisa-se de operários' / 'Trata-se de problemas graves').\n• **Expressões Partitivas ('A maioria de', 'Grande parte de'):** Concordância facultativa com o coletivo ou com o especificador ('A maioria dos alunos *passou*' ou '*passaram*').\n\n### 2. Regência Verbal e Mudança de Sentido\nDeterminados verbos alteram radicalmente de significado conforme a preposição regente:\n• **Aspirar:**\n  - Sem preposição (VTD = sorver o ar): 'Aspirou o perfume da flor'.\n  - Com preposição *a* (VTI = almejar, desejar): 'Aspira **ao** cargo de médico'.\n• **Assistir:**\n  - Com preposição *a* (VTI = presenciar, ver): 'Assistiu **ao** filme'.\n  - Sem preposição (VTD = dar assistência): 'O médico assistiu o paciente'.\n• **Visar:**\n  - Com preposição *a* (VTI = objetivar): 'Visa **à** aprovação'.\n  - Sem preposição (VTD = mirar, assinar): 'Visou o alvo'; 'Visou o cheque'.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_gram_03_q1",
+              "title": "Concordância Verbal com Haver e Existir",
+              "problemStatement": "De acordo com a norma-padrão da língua portuguesa escrita, a opção em que a concordância verbal está inteiramente correta é:",
+              "options": [
+                "Havia muitas pessoas na manifestação pública em frente ao ministério.",
+                "Precisa-se de novos técnicos agrícolas para a colheita no interior.",
+                "Haviam muitas pessoas na manifestação pública em frente ao ministério.",
+                "Vende-se apartamentos mobiliados com vista para a orla marítima.",
+                "Fazem cinco anos que os cientistas pesquisam essa vacina inovadora."
+              ],
+              "correctIndex": 0,
+              "hint": "O verbo haver no sentido de existir é impessoal e não admite forma no plural.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. O verbo 'haver' com significado de existir é impessoal e deve ficar na 3ª pessoa do singular: 'Havia muitas pessoas'.\n2. 'Fazem cinco anos' está errado (fazer de tempo é impessoal: 'Faz cinco anos').\n3. 'Vende-se apartamentos' está errado (apassivadora: 'Vendem-se apartamentos').\nAlternativa correta: A"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_gram_04",
+          "unitId": "mod_ling_04_gramatica",
+          "title": "4. Pontuação",
+          "conceptTitle": "Uso da vírgula, travessões e reticências como recursos de sentido",
+          "explanation": "# Pontuação como Recurso Expressivo e de Sentido\n\nA pontuação não serve para indicar quando o leitor deve 'respirar'; ela é um instrumento sintático e discursivo que delimita unidades de sentido e cria ênfases expressivas.\n\n### 1. O Uso da Vírgula (Regras de Ouro)\n• **PROIBIDO SEPARAR:** Nunca se separa por vírgula o Sujeito do Verbo, nem o Verbo de seus Objetos diretos/indiretos ('O professor explicou a matéria', e NUNCA 'O professor, explicou a matéria').\n• **USO OBRIGATÓRIO:**\n  - **Vocativo (Chamamento):** Sempre isolado por vírgula ('Venha aqui, Pedro!'; 'Amigos, escutem com atenção!').\n  - **Aposto Explicativo:** 'Machado de Assis, **grande escritor brasileiro**, nasceu no Rio.'\n  - **Adjunto Adverbial Deslocado:** Quando a expressão de tempo, lugar ou modo vem no início ou meio da frase ('Na semana passada, todos compareceram').\n  - **Termos em Enumeração:** 'Comprou cadernos, lápis, borrachas e canetas.'\n  - **Conjunções Adversativas e Conclusivas Deslocadas:** 'O projeto era bom; não obteve, **contudo**, os recursos necessários.'\n\n### 2. Travessões, Parênteses e Dois-Pontos\n• **Travessão Duplo:** Destaca e valoriza uma informação intercalada com mais ênfase visual e expressiva do que parênteses ou vírgulas.\n• **Dois-Pontos:** Introduzem esclarecimento, enumeração, citação ou síntese explicativa da ideia anterior.\n• **Reticências:** Sugerem continuidade de pensamento, hesitação, ironia ou silenciamento intencional da personagem.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_gram_04_q1",
+              "title": "Emprego da Pontuação e Expressividade",
+              "problemStatement": "No período: 'A juventude brasileira — consciente dos desafios climáticos globais — tem liderado manifestações em defesa das florestas', o uso dos travessões duplos cumpre a função de:",
+              "options": [
+                "denotar dúvida ou indecisão do narrador quanto à veracidade do fato.",
+                "introduzir a fala de uma personagem em um diálogo teatral.",
+                "separar obrigatoriamente o sujeito do predicado por falta de conectivo.",
+                "isolar um comentário explicativo que destaca a postura crítica dos jovens perante o meio ambiente.",
+                "marcar a omissão acidental de dados estatísticos do Censo Florestal."
+              ],
+              "correctIndex": 3,
+              "hint": "O elemento entre travessões caracteriza e qualifica o sujeito 'a juventude brasileira'.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. Os travessões duplos intercalados funcionam com efeito semelhante aos parênteses ou vírgulas explicativas, conferindo ênfase estilística à caracterização da consciência ambiental da juventude.\nAlternativa correta: D"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "mod_ling_05_artes_corpo",
+      "unitNumber": 5,
+      "tier": "BASIC",
+      "title": "Artes e Expressão Corporal",
+      "description": "Vanguardas europeias, modernismo nas artes plásticas (Tarsila e Portinari), cultura corporal, esportes x atividades físicas e padrões estéticos.",
+      "category": "Linguagens",
+      "subject": "Linguagens e Códigos",
+      "lessons": [
+        {
+          "id": "ling_art_01",
+          "unitId": "mod_ling_05_artes_corpo",
+          "title": "1. Vanguardas Europeias",
+          "conceptTitle": "Cubismo, Surrealismo, Dadaísmo, Expressionismo e Futurismo",
+          "explanation": "# As Vanguardas Europeias do Início do Século XX\n\nNo início do século XX, com a eclosão da 1ª Guerra Mundial e a aceleração industrial, artistas europeus romperam violentamente com o academicismo e com a imitação servil da realidade.\n\n### 1. Principais Movimentos de Vanguarda no ENEM\n• **Futurismo (Filippo Marinetti, 1909):** Culto à máquina, à velocidade, à eletricidade e ao dinamismo da metrópole moderna. Rompimento radical com museus e bibliotecas do passado.\n• **Cubismo (Pablo Picasso, Georges Braque, 1907):** Geometrização das formas e sobreposição de múltiplos ângulos e perspectivas simultâneas na mesma tela bidimensional (*Les Demoiselles d'Avignon*, *Guernica*).\n• **Expressionismo (Edvard Munch, Ernst Kirchner, 1905):** Deformação expressiva da realidade objetiva para projetar a angústia interior, o medo, a solidão e o desespero do homem moderno (*O Grito*).\n• **Dadaísmo (Tristan Tzara, Marcel Duchamp, 1916):** Anti-arte radical, niilismo, deboche e culto ao absurdo e ao acaso como resposta ao horror irracional da Primeira Guerra Mundial. Criação do *Ready-made* (a roda de bicicleta ou o mictório transformados em obra de arte pela escolha do artista).\n• **Surrealismo (André Breton, Salvador Dalí, René Magritte, 1924):** Valorização do inconsciente freudiano, do mundo dos sonhos, da escrita automática e do delírio desprovido de censura moral ou racional (*A Persistência da Memória* com os relógios derretidos).\n\n### 2. Influência Direta no Brasil\nAs vanguardas europeias alimentaram diretamente os artistas brasileiros da Semana de 1922 (Anita Malfatti, Oswald de Andrade, Mário de Andrade), que as 'devoraram' para fundar a arte moderna brasileira.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_art_01_q1",
+              "title": "Vanguardas Europeias no ENEM",
+              "problemStatement": "Em 1917, o artista francês Marcel Duchamp enviou para uma exposição de arte em Nova York um mictório de louça comum invertido, assinado com o pseudônimo 'R. Mutt' e intitulado 'A Fonte'. A obra, expoente máximo do Dadaísmo e precursora do ready-made, provocou escândalo porque:",
+              "options": [
+                "procurava ensinar noções de encanamento industrial aos críticos de arte nova-iorquinos.",
+                "fazia apologia à poluição dos rios e à destruição das instalações sanitárias urbanas.",
+                "comprovava o domínio virtuoso da escultura em mármore clássico do Renascimento.",
+                "desafiava os critérios tradicionais de estética e autoria, demonstrando que a obra de arte reside na ideia e na escolha crítica do artista, e não na confecção manual do objeto.",
+                "afirmava a superioridade do artesanato grego sobre a produção em massa moderna."
+              ],
+              "correctIndex": 3,
+              "hint": "O ready-made tira um objeto industrial comum de seu uso cotidiano e o coloca em um museu, forçando uma reflexão conceitual.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A proposta dadaísta de Marcel Duchamp operou uma das maiores revoluções da história da arte: ao descontextualizar um mictório e levá-lo ao museu, ele afirmou que o valor da arte é um conceito filosófico e institucional, quebrando o fetiche da técnica acadêmica.\nAlternativa correta: D"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_art_02",
+          "unitId": "mod_ling_05_artes_corpo",
+          "title": "2. Arte Brasileira",
+          "conceptTitle": "Semana de 22, Tarsila do Amaral, Portinari e Arte Contemporânea",
+          "explanation": "# Arte Brasileira: Da Semana de 22 à Contemporaneidade\n\nA arte brasileira do século XX constrói uma reflexão crítica sobre a mestiçagem, o trabalhador e as desigualdades sociais.\n\n### 1. A Semana de 22 e Anita Malfatti\n• Em 1917, a exposição expressionista de Anita Malfatti foi duramente atacada por Monteiro Lobato no artigo 'Paranoia ou Mistificação?'. O ataque catalisou a união dos jovens artistas que culminou na Semana de Arte Moderna de 1922 no Teatro Municipal de São Paulo.\n• Rompimento com o academicismo e com o gosto burguês conservador paulistano.\n\n### 2. Tarsila do Amaral e o Movimento Antropofágico\n• **Fase Pau-Brasil (1924):** Cores vivas e 'caipiras' (azul puríssimo, rosa, amarelo), paisagens tropicais com palmeiras e favelas cariocas.\n• **Fase Antropofágica (1928):** A pintura *Abaporu* ('o homem que come') — cabeça minúscula e pés e mãos agigantados ancorados na terra brasileira, inspirando o manifesto de Oswald de Andrade.\n• **Fase Social (1933):** O quadro *Operários* — dezenas de rostos sobrepostos de diversas etnias diante das chaminés das fábricas, retratando a industrialização e a diversidade da força de trabalho imigrante e nacional.\n\n### 3. Candido Portinari e o Drama Social\n• Foco nos retirantes da seca (*Retirantes*, 1944), nos trabalhadores rurais do café e nos meninos de Brodowski.\n• Grandes murais públicos (*Guerra e Paz*, na sede da ONU em Nova York).\n\n### 4. Neoconcretismo e Arte Contemporânea\n• Lygia Clark (*Bichos* — esculturas geométricas manipuladas pelo próprio público participante).\n• Hélio Oiticica (*Parangolés* — capas de tecido para serem vestidas e dançadas no samba).\n• A arte contemporânea rompe a distância passiva entre o espectador e o objeto.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_art_02_q1",
+              "title": "Tarsila do Amaral e o Abaporu",
+              "problemStatement": "A célebre pintura 'Abaporu' (1928), de Tarsila do Amaral, apresenta uma figura humana nua, solitária, com um pé e um braço gigantescos pousados na terra ao lado de um cacto sob um sol radiante, contrastando com uma cabeça minúscula. Na perspectiva do Modernismo brasileiro, essa desproporção anatômica simboliza:",
+              "options": [
+                "uma denúncia dos efeitos danosos do calçado inadequado para operários da construção civil.",
+                "a incapacidade técnica da pintora de reproduzir a anatomia humana segundo os manuais médicos.",
+                "uma doença deformadora típica das regiões áridas do semiárido sertanejo.",
+                "a ligação visceral e física do homem brasileiro com a terra e com a natureza tropical, valorizando a força instintiva e o enraizamento telúrico.",
+                "o desdém da artista pelas belezas naturais e pelas tradições folclóricas do país."
+              ],
+              "correctIndex": 3,
+              "hint": "Os pés agigantados fincados no solo evocam o contato direto e a sustentação do ser na terra nativa.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. 'Abaporu' (em tupi, 'homem que come carne humana') inaugurou o Movimento Antropofágico. A enorme dimensão dos pés e membros inferiores expressa o enraizamento profundo no solo nativo e a força da materialidade brasileira, em oposição ao intelectualismo europeu hipertrofiado.\nAlternativa correta: D"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_art_03",
+          "unitId": "mod_ling_05_artes_corpo",
+          "title": "3. O Corpo e a Saúde",
+          "conceptTitle": "Práticas corporais, esporte x atividade física, dança e lutas",
+          "explanation": "# O Corpo e a Saúde: Práticas Corporais na Prova de Linguagens\n\nA Educação Física no ENEM integra a área de Linguagens porque **o corpo é uma forma de comunicação, expressão de identidade cultural e linguagem social**.\n\n### 1. Esporte versus Atividade Física / Exercício Físico\n• **Esporte:** Prática corporal institucionalizada, regida por regras formais universais estabelecidas por confederações/federações, visando à competição e ao rendimento.\n• **Atividade Física:** Qualquer movimento voluntário produzido pelo corpo com gasto energético acima do repouso (caminhar até a padaria, varrer a casa, subir escadas).\n• **Exercício Físico:** Atividade física estruturada, planejada, repetitiva e deliberada com o objetivo de melhorar a aptidão física e a saúde.\n\n### 2. A Dança e a Expressão Coletiva\n• A dança é patrimônio cultural imaterial da humanidade. Manifestações como o frevo, maracatu, samba de roda, jongo e o breakdance comunicam resistência histórica, memória ancestral e integração comunitária.\n\n### 3. Lutas versus Violência / Briga\n• **Luta:** Prática corporal milenar dotada de regras claras, respeito rigoroso à integridade física do oponente, código de honra e autocontrole emocional (judô, capoeira, karatê).\n• **Briga / Violência:** Ato desregrado, sem limites, cujo único objetivo é ferir ou destruir o outro, repudiado pelo esporte e pela ética humana.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_art_03_q1",
+              "title": "O Corpo como Prática Cultural",
+              "problemStatement": "Ao longo da história do Brasil, a capoeira foi perseguida pelas autoridades policiais e criminalizada no Código Penal da República em 1890 como contravenção. Na atualidade, reconhecida como Patrimônio Cultural Imaterial da Humanidade pela UNESCO, a capoeira destaca-se por:",
+              "options": [
+                "articular luta, dança, música e ancestralidade como forma de resistência cultural e preservação da memória da população afro-brasileira.",
+                "estimular brigas desregradas e violentas para resolução de desavenças comunitárias em locais públicos.",
+                "limitar-se à cópia fiel dos modelos de ginástica militar sueca do século XIX.",
+                "rejeitar qualquer forma de musicalidade ou ritmo sonoro em suas rodas de apresentação.",
+                "constituir uma prática corporal exclusiva para o treino de soldados das forças armadas."
+              ],
+              "correctIndex": 0,
+              "hint": "A capoeira mescla elementos de jogo corporal, música e resistência histórica contra a opressão.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A capoeira transcende a mera dimensão física: é um fenômeno de linguagem corporal onde o ritmo do berimbau, os cantos ancestrais e o jogo de esquiva compõem um monumento vivo da resistência negra no Brasil.\nAlternativa correta: A"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "ling_art_04",
+          "unitId": "mod_ling_05_artes_corpo",
+          "title": "4. Padrões Estéticos e Indústria Cultural",
+          "conceptTitle": "Mídia, consumo do corpo e alienação",
+          "explanation": "# Padrões Estéticos, Mídia e Indústria Cultural\n\nA sociedade contemporânea transforma o corpo humano em mercadoria e objeto de consumo, gerando pressões sociais e sofrimento psíquico.\n\n### 1. A Tirania da Imagem e Padrões Inalcançáveis\n• A publicidade e as redes sociais promovem um padrão estético hegemônico (magreza extrema, corpos hipermusculosos e juventude eterna).\n• O uso massivo de filtros digitais e cirurgias estéticas desumaniza a diversidade corporal natural, gerando quadros de vigorexia, anorexia, bulimia e depressão.\n\n### 2. Conceito de Indústria Cultural (Adorno e Horkheimer)\n• A cultura, a arte e o próprio corpo tornam-se produtos industriais padronizados para consumo de massa.\n• A promessa de 'felicidade' é atrelada à compra de suplementos milagrosos, procedimentos estéticos e cosméticos.\n\n### 3. Movimentos de Resistência e Autoaceitação\n• **Diversidade Corporal (Body Positivity):** Movimentos sociais que defendem o respeito a corpos gordos, corpos com deficiência, corpos idosos e não binários, denunciando a gordofobia e o capacitismo como formas de opressão social.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ling_art_04_q1",
+              "title": "Mídia, Corpo e Indústria Cultural",
+              "problemStatement": "Pesquisas sociológicas recentes apontam que a exposição contínua a imagens digitais com filtros de embelezamento nas redes sociais tem provocado o aumento de transtornos de imagem corporal entre jovens e adolescentes. Diante desse fenômeno, a crítica cultural contemporânea alerta para:",
+              "options": [
+                "a vantagem biológica indiscutível de cirurgias plásticas prematuras na infância.",
+                "a confirmação de que os filtros digitais democratizam democraticamente a beleza biológica sem efeitos colaterais.",
+                "a necessidade de criminalizar a fotografia digital em todas as esferas do cotidiano.",
+                "o desinteresse completo dos jovens por qualquer forma de validação estética nas plataformas virtuais.",
+                "os perigos da imposição mercadológica de padrões estéticos inalcançáveis, que transformam o corpo em produto de consumo e geram sofrimento psíquico decorrente da não aceitação da diversidade real."
+              ],
+              "correctIndex": 4,
+              "hint": "A mercantilização do corpo e a cobrança por uma perfeição artificial geram angústia e exclusão.",
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A indústria cultural do consumo estimula a inadequação corporal para lucrar com produtos estéticos, cosméticos e cirurgias. A reflexão crítica do ENEM incentiva o reconhecimento da pluralidade dos corpos contra a ditadura da imagem hegemônica.\nAlternativa correta: E"
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    }
+  ]
+}

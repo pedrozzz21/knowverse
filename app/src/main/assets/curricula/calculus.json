@@ -1,0 +1,1277 @@
+{
+  "subjectId": "calculus",
+  "title": "Cálculo I (Limites, Derivadas e Integrais)",
+  "category": "Matemática",
+  "unitCount": 3,
+  "lessonCount": 26,
+  "units": [
+    {
+      "id": "calc_u_limits",
+      "unitNumber": 1,
+      "tier": "BASIC",
+      "title": "Limites e Continuidade",
+      "description": "Aproximação em vizinhança, limites laterais, indeterminações 0/0, fatoração, continuidade, assíntotas e Teorema do Confronto.",
+      "category": "Matemática",
+      "subject": "Cálculo I",
+      "lessons": [
+        {
+          "id": "calc_l1",
+          "unitId": "calc_u_limits",
+          "title": "Aula 1: O que é o Limite? (A Ideia Básica)",
+          "conceptTitle": "Aproximação na Vizinhança: lim_{x->a} f(x) = L",
+          "explanation": "Imagine que você está se aproximando de uma pessoa numa festa. Você chega super perto, fala no ouvido dela, mas NUNCA encosta nela.\n\nEm matemática, o limite de f(x) quando x tende a 'a' estuda PARA ONDE a função está apontando à medida que x chega cada vez mais perto de 'a'.\n\n• A Notação:\n  lim_{x -> a} f(x) = L\n\n• A Regra de Ouro:\n  Não importa o que acontece exatamente no ponto x = a (a função pode até não existir ali ou ter um buraco). O que importa é apenas a tendência dos vizinhos bem pertinho do ponto 'a'!",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "O limite investiga a vizinhança imediata do ponto, não o ponto em si.",
+            "Mesmo que f(a) seja indefinido, o limite lim_{x->a} f(x) pode existir perfeitamente."
+          ],
+          "solutionExplanation": "O limite analisa a trajetória nas imediações do ponto, e não o valor estático de f(a).",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l1_1",
+              "title": "Tendência de Vizinhança e Cancelamento",
+              "problemStatement": "Considere a função racional \\[ f(x) = \\\\frac{x^2 - 1}{x - 1} \\] Ao calcular o limite quando x tende a 1, a substituição direta resulta na indeterminação 0/0. Analisando a vizinhança perfurada (x ≠ 1), para qual valor real converge o limite \\[ \\\\lim_{x \\\\to 1} f(x) \\] ?",
+              "options": [
+                "f(x) converge para 2",
+                "f(x) converge para 0",
+                "f(x) converge para 1",
+                "f(x) diverge para +∞",
+                "O limite não existe devido à indeterminação"
+              ],
+              "correctIndex": 0,
+              "hint": "Fatore o numerador pela diferença de dois quadrados: (x - 1)(x + 1) e simplifique para x ≠ 1.",
+              "stepByStepSolution": "Passo 1: Identificação da forma indeterminada. Ao substituir x = 1 diretamente, encontramos (1² - 1)/(1 - 1) = 0/0.\nPasso 2: Fatoração algébrica do numerador pela diferença de quadrados:\n\\[ x^2 - 1 = (x - 1)(x + 1) \\]\nPasso 3: Cancelamento do fator nulo para toda a vizinhança perfurada x ≠ 1:\n\\[ f(x) = \\frac{(x - 1)(x + 1)}{x - 1} = x + 1 \\]\nPasso 4: Cálculo do limite por substituição na expressão simplificada:\n\\[ \\lim_{x \\to 1} (x + 1) = 1 + 1 = 2 \\]\nConclusão: Embora f(1) seja indefinido (um ponto aberto no gráfico), o limite bilateral existe e converge para 2."
+            },
+            {
+              "id": "ex_calc_l1_2",
+              "title": "Existência do Limite vs Valor Pontual",
+              "problemStatement": "Seja g(x) uma função com um ponto perfurado em x = 3, de modo que g(3) não existe no domínio. Com base nos fundamentos do Cálculo, o que podemos afirmar categoricamente sobre \\[ \\\\lim_{x \\\\to 3} g(x) \\] ?",
+              "options": [
+                "O limite obrigatoriamente não existe porque g(3) é indefinido",
+                "O limite pode existir normalmente e ser um número real bem definido",
+                "O limite deve ser necessariamente igual a 0",
+                "O limite diverge obrigatoriamente para +∞ ou -∞",
+                "O limite só existe se a derivada g'(3) também existir"
+              ],
+              "correctIndex": 1,
+              "hint": "A definição formal de limite utiliza a vizinhança perfurada 0 < |x - a| < δ, sem depender do que ocorre exatamente no ponto x = a.",
+              "stepByStepSolution": "Passo 1: Definição formal de limite de Cauchy. O limite investiga o comportamento dos valores de g(x) na vizinhança perfurada 0 < |x - 3| < δ.\nPasso 2: Análise da condição x ≠ 3. O valor estático pontual g(3) não participa da definição nem da existência do limite.\nPasso 3: Distinção conceitual entre continuidade e existência de limite. A continuidade exige que lim g(x) = g(3), mas a existência do limite requer apenas a convergência na vizinhança.\nConclusão: O limite pode existir perfeitamente e ter valor real finito, independentemente da existência de g(3)."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l2",
+          "unitId": "calc_u_limits",
+          "title": "Aula 2: Limites Laterais e Existência",
+          "conceptTitle": "O Teste Decisivo do 'Vem por Onde?'",
+          "explanation": "Para saber o limite em um ponto 'a', você precisa testar a aproximação por dois lados:\n\n• Pela esquerda (x -> a⁻): valores menores que a.\n• Pela direita (x -> a⁺): valores maiores que a.\n\nTeorema da Existência (O Teste Decisivo):\nO limite bilateral lim_{x->a} f(x) SÓ EXISTE se a aproximação pela esquerda for EXATAMENTE IGUAL à da direita:\nlim_{x->a} f(x) = L  <=>  lim_{x->a⁻} f(x) = lim_{x->a⁺} f(x) = L\n\nOlhe o gráfico abaixo:\nQuando x vem pela esquerda de 2, a função vai para 3.\nQuando vem pela direita de 2, a função vai para 1.\nComo 3 != 1, há um salto (pulo) no gráfico e o limite NÃO EXISTE em x = 2!",
+          "lessonType": "PRACTICE",
+          "initialCode": "",
+          "hints": [
+            "Se os limites laterais forem diferentes, o limite global NÃO existe.",
+            "Saltos no gráfico quebram a concordância bilateral."
+          ],
+          "solutionExplanation": "O salto quebra a existência do limite bilateral.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l2_1",
+              "title": "Condição Fundamental de Existência",
+              "problemStatement": "Considere que para uma função h(x), os limites laterais no ponto x = 4 foram avaliados como: \\[ \\\\lim_{x \\\\to 4^-} h(x) = 7 \\\\quad \\\\text{e} \\\\quad \\\\lim_{x \\\\to 4^+} h(x) = 7 \\] Pelo Teorema da Existência de Limites, qual é o valor do limite bilateral \\[ \\\\lim_{x \\\\to 4} h(x) \\] ?",
+              "options": [
+                "O limite não existe sem saber o valor pontual de h(4)",
+                "O limite bilateral é a soma dos laterais: 14",
+                "O limite bilateral existe e é igual a 7",
+                "O limite bilateral é a média ponderada: 3.5",
+                "O limite é indeterminado da forma 7/0"
+              ],
+              "correctIndex": 2,
+              "hint": "Teorema Fundamental: lim_{x->a} h(x) = L se e somente se lim_{x->a⁻} h(x) = lim_{x->a⁺} h(x) = L.",
+              "stepByStepSolution": "Passo 1: Enunciado do Teorema da Existência. O limite bilateral lim_{x->a} h(x) = L existe se, e somente se, os dois limites laterais existirem e forem estritamente iguais a L.\nPasso 2: Verificação das hipóteses do problema:\n\\[ \\lim_{x \\to 4^-} h(x) = 7 \\quad \\text{e} \\quad \\lim_{x \\to 4^+} h(x) = 7 \\]\nPasso 3: Igualdade comprovada: 7 = 7 = L.\nConclusão: O limite bilateral lim_{x->4} h(x) existe e é exatamente igual a 7."
+            },
+            {
+              "id": "ex_calc_l2_2",
+              "title": "Descontinuidade de Salto (Jump)",
+              "problemStatement": "No estudo de uma função descontínua no ponto x = 2, constatou-se que \\[ \\\\lim_{x \\\\to 2^-} f(x) = 3 \\\\quad \\\\text{e} \\\\quad \\\\lim_{x \\\\to 2^+} f(x) = 1 \\] Qual a conclusão matemática correta sobre o comportamento de f(x) em x = 2?",
+              "options": [
+                "O limite bilateral é a média aritmética: (3 + 1)/2 = 2",
+                "O limite bilateral vale 3, pois aproximações pela esquerda têm prioridade",
+                "O limite bilateral vale 1, pois aproximações pela direita definem a imagem",
+                "O limite bilateral não existe devido a uma descontinuidade de salto",
+                "O limite bilateral diverge para +∞"
+              ],
+              "correctIndex": 3,
+              "hint": "Observe que 3 ≠ 1. Quando as trajetórias vindas de lados opostos não convergem para a mesma altura, há uma quebra bilateral.",
+              "stepByStepSolution": "Passo 1: Comparação dos limites laterais: lim_{x->2⁻} f(x) = 3 e lim_{x->2⁺} f(x) = 1.\nPasso 2: Aplicação da condição necessária de existência:\n\\[ \\lim_{x \\to 2^-} f(x) \\neq \\lim_{x \\to 2^+} f(x) \\implies (3 \\neq 1) \\]\nPasso 3: Interpretação geométrica. O gráfico sofre uma quebra vertical abrupta com salto |3 - 1| = 2.\nConclusão: O limite bilateral não existe no ponto x = 2."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l3",
+          "unitId": "calc_u_limits",
+          "title": "Aula 3: Propriedades e Substituição Direta",
+          "conceptTitle": "As Regras do Jogo e Estratégia nº 1",
+          "explanation": "Se os limites existirem e derem números finitos, você pode operar os limites como matemática normal:\n\n1. Soma / Subtração: O limite da soma é a soma dos limites.\n2. Multiplicação: O limite do produto é o produto dos limites.\n3. Divisão: O limite do quociente é o quociente dos limites (desde que o denominador não seja zero).\n\nEstratégia nº 1:\nA primeira coisa que você faz em qualquer questão de limite é a SUBSTITUIÇÃO DIRETA (jogar o número na função).\nSe der um número real normal sem divisão por zero, acabou a questão!",
+          "lessonType": "PRACTICE",
+          "initialCode": "",
+          "hints": [
+            "Substitua o valor diretamente antes de tentar métodos complexos.",
+            "Funções polinomiais são contínuas em todos os reais."
+          ],
+          "solutionExplanation": "Substituição direta resolve limites de funções contínuas.",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l3_1",
+              "title": "Cálculo por Substituição Direta",
+              "problemStatement": "Calcule o limite polinomial por substituição direta: \\[ \\\\lim_{x \\\\to 3} (2x^2 - 3x + 5) \\]",
+              "options": [
+                "11",
+                "14",
+                "20",
+                "8",
+                "Indeterminado da forma 0/0"
+              ],
+              "correctIndex": 1,
+              "hint": "Substitua x = 3 em cada monômio: 2 · (3²) - 3 · (3) + 5.",
+              "stepByStepSolution": "Passo 1: Verificação da natureza da função. P(x) = 2x² - 3x + 5 é um polinômio de segundo grau, contínuo em toda a reta real ℝ.\nPasso 2: Aplicação do Teorema da Substituição Direta:\n\\[ \\lim_{x \\to 3} P(x) = P(3) \\]\nPasso 3: Avaliação aritmética detalhada:\n\\[ P(3) = 2(3)^2 - 3(3) + 5 = 2(9) - 9 + 5 = 18 - 9 + 5 = 14 \\]\nConclusão: O valor numérico é finito e bem determinado: lim_{x->3} (2x² - 3x + 5) = 14."
+            },
+            {
+              "id": "ex_calc_l3_2",
+              "title": "Divisão com Denominador Não-Nulo",
+              "problemStatement": "Calcule o limite racional aplicando as propriedades operatórias: \\[ \\\\lim_{x \\\\to 2} \\\\frac{x^3 + 1}{x + 3} \\]",
+              "options": [
+                "9/5",
+                "8/5",
+                "7/5",
+                "3",
+                "Indeterminado"
+              ],
+              "correctIndex": 0,
+              "hint": "Verifique o denominador para x = 2: 2 + 3 = 5 ≠ 0. Não há indeterminação, aplique a substituição direta.",
+              "stepByStepSolution": "Passo 1: Verificação da condição de quociente. O limite do quociente é o quociente dos limites se o denominador for não-nulo:\n\\[ \\lim_{x \\to 2} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x \\to 2} f(x)}{\\lim_{x \\to 2} g(x)} \\quad \\text{se } \\lim_{x \\to 2} g(x) \\neq 0 \\]\nPasso 2: Cálculo individual do numerador e denominador:\n\\[ Numerador = 2^3 + 1 = 8 + 1 = 9 \\]\n\\[ Denominador = 2 + 3 = 5 \\]\nPasso 3: Como 5 ≠ 0, a fração é diretamente avaliada: 9/5.\nConclusão: O limite existe e vale 9/5."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l4",
+          "unitId": "calc_u_limits",
+          "title": "Aula 4: Indeterminação 0/0 e o Furo Removível",
+          "conceptTitle": "A Ilusão do 0/0 Esconde um Buraco Geométrico",
+          "explanation": "Quando você faz a substituição direta e encontra 0/0, isso NÃO significa erro ou zero!\nSignifica: 'Tem um fator (x - a) escondido em cima e embaixo atrapalhando o cálculo!'\n\nOlhe o gráfico abaixo:\nA função f(x) = (x² - 4) / (x - 2) é uma reta perfeita y = x + 2, mas em x = 2 ela tem um FURO (bolinha aberta).\nO valor f(2) não existe na álgebra estática, mas o LIMITE é perfeitamente igual a 4!\n\nComo destravar:\n(x² - 4) / (x - 2) = [(x - 2)(x + 2)] / (x - 2) = x + 2.\nSubstituindo x = 2 em (x + 2), encontramos 4!",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "0/0 é uma indeterminação, não um resultado numérico.",
+            "Cancele o fator comum (x - a) que causa o zero no numerador e denominador."
+          ],
+          "solutionExplanation": "O cancelamento remove o termo nulo.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l4_1",
+              "title": "Destravando a Indeterminação 0/0",
+              "problemStatement": "Avalie o limite racional que resulta na indeterminação 0/0: \\[ \\\\lim_{x \\\\to 2} \\\\frac{x^2 - 4}{x - 2} \\]",
+              "options": [
+                "0",
+                "2",
+                "4",
+                "Indeterminado, portanto inexistente",
+                "+∞"
+              ],
+              "correctIndex": 2,
+              "hint": "Reconheça a diferença de dois quadrados: x² - 4 = (x - 2)(x + 2). Cancele o termo comum para x ≠ 2.",
+              "stepByStepSolution": "Passo 1: Identificação da indeterminação. Substituindo x = 2: (2² - 4)/(2 - 2) = 0/0.\nPasso 2: Fatoração algébrica do numerador pela diferença de quadrados:\n\\[ x^2 - 4 = (x - 2)(x + 2) \\]\nPasso 3: Cancelamento do fator compartilhado para x ≠ 2:\n\\[ \\frac{(x - 2)(x + 2)}{x - 2} = x + 2 \\]\nPasso 4: Cálculo do limite sobre a forma simplificada:\n\\[ \\lim_{x \\to 2} (x + 2) = 2 + 2 = 4 \\]\nConclusão: O limite existe e converge para 4."
+            },
+            {
+              "id": "ex_calc_l4_2",
+              "title": "Interpretação Gráfica do Furo Removível",
+              "problemStatement": "Qual é o significado geométrico preciso de uma descontinuidade removível no gráfico da função f(x) = (x² - 4)/(x - 2)?",
+              "options": [
+                "O gráfico é interrompido por uma assíntota vertical infinita em x = 2",
+                "O gráfico é a reta y = x + 2 com um furo pontual (ponto aberto) na coordenada (2, 4)",
+                "O gráfico sofre um salto vertical discreto de 4 unidades",
+                "A função oscila infinitamente ao redor do valor x = 2",
+                "A reta tangente em x = 2 torna-se estritamente horizontal"
+              ],
+              "correctIndex": 1,
+              "hint": "A função simplificada é y = x + 2 para todo x ≠ 2. O ponto (2, 4) é perfurado.",
+              "stepByStepSolution": "Passo 1: Análise algébrica. Para todo x ≠ 2, f(x) = x + 2. O traçado gráfico coincide com uma reta contínua de inclinação 1.\nPasso 2: Análise pontual em x = 2. Como 2 não pertence ao domínio original, o ponto não é preenchido.\nPasso 3: Análise do limite. Como lim_{x->2} f(x) = 4, a vizinhança aponta para a coordenada (2, 4).\nConclusão: O gráfico é exatamente a reta y = x + 2 com um ponto aberto (furo) em (2, 4)."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l5",
+          "unitId": "calc_u_limits",
+          "title": "Aula 5: Ferramentas Algébricas (Fatoração e Racionalização)",
+          "conceptTitle": "O Bisturi e o Espelho Conjugado",
+          "explanation": "Duas técnicas clássicas para eliminar 0/0:\n\n1. Fatoração (O Bisturi):\n   lim_{x -> 3} (x² - 9) / (x - 3)\n   Fatorando o numerador: (x - 3)(x + 3) / (x - 3) = x + 3.\n   Substituindo x = 3: 3 + 3 = 6.\n\n2. Racionalização (O Espelho):\n   Quando houver raiz quadrada, multiplique numerador e denominador pelo CONJUGADO (trocando o sinal do meio).\n   (√x - 2) * (√x + 2) = x - 4.",
+          "lessonType": "PRACTICE",
+          "initialCode": "",
+          "hints": [
+            "Diferença de quadrados: a² - b² = (a - b)(a + b).",
+            "Multiplicar pelo conjugado elimina a raiz: (√A - B)(√A + B) = A - B²."
+          ],
+          "solutionExplanation": "Fatoração e conjugados eliminam indeterminações.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l5_1",
+              "title": "Racionalização de Raiz com Conjugado",
+              "problemStatement": "Resolva o limite com radical pela técnica da multiplicação pelo conjugado: \\[ \\\\lim_{x \\\\to 4} \\\\frac{\\\\sqrt{x} - 2}{x - 4} \\]",
+              "options": [
+                "1/2",
+                "1/4",
+                "1/8",
+                "0",
+                "4"
+              ],
+              "correctIndex": 1,
+              "hint": "Multiplique numerador e denominador pelo conjugado (√x + 2). Lembre que (√x - 2)(√x + 2) = x - 4.",
+              "stepByStepSolution": "Passo 1: Teste de substituição direta em x = 4: (√4 - 2)/(4 - 4) = 0/0.\nPasso 2: Multiplicação pelo conjugado do numerador:\n\\[ \\frac{(\\sqrt{x} - 2)(\\sqrt{x} + 2)}{(x - 4)(\\sqrt{x} + 2)} = \\frac{(\\sqrt{x})^2 - 2^2}{(x - 4)(\\sqrt{x} + 2)} = \\frac{x - 4}{(x - 4)(\\sqrt{x} + 2)} \\]\nPasso 3: Cancelamento do fator nulo (x - 4):\n\\[ = \\frac{1}{\\sqrt{x} + 2} \\]\nPasso 4: Cálculo do limite por substituição na expressão racionalizada:\n\\[ \\lim_{x \\to 4} \\frac{1}{\\sqrt{x} + 2} = \\frac{1}{\\sqrt{4} + 2} = \\frac{1}{2 + 2} = \\frac{1}{4} \\]\nConclusão: O limite é 1/4."
+            },
+            {
+              "id": "ex_calc_l5_2",
+              "title": "Fatoração Quadrática e Cancelamento",
+              "problemStatement": "Calcule o limite com fatoração da diferença de quadrados: \\[ \\\\lim_{x \\\\to 5} \\\\frac{x^2 - 25}{x - 5} \\]",
+              "options": [
+                "5",
+                "0",
+                "25",
+                "10",
+                "Indeterminado"
+              ],
+              "correctIndex": 3,
+              "hint": "Diferença de quadrados: a² - b² = (a - b)(a + b). Logo, x² - 25 = (x - 5)(x + 5).",
+              "stepByStepSolution": "Passo 1: Avaliação direta: (5² - 25)/(5 - 5) = 0/0 (indeterminação).\nPasso 2: Fatoração algébrica do numerador: x² - 25 = (x - 5)(x + 5).\nPasso 3: Cancelamento de (x - 5) na vizinhança perfurada:\n\\[ \\frac{(x - 5)(x + 5)}{x - 5} = x + 5 \\quad (\\forall x \\neq 5) \\]\nPasso 4: Aplicação do limite:\n\\[ \\lim_{x \\to 5} (x + 5) = 5 + 5 = 10 \\]\nConclusão: O limite procurado vale 10."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l6",
+          "unitId": "calc_u_limits",
+          "title": "Aula 6: Continuidade e Matriz Diagnóstica",
+          "conceptTitle": "Desenhando Sem Tirar a Caneta do Papel",
+          "explanation": "Uma função é contínua em x = a se você pode desenhá-la sem tirar a caneta do papel:\n\nA Regra dos 3 Passos da Continuidade:\n1. f(a) precisa existir (o ponto existe).\n2. lim_{x -> a} f(x) precisa existir (os dois lados concordam).\n3. O limite e o valor no ponto têm que ser IGUAIS:\n   lim_{x -> a} f(x) = f(a)\n\nMatriz Diagnóstica de Descontinuidades:\n• 1. Evitável (Removível): O limite existe, mas f(a) não existe ou está fora do lugar (furo).\n• 2. Salto (Pulo): Os limites laterais são diferentes (lim⁻ != lim⁺).\n• 3. Infinita: Ao menos um limite lateral tende a ±∞ (assíntota vertical).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Para ser contínua, os 3 passos devem ser satisfeitos simultaneamente.",
+            "Se lim f(x) != f(a), a função falha no passo 3."
+          ],
+          "solutionExplanation": "Continuidade exige igualdade entre o limite e o valor pontual.",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l6_1",
+              "title": "Os 3 Passos da Continuidade",
+              "problemStatement": "Considere uma função f(x) onde o valor pontual é f(2) = 5, enquanto o limite bilateral converge para \\[ \\\\lim_{x \\\\to 2} f(x) = 3 \\] Com base no critério dos 3 passos, f(x) é contínua em x = 2?",
+              "options": [
+                "Sim, porque o limite existe e possui valor finito",
+                "Não, porque a 3ª condição falhou: o limite (3) é diferente do valor da função f(2) = 5",
+                "Sim, desde que a função admita derivadas laterais",
+                "Não é possível determinar sem a fórmula analítica completa",
+                "Sim, a média ponderada (3 + 5)/2 restaura a continuidade"
+              ],
+              "correctIndex": 1,
+              "hint": "Critério dos 3 passos: 1) f(a) existe; 2) lim_{x->a} f(x) existe; 3) lim_{x->a} f(x) = f(a).",
+              "stepByStepSolution": "Passo 1: Verificação do Passo 1: f(2) = 5 (definido e finito).\nPasso 2: Verificação do Passo 2: lim_{x->2} f(x) = 3 (o limite bilateral existe).\nPasso 3: Verificação do Passo 3 (Concordância):\n\\[ 3 \\neq 5 \\implies \\lim_{x \\to 2} f(x) \\neq f(2) \\]\nConclusão: A terceira condição de continuidade falha. A função possui um ponto isolado destacado em (2, 5), sendo descontínua em x = 2."
+            },
+            {
+              "id": "ex_calc_l6_2",
+              "title": "Identificação de Descontinuidade de Salto",
+              "problemStatement": "Se no ponto x = 1 os limites laterais de uma função são \\[ \\\\lim_{x \\\\to 1^-} f(x) = 4 \\\\quad \\\\text{e} \\\\quad \\\\lim_{x \\\\to 1^+} f(x) = -2 \\] qual a classificação formal da descontinuidade em x = 1?",
+              "options": [
+                "Descontinuidade de Salto (Jump) com amplitude 6",
+                "Descontinuidade Removível com furo em y = 4",
+                "Descontinuidade Infinita (Assintótica)",
+                "Ponto de Continuidade Ordinária",
+                "Descontinuidade Oscilatória Essencial"
+              ],
+              "correctIndex": 0,
+              "hint": "Limites laterais finitos e distintos geram um degrau ou salto de amplitude |L₂ - L₁|.",
+              "stepByStepSolution": "Passo 1: Avaliação dos limites laterais:\n\\[ \\lim_{x \\to 1^-} f(x) = 4 \\quad \\text{e} \\quad \\lim_{x \\to 1^+} f(x) = -2 \\]\nPasso 2: Constatação de que ambos são números reais finitos, porém desiguais: 4 ≠ -2.\nPasso 3: Cálculo da magnitude do salto vertical:\n\\[ \\text{Salto} = |\\lim_{x \\to 1^+} f(x) - \\lim_{x \\to 1^-} f(x)| = |-2 - 4| = 6 \\]\nConclusão: Trata-se de uma descontinuidade de salto de magnitude 6."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l7",
+          "unitId": "calc_u_limits",
+          "title": "Aula 7: Limites Infinitos e Assíntotas Verticais",
+          "conceptTitle": "O Abraço da Parede Vertical: 1/x e 1/x²",
+          "explanation": "Quando o denominador vai a zero mas o numerador NÃO vai a zero (tipo 1/0), a função explode para o infinito!\n\n• Assíntota Vertical:\n  É a parede invisível x = a onde o gráfico dispara verticalmente.\n\n• 1. O Foguete Duplo: f(x) = 1/x²\n  Tanto pela esquerda quanto pela direita, o denominador ao quadrado é positivo. Ambos abraçam +∞!\n\n• 2. A Divisão Direcional: f(x) = 1/x\n  Pela esquerda (valores negativos) vai para -∞. Pela direita (valores positivos) vai para +∞.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Constante não-nula dividida por zero indica assíntota vertical (±∞).",
+            "Analise o sinal do denominador ao se aproximar pela esquerda e pela direita."
+          ],
+          "solutionExplanation": "Divisão por zero com numerador não-nulo gera assíntota vertical.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l7_1",
+              "title": "Comportamento Assintótico de 1/x²",
+              "problemStatement": "Determine o comportamento assintótico e o valor do limite: \\[ \\\\lim_{x \\\\to 0} \\\\frac{1}{x^2} \\]",
+              "options": [
+                "0",
+                "+∞",
+                "-∞",
+                "O limite não existe devido à inversão de sinais",
+                "Indeterminado"
+              ],
+              "correctIndex": 1,
+              "hint": "Para qualquer x ≠ 0, x² é estritamente positivo (x² > 0). Quando x -> 0, o denominador tende a zero pela direita (0⁺).",
+              "stepByStepSolution": "Passo 1: Análise pela esquerda (x -> 0⁻): x² > 0.\n\\[ \\lim_{x \\to 0^-} \\frac{1}{x^2} = \\frac{1}{(0^-)^2} = \\frac{1}{0^+} = +\\infty \\]\nPasso 2: Análise pela direita (x -> 0⁺): x² > 0.\n\\[ \\lim_{x \\to 0^+} \\frac{1}{x^2} = \\frac{1}{(0^+)^2} = \\frac{1}{0^+} = +\\infty \\]\nPasso 3: Como ambos os ramos laterais convergem para +∞ em uníssono:\n\\[ \\lim_{x \\to 0} \\frac{1}{x^2} = +\\infty \\]\nConclusão: O limite diverge para +∞ e o eixo y (x = 0) é uma assíntota vertical da curva."
+            },
+            {
+              "id": "ex_calc_l7_2",
+              "title": "Localização da Assíntota Vertical",
+              "problemStatement": "Em qual reta cartesiana se localiza a assíntota vertical da função racional \\[ f(x) = \\\\frac{5}{x - 3} \\] ?",
+              "options": [
+                "Na reta horizontal y = 5",
+                "Na reta horizontal y = 3",
+                "Na reta vertical x = 3",
+                "Na reta vertical x = -3",
+                "Na reta vertical x = 0"
+              ],
+              "correctIndex": 2,
+              "hint": "Assíntotas verticais ocorrem onde o denominador se anula (x - 3 = 0) e o numerador é uma constante não-nula.",
+              "stepByStepSolution": "Passo 1: Encontrar os pontos onde o denominador se anula: x - 3 = 0 => x = 3.\nPasso 2: Verificar o numerador no ponto crítico: em x = 3, o numerador vale 5 ≠ 0.\nPasso 3: Avaliar os limites laterais no ponto:\n\\[ \\lim_{x \\to 3^-} \\frac{5}{x - 3} = \\frac{5}{0^-} = -\\infty \\quad \\text{e} \\quad \\lim_{x \\to 3^+} \\frac{5}{x - 3} = \\frac{5}{0^+} = +\\infty \\]\nConclusão: A reta vertical x = 3 é a assíntota vertical da função."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l8",
+          "unitId": "calc_u_limits",
+          "title": "Aula 8: Limites no Infinito e Assíntotas Horizontais",
+          "conceptTitle": "A Busca pelo Horizonte Geométrico: lim_{x->∞} f(x) = L",
+          "explanation": "Responde à pergunta: 'O que acontece lá no fim do universo quando x fica gigante?'\n\n• Assíntota Horizontal:\n  É a linha horizontal y = L onde o gráfico estabiliza no horizonte.\n\n• Teorema-Chave:\n  lim_{x -> ±∞} 1 / xʳ = 0 (para qualquer r > 0).\n  Pegar 1 valor fixo e dividir por uma multidão sem fim resulta em pó matemático (zero)!\n\nOlhe o gráfico abaixo da função f(x) = (2x + 1) / (x - 1):\n• Assíntota Vertical em x = 1 (linha pontilhada laranja).\n• Assíntota Horizontal em y = 2 (linha pontilhada ciano).",
+          "lessonType": "PRACTICE",
+          "initialCode": "",
+          "hints": [
+            "Para x -> ∞ em frações polinomiais, divida todos os termos pelo termo de maior grau.",
+            "Termos como c/x tendem a zero quando x tende ao infinito."
+          ],
+          "solutionExplanation": "Os termos dominantes determinam a assíntota horizontal.",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l8_1",
+              "title": "Assíntota Horizontal no Infinito",
+              "problemStatement": "Calcule o limite no infinito para determinar a assíntota horizontal da curva: \\[ \\\\lim_{x \\\\to \\\\infty} \\\\frac{2x + 1}{x - 1} \\]",
+              "options": [
+                "y = 1",
+                "y = 0",
+                "y = 2",
+                "y = -1",
+                "A curva não possui assíntotas horizontais"
+              ],
+              "correctIndex": 2,
+              "hint": "Coloque o termo de maior grau (x) em evidência no numerador e denominador.",
+              "stepByStepSolution": "Passo 1: Fatoração de x no numerador e denominador:\n\\[ \\frac{2x + 1}{x - 1} = \\frac{x(2 + \\frac{1}{x})}{x(1 - \\frac{1}{x})} = \\frac{2 + \\frac{1}{x}}{1 - \\frac{1}{x}} \\]\nPasso 2: Aplicação do limite quando x -> ∞, sabendo que 1/x -> 0:\n\\[ \\lim_{x \\to \\infty} \\frac{2 + \\frac{1}{x}}{1 - \\frac{1}{x}} = \\frac{2 + 0}{1 - 0} = \\frac{2}{1} = 2 \\]\nConclusão: O limite é 2, o que define a assíntota horizontal na reta y = 2."
+            },
+            {
+              "id": "ex_calc_l8_2",
+              "title": "Grau do Denominador Maior que o Numerador",
+              "problemStatement": "Determine o valor do limite quando o grau do denominador supera o do numerador: \\[ \\\\lim_{x \\\\to \\\\infty} \\\\frac{3x + 4}{x^2 - 5} \\]",
+              "options": [
+                "3",
+                "+∞",
+                "4/5",
+                "0",
+                "Indeterminado"
+              ],
+              "correctIndex": 3,
+              "hint": "Divida todos os termos pela maior potência presente (x²). Termos do tipo c/x^k tendem a 0.",
+              "stepByStepSolution": "Passo 1: Divisão de todos os termos por x²:\n\\[ \\frac{\\frac{3x}{x^2} + \\frac{4}{x^2}}{\\frac{x^2}{x^2} - \\frac{5}{x^2}} = \\frac{\\frac{3}{x} + \\frac{4}{x^2}}{1 - \\frac{5}{x^2}} \\]\nPasso 2: Avaliação dos limites infinitesimais:\n\\[ \\lim_{x \\to \\infty} \\frac{3}{x} = 0, \\quad \\lim_{x \\to \\infty} \\frac{4}{x^2} = 0, \\quad \\lim_{x \\to \\infty} \\frac{5}{x^2} = 0 \\]\nPasso 3: Substituição dos limites:\n\\[ \\frac{0 + 0}{1 - 0} = \\frac{0}{1} = 0 \\]\nConclusão: O limite é 0 e a reta y = 0 (eixo x) é a assíntota horizontal da curva."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l9",
+          "unitId": "calc_u_limits",
+          "title": "Aula 9: Teorema do Sanduíche e Limite Trigonométrico",
+          "conceptTitle": "Domesticando Oscilações e lim_{x->0} sen(x)/x = 1",
+          "explanation": "• Teorema do Sanduíche (ou do Confronto):\n  Se uma função g(x) está prensada no meio de duas funções f(x) <= g(x) <= h(x), e tanto a de cima quanto a de baixo vão para L, a do meio é FORÇADA a ir para L também!\n  Exemplo: x² * sen(1/x) prensada entre -x² e x² no zero vai para zero.\n\n• Limite Fundamental Trigonométrico:\n  lim_{x -> 0} sen(x) / x = 1\n  Guarde esse limite no coração, pois ele cai direto nas provas!",
+          "lessonType": "PRACTICE",
+          "initialCode": "",
+          "hints": [
+            "sen(x) está sempre limitado entre -1 e 1.",
+            "lim_{x->0} sen(kx)/x = k."
+          ],
+          "solutionExplanation": "O Teorema do Confronto resolve funções oscilantes limitadas.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l9_1",
+              "title": "Limite Fundamental Trigonométrico com Ajuste Linear",
+              "problemStatement": "Calcule o limite trigonométrico fundamental utilizando a mudança de variável linear: \\[ \\\\lim_{x \\\\to 0} \\\\frac{\\\\text{sen}(5x)}{x} \\]",
+              "options": [
+                "1",
+                "0",
+                "5",
+                "1/5",
+                "Indeterminado"
+              ],
+              "correctIndex": 2,
+              "hint": "Multiplique e divida por 5 para formar o padrão sen(u)/u, com u = 5x.",
+              "stepByStepSolution": "Passo 1: Manipulação algébrica para evidenciar o limite trigonométrico fundamental:\n\\[ \\frac{\\text{sen}(5x)}{x} = 5 \\cdot \\frac{\\text{sen}(5x)}{5x} \\]\nPasso 2: Definição de u = 5x. Quando x -> 0, u -> 0:\n\\[ \\lim_{x \\to 0} 5 \\cdot \\frac{\\text{sen}(5x)}{5x} = 5 \\cdot \\lim_{u \\to 0} \\frac{\\text{sen}(u)}{u} \\]\nPasso 3: Pelo Limite Fundamental de Euler, lim_{u->0} [sen(u)/u] = 1.\nPasso 4: Multiplicação: 5 · 1 = 5.\nConclusão: O limite procurado vale 5."
+            },
+            {
+              "id": "ex_calc_l9_2",
+              "title": "Teorema do Confronto (Sanduíche)",
+              "problemStatement": "Aplique o Teorema do Confronto (Sanduíche) para resolver o limite com termo oscilante limitado: \\[ \\\\lim_{x \\\\to 0} x^2 \\\\cos\\\\left(\\\\frac{1}{x}\\\\right) \\]",
+              "options": [
+                "1",
+                "0",
+                "Não existe devido à oscilação infinita",
+                "+∞",
+                "-1"
+              ],
+              "correctIndex": 1,
+              "hint": "O cosseno é limitado no intervalo [-1, 1]. Multiplique todos os membros por x².",
+              "stepByStepSolution": "Passo 1: Limitação da função cosseno para todo x ≠ 0:\n\\[ -1 \\leq \\cos\\left(\\frac{1}{x}\\right) \\leq 1 \\]\nPasso 2: Multiplicação por x² (que é estritamente positivo para x ≠ 0):\n\\[ -x^2 \\leq x^2 \\cos\\left(\\frac{1}{x}\\right) \\leq x^2 \\]\nPasso 3: Cálculo do limite das funções limitantes quando x -> 0:\n\\[ \\lim_{x \\to 0} (-x^2) = 0 \\quad \\text{e} \\quad \\lim_{x \\to 0} (x^2) = 0 \\]\nConclusão: Pelo Teorema do Confronto, a função imprensada converge compulsoriamente para 0."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l10",
+          "unitId": "calc_u_limits",
+          "title": "Aula 10: O Elo Fundamental (Da Secante à Tangente)",
+          "conceptTitle": "A Ponte para as Derivadas: f'(a) = lim_{h->0} [f(a+h) - f(a)] / h",
+          "explanation": "Tudo no Cálculo se conecta aqui:\nA DERIVADA nada mais é do que o limite da taxa de variação média quando o intervalo h encolhe até zero!\n\n• A Fórmula da Definição:\n  f'(a) = lim_{h -> 0} [f(a + h) - f(a)] / h\n\nGeometria:\nAo colapsar o intervalo físico 'h' entre os pontos até zero sob a lente do limite, convertemos a Reta Secante grosseira na perfeita e cobiçada Reta Tangente (Taxa Instantânea de Variação)!",
+          "lessonType": "CHALLENGE",
+          "initialCode": "",
+          "hints": [
+            "A inclinação da secante é Δy / Δx = [f(a+h) - f(a)] / h.",
+            "O limite quando h -> 0 transforma a reta secante em reta tangente."
+          ],
+          "solutionExplanation": "A derivada é o limite da inclinação das retas secantes.",
+          "xpReward": 45,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l10_1",
+              "title": "Derivada pela Definição de Limite",
+              "problemStatement": "Utilizando a definição formal de derivada por limite \\[ f'(a) = \\\\lim_{h \\\\to 0} \\\\frac{f(a+h) - f(a)}{h} \\] calcule a derivada de f(x) = x² no ponto a = 3.",
+              "options": [
+                "9",
+                "3",
+                "6",
+                "12",
+                "0"
+              ],
+              "correctIndex": 2,
+              "hint": "f(3+h) = (3+h)² = 9 + 6h + h². Subtraia f(3) = 9, divida por h e aplique o limite h -> 0.",
+              "stepByStepSolution": "Passo 1: Aplicação direta da definição formal para a = 3:\n\\[ f'(3) = \\lim_{h \\to 0} \\frac{f(3+h) - f(3)}{h} = \\lim_{h \\to 0} \\frac{(3+h)^2 - 3^2}{h} \\]\nPasso 2: Expansão do binômio ao quadrado:\n\\[ (3+h)^2 - 9 = (9 + 6h + h^2) - 9 = 6h + h^2 \\]\nPasso 3: Cancelamento de h no quociente de Newton para h ≠ 0:\n\\[ \\frac{6h + h^2}{h} = \\frac{h(6 + h)}{h} = 6 + h \\]\nPasso 4: Avaliação do limite quando h -> 0:\n\\[ \\lim_{h \\to 0} (6 + h) = 6 + 0 = 6 \\]\nConclusão: A taxa instantânea de variação (derivada) f'(3) é exatamente 6."
+            },
+            {
+              "id": "ex_calc_l10_2",
+              "title": "Interpretação Geométrica do Coeficiente Angular",
+              "problemStatement": "Qual é a interpretação geométrica exata do valor da derivada primeira f'(a) calculada em um ponto da curva?",
+              "options": [
+                "A área acumulada sob a curva desde a origem até o ponto a",
+                "A inclinação (coeficiente angular) da reta tangente à curva no ponto (a, f(a))",
+                "O comprimento de arco da curva no intervalo centrado em a",
+                "A curvatura elíptica da função",
+                "A coordenada vertical do ponto de máximo da curva"
+              ],
+              "correctIndex": 1,
+              "hint": "A derivada mede a taxa instantânea de inclinação, exatamente o coeficiente angular da reta tangente.",
+              "stepByStepSolution": "Passo 1: Reta Secante. Conecta dois pontos distintos (a, f(a)) e (a+h, f(a+h)), tendo inclinação:\n\\[ m_{\\text{sec}} = \\frac{\\Delta y}{\\Delta x} = \\frac{f(a+h) - f(a)}{h} \\]\nPasso 2: Passagem ao limite. Quando h tende a 0, o segundo ponto desliza sobre a curva até coincidir com o primeiro.\nPasso 3: Reta Tangente. A inclinação resultante é:\n\\[ m_{\\text{tan}} = \\lim_{h \\to 0} m_{\\text{sec}} = f'(a) \\]\nConclusão: A derivada primeira f'(a) representa com rigor o coeficiente angular (inclinação) da reta tangente no ponto."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "calc_u_derivatives",
+      "unitNumber": 2,
+      "tier": "BASIC",
+      "title": "Derivadas e Aplicações",
+      "description": "Taxa instantânea, regras do tombo, produto, quociente, cadeia, derivação implícita, aproximação linear, estudo de funções, L'Hôpital e otimização.",
+      "category": "Matemática",
+      "subject": "Cálculo I",
+      "lessons": [
+        {
+          "id": "calc_l11",
+          "unitId": "calc_u_derivatives",
+          "title": "Aula 1: O que é a Derivada (Na Prática)?",
+          "conceptTitle": "Taxa de Variação Instantânea e Reta Tangente",
+          "explanation": "Se o limite estuda a aproximação, a DERIVADA mede a taxa de variação instantânea!\n\n• Na Física: Se a função é a posição s(t) do carro, a derivada s'(t) é a velocidade no velocímetro naquele exato segundo!\n• Na Geometria: É o coeficiente angular (inclinação m) da reta tangente à curva no ponto.\n\nA Fórmula da Definição:\nf'(x) = lim_{h -> 0} [f(x + h) - f(x)] / h\n\nOlhe o gráfico abaixo (grafico_reta_tangente):\nÀ medida que a distância h entre dois pontos encolhe até zero, a reta secante (verde tracejada) vai girando até se ajustar perfeitamente como a reta tangente (vermelha) na curva no ponto P(1, 1).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "A reta secante conecta 2 pontos; a reta tangente toca em apenas 1 ponto localmente.",
+            "O coeficiente angular m da reta tangente é exatamente o valor de f'(x)."
+          ],
+          "solutionExplanation": "A reta tangente é o limite geométrico das retas secantes.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l11_1",
+              "title": "Taxa Instantânea vs Taxa Média",
+              "problemStatement": "A trajetória de um corpo em queda livre é modelada por s(t) = t² metros. Determine a velocidade média entre t = 1s e t = 3s e compare com a velocidade instantânea em t = 1s:",
+              "options": [
+                "Velocidade média = 2 m/s e instantânea = 4 m/s",
+                "Velocidade média = 4 m/s e instantânea = 2 m/s",
+                "Velocidade média = 3 m/s e instantânea = 3 m/s",
+                "Velocidade média = 8 m/s e instantânea = 4 m/s",
+                "Velocidade média = 4 m/s e instantânea = 1 m/s"
+              ],
+              "correctIndex": 1,
+              "hint": "Velocidade média = [s(3) - s(1)] / (3 - 1). Velocidade instantânea = s'(1) = 2(1).",
+              "stepByStepSolution": "Passo 1: Cálculo da velocidade média:\n\\[ v_{\\text{média}} = \\frac{\\Delta s}{\\Delta t} = \\frac{s(3) - s(1)}{3 - 1} = \\frac{3^2 - 1^2}{2} = \\frac{9 - 1}{2} = \\frac{8}{2} = 4\\text{ m/s} \\]\nPasso 2: Cálculo da velocidade instantânea via derivada:\n\\[ s'(t) = \\frac{d}{dt}(t^2) = 2t \\]\nPasso 3: Avaliação em t = 1:\n\\[ v_{\\text{inst}}(1) = s'(1) = 2(1) = 2\\text{ m/s} \\]\nConclusão: A velocidade média no intervalo é 4 m/s e a velocidade instantânea em t = 1s é 2 m/s."
+            },
+            {
+              "id": "ex_calc_l11_2",
+              "title": "Equação da Reta Tangente",
+              "problemStatement": "Para a parábola f(x) = x² no ponto P(1, 1), sabemos que a derivada fornece a inclinação m = f'(1) = 2. Qual é a equação reduzida da reta tangente?",
+              "options": [
+                "y = 2x + 1",
+                "y = 2x - 1",
+                "y = x + 1",
+                "y = 2x - 2",
+                "y = -2x + 3"
+              ],
+              "correctIndex": 1,
+              "hint": "Equação ponto-inclinação: y - y₀ = m(x - x₀), onde (x₀, y₀) = (1, 1) e m = 2.",
+              "stepByStepSolution": "Passo 1: Aplicação da equação da reta tangente na forma ponto-inclinação:\n\\[ y - y_0 = m(x - x_0) \\implies y - 1 = 2(x - 1) \\]\nPasso 2: Distribuição do coeficiente angular:\n\\[ y - 1 = 2x - 2 \\implies y = 2x - 2 + 1 \\implies y = 2x - 1 \\]\nConclusão: A equação reduzida da reta tangente é y = 2x - 1."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l12",
+          "unitId": "calc_u_derivatives",
+          "title": "Aula 2: As Regras Rápidas de Derivação",
+          "conceptTitle": "Sem Fazer Limite! Regra do Tombo e Funções Especiais",
+          "explanation": "Ninguém calcula derivada por limite na prova toda. Usamos as regras práticas:\n\n1. Regra do Tombo (Potência):\n   O expoente 'cai' multiplicando na frente e você subtrai 1 do expoente original:\n   (xⁿ)' = n · xⁿ⁻¹\n   • Exemplos: (x³)' = 3x²  |  (x⁵)' = 5x⁴  |  (x)' = 1\n\n2. Derivada da Constante e Multiplicação por Constante:\n   • A derivada de um número sozinho é ZERO: (7)' = 0.\n   • Se o número estiver multiplicando o x, ele 'pega carona':\n     (4x³)' = 4 · (3x²) = 12x².\n\n3. Funções Especiais Famosas:\n   • Exponencial: (eˣ)' = eˣ (a única função do universo cuja derivada é ela mesma!)\n   • Logaritmo: (ln x)' = 1/x\n   • Trigonométricas:\n     (sen x)' = cos x\n     (cos x)' = -sen x\n     (tg x)' = sec² x",
+          "lessonType": "PRACTICE",
+          "initialCode": "",
+          "hints": [
+            "Derrube o expoente multiplicando e subtraia 1 da potência.",
+            "Derivada de constante pura sem variável é zero."
+          ],
+          "solutionExplanation": "A regra da potência simplifica qualquer polinômio.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l12_1",
+              "title": "Regra do Tombo (Potência) com Polinômio",
+              "problemStatement": "Calcule a derivada da função polinomial \\[ f(x) = 5x^4 - 3x^2 + 7x - 12 \\]",
+              "options": [
+                "20x³ - 6x + 7",
+                "20x⁴ - 6x² + 7",
+                "5x³ - 3x + 7",
+                "20x³ - 6x",
+                "15x³ - 6x + 7"
+              ],
+              "correctIndex": 0,
+              "hint": "Aplique a regra do tombo (x^n)' = n·x^(n-1) termo a termo e lembre que a derivada de uma constante é zero.",
+              "stepByStepSolution": "Passo 1: Aplicação da Regra da Potência (d/dx[xⁿ] = n·xⁿ⁻¹) e linearidade da derivada termo a termo:\n\\[ \\frac{d}{dx}(5x^4) = 5 \\cdot (4x^3) = 20x^3 \\]\nPasso 2: Derivação do segundo termo:\n\\[ \\frac{d}{dx}(-3x^2) = -3 \\cdot (2x) = -6x \\]\nPasso 3: Derivação do termo linear:\n\\[ \\frac{d}{dx}(7x) = 7 \\cdot (1) = 7 \\]\nPasso 4: Derivação da constante pura:\n\\[ \\frac{d}{dx}(-12) = 0 \\]\nPasso 5: Agrupamento final:\n\\[ f'(x) = 20x^3 - 6x + 7 \\]\nConclusão: A derivada da função é 20x³ - 6x + 7."
+            },
+            {
+              "id": "ex_calc_l12_2",
+              "title": "Derivadas de Funções Notáveis",
+              "problemStatement": "Seja \\[ f(x) = 3e^x + 4\\\\text{sen}(x) - 2\\\\ln(x) \\] determine a expressão da derivada f'(x):",
+              "options": [
+                "3eˣ - 4 cos(x) - 2/x",
+                "3xeˣ + 4 cos(x) - 2x",
+                "3eˣ + 4 sen(x) - 2/x",
+                "3eˣ + 4 cos(x) - 2/x",
+                "3eˣ + 4 cos(x) + 2/x"
+              ],
+              "correctIndex": 3,
+              "hint": "Tabela de derivadas imediatas: (eˣ)' = eˣ, (sen x)' = cos x e (ln x)' = 1/x.",
+              "stepByStepSolution": "Passo 1: Derivação da função exponencial natural:\n\\[ \\frac{d}{dx}(3e^x) = 3 \\cdot e^x = 3e^x \\]\nPasso 2: Derivação da função trigonométrica fundamental:\n\\[ \\frac{d}{dx}(4\\text{sen}(x)) = 4 \\cdot \\cos(x) = 4\\cos(x) \\]\nPasso 3: Derivação da função logarítmica neperiana:\n\\[ \\frac{d}{dx}(-2\\ln(x)) = -2 \\cdot \\frac{1}{x} = -\\frac{2}{x} \\]\nPasso 4: Combinação linear de todos os termos:\n\\[ f'(x) = 3e^x + 4\\cos(x) - \\frac{2}{x} \\]\nConclusão: f'(x) = 3eˣ + 4 cos(x) - 2/x."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l13",
+          "unitId": "calc_u_derivatives",
+          "title": "Aula 3: As 3 Regras de Ouro para Operações",
+          "conceptTitle": "Regra do Produto, Quociente e da Cadeia",
+          "explanation": "1. Regra do Produto (Multiplicação):\n   'Deriva o primeiro, copia o segundo MAIS copia o primeiro, deriva o segundo!'\n   (f · g)' = f' · g + f · g'\n   • Exemplo: y = x² · sen(x)\n     y' = (2x) · sen(x) + (x²) · cos(x)\n\n2. Regra do Quociente (Divisão):\n   'Deriva o de cima vezes o de baixo MENOS o de cima vezes a derivada do de baixo, TUDO SOBRE o de baixo ao quadrado!'\n   (f / g)' = (f' · g - f · g') / g²\n   • Exemplo: y = eˣ / x\n     y' = [(eˣ) · x - eˣ · 1] / x² = [eˣ(x - 1)] / x²\n\n3. Regra da Cadeia (Função Dentro de Função):\n   'Deriva a de FORA mantendo a de dentro intacta, e MULTIPLICA pela derivada da de DENTRO!'\n   [f(g(x))]' = f'(g(x)) · g'(x)\n   • Exemplo: y = sen(x³)\n     Fora: sen(u) => cos(u)\n     Dentro: x³ => 3x²\n     Resultado: y' = cos(x³) · 3x² = 3x² cos(x³)",
+          "lessonType": "PRACTICE",
+          "initialCode": "",
+          "hints": [
+            "Produto usa SOMA (+), Quociente usa SUBTRAÇÃO (-) e denominador ao quadrado.",
+            "Na Regra da Cadeia, NUNCA esqueça de multiplicar pela derivada do que está dentro!"
+          ],
+          "solutionExplanation": "As 3 regras cobrem todas as composições e operações algébricas.",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l13_1",
+              "title": "Regra do Produto de Funções",
+              "problemStatement": "Utilize a Regra do Produto para derivar a função \\[ f(x) = x^3 \\\\cdot e^x \\]",
+              "options": [
+                "3x² eˣ",
+                "x³ eˣ",
+                "x² eˣ (3 + x)",
+                "3x² + eˣ",
+                "3x³ eˣ"
+              ],
+              "correctIndex": 2,
+              "hint": "Regra do Produto: (u · v)' = u'·v + u·v'. Aqui u = x³ e v = eˣ.",
+              "stepByStepSolution": "Passo 1: Identificação dos fatores: u(x) = x³ e v(x) = eˣ.\nPasso 2: Cálculo das derivadas individuais:\n\\[ u'(x) = 3x^2 \\quad \\text{e} \\quad v'(x) = e^x \\]\nPasso 3: Aplicação da fórmula do produto (u'v + uv'):\n\\[ f'(x) = (3x^2) \\cdot e^x + (x^3) \\cdot e^x \\]\nPasso 4: Fatoração colocando o termo comum x² eˣ em evidência:\n\\[ f'(x) = e^x (3x^2 + x^3) = x^2 e^x (3 + x) \\]\nConclusão: A derivada é x² eˣ (3 + x)."
+            },
+            {
+              "id": "ex_calc_l13_2",
+              "title": "Regra da Cadeia para Funções Compostas",
+              "problemStatement": "Derive a função composta \\[ y = (2x^3 + 5)^4 \\]",
+              "options": [
+                "4 (2x³ + 5)³",
+                "24x² (2x³ + 5)³",
+                "24x (2x³ + 5)³",
+                "8x² (2x³ + 5)³",
+                "6x² (2x³ + 5)⁴"
+              ],
+              "correctIndex": 1,
+              "hint": "Regra da Cadeia: dy/dx = f'(u) · u'. Derive a externa 4u³ e multiplique pela derivada interna (2x³ + 5)' = 6x².",
+              "stepByStepSolution": "Passo 1: Identificação da função externa e interna:\n\\[ \\text{Externa: } f(u) = u^4 \\quad \\implies \\quad f'(u) = 4u^3 \\]\n\\[ \\text{Interna: } u(x) = 2x^3 + 5 \\quad \\implies \\quad u'(x) = 6x^2 \\]\nPasso 2: Aplicação da Regra da Cadeia (dy/dx = f'(u) · u'):\n\\[ y' = 4(2x^3 + 5)^3 \\cdot (6x^2) \\]\nPasso 3: Multiplicação dos coeficientes:\n\\[ y' = (4 \\cdot 6x^2)(2x^3 + 5)^3 = 24x^2 (2x^3 + 5)^3 \\]\nConclusão: y' = 24x² (2x³ + 5)³."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l14",
+          "unitId": "calc_u_derivatives",
+          "title": "Aula 4: Técnicas Especiais: Derivação Implícita e Logarítmica",
+          "conceptTitle": "Quando y Não Está Isolado ou Está no Expoente",
+          "explanation": "1. Derivação Implícita:\n   Usa-se quando y está 'embaralhado' com x e não dá para isolar facilmente (ex: círculo x² + y² = 25).\n   \n   • A Regra: Derive tudo em relação a x normalmente. Toda vez que derivar um termo com y, MULTIPLIQUE por y' (ou dy/dx) por causa da Regra da Cadeia! Em seguida, isole y'.\n   • Exemplo: x² + y² = 25\n     1. Derive: 2x + 2y · y' = 0\n     2. Isole y': 2y · y' = -2x  =>  y' = -x / y\n\n2. Derivação Logarítmica:\n   Usa-se quando a variável está na base E no expoente ao mesmo tempo (tipo y = xˣ) ou produtos gigantes.\n   \n   • O Truque: Aplique ln dos dois lados antes de derivar!\n     1. y = xˣ  =>  ln(y) = ln(xˣ)\n     2. Derrube o expoente: ln(y) = x · ln(x)\n     3. Derive ambos os lados: (1/y) · y' = 1 · ln(x) + x · (1/x) = ln(x) + 1\n     4. Passe o y multiplicando: y' = y · (ln(x) + 1) = xˣ(ln(x) + 1)",
+          "lessonType": "CHALLENGE",
+          "initialCode": "",
+          "hints": [
+            "Toda vez que derivar y, surge um fator y' multiplicando.",
+            "Para xˣ, aplique ln dos dois lados para descer o expoente."
+          ],
+          "solutionExplanation": "Derivação implícita e logarítmica resolvem equações relacionais complexas.",
+          "xpReward": 45,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l14_1",
+              "title": "Derivação Implícita na Circunferência",
+              "problemStatement": "Na equação da circunferência \\[ x^2 + y^2 = 25 \\] determine a inclinação da reta tangente no ponto P(3, 4):",
+              "options": [
+                "4/3",
+                "-4/3",
+                "3/4",
+                "-3/4",
+                "-1"
+              ],
+              "correctIndex": 3,
+              "hint": "Derive implicitamente em relação a x: 2x + 2y·y' = 0. Isole y' = -x/y e substitua x = 3, y = 4.",
+              "stepByStepSolution": "Passo 1: Derivação de ambos os membros da equação em relação a x:\n\\[ \\frac{d}{dx}(x^2) + \\frac{d}{dx}(y^2) = \\frac{d}{dx}(25) \\]\nPasso 2: Aplicação da Regra da Cadeia no termo com y:\n\\[ 2x + 2y \\cdot y' = 0 \\]\nPasso 3: Isolamento algébrico de y':\n\\[ 2y \\cdot y' = -2x \\implies y' = -\\frac{2x}{2y} = -\\frac{x}{y} \\]\nPasso 4: Avaliação no ponto P(3, 4):\n\\[ y'(3, 4) = -\\frac{3}{4} \\]\nConclusão: A inclinação da reta tangente é -3/4."
+            },
+            {
+              "id": "ex_calc_l14_2",
+              "title": "Derivação Logarítmica de xˣ",
+              "problemStatement": "Calcule a derivada de \\[ y = x^x \\] para x > 0 utilizando a técnica da Derivação Logarítmica:",
+              "options": [
+                "x · xˣ⁻¹ = xˣ",
+                "xˣ · ln(x)",
+                "xˣ (1 + ln(x))",
+                "eˣ (1 + x)",
+                "xˣ⁻¹ (ln(x) + 1)"
+              ],
+              "correctIndex": 2,
+              "hint": "Aplique ln em ambos os lados: ln y = x ln x. Derive implicitamente: y'/y = 1·ln x + x·(1/x) = ln x + 1.",
+              "stepByStepSolution": "Passo 1: Aplicação do logaritmo natural em ambos os membros:\n\\[ \\ln(y) = \\ln(x^x) = x \\cdot \\ln(x) \\]\nPasso 2: Derivação implícita em relação a x:\n\\[ \\frac{d}{dx}(\\ln(y)) = \\frac{d}{dx}(x \\cdot \\ln(x)) \\]\nPasso 3: Regra do produto no membro direito:\n\\[ \\frac{y'}{y} = (1) \\cdot \\ln(x) + x \\cdot \\frac{1}{x} = \\ln(x) + 1 \\]\nPasso 4: Multiplicação por y para isolar y':\n\\[ y' = y \\cdot (\\ln(x) + 1) = x^x (1 + \\ln(x)) \\]\nConclusão: A derivada é xˣ (1 + ln(x))."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l15",
+          "unitId": "calc_u_derivatives",
+          "title": "Aula 5: Aproximação Linear e Diferenciais",
+          "conceptTitle": "Linearização: L(x) = f(a) + f'(a)(x - a)",
+          "explanation": "Curvas são difíceis de calcular de cabeça, mas retas são fáceis!\nSe você estiver bem perto de um ponto x = a, o gráfico da função e o gráfico da reta tangente são quase IDÊNTICOS!\n\nA Fórmula da Linearização:\nL(x) = f(a) + f'(a)(x - a)\n\nOlhe o gráfico abaixo (grafico_aproximacao_linear):\nQuer calcular √4.05? Em vez de usar a curva complexa √x, usamos a reta tangente em a = 4:\n• f(4) = √4 = 2\n• f'(x) = 1 / (2√x)  =>  f'(4) = 1 / 4 = 0.25\n• L(4.05) = 2 + 0.25(4.05 - 4) = 2 + 0.25(0.05) = 2.0125\n\nValor exato na calculadora: 2.01246... Erro menor que 0.0001!",
+          "lessonType": "PRACTICE",
+          "initialCode": "",
+          "hints": [
+            "Escolha um valor 'a' fácil e muito próximo do valor pedido.",
+            "L(x) é a equação da reta tangente reescrita."
+          ],
+          "solutionExplanation": "A linearização substitui a curva pela tangente nas proximidades de 'a'.",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l15_1",
+              "title": "Linearização da Função Raiz Quadrada",
+              "problemStatement": "Utilizando a reta tangente L(x) = f(a) + f'(a)(x - a) para \\[ f(x) = \\\\sqrt{x} \\] em torno de a = 4, estime o valor de √4.2:",
+              "options": [
+                "2.10",
+                "2.05",
+                "2.025",
+                "2.20",
+                "2.00"
+              ],
+              "correctIndex": 1,
+              "hint": "f(4) = √4 = 2. f'(x) = 1/(2√x) => f'(4) = 1/4 = 0.25. L(4.2) = 2 + 0.25(4.2 - 4).",
+              "stepByStepSolution": "Passo 1: Cálculo do ponto base: f(4) = √4 = 2.\nPasso 2: Cálculo da taxa de variação (derivada):\n\\[ f'(x) = \\frac{1}{2\\sqrt{x}} \\implies f'(4) = \\frac{1}{2\\sqrt{4}} = \\frac{1}{4} = 0.25 \\]\nPasso 3: Construção da aproximação linear:\n\\[ L(x) = f(4) + f'(4)(x - 4) = 2 + 0.25(x - 4) \\]\nPasso 4: Avaliação para x = 4.2 (onde Δx = 0.2):\n\\[ L(4.2) = 2 + 0.25(4.2 - 4) = 2 + 0.25(0.2) = 2 + 0.05 = 2.05 \\]\nConclusão: A aproximação linear fornece √4.2 ≈ 2.05."
+            },
+            {
+              "id": "ex_calc_l15_2",
+              "title": "Equação Geral de Linearização",
+              "problemStatement": "Se para uma função diferenciável sabemos que f(1) = 3 e f'(1) = 5, qual é a fórmula da linearização L(x) em torno de a = 1?",
+              "options": [
+                "L(x) = 5x + 3",
+                "L(x) = 3x + 5",
+                "L(x) = 5x - 2",
+                "L(x) = 5x - 5",
+                "L(x) = 3x - 2"
+              ],
+              "correctIndex": 2,
+              "hint": "L(x) = f(a) + f'(a)(x - a) = 3 + 5(x - 1). Simplifique a expressão.",
+              "stepByStepSolution": "Passo 1: Aplicação da fórmula geral da linearização:\n\\[ L(x) = f(1) + f'(1)(x - 1) \\]\nPasso 2: Substituição dos valores dados f(1) = 3 e f'(1) = 5:\n\\[ L(x) = 3 + 5(x - 1) \\]\nPasso 3: Simplificação algébrica:\n\\[ L(x) = 3 + 5x - 5 = 5x - 2 \\]\nConclusão: A reta de aproximação linear é L(x) = 5x - 2."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l16",
+          "unitId": "calc_u_derivatives",
+          "title": "Aula 6: Estudo Completo da Função e Esboço de Gráficos",
+          "conceptTitle": "Pontos Críticos, Máximos, Mínimos e Concavidade",
+          "explanation": "Esta é a parte onde unimos a 1ª e a 2ª derivada para mapear todo o comportamento do gráfico:\n\nOlhe o gráfico abaixo (grafico_estudo_funcao_max_min):\n\n1. Pontos Críticos:\n   Candidatos a extremos. Ocorrem onde f'(x) = 0 (tangente horizontal) ou onde f'(x) não existe.\n\n2. Teste da 1ª Derivada (Crescimento e Extremos):\n   • f'(x) > 0: Função CRESCENTE ↗\n   • f'(x) < 0: Função DECRESCENTE ↘\n   • Mudança de sinal:\n     (+ para -): Máximo Local 🏔️\n     (- para +): Mínimo Local 🕳️\n\n3. Teste da 2ª Derivada (Concavidade e Inflexão):\n   A 2ª derivada f''(x) mede a curvatura:\n   • f''(x) > 0: Concavidade para CIMA ⌣ ('Carinha Feliz' / copo segurando água)\n   • f''(x) < 0: Concavidade para BAIXO ⌢ ('Carinha Triste' / guarda-chuva)\n   • Ponto de Inflexão: f''(x) = 0 com MUDANÇA de concavidade!",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "f'(x) = 0 indica ponto crítico (candidato a max/min).",
+            "f''(x) > 0 indica concavidade para cima (mínimo se f'=0)."
+          ],
+          "solutionExplanation": "A 1ª derivada rege inclinação e a 2ª derivada rege concavidade.",
+          "xpReward": 45,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l16_1",
+              "title": "Teste da Segunda Derivada em Ponto Crítico",
+              "problemStatement": "Seja f(x) uma função com derivada nula f'(3) = 0 e segunda derivada f''(3) = -8. Com base no Teste da Segunda Derivada, o que podemos afirmar sobre x = 3?",
+              "options": [
+                "x = 3 é um Ponto de Mínimo Local",
+                "x = 3 é um Ponto de Máximo Local",
+                "x = 3 é um Ponto de Inflexão com concavidade nula",
+                "O teste é inconclusivo e exige análise da 3ª derivada",
+                "A função é descontínua em x = 3"
+              ],
+              "correctIndex": 1,
+              "hint": "f''(x) < 0 indica concavidade voltada para baixo (formato de sino ou topo de morro). Logo, o ponto crítico é um Máximo.",
+              "stepByStepSolution": "Passo 1: Identificação do Ponto Crítico. Como f'(3) = 0, a reta tangente é horizontal em x = 3.\nPasso 2: Análise da concavidade pela segunda derivada: f''(3) = -8 < 0.\nPasso 3: Aplicação do Teste da Segunda Derivada:\n- Se f''(c) > 0: concavidade para cima ∪ (Mínimo Local).\n- Se f''(c) < 0: concavidade para baixo ∩ (Máximo Local).\nConclusão: Como f''(3) = -8 < 0, x = 3 é indiscutivelmente um Ponto de Máximo Local."
+            },
+            {
+              "id": "ex_calc_l16_2",
+              "title": "Definição de Ponto de Inflexão",
+              "problemStatement": "O que caracteriza formalmente um Ponto de Inflexão no gráfico de uma função duas vezes diferenciável?",
+              "options": [
+                "O ponto onde a derivada primeira f'(x) atinge valor nulo",
+                "O ponto onde a função atinge o valor máximo absoluto",
+                "O ponto onde a curva muda o sentido de sua concavidade (de côncava para convexa ou vice-versa)",
+                "O ponto onde a reta tangente torna-se estritamente vertical",
+                "O ponto de cruzamento com o eixo das ordenadas"
+              ],
+              "correctIndex": 2,
+              "hint": "Inflexão refere-se à mudança de curvatura/concavidade, correspondendo à mudança de sinal de f''(x).",
+              "stepByStepSolution": "Passo 1: Definição geométrica. Um ponto de inflexão é o ponto onde o gráfico de uma função contínua muda o sentido da sua concavidade (de côncava para cima para côncava para baixo, ou vice-versa).\nPasso 2: Condição necessária. Em funções diferenciáveis de segunda ordem, f''(x) = 0 ou não existe no ponto de inflexão.\nPasso 3: Condição suficiente. A segunda derivada f''(x) deve obrigatoriamente alternar de sinal ao cruzar o ponto.\nConclusão: Um ponto de inflexão é definido pela mudança do sentido da concavidade da curva."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l17",
+          "unitId": "calc_u_derivatives",
+          "title": "Aula 7: Regra de L'Hôpital (O Shortcut de Ouro)",
+          "conceptTitle": "Destravando 0/0 e ∞/∞ com Derivadas",
+          "explanation": "Quando você estiver calculando um limite e cair numa indeterminação do tipo 0/0 ou ∞/∞, a Regra de L'Hôpital autoriza você a DERIVAR o numerador e o denominador SEPARADAMENTE:\n\nlim_{x -> a} [f(x) / g(x)] = lim_{x -> a} [f'(x) / g'(x)]\n\nExemplo Clássico:\nlim_{x -> 0} sen(x) / x  =>  (0/0)\n\nDerivando em cima e embaixo separadamente:\n• (sen x)' = cos x\n• (x)' = 1\n\nlim_{x -> 0} cos(x) / 1 = cos(0) / 1 = 1 / 1 = 1!\n\nATENÇÃO: Não use a Regra do Quociente aqui! Você apenas deriva o de cima sozinho e o de baixo sozinho.",
+          "lessonType": "PRACTICE",
+          "initialCode": "",
+          "hints": [
+            "L'Hôpital só pode ser aplicada em indeterminações do tipo 0/0 ou ∞/∞.",
+            "Derive o de cima sozinho e o de baixo sozinho (NÃO use a regra do quociente)."
+          ],
+          "solutionExplanation": "A Regra de L'Hôpital converte limites indeterminados em limites de derivadas.",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l17_1",
+              "title": "Aplicação Direta da Regra de L'Hôpital",
+              "problemStatement": "Calcule o limite que resulta na forma indeterminada 0/0 aplicando a Regra de L'Hôpital: \\[ \\\\lim_{x \\\\to 0} \\\\frac{e^x - 1}{x} \\]",
+              "options": [
+                "0",
+                "e",
+                "1",
+                "+∞",
+                "Indeterminado"
+              ],
+              "correctIndex": 2,
+              "hint": "Substituindo x = 0 temos (e⁰ - 1)/0 = 0/0. Derive o numerador (eˣ)' = eˣ e o denominador (x)' = 1.",
+              "stepByStepSolution": "Passo 1: Verificação da indeterminação:\n\\[ \\lim_{x \\to 0} (e^x - 1) = e^0 - 1 = 0 \\quad \\text{e} \\quad \\lim_{x \\to 0} x = 0 \\implies \\frac{0}{0} \\]\nPasso 2: Aplicação do Teorema de L'Hôpital (derivar numerador e denominador separadamente):\n\\[ \\lim_{x \\to 0} \\frac{e^x - 1}{x} = \\lim_{x \\to 0} \\frac{\\frac{d}{dx}(e^x - 1)}{\\frac{d}{dx}(x)} \\]\nPasso 3: Cálculo das derivadas: (eˣ - 1)' = eˣ e (x)' = 1.\nPasso 4: Avaliação do novo limite:\n\\[ \\lim_{x \\to 0} \\frac{e^x}{1} = \\frac{e^0}{1} = \\frac{1}{1} = 1 \\]\nConclusão: O limite é exatamente igual a 1."
+            },
+            {
+              "id": "ex_calc_l17_2",
+              "title": "Regra de L'Hôpital em Quociente Polinomial",
+              "problemStatement": "Avalie o limite racional utilizando a Regra de L'Hôpital: \\[ \\\\lim_{x \\\\to 2} \\\\frac{x^3 - 8}{x - 2} \\]",
+              "options": [
+                "4",
+                "8",
+                "12",
+                "16",
+                "0"
+              ],
+              "correctIndex": 2,
+              "hint": "2³ - 8 = 0 e 2 - 2 = 0 (forma 0/0). Derive: (x³ - 8)' = 3x² e (x - 2)' = 1.",
+              "stepByStepSolution": "Passo 1: Substituição direta: (2³ - 8)/(2 - 2) = 0/0 (indeterminação de Cauchy).\nPasso 2: Aplicação da Regra de L'Hôpital:\n\\[ \\lim_{x \\to 2} \\frac{x^3 - 8}{x - 2} = \\lim_{x \\to 2} \\frac{\\frac{d}{dx}(x^3 - 8)}{\\frac{d}{dx}(x - 2)} \\]\nPasso 3: Cálculo das derivadas imediatas:\n\\[ \\frac{d}{dx}(x^3 - 8) = 3x^2 \\quad \\text{e} \\quad \\frac{d}{dx}(x - 2) = 1 \\]\nPasso 4: Cálculo por substituição direta no novo quociente:\n\\[ \\lim_{x \\to 2} \\frac{3x^2}{1} = 3(2)^2 = 3(4) = 12 \\]\nConclusão: O limite é 12."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l18",
+          "unitId": "calc_u_derivatives",
+          "title": "Aula 8: Problemas de Otimização (A Aplicação Suprema)",
+          "conceptTitle": "Maximizando Lucro e Minimizando Custo em 4 Passos",
+          "explanation": "Problemas de otimização pedem para você encontrar a MAIOR área, o MENOR custo, o MAIOR lucro ou o MENOR tempo.\n\nRoteiro de Resolução em 4 Passos:\n1. Escrever a Equação Objetivo:\n   Crie a fórmula da grandeza que você quer maximizar/minimizar (ex: Área A = x · y).\n\n2. Deixar com Apenas UMA Variável:\n   Use as restrições do problema (ex: perímetro fixo 2x + 2y = 100 => y = 50 - x) para substituir na equação objetivo:\n   A(x) = x · (50 - x) = 50x - x²\n\n3. Derivar e Igualar a Zero:\n   Calcule A'(x) = 0 para achar o ponto crítico:\n   A'(x) = 50 - 2x = 0  =>  2x = 50  =>  x = 25\n\n4. Verificar o Resultado:\n   Confirme pela 2ª derivada: A''(x) = -2 < 0 (concavidade triste => MÁXIMO absoluto!).\n   Dimensões ótimas: x = 25 e y = 25 (um quadrado perfeito com área máxima de 625 m²)!",
+          "lessonType": "CHALLENGE",
+          "initialCode": "",
+          "hints": [
+            "Sempre use a restrição do problema para eliminar uma das incógnitas.",
+            "O ponto ótimo ocorre onde a derivada da função objetivo se anula (f'(x) = 0)."
+          ],
+          "solutionExplanation": "Otimização localiza o ápice ou vale através do ponto crítico f'(x) = 0.",
+          "xpReward": 50,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l18_1",
+              "title": "Otimização de Área com Restrição de Perímetro",
+              "problemStatement": "Um fazendeiro possui 100 metros lineares de cerca para cercar um terreno retangular de dimensões x e y (perímetro 2x + 2y = 100). Qual dimensão x maximiza a área do terreno?",
+              "options": [
+                "x = 10 metros",
+                "x = 20 metros",
+                "x = 25 metros",
+                "x = 50 metros",
+                "x = 30 metros"
+              ],
+              "correctIndex": 2,
+              "hint": "Perímetro: 2x + 2y = 100 => y = 50 - x. Área A(x) = x(50 - x) = 50x - x². Derive e iguale a zero: A'(x) = 50 - 2x = 0.",
+              "stepByStepSolution": "Passo 1: Equação de vínculo (restrição):\n\\[ 2x + 2y = 100 \\implies x + y = 50 \\implies y = 50 - x \\]\nPasso 2: Formulação da função objetivo a maximizar (Área = largura × comprimento):\n\\[ A(x) = x \\cdot y = x(50 - x) = 50x - x^2 \\]\nPasso 3: Derivação para encontrar o ponto crítico:\n\\[ A'(x) = \\frac{d}{dx}(50x - x^2) = 50 - 2x \\]\nPasso 4: Igualar a derivada a zero (A'(x) = 0):\n\\[ 50 - 2x = 0 \\implies 2x = 50 \\implies x = 25\\text{ metros} \\]\nPasso 5: Teste da segunda derivada para confirmação de máximo:\n\\[ A''(x) = -2 < 0 \\implies \\text{Ponto de Máximo Global} \\]\nConclusão: O valor de x que maximiza a área cercada é x = 25 metros (um quadrado de 25m × 25m com área máxima de 625 m²)."
+            },
+            {
+              "id": "ex_calc_l18_2",
+              "title": "Minimização de Custo de Produção",
+              "problemStatement": "Uma fábrica modelou o seu custo operacional diário pela função \\[ C(x) = x^2 - 40x + 500 \\] onde x é a quantidade de lotes produzidos. Quantos lotes x minimizam o custo?",
+              "options": [
+                "10 lotes",
+                "40 lotes",
+                "20 lotes",
+                "25 lotes",
+                "15 lotes"
+              ],
+              "correctIndex": 2,
+              "hint": "Derive a função de custo: C'(x) = 2x - 40. Iguale a zero para encontrar o ponto crítico.",
+              "stepByStepSolution": "Passo 1: Função Custo: C(x) = x² - 40x + 500.\nPasso 2: Cálculo da taxa de variação (Custo Marginal):\n\\[ C'(x) = \\frac{d}{dx}(x^2 - 40x + 500) = 2x - 40 \\]\nPasso 3: Ponto crítico onde o custo cessa de decrescer e atinge o mínimo (C'(x) = 0):\n\\[ 2x - 40 = 0 \\implies 2x = 40 \\implies x = 20\\text{ lotes} \\]\nPasso 4: Teste da 2ª derivada para confirmação de mínimo:\n\\[ C''(x) = 2 > 0 \\implies \\text{Concavidade voltada para cima (Mínimo Local)} \\]\nConclusão: A quantidade que minimiza o custo é de 20 lotes operacionais."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "calc_u_integrals",
+      "unitNumber": 3,
+      "tier": "BASIC",
+      "title": "Integrais e Teorema Fundamental",
+      "description": "Primitivas, regra da potência, integrais imediatas, linearidade, substituição, integração por partes, frações parciais e Teorema Fundamental do Cálculo.",
+      "category": "Matemática",
+      "subject": "Cálculo I",
+      "lessons": [
+        {
+          "id": "calc_l19",
+          "unitId": "calc_u_integrals",
+          "title": "Aula 1: O que significa 'Integrar'? (Primitivas)",
+          "conceptTitle": "A Antiderivada Geral e a Constante de Integração C",
+          "explanation": "Integrar é fazer o caminho inverso da derivada. Se a derivada parte da posição e calcula a velocidade instantânea, a integral parte da velocidade e reconstrói o deslocamento total!\n\n• A Notação:\n  ∫ f(x) dx = F(x) + C  <=>  F'(x) = f(x)\n\n• Por que somar + C?\n  Como a derivada de qualquer constante é zero [d/dx(x² + 7) = 2x], existem infinitas funções primitivas que possuem a mesma derivada. A constante C representa toda essa família!",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Integrar é antiderivar: procure a função cuja derivada seja o integrando.",
+            "Lembre-se sempre de incluir a constante + C nas integrais indefinidas."
+          ],
+          "solutionExplanation": "A integral indefinida representa toda a família de primitivas de uma função.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l19_1",
+              "title": "Identificação de Primitiva e Constante",
+              "problemStatement": "Qual é a família de primitivas da função f(x) = 2x ?",
+              "options": [
+                "F(x) = x² + C",
+                "F(x) = 2 + C",
+                "F(x) = x³/3 + C",
+                "F(x) = 2x² + C",
+                "F(x) = x²"
+              ],
+              "correctIndex": 0,
+              "hint": "Qual função quando derivada resulta exatamente em 2x?",
+              "stepByStepSolution": "Passo 1: Reconheça que d/dx[x²] = 2x.\nPasso 2: Adicione a constante arbitrária de integração C.\nConclusão: ∫ 2x dx = x² + C."
+            },
+            {
+              "id": "ex_calc_l19_2",
+              "title": "Propriedade Fundamental da Antiderivada",
+              "problemStatement": "Se F'(x) = f(x) para todo x no domínio, o que afirma a relação fundamental do cálculo infinitesimal?",
+              "options": [
+                "∫ f(x) dx = F(x) + C",
+                "∫ F(x) dx = f(x) + C",
+                "F(x) * f(x) = C",
+                "f'(x) = F(x)",
+                "∫ f'(x) dx = 0"
+              ],
+              "correctIndex": 0,
+              "hint": "A integral indefinida é a operação inversa direta da derivação.",
+              "stepByStepSolution": "Passo 1: A definição formal de integral indefinida estabelece que se F'(x) = f(x), então ∫ f(x) dx = F(x) + C."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l20",
+          "unitId": "calc_u_integrals",
+          "title": "Aula 2: A Mecânica Básica: Regra da Potência",
+          "conceptTitle": "O Inverso da Regra do Tombo: ∫ xⁿ dx = x^(n+1)/(n+1) + C",
+          "explanation": "Na derivada (regra do tombo), você multiplicava pelo expoente e subtraía 1.\nNa integral, você faz exatamente o oposto: SOMA 1 ao expoente e DIVIDE pelo novo expoente!\n\nFórmula Geral:\n∫ xⁿ dx = [x^(n+1) / (n + 1)] + C   (para todo n ≠ -1)\n\n• Exemplos Práticos:\n  ∫ x³ dx = x⁴/4 + C\n  ∫ 1 dx = x + C  (pois x⁰ -> x¹/1)\n  ∫ √x dx = ∫ x^(1/2) dx = x^(3/2) / (3/2) + C = (2/3)x^(3/2) + C",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Converta raízes e potências no denominador para potências fracionárias ou negativas antes de integrar.",
+            "Dividir por uma fração a/b é o mesmo que multiplicar por b/a."
+          ],
+          "solutionExplanation": "Soma-se 1 ao expoente e divide-se pelo novo valor.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l20_1",
+              "title": "Integral de Potência com Raiz (Exercício 50102)",
+              "problemStatement": "Calcule a integral da função radical pela regra da potência: \\[ \\int \\sqrt{x} \\, dx \\]",
+              "options": [
+                "\\frac{2}{3}x^{3/2} + C",
+                "\\frac{1}{2\\sqrt{x}} + C",
+                "\\frac{3}{2}x^{3/2} + C",
+                "\\frac{2}{3}\\sqrt{x} + C",
+                "x^{3/2} + C"
+              ],
+              "correctIndex": 0,
+              "hint": "Reescreva √x como x^(1/2). Some 1: 1/2 + 1 = 3/2. Divida por 3/2.",
+              "stepByStepSolution": "Passo 1: Escreva como expoente: √x = x^(1/2).\nPasso 2: Some 1 ao expoente: 1/2 + 1 = 3/2.\nPasso 3: Divida por 3/2: x^(3/2) / (3/2) = (2/3) x^(3/2) + C."
+            },
+            {
+              "id": "ex_calc_l20_2",
+              "title": "Potência no Denominador",
+              "problemStatement": "Calcule a integral da função racional: \\[ \\int \\frac{1}{x^3} \\, dx \\]",
+              "options": [
+                "-\\frac{1}{2x^2} + C",
+                "\\frac{1}{4x^4} + C",
+                "\\ln|x^3| + C",
+                "-\\frac{3}{x^4} + C",
+                "\\frac{1}{2x^2} + C"
+              ],
+              "correctIndex": 0,
+              "hint": "1/x³ = x^(-3). Somando 1 ao expoente: -3 + 1 = -2.",
+              "stepByStepSolution": "Passo 1: Reescreva com expoente negativo: ∫ x^(-3) dx.\nPasso 2: Some 1: -3 + 1 = -2.\nPasso 3: Divida pelo novo expoente: x^(-2) / (-2) + C = -1 / (2x²) + C."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l21",
+          "unitId": "calc_u_integrals",
+          "title": "Aula 3: Exponenciais, Logaritmos e Funções Trigonométricas",
+          "conceptTitle": "Integrais Imediatas Clássicas",
+          "explanation": "Quando n = -1 na regra da potência, teríamos divisão por zero. A primitiva de 1/x é o logaritmo natural!\n\n• Primitiva do Logaritmo:\n  ∫ (1/x) dx = ln|x| + C\n\n• Primitivas Exponenciais:\n  ∫ eˣ dx = eˣ + C\n  ∫ aˣ dx = aˣ / ln(a) + C\n\n• Primitivas Trigonométricas:\n  ∫ cos(x) dx = sin(x) + C  (atenção: sinal POSITIVO!)\n  ∫ sin(x) dx = -cos(x) + C (atenção: sinal NEGATIVO!)\n  ∫ sec²(x) dx = tan(x) + C",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Cuidado com os sinais trigonométricos: derivada de sin é cos, mas integral de sin é -cos!",
+            "A integral de 1/x sempre leva módulo no argumento: ln|x|."
+          ],
+          "solutionExplanation": "Integrais imediatas que desfazem as derivadas fundamentais.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l21_1",
+              "title": "Integral Trigonométrica Imediata",
+              "problemStatement": "Calcule a integral indefinida: \\[ \\int (3\\cos(x) - 4\\sin(x)) \\, dx \\]",
+              "options": [
+                "3\\sin(x) + 4\\cos(x) + C",
+                "-3\\sin(x) - 4\\cos(x) + C",
+                "3\\sin(x) - 4\\cos(x) + C",
+                "-3\\sin(x) + 4\\cos(x) + C",
+                "3\\cos(x) + 4\\sin(x) + C"
+              ],
+              "correctIndex": 0,
+              "hint": "∫ cos(x) dx = sin(x) e ∫ sin(x) dx = -cos(x). Menos com menos dá mais!",
+              "stepByStepSolution": "Passo 1: 3 ∫ cos(x) dx = 3 sin(x).\nPasso 2: -4 ∫ sin(x) dx = -4 (-cos(x)) = +4 cos(x).\nConclusão: 3 sin(x) + 4 cos(x) + C."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l22",
+          "unitId": "calc_u_integrals",
+          "title": "Aula 4: Propriedades da Linearidade na Integral",
+          "conceptTitle": "Integração Termo a Termo e Fatores Constantes",
+          "explanation": "Assim como o limite e a derivada, a integral é um OPERADOR LINEAR:\n\n1. Constante multiplicando 'pula' para fora da integral:\n   ∫ c * f(x) dx = c * ∫ f(x) dx\n\n2. A integral da soma (ou subtração) é a soma das integrais:\n   ∫ [f(x) ± g(x)] dx = ∫ f(x) dx ± ∫ g(x) dx",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Quebre polinômios termo a termo e integre cada potência individualmente."
+          ],
+          "solutionExplanation": "Aplicação de linearidade direta.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l22_1",
+              "title": "Linearidade Completa (Exercício 50101)",
+              "problemStatement": "Calcule a integral indefinida aplicando a linearidade e as regras imediatas: \\[ \\int \\left( 4x^3 - 3\\cos(x) + \\frac{5}{x} \\right) dx \\]",
+              "options": [
+                "x^4 - 3\\sin(x) + 5\\ln|x| + C",
+                "12x^2 + 3\\sin(x) - \\frac{5}{x^2} + C",
+                "x^4 + 3\\sin(x) + 5\\ln|x| + C",
+                "\\frac{4x^4}{3} - 3\\cos(x) + 5x + C",
+                "x^4 - 3\\sin(x) + \\frac{5}{x^2} + C"
+              ],
+              "correctIndex": 0,
+              "hint": "Integre termo a termo: 4(x⁴/4) - 3(sin x) + 5(ln|x|) + C.",
+              "stepByStepSolution": "Passo 1: 4 ∫ x³ dx = 4(x⁴/4) = x⁴.\nPasso 2: -3 ∫ cos(x) dx = -3 sin(x).\nPasso 3: 5 ∫ (1/x) dx = 5 ln|x|.\nResultado Final: x⁴ - 3 sin(x) + 5 ln|x| + C."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l23",
+          "unitId": "calc_u_integrals",
+          "title": "Aula 5: Técnica de Substituição (Regra da Cadeia ao Contrário)",
+          "conceptTitle": "A Técnica da Mudança de Variável (u-substituição)",
+          "explanation": "Quando você tem uma função composta multiplicada pela derivada da função interna, usa-se a MUDANÇA DE VARIÁVEL (u-substituição).\n\nFórmula de Substituição:\n∫ f(g(x)) * g'(x) dx = ∫ f(u) du   (onde u = g(x) e du = g'(x) dx)\n\n• Roteiro Infalível:\n  1. Identifique a 'função de dentro' mais complicada e chame de u.\n  2. Calcule du = u'(x) dx.\n  3. Veja se du (ou um múltiplo constante dele) está sobrando no resto da integral.\n  4. Substitua tudo para a variável u, resolva a integral imediata e depois devolva x!",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Procure pares onde uma parte é a função u e a outra parte é a sua derivada du.",
+            "Não esqueça de substituir o dx por du/u'(x)."
+          ],
+          "solutionExplanation": "A u-substituição transforma integrais complexas em integrais imediatas.",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l23_1",
+              "title": "Substituição Trigonométrica (Exercício 50201)",
+              "problemStatement": "Calcule pelo método da substituição: \\[ \\int 2x \\cos(x^2) \\, dx \\]",
+              "options": [
+                "\\sin(x^2) + C",
+                "-\\sin(x^2) + C",
+                "2x\\sin(x^2) + C",
+                "\\cos(x^2) + C",
+                "\\frac{1}{2}\\sin(x^2) + C"
+              ],
+              "correctIndex": 0,
+              "hint": "Chame u = x², então du = 2x dx.",
+              "stepByStepSolution": "Passo 1: Defina u = x² => du = 2x dx.\nPasso 2: A integral vira ∫ cos(u) du.\nPasso 3: ∫ cos(u) du = sin(u) + C.\nPasso 4: Retornando a x: sin(x²) + C."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l24",
+          "unitId": "calc_u_integrals",
+          "title": "Aula 6: Integração por Partes (Regra do Produto ao Contrário)",
+          "conceptTitle": "A Fórmula: ∫ u dv = u*v - ∫ v du (Regra LIATE)",
+          "explanation": "Quando o integrando é a multiplicação de duas funções de naturezas diferentes (por exemplo, x * eˣ ou x * cos(x)), usamos a INTEGRAÇÃO POR PARTES.\n\nFórmula Mestra:\n∫ u dv = u * v - ∫ v du\n\n• Como escolher quem é 'u'? (Prioridade LIATE):\n  L - Logaritmos [ln(x)]\n  I - Inversas trigonométricas [arctan(x), arcsin(x)]\n  A - Algébricas [x, x², x³]\n  T - Trigonométricas [sin(x), cos(x)]\n  E - Exponenciais [eˣ, 2ˣ]\n  Quem vier primeiro no LIATE ganha o papel de u! O que sobrou vira dv.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Memorize a frase: 'Um Dia Vi Uma Vaca Vestida De Uniforme' (u dv = u v - v du).",
+            "A ordem LIATE sempre define quem é o melhor u para ser derivado."
+          ],
+          "solutionExplanation": "Integração por partes reduz integrais de produtos a formas simples.",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l24_1",
+              "title": "Integração por Partes Clássica (Exercício 50202)",
+              "problemStatement": "Calcule utilizando a fórmula de integração por partes: \\[ \\int x e^x \\, dx \\]",
+              "options": [
+                "e^x(x - 1) + C",
+                "e^x(x + 1) + C",
+                "x^2 e^x + C",
+                "\\frac{x^2}{2}e^x + C",
+                "e^x - x + C"
+              ],
+              "correctIndex": 0,
+              "hint": "Pelo LIATE: u = x (algébrica) => du = dx; dv = eˣ dx => v = eˣ.",
+              "stepByStepSolution": "Passo 1: u = x => du = dx.\nPasso 2: dv = eˣ dx => v = eˣ.\nPasso 3: ∫ u dv = u*v - ∫ v du = x eˣ - ∫ eˣ dx = x eˣ - eˣ + C.\nPasso 4: Fatorando eˣ: eˣ(x - 1) + C."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l25",
+          "unitId": "calc_u_integrals",
+          "title": "Aula 7: Frações Parciais e Substituição Trigonométrica",
+          "conceptTitle": "Decomposição de Funções Racionais P(x)/Q(x)",
+          "explanation": "Quando temos frações racionais cujo denominador pode ser fatorado em termos lineares distintos (x - r₁)(x - r₂), decompomos em frações parciais simples:\n\nExemplo:\n1 / [(x - 1)(x + 1)] = [A / (x - 1)] + [B / (x + 1)]\n\nMultiplicando pelo denominador comum:\n1 = A(x + 1) + B(x - 1)\n\nSubstituindo raízes:\n• Se x = 1: 1 = A(2) => A = 1/2\n• Se x = -1: 1 = B(-2) => B = -1/2\n\nCada fração simples resulta em um logaritmo natural imediato!",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Fatore o denominador primeiro antes de montar as constantes A e B.",
+            "Diferença de quadrados: x² - a² = (x - a)(x + a)."
+          ],
+          "solutionExplanation": "Frações parciais transformam quocientes polinomiais em somas de logaritmos.",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l25_1",
+              "title": "Frações Parciais (Exercício 50301)",
+              "problemStatement": "Calcule utilizando a técnica de decomposição em frações parciais: \\[ \\int \\frac{1}{x^2 - 1} \\, dx \\]",
+              "options": [
+                "\\frac{1}{2}\\ln\\left|\\frac{x - 1}{x + 1}\\right| + C",
+                "\\ln|x^2 - 1| + C",
+                "\\arctan(x) + C",
+                "\\frac{1}{2}\\ln\\left|\\frac{x + 1}{x - 1}\\right| + C",
+                "\\ln|x - 1| - \\ln|x + 1| + C"
+              ],
+              "correctIndex": 0,
+              "hint": "1/(x² - 1) = (1/2)/(x-1) - (1/2)/(x+1). Use ln(A) - ln(B) = ln(A/B).",
+              "stepByStepSolution": "Passo 1: Fatoração: x² - 1 = (x - 1)(x + 1).\nPasso 2: Decomposição: 1/[(x-1)(x+1)] = 1/2/(x-1) - 1/2/(x+1).\nPasso 3: Integral: (1/2) ln|x - 1| - (1/2) ln|x + 1| + C.\nPasso 4: Propriedade dos logaritmos: (1/2) ln|(x-1)/(x+1)| + C."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "calc_l26",
+          "unitId": "calc_u_integrals",
+          "title": "Aula 8: A Integral Definida e o Teorema Fundamental (TFC)",
+          "conceptTitle": "Cálculo de Área e a Relação [F(b) - F(a)]",
+          "explanation": "A Integral Definida calcula o ACÚMULO TOTAL ou a ÁREA LÍQUIDA sob o gráfico de f(x) entre os limites a e b.\n\nO Teorema Fundamental do Cálculo (TFC - Parte 2):\nSe f é contínua em [a, b] e F é qualquer primitiva de f:\n∫_{a}^{b} f(x) dx = F(b) - F(a) = [F(x)]_{a}^{b}\n\n• Nota Fundamental:\n  Na integral definida, NÃO precisamos somar a constante + C, pois:\n  [F(b) + C] - [F(a) + C] = F(b) - F(a)!",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Calcule a primitiva F(x), aplique no limite superior b, depois no limite inferior a e subtraia: F(b) - F(a).",
+            "Integrais definidas resultam em um NÚMERO real, não em uma função."
+          ],
+          "solutionExplanation": "O TFC estabelece a ligação definitiva entre a antiderivada e o cálculo de áreas.",
+          "xpReward": 45,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_calc_l26_1",
+              "title": "Área sob Curva pelo TFC (Exercício 50401)",
+              "problemStatement": "Calcule o valor numérico da integral definida aplicando o Teorema Fundamental do Cálculo: \\[ \\int_{0}^{2} 3x^2 \\, dx \\]",
+              "options": [
+                "8",
+                "6",
+                "12",
+                "16",
+                "24"
+              ],
+              "correctIndex": 0,
+              "hint": "A primitiva de 3x² é x³. Calcule F(2) - F(0) = 2³ - 0³.",
+              "stepByStepSolution": "Passo 1: Primitiva F(x) = ∫ 3x² dx = x³.\nPasso 2: Limite superior: F(2) = 2³ = 8.\nPasso 3: Limite inferior: F(0) = 0³ = 0.\nPasso 4: TFC: F(2) - F(0) = 8 - 0 = 8."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    }
+  ]
+}

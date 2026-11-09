@@ -1,0 +1,3022 @@
+{
+  "subjectId": "enem_math",
+  "title": "Matemática e suas Tecnologias ENEM",
+  "category": "Matemática",
+  "unitCount": 14,
+  "lessonCount": 79,
+  "units": [
+    {
+      "id": "unit_mod_01_matematica_basica",
+      "unitNumber": 1,
+      "tier": "BASIC",
+      "title": "Matemática Básica",
+      "description": "Operações fundamentais, frações, decimais, MMC, potenciação, unidades de medida, proporções, regras de três e porcentagem.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m1_a1",
+          "unitId": "mod_01_matematica_basica",
+          "title": "Aula 1: Operações com números inteiros, fracionários e decimais",
+          "conceptTitle": "Operações Fundamentais & Frações",
+          "explanation": "# Operações Básicas: Adição, Subtração, Multiplicação e Divisão\n\nAs quatro operações fundamentais são o alicerce de mais de 35% de todas as questões do ENEM. \nNo ENEM, raramente as operações aparecem puras; elas estão inseridas em problemas de contabilidade doméstica, consumo de combustível, leitura de relógios de energia e divisão de heranças.\n\n### Hierarquia das Operações (Regra PEMDAS)\nEm expressões matemáticas com múltiplos operadores, a prioridade absoluta de execução é:\n1. Parênteses, Colchetes e Chaves: `( )`, `[ ]`, `{ }`\n2. Expoentes e Raízes: \\( a^n \\) e \\( \\sqrt{a} \\)\n3. Multiplicações e Divisões: na ordem em que aparecem (da esquerda para a direita).\n4. Adições e Subtrações: na ordem em que aparecem.\n\n### Regras de Sinais\n• Na multiplicação e divisão: sinais iguais resultam em positivo (`+`), sinais diferentes resultam em negativo (`-`).\n• Na adição e subtração: sinais iguais somam e mantêm o sinal; sinais diferentes subtraem e mantêm o sinal do número de maior valor absoluto.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m1_a1_1",
+              "title": "Contextualizada: Economia e Combustível",
+              "problemStatement": "Um motorista realizou uma viagem de 480 km. O carro tem consumo médio de 12 km por litro de gasolina. Sabendo que o preço do litro de gasolina é R$ 5,60 e que foram pagos R$ 34,00 em pedágios, qual foi o custo total com combustível e pedágios nessa viagem?",
+              "options": [
+                "R$ 310,00",
+                "R$ 280,00",
+                "R$ 268,00",
+                "R$ 258,00",
+                "R$ 224,00"
+              ],
+              "correctIndex": 3,
+              "hint": "Primeiro calcule a quantidade de litros dividindo a distância pelo consumo médio.",
+              "stepByStepSolution": "1. Litros consumidos: 480 / 12 = 40 litros.\n2. Custo com gasolina: 40 * 5,60 = R$ 224,00.\n3. Custo total com pedágio: 224,00 + 34,00 = R$ 258,00."
+            },
+            {
+              "id": "ex_m1_a1_2",
+              "title": "Expressão Numérica Aplicada",
+              "problemStatement": "Em uma promoção, um produto que custava R$ 180,00 teve um desconto de R$ 25,00 e o valor restante foi parcelado em 5 prestações iguais. Qual é o valor de cada prestação?",
+              "options": [
+                "R$ 31,00",
+                "R$ 32,50",
+                "R$ 36,00",
+                "R$ 35,00",
+                "R$ 29,00"
+              ],
+              "correctIndex": 0,
+              "hint": "Subtraia o desconto do valor original e depois divida pelo número de parcelas.",
+              "stepByStepSolution": "1. Valor pós-desconto: 180 - 25 = 155.\n2. Cada parcela: 155 / 5 = R$ 31,00."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m1_a2",
+          "unitId": "mod_01_matematica_basica",
+          "title": "Aula 2: Múltiplos e divisores (MMC e MDC)",
+          "conceptTitle": "Aritmética: MMC e MDC",
+          "explanation": "# Frações e Números Decimais\n\nFrações representam partes de um todo, proporções e divisões. No ENEM, frações surgem em dosagens de medicamentos, receitas, mistura de tintas e cálculo de rendimentos.\n\n### Operações com Frações\n• **Adição/Subtração com denominadores diferentes:** Encontra-se o MMC dos denominadores para criar frações equivalentes com base comum.\n• **Multiplicação:** Multiplica-se numerador por numerador e denominador por denominador: \\( \\frac{a}{b} \\cdot \\frac{c}{d} = \\frac{a \\cdot c}{b \\cdot d} \\).\n• **Divisão:** Multiplica-se a primeira fração pelo inverso da segunda: \\( \\frac{a}{b} \\div \\frac{c}{d} = \\frac{a}{b} \\cdot \\frac{d}{c} \\).\n\n### Conversão Decimal-Fração\n• `0,25` = 25/100 = 1/4\n• `0,5` = 5/10 = 1/2\n• `0,75` = 75/100 = 3/4\n• `0,125` = 125/1000 = 1/8",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m1_a2_1",
+              "title": "Contextualizada: Soma de Frações e Volume",
+              "problemStatement": "Uma cozinheira utilizou 3/4 de xícara de açúcar para uma massa e 2/5 de xícara para o recheio. Qual foi o total de açúcar utilizado em número decimal?",
+              "options": [
+                "1,20 xícaras",
+                "1,15 xícaras",
+                "1,25 xícaras",
+                "1,05 xícaras",
+                "1,35 xícaras"
+              ],
+              "correctIndex": 1,
+              "hint": "Converta 3/4 e 2/5 para decimais ou encontre o MMC(4, 5).",
+              "stepByStepSolution": "3/4 = 0,75. 2/5 = 0,40. Total = 0,75 + 0,40 = 1,15 xícaras."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m1_a3",
+          "unitId": "mod_01_matematica_basica",
+          "title": "Aula 3: Potenciação e radiciação",
+          "conceptTitle": "Potências e Raízes",
+          "explanation": "# Múltiplos e Divisores: MMC e MDC\n\nProblemas de encontros periódicos e divisão máxima em partes iguais são clássicos absolutos do ENEM.\n\n### Mínimo Múltiplo Comum (MMC)\nO menor número positivo que é múltiplo simultâneo de dois ou mais números. \n**Palavras-chave no ENEM:** *Quando se encontrarão novamente?*, *Repetição simultânea*, *Coincidência temporal*.\n\n### Máximo Divisor Comum (MDC)\nO maior número que divide exatamente dois ou mais números sem deixar resto.\n**Palavras-chave no ENEM:** *Dividir em pedaços iguais de maior tamanho possível*, *Sem sobrar nada*, *Maior comprimento comum*.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m1_a3_1",
+              "title": "Contextualizada: Plantão Médico e MMC",
+              "problemStatement": "Dois médicos dão plantão em um hospital de emergência. O médico A dá plantão a cada 6 dias e o médico B a cada 8 dias. Se ambos deram plantão juntos no dia 1º de março, quantos dias depois voltarão a dar plantão juntos?",
+              "options": [
+                "36 dias",
+                "16 dias",
+                "48 dias",
+                "12 dias",
+                "24 dias"
+              ],
+              "correctIndex": 4,
+              "hint": "Encontre o Menor Múltiplo Comum entre 6 e 8.",
+              "stepByStepSolution": "Fatorando 6 e 8 simultaneamente:\n6, 8 | 2\n3, 4 | 2\n3, 2 | 2\n3, 1 | 3\n1, 1 | MMC = 2³ * 3 = 24 dias."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m1_a4",
+          "unitId": "mod_01_matematica_basica",
+          "title": "Aula 4: Notação científica e ordem de grandeza",
+          "conceptTitle": "Notação Científica",
+          "explanation": "# Razão, Proporção e Escalas\n\nRazão é a comparação entre duas grandezas por meio de uma divisão: \\( R = \\frac{a}{b} \\).\nUma proporção é a igualdade entre duas razões: \\( \\frac{a}{b} = \\frac{c}{d} \\).\n\n### Escalas Cartográficas\nA escala de um mapa ou maquete compara a medida no desenho (`d`) com a medida real (`D`):\n\\( E = \\frac{d}{D} \\).\n\n**Atenção Crítica no ENEM:**\n• Escala linear (comprimento): \\( E = \\frac{d}{D} \\)\n• Escala de área (superfície): \\( E^2 = \\frac{A_{\\text{mapa}}}{A_{\\text{real}}} \\)\n• Escala volumétrica (capacidade): \\( E^3 = \\frac{V_{\\text{maquete}}}{V_{\\text{real}}} \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m1_a4_1",
+              "title": "Contextualizada: Escala Cartográfica",
+              "problemStatement": "Em uma planta arquitetônica desenhada na escala 1:50, a sala de um apartamento possui 8 cm de comprimento por 6 cm de largura. As dimensões reais dessa sala são:",
+              "options": [
+                "4 m x 3 m",
+                "40 m x 30 m",
+                "4,5 m x 3,5 m",
+                "5 m x 4 m",
+                "8 m x 6 m"
+              ],
+              "correctIndex": 0,
+              "hint": "Multiplique cada dimensão por 50 e converta centímetros para metros.",
+              "stepByStepSolution": "Comprimento: 8 cm * 50 = 400 cm = 4 metros.\nLargura: 6 cm * 50 = 300 cm = 3 metros."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m1_a5",
+          "unitId": "mod_01_matematica_basica",
+          "title": "Aula 5: Sistema métrico decimal e conversão de unidades (comprimento, área, volume, massa, capacidade, tempo)",
+          "conceptTitle": "Conversão de Unidades",
+          "explanation": "# Regra de Três Simples e Composta\n\nA regra de três permite encontrar um valor desconhecido a partir de grandezas proporcionais.\n\n### Grandezas Diretamente Proporcionais (GDP)\nQuando o aumento de uma grandeza provoca o aumento proporcional da outra.\n*Exemplo:* Quantidade de combustível e distância percorrida por um veículo.\n*Cálculo:* Multiplica-se em cruz (`X`).\n\n### Grandezas Inversamente Proporcionais (GIP)\nQuando o aumento de uma grandeza provoca a redução proporcional da outra.\n*Exemplo:* Velocidade e tempo de viagem; número de operários e dias para concluir uma obra.\n*Cálculo:* Multiplica-se em linha reta (`=`).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m1_a5_1",
+              "title": "Contextualizada: Equipe de Operários (Regra de Três Inversa)",
+              "problemStatement": "Uma obra é realizada por 6 operários em 20 dias de trabalho contínuo. Se a equipe for reforçada, passando a contar com 8 operários com a mesma produtividade, em quantos dias a mesma obra será concluída?",
+              "options": [
+                "18 dias",
+                "14 dias",
+                "16 dias",
+                "15 dias",
+                "12 dias"
+              ],
+              "correctIndex": 3,
+              "hint": "Mais operários realizam a obra em MENOS dias (inversamente proporcional). Multiplique em linha.",
+              "stepByStepSolution": "6 * 20 = 8 * x -> 120 = 8x -> x = 120 / 8 = 15 dias."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m1_a6",
+          "unitId": "mod_01_matematica_basica",
+          "title": "Aula 6: Razão e proporção",
+          "conceptTitle": "Razão e Proporção",
+          "explanation": "# Porcentagem e Fatores de Multiplicação\n\nA porcentagem é uma razão centesimal \\( \\frac{p}{100} \\). No ENEM, dominar os **fatores de multiplicação** elimina etapas de contas longas.\n\n### Fator de Aumento\nPara aplicar um aumento de `i%`, multiplica-se diretamente por:\n\\( F = 1 + \\\\frac{i}{100} \\)\n• Aumento de 15%: multiplica por `1,15`\n• Aumento de 40%: multiplica por `1,40`\n• Aumento de 5%: multiplica por `1,05`\n\n### Fator de Desconto\nPara aplicar uma redução de `i%`, multiplica-se diretamente por:\n\\( F = 1 - \\\\frac{i}{100} \\)\n• Desconto de 20%: multiplica por `0,80`\n• Desconto de 35%: multiplica por `0,65`\n• Desconto de 8%: multiplica por `0,92`\n\n### Aumentos e Descontos Sucessivos\nMultiplicam-se os fatores correspondentes:\n\\( F_{\\\\text{final}} = F_1 \\\\cdot F_2 \\\\dots \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m1_a6_1",
+              "title": "Contextualizada: Aumento Sucessivo",
+              "problemStatement": "Uma mercadoria teve seu preço reajustado em 10% no mês de janeiro e, sobre o novo preço, recebeu outro aumento de 20% em fevereiro. O aumento percentual acumulado em relação ao preço inicial foi de:",
+              "options": [
+                "34%",
+                "33%",
+                "31%",
+                "32%",
+                "30%"
+              ],
+              "correctIndex": 3,
+              "hint": "Multiplique os fatores 1,10 e 1,20.",
+              "stepByStepSolution": "Fator total = 1,10 * 1,20 = 1,32 -> Aumento real de 32% (e não 30%)."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m1_a7",
+          "unitId": "mod_01_matematica_basica",
+          "title": "Aula 7: Grandezas diretamente e inversamente proporcionais",
+          "conceptTitle": "Grandezas Proporcionais",
+          "explanation": "# Grandezas Diretamente e Inversamente Proporcionais\n\nNo ENEM, o reconhecimento do tipo de proporcionalidade entre grandezas físicas ou econômicas é uma das habilidades mais testadas (H11 e H12).\n\n### Grandezas Diretamente Proporcionais (GDP)\nDuas grandezas \\(x\\) e \\(y\\) são diretamente proporcionais quando o quociente entre elas é constante:\n\\[ \\frac{y}{x} = k \\iff y = k \\cdot x \\]\nSe uma grandeza dobra, a outra também dobra. Graficamente, é uma reta que passa pela origem \\((0,0)\\).\n\n### Grandezas Inversamente Proporcionais (GIP)\nDuas grandezas \\(x\\) e \\(y\\) são inversamente proporcionais quando o produto entre elas é constante:\n\\[ x \\cdot y = k \\iff y = \\frac{k}{x} \\]\nSe uma grandeza dobra, a outra é reduzida pela metade. Graficamente, representa um ramo de hipérbole equilátera.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m1_a7_1",
+              "title": "ENEM: Grandezas Inversamente Proporcionais",
+              "problemStatement": "Dois amigos abriram uma empresa e combinaram que a distribuição do lucro anual de R$ 90.000,00 seria inversamente proporcional ao número de dias que cada um esteve ausente da administração: o sócio A faltou 2 dias e o sócio B faltou 3 dias. Qual foi o valor do lucro recebido pelo sócio A?",
+              "options": [
+                "R$ 60.000,00",
+                "R$ 72.000,00",
+                "R$ 45.000,00",
+                "R$ 54.000,00",
+                "R$ 36.000,00"
+              ],
+              "correctIndex": 3,
+              "hint": "Se é inversamente proporcional, A recebe k/2 e B recebe k/3.",
+              "stepByStepSolution": "k/2 + k/3 = 90.000 -> 5k/6 = 90.000 -> 5k = 540.000 -> k = 108.000.\nSócio A = 108.000 / 2 = R$ 54.000,00."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m1_a8",
+          "unitId": "mod_01_matematica_basica",
+          "title": "Aula 8: Regra de três simples e composta",
+          "conceptTitle": "Regra de Três",
+          "explanation": "# Regra de Três Composta\n\nA regra de três composta envolve três ou mais grandezas interconectadas por relações de proporcionalidade direta ou inversa.\n\n### Método Prático de Resolução (Processo vs Produto)\n1. Fixe a grandeza que contém a incógnita \\(x\\).\n2. Compare individualmente cada uma das outras grandezas com a grandeza da incógnita, supondo todas as demais constantes.\n3. Se for **direta**, mantenha a razão na mesma ordem. Se for **inversa**, inverta a razão.\n4. Monte a equação: a razão da incógnita é igual ao produto de todas as demais razões ajustadas.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m1_a8_1",
+              "title": "ENEM: Pavimentação de Rodovia (Regra de Três Composta)",
+              "problemStatement": "Uma equipe de 12 operários, trabalhando 8 horas por dia, pavimenta 400 metros de rodovia em 10 dias. Quantos dias serão necessários para que uma equipe de 16 operários, trabalhando 6 horas por dia com a mesma produtividade, pavimente 600 metros dessa mesma rodovia?",
+              "options": [
+                "18 dias",
+                "14 dias",
+                "12 dias",
+                "15 dias",
+                "10 dias"
+              ],
+              "correctIndex": 3,
+              "hint": "Operários e horas/dia são grandezas inversas aos dias; extensão da rodovia é grandeza direta.",
+              "stepByStepSolution": "10/x = (16/12) * (6/8) * (400/600)\n10/x = (4/3) * (3/4) * (2/3) = 1 * (2/3) = 2/3\n2x = 30 -> x = 15 dias."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m1_a9",
+          "unitId": "mod_01_matematica_basica",
+          "title": "Aula 9: Escalas (lineares, de área e volumétricas)",
+          "conceptTitle": "Escalas Cartográficas",
+          "explanation": "# Escalas Cartográficas, Lineares, Superficiais e Volumétricas\n\nEscala é a razão constante entre a medida gráfica no desenho (d) e a medida real correspondente (D), expressas na **mesma unidade de comprimento**:\n\\[ E = \\frac{d}{D} \\]\n\n### Relações Dimensionais de Escala (Pegadinha clássica do ENEM!)\n• **Escala Linear (comprimento):** \\( E = \\frac{d}{D} \\)\n• **Escala de Área (superfície):** \\( E_{\\text{área}} = E^2 = \\frac{a_{\\text{desenho}}}{A_{\\text{real}}} \\)\n• **Escala de Volume (capacidade):** \\( E_{\\text{volume}} = E^3 = \\frac{v_{\\text{desenho}}}{V_{\\text{real}}} \\)\n\nSe a maquete de um prédio é feita na escala \\( 1:100 \\), a área do piso na maquete é \\( 1:10.000 \\) da área real, e o volume é \\( 1:1.000.000 \\) do volume real!",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m1_a9_1",
+              "title": "ENEM: Terreno e Escala Cartográfica de Superfície",
+              "problemStatement": "Em um mapa confeccionado na escala linear 1:20.000, uma reserva ecológica retangular é representada com 3 cm de largura por 5 cm de comprimento. A área real dessa reserva, em quilômetros quadrados, é igual a:",
+              "options": [
+                "6,0 km²",
+                "0,6 km²",
+                "3,0 km²",
+                "12,0 km²",
+                "60,0 km²"
+              ],
+              "correctIndex": 0,
+              "hint": "Na escala linear 1:20.000, 1 cm no mapa vale 20.000 cm = 200 m = 0,2 km no terreno real.",
+              "stepByStepSolution": "Largura real = 3 cm * 0,2 km/cm = 0,6 km.\nComprimento real = 5 cm * 0,2 km/cm = 1,0 km.\nÁrea real = 0,6 km * 1,0 km = 6,0 km² (Alternativa C)."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m1_a10",
+          "unitId": "mod_01_matematica_basica",
+          "title": "Aula 10: Porcentagem (aumentos, descontos e variações sucessivas)",
+          "conceptTitle": "Porcentagem e Variações",
+          "explanation": "# Porcentagem e Fatores de Variação Sucessiva\n\nTrabalhar com fatores multiplicativos agiliza a resolução de provas do ENEM e evita cálculos intermediários redundantes.\n\n### Fator de Aumento e Fator de Desconto\n• Aumento de \\( p\\% \\): multiplica-se por \\( F = 1 + \\frac{p}{100} \\)\n• Desconto de \\( p\\% \\): multiplica-se por \\( F = 1 - \\frac{p}{100} \\)\n\n### Variações Acumuladas\nQuando um produto sofre múltiplos aumentos ou descontos sucessivos, os fatores são **multiplicados** entre si (e nunca somados!):\n\\[ F_{\\text{total}} = F_1 \\cdot F_2 \\cdot F_3 \\dots \\]",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m1_a10_1",
+              "title": "ENEM: Inflação e Reajustes Sucessivos",
+              "problemStatement": "O aluguel de um imóvel sofreu um reajuste de 15% no início do primeiro semestre e, devido à inflação acumulada, um novo aumento de 10% no final do ano sobre o valor já corrigido. Em relação ao valor inicial do início do ano, qual foi o aumento percentual total acumulado?",
+              "options": [
+                "27,0%",
+                "30,0%",
+                "28,5%",
+                "26,5%",
+                "25,0%"
+              ],
+              "correctIndex": 3,
+              "hint": "Multiplique os fatores 1,15 e 1,10.",
+              "stepByStepSolution": "Fator total = 1,15 * 1,10 = 1,265.\n1,265 - 1 = 0,265 = 26,5% de aumento acumulado (e não 25%)."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_07_algebra_equacoes",
+      "unitNumber": 2,
+      "tier": "BASIC",
+      "title": "Álgebra e Equações",
+      "description": "Expressões algébricas, valor numérico, produtos notáveis, fatoração, equações e inequações do 1º e 2º grau e sistemas 2x2.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m7_a1",
+          "unitId": "mod_07_algebra_equacoes",
+          "title": "Aula 1: Expressões algébricas e valor numérico",
+          "conceptTitle": "Expressões Algébricas",
+          "explanation": "# Expressões Algébricas e Substituição Numérica\n\nNo ENEM, fórmulas de física, economia, ecologia e medicina são apresentadas no enunciado para que o estudante substitua as variáveis pelos valores fornecidos e determine a incógnita restante.\n\n### Regras Fundamentais de Substituição\n• **Uso de Parênteses:** Sempre envolva números negativos ou frações entre parênteses antes de elevar a um expoente.\n• **Unidades Compatíveis:** Confira se todas as grandezas estão nas mesmas unidades exigidas pela fórmula antes de calcular.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m7_a1_1",
+              "title": "ENEM: Valor Numérico de Fórmula Pediátrica",
+              "problemStatement": "A dose diária recomendada de um medicamento para crianças é calculada pela fórmula D = (Idade * 12) / (Idade + 12) mg. Para uma criança de 4 anos de idade, a dose diária calculada é de:",
+              "options": [
+                "4 mg",
+                "6 mg",
+                "2 mg",
+                "8 mg",
+                "3 mg"
+              ],
+              "correctIndex": 4,
+              "hint": "Substitua Idade = 4 na fórmula.",
+              "stepByStepSolution": "Alternativa correta: E (3 mg).\n\nD = (4 * 12) / (4 + 12) = 48 / 16 = 3 mg."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m7_a2",
+          "unitId": "mod_07_algebra_equacoes",
+          "title": "Aula 2: Produtos notáveis e fatoração algébrica",
+          "conceptTitle": "Produtos Notáveis & Fatoração",
+          "explanation": "# Produtos Notáveis e Fatoração Algébrica\n\nIdentidades que poupam tempo em simplificações de frações algébricas.\n• Quadrado da soma: \\( (a + b)^2 = a^2 + 2ab + b^2 \\)\n• Quadrado da diferença: \\( (a - b)^2 = a^2 - 2ab + b^2 \\)\n• Produto da soma pela diferença: \\( (a + b)(a - b) = a^2 - b^2 \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m7_a2_1",
+              "title": "ENEM: Diferença de Quadrados em Terrenos",
+              "problemStatement": "Um proprietário possuía um terreno quadrado de lado 53 metros e vendeu dele uma área quadrada menor de lado 47 metros. A área de terreno restante que ainda lhe pertence mede:",
+              "options": [
+                "300 m²",
+                "600 m²",
+                "500 m²",
+                "400 m²",
+                "700 m²"
+              ],
+              "correctIndex": 1,
+              "hint": "Use a fatoração da diferença de quadrados: a² - b² = (a + b)(a - b).",
+              "stepByStepSolution": "Alternativa correta: B (600 m²).\n\n53² - 47² = (53 + 47) * (53 - 47) = 100 * 6 = 600 m²."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m7_a3",
+          "unitId": "mod_07_algebra_equacoes",
+          "title": "Aula 3: Equações e inequações do 1º grau",
+          "conceptTitle": "Equações do 1º Grau",
+          "explanation": "# Equações e Inequações do 1º Grau\n\nEquações e inequações lineares traduzem problemas de comparação de planos tarifários, metas de vendas e restrições de orçamento no ENEM.\n\n### Propriedades Operatórias\n• Isola-se a incógnita aplicando operações inversas em ambos os membros da igualdade ou desigualdade.\n• Nas inequações (\\( <, \\le, >, \\ge \\)), multiplicar ou dividir ambos os lados por um número negativo inverte obrigatoriamente o sinal da desigualdade.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m7_a3_1",
+              "title": "ENEM: Inequação de Orçamento em Compras",
+              "problemStatement": "Um estudante dispõe de R$ 60,00 para comprar canetas que custam R$ 4,50 cada, após já ter pago R$ 15,00 por um caderno. O número máximo de canetas que ele pode comprar é:",
+              "options": [
+                "8",
+                "10",
+                "11",
+                "12",
+                "9"
+              ],
+              "correctIndex": 1,
+              "hint": "Monte a inequação: 4,50x + 15 <= 60.",
+              "stepByStepSolution": "Alternativa correta: B (10 canetas).\n\n4,50x <= 60 - 15 = 45 -> x <= 45 / 4,50 = 10 canetas."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m7_a4",
+          "unitId": "mod_07_algebra_equacoes",
+          "title": "Aula 4: Equações e inequações do 2º grau",
+          "conceptTitle": "Equações do 2º Grau",
+          "explanation": "# Equações do 2º Grau e Relações de Girard\n\nUma equação quadrática completa \\( ax^2 + bx + c = 0 \\) (com \\( a \\neq 0 \\)) possui até duas raízes reais, que podem ser determinadas pela Fórmula de Bhaskara ou pelas Relações de Girard (Soma e Produto):\n• Soma das raízes: \\( S = x_1 + x_2 = -\\frac{b}{a} \\)\n• Produto das raízes: \\( P = x_1 \\cdot x_2 = \\frac{c}{a} \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m7_a4_1",
+              "title": "ENEM: Dimensões de Campo Retangular (Bhaskara)",
+              "problemStatement": "Um campo de futebol retangular tem área de 300 m² e seu comprimento excede a largura em 5 metros. A largura desse campo mede:",
+              "options": [
+                "20 metros",
+                "25 metros",
+                "18 metros",
+                "15 metros",
+                "12 metros"
+              ],
+              "correctIndex": 3,
+              "hint": "Monte x * (x + 5) = 300 -> x² + 5x - 300 = 0.",
+              "stepByStepSolution": "Alternativa correta: D (15 metros).\n\nDois números com diferença 5 e produto 300 são 15 e 20 (15 * 20 = 300). Logo, a largura mede 15 m."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m7_a5",
+          "unitId": "mod_07_algebra_equacoes",
+          "title": "Aula 5: Sistemas de equações do 1º grau (2x2)",
+          "conceptTitle": "Sistemas Lineares 2x2",
+          "explanation": "# Sistemas Lineares 2x2 no Cotidiano\n\nSistemas de duas equações e duas incógnitas resolvem problemas clássicos do ENEM envolvendo misturas de produtos, bilheteria (ingressos inteiros e meia-entrada) e contagem de rodas ou patas em estacionamentos e fazendas.\n\n### Métodos de Resolução\n• **Substituição:** Isole uma variável na equação mais simples e substitua na outra.\n• **Adição:** Multiplique uma equação por uma constante conveniente para cancelar uma das incógnitas ao somar as duas linhas.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m7_a5_1",
+              "title": "ENEM: Ingressos de Cinema (Sistema 2x2)",
+              "problemStatement": "Em uma sessão de cinema, foram vendidos 120 ingressos entre inteiras (R$ 30,00) e meias-entradas (R$ 15,00), totalizando uma arrecadação de R$ 2.700,00. Quantas meias-entradas foram vendidas?",
+              "options": [
+                "70",
+                "60",
+                "50",
+                "40",
+                "80"
+              ],
+              "correctIndex": 1,
+              "hint": "Sistema: x + y = 120 e 30x + 15y = 2.700.",
+              "stepByStepSolution": "Alternativa correta: B (60 meias-entradas).\n\nx + y = 120 -> x = 120 - y.\n30(120 - y) + 15y = 2.700 -> 3.600 - 15y = 2.700 -> 15y = 900 -> y = 60 meias."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_06_funcoes",
+      "unitNumber": 3,
+      "tier": "BASIC",
+      "title": "Funções",
+      "description": "Plano cartesiano, domínio, contradomínio, imagem, funções afins, funções quadráticas (máximo e mínimo), exponenciais e logarítmicas.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m6_a1",
+          "unitId": "mod_06_funcoes",
+          "title": "Aula 1: Plano cartesiano e pares ordenados",
+          "conceptTitle": "Plano Cartesiano",
+          "explanation": "# Plano Cartesiano e Pares Ordenados\n\nO plano cartesiano permite a representação geométrica de grandezas numéricas correlacionadas, como tempo e velocidade, custo e produção.\n\n### Estrutura\n• Eixo horizontal das abscissas (\\( x \\)) e eixo vertical das ordenadas (\\( y \\)).\n• Quatro quadrantes anti-horários numerados de I a IV.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m6_a1_1",
+              "title": "ENEM: Localização de Ponto no Plano",
+              "problemStatement": "Em um sistema de coordenadas cartesianas de monitoramento de tráfego, uma viatura está estacionada no ponto P de coordenadas x = -4 km e y = -6 km. O quadrante em que essa viatura se encontra é o:",
+              "options": [
+                "Quarto quadrante",
+                "Primeiro quadrante",
+                "Eixo das ordenadas",
+                "Segundo quadrante",
+                "Terceiro quadrante"
+              ],
+              "correctIndex": 4,
+              "hint": "Quando tanto a abscissa (x) quanto a ordenada (y) são negativas, o ponto localiza-se no terceiro quadrante.",
+              "stepByStepSolution": "Alternativa correta: E (Terceiro quadrante).\n\nNo plano cartesiano:\nI: (+, +) | II: (-, +) | III: (-, -) | IV: (+, -).\nComo P tem x < 0 e y < 0, ele pertence ao III Quadrante."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m6_a2",
+          "unitId": "mod_06_funcoes",
+          "title": "Aula 2: Conceito de função (domínio, contradomínio e imagem)",
+          "conceptTitle": "Definição de Função",
+          "explanation": "# Conceito de Função: Domínio, Contradomínio e Imagem\n\nUma função associa cada elemento de um conjunto de partida (domínio) a um único elemento no conjunto de chegada.\n\n### Leitura de Gráficos no ENEM\nPara verificar se uma curva representa uma função, traçam-se retas verticais: cada reta vertical deve cruzar a curva em no máximo um ponto.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m6_a2_1",
+              "title": "ENEM: Identificação de Função pelo Teste da Reta Vertical",
+              "problemStatement": "Dentre os gráficos a seguir que relacionam grandezas econômicas, aquele que NÃO representa uma função y = f(x) é uma curva em que:",
+              "options": [
+                "para cada valor de x existe um único valor correspondente de y.",
+                "a imagem coincide com o conjunto dos números reais positivos.",
+                "o gráfico intercepta o eixo horizontal em uma única raiz.",
+                "uma reta vertical intercepta o gráfico em mais de um ponto distinto.",
+                "a reta é estritamente crescente em todo o domínio."
+              ],
+              "correctIndex": 3,
+              "hint": "Pela definição de função, um elemento do domínio (x) não pode ter mais de uma imagem (y).",
+              "stepByStepSolution": "Alternativa correta: D.\n\nPelo teste da reta vertical, se uma reta perpendicular ao eixo x cruza a curva em dois ou mais pontos, significa que um mesmo valor de x possui múltiplas saídas y, violando a definição unívoca de função."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m6_a3",
+          "unitId": "mod_06_funcoes",
+          "title": "Aula 3: Função afim ou de 1º grau (gráficos, raízes, coeficiente angular e linear, taxa de variação)",
+          "conceptTitle": "Função Afim (1º Grau)",
+          "explanation": "# Função Afim (1º Grau): Taxa de Variação e Gráficos\n\nA função afim modela processos de crescimento ou decrescimento constante, como tarifas de táxi (bandeirada fixa + valor por km).\n\n### Equação da Reta\n\\( f(x) = a \\cdot x + b \\)\n• **Coeficiente Angular (\\( a \\)):** Taxa constante de variação \\( a = \\frac{\\Delta y}{\\Delta x} \\).\n• **Coeficiente Linear (\\( b \\)):** Valor inicial fixo, onde a reta corta o eixo \\( y \\) (ponto \\( (0, b) \\)).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m6_a3_1",
+              "title": "ENEM: Tarifa de Táxi e Função Afim",
+              "problemStatement": "O valor cobrado por uma corrida de táxi é composto por uma taxa fixa de bandeirada no valor de R$ 6,00 mais R$ 2,50 por quilômetro rodado. Se um passageiro pagou R$ 41,00 pela corrida, a distância percorrida pelo veículo foi de:",
+              "options": [
+                "16 km",
+                "20 km",
+                "12 km",
+                "18 km",
+                "14 km"
+              ],
+              "correctIndex": 4,
+              "hint": "Monte a equação: 2,50x + 6,00 = 41,00 e isole x.",
+              "stepByStepSolution": "Alternativa correta: E (14 km).\n\n2,50x + 6 = 41 -> 2,50x = 35 -> x = 35 / 2,50 = 14 km."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m6_a4",
+          "unitId": "mod_06_funcoes",
+          "title": "Aula 4: Função quadrática ou de 2º grau (parábola, raízes por Bhaskara, vértices para pontos de máximo e mínimo)",
+          "conceptTitle": "Função Quadrática & Vértices",
+          "explanation": "# Função Quadrática: Parábola, Bhaskara e Vértices\n\nA função do 2º grau modela trajetórias balísticas e problemas de **lucro máximo**, **receita máxima** ou **custo mínimo**.\n\n### 1. Vértice da Parábola (Máximo e Mínimo)\n• Coordenada \\( x \\) que maximiza/minimiza: \\( x_v = -\\frac{b}{2a} \\)\n• Valor máximo/mínimo atingido: \\( y_v = -\\frac{\\Delta}{4a} \\)\n• Se \\( a < 0 \\), a parábola tem concavidade para baixo e possui ponto de **máximo**.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m6_a4_1",
+              "title": "ENEM: Ponto de Máximo e Lucro em Função Quadrática",
+              "problemStatement": "Uma empresa calculou que seu lucro mensal L (em milhares de reais) varia com a quantidade produzida x (em centenas de peças) segundo a função quadrática L(x) = -x² + 12x - 20. A quantidade de peças que a empresa deve produzir para maximizar seu lucro mensal é de:",
+              "options": [
+                "1.200 peças",
+                "400 peças",
+                "600 peças",
+                "1.000 peças",
+                "800 peças"
+              ],
+              "correctIndex": 2,
+              "hint": "O ponto de máximo de uma parábola ocorre no vértice x_v = -b / (2a).",
+              "stepByStepSolution": "Alternativa correta: C (600 peças).\n\nx_v = -12 / (2 * (-1)) = -12 / -2 = 6 centenas = 600 peças."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m6_a5",
+          "unitId": "mod_06_funcoes",
+          "title": "Aula 5: Função exponencial (crescimento e decaimento exponencial)",
+          "conceptTitle": "Função Exponencial",
+          "explanation": "# Função Exponencial: Crescimento Bacteriano e Decaimento\n\nA função exponencial \\( f(x) = a \\cdot b^x \\) modela situações em que uma grandeza se multiplica por um fator constante a intervalos regulares de tempo (crescimento de vírus, juros compostos ou desintegração radioativa).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m6_a5_1",
+              "title": "ENEM: Crescimento Exponencial de Bactérias",
+              "problemStatement": "Uma colônia de bactérias possui inicialmente 200 indivíduos e duplica sua população a cada 3 horas. O número total de bactérias presentes nessa cultura após decorridas 12 horas é igual a:",
+              "options": [
+                "6.400",
+                "1.600",
+                "3.200",
+                "2.400",
+                "800"
+              ],
+              "correctIndex": 2,
+              "hint": "Em 12 horas ocorrem 12 / 3 = 4 ciclos de duplicação. N = 200 * 2^4.",
+              "stepByStepSolution": "Alternativa correta: C (3.200 bactérias).\n\nNúmero de períodos: 12 / 3 = 4 ciclos.\nN = 200 * 2⁴ = 200 * 16 = 3.200 bactérias."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m6_a6",
+          "unitId": "mod_06_funcoes",
+          "title": "Aula 6: Função logarítmica (gráficos e comportamento)",
+          "conceptTitle": "Função Logarítmica",
+          "explanation": "# Função Logarítmica e Escalas Científicas\n\nA função logarítmica \\( f(x) = \\log_b(x) \\) é a inversa da exponencial. Ela converte grandezas com variações astronômicas em escalas compactas e manipuláveis (Escala Richter para terremotos, decibéis sonoros e pH químico).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m6_a6_1",
+              "title": "ENEM: Comparação na Escala Richter",
+              "problemStatement": "A energia liberada por um terremoto de magnitude M na escala Richter relaciona-se com a amplitude das ondas pela expressão M = log₁₀(A / A₀). Se um terremoto na cidade A teve magnitude 7 e outro na cidade B teve magnitude 5, a amplitude das ondas sísmicas em A foi quantas vezes superior à amplitude em B?",
+              "options": [
+                "200 vezes",
+                "20 vezes",
+                "2 vezes",
+                "1.000 vezes",
+                "100 vezes"
+              ],
+              "correctIndex": 4,
+              "hint": "Como a base do logaritmo é 10, a diferença de 2 unidades na magnitude equivale a uma razão de 10².",
+              "stepByStepSolution": "Alternativa correta: E (100 vezes).\n\nΔM = 7 - 5 = 2.\nA_A / A_B = 10^(ΔM) = 10² = 100 vezes mais intenso."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_10_sequencias_progressoes",
+      "unitNumber": 4,
+      "tier": "BASIC",
+      "title": "Sequências e Progressões",
+      "description": "Padrões lógicos e numéricos, Progressão Aritmética (PA) com termo geral e soma, e Progressão Geométrica (PG) com termo geral e soma.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m10_a1",
+          "unitId": "mod_10_sequencias_progressoes",
+          "title": "Aula 1: Identificação de padrões lógicos, numéricos e figurativos",
+          "conceptTitle": "Padrões Lógicos & Sequências",
+          "explanation": "# Sequências Numéricas, Padrões e Regularidades\n\nO ENEM frequentemente propõe problemas de contagem de palitos, ladrilhos em mosaicos ou disposições de cadeiras que formam sequências lógicas.\n\n### Lei de Formação de uma Sequência\nUma sequência pode ser definida por:\n1. **Fórmula do termo geral:** \\( a_n = f(n) \\), que calcula o valor diretamente a partir de sua posição \\(n\\).\n2. **Relação de recorrência:** que define cada termo a partir do anterior, como \\( a_{n} = a_{n-1} + r \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m10_a1_1",
+              "title": "ENEM: Padrão Geométrico em Azulejos",
+              "problemStatement": "Uma sequência de mosaicos é construída com azulejos pretos e brancos. O 1º mosaico tem 8 azulejos brancos; o 2º tem 11; o 3º tem 14, mantendo sempre o mesmo padrão aditivo regular. Quantos azulejos brancos terá o 25º mosaico?",
+              "options": [
+                "88",
+                "84",
+                "76",
+                "80",
+                "72"
+              ],
+              "correctIndex": 3,
+              "hint": "A sequência é uma PA com a_1 = 8 e razão r = 3.",
+              "stepByStepSolution": "a_25 = a_1 + (25 - 1) * r = 8 + 24 * 3 = 8 + 72 = 80 azulejos."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m10_a2",
+          "unitId": "mod_10_sequencias_progressoes",
+          "title": "Aula 2: Progressão Aritmética (PA): fórmula do termo geral e soma dos termos",
+          "conceptTitle": "Progressão Aritmética (PA)",
+          "explanation": "# Progressão Aritmética (PA): Termo Geral e Soma dos Termos\n\nUma Progressão Aritmética é uma sequência em que cada termo, a partir do segundo, é obtido somando-se ao anterior uma constante \\(r\\) (razão da PA).\n\n### Classificação da PA\n• **Crescente:** \\( r > 0 \\)\n• **Decrescente:** \\( r < 0 \\)\n• **Constante:** \\( r = 0 \\)\n\n### Termo Geral e Soma de Gauss\n• Termo geral: \\( a_n = a_1 + (n - 1) \\cdot r \\)\n• Soma dos \\(n\\) primeiros termos: \\( S_n = \\frac{(a_1 + a_n) \\cdot n}{2} \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m10_a2_1",
+              "title": "ENEM: Economia Progressiva em Cofre (Soma da PA)",
+              "problemStatement": "Uma pessoa planejou guardar dinheiro durante 30 dias: guardou R$ 5,00 no 1º dia, R$ 7,00 no 2º dia, R$ 9,00 no 3º dia, e assim sucessivamente até o trigésimo dia. O valor total acumulado no cofre ao final dos 30 dias foi de:",
+              "options": [
+                "R$ 1.120,00",
+                "R$ 960,00",
+                "R$ 1.050,00",
+                "R$ 1.080,00",
+                "R$ 1.020,00"
+              ],
+              "correctIndex": 4,
+              "hint": "Calcule o 30º termo da PA (razão 2) e depois a soma de Gauss dos 30 termos.",
+              "stepByStepSolution": "a_30 = 5 + (30 - 1)*2 = 5 + 58 = R$ 63,00.\nS_30 = [(a_1 + a_30) * n] / 2 = [(5 + 63) * 30] / 2 = 68 * 15 = R$ 1.020,00."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m10_a3",
+          "unitId": "mod_10_sequencias_progressoes",
+          "title": "Aula 3: Progressão Geométrica (PG): fórmula do termo geral e soma dos termos",
+          "conceptTitle": "Progressão Geométrica (PG)",
+          "explanation": "# Progressão Geométrica (PG): Termo Geral e Soma Finita e Infinita\n\nUma Progressão Geométrica é uma sequência em que cada termo é obtido multiplicando o anterior por uma razão fixa \\(q\\).\n\n### Propriedades da PG\n• Termo geral: \\( a_n = a_1 \\cdot q^{n-1} \\)\n• Soma dos \\(n\\) termos de uma PG finita (\\(q \\ne 1\\)):\n\\[ S_n = \\frac{a_1 (q^n - 1)}{q - 1} \\]\n• Soma de uma PG infinita convergente (\\(|q| < 1\\)):\n\\[ S_\\infty = \\frac{a_1}{1 - q} \\]",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m10_a3_1",
+              "title": "ENEM: Depreciação de Equipamento e PG",
+              "problemStatement": "Uma máquina industrial avaliada hoje em R$ 80.000,00 sofre uma depreciação anual de 20% sobre o seu valor no ano imediatamente anterior. Qual será o valor estimado dessa máquina após 3 anos de uso contínuo?",
+              "options": [
+                "R$ 38.400,00",
+                "R$ 48.000,00",
+                "R$ 40.960,00",
+                "R$ 32.000,00",
+                "R$ 51.200,00"
+              ],
+              "correctIndex": 2,
+              "hint": "A cada ano o valor da máquina passa a ser 80% (fator 0,8) do ano anterior.",
+              "stepByStepSolution": "Valor = 80.000 * (0,80)^3 = 80.000 * 0,512 = R$ 40.960,00."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_11_logaritmos",
+      "unitNumber": 5,
+      "tier": "BASIC",
+      "title": "Logaritmos",
+      "description": "Definição, condições de existência, propriedades operatórias (produto, quociente, potência e mudança de base) e equações exponenciais aplicadas.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m11_a1",
+          "unitId": "mod_11_logaritmos",
+          "title": "Aula 1: Definição e condição de existência",
+          "conceptTitle": "Definição de Logaritmo",
+          "explanation": "# Definição e Condições de Existência de Logaritmos\n\nPara que \\( \\log_b(a) \\) exista nos reais:\n• O logaritmando deve ser estritamente positivo: \\( a > 0 \\).\n• A base deve ser positiva e diferente de 1: \\( b > 0 \\) e \\( b \\neq 1 \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m11_a1_1",
+              "title": "ENEM: Definição de Logaritmo",
+              "problemStatement": "Sabendo que a intensidade do som em decibéis é dada por N = 10 * log₁₀(I / I₀), se uma fonte sonora emite com intensidade tal que I / I₀ = 100.000, o nível sonoro em decibéis é de:",
+              "options": [
+                "40 dB",
+                "50 dB",
+                "60 dB",
+                "70 dB",
+                "30 dB"
+              ],
+              "correctIndex": 1,
+              "hint": "100.000 = 10⁵. Logo log₁₀(10⁵) = 5.",
+              "stepByStepSolution": "Alternativa correta: B (50 dB).\n\nN = 10 * log₁₀(10⁵) = 10 * 5 = 50 dB."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m11_a2",
+          "unitId": "mod_11_logaritmos",
+          "title": "Aula 2: Propriedades operatórias (logaritmo do produto, do quociente, da potência e mudança de base)",
+          "conceptTitle": "Propriedades dos Logaritmos",
+          "explanation": "# Propriedades Operatórias dos Logaritmos\n\nAs três propriedades capitais cobradas no ENEM:\n1. **Logaritmo do Produto:** \\( \\log(a \\cdot c) = \\log(a) + \\log(c) \\)\n2. **Logaritmo do Quociente:** \\( \\log(a / c) = \\log(a) - \\log(c) \\)\n3. **Logaritmo da Potência (Regra do Tombo):** \\( \\log(a^k) = k \\cdot \\log(a) \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m11_a2_1",
+              "title": "ENEM: Propriedade do Produto de Logaritmos",
+              "problemStatement": "Considerando log 2 = 0,30 e log 3 = 0,48, o valor de log 18 é igual a:",
+              "options": [
+                "1,26",
+                "1,08",
+                "0,96",
+                "1,44",
+                "0,78"
+              ],
+              "correctIndex": 0,
+              "hint": "Fatore 18 = 2 * 3² -> log 18 = log 2 + 2 * log 3.",
+              "stepByStepSolution": "Alternativa correta: A (1,26).\n\nlog 18 = log(2 * 3²) = log 2 + 2 * log 3 = 0,30 + 2 * 0,48 = 0,30 + 0,96 = 1,26."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m11_a3",
+          "unitId": "mod_11_logaritmos",
+          "title": "Aula 3: Resolução de equações exponenciais utilizando logaritmos",
+          "conceptTitle": "Equações Exponenciais & Log",
+          "explanation": "# Resolução de Equações Exponenciais com Logaritmos\n\nQuando as bases de uma equação exponencial não podem ser igualadas (ex: \\( 2^x = 7 \\)), aplica-se o logaritmo em ambos os lados e usa-se a regra do tombo:\n\\( x \\cdot \\log(2) = \\log(7) \\implies x = \\frac{\\log(7)}{\\log(2)} \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m11_a3_1",
+              "title": "ENEM: Equação Exponencial com Logaritmo",
+              "problemStatement": "O número de infectados por uma nova variante em um hospital cresce segundo f(t) = 10 * 2^t, com t em semanas. Para estimar em quantas semanas o número atingirá 1.000 infectados, adotando log 2 = 0,30, deve-se resolver a equação obtendo aproximadamente:",
+              "options": [
+                "6,7 semanas",
+                "5,2 semanas",
+                "10,0 semanas",
+                "3,3 semanas",
+                "8,1 semanas"
+              ],
+              "correctIndex": 0,
+              "hint": "10 * 2^t = 1.000 -> 2^t = 100 -> t * log 2 = log 100 = 2.",
+              "stepByStepSolution": "Alternativa correta: A (6,7 semanas).\n\n2^t = 100 -> t * log 2 = 2 -> t * 0,30 = 2 -> t = 2 / 0,30 ≈ 6,67 semanas."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_02_matematica_financeira",
+      "unitNumber": 6,
+      "tier": "BASIC",
+      "title": "Matemática Financeira",
+      "description": "Juros simples, juros compostos, tabelas de amortização, financiamentos e tomada de decisões econômicas no ENEM.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m2_a1",
+          "unitId": "mod_02_matematica_financeira",
+          "title": "Aula 1: Juros simples",
+          "conceptTitle": "Juros Simples & Montante",
+          "explanation": "# Juros Simples\n\nNo regime de juros simples, os juros são calculados exclusivamente sobre o capital inicial em todos os períodos.\nO crescimento do montante ao longo do tempo é estritamente linear (representado graficamente por uma reta).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m2_a1_1",
+              "title": "Contextualizada: Juros Simples e Renda",
+              "problemStatement": "Um investidor aplicou R$ 4.000,00 a uma taxa de juros simples de 1,5% ao mês durante 8 meses. Qual é o valor dos juros e o montante final resgatado?",
+              "options": [
+                "J = R$ 640,00 e M = R$ 4.640,00",
+                "J = R$ 520,00 e M = R$ 4.520,00",
+                "J = R$ 600,00 e M = R$ 4.600,00",
+                "J = R$ 480,00 e M = R$ 4.480,00",
+                "J = R$ 720,00 e M = R$ 4.720,00"
+              ],
+              "correctIndex": 3,
+              "hint": "Aplique J = C * i * t com taxa em formato decimal (0,015).",
+              "stepByStepSolution": "J = 4000 * 0,015 * 8 = 480,00.\nMontante = 4000 + 480 = R$ 4.480,00."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m2_a2",
+          "unitId": "mod_02_matematica_financeira",
+          "title": "Aula 2: Juros compostos",
+          "conceptTitle": "Juros Compostos & Exponencial",
+          "explanation": "# Juros Compostos\n\nNo regime de juros compostos (regime padrão do mercado financeiro, poupança, cartões de crédito e investimentos), os juros de cada período são incorporados ao capital para render nos períodos seguintes ('juros sobre juros').\nO crescimento do montante é exponencial.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m2_a2_1",
+              "title": "Contextualizada: Montante Composto",
+              "problemStatement": "Um capital de R$ 2.000,00 foi aplicado a juros compostos com taxa de 10% ao ano durante 2 anos. O montante ao final da aplicação foi de:",
+              "options": [
+                "R$ 2.420,00",
+                "R$ 2.500,00",
+                "R$ 2.440,00",
+                "R$ 2.200,00",
+                "R$ 2.400,00"
+              ],
+              "correctIndex": 0,
+              "hint": "M = C * (1 + i)^t -> M = 2000 * (1,10)^2.",
+              "stepByStepSolution": "1,10^2 = 1,21. M = 2000 * 1,21 = R$ 2.420,00."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m2_a3",
+          "unitId": "mod_02_matematica_financeira",
+          "title": "Aula 3: Interpretação de tabelas de amortização e financiamento",
+          "conceptTitle": "Amortização e Financiamento",
+          "explanation": "# Sistemas de Amortização\n\nAmortização é o processo de pagamento gradual de uma dívida através de prestações periódicas.\n\n### Tabela SAC (Sistema de Amortização Constante)\n• A **amortização da dívida** é rigorosamente igual em todas as parcelas: \\( A = \\frac{\\text{Dívida Total}}{n} \\).\n• Como a dívida diminui a cada mês, os juros também diminuem.\n• Consequência: as parcelas são **decrescentes** (a primeira prestação é a mais cara, a última é a mais barata).\n\n### Tabela PRICE (Sistema Francês)\n• O valor da **prestação é constante** durante todo o financiamento.\n• No início, paga-se muito juro e pouca amortização; com o tempo, a amortização cresce e os juros caem.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m2_a3_1",
+              "title": "ENEM: Financiamento Imobiliário no Sistema SAC",
+              "problemStatement": "Um cidadão financiou R$ 240.000,00 pelo Sistema de Amortização Constante (SAC) em 120 parcelas mensais, à taxa de juros de 1% ao mês sobre o saldo devedor. Qual será o valor da primeira prestação paga por esse mutuário?",
+              "options": [
+                "R$ 4.400,00",
+                "R$ 2.400,00",
+                "R$ 4.800,00",
+                "R$ 3.800,00",
+                "R$ 4.000,00"
+              ],
+              "correctIndex": 0,
+              "hint": "A amortização mensal é fixa: A = Capital / n. A prestação é a soma da amortização com os juros do primeiro mês.",
+              "stepByStepSolution": "Amortização A = 240.000 / 120 = R$ 2.000,00.\nJuros do 1º mês = 1% de 240.000 = R$ 2.400,00.\nPrimeira prestação P_1 = 2.000 + 2.400 = R$ 4.400,00."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_03_estatistica",
+      "unitNumber": 7,
+      "tier": "BASIC",
+      "title": "Estatística",
+      "description": "Interpretação de gráficos, média simples, média ponderada, moda, mediana e medidas de dispersão (variância e desvio padrão).",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m3_a1",
+          "unitId": "mod_03_estatistica",
+          "title": "Aula 1: Leitura e interpretação de tabelas e gráficos (barras, linhas, setores, pictogramas)",
+          "conceptTitle": "Interpretação Gráfica",
+          "explanation": "# Leitura e Interpretação de Gráficos e Tabelas no ENEM\n\nMais de 5 questões da prova de Matemática exigem puramente leitura atenta de gráficos de barras, setores, linhas e infográficos.\n\n### Tipos de Gráficos\n• **Barras/Colunas:** Comparam quantidades discretas entre categorias.\n• **Linhas:** Indicam evolução temporal contínua de uma grandeza.\n• **Setores (Pizza):** Mostram a composição percentual de um todo (a soma das fatias deve ser 100% ou 360°).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m3_a1_1",
+              "title": "ENEM: Leitura de Gráfico de Setores",
+              "problemStatement": "Em uma pesquisa de preferência realizada com 1.200 consumidores, o gráfico de setores indicou que o setor correspondente ao Produto A possui um ângulo central de 72°. O número de consumidores que declararam preferência pelo Produto A foi de:",
+              "options": [
+                "120",
+                "360",
+                "240",
+                "180",
+                "288"
+              ],
+              "correctIndex": 2,
+              "hint": "Como o círculo completo tem 360°, a fração é 72° / 360° = 1/5. Calcule 1/5 de 1.200.",
+              "stepByStepSolution": "Alternativa correta: C (240 consumidores).\n\n72° / 360° = 1/5 = 20%.\nTotal de pessoas = 1.200 * 20% = 240."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m3_a2",
+          "unitId": "mod_03_estatistica",
+          "title": "Aula 2: Média aritmética simples",
+          "conceptTitle": "Média Aritmética Simples",
+          "explanation": "# Média Aritmética Simples\n\nA média aritmética simples representa o valor de equilíbrio de uma distribuição e é calculada somando todos os valores amostrais e dividindo pelo número total de observações:\n\\( \\bar{x} = \\frac{\\sum x_i}{n} \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m3_a2_1",
+              "title": "ENEM: Meta de Média em Avaliações",
+              "problemStatement": "Um estudante obteve as notas 6,0; 7,0 e 5,0 nas três primeiras provas do bimestre. Para que sua média aritmética nas quatro provas seja de no mínimo 7,0, a nota mínima que ele precisa tirar na quarta avaliação é:",
+              "options": [
+                "8,5",
+                "9,0",
+                "8,0",
+                "10,0",
+                "9,5"
+              ],
+              "correctIndex": 3,
+              "hint": "A soma das 4 notas deve ser no mínimo 4 * 7,0 = 28,0.",
+              "stepByStepSolution": "Alternativa correta: D (10,0).\n\nSoma atual = 6 + 7 + 5 = 18.\nSoma necessária = 4 * 7,0 = 28.\nNota na 4ª prova = 28 - 18 = 10,0."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m3_a3",
+          "unitId": "mod_03_estatistica",
+          "title": "Aula 3: Média aritmética ponderada",
+          "conceptTitle": "Média Ponderada",
+          "explanation": "# Média Aritmética Ponderada\n\nUtilizada quando diferentes observações possuem pesos (ou frequências) desiguais:\n\\( \\bar{x}_p = \\frac{\\sum (x_i \\cdot p_i)}{\\sum p_i} \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m3_a3_1",
+              "title": "ENEM: Média Ponderada em Concurso",
+              "problemStatement": "Em um processo seletivo, a prova de Conhecimentos Específicos tem peso 3 e a de Língua Portuguesa tem peso 2. Um candidato tirou nota 80 em Específicos e nota 60 em Português. Sua média ponderada final foi de:",
+              "options": [
+                "72",
+                "70",
+                "76",
+                "74",
+                "68"
+              ],
+              "correctIndex": 0,
+              "hint": "Mp = (80 * 3 + 60 * 2) / (3 + 2).",
+              "stepByStepSolution": "Alternativa correta: A (72).\n\nMp = (240 + 120) / 5 = 360 / 5 = 72."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m3_a4",
+          "unitId": "mod_03_estatistica",
+          "title": "Aula 4: Moda",
+          "conceptTitle": "Moda Estatística",
+          "explanation": "# Moda Estatística\n\nA moda (\\( M_o \\)) é o valor que ocorre com maior frequência em um conjunto de dados. Um conjunto pode ser amodal (sem repetições), unimodal ou bimodal.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m3_a4_1",
+              "title": "ENEM: Moda em Vendas de Calçados",
+              "problemStatement": "Uma loja registrou os tamanhos dos últimos pares de tênis vendidos: {38, 39, 40, 40, 41, 40, 42, 39, 40, 43}. A moda dessa amostra de calçados vendidos é o número:",
+              "options": [
+                "40,2",
+                "40",
+                "39",
+                "41",
+                "42"
+              ],
+              "correctIndex": 1,
+              "hint": "A moda é o número que mais se repete na lista.",
+              "stepByStepSolution": "Alternativa correta: B (40).\n\nO número 40 aparece 4 vezes, com frequência absoluta superior a todos os demais calçados."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m3_a5",
+          "unitId": "mod_03_estatistica",
+          "title": "Aula 5: Mediana",
+          "conceptTitle": "Mediana & Posição Central",
+          "explanation": "# Mediana e Posição Central\n\nA mediana (\\( M_d \\)) divide o conjunto ordenado de dados (em rol) exatamente ao meio.\n\n### Como Calcular\n1. Ordene os dados em ordem crescente (**Rol**).\n2. Se \\( n \\) for ímpar: a mediana é o elemento central exatamente na posição \\( \\frac{n + 1}{2} \\).\n3. Se \\( n \\) for par: a mediana é a média aritmética dos dois termos centrais.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m3_a5_1",
+              "title": "ENEM: Mediana de Conjunto de Dados",
+              "problemStatement": "O tempo diário de treino (em minutos) de um atleta ao longo de 8 dias foi: 45, 60, 30, 50, 40, 55, 65, 35. A mediana desse conjunto de tempos é de:",
+              "options": [
+                "52,5 minutos",
+                "50,0 minutos",
+                "55,0 minutos",
+                "47,5 minutos",
+                "45,0 minutos"
+              ],
+              "correctIndex": 3,
+              "hint": "Ordene primeiro a lista em rol crescente e faça a média dos dois valores centrais.",
+              "stepByStepSolution": "Alternativa correta: D (47,5 minutos).\n\nRol ordenado: 30, 35, 40, 45, 50, 55, 60, 65.\nTermos centrais: 45 e 50.\nMediana = (45 + 50) / 2 = 47,5 minutos."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m3_a6",
+          "unitId": "mod_03_estatistica",
+          "title": "Aula 6: Medidas de dispersão (variância e desvio padrão)",
+          "conceptTitle": "Variância & Desvio Padrão",
+          "explanation": "# Medidas de Dispersão: Variância e Desvio Padrão\n\nIndicam a regularidade de um conjunto de dados em torno da média.\n• **Desvio Padrão (\\( \\sigma \\)):** É a raiz quadrada da variância.\n• Quanto **menor** o desvio padrão, mais **regular**, **homogêneo** e **confiável** é o desempenho do candidato ou máquina.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m3_a6_1",
+              "title": "ENEM: Interpretação de Desvio Padrão",
+              "problemStatement": "Três máquinas empacotadoras de grãos A, B e C produzem pacotes com média de 1.000 gramas. Os desvios padrão apurados no controle de qualidade foram: Máquina A (σ = 2,5 g), Máquina B (σ = 0,8 g) e Máquina C (σ = 4,2 g). O setor de engenharia deve escolher a máquina com produção mais homogênea e regular. A máquina escolhida deve ser a:",
+              "options": [
+                "Máquina C",
+                "Máquina C, por ter maior tolerância",
+                "Máquina B",
+                "Máquina A",
+                "Qualquer uma, pois as médias são iguais"
+              ],
+              "correctIndex": 2,
+              "hint": "Maior regularidade e homogeneidade correspondem ao MENOR desvio padrão.",
+              "stepByStepSolution": "Alternativa correta: C (Máquina B).\n\nO desvio padrão mede a dispersão em torno da média. Como a Máquina B tem o menor desvio padrão (0,8 g), seus pacotes apresentam peso muito mais constante e uniforme."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_08_analise_combinatoria",
+      "unitNumber": 8,
+      "tier": "BASIC",
+      "title": "Análise Combinatória",
+      "description": "Princípio Fundamental da Contagem (PFC), fatorial, permutações simples e com repetição, arranjos simples e combinações.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m8_a1",
+          "unitId": "mod_08_analise_combinatoria",
+          "title": "Aula 1: Princípio Fundamental da Contagem (PFC) ou Princípio Multiplicativo",
+          "conceptTitle": "Princípio Fundamental da Contagem",
+          "explanation": "# Princípio Fundamental da Contagem (PFC)\n\nSe uma decisão pode ser tomada de \\( m \\) maneiras e, em seguida, uma segunda decisão pode ser tomada de \\( n \\) maneiras independentes, o total de combinações possíveis é \\( m \\cdot n \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m8_a1_1",
+              "title": "ENEM: Combinações de Roupas pelo PFC",
+              "problemStatement": "Um jovem dispõe de 4 camisas de cores diferentes, 3 calças distintas e 2 pares de sapatos. O número de maneiras distintas que ele pode se vestir escolhendo uma camisa, uma calça e um par de sapatos é:",
+              "options": [
+                "36",
+                "9",
+                "12",
+                "18",
+                "24"
+              ],
+              "correctIndex": 4,
+              "hint": "Pelo Princípio Multiplicativo: 4 * 3 * 2.",
+              "stepByStepSolution": "Alternativa correta: E (24 maneiras).\n\nN = 4 * 3 * 2 = 24 combinações de vestuário."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m8_a2",
+          "unitId": "mod_08_analise_combinatoria",
+          "title": "Aula 2: Fatorial",
+          "conceptTitle": "Fatorial & Simplificações",
+          "explanation": "# Fatorial e Simplificações Algébricas\n\nO fatorial de um número natural \\( n \\) é o produto de todos os inteiros positivos de 1 até \\( n \\):\n\\( n! = n \\cdot (n - 1) \\cdot (n - 2) \\cdots 1 \\). Por convenção: \\( 0! = 1 \\) e \\( 1! = 1 \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m8_a2_1",
+              "title": "ENEM: Simplificação de Fatoriais",
+              "problemStatement": "O valor da expressão numérica (12! + 11!) / 10! é igual a:",
+              "options": [
+                "144",
+                "154",
+                "132",
+                "165",
+                "143"
+              ],
+              "correctIndex": 4,
+              "hint": "Fatore 10! no numerador: (12 * 11 * 10! + 11 * 10!) / 10! = 132 + 11.",
+              "stepByStepSolution": "Alternativa correta: E (143).\n\n(132 * 10! + 11 * 10!) / 10! = 132 + 11 = 143."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m8_a3",
+          "unitId": "mod_08_analise_combinatoria",
+          "title": "Aula 3: Permutação simples e permutação com repetição",
+          "conceptTitle": "Permutações",
+          "explanation": "# Permutações Simples e com Repetição (Anagramas)\n\nPermutar significa reordenar todos os elementos disponíveis.\n• **Permutação Simples:** \\( P_n = n! \\)\n• **Permutação com Repetição (elementos repetidos \\( a, b \\)):** \\( P_n^{a, b} = \\frac{n!}{a! \\cdot b!} \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m8_a3_1",
+              "title": "ENEM: Anagramas com Letras Repetidas",
+              "problemStatement": "O número de anagramas diferentes que podem ser formados com as letras da palavra BRASIL mantendo as vogais 'A' e 'I' sempre juntas em qualquer ordem é:",
+              "options": [
+                "720",
+                "360",
+                "480",
+                "240",
+                "120"
+              ],
+              "correctIndex": 3,
+              "hint": "Considere o bloco (AI) como 1 elemento. Teremos 5 elementos permutando, multiplicados por 2! da ordem interna das vogais.",
+              "stepByStepSolution": "Alternativa correta: D (240 anagramas).\n\nElementos: B, R, S, L e o bloco (A, I) -> 5 elementos.\nP = 5! * 2! = 120 * 2 = 240."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m8_a4",
+          "unitId": "mod_08_analise_combinatoria",
+          "title": "Aula 4: Arranjo simples",
+          "conceptTitle": "Arranjos Simples",
+          "explanation": "# Arranjos Simples: A Ordem Importa!\n\nEm um arranjo de \\( n \\) elementos tomados \\( p \\) a \\( p \\), a troca de ordem dos elementos gera um agrupamento diferente (ex: pódio de 1º, 2º e 3º lugares, senhas, cargos de presidente e tesoureiro).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m8_a4_1",
+              "title": "ENEM: Criação de Senhas Numéricas (Arranjo)",
+              "problemStatement": "Um cofre eletrônico exige uma senha formada por 4 algarismos distintos escolhidos entre os algarismos de 1 a 9. O total de senhas possíveis de serem criadas é:",
+              "options": [
+                "3.024",
+                "6.561",
+                "126",
+                "504",
+                "1.512"
+              ],
+              "correctIndex": 0,
+              "hint": "A ordem importa. A(9, 4) = 9 * 8 * 7 * 6.",
+              "stepByStepSolution": "Alternativa correta: A (3.024 senhas).\n\n9 opções para o 1º dígito, 8 para o 2º, 7 para o 3º e 6 para o 4º: 9 * 8 * 7 * 6 = 3.024."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m8_a5",
+          "unitId": "mod_08_analise_combinatoria",
+          "title": "Aula 5: Combinação simples",
+          "conceptTitle": "Combinações Simples",
+          "explanation": "# Combinações Simples: A Ordem NÃO Importa!\n\nNa combinação, mudar a ordem dos elementos não cria um grupo novo (ex: comissões, equipes de trabalho, escolha de sabores de pizza ou mãos de baralho).\n\\( C_{n, p} = \\frac{n!}{p! \\cdot (n - p)!} \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m8_a5_1",
+              "title": "ENEM: Formação de Comissão de Trabalho (Combinação)",
+              "problemStatement": "Em um hospital, um plantão de emergência deve ser composto por 3 médicos escolhidos entre um grupo de 10 médicos plantonistas disponíveis. Quantas equipes de plantão diferentes podem ser formadas?",
+              "options": [
+                "720",
+                "120",
+                "360",
+                "1.000",
+                "240"
+              ],
+              "correctIndex": 1,
+              "hint": "A ordem dos médicos não altera a equipe: C(10, 3) = (10 * 9 * 8) / (3 * 2 * 1).",
+              "stepByStepSolution": "Alternativa correta: B (120 equipes).\n\nC(10, 3) = 720 / 6 = 120 equipes."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_09_probabilidade",
+      "unitNumber": 9,
+      "tier": "BASIC",
+      "title": "Probabilidade",
+      "description": "Espaço amostral, eventos, definição clássica, união de eventos, intersecção de eventos independentes, probabilidade condicional e evento complementar.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m9_a1",
+          "unitId": "mod_09_probabilidade",
+          "title": "Aula 1: Experimento aleatório, espaço amostral e evento",
+          "conceptTitle": "Espaço Amostral & Eventos",
+          "explanation": "# Experimento Aleatório, Espaço Amostral e Evento\n\nEspaço amostral (\\( \\Omega \\)) é o conjunto de todos os resultados possíveis de um experimento aleatório. Evento (\\( A \\)) é qualquer subconjunto de resultados de interesse contido em \\( \\Omega \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m9_a1_1",
+              "title": "ENEM: Espaço Amostral no Lançamento de Três Moedas",
+              "problemStatement": "Ao lançar 3 moedas honestas simultaneamente, o número total de resultados possíveis no espaço amostral é:",
+              "options": [
+                "12",
+                "8",
+                "6",
+                "9",
+                "3"
+              ],
+              "correctIndex": 1,
+              "hint": "Cada moeda tem 2 resultados (Cara ou Coroa). n(Ω) = 2³.",
+              "stepByStepSolution": "Alternativa correta: B (8 resultados).\n\n2 * 2 * 2 = 8 sequências possíveis."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m9_a2",
+          "unitId": "mod_09_probabilidade",
+          "title": "Aula 2: Definição clássica de probabilidade",
+          "conceptTitle": "Probabilidade Clássica",
+          "explanation": "# Definição Clássica de Probabilidade (Laplace)\n\nPara espaços equiprováveis:\n\\( P(A) = \\frac{\\text{Casos Favoráveis}}{\\text{Casos Possíveis}} = \\frac{n(A)}{n(\\Omega)} \\).\nA probabilidade está sempre no intervalo \\( 0 \\le P(A) \\le 1 \\) (ou de 0% a 100%).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m9_a2_1",
+              "title": "ENEM: Probabilidade Clássica em Urna",
+              "problemStatement": "Uma urna contém 12 bolas brancas, 18 bolas vermelhas e 20 bolas pretas, todas de mesmo tamanho e peso. Retirando-se uma bola ao acaso dessa urna, a probabilidade de ela ser vermelha é de:",
+              "options": [
+                "36%",
+                "40%",
+                "30%",
+                "45%",
+                "24%"
+              ],
+              "correctIndex": 0,
+              "hint": "Total de bolas = 12 + 18 + 20 = 50. P = 18 / 50.",
+              "stepByStepSolution": "Alternativa correta: A (36%).\n\nP = 18 / 50 = 36 / 100 = 36%."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m9_a3",
+          "unitId": "mod_09_probabilidade",
+          "title": "Aula 3: Probabilidade da união de eventos (eventos mutuamente exclusivos)",
+          "conceptTitle": "União de Eventos",
+          "explanation": "# Probabilidade da União de Eventos\n\nProbabilidade de ocorrer o evento A **OU** o evento B:\n\\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\).\nSe forem mutuamente exclusivos (não podem ocorrer juntos), \\( P(A \\cap B) = 0 \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m9_a3_1",
+              "title": "ENEM: Probabilidade da União (Regra da Soma)",
+              "problemStatement": "Ao sortear um número de 1 a 50 em uma rifa beneficente, a probabilidade de o número sorteado ser múltiplo de 5 OU múltiplo de 8 é de:",
+              "options": [
+                "34%",
+                "32%",
+                "30%",
+                "24%",
+                "26%"
+              ],
+              "correctIndex": 2,
+              "hint": "Múltiplos de 5: 10 números. Múltiplos de 8: 6 números. Múltiplos de 40 (ambos): 1 número. P = (10 + 6 - 1) / 50.",
+              "stepByStepSolution": "Múltiplos de 5: {5, 10, ..., 50} (10 números).\nMúltiplos de 8: {8, 16, 24, 32, 40, 48} (6 números).\nIntersecção (múltiplos de 40): {40} (1 número).\nFavoráveis = 10 + 6 - 1 = 15.\nP = 15 / 50 = 30% (Alternativa C)."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m9_a4",
+          "unitId": "mod_09_probabilidade",
+          "title": "Aula 4: Probabilidade da intersecção de eventos (eventos independentes)",
+          "conceptTitle": "Intersecção de Eventos",
+          "explanation": "# Probabilidade da Intersecção (Eventos Independentes)\n\nA probabilidade de ocorrerem simultaneamente ou sucessivamente dois eventos independentes \\( A \\) **E** \\( B \\) é igual ao produto de suas probabilidades individuais:\n\\( P(A \\cap B) = P(A) \\cdot P(B) \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m9_a4_1",
+              "title": "ENEM: Probabilidade de Eventos Independentes",
+              "problemStatement": "A probabilidade de um atirador A acertar o alvo é de 80% (4/5) e a de um atirador B acertar é de 70% (7/10). Se ambos atiram de forma independente, a probabilidade de AMBOS acertarem o alvo é de:",
+              "options": [
+                "72%",
+                "75%",
+                "56%",
+                "64%",
+                "50%"
+              ],
+              "correctIndex": 2,
+              "hint": "Multiplique as probabilidades: P(A e B) = 0,80 * 0,70.",
+              "stepByStepSolution": "Alternativa correta: C (56%).\n\nP = 0,80 * 0,70 = 0,56 = 56%."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m9_a5",
+          "unitId": "mod_09_probabilidade",
+          "title": "Aula 5: Probabilidade condicional",
+          "conceptTitle": "Probabilidade Condicional",
+          "explanation": "# Probabilidade Condicional\n\nProbabilidade de ocorrer A sabendo previamente que o evento B já ocorreu:\n\\( P(A|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{n(A \\cap B)}{n(B)} \\).\nO evento B passa a ser o novo espaço amostral reduzido!",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m9_a5_1",
+              "title": "ENEM: Probabilidade Condicional com Espaço Reduzido",
+              "problemStatement": "Em uma escola com 200 alunos, 120 praticam futebol, 80 praticam vôlei e 40 praticam ambos os esportes. Escolhendo-se ao acaso um aluno que sabidamente joga futebol, a probabilidade de ele também praticar vôlei é de:",
+              "options": [
+                "33,3%",
+                "25%",
+                "50%",
+                "40%",
+                "20%"
+              ],
+              "correctIndex": 0,
+              "hint": "O novo espaço amostral são os 120 que jogam futebol. Favoráveis: os 40 que praticam ambos.",
+              "stepByStepSolution": "Alternativa correta: A (33,3% ou 1/3).\n\nP(Vôlei | Futebol) = 40 / 120 = 1/3 ≈ 33,3%."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m9_a6",
+          "unitId": "mod_09_probabilidade",
+          "title": "Aula 6: Probabilidade do evento complementar",
+          "conceptTitle": "Evento Complementar",
+          "explanation": "# Probabilidade do Evento Complementar\n\nA probabilidade de um evento NÃO acontecer é dada por:\n\\( P(A^c) = 1 - P(A) \\).\nEstratégia mestre para questões com 'pelo menos um':\n\\( P(\\text{pelo menos um}) = 1 - P(\\text{nenhum}) \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m9_a6_1",
+              "title": "ENEM: Probabilidade do Evento Complementar",
+              "problemStatement": "A probabilidade de um equipamento de segurança falhar em um dia é de 10% (0,10). Em um sistema com dois equipamentos operando de forma independente, a probabilidade de PELO MENOS UM deles funcionar com sucesso é de:",
+              "options": [
+                "99%",
+                "90%",
+                "81%",
+                "95%",
+                "80%"
+              ],
+              "correctIndex": 0,
+              "hint": "P(pelo menos um) = 1 - P(ambos falharem) = 1 - (0,10 * 0,10).",
+              "stepByStepSolution": "Alternativa correta: A (99%).\n\nP(ambos falharem) = 0,10 * 0,10 = 0,01 (1%).\nP(ao menos um funcionar) = 1 - 0,01 = 0,99 = 99%."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_04_geometria_plana",
+      "unitNumber": 10,
+      "tier": "BASIC",
+      "title": "Geometria Plana",
+      "description": "Pontos, retas, ângulos, polígonos, triângulos, semelhança, Teorema de Tales, Pitágoras, perímetros, áreas e circunferência.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m4_a1",
+          "unitId": "mod_04_geometria_plana",
+          "title": "Aula 1: Conceitos fundamentais (ponto, reta, plano, ângulos)",
+          "conceptTitle": "Fundamentos da Geometria Plana",
+          "explanation": "# Fundamentos da Geometria Plana e Ângulos no ENEM\n\nA Geometria Plana no ENEM é predominantemente contextualizada em projetos arquitetônicos, cortes de tecidos, azulejos e rotas de navegação.\n\n### 1. Elementos Primitivos e Ângulos\n• **Retas Paralelas Cortadas por Transversal:** Formam pares de ângulos correspondentes, alternos internos/externos (que são congruentes) e colaterais internos/externos (que são suplementares, somando 180°).\n• **Bissetriz:** Semirreta interna que divide um ângulo em duas medidas rigorosamente congruentes.\n• **Classificação de Ângulos:** Agudo (< 90°), Reto (= 90°), Obtuso (> 90° e < 180°) e Raso (= 180°).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m4_a1_1",
+              "title": "ENEM: Ângulos em Estruturas Metálicas",
+              "problemStatement": "Uma treliça metálica é construída com duas vigas paralelas cortadas por uma barra transversal de reforço. Se o menor ângulo formado entre a transversal e uma das vigas mede 38°, o ângulo obtuso colateral interno formado na outra viga mede:",
+              "options": [
+                "152°",
+                "142°",
+                "52°",
+                "38°",
+                "128°"
+              ],
+              "correctIndex": 1,
+              "hint": "Ângulos colaterais internos entre retas paralelas são suplementares (somam 180°).",
+              "stepByStepSolution": "Alternativa correta: B (142°).\n\nComo as vigas são paralelas e os ângulos colaterais internos somam 180°:\nθ = 180° - 38° = 142°."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m4_a2",
+          "unitId": "mod_04_geometria_plana",
+          "title": "Aula 2: Polígonos (soma de ângulos internos e externos, diagonais)",
+          "conceptTitle": "Polígonos & Ângulos",
+          "explanation": "# Polígonos, Diagonais e Ângulos Internos\n\nPolígonos regulares são a base para ladrilhamento de pisos e cálculo de armações metálicas.\n\n### 1. Soma dos Ângulos\n• **Soma dos Ângulos Internos:** Divide-se o polígono de \\( n \\) lados em \\( (n - 2) \\) triângulos a partir de um vértice: \\( S_i = (n - 2) \\cdot 180^\\circ \\).\n• **Soma dos Ângulos Externos:** Vale invariavelmente \\( 360^\\circ \\) para qualquer polígono convexo, independentemente do número de lados!\n• **Ladrilhamento do Plano:** Apenas triângulos equiláteros (60°), quadrados (90°) e hexágonos regulares (120°) ladrilham o plano sem deixar frestas nem sobreposições, pois seus ângulos internos dividem 360°.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m4_a2_1",
+              "title": "ENEM: Ladrilhamento com Polígonos Regulares",
+              "problemStatement": "Um arquiteto deseja revestir um piso plano utilizando exclusivamente ladrilhos cerâmicos que sejam polígonos regulares congruentes, sem que haja sobreposições ou frestas entre as peças. Dentre as opções a seguir, o único polígono regular que permite esse ladrilhamento monoédrico é o:",
+              "options": [
+                "Hexágono regular",
+                "Decágono regular",
+                "Heptágono regular",
+                "Pentágono regular",
+                "Octógono regular"
+              ],
+              "correctIndex": 0,
+              "hint": "Para que os vértices se juntem sem frestas, o ângulo interno do polígono regular deve ser divisor exato de 360°.",
+              "stepByStepSolution": "Alternativa correta: A (Hexágono regular).\n\nO ângulo interno do hexágono regular vale (6 - 2)*180° / 6 = 720° / 6 = 120°. Como 360° / 120° = 3 (número inteiro exato), três hexágonos se encontram perfeitamente em torno de cada vértice."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m4_a3",
+          "unitId": "mod_04_geometria_plana",
+          "title": "Aula 3: Triângulos (classificação, condição de existência, pontos notáveis)",
+          "conceptTitle": "Triângulos & Pontos Notáveis",
+          "explanation": "# Triângulos, Pontos Notáveis e Desigualdade Triangular\n\nO triângulo é a estrutura rígida mais indeformável da natureza, largamente explorada na engenharia civil.\n\n### 1. Condição de Existência (Desigualdade Triangular)\nPara que três segmentos de reta \\( a, b, c \\) formem um triângulo, o maior lado deve ser estritamente menor que a soma dos outros dois:\n\\( |b - c| < a < b + c \\).\n\n### 2. Pontos Notáveis\n• **Baricentro (G):** Ponto de encontro das medianas. É o centro de gravidade do triângulo e divide cada mediana na razão 2:1.\n• **Ortocentro (H):** Ponto de encontro das retas suportes das alturas.\n• **Incentro (I):** Encontro das bissetrizes internas (centro da circunferência inscrita).\n• **Circuncentro (O):** Encontro das mediatrizes dos lados (centro da circunferência circunscrita).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m4_a3_1",
+              "title": "ENEM: Desigualdade Triangular e Varetas",
+              "problemStatement": "Um marceneiro dispõe de varetas de madeira com comprimentos de 7 cm, 11 cm e 19 cm. Ao tentar unir as extremidades dessas três varetas para formar uma moldura triangular rígida, ele conclui corretamente que:",
+              "options": [
+                "é possível construir um triângulo acutângulo.",
+                "é possível construir um triângulo isósceles.",
+                "é possível construir um triângulo obtusângulo.",
+                "não é possível construir um triângulo, pois 19 >= 7 + 11.",
+                "é possível construir um triângulo retângulo pelo teorema de Pitágoras."
+              ],
+              "correctIndex": 3,
+              "hint": "Pela desigualdade triangular, o maior lado deve ser estritamente menor que a soma dos outros dois lados.",
+              "stepByStepSolution": "Alternativa correta: D.\n\nA condição de existência exige que o maior lado (19 cm) seja menor que a soma dos outros dois (7 + 11 = 18 cm). Como 19 > 18, as varetas menores não conseguem se encontrar nas extremidades, tornando impossível fechar o triângulo."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m4_a4",
+          "unitId": "mod_04_geometria_plana",
+          "title": "Aula 4: Semelhança e congruência de triângulos",
+          "conceptTitle": "Semelhança de Triângulos",
+          "explanation": "# Semelhança de Triângulos e Razão entre Áreas\n\nDois triângulos são semelhantes se possuem seus três ângulos correspondentes congruentes e lados homólogos proporcionais.\n\n### 1. Razão Linear e Razão Quadrática\nSe a razão de semelhança linear entre comprimentos é \\( k = \\frac{a_1}{a_2} \\), então:\n• A razão entre perímetros é \\( k \\).\n• A razão entre alturas correspondentes é \\( k \\).\n• **A razão entre áreas é \\( k^2 \\)**.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m4_a4_1",
+              "title": "ENEM: Razão entre Áreas de Terrenos Semelhantes",
+              "problemStatement": "Dois terrenos triangulares semelhantes possuem perímetros de 60 metros e 180 metros, respectivamente. Se o terreno menor possui uma área de 150 m², a área do terreno maior é igual a:",
+              "options": [
+                "450 m²",
+                "300 m²",
+                "600 m²",
+                "1.350 m²",
+                "900 m²"
+              ],
+              "correctIndex": 3,
+              "hint": "A razão entre áreas de figuras semelhantes é o quadrado da razão entre seus comprimentos (perímetros).",
+              "stepByStepSolution": "Alternativa correta: D (1.350 m²).\n\nRazão linear: k = 180 / 60 = 3.\nRazão entre áreas: k² = 3² = 9.\nÁrea maior = 150 * 9 = 1.350 m²."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m4_a5",
+          "unitId": "mod_04_geometria_plana",
+          "title": "Aula 5: Teorema de Tales",
+          "conceptTitle": "Teorema de Tales",
+          "explanation": "# Teorema de Tales e Divisão Proporcional\n\nO Teorema de Tales estabelece que um feixe de retas paralelas determina sobre duas retas transversais segmentos proporcionais.\n\n### Aplicação Prática no ENEM\nMuito cobrado no cálculo de frentes de lotes urbanos em terrenos triangulares ou trapézios cortados por ruas paralelas.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m4_a5_1",
+              "title": "ENEM: Teorema de Tales em Loteamento",
+              "problemStatement": "Três lotes urbanos paralelos possuem frentes voltadas para a Rua A e fundos para a Rua B. As divisas laterais dos lotes são perpendiculares à Rua A e paralelas entre si. A frente do lote 1 mede 15 m na Rua A e 20 m na Rua B. Se a frente do lote 2 mede 30 m na Rua A, qual é a medida de sua frente voltada para a Rua B?",
+              "options": [
+                "35 m",
+                "60 m",
+                "50 m",
+                "40 m",
+                "45 m"
+              ],
+              "correctIndex": 3,
+              "hint": "Pelo Teorema de Tales: 15 / 20 = 30 / x.",
+              "stepByStepSolution": "Alternativa correta: D (40 m).\n\n15 / 20 = 30 / x -> 15x = 600 -> x = 600 / 15 = 40 metros."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m4_a6",
+          "unitId": "mod_04_geometria_plana",
+          "title": "Aula 6: Teorema de Pitágoras e relações métricas no triângulo retângulo",
+          "conceptTitle": "Pitágoras & Relações Métricas",
+          "explanation": "# Teorema de Pitágoras e Relações Métricas no Triângulo Retângulo\n\nO teorema mais famoso da matemática é onipresente no ENEM em diagonais, cabos de sustentação e distâncias de trajetos.\n\n### 1. Relações Métricas Fundamentais\nSeja \\( a \\) a hipotenusa, \\( b, c \\) os catetos, \\( h \\) a altura relativa à hipotenusa e \\( m, n \\) as projeções dos catetos:\n• \\( a^2 = b^2 + c^2 \\) (Pitágoras)\n• \\( b^2 = a \\cdot m \\quad e \\quad c^2 = a \\cdot n \\)\n• \\( h^2 = m \\cdot n \\)\n• \\( b \\cdot c = a \\cdot h \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m4_a6_1",
+              "title": "ENEM: Cabo de Sustentação de Antena (Pitágoras)",
+              "problemStatement": "Uma antena transmissora de rádio vertical de 24 metros de altura deve ser fixada no solo plano por um cabo de aço retilíneo esticado, preso do topo da antena até um ponto de ancoragem no chão situado a 7 metros de distância da base da torre. O comprimento mínimo desse cabo de aço é de:",
+              "options": [
+                "25 metros",
+                "26 metros",
+                "31 metros",
+                "28 metros",
+                "30 metros"
+              ],
+              "correctIndex": 0,
+              "hint": "Aplique o Teorema de Pitágoras com catetos 24 m e 7 m.",
+              "stepByStepSolution": "Alternativa correta: A (25 metros).\n\nC² = 24² + 7² = 576 + 49 = 625 -> C = √625 = 25 metros."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m4_a7",
+          "unitId": "mod_04_geometria_plana",
+          "title": "Aula 7: Cálculo de perímetros",
+          "conceptTitle": "Perímetros de Figuras Planas",
+          "explanation": "# Perímetros de Figuras Planas e Cercamentos\n\nPerímetro é a medida do contorno linear de uma figura bidimensional.\n\n### Aplicações no ENEM\n• Quantidade de mourões e voltas de arame farpado para cercar pastos.\n• Molduras de quadros, rodapés e pistas de atletismo compostas por trechos retos e semicírculos.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m4_a7_1",
+              "title": "ENEM: Pista de Atletismo Circular",
+              "problemStatement": "Uma praça circular tem raio de 50 metros. Um corredor treina completando exatamente 10 voltas ao redor do contorno externo dessa praça. Adotando π = 3,14, a distância total percorrida pelo atleta é de:",
+              "options": [
+                "4.710 m",
+                "3.140 m",
+                "6.280 m",
+                "7.850 m",
+                "1.570 m"
+              ],
+              "correctIndex": 1,
+              "hint": "O comprimento de 1 volta é C = 2 * π * r. Multiplique por 10.",
+              "stepByStepSolution": "Alternativa correta: B (3.140 m).\n\nC = 2 * 3,14 * 50 = 314 metros por volta.\nEm 10 voltas: 314 * 10 = 3.140 metros."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m4_a8",
+          "unitId": "mod_04_geometria_plana",
+          "title": "Aula 8: Cálculo de áreas (triângulos, quadriláteros, polígonos regulares)",
+          "conceptTitle": "Cálculo de Áreas Planas",
+          "explanation": "# Cálculo de Áreas Planas (Triângulos, Quadriláteros e Polígonos)\n\nO cálculo de áreas é o segundo assunto de geometria mais cobrado em toda a história do ENEM.\n\n### 1. Fórmulas de Área Essenciais\n• **Retângulo e Paralelogramo:** \\( A = b \\cdot h \\)\n• **Triângulo Geral:** \\( A = \\frac{b \\cdot h}{2} \\)\n• **Triângulo Equilátero:** \\( A = \\frac{L^2 \\sqrt{3}}{4} \\)\n• **Trapézio:** \\( A = \\frac{(B + b) \\cdot h}{2} \\)\n• **Losango:** \\( A = \\frac{D \\cdot d}{2} \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m4_a8_1",
+              "title": "ENEM: Custo de Grama em Terreno Trapezoidal",
+              "problemStatement": "Um jardim tem a forma de um trapézio de bases paralelas medindo 18 metros e 12 metros, com altura de 10 metros. Sabendo que o metro quadrado de grama custa R$ 15,00, o valor total gasto para cobrir todo o jardim é:",
+              "options": [
+                "R$ 4.500,00",
+                "R$ 3.000,00",
+                "R$ 1.800,00",
+                "R$ 2.700,00",
+                "R$ 2.250,00"
+              ],
+              "correctIndex": 4,
+              "hint": "Calcule a área do trapézio: A = (B + b) * h / 2 e multiplique pelo preço do m².",
+              "stepByStepSolution": "Alternativa correta: E (R$ 2.250,00).\n\nÁrea = (18 + 12) * 10 / 2 = 30 * 10 / 2 = 150 m².\nCusto = 150 * 15 = R$ 2.250,00."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m4_a9",
+          "unitId": "mod_04_geometria_plana",
+          "title": "Aula 9: Círculo e circunferência (comprimento da circunferência, área do círculo, coroa e setor circular)",
+          "conceptTitle": "Círculo, Setor & Coroa Circular",
+          "explanation": "# Círculo, Setor Circular e Coroa Circular\n\nCírculo é a região interna delimitada pela circunferência.\n\n### 1. Áreas Circulares\n• **Área do Círculo:** \\( A = \\pi \\cdot r^2 \\)\n• **Setor Circular de ângulo \\( \\alpha \\):** \\( A_{setor} = \\frac{\\alpha}{360^\\circ} \\cdot \\pi \\cdot r^2 \\)\n• **Coroa Circular (entre dois raios R e r):** \\( A_{coroa} = \\pi \\cdot (R^2 - r^2) \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m4_a9_1",
+              "title": "ENEM: Área de Pista em Coroa Circular",
+              "problemStatement": "Uma pista de caminhada foi construída em formato de coroa circular ao redor de um lago. O raio interno do lago é de 20 metros e o raio externo da pista é de 30 metros. Adotando π = 3, a área pavimentada dessa pista é igual a:",
+              "options": [
+                "2.700 m²",
+                "750 m²",
+                "1.800 m²",
+                "1.500 m²",
+                "1.200 m²"
+              ],
+              "correctIndex": 3,
+              "hint": "Área da coroa circular = π * (R² - r²).",
+              "stepByStepSolution": "Alternativa correta: D (1.500 m²).\n\nA = 3 * (30² - 20²) = 3 * (900 - 400) = 3 * 500 = 1.500 m²."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_12_trigonometria",
+      "unitNumber": 11,
+      "tier": "BASIC",
+      "title": "Trigonometria",
+      "description": "Seno, cosseno e tangente no triângulo retângulo, ângulos notáveis, Lei dos Senos e dos Cossenos, ciclo trigonométrico e funções trigonométricas.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m12_a1",
+          "unitId": "mod_12_trigonometria",
+          "title": "Aula 1: Relações trigonométricas no triângulo retângulo (seno, cosseno e tangente)",
+          "conceptTitle": "Trigonometria no Triângulo Retângulo",
+          "explanation": "# Razões Trigonométricas no Triângulo Retângulo\n\nPara um ângulo agudo \\(\\alpha\\) em um triângulo retângulo:\n• **Seno (\\(\\sin \\alpha\\)):** \\(\\frac{\\text{Cateto Oposto}}{\\text{Hipotenusa}}\\)\n• **Cosseno (\\(\\cos \\alpha\\)):** \\(\\frac{\\text{Cateto Adjacente}}{\\text{Hipotenusa}}\\)\n• **Tangente (\\(\\tan \\alpha\\)):** \\(\\frac{\\text{Cateto Oposto}}{\\text{Cateto Adjacente}} = \\frac{\\sin \\alpha}{\\cos \\alpha}\\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m12_a1_1",
+              "title": "ENEM: Rampa de Acessibilidade e Seno",
+              "problemStatement": "Uma rampa de acessibilidade plana deve vencer um desnível vertical de 1,5 metro entre a calçada e a porta de um hospital. A norma técnica exige que o ângulo de inclinação da rampa com o solo seja de exatamente 30°. Qual deve ser o comprimento total da superfície inclinada da rampa?",
+              "options": [
+                "3,5 m",
+                "2,5 m",
+                "2,0 m",
+                "3,0 m",
+                "4,0 m"
+              ],
+              "correctIndex": 3,
+              "hint": "O desnível vertical é o cateto oposto ao ângulo de 30° e o comprimento da rampa é a hipotenusa. sen(30°) = 1/2.",
+              "stepByStepSolution": "sen(30°) = Cateto Oposto / Hipotenusa\n1/2 = 1,5 / L -> L = 1,5 * 2 = 3,0 metros."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m12_a2",
+          "unitId": "mod_12_trigonometria",
+          "title": "Aula 2: Ângulos notáveis (30º, 45º e 60º)",
+          "conceptTitle": "Ângulos Notáveis (30°, 45°, 60°)",
+          "explanation": "# Ângulos Notáveis e Relação Fundamental\n\nOs ângulos de 30°, 45° e 60° aparecem constantemente em provas e devem ser memorizados:\n\n| Ângulo | Seno | Cosseno | Tangente |\n|---|---|---|---|\n| **30°** | 1/2 | \\(\\frac{\\sqrt{3}}{2}\\) | \\(\\frac{\\sqrt{3}}{3}\\) |\n| **45°** | \\(\\frac{\\sqrt{2}}{2}\\) | \\(\\frac{\\sqrt{2}}{2}\\) | 1 |\n| **60°** | \\(\\frac{\\sqrt{3}}{2}\\) | 1/2 | \\(\\sqrt{3}\\) |\n\n### Relação Fundamental da Trigonometria\nPara qualquer ângulo real \\(x\\):\n\\[ \\sin^2(x) + \\cos^2(x) = 1 \\]",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m12_a2_1",
+              "title": "ENEM: Sombra de Poste e Ângulos Notáveis",
+              "problemStatement": "Em um dia ensolarado, um poste vertical projeta no chão plano uma sombra horizontal de comprimento igual a 4√3 metros. Sabendo que os raios solares incidem sobre o solo formando um ângulo de 60°, qual é a altura desse poste?",
+              "options": [
+                "8 metros",
+                "6 metros",
+                "10 metros",
+                "14 metros",
+                "12 metros"
+              ],
+              "correctIndex": 4,
+              "hint": "Use a tangente de 60° = √3.",
+              "stepByStepSolution": "tan(60°) = Altura / Sombra\n√3 = h / (4√3) -> h = 4√3 * √3 = 4 * 3 = 12 metros."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m12_a3",
+          "unitId": "mod_12_trigonometria",
+          "title": "Aula 3: Trigonometria em triângulos quaisquer (Lei dos Senos e Lei dos Cossenos)",
+          "conceptTitle": "Lei dos Senos & Cossenos",
+          "explanation": "# Lei dos Senos e Lei dos Cossenos em Triângulos Quaisquer\n\nQuando o triângulo **não é retângulo**, utilizamos as leis gerais para relacionar lados e ângulos.\n\n### Lei dos Cossenos (Pitágoras Generalizado)\nEm qualquer triângulo com lados \\(a, b, c\\) e ângulo \\(\\theta\\) oposto a \\(a\\):\n\\[ a^2 = b^2 + c^2 - 2bc \\cos(\\theta) \\]\n• **Quando usar:** quando você conhece **dois lados e o ângulo entre eles**, ou **os três lados**.\n\n### Lei dos Senos\nOs lados são proporcionais aos senos dos ângulos opostos:\n\\[ \\frac{a}{\\sin \\hat{A}} = \\frac{b}{\\sin \\hat{B}} = \\frac{c}{\\sin \\hat{C}} = 2R \\]\n(onde \\(R\\) é o raio da circunferência circunscrita ao triângulo).\n• **Quando usar:** quando você conhece **dois ângulos e um lado**, ou um lado e o raio circunscrito.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m12_a3_1",
+              "title": "ENEM: Navegação Marítima e Lei dos Cossenos",
+              "problemStatement": "Uma lancha parte de um porto O e navega 6 milhas náuticas em linha reta até o ponto A. Ao mesmo tempo, um veleiro parte do mesmo porto O e navega 10 milhas em linha reta até o ponto B. Sabendo que o ângulo formado entre as duas rotas (AOB) foi de 60°, a distância em linha reta entre os dois barcos nos pontos A e B é de:",
+              "options": [
+                "2√31 milhas",
+                "8 milhas",
+                "14 milhas",
+                "2√19 milhas",
+                "4√7 milhas"
+              ],
+              "correctIndex": 3,
+              "hint": "Aplique a Lei dos Cossenos: d² = a² + b² - 2ab cos(60°). Note que cos(60°) = 0,5.",
+              "stepByStepSolution": "d² = 6² + 10² - 2 * 6 * 10 * cos(60°)\nd² = 36 + 100 - 120 * 0,5 = 136 - 60 = 76.\nd = √76 = √(4 * 19) = 2√19 milhas náuticas."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m12_a4",
+          "unitId": "mod_12_trigonometria",
+          "title": "Aula 4: Ciclo trigonométrico (conversão entre graus e radianos)",
+          "conceptTitle": "Ciclo Trigonométrico & Radianos",
+          "explanation": "# Ciclo Trigonométrico, Arcos e Radianos\n\nO ciclo trigonométrico é uma circunferência de raio unitário \\(R = 1\\) orientada no sentido anti-horário com centro na origem \\((0,0)\\).\n\n### Eixos Coordenados no Ciclo\n• O eixo das abscissas (\\(x\\)) corresponde ao **cosseno** (\\(\\cos\\)).\n• O eixo das ordenadas (\\(y\\)) corresponde ao **seno** (\\(\\sin\\)).\n\n### Conversão Graus - Radianos\nPor definição, \\( 180^\\circ = \\pi \\text{ radianos} \\).\nPortanto, \\( 360^\\circ = 2\\pi \\text{ rad} \\), \\( 90^\\circ = \\frac{\\pi}{2} \\text{ rad} \\), \\( 60^\\circ = \\frac{\\pi}{3} \\text{ rad} \\).\nComprimento de um arco com ângulo central \\(\\theta\\) (em radianos):\n\\[ s = \\theta \\cdot R \\]",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m12_a4_1",
+              "title": "ENEM: Roda Gigante e Comprimento de Arco",
+              "problemStatement": "Uma roda gigante com raio de 18 metros gira no sentido anti-horário. Uma cabine que se encontrava no ponto mais baixo sobe descrevendo um ângulo central de 2π/3 radianos. O comprimento do arco percorrido pela cabine nessa rotação foi de:",
+              "options": [
+                "12π metros",
+                "18π metros",
+                "15π metros",
+                "9π metros",
+                "6π metros"
+              ],
+              "correctIndex": 0,
+              "hint": "O comprimento do arco é dado por s = θ * R (com θ em radianos).",
+              "stepByStepSolution": "s = θ * R = (2π/3) * 18 = 2π * 6 = 12π metros."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m12_a5",
+          "unitId": "mod_12_trigonometria",
+          "title": "Aula 5: Funções trigonométricas (análise de gráficos, período e amplitude de seno e cosseno)",
+          "conceptTitle": "Funções Periódicas (Seno & Cosseno)",
+          "explanation": "# Funções Trigonométricas Seno e Cosseno\n\nNo ENEM, funções trigonométricas modelam fenômenos periódicos naturais e tecnológicos: batimentos cardíacos, variação das marés, temperaturas médias ao longo dos meses e ondas sonoras.\n\n### Parâmetros da Função Harmônica Geral\nDada a função:\n\\[ f(t) = A + B \\cdot \\sin(C \\cdot t + D) \\]\n• **Eixo Médio / Deslocamento Vertical (\\(A\\)):** média entre valor máximo e mínimo: \\( A = \\frac{Y_{\\max} + Y_{\\min}}{2} \\).\n• **Amplitude (\\(|B|\\)):** metade da oscilação total: \\( |B| = \\frac{Y_{\\max} - Y_{\\min}}{2} \\).\n• **Período (\\(P\\)):** tempo para completar um ciclo completo: \\( P = \\frac{2\\pi}{|C|} \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m12_a5_1",
+              "title": "ENEM: Temperatura Média e Modelo Senoidal",
+              "problemStatement": "A temperatura média diária T (em °C) em uma cidade serrana ao longo dos meses do ano t (onde t = 1 representa janeiro) é modelada pela função periódica:\\nT(t) = 18 + 6 \\\\cdot \\\\cos\\\\left(\\\\frac{\\\\pi(t - 1)}{6}\\\\right)\\nQual é a temperatura máxima prevista para essa cidade e em qual mês do ano ela ocorre?",
+              "options": [
+                "18 °C em abril",
+                "12 °C em outubro",
+                "24 °C em julho",
+                "24 °C em janeiro",
+                "22 °C em março"
+              ],
+              "correctIndex": 3,
+              "hint": "O valor máximo do cosseno é +1, que ocorre quando o argumento é 0 (t = 1).",
+              "stepByStepSolution": "T_max = 18 + 6 * 1 = 24 °C. Para cos = 1, π(t - 1)/6 = 0 -> t = 1 (mês de janeiro)."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_05_geometria_espacial",
+      "unitNumber": 12,
+      "tier": "BASIC",
+      "title": "Geometria Espacial",
+      "description": "Projeções ortogonais, planificação de sólidos, Relação de Euler, prismas, cilindros, pirâmides, cones, esferas e troncos.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m5_a1",
+          "unitId": "mod_05_geometria_espacial",
+          "title": "Aula 1: Visão espacial (projeções ortogonais e vistas frontais, laterais e superiores)",
+          "conceptTitle": "Projeções Ortogonais & Vistas",
+          "explanation": "# Visão Espacial e Projeções Ortogonais no ENEM\n\nProjeção ortogonal é a 'sombra' perpendicular que um objeto tridimensional projeta sobre um plano de referência iluminado por raios paralelos de luz.\n\n### Dicas para o ENEM\n• A projeção de um segmento paralelo ao plano mantém o mesmo comprimento.\n• A projeção de um segmento perpendicular ao plano é reduzida a um único **ponto**.\n• Vistas ortogonais principais: Frontal (elevação), Superior (planta baixa) e Lateral.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m5_a1_1",
+              "title": "ENEM: Projeção Ortogonal de Trajetória Espiral",
+              "problemStatement": "Uma formiga sobe ao longo do corrimão helicoidal de uma escada caracol perfeitamente vertical em direção ao andar superior. Sob a iluminação do sol no zênite (raios solares estritamente verticais), a sombra projetada pelo movimento da formiga no chão plano da sala descreve uma:",
+              "options": [
+                "Reta oblíqua",
+                "Elipse aberta",
+                "Circunferência",
+                "Parábola",
+                "Hipérbole"
+              ],
+              "correctIndex": 2,
+              "hint": "Uma hélice cilíndrica projetada verticalmente em seu eixo coincide com a base circular do cilindro.",
+              "stepByStepSolution": "Alternativa correta: C (Circunferência).\n\nA hélice circular de raio constante R, ao ser projetada ortogonalmente sobre o plano horizontal perpendicular ao seu eixo, resulta em uma circunferência de mesmo raio R."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m5_a2",
+          "unitId": "mod_05_geometria_espacial",
+          "title": "Aula 2: Planificação de sólidos geométricos",
+          "conceptTitle": "Planificação de Sólidos",
+          "explanation": "# Planificação de Sólidos Geométricos e Embalagens\n\nPlanificação consiste em 'abrir' a superfície externa de um sólido 3D em uma superfície bidimensional contínua sem rasgar nem sobrepor faces.\n\n### Planificações Frequentes no ENEM\n• **Cubo:** Possui 11 planificações possíveis de 6 quadrados.\n• **Cilindro Reto:** Um retângulo de base \\( 2\\pi r \\) e altura \\( h \\), acompanhado de dois círculos de raio \\( r \\).\n• **Cone Reto:** Um setor circular de raio \\( g \\) (geratriz) com comprimento de arco \\( 2\\pi r \\), mais o círculo da base.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m5_a2_1",
+              "title": "ENEM: Planificação da Superfície Lateral do Cilindro",
+              "problemStatement": "Um rótulo retangular adesivo envolve exatamente toda a superfície lateral de uma lata cilíndrica de tinta de raio 5 cm e altura 20 cm, sem haver folgas ou sobreposições. Adotando π = 3,14, as dimensões desse rótulo retangular são de aproximadamente:",
+              "options": [
+                "31,4 cm x 20 cm",
+                "15,7 cm x 20 cm",
+                "78,5 cm x 20 cm",
+                "25 cm x 20 cm",
+                "62,8 cm x 20 cm"
+              ],
+              "correctIndex": 0,
+              "hint": "A base do retângulo planificado é o comprimento da circunferência 2 * π * r.",
+              "stepByStepSolution": "Alternativa correta: A (31,4 cm x 20 cm).\n\nComprimento da base: C = 2 * 3,14 * 5 = 31,4 cm.\nAltura: h = 20 cm."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m5_a3",
+          "unitId": "mod_05_geometria_espacial",
+          "title": "Aula 3: Poliedros e Relação de Euler",
+          "conceptTitle": "Poliedros & Relação de Euler",
+          "explanation": "# Poliedros Convexos e Teorema de Euler\n\nPoliedros são sólidos geométricos limitados exclusivamente por polígonos planos chamados faces.\n\n### 1. Relação de Euler\nPara todo poliedro convexo fechado com \\( V \\) vértices, \\( A \\) arestas e \\( F \\) faces:\n\\( V - A + F = 2 \\) (ou \"Vamos Fazer Amor a Dois\": \\( V + F = A + 2 \\)).\n\n### 2. Contagem de Arestas por Faces\nComo cada aresta é compartilhada por exatamente duas faces:\n\\( 2A = 3F_3 + 4F_4 + 5F_5 + \\dots \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m5_a3_1",
+              "title": "ENEM: Poliedro e Teorema de Euler",
+              "problemStatement": "Um poliedro convexo possui 8 faces triangulares e 6 faces quadrangulares. O número de vértices desse poliedro é igual a:",
+              "options": [
+                "16",
+                "24",
+                "14",
+                "10",
+                "12"
+              ],
+              "correctIndex": 4,
+              "hint": "Primeiro calcule o total de arestas: 2A = 8*3 + 6*4. Depois use V + F = A + 2.",
+              "stepByStepSolution": "Alternativa correta: E (12 vértices).\n\nTotal de faces: F = 8 + 6 = 14.\nArestas: 2A = 8*3 + 6*4 = 24 + 24 = 48 -> A = 24.\nEuler: V + 14 = 24 + 2 -> V = 26 - 14 = 12."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m5_a4",
+          "unitId": "mod_05_geometria_espacial",
+          "title": "Aula 4: Prismas (elementos, área da superfície e cálculo de volume)",
+          "conceptTitle": "Prismas: Superfície e Volume",
+          "explanation": "# Prismas: Área Superficial e Volume\n\nPrismas são sólidos com duas bases poligonais paralelas e congruentes, e faces laterais paralelogrâmicas (ou retangulares nos prismas retos).\n\n### 1. Fórmulas Fundamentais\n• **Volume de Qualquer Prisma:** \\( V = A_{base} \\cdot h \\)\n• **Paralelepípedo Retângulo (\\( a, b, c \\)):**\n  - Volume: \\( V = a \\cdot b \\cdot c \\)\n  - Diagonal interna: \\( D = \\sqrt{a^2 + b^2 + c^2} \\)\n  - Área total: \\( A_t = 2(ab + ac + bc) \\)\n• **Cubo de aresta \\( a \\):** \\( V = a^3 \\) e diagonal \\( D = a\\sqrt{3} \\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m5_a4_1",
+              "title": "ENEM: Volume de Caixa d'Água Paralelepipédica",
+              "problemStatement": "Um condomínio construiu uma caixa-d'água em formato de paralelepípedo reto retângulo com dimensões internas de 3 metros de comprimento, 2 metros de largura e 1,5 metro de profundidade. A capacidade máxima de armazenamento de água desse reservatório, em litros, é de:",
+              "options": [
+                "4.500 litros",
+                "12.000 litros",
+                "6.000 litros",
+                "9.000 litros",
+                "7.500 litros"
+              ],
+              "correctIndex": 3,
+              "hint": "Calcule o volume em metros cúbicos multiplicando comprimento x largura x altura e lembre-se que 1 m³ = 1.000 litros.",
+              "stepByStepSolution": "Alternativa correta: D (9.000 litros).\n\nV = 3 * 2 * 1,5 = 9 m³.\nComo 1 m³ = 1.000 L -> 9 * 1.000 = 9.000 litros."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m5_a5",
+          "unitId": "mod_05_geometria_espacial",
+          "title": "Aula 5: Cilindros (elementos, área da superfície e cálculo de volume)",
+          "conceptTitle": "Cilindros: Superfície e Volume",
+          "explanation": "# Cilindros: Superfície e Volume no Cotidiano\n\nO cilindro reto (ou cilindro de revolução) é gerado pela rotação de um retângulo em torno de um de seus lados.\n\n### Fórmulas Essenciais\n• **Área da Base:** \\( A_b = \\pi \\cdot r^2 \\)\n• **Área Lateral:** \\( A_l = 2\\pi r \\cdot h \\)\n• **Área Total:** \\( A_t = 2\\pi r(r + h) \\)\n• **Volume:** \\( V = \\pi \\cdot r^2 \\cdot h \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m5_a5_1",
+              "title": "ENEM: Tanque de Combustível Cilíndrico",
+              "problemStatement": "Um posto de combustíveis armazena etanol em um tanque subterrâneo com formato cilíndrico circular reto de raio interno 2 metros e comprimento 5 metros. Adotando π = 3, o volume máximo comportado por esse tanque é de:",
+              "options": [
+                "40 m³ (40.000 L)",
+                "30 m³ (30.000 L)",
+                "60 m³ (60.000 L)",
+                "80 m³ (80.000 L)",
+                "50 m³ (50.000 L)"
+              ],
+              "correctIndex": 2,
+              "hint": "V = π * r² * h.",
+              "stepByStepSolution": "Alternativa correta: C (60 m³ ou 60.000 L).\n\nV = 3 * (2²) * 5 = 3 * 4 * 5 = 60 m³ = 60.000 litros."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m5_a6",
+          "unitId": "mod_05_geometria_espacial",
+          "title": "Aula 6: Pirâmides (elementos, área da superfície e cálculo de volume)",
+          "conceptTitle": "Pirâmides: Superfície e Volume",
+          "explanation": "# Pirâmides: Elementos, Apótema e Volume\n\nUma pirâmide possui uma base poligonal qualquer e um vértice superior comum fora do plano da base.\n\n### 1. Volume de Qualquer Pirâmide\nO volume de uma pirâmide é rigorosamente um terço do volume do prisma de mesma base e mesma altura:\n\\( V = \\frac{A_{base} \\cdot h}{3} \\).\n\n### 2. Relação no Triângulo Retângulo Interno\nEm uma pirâmide regular:\n\\( g^2 = h^2 + m^2 \\), onde \\( g \\) é o apótema da pirâmide (altura da face triangular) e \\( m \\) é o apótema da base.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m5_a6_1",
+              "title": "ENEM: Volume de Pirâmide Regular",
+              "problemStatement": "Uma estufa de plantas tem o formato de uma pirâmide regular de base quadrada com lado de 6 metros e altura vertical de 4 metros. O volume de ar contido no interior dessa estufa é:",
+              "options": [
+                "72 m³",
+                "48 m³",
+                "36 m³",
+                "144 m³",
+                "24 m³"
+              ],
+              "correctIndex": 1,
+              "hint": "Volume da pirâmide = (Área da Base * altura) / 3.",
+              "stepByStepSolution": "Alternativa correta: B (48 m³).\n\nÁrea da base = 6 * 6 = 36 m².\nVolume = (36 * 4) / 3 = 144 / 3 = 48 m³."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m5_a7",
+          "unitId": "mod_05_geometria_espacial",
+          "title": "Aula 7: Cones (elementos, área da superfície e cálculo de volume)",
+          "conceptTitle": "Cones: Superfície e Volume",
+          "explanation": "# Cones: Geratriz, Área Lateral e Volume\n\nO cone reto (ou cone de revolução) é o análogo circular da pirâmide, gerado pela rotação de um triângulo retângulo em torno de um cateto.\n\n### Fórmulas Centrais\n• **Relação Pitagórica:** \\( g^2 = h^2 + r^2 \\) (geratriz \\( g \\), altura \\( h \\), raio \\( r \\))\n• **Área Lateral:** \\( A_l = \\pi \\cdot r \\cdot g \\)\n• **Volume do Cone:** \\( V = \\frac{\\pi \\cdot r^2 \\cdot h}{3} \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m5_a7_1",
+              "title": "ENEM: Volume de Cone de Sinalização",
+              "problemStatement": "Um cone de trânsito maciço tem raio da base de 10 cm e altura de 30 cm. Adotando π = 3,14, o volume de material plástico utilizado em sua fabricação é de:",
+              "options": [
+                "9.420 cm³",
+                "4.710 cm³",
+                "1.046 cm³",
+                "1.570 cm³",
+                "3.140 cm³"
+              ],
+              "correctIndex": 4,
+              "hint": "V = (π * r² * h) / 3.",
+              "stepByStepSolution": "Alternativa correta: E (3.140 cm³).\n\nV = (3,14 * 10² * 30) / 3 = (3,14 * 100 * 30) / 3 = 9.420 / 3 = 3.140 cm³."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m5_a8",
+          "unitId": "mod_05_geometria_espacial",
+          "title": "Aula 8: Esferas (área da superfície e cálculo de volume)",
+          "conceptTitle": "Esferas: Superfície e Volume",
+          "explanation": "# Esferas: Área da Superfície e Volume\n\nA esfera é o sólido perfeito formado pelo conjunto de pontos do espaço a uma distância menor ou igual a \\( R \\) do centro.\n\n### Fórmulas Arquimedianas\n• **Área da Superfície Esférica:** \\( A = 4 \\cdot \\pi \\cdot R^2 \\) (equivale à área de 4 círculos máximos!)\n• **Volume da Esfera:** \\( V = \\frac{4}{3} \\cdot \\pi \\cdot R^3 \\)",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m5_a8_1",
+              "title": "ENEM: Capacidade de Esfera de Armazenamento",
+              "problemStatement": "Um reservatório esférico de gás liquefeito tem raio de 3 metros. Adotando π = 3, o volume interno desse reservatório esférico é de:",
+              "options": [
+                "108 m³",
+                "216 m³",
+                "144 m³",
+                "36 m³",
+                "54 m³"
+              ],
+              "correctIndex": 0,
+              "hint": "V = (4/3) * π * R³.",
+              "stepByStepSolution": "Alternativa correta: A (108 m³).\n\nV = (4/3) * 3 * (3³) = 4 * 27 = 108 m³."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m5_a9",
+          "unitId": "mod_05_geometria_espacial",
+          "title": "Aula 9: Troncos de pirâmide e de cone",
+          "conceptTitle": "Troncos de Sólidos",
+          "explanation": "# Troncos de Pirâmide e Cone (Baldes e Vasos)\n\nCortando-se uma pirâmide ou cone por um plano paralelo à base, obtém-se um sólido menor semelhante no topo e um **tronco** na parte inferior.\n\n### 1. Razão de Semelhança em Sólidos\nSe a razão entre as alturas é \\( k = \\frac{h_{menor}}{H_{total}} \\):\n• Razão entre áreas das bases: \\( \\frac{A_b}{A_B} = k^2 \\)\n• Razão entre volumes: \\( \\frac{V_{menor}}{V_{total}} = k^3 \\)\n\n### 2. Volume do Tronco de Cone por Subtração\n\\( V_{tronco} = V_{total} - V_{topo} \\) (muito mais rápido e intuitivo que a fórmula direta).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m5_a9_1",
+              "title": "ENEM: Vaso com Formato de Tronco de Cone",
+              "problemStatement": "Um vaso decorativo com formato de cone reto de altura total 40 cm e volume total de 800 mL foi seccionado por um plano horizontal a meia altura (20 cm da base). O volume do pequeno cone superior que foi removido equivale a:",
+              "options": [
+                "200 mL",
+                "50 mL",
+                "100 mL",
+                "400 mL",
+                "600 mL"
+              ],
+              "correctIndex": 2,
+              "hint": "A razão linear é k = 20 / 40 = 1/2. O volume varia com k³.",
+              "stepByStepSolution": "Alternativa correta: C (100 mL).\n\nRazão de semelhança linear k = 20/40 = 1/2.\nRazão de volumes = k³ = (1/2)³ = 1/8.\nVolume do cone superior = 800 * (1/8) = 100 mL."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_13_geometria_analitica",
+      "unitNumber": 13,
+      "tier": "BASIC",
+      "title": "Geometria Analítica",
+      "description": "Distância entre dois pontos, ponto médio, alinhamento, equação geral e reduzida da reta, posições relativas e equação da circunferência.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m13_a1",
+          "unitId": "mod_13_geometria_analitica",
+          "title": "Aula 1: Distância entre dois pontos no plano cartesiano",
+          "conceptTitle": "Distância Entre Dois Pontos",
+          "explanation": "# Plano Cartesiano e Distância entre Dois Pontos\n\nA Geometria Analítica conecta a álgebra à geometria através do sistema de coordenadas cartesianas retangulares.\n\n### Distância Euclidiana entre Pontos\nA distância entre \\(A(x_A, y_A)\\) e \\(B(x_B, y_B)\\) é calculada aplicando o Teorema de Pitágoras no triângulo retângulo formado pelas variações \\(\\Delta x\\) e \\(\\Delta y\\):\n\\[ d_{AB} = \\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2} \\]",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m13_a1_1",
+              "title": "ENEM: Distância entre Cidades em Malha Viária",
+              "problemStatement": "Em uma representação cartográfica com coordenadas em quilômetros, a sede de um município A fica no ponto (-2, 1) e a sede de outro município B fica no ponto (6, 7). A distância em linha reta entre essas duas sedes municipais é de:",
+              "options": [
+                "10 km",
+                "14 km",
+                "12 km",
+                "9 km",
+                "8 km"
+              ],
+              "correctIndex": 0,
+              "hint": "Calcule d = √[(Δx)² + (Δy)²].",
+              "stepByStepSolution": "Δx = 6 - (-2) = 8; Δy = 7 - 1 = 6.\nd = √(8² + 6²) = √(64 + 36) = √100 = 10 km."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m13_a2",
+          "unitId": "mod_13_geometria_analitica",
+          "title": "Aula 2: Ponto médio de um segmento de reta",
+          "conceptTitle": "Ponto Médio",
+          "explanation": "# Ponto Médio e Baricentro de um Triângulo\n\n### Coordenadas do Ponto Médio\nO ponto médio \\(M\\) do segmento \\(AB\\) é a média aritmética simples das coordenadas das extremidades:\n\\[ x_M = \\frac{x_A + x_B}{2}, \\quad y_M = \\frac{y_A + y_B}{2} \\]\n\n### Baricentro de um Triângulo (\\(G\\))\nO baricentro é o ponto de encontro das medianas e o centro de gravidade (massa uniforme) do triângulo:\n\\[ x_G = \\frac{x_A + x_B + x_C}{3}, \\quad y_G = \\frac{y_A + y_B + y_C}{3} \\]\nO baricentro divide cada mediana na proporção \\(2:1\\) a partir do vértice.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m13_a2_1",
+              "title": "ENEM: Centro de Distribuição e Ponto Médio",
+              "problemStatement": "Uma rede de supermercados deseja construir um centro logístico de distribuição exatamente no ponto médio entre duas filiais localizadas nas posições (-4, 8) e (10, 2). As coordenadas cartesianas do centro logístico serão:",
+              "options": [
+                "(3, 3)",
+                "(6, 6)",
+                "(5, 3)",
+                "(2, 4)",
+                "(3, 5)"
+              ],
+              "correctIndex": 4,
+              "hint": "M = ((x_1 + x_2)/2, (y_1 + y_2)/2).",
+              "stepByStepSolution": "x_M = (-4 + 10)/2 = 6/2 = 3.\ny_M = (8 + 2)/2 = 10/2 = 5.\nPonto Médio = (3, 5)."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m13_a3",
+          "unitId": "mod_13_geometria_analitica",
+          "title": "Aula 3: Condição de alinhamento de três pontos",
+          "conceptTitle": "Alinhamento de Pontos",
+          "explanation": "# Condição de Alinhamento de Três Pontos\n\nTrês pontos distintos \\(A(x_A, y_A)\\), \\(B(x_B, y_B)\\) e \\(C(x_C, y_C)\\) são **colineares** (pertencem à mesma reta) se, e somente se, o determinante de suas coordenadas for nulo:\n\\[\n\\begin{vmatrix}\nx_A & y_A & 1 \\\\\nx_B & y_B & 1 \\\\\nx_C & y_C & 1\n\\end{vmatrix} = 0\n\\]\n\n### Cálculo da Área de um Triângulo no Plano\nSe os pontos não forem colineares, eles formam os vértices de um triângulo cuja área é dada pela metade do módulo desse determinante:\n\\[ \\text{Área} = \\frac{1}{2} \\cdot |D| \\]",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m13_a3_1",
+              "title": "ENEM: Área de Propriedade Triangular no Plano",
+              "problemStatement": "Um sítio possui formato triangular com vértices demarcados nos pontos A(0, 0), B(6, 0) e C(4, 5), com coordenadas em centenas de metros. A área total desse sítio é igual a:",
+              "options": [
+                "30 centenas de m²",
+                "10 centenas de m²",
+                "20 centenas de m²",
+                "12 centenas de m²",
+                "15 centenas de m²"
+              ],
+              "correctIndex": 4,
+              "hint": "Área = (base * altura) / 2 ou pelo determinante 3x3.",
+              "stepByStepSolution": "Como os pontos A e B estão sobre o eixo x, a base mede 6 unidades (de 0 a 6) e a altura vertical é a ordenada de C (y = 5). Área = (6 * 5) / 2 = 15 unidades de área."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m13_a4",
+          "unitId": "mod_13_geometria_analitica",
+          "title": "Aula 4: Estudo da reta (equação reduzida, equação geral, coeficientes angular e linear)",
+          "conceptTitle": "Equações da Reta",
+          "explanation": "# Equações da Reta: Reduzida e Geral\n\n### 1. Equação Reduzida da Reta\n\\[ y = m \\cdot x + q \\]\n• \\(m\\): **coeficiente angular** (declividade ou taxa de inclinação):\n\\[ m = \\tan(\\theta) = \\frac{y_B - y_A}{x_B - x_A} \\]\n• \\(q\\): **coeficiente linear** (ponto de intercepto com o eixo das ordenadas: \\((0, q)\\)).\n\n### 2. Equação Geral da Reta\n\\[ A \\cdot x + B \\cdot y + C = 0 \\]\nOnde o coeficiente angular é \\( m = -\\frac{A}{B} \\) (com \\(B \\ne 0\\)).\n\n### Ponto e Inclinação (Equação Fundamental)\nConhecendo um ponto \\(P_0(x_0, y_0)\\) e a inclinação \\(m\\):\n\\[ y - y_0 = m \\cdot (x - x_0) \\]",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m13_a4_1",
+              "title": "ENEM: Equação da Reta da Rota Aérea",
+              "problemStatement": "Um avião comercial mantém rota retilínea descrita no plano cartesiano passando pelos pontos P(2, 3) e Q(4, 7). A equação reduzida que descreve essa trajetória é:",
+              "options": [
+                "y = 2x - 1",
+                "y = 3x - 3",
+                "y = 2x + 1",
+                "y = 4x - 5",
+                "y = x + 3"
+              ],
+              "correctIndex": 0,
+              "hint": "Calcule a declividade m = (7 - 3)/(4 - 2) e utilize y - y_0 = m(x - x_0).",
+              "stepByStepSolution": "m = (7 - 3) / (4 - 2) = 4 / 2 = 2.\ny - 3 = 2(x - 2) -> y - 3 = 2x - 4 -> y = 2x - 1."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m13_a5",
+          "unitId": "mod_13_geometria_analitica",
+          "title": "Aula 5: Posições relativas entre retas (paralelas e perpendiculares)",
+          "conceptTitle": "Retas Paralelas & Perpendiculares",
+          "explanation": "# Posições Relativas de Retas: Paralelismo e Perpendicularismo\n\nDadas duas retas \\(r\\) e \\(s\\) com coeficientes angulares \\(m_r\\) e \\(m_s\\):\n\n### 1. Retas Paralelas (\\(r \\parallel s\\))\nPossuem a mesma inclinação e nunca se cruzam (ou coincidem):\n\\[ m_r = m_s \\]\n\n### 2. Retas Perpendiculares (\\(r \\perp s\\))\nCruzam-se formando um ângulo reto de 90°. Suas declividades são opostas e inversas:\n\\[ m_r \\cdot m_s = -1 \\iff m_s = -\\frac{1}{m_r} \\]",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m13_a5_1",
+              "title": "ENEM: Retas Perpendiculares em Traçado Urbano",
+              "problemStatement": "Em um projeto de loteamento urbano, a Avenida Principal tem equação da reta dada por 2x - y + 4 = 0. Uma rua transversal deve ser projetada de forma estritamente perpendicular à Avenida Principal, passando pelo cruzamento (4, 1). Qual é a equação da reta dessa rua transversal?",
+              "options": [
+                "x - 2y - 2 = 0",
+                "x + 2y + 6 = 0",
+                "2x - y - 7 = 0",
+                "2x + y - 9 = 0",
+                "x + 2y - 6 = 0"
+              ],
+              "correctIndex": 4,
+              "hint": "A reta original tem m_1 = 2. A reta perpendicular deve ter m_2 = -1/2.",
+              "stepByStepSolution": "m_1 = 2 -> m_perp = -1/2.\ny - 1 = -1/2 (x - 4) -> 2y - 2 = -x + 4 -> x + 2y - 6 = 0."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m13_a6",
+          "unitId": "mod_13_geometria_analitica",
+          "title": "Aula 6: Equação reduzida e geral da circunferência",
+          "conceptTitle": "Equação da Circunferência",
+          "explanation": "# Equação da Circunferência: Reduzida e Geral\n\nUma circunferência é o lugar geométrico de todos os pontos \\(P(x, y)\\) do plano cuja distância ao centro fixo \\(C(a, b)\\) é constante e igual ao raio \\(R\\).\n\n### 1. Equação Reduzida\n\\[ (x - a)^2 + (y - b)^2 = R^2 \\]\n\n### 2. Equação Geral\nDesenvolvendo os produtos notáveis:\n\\[ x^2 + y^2 - 2ax - 2by + (a^2 + b^2 - R^2) = 0 \\]\n\nPara obter o centro a partir da equação geral, divida os coeficientes de \\(x\\) e de \\(y\\) por \\(-2\\).",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m13_a6_1",
+              "title": "ENEM: Radar Meteorológico e Equação da Circunferência",
+              "problemStatement": "Um radar meteorológico instalado no ponto (2, -3) monitora tempestades em um raio de 4 km. A equação reduzida da circunferência que delimita o alcance máximo de monitoramento desse radar é:",
+              "options": [
+                "(x - 2)² + (y + 3)² = 16",
+                "(x - 2)² + (y + 3)² = 8",
+                "(x - 2)² + (y - 3)² = 4",
+                "(x + 2)² + (y + 3)² = 4",
+                "(x + 2)² + (y - 3)² = 16"
+              ],
+              "correctIndex": 0,
+              "hint": "(x - a)² + (y - b)² = R² com a = 2, b = -3 e R = 4.",
+              "stepByStepSolution": "(x - 2)² + (y - (-3))² = 4² -> (x - 2)² + (y + 3)² = 16."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "unit_mod_14_matrizes_sistemas",
+      "unitNumber": 14,
+      "tier": "BASIC",
+      "title": "Matrizes e Sistemas Lineares",
+      "description": "Lei de formação e operações elementares com matrizes, determinantes de ordens 2 e 3 e resolução de sistemas lineares.",
+      "category": "Matemática",
+      "subject": "Matemática ENEM",
+      "lessons": [
+        {
+          "id": "enem_m14_a1",
+          "unitId": "mod_14_matrizes_sistemas",
+          "title": "Aula 1: Lei de formação e operações elementares com matrizes (adição, subtração, multiplicação)",
+          "conceptTitle": "Matrizes & Operações",
+          "explanation": "# Matrizes: Representação e Operações\n\nNo ENEM, matrizes são utilizadas para tabular dados econômicos, rotas logísticas, notas escolares e estoques de lojas.\n\n### Notação Matricial\nUma matriz \\(A\\) de ordem \\(m \\times n\\) possui \\(m\\) linhas e \\(n\\) colunas, com elementos genéricos \\(a_{ij}\\) (onde \\(i\\) indica a linha e \\(j\\) a coluna).\n\n### Operações Básicas\n• **Adição e Subtração:** só podem ser realizadas entre matrizes de mesma ordem, somando-se os elementos correspondentes.\n• **Multiplicação por Escalar:** multiplica-se cada entrada da matriz pelo número real.\n• **Multiplicação de Matrizes (\\(A_{m \\times p} \\cdot B_{p \\times n} = C_{m \\times n}\\)):** a multiplicação só é possível se o **número de colunas de A for igual ao número de linhas de B**. O elemento \\(c_{ij}\\) é a soma dos produtos da linha \\(i\\) de A pela coluna \\(j\\) de B.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m14_a1_1",
+              "title": "ENEM: Matriz de Pontuação de Atletas",
+              "problemStatement": "Em um torneio, o número de vitórias (3 pontos), empates (1 ponto) e derrotas (0 ponto) de duas equipes é representado pela matriz 2x3:\\n\\\\[ M = \\\\begin{bmatrix} 5 & 2 & 1 \\\\\\\\ 4 & 4 & 0 \\\\end{bmatrix} \\\\]\\nMultiplicando M pela matriz coluna de pontuação P = [3, 1, 0]^t, qual é a pontuação final obtida pelas duas equipes, respectivamente?",
+              "options": [
+                "18 e 16 pontos",
+                "15 e 12 pontos",
+                "16 e 16 pontos",
+                "17 e 12 pontos",
+                "17 e 16 pontos"
+              ],
+              "correctIndex": 4,
+              "hint": "Faça a multiplicação linha por coluna: 5*3 + 2*1 + 1*0 para a 1ª equipe, e 4*3 + 4*1 + 0*0 para a 2ª.",
+              "stepByStepSolution": "Equipe 1 = 5*3 + 2*1 + 1*0 = 15 + 2 + 0 = 17 pontos.\nEquipe 2 = 4*3 + 4*1 + 0*0 = 12 + 4 + 0 = 16 pontos."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m14_a2",
+          "unitId": "mod_14_matrizes_sistemas",
+          "title": "Aula 2: Determinantes (ordens 2 e 3)",
+          "conceptTitle": "Determinantes (Ordem 2 e 3)",
+          "explanation": "# Determinantes de 2ª e 3ª Ordem (Regra de Sarrus)\n\nO determinante é um número real associado a uma matriz quadrada.\n\n### Determinante de Ordem 2x2\n\\[ \\det \\begin{bmatrix} a & b \\\\ c & d \\end{bmatrix} = a \\cdot d - b \\cdot c \\]\n(Produto da diagonal principal menos produto da diagonal secundária).\n\n### Determinante de Ordem 3x3 (Regra de Sarrus)\nRepetem-se as duas primeiras colunas à direita da matriz:\n1. Somam-se os três produtos das diagonais no sentido principal.\n2. Subtraem-se os três produtos das diagonais no sentido secundário.",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m14_a2_1",
+              "title": "ENEM: Determinante e Parâmetro Linear",
+              "problemStatement": "Para que a matriz quadrada \\\\( A = \\\\begin{bmatrix} k & 6 \\\\\\\\ 2 & 3 \\\\end{bmatrix} \\\\) NÃO seja invertível (ou seja, tenha determinante igual a zero), o valor real da constante k deve ser:",
+              "options": [
+                "3",
+                "1",
+                "2",
+                "6",
+                "4"
+              ],
+              "correctIndex": 4,
+              "hint": "det(A) = 3k - 12 = 0.",
+              "stepByStepSolution": "det(A) = k * 3 - 6 * 2 = 3k - 12.\nPara det = 0: 3k = 12 -> k = 4."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "enem_m14_a3",
+          "unitId": "mod_14_matrizes_sistemas",
+          "title": "Aula 3: Resolução e classificação de sistemas lineares simples",
+          "conceptTitle": "Sistemas Lineares & Classificação",
+          "explanation": "# Sistemas Lineares: Classificação, Escalonamento e Cramer\n\nUm sistema linear de equações expressa o cruzamento de múltiplas restrições algébricas.\n\n### Classificação dos Sistemas Lineares\n1. **SPD (Sistema Possível e Determinado):** admite **solução única**. As retas/planos se cruzam em um único ponto (\\(D \\ne 0\\)).\n2. **SPI (Sistema Possível e Indeterminado):** admite **infinitas soluções**. As retas são coincidentes (\\(D = D_x = D_y = 0\\)).\n3. **SI (Sistema Impossível):** **não admite nenhuma solução**. As retas são paralelas e distintas (\\(D = 0\\) e pelo menos um \\(D_i \\ne 0\\)).\n\n### Regra de Cramer (para sistemas \\(n \\times n\\))\n\\[ x = \\frac{D_x}{D}, \\quad y = \\frac{D_y}{D}, \\quad z = \\frac{D_z}{D} \\]",
+          "lessonType": "LEARN",
+          "initialCode": "",
+          "hints": [
+            "Revise os conceitos fundamentais deste subtópico.",
+            "Aplique os métodos matemáticos recomendados para o ENEM."
+          ],
+          "solutionExplanation": "Conceito dominado com sucesso!",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [],
+          "mathExercises": [
+            {
+              "id": "ex_m14_a3_1",
+              "title": "ENEM: Sistema Linear de Mistura de Combustíveis",
+              "problemStatement": "Um posto de combustíveis vendeu em um determinado dia um total de 1.000 litros entre etanol (R$ 3,50 o litro) e gasolina (R$ 5,50 o litro), totalizando um faturamento diário de R$ 4.700,00. Quantos litros de gasolina foram vendidos nesse dia?",
+              "options": [
+                "800 litros",
+                "700 litros",
+                "500 litros",
+                "400 litros",
+                "600 litros"
+              ],
+              "correctIndex": 4,
+              "hint": "Monte o sistema: E + G = 1000 e 3,5E + 5,5G = 4700.",
+              "stepByStepSolution": "Multiplicando a 1ª equação por -3,5:\n-3,5E - 3,5G = -3500\nSomando com a 2ª (3,5E + 5,5G = 4700):\n2G = 1200 -> G = 600 litros de gasolina (e 400 de etanol)."
+            }
+          ],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    }
+  ]
+}

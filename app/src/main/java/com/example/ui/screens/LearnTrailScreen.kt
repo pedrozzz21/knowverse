@@ -102,6 +102,7 @@ fun LearnTrailScreen(
     var isPythonExpanded by remember { mutableStateOf(false) }
     var isEnemMathExpanded by remember { mutableStateOf(false) }
     var expandedEnemModuleId by remember { mutableStateOf<String?>(null) }
+    var isBasicMathExpanded by remember { mutableStateOf(false) }
     var isCalculusExpanded by remember { mutableStateOf(false) }
     var isPhysicsExpanded by remember { mutableStateOf(false) }
     var expandedPhysicsModuleId by remember { mutableStateOf<String?>(null) }
@@ -115,6 +116,9 @@ fun LearnTrailScreen(
     var expandedHistoryModuleId by remember { mutableStateOf<String?>(null) }
     var isGeographyExpanded by remember { mutableStateOf(false) }
     var expandedGeographyModuleId by remember { mutableStateOf<String?>(null) }
+    var isTranspetroExpanded by remember { mutableStateOf(false) }
+    var selectedTranspetroDisciplineId by remember { mutableStateOf("transpetro_adm") }
+    var expandedTranspetroModuleId by remember { mutableStateOf<String?>(null) }
 
     val enemModules = remember { EnemMathCurriculum.getAllModules() }
     val physicsModules = remember { com.example.data.physics.EnemPhysicsCurriculum.getAllModules() }
@@ -123,6 +127,7 @@ fun LearnTrailScreen(
     val languagesModules = remember { com.example.data.languages.EnemLanguagesCurriculum.getAllModules() }
     val historyModules = remember { com.example.data.history.EnemHistoryCurriculum.getAllModules() }
     val geographyModules = remember { com.example.data.geography.EnemGeographyCurriculum.getAllModules() }
+    val transpetroDisciplines = remember { com.example.data.transpetro.TranspetroCurriculum.allDisciplines }
 
     // Active sub-module selection inside Python
     var selectedPythonTier by remember { mutableStateOf(initialTier) }
@@ -133,6 +138,7 @@ fun LearnTrailScreen(
 
     var activeFollowTrail by remember(userProgress.favoriteAreaId, userProgress.currentLessonId) {
         val initial = when {
+            userProgress.currentLessonId.startsWith("mb_") -> "matematica_basica"
             userProgress.currentLessonId.startsWith("mat_") || userProgress.currentLessonId.startsWith("enem_") -> "matematica_enem"
             userProgress.currentLessonId.startsWith("calc_") -> "calculus"
             userProgress.currentLessonId.startsWith("fis_") -> "fisica"
@@ -141,13 +147,15 @@ fun LearnTrailScreen(
             userProgress.currentLessonId.startsWith("ling_") -> "linguagens"
             userProgress.currentLessonId.startsWith("hist_") -> "historia"
             userProgress.currentLessonId.startsWith("geo_") -> "geografia"
+            userProgress.currentLessonId.startsWith("tp_") -> "transpetro"
             userProgress.favoriteAreaId.isNotBlank() && userProgress.favoriteAreaId != "py_b1" -> userProgress.favoriteAreaId
             else -> "python"
         }
         mutableStateOf(initial)
     }
 
-    val categories = listOf("Todas", "Química", "Geografia", "História", "Linguagens", "Matemática", "Física", "Biologia", "Programação")
+    val categories = listOf("Todas", "Transpetro", "Química", "Geografia", "História", "Linguagens", "Matemática", "Física", "Biologia", "Programação")
+    val showTranspetro = selectedCategory == "Todas" || selectedCategory == "Transpetro"
     val showProgramming = selectedCategory == "Todas" || selectedCategory == "Programação"
     val showMath = selectedCategory == "Todas" || selectedCategory == "Matemática"
     val showPhysics = selectedCategory == "Todas" || selectedCategory == "Física"
@@ -234,9 +242,9 @@ fun LearnTrailScreen(
                                         style = MaterialTheme.typography.labelSmall.copy(
                                             color = SuccessEmerald,
                                             fontWeight = FontWeight.Bold,
-                                            fontSize = 9.sp
+                                            fontSize = 11.sp
                                         ),
-                                        modifier = Modifier.padding(horizontal = 5.dp, vertical = 1.dp)
+                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                                     )
                                 }
                             }
@@ -244,6 +252,144 @@ fun LearnTrailScreen(
                                 text = "Todas as lições e exercícios estão salvos no banco local para estudo sem internet.",
                                 style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary, fontSize = 11.sp)
                             )
+                        }
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(10.dp))
+
+                // Card "Continuar de onde parou" + Aulas para Revisão
+                val (continueLesson, continueSubjectLabel, continueSubjectMap) = remember(
+                    userProgress.currentLessonId,
+                    userProgress.favoriteAreaId,
+                    userProgress.completedLessonIds
+                ) {
+                    resolveContinueLearningTarget(userProgress, defaultSubjectPairs(context))
+                }
+                val (completedInSubj, totalInSubj) = continueSubjectMap[continueSubjectLabel] ?: (0 to 0)
+                val reviewLessons = remember(userProgress.reviewLessonIds) {
+                    userProgress.reviewLessonIds.mapNotNull { resolveLessonById(it) }.take(4)
+                }
+
+                Card(
+                    shape = RoundedCornerShape(10.dp),
+                    colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .border(1.dp, PrimaryViolet.copy(alpha = 0.55f), RoundedCornerShape(10.dp))
+                        .clickable { onSelectLesson(continueLesson) }
+                        .testTag("trail_continue_learning_card")
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(12.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ) {
+                        Column(modifier = Modifier.weight(1f)) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(6.dp)
+                            ) {
+                                Surface(
+                                    color = PrimaryViolet.copy(alpha = 0.2f),
+                                    shape = RoundedCornerShape(4.dp)
+                                ) {
+                                    Text(
+                                        text = "CONTINUAR DE ONDE PAROU",
+                                        style = MaterialTheme.typography.labelSmall.copy(
+                                            color = PrimaryViolet,
+                                            fontWeight = FontWeight.Bold,
+                                            fontSize = 9.5.sp
+                                        ),
+                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                    )
+                                }
+                                Text(
+                                    text = "$completedInSubj/$totalInSubj concluídas",
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        color = GoldXp,
+                                        fontWeight = FontWeight.SemiBold,
+                                        fontSize = 10.sp
+                                    )
+                                )
+                            }
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = continueLesson.title,
+                                style = MaterialTheme.typography.titleSmall.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    color = TextPrimary
+                                ),
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis
+                            )
+                            Text(
+                                text = "$continueSubjectLabel • ${continueLesson.conceptTitle}",
+                                style = MaterialTheme.typography.bodySmall.copy(
+                                    color = TextSecondary,
+                                    fontSize = 11.sp
+                                ),
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis
+                            )
+                        }
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Surface(
+                            color = PrimaryViolet,
+                            shape = RoundedCornerShape(8.dp)
+                        ) {
+                            Text(
+                                text = "Estudar",
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    color = Color.White,
+                                    fontWeight = FontWeight.Bold
+                                ),
+                                modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
+                            )
+                        }
+                    }
+                }
+
+                if (reviewLessons.isNotEmpty()) {
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Card(
+                        shape = RoundedCornerShape(10.dp),
+                        colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .border(1.dp, GoldXp.copy(alpha = 0.45f), RoundedCornerShape(10.dp))
+                            .testTag("trail_review_lessons_card")
+                    ) {
+                        Column(modifier = Modifier.padding(12.dp)) {
+                            Text(
+                                text = "Aulas Recomendadas para Revisão (${userProgress.reviewLessonIds.size})",
+                                style = MaterialTheme.typography.labelMedium.copy(
+                                    color = GoldXp,
+                                    fontWeight = FontWeight.Bold
+                                )
+                            )
+                            Spacer(modifier = Modifier.height(6.dp))
+                            LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                                items(reviewLessons, key = { it.id }) { revLesson ->
+                                    Surface(
+                                        color = SurfaceElevated,
+                                        shape = RoundedCornerShape(6.dp),
+                                        border = androidx.compose.foundation.BorderStroke(1.dp, GoldXp.copy(alpha = 0.4f)),
+                                        modifier = Modifier.clickable { onSelectLesson(revLesson) }
+                                    ) {
+                                        Text(
+                                            text = revLesson.title,
+                                            style = MaterialTheme.typography.labelSmall.copy(
+                                                color = TextPrimary,
+                                                fontWeight = FontWeight.Medium
+                                            ),
+                                            modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp)
+                                        )
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -671,6 +817,131 @@ fun LearnTrailScreen(
                                             onSelectLesson = onSelectLesson
                                         )
                                     }
+                                }
+                            }
+                        }
+                    }
+
+                    Spacer(modifier = Modifier.height(10.dp))
+
+                    // CURSO DE FUNDAÇÃO: MATEMÁTICA BÁSICA (10 AULAS ESSENCIAIS)
+                    val isBasicMathActive = activeFollowTrail == "matematica_basica"
+                    val basicMathUnits = remember { listOf(com.example.data.math.BasicMathCurriculum.basicMathUnit) }
+                    val basicMathLessons = remember(basicMathUnits) { basicMathUnits.flatMap { it.lessons } }
+                    val basicMathDoneCount = remember(userProgress.completedLessonIds, basicMathLessons) {
+                        basicMathLessons.count { it.id in userProgress.completedLessonIds }
+                    }
+                    Card(
+                        shape = RoundedCornerShape(8.dp),
+                        colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .border(
+                                if (isBasicMathActive) 1.5.dp else 1.dp,
+                                if (isBasicMathActive) SuccessEmerald else BorderSubtle,
+                                RoundedCornerShape(8.dp)
+                            )
+                            .clickable {
+                                isBasicMathExpanded = !isBasicMathExpanded
+                                activeFollowTrail = "matematica_basica"
+                            }
+                            .testTag("course_card_basic_math")
+                    ) {
+                        Column(modifier = Modifier.padding(14.dp)) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(40.dp)
+                                            .clip(CircleShape)
+                                            .background(SuccessEmerald.copy(alpha = 0.2f)),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.Calculate,
+                                            contentDescription = null,
+                                            tint = SuccessEmerald,
+                                            modifier = Modifier.size(24.dp)
+                                        )
+                                    }
+
+                                    Spacer(modifier = Modifier.width(12.dp))
+
+                                    Column {
+                                        Row(verticalAlignment = Alignment.CenterVertically) {
+                                            Text(
+                                                text = "Matemática Básica",
+                                                style = MaterialTheme.typography.titleMedium.copy(
+                                                    fontWeight = FontWeight.Bold,
+                                                    color = TextPrimary
+                                                )
+                                            )
+                                            Spacer(modifier = Modifier.width(8.dp))
+                                            Surface(
+                                                color = SuccessEmerald.copy(alpha = 0.15f),
+                                                shape = RoundedCornerShape(4.dp)
+                                            ) {
+                                                Text(
+                                                    text = "$basicMathDoneCount/${basicMathLessons.size} Aulas",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = SuccessEmerald,
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 10.sp
+                                                    ),
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
+
+                                        Text(
+                                            text = "Fundamentos: Frações, MMC/MDC, Potenciação, Razão, Regra de 3 e Porcentagem",
+                                            style = MaterialTheme.typography.bodySmall.copy(
+                                                color = TextSecondary,
+                                                fontSize = 11.sp
+                                            ),
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis
+                                        )
+                                    }
+                                }
+
+                                IconButton(
+                                    onClick = { isBasicMathExpanded = !isBasicMathExpanded },
+                                    modifier = Modifier.size(28.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = if (isBasicMathExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                        contentDescription = "Expandir Matemática Básica",
+                                        tint = TextSecondary
+                                    )
+                                }
+                            }
+
+                            AnimatedVisibility(
+                                visible = isBasicMathExpanded,
+                                enter = fadeIn() + expandVertically(),
+                                exit = fadeOut() + shrinkVertically()
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(top = 14.dp),
+                                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                                ) {
+                                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
+                                    ModuleLessonsInlineView(
+                                        units = basicMathUnits,
+                                        finalTest = com.example.data.math.BasicMathCurriculum.basicMathFinalTest,
+                                        isTierUnlocked = true,
+                                        userProgress = userProgress,
+                                        onSelectLesson = onSelectLesson,
+                                        onStartFinalTest = onStartFinalTest
+                                    )
                                 }
                             }
                         }
@@ -1704,6 +1975,242 @@ fun LearnTrailScreen(
                         }
                     }
                 }
+
+                // =====================================================================
+                // CONCURSO TRANSPETRO — ADMINISTRAÇÃO E CONTROLE (CESGRANRIO)
+                // =====================================================================
+                if (showTranspetro) {
+                    item {
+                        val isTranspetroActive = activeFollowTrail == "transpetro"
+                        val transpetroCyan = Color(0xFF00B4D8)
+
+                        Text(
+                            text = "CONCURSOS PÚBLICOS",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = transpetroCyan,
+                                fontWeight = FontWeight.Bold,
+                                letterSpacing = 1.sp
+                            ),
+                            modifier = Modifier.padding(top = 10.dp, bottom = 2.dp)
+                        )
+
+                    Card(
+                        shape = RoundedCornerShape(8.dp),
+                        colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .border(
+                                if (isTranspetroActive) 1.5.dp else 1.dp,
+                                if (isTranspetroActive) transpetroCyan else BorderSubtle,
+                                RoundedCornerShape(8.dp)
+                            )
+                            .clickable {
+                                isTranspetroExpanded = !isTranspetroExpanded
+                                activeFollowTrail = "transpetro"
+                            }
+                            .testTag("course_card_transpetro")
+                    ) {
+                        Column(modifier = Modifier.padding(14.dp)) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    modifier = Modifier.weight(1f)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(40.dp)
+                                            .clip(CircleShape)
+                                            .background(transpetroCyan.copy(alpha = 0.2f)),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.WorkspacePremium,
+                                            contentDescription = "Concurso Transpetro",
+                                            tint = transpetroCyan,
+                                            modifier = Modifier.size(22.dp)
+                                        )
+                                    }
+
+                                    Spacer(modifier = Modifier.width(12.dp))
+
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                        ) {
+                                            Text(
+                                                text = "Transpetro • ADM e Controle",
+                                                style = MaterialTheme.typography.titleMedium.copy(
+                                                    fontWeight = FontWeight.ExtraBold,
+                                                    color = TextPrimary
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
+                                            )
+                                            Surface(
+                                                color = transpetroCyan.copy(alpha = 0.15f),
+                                                shape = RoundedCornerShape(4.dp)
+                                            ) {
+                                                Text(
+                                                    text = "6 Matérias • 120 Aulas",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = transpetroCyan,
+                                                        fontWeight = FontWeight.Bold,
+                                                        fontSize = 10.sp
+                                                    ),
+                                                    maxLines = 1,
+                                                    softWrap = false,
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
+
+                                        Spacer(modifier = Modifier.height(2.dp))
+
+                                        Text(
+                                            text = "Edital Cesgranrio: Administração, Finanças, Logística, Informática, Português e Matemática",
+                                            style = MaterialTheme.typography.bodySmall.copy(
+                                                color = TextSecondary,
+                                                fontSize = 11.sp
+                                            ),
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis
+                                        )
+                                    }
+                                }
+
+                                IconButton(
+                                    onClick = { isTranspetroExpanded = !isTranspetroExpanded },
+                                    modifier = Modifier.size(28.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = if (isTranspetroExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
+                                        contentDescription = "Expandir Concurso Transpetro",
+                                        tint = TextSecondary
+                                    )
+                                }
+                            }
+
+                            // Conteúdo expandido com seletor de disciplinas e lista de módulos
+                            AnimatedVisibility(
+                                visible = isTranspetroExpanded,
+                                enter = fadeIn() + expandVertically(),
+                                exit = fadeOut() + shrinkVertically()
+                            ) {
+                                Column(
+                                    modifier = Modifier.padding(top = 14.dp),
+                                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                                ) {
+                                    Box(modifier = Modifier.fillMaxWidth().height(1.dp).background(BorderSubtle))
+
+                                    // Seletor horizontal de matérias
+                                    LazyRow(
+                                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                        modifier = Modifier.fillMaxWidth()
+                                    ) {
+                                        items(transpetroDisciplines) { discipline ->
+                                            val isSelected = discipline.id == selectedTranspetroDisciplineId
+                                            val discCompleted = discipline.modules.sumOf { mod ->
+                                                mod.lessons.count { userProgress.completedLessonIds.contains(it.id) }
+                                            }
+                                            val discTotal = discipline.modules.sumOf { it.lessons.size }
+                                            val shortName = when (discipline.id) {
+                                                "transpetro_adm" -> "Administração"
+                                                "transpetro_fin" -> "Finanças"
+                                                "transpetro_log" -> "Logística"
+                                                "transpetro_inf" -> "Informática"
+                                                "transpetro_por" -> "Português"
+                                                "transpetro_mat" -> "Matemática"
+                                                else -> discipline.name
+                                            }
+
+                                            Surface(
+                                                color = if (isSelected) transpetroCyan.copy(alpha = 0.2f) else SurfaceElevated,
+                                                shape = RoundedCornerShape(20.dp),
+                                                border = androidx.compose.foundation.BorderStroke(
+                                                    1.dp,
+                                                    if (isSelected) transpetroCyan else BorderSubtle
+                                                ),
+                                                modifier = Modifier.clickable {
+                                                    selectedTranspetroDisciplineId = discipline.id
+                                                    expandedTranspetroModuleId = null
+                                                }
+                                            ) {
+                                                Row(
+                                                    verticalAlignment = Alignment.CenterVertically,
+                                                    horizontalArrangement = Arrangement.spacedBy(6.dp),
+                                                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 6.dp)
+                                                ) {
+                                                    Text(
+                                                        text = shortName,
+                                                        style = MaterialTheme.typography.labelSmall.copy(
+                                                            color = if (isSelected) transpetroCyan else TextSecondary,
+                                                            fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
+                                                            fontSize = 11.sp
+                                                        )
+                                                    )
+                                                    Surface(
+                                                        color = if (isSelected) transpetroCyan.copy(alpha = 0.35f) else ObsidianSurface,
+                                                        shape = RoundedCornerShape(10.dp)
+                                                    ) {
+                                                        Text(
+                                                            text = "$discCompleted/$discTotal",
+                                                            style = MaterialTheme.typography.labelSmall.copy(
+                                                                color = if (isSelected) Color.White else TextTertiary,
+                                                                fontSize = 9.5.sp,
+                                                                fontWeight = FontWeight.Bold
+                                                            ),
+                                                            modifier = Modifier.padding(horizontal = 5.dp, vertical = 1.dp)
+                                                        )
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // Detalhes da matéria selecionada
+                                    val currentDiscipline = transpetroDisciplines.firstOrNull { it.id == selectedTranspetroDisciplineId }
+                                        ?: transpetroDisciplines.first()
+                                    val groupLabel = when (currentDiscipline.id) {
+                                        "transpetro_por" -> "Grupo B • Língua Portuguesa"
+                                        "transpetro_mat" -> "Grupo C • Matemática"
+                                        else -> "Grupo A • Conhecimentos Específicos"
+                                    }
+
+                                    Text(
+                                        text = "$groupLabel • ${currentDiscipline.name} (${currentDiscipline.modules.size} módulos)",
+                                        style = MaterialTheme.typography.labelSmall.copy(
+                                            color = transpetroCyan,
+                                            fontWeight = FontWeight.SemiBold,
+                                            fontSize = 11.5.sp
+                                        ),
+                                        modifier = Modifier.padding(vertical = 2.dp)
+                                    )
+
+                                    // Módulos da matéria selecionada
+                                    currentDiscipline.modules.forEach { module ->
+                                        EnemMathTrailModuleContainer(
+                                            module = module,
+                                            isExpanded = expandedTranspetroModuleId == module.id,
+                                            userProgress = userProgress,
+                                            onToggleExpand = {
+                                                expandedTranspetroModuleId = if (expandedTranspetroModuleId == module.id) null else module.id
+                                            },
+                                            onSelectLesson = onSelectLesson,
+                                            accentColor = transpetroCyan
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    }
+                }
             }
 
             item {
@@ -2328,6 +2835,17 @@ fun EnemLessonCard(
     isCompleted: Boolean,
     onClick: () -> Unit
 ) {
+    val statusLabel = when {
+        isCompleted -> "Concluído"
+        isUnlocked -> "Disponível"
+        else -> "Bloqueado"
+    }
+    val statusColor = when {
+        isCompleted -> SuccessEmerald
+        isUnlocked -> NeonGreen
+        else -> TextTertiary
+    }
+
     Card(
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.cardColors(
@@ -2336,7 +2854,7 @@ fun EnemLessonCard(
         border = androidx.compose.foundation.BorderStroke(
             width = 1.dp,
             color = when {
-                isCompleted -> SuccessEmerald.copy(alpha = 0.4f)
+                isCompleted -> SuccessEmerald.copy(alpha = 0.45f)
                 isUnlocked -> BorderSubtle
                 else -> BorderSubtle.copy(alpha = 0.3f)
             }
@@ -2357,31 +2875,29 @@ fun EnemLessonCard(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.weight(1f)
             ) {
-                // Ícone circular à esquerda: play se desbloqueada, cadeado se bloqueada
-                Surface(
-                    color = when {
-                        isCompleted -> SuccessEmerald.copy(alpha = 0.2f)
-                        isUnlocked -> NeonGreen.copy(alpha = 0.15f)
-                        else -> SurfaceElevated
-                    },
-                    shape = CircleShape,
-                    modifier = Modifier.size(32.dp)
-                ) {
-                    Box(contentAlignment = Alignment.Center) {
-                        Icon(
-                            imageVector = when {
-                                isCompleted -> Icons.Default.Check
-                                isUnlocked -> Icons.Default.PlayArrow
-                                else -> Icons.Default.Lock
-                            },
-                            contentDescription = if (isUnlocked) "Iniciar Aula" else "Aula Bloqueada",
-                            tint = when {
-                                isCompleted -> SuccessEmerald
-                                isUnlocked -> NeonGreen
-                                else -> TextTertiary
-                            },
-                            modifier = Modifier.size(16.dp)
-                        )
+                // Indicador vertical de trilha + Ícone circular de status
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    Surface(
+                        color = when {
+                            isCompleted -> SuccessEmerald.copy(alpha = 0.2f)
+                            isUnlocked -> NeonGreen.copy(alpha = 0.15f)
+                            else -> SurfaceElevated
+                        },
+                        shape = CircleShape,
+                        modifier = Modifier.size(34.dp)
+                    ) {
+                        Box(contentAlignment = Alignment.Center) {
+                            Icon(
+                                imageVector = when {
+                                    isCompleted -> Icons.Default.Check
+                                    isUnlocked -> Icons.Default.PlayArrow
+                                    else -> Icons.Default.Lock
+                                },
+                                contentDescription = statusLabel,
+                                tint = statusColor,
+                                modifier = Modifier.size(16.dp)
+                            )
+                        }
                     }
                 }
 
@@ -2393,16 +2909,36 @@ fun EnemLessonCard(
                         style = MaterialTheme.typography.bodySmall.copy(
                             fontWeight = if (isUnlocked) FontWeight.SemiBold else FontWeight.Normal,
                             color = if (isUnlocked) TextPrimary else TextTertiary,
-                            fontSize = 12.5.sp
+                            fontSize = 13.sp
                         )
                     )
-                    Text(
-                        text = lesson.subtopic,
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            color = if (isUnlocked) TextSecondary else TextTertiary.copy(alpha = 0.7f),
-                            fontSize = 10.5.sp
+                    Spacer(modifier = Modifier.height(2.dp))
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(6.dp)
+                    ) {
+                        Surface(
+                            color = statusColor.copy(alpha = 0.14f),
+                            shape = RoundedCornerShape(4.dp)
+                        ) {
+                            Text(
+                                text = statusLabel,
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    color = statusColor,
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold
+                                ),
+                                modifier = Modifier.padding(horizontal = 5.dp, vertical = 1.dp)
+                            )
+                        }
+                        Text(
+                            text = lesson.subtopic,
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = if (isUnlocked) TextSecondary else TextTertiary.copy(alpha = 0.7f),
+                                fontSize = 11.sp
+                            )
                         )
-                    )
+                    }
                 }
             }
 

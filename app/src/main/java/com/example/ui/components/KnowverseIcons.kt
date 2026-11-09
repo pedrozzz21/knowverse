@@ -538,5 +538,284 @@ object KnowverseIcons {
             }
         }.build()
     }
+
+    val PhysicsAtom: ImageVector by lazy {
+        ImageVector.Builder(
+            name = "PhysicsAtomIcon",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f
+        ).apply {
+            // Nucleus
+            path(fill = SolidColor(Color(0xFF06B6D4))) {
+                moveTo(12f, 10f)
+                curveTo(13.1f, 10f, 14f, 10.9f, 14f, 12f)
+                curveTo(14f, 13.1f, 13.1f, 14f, 12f, 14f)
+                curveTo(10.9f, 14f, 10f, 13.1f, 10f, 12f)
+                curveTo(10f, 10.9f, 10.9f, 10f, 12f, 10f)
+                close()
+            }
+            // Orbital rings
+            path(
+                stroke = SolidColor(Color(0xFF38BDF8)),
+                strokeLineWidth = 1.6f
+            ) {
+                moveTo(4f, 12f)
+                curveTo(4f, 9.2f, 7.6f, 7f, 12f, 7f)
+                curveTo(16.4f, 7f, 20f, 9.2f, 20f, 12f)
+                curveTo(20f, 14.8f, 16.4f, 17f, 12f, 17f)
+                curveTo(7.6f, 17f, 4f, 14.8f, 4f, 12f)
+                close()
+                moveTo(12f, 4f)
+                curveTo(14.8f, 4f, 17f, 7.6f, 17f, 12f)
+                curveTo(17f, 16.4f, 14.8f, 20f, 12f, 20f)
+                curveTo(9.2f, 20f, 7f, 16.4f, 7f, 12f)
+                curveTo(7f, 7.6f, 9.2f, 4f, 12f, 4f)
+                close()
+            }
+        }.build()
+    }
+
+    val BiologyLeaf: ImageVector by lazy {
+        ImageVector.Builder(
+            name = "BiologyLeafIcon",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f
+        ).apply {
+            path(fill = SolidColor(Color(0xFF14B8A6))) {
+                moveTo(17f, 8f)
+                curveTo(8f, 10f, 5.9f, 16.17f, 3.82f, 21.34f)
+                lineTo(5.71f, 22f)
+                lineTo(6.66f, 19.7f)
+                curveTo(7.14f, 19.87f, 7.64f, 20f, 8f, 20f)
+                curveTo(19f, 20f, 22f, 3f, 22f, 3f)
+                curveTo(21f, 5f, 14f, 5.25f, 9f, 6.25f)
+                curveTo(4f, 7.25f, 2f, 11.5f, 2f, 13.5f)
+                curveTo(2f, 15.5f, 3.75f, 17.25f, 3.75f, 17.25f)
+                curveTo(7f, 8f, 17f, 8f, 17f, 8f)
+                close()
+            }
+        }.build()
+    }
+
+    val GeographyGlobe: ImageVector by lazy {
+        ImageVector.Builder(
+            name = "GeographyGlobeIcon",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f
+        ).apply {
+            path(fill = SolidColor(Color(0xFFF59E0B))) {
+                moveTo(12f, 2f)
+                curveTo(6.48f, 2f, 2f, 6.48f, 2f, 12f)
+                curveTo(2f, 17.52f, 6.48f, 22f, 12f, 22f)
+                curveTo(17.52f, 22f, 22f, 17.52f, 22f, 12f)
+                curveTo(22f, 6.48f, 17.52f, 2f, 12f, 2f)
+                close()
+                moveTo(11f, 19.93f)
+                curveTo(7.05f, 19.44f, 4f, 16.08f, 4f, 12f)
+                curveTo(4f, 11.38f, 4.08f, 10.79f, 4.21f, 10.21f)
+                lineTo(9f, 15f)
+                verticalLineTo(16f)
+                curveTo(9f, 17.1f, 9.9f, 18f, 11f, 18f)
+                verticalLineTo(19.93f)
+                close()
+                moveTo(17.9f, 17.39f)
+                curveTo(17.64f, 16.58f, 16.9f, 16f, 16f, 16f)
+                horizontalLineTo(15f)
+                verticalLineTo(13f)
+                curveTo(15f, 12.45f, 14.55f, 12f, 14f, 12f)
+                horizontalLineTo(8f)
+                verticalLineTo(10f)
+                horizontalLineTo(10f)
+                curveTo(10.55f, 10f, 11f, 9.55f, 11f, 9f)
+                verticalLineTo(7f)
+                horizontalLineTo(13f)
+                curveTo(14.1f, 7f, 15f, 6.1f, 15f, 5f)
+                verticalLineTo(4.59f)
+                curveTo(17.93f, 5.78f, 20f, 8.65f, 20f, 12f)
+                curveTo(20f, 14.08f, 19.2f, 15.97f, 17.9f, 17.39f)
+                close()
+            }
+        }.build()
+    }
+
+    val HistoryColumns: ImageVector by lazy {
+        ImageVector.Builder(
+            name = "HistoryColumnsIcon",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f
+        ).apply {
+            path(fill = SolidColor(Color(0xFFFBBF24))) {
+                moveTo(12f, 2f)
+                lineTo(2f, 7f)
+                verticalLineTo(9f)
+                horizontalLineTo(22f)
+                verticalLineTo(7f)
+                lineTo(12f, 2f)
+                close()
+                moveTo(4f, 11f)
+                verticalLineTo(18f)
+                horizontalLineTo(7f)
+                verticalLineTo(11f)
+                horizontalLineTo(4f)
+                close()
+                moveTo(10.5f, 11f)
+                verticalLineTo(18f)
+                horizontalLineTo(13.5f)
+                verticalLineTo(11f)
+                horizontalLineTo(10.5f)
+                close()
+                moveTo(17f, 11f)
+                verticalLineTo(18f)
+                horizontalLineTo(20f)
+                verticalLineTo(11f)
+                horizontalLineTo(17f)
+                close()
+                moveTo(2f, 20f)
+                verticalLineTo(22f)
+                horizontalLineTo(22f)
+                verticalLineTo(20f)
+                horizontalLineTo(2f)
+                close()
+            }
+        }.build()
+    }
+
+    val LanguagesBook: ImageVector by lazy {
+        ImageVector.Builder(
+            name = "LanguagesBookIcon",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f
+        ).apply {
+            path(fill = SolidColor(Color(0xFF818CF8))) {
+                moveTo(21f, 5f)
+                curveTo(19.89f, 4.65f, 18.67f, 4.5f, 17.5f, 4.5f)
+                curveTo(15.55f, 4.5f, 13.45f, 4.9f, 12f, 6f)
+                curveTo(10.55f, 4.9f, 8.45f, 4.5f, 6.5f, 4.5f)
+                curveTo(4.55f, 4.5f, 2.45f, 4.9f, 1f, 6f)
+                verticalLineTo(20.65f)
+                curveTo(1f, 20.9f, 1.25f, 21.15f, 1.5f, 21.15f)
+                curveTo(1.6f, 21.15f, 1.65f, 21.1f, 1.75f, 21.1f)
+                curveTo(3.1f, 20.45f, 5.05f, 20f, 6.5f, 20f)
+                curveTo(8.45f, 20f, 10.55f, 20.4f, 12f, 21.5f)
+                curveTo(13.35f, 20.65f, 15.8f, 20f, 17.5f, 20f)
+                curveTo(19.15f, 20f, 20.85f, 20.3f, 22.25f, 21.05f)
+                curveTo(22.35f, 21.1f, 22.4f, 21.1f, 22.5f, 21.1f)
+                curveTo(22.75f, 21.1f, 23f, 20.85f, 23f, 20.6f)
+                verticalLineTo(6f)
+                curveTo(22.4f, 5.55f, 21.75f, 5.25f, 21f, 5f)
+                close()
+                moveTo(21f, 18.5f)
+                curveTo(19.9f, 18.15f, 18.7f, 18f, 17.5f, 18f)
+                curveTo(15.8f, 18f, 13.35f, 18.65f, 12f, 19.5f)
+                verticalLineTo(8f)
+                curveTo(13.35f, 7.15f, 15.8f, 6.5f, 17.5f, 6.5f)
+                curveTo(18.7f, 6.5f, 19.9f, 6.65f, 21f, 7f)
+                verticalLineTo(18.5f)
+                close()
+            }
+        }.build()
+    }
+
+    val TargetGoal: ImageVector by lazy {
+        ImageVector.Builder(
+            name = "TargetGoalIcon",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f
+        ).apply {
+            path(fill = SolidColor(Color(0xFF10B981))) {
+                moveTo(12f, 2f)
+                curveTo(6.48f, 2f, 2f, 6.48f, 2f, 12f)
+                curveTo(2f, 17.52f, 6.48f, 22f, 12f, 22f)
+                curveTo(17.52f, 22f, 22f, 17.52f, 22f, 12f)
+                curveTo(22f, 6.48f, 17.52f, 2f, 12f, 2f)
+                close()
+                moveTo(12f, 20f)
+                curveTo(7.58f, 20f, 4f, 16.42f, 4f, 12f)
+                curveTo(4f, 7.58f, 7.58f, 4f, 12f, 4f)
+                curveTo(16.42f, 4f, 20f, 7.58f, 20f, 12f)
+                curveTo(20f, 16.42f, 16.42f, 20f, 12f, 20f)
+                close()
+                moveTo(12f, 6f)
+                curveTo(8.69f, 6f, 6f, 8.69f, 6f, 12f)
+                curveTo(6f, 15.31f, 8.69f, 18f, 12f, 18f)
+                curveTo(15.31f, 18f, 18f, 15.31f, 18f, 12f)
+                curveTo(18f, 8.69f, 15.31f, 6f, 12f, 6f)
+                close()
+                moveTo(12f, 16f)
+                curveTo(9.79f, 16f, 8f, 14.21f, 8f, 12f)
+                curveTo(8f, 9.79f, 9.79f, 8f, 12f, 8f)
+                curveTo(14.21f, 8f, 16f, 9.79f, 16f, 12f)
+                curveTo(16f, 14.21f, 14.21f, 16f, 12f, 16f)
+                close()
+                moveTo(12f, 10f)
+                curveTo(10.9f, 10f, 10f, 10.9f, 10f, 12f)
+                curveTo(10f, 13.1f, 10.9f, 14f, 12f, 14f)
+                curveTo(13.1f, 14f, 14f, 13.1f, 14f, 12f)
+                curveTo(14f, 10.9f, 13.1f, 10f, 12f, 10f)
+                close()
+            }
+        }.build()
+    }
+
+    val AutoScale: ImageVector by lazy {
+        ImageVector.Builder(
+            name = "AutoScaleIcon",
+            defaultWidth = 24.dp,
+            defaultHeight = 24.dp,
+            viewportWidth = 24f,
+            viewportHeight = 24f
+        ).apply {
+            path(fill = SolidColor(Color(0xFF38BDF8))) {
+                moveTo(15f, 3f)
+                lineTo(17.3f, 5.3f)
+                lineTo(14.41f, 8.17f)
+                lineTo(15.83f, 9.59f)
+                lineTo(18.7f, 6.7f)
+                lineTo(21f, 9f)
+                verticalLineTo(3f)
+                horizontalLineTo(15f)
+                close()
+                moveTo(3f, 9f)
+                lineTo(5.3f, 6.7f)
+                lineTo(8.17f, 9.59f)
+                lineTo(9.59f, 8.17f)
+                lineTo(6.7f, 5.3f)
+                lineTo(9f, 3f)
+                horizontalLineTo(3f)
+                verticalLineTo(9f)
+                close()
+                moveTo(9f, 21f)
+                lineTo(6.7f, 18.7f)
+                lineTo(9.59f, 15.83f)
+                lineTo(8.17f, 14.41f)
+                lineTo(5.3f, 17.3f)
+                lineTo(3f, 15f)
+                verticalLineTo(21f)
+                horizontalLineTo(9f)
+                close()
+                moveTo(21f, 15f)
+                lineTo(18.7f, 17.3f)
+                lineTo(15.83f, 14.41f)
+                lineTo(14.41f, 15.83f)
+                lineTo(17.3f, 18.7f)
+                lineTo(15f, 21f)
+                horizontalLineTo(21f)
+                verticalLineTo(15f)
+                close()
+            }
+        }.build()
+    }
 }
 

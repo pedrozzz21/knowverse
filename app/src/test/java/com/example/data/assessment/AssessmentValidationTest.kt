@@ -242,4 +242,34 @@ class AssessmentValidationTest {
         assertTrue(filtered.isNotEmpty())
         assertTrue(filtered.all { it.lesson.subtopic.equals(chosenSub, ignoreCase = true) })
     }
+
+    @Test
+    fun testValidateQuestionIntegrityCatchesInvalidQuestions() {
+        val validMc = Question(
+            id = "q_valid_1",
+            lessonId = "enem_m1_l1",
+            format = QuestionFormat.MULTIPLE_CHOICE,
+            difficulty = QDifficulty.MEDIUM,
+            skill = "Resolver proporções",
+            concept = "Razão e Proporção",
+            statement = "Em uma escala 1:100, 5 cm equivalem a quantos metros?",
+            explanation = "5 cm * 100 = 500 cm = 5 m.",
+            retryGuidance = "Converta centímetros para metros dividindo por 100.",
+            options = listOf("0,5 m", "5 m", "50 m", "500 m"),
+            answerIndex = 1
+        )
+        assertEquals(null, QuestionBankRepository.validateQuestionIntegrity(validMc))
+
+        // Alternativas duplicadas devem ser rejeitadas
+        val duplicateOpts = validMc.copy(options = listOf("5 m", "5 m", "50 m", "500 m"))
+        assertNotNull(QuestionBankRepository.validateQuestionIntegrity(duplicateOpts))
+
+        // Gabarito fora do intervalo deve ser rejeitado
+        val badIndex = validMc.copy(answerIndex = 5)
+        assertNotNull(QuestionBankRepository.validateQuestionIntegrity(badIndex))
+
+        // Explicação vazia deve ser rejeitada
+        val noExplanation = validMc.copy(explanation = "   ")
+        assertNotNull(QuestionBankRepository.validateQuestionIntegrity(noExplanation))
+    }
 }

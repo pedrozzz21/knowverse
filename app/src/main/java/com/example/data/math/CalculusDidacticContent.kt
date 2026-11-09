@@ -47,7 +47,8 @@ object CalculusDidacticContent {
             )
         ),
         imageResId = null,
-        goldTip = "Siga sempre o ciclo: 1. Entender a Teoria -> 2. Dominar a Fórmula -> 3. Praticar no Exercício!"
+        goldTip = "Siga sempre o ciclo: 1. Entender a Teoria -> 2. Dominar a Fórmula -> 3. Praticar no Exercício!",
+        status = DidacticContentStatus.PENDING_CURATION
     )
 
     fun getContentForLesson(lessonId: String): CalculusDidacticBundle {
@@ -118,7 +119,8 @@ object CalculusDidacticContent {
                 )
             ),
             imageResId = null,
-            goldTip = "Revise sempre o enunciado com atenção e elimine as alternativas com contradições evidentes!"
+            goldTip = "Revise sempre o enunciado com atenção e elimine as alternativas com contradições evidentes!",
+            status = DidacticContentStatus.PENDING_CURATION
         )
     }
 }

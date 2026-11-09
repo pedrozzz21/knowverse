@@ -34,7 +34,7 @@ object MathCombinatoricsDidactic {
                 theoryMarkdown = """
                     # Média Aritmética Simples
                     
-                    A média simples soma todos os valores amostrais e divide pelo número total de observações:
+                    A média aritmética simples representa o valor de equilíbrio de uma distribuição e é calculada somando todos os valores amostrais e dividindo pelo número total de observações:
                     \( \bar{x} = \frac{\sum x_i}{n} \).
                 """.trimIndent(),
                 formulas = listOf(FormulaOrSyntaxItem("Média Simples", "\\bar{x} = \\frac{x_1 + x_2 + \\dots + x_n}{n}", "Soma dividida pelo total de termos")),
@@ -156,7 +156,11 @@ object MathCombinatoricsDidactic {
 
             // Módulo 9: Probabilidade
             "enem_m9_a1" -> CalculusDidacticBundle(
-                theoryMarkdown = "# Experimento Aleatório, Espaço Amostral e Evento\nEspaço amostral (Ω) é o conjunto de todos os resultados possíveis. Evento (A) é qualquer subconjunto de Ω.",
+                theoryMarkdown = """
+                    # Experimento Aleatório, Espaço Amostral e Evento
+                    
+                    Espaço amostral (\( \Omega \)) é o conjunto de todos os resultados possíveis de um experimento aleatório. Evento (\( A \)) é qualquer subconjunto de resultados de interesse contido em \( \Omega \).
+                """.trimIndent(),
                 formulas = listOf(FormulaOrSyntaxItem("Espaço Amostral de Moedas", "n(\\Omega) = 2^k", "Número de resultados ao lançar k moedas")),
                 solvedExamples = listOf(LessonExample("Lançamento de 2 dados", "n(Ω) = 6 * 6 = 36 pares ordenados", "Espaço amostral completo.")),
                 goldTip = "Antes de calcular a probabilidade, conte primeiro o número total de possibilidades do espaço amostral!"
@@ -192,7 +196,7 @@ object MathCombinatoricsDidactic {
                 theoryMarkdown = """
                     # Probabilidade da Intersecção (Eventos Independentes)
                     
-                    Probabilidade de ocorrer o evento A **E** o evento B sucessivamente:
+                    A probabilidade de ocorrerem simultaneamente ou sucessivamente dois eventos independentes \( A \) **E** \( B \) é igual ao produto de suas probabilidades individuais:
                     \( P(A \cap B) = P(A) \cdot P(B) \).
                 """.trimIndent(),
                 formulas = listOf(FormulaOrSyntaxItem("Regra do Produto", "P(A \\cap B) = P(A) \\cdot P(B)", "Multiplicação para eventos independentes")),

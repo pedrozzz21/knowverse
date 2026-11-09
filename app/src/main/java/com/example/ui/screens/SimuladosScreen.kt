@@ -54,6 +54,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -64,6 +65,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.data.assessment.AnswerEvaluator
 import com.example.data.assessment.BankQuestion
 import com.example.data.assessment.Feedback
 import com.example.data.assessment.QDifficulty
@@ -92,13 +94,169 @@ import com.example.ui.theme.TextPrimary
 import com.example.ui.theme.TextSecondary
 import com.example.ui.theme.TextTertiary
 import com.example.ui.theme.WarningAmber
+import android.content.Context
+import com.squareup.moshi.Moshi
 import kotlin.math.roundToInt
 
-private enum class SimuladoScreenState {
+internal enum class SimuladoScreenState {
     CONFIGURATOR,
     RUNNING_EXAM,
     DIAGNOSTIC_REPORT,
     LESSON_BANK_EXPLORER
+}
+
+/**
+ * Armazenamento resiliente de sessão de Simulado:
+ * mantém respostas em rascunho (`answerMap`), avaliações (`feedbackMap`), questões geradas,
+ * questão atual e cronômetro tanto em memória quanto em SharedPreferences para impedir
+ * qualquer perda de respostas ao trocar de aba, girar a tela ou concluir a prova.
+ */
+internal object SimuladoSessionStore {
+    private const val PREFS_NAME = "knowverse_simulado_session"
+    private const val KEY_SESSION_JSON = "active_simulado_json"
+
+    var screenState: SimuladoScreenState = SimuladoScreenState.CONFIGURATOR
+    var generatedQuestionIds: List<String> = emptyList()
+    var currentQuestionIdx: Int = 0
+    var examElapsedSeconds: Int = 0
+    val answerMap: MutableMap<String, UserAnswer> = LinkedHashMap()
+    val feedbackMap: MutableMap<String, Feedback> = LinkedHashMap()
+    private var loadedFromPrefs: Boolean = false
+
+    fun ensureRestored(context: Context?) {
+        if (loadedFromPrefs || context == null) return
+        loadedFromPrefs = true
+        try {
+            val prefs = context.applicationContext.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            val raw = prefs.getString(KEY_SESSION_JSON, null) ?: return
+            restoreFromJsonString(raw)
+        } catch (_: Exception) {
+        }
+    }
+
+    fun persist(context: Context?) {
+        if (context == null) return
+        try {
+            val prefs = context.applicationContext.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            prefs.edit().putString(KEY_SESSION_JSON, toJsonString()).apply()
+        } catch (_: Exception) {
+        }
+    }
+
+    fun finalizePendingAnswers(
+        questions: List<BankQuestion>,
+        answers: Map<String, UserAnswer>,
+        feedbacks: MutableMap<String, Feedback>
+    ) {
+        for (bq in questions) {
+            if (feedbacks[bq.id] == null) {
+                val draft = answers[bq.id]
+                if (draft != null) {
+                    feedbacks[bq.id] = AnswerEvaluator.evaluate(bq.question, draft)
+                }
+            }
+        }
+    }
+
+    private val anyAdapter by lazy { Moshi.Builder().build().adapter(Any::class.java) }
+
+    fun toJsonString(): String {
+        val answersMap = LinkedHashMap<String, Any>()
+        for ((qId, ans) in answerMap) {
+            val aObj = when (ans) {
+                is UserAnswer.Choice -> mapOf("type" to "CHOICE", "index" to ans.index)
+                is UserAnswer.Bool -> mapOf("type" to "BOOL", "value" to ans.value)
+                is UserAnswer.Text -> mapOf("type" to "TEXT", "text" to ans.value)
+                is UserAnswer.Pairs -> mapOf("type" to "PAIRS", "pairs" to LinkedHashMap(ans.mapping))
+            }
+            answersMap[qId] = aObj
+        }
+
+        val feedbacksMap = LinkedHashMap<String, Any>()
+        for ((qId, fb) in feedbackMap) {
+            feedbacksMap[qId] = mapOf(
+                "verdict" to fb.verdict.name,
+                "score" to fb.score,
+                "headline" to fb.headline,
+                "reasoning" to fb.reasoning,
+                "misunderstoodConcept" to (fb.misunderstoodConcept ?: ""),
+                "retryTip" to (fb.retryTip ?: ""),
+                "details" to fb.details
+            )
+        }
+
+        val root = mapOf(
+            "screenState" to screenState.name,
+            "currentQuestionIdx" to currentQuestionIdx,
+            "examElapsedSeconds" to examElapsedSeconds,
+            "generatedQuestionIds" to generatedQuestionIds,
+            "answers" to answersMap,
+            "feedbacks" to feedbacksMap
+        )
+        return anyAdapter.toJson(root)
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    fun restoreFromJsonString(raw: String) {
+        val root = anyAdapter.fromJson(raw) as? Map<String, Any?> ?: return
+        val stateName = root["screenState"] as? String ?: SimuladoScreenState.CONFIGURATOR.name
+        screenState = try {
+            SimuladoScreenState.valueOf(stateName)
+        } catch (_: Exception) {
+            SimuladoScreenState.CONFIGURATOR
+        }
+        currentQuestionIdx = ((root["currentQuestionIdx"] as? Number)?.toInt() ?: 0).coerceAtLeast(0)
+        examElapsedSeconds = ((root["examElapsedSeconds"] as? Number)?.toInt() ?: 0).coerceAtLeast(0)
+
+        generatedQuestionIds = (root["generatedQuestionIds"] as? List<Any?>)
+            ?.mapNotNull { (it as? String)?.takeIf { s -> s.isNotBlank() } }
+            ?: emptyList()
+
+        answerMap.clear()
+        val answersObj = root["answers"] as? Map<String, Any?>
+        if (answersObj != null) {
+            for ((qId, rawAns) in answersObj) {
+                val aObj = rawAns as? Map<String, Any?> ?: continue
+                val parsed: UserAnswer? = when (aObj["type"] as? String) {
+                    "CHOICE" -> UserAnswer.Choice((aObj["index"] as? Number)?.toInt() ?: 0)
+                    "BOOL" -> UserAnswer.Bool(aObj["value"] as? Boolean ?: false)
+                    "TEXT" -> UserAnswer.Text(aObj["text"] as? String ?: "")
+                    "PAIRS" -> {
+                        val pObj = aObj["pairs"] as? Map<String, Any?>
+                        val map = LinkedHashMap<String, String>()
+                        pObj?.forEach { (k, v) -> map[k] = v?.toString().orEmpty() }
+                        UserAnswer.Pairs(map)
+                    }
+                    else -> null
+                }
+                if (parsed != null) answerMap[qId] = parsed
+            }
+        }
+
+        feedbackMap.clear()
+        val feedbacksObj = root["feedbacks"] as? Map<String, Any?>
+        if (feedbacksObj != null) {
+            for ((qId, rawFb) in feedbacksObj) {
+                val fObj = rawFb as? Map<String, Any?> ?: continue
+                val verdictName = fObj["verdict"] as? String ?: Verdict.INCORRECT.name
+                val verdict = try {
+                    Verdict.valueOf(verdictName)
+                } catch (_: Exception) {
+                    Verdict.INCORRECT
+                }
+                val detailsList = (fObj["details"] as? List<Any?>)?.map { it?.toString().orEmpty() } ?: emptyList()
+                feedbackMap[qId] = Feedback(
+                    verdict = verdict,
+                    score = (fObj["score"] as? Number)?.toDouble() ?: 0.0,
+                    headline = fObj["headline"] as? String ?: "",
+                    reasoning = fObj["reasoning"] as? String ?: "",
+                    misunderstoodConcept = fObj["misunderstoodConcept"] as? String ?: "",
+                    retryTip = fObj["retryTip"] as? String ?: "",
+                    details = detailsList
+                )
+            }
+        }
+    }
 }
 
 /**
@@ -121,18 +279,22 @@ fun SimuladosScreen(
 
     LaunchedEffect(Unit) {
         QuestionBankRepository.ensureLoaded(context)
+        SimuladoSessionStore.ensureRestored(context)
     }
 
     val subjects = remember { listOf("Todas") + QuestionBankRepository.getSubjects(context) }
 
-    var screenState by remember { mutableStateOf(SimuladoScreenState.CONFIGURATOR) }
-    var selectedSubject by remember { mutableStateOf("Todas") }
-    var selectedMode by remember { mutableStateOf(SimuladoMode.BY_SUBJECT) }
-    var selectedModuleId by remember { mutableStateOf<String?>(null) }
-    var selectedSubtopic by remember { mutableStateOf<String?>(null) }
-    var questionCountSlider by remember { mutableFloatStateOf(15f) }
-    var selectedFormatFilter by remember { mutableStateOf<QuestionFormat?>(null) }
-    var selectedDifficultyFilter by remember { mutableStateOf<QDifficulty?>(null) }
+    var screenState by rememberSaveable {
+        SimuladoSessionStore.ensureRestored(context)
+        mutableStateOf(SimuladoSessionStore.screenState)
+    }
+    var selectedSubject by rememberSaveable { mutableStateOf("Todas") }
+    var selectedMode by rememberSaveable { mutableStateOf(SimuladoMode.BY_SUBJECT) }
+    var selectedModuleId by rememberSaveable { mutableStateOf<String?>(null) }
+    var selectedSubtopic by rememberSaveable { mutableStateOf<String?>(null) }
+    var questionCountSlider by rememberSaveable { mutableFloatStateOf(15f) }
+    var selectedFormatFilter by rememberSaveable { mutableStateOf<QuestionFormat?>(null) }
+    var selectedDifficultyFilter by rememberSaveable { mutableStateOf<QDifficulty?>(null) }
 
     val availableModules = remember(selectedSubject) {
         QuestionBankRepository.getModulesForSubject(selectedSubject, context)
@@ -142,14 +304,83 @@ fun SimuladosScreen(
     }
 
     LaunchedEffect(selectedSubject) {
-        selectedModuleId = availableModules.firstOrNull()?.moduleId
-        selectedSubtopic = availableSubtopics.firstOrNull()
+        if (selectedModuleId == null || availableModules.none { it.moduleId == selectedModuleId }) {
+            selectedModuleId = availableModules.firstOrNull()?.moduleId
+        }
+        if (selectedSubtopic == null || selectedSubtopic !in availableSubtopics) {
+            selectedSubtopic = availableSubtopics.firstOrNull()
+        }
     }
 
-    var generatedQuestions by remember { mutableStateOf<List<BankQuestion>>(emptyList()) }
-    var currentQuestionIdx by remember { mutableIntStateOf(0) }
-    val feedbackMap = remember { mutableStateMapOf<String, Feedback>() }
-    val answerMap = remember { mutableStateMapOf<String, UserAnswer>() }
+    var generatedQuestionIds by rememberSaveable {
+        SimuladoSessionStore.ensureRestored(context)
+        mutableStateOf(SimuladoSessionStore.generatedQuestionIds)
+    }
+    var cachedGeneratedQuestions by remember { mutableStateOf<List<BankQuestion>>(emptyList()) }
+    var examElapsedSeconds by rememberSaveable {
+        SimuladoSessionStore.ensureRestored(context)
+        mutableStateOf(SimuladoSessionStore.examElapsedSeconds)
+    }
+
+    LaunchedEffect(screenState) {
+        SimuladoSessionStore.screenState = screenState
+        SimuladoSessionStore.persist(context)
+        while (screenState == SimuladoScreenState.RUNNING_EXAM) {
+            kotlinx.coroutines.delay(1000L)
+            examElapsedSeconds += 1
+            SimuladoSessionStore.examElapsedSeconds = examElapsedSeconds
+        }
+    }
+    val generatedQuestions: List<BankQuestion> = remember(generatedQuestionIds, cachedGeneratedQuestions) {
+        if (cachedGeneratedQuestions.isNotEmpty() && cachedGeneratedQuestions.map { it.id } == generatedQuestionIds) {
+            cachedGeneratedQuestions
+        } else if (generatedQuestionIds.isNotEmpty()) {
+            val byId = QuestionBankRepository.getAllQuestions(includeLegacy = true, context = context).associateBy { it.id }
+            generatedQuestionIds.mapNotNull { byId[it] }
+        } else {
+            emptyList()
+        }
+    }
+    var currentQuestionIdx by rememberSaveable {
+        SimuladoSessionStore.ensureRestored(context)
+        mutableIntStateOf(SimuladoSessionStore.currentQuestionIdx)
+    }
+    val feedbackMap = remember {
+        SimuladoSessionStore.ensureRestored(context)
+        mutableStateMapOf<String, Feedback>().apply { putAll(SimuladoSessionStore.feedbackMap) }
+    }
+    val answerMap = remember {
+        SimuladoSessionStore.ensureRestored(context)
+        mutableStateMapOf<String, UserAnswer>().apply { putAll(SimuladoSessionStore.answerMap) }
+    }
+
+    fun syncSessionStore() {
+        SimuladoSessionStore.screenState = screenState
+        SimuladoSessionStore.generatedQuestionIds = generatedQuestionIds
+        SimuladoSessionStore.currentQuestionIdx = currentQuestionIdx
+        SimuladoSessionStore.examElapsedSeconds = examElapsedSeconds
+        SimuladoSessionStore.answerMap.clear()
+        SimuladoSessionStore.answerMap.putAll(answerMap)
+        SimuladoSessionStore.feedbackMap.clear()
+        SimuladoSessionStore.feedbackMap.putAll(feedbackMap)
+        SimuladoSessionStore.persist(context)
+    }
+
+    fun finalizeSimuladoAndOpenReport() {
+        SimuladoSessionStore.finalizePendingAnswers(generatedQuestions, answerMap, feedbackMap)
+        for (bq in generatedQuestions) {
+            val fb = feedbackMap[bq.id]
+            if (fb != null) {
+                if (fb.isCorrect) {
+                    progressRepository.recordSolvedExercise(bq.id, 20)
+                } else {
+                    progressRepository.recordWrongQuestion(bq.id, bq.lesson.lessonId)
+                }
+            }
+        }
+        screenState = SimuladoScreenState.DIAGNOSTIC_REPORT
+        syncSessionStore()
+    }
 
     Column(
         modifier = Modifier
@@ -191,7 +422,10 @@ fun SimuladosScreen(
                             )
                         }
                         OutlinedButton(
-                            onClick = { screenState = SimuladoScreenState.LESSON_BANK_EXPLORER },
+                            onClick = {
+                                screenState = SimuladoScreenState.LESSON_BANK_EXPLORER
+                                syncSessionStore()
+                            },
                             shape = RoundedCornerShape(10.dp)
                         ) {
                             Icon(
@@ -201,6 +435,51 @@ fun SimuladosScreen(
                             )
                             Spacer(modifier = Modifier.width(6.dp))
                             Text("Banco por Aula")
+                        }
+                    }
+
+                    // Banner de Retomada caso exista um Simulado em Andamento salvo
+                    if (generatedQuestions.isNotEmpty()) {
+                        Surface(
+                            color = PrimaryViolet.copy(alpha = 0.14f),
+                            shape = RoundedCornerShape(12.dp),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .border(1.dp, BorderActive, RoundedCornerShape(12.dp))
+                                .clickable {
+                                    screenState = SimuladoScreenState.RUNNING_EXAM
+                                    syncSessionStore()
+                                }
+                        ) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                modifier = Modifier.padding(14.dp)
+                            ) {
+                                Column(modifier = Modifier.weight(1f)) {
+                                    Text(
+                                        text = "Simulado em Andamento Salvo",
+                                        style = MaterialTheme.typography.titleSmall,
+                                        fontWeight = FontWeight.Bold,
+                                        color = PrimaryVioletLight
+                                    )
+                                    Text(
+                                        text = "${answerMap.size} de ${generatedQuestions.size} questões respondidas • Nenhuma resposta perdida",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = TextSecondary
+                                    )
+                                }
+                                Button(
+                                    onClick = {
+                                        screenState = SimuladoScreenState.RUNNING_EXAM
+                                        syncSessionStore()
+                                    },
+                                    colors = ButtonDefaults.buttonColors(containerColor = PrimaryViolet),
+                                    shape = RoundedCornerShape(8.dp)
+                                ) {
+                                    Text("Retomar")
+                                }
+                            }
                         }
                     }
 
@@ -352,11 +631,14 @@ fun SimuladosScreen(
                             )
                             val questions = QuestionBankRepository.generateSimulado(cfg, context)
                             if (questions.isNotEmpty()) {
-                                generatedQuestions = questions
+                                cachedGeneratedQuestions = questions
+                                generatedQuestionIds = questions.map { it.id }
                                 currentQuestionIdx = 0
+                                examElapsedSeconds = 0
                                 feedbackMap.clear()
                                 answerMap.clear()
                                 screenState = SimuladoScreenState.RUNNING_EXAM
+                                syncSessionStore()
                             }
                         },
                         colors = ButtonDefaults.buttonColors(containerColor = PrimaryViolet),
@@ -396,7 +678,10 @@ fun SimuladosScreen(
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         OutlinedButton(
-                            onClick = { screenState = SimuladoScreenState.CONFIGURATOR },
+                            onClick = {
+                                screenState = SimuladoScreenState.CONFIGURATOR
+                                syncSessionStore()
+                            },
                             contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp),
                             shape = RoundedCornerShape(8.dp)
                         ) {
@@ -409,15 +694,26 @@ fun SimuladosScreen(
                             Text("Configurar", style = MaterialTheme.typography.labelMedium)
                         }
 
-                        Text(
-                            text = "Questão ${currentQuestionIdx + 1} de $total • Respondidas: ${feedbackMap.size}/$total",
-                            style = MaterialTheme.typography.labelLarge,
-                            fontWeight = FontWeight.Bold,
-                            color = TextPrimary
-                        )
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            val mins = (examElapsedSeconds / 60).toString().padStart(2, '0')
+                            val secs = (examElapsedSeconds % 60).toString().padStart(2, '0')
+                            val answeredCount = maxOf(answerMap.size, feedbackMap.size)
+                            Text(
+                                text = "Questão ${currentQuestionIdx + 1} de $total • $answeredCount/$total respondidas",
+                                style = MaterialTheme.typography.labelLarge,
+                                fontWeight = FontWeight.Bold,
+                                color = TextPrimary
+                            )
+                            Text(
+                                text = "Tempo: $mins:$secs",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = AccentCyan,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        }
 
                         Button(
-                            onClick = { screenState = SimuladoScreenState.DIAGNOSTIC_REPORT },
+                            onClick = { finalizeSimuladoAndOpenReport() },
                             colors = ButtonDefaults.buttonColors(containerColor = SuccessEmerald),
                             contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp),
                             shape = RoundedCornerShape(8.dp)
@@ -434,7 +730,26 @@ fun SimuladosScreen(
 
                     Spacer(modifier = Modifier.height(8.dp))
 
-                    // Navegador Horizontal de Questões (1..N)
+                    // Barra de Progresso Geral do Simulado (considera respostas salvas e avaliadas)
+                    val answeredTotal = maxOf(answerMap.size, feedbackMap.size)
+                    val progressFraction = if (total > 0) (answeredTotal.toFloat() / total.toFloat()).coerceIn(0f, 1f) else 0f
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(5.dp)
+                            .clip(RoundedCornerShape(3.dp))
+                            .background(SurfaceElevated)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth(progressFraction.coerceAtLeast(if (answeredTotal > 0) 0.04f else 0f))
+                                .height(5.dp)
+                                .clip(RoundedCornerShape(3.dp))
+                                .background(SuccessEmerald)
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(6.dp))
                     Row(
                         horizontalArrangement = Arrangement.spacedBy(6.dp),
                         modifier = Modifier
@@ -444,12 +759,17 @@ fun SimuladosScreen(
                     ) {
                         generatedQuestions.forEachIndexed { idx, bq ->
                             val fb = feedbackMap[bq.id]
+                            val hasDraft = answerMap.containsKey(bq.id)
                             val isCurrent = idx == currentQuestionIdx
                             val pillColor = when (fb?.verdict) {
                                 Verdict.CORRECT -> SuccessEmerald
                                 Verdict.PARTIAL -> WarningAmber
                                 Verdict.INCORRECT -> ErrorRose
-                                else -> if (isCurrent) PrimaryViolet else SurfaceCard
+                                else -> when {
+                                    isCurrent -> PrimaryViolet
+                                    hasDraft -> AccentCyan
+                                    else -> SurfaceCard
+                                }
                             }
                             Box(
                                 contentAlignment = Alignment.Center,
@@ -462,7 +782,10 @@ fun SimuladosScreen(
                                         color = if (isCurrent) TextPrimary else pillColor,
                                         shape = CircleShape
                                     )
-                                    .clickable { currentQuestionIdx = idx }
+                                    .clickable {
+                                        currentQuestionIdx = idx
+                                        syncSessionStore()
+                                    }
                             ) {
                                 Text(
                                     text = "${idx + 1}",
@@ -487,10 +810,21 @@ fun SimuladosScreen(
                                 bankQuestion = currentQ,
                                 questionNumber = currentQuestionIdx + 1,
                                 pythonEngine = pythonEngine,
+                                existingAnswer = answerMap[currentQ.id],
                                 existingFeedback = feedbackMap[currentQ.id],
+                                onAnswerDraftChanged = { ans ->
+                                    answerMap[currentQ.id] = ans
+                                    syncSessionStore()
+                                },
                                 onEvaluated = { ans, fb ->
                                     answerMap[currentQ.id] = ans
                                     feedbackMap[currentQ.id] = fb
+                                    if (fb.isCorrect) {
+                                        progressRepository.recordSolvedExercise(currentQ.id, 20)
+                                    } else {
+                                        progressRepository.recordWrongQuestion(currentQ.id, currentQ.lesson.lessonId)
+                                    }
+                                    syncSessionStore()
                                 }
                             )
                         }
@@ -504,7 +838,12 @@ fun SimuladosScreen(
                         modifier = Modifier.fillMaxWidth()
                     ) {
                         OutlinedButton(
-                            onClick = { if (currentQuestionIdx > 0) currentQuestionIdx-- },
+                            onClick = {
+                                if (currentQuestionIdx > 0) {
+                                    currentQuestionIdx--
+                                    syncSessionStore()
+                                }
+                            },
                             enabled = currentQuestionIdx > 0,
                             shape = RoundedCornerShape(10.dp)
                         ) {
@@ -517,8 +856,9 @@ fun SimuladosScreen(
                             onClick = {
                                 if (currentQuestionIdx < total - 1) {
                                     currentQuestionIdx++
+                                    syncSessionStore()
                                 } else {
-                                    screenState = SimuladoScreenState.DIAGNOSTIC_REPORT
+                                    finalizeSimuladoAndOpenReport()
                                 }
                             },
                             colors = ButtonDefaults.buttonColors(containerColor = PrimaryViolet),

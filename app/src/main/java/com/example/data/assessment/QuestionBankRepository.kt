@@ -83,6 +83,12 @@ object QuestionBankRepository {
     @Volatile
     private var cachedLegacyQuestions: List<BankQuestion>? = null
 
+    @Volatile
+    private var cachedTranspetroLessons: List<LessonRef>? = null
+
+    @Volatile
+    private var cachedTranspetroQuestions: List<BankQuestion>? = null
+
     private val _quarantinedQuestions = mutableListOf<QuarantinedQuestion>()
 
     fun getQuarantinedQuestions(): List<QuarantinedQuestion> = synchronized(this) {
@@ -115,12 +121,55 @@ object QuestionBankRepository {
         val lessons = AssessmentJson.parseLessonIndex(lessonsText).sortedBy { it.order }
         val lessonById = lessons.associateBy { it.lessonId }
 
+        _quarantinedQuestions.clear()
         val authored = mutableListOf<BankQuestion>()
+        val seenIds = mutableSetOf<String>()
+
         for (path in bankFiles) {
             val raw = readAssetText(context, path)
             val parsed = AssessmentJson.parseQuestions(raw)
             for (q in parsed) {
-                val lesson = lessonById[q.lessonId] ?: continue
+                val lesson = lessonById[q.lessonId]
+                if (lesson == null) {
+                    _quarantinedQuestions.add(
+                        QuarantinedQuestion(
+                            questionId = q.id,
+                            discipline = "Desconhecida",
+                            module = q.lessonId,
+                            subtopic = q.concept,
+                            reason = "Aula '${q.lessonId}' não encontrada em lesson_index.json",
+                            origin = path
+                        )
+                    )
+                    continue
+                }
+                if (!seenIds.add(q.id)) {
+                    _quarantinedQuestions.add(
+                        QuarantinedQuestion(
+                            questionId = q.id,
+                            discipline = lesson.subject,
+                            module = lesson.moduleTitle,
+                            subtopic = lesson.subtopic,
+                            reason = "Identificador de questão duplicado: '${q.id}'",
+                            origin = path
+                        )
+                    )
+                    continue
+                }
+                val validationError = validateQuestionIntegrity(q)
+                if (validationError != null) {
+                    _quarantinedQuestions.add(
+                        QuarantinedQuestion(
+                            questionId = q.id,
+                            discipline = lesson.subject,
+                            module = lesson.moduleTitle,
+                            subtopic = lesson.subtopic,
+                            reason = validationError,
+                            origin = path
+                        )
+                    )
+                    continue
+                }
                 authored.add(BankQuestion(question = q, lesson = lesson))
             }
         }
@@ -128,12 +177,85 @@ object QuestionBankRepository {
         cachedLessons = lessons
         cachedAuthoredQuestions = authored
         cachedLegacyQuestions = buildLegacyBridge(lessons)
+
+        // Carrega questões e aulas do Concurso Transpetro em cache dedicado
+        try {
+            cachedTranspetroLessons = com.example.data.transpetro.TranspetroQuestionBankLoader.getAllLessonRefs()
+            cachedTranspetroQuestions = com.example.data.transpetro.TranspetroQuestionBankLoader.getAllBankQuestions(context)
+        } catch (_: Exception) {
+            // Em testes unitários headless ou sem asset local disponível
+        }
+    }
+
+    /**
+     * Valida a integridade estrutural e pedagógica de uma questão.
+     * Retorna `null` se a questão for válida, ou o motivo da rejeição para quarentena.
+     */
+    fun validateQuestionIntegrity(q: Question): String? {
+        if (q.id.isBlank()) return "ID da questão em branco"
+        if (q.statement.isBlank()) return "Enunciado em branco"
+        if (q.explanation.isBlank()) return "Explicação pedagógica ausente"
+
+        return when (q.format) {
+            QuestionFormat.MULTIPLE_CHOICE, QuestionFormat.CHART -> {
+                if (q.options.size < 2) {
+                    "Questão de múltipla escolha com menos de 2 alternativas (${q.options.size})"
+                } else if (q.options.any { it.isBlank() }) {
+                    "Questão possui alternativa em branco"
+                } else if (q.options.map { it.trim().lowercase() }.distinct().size != q.options.size) {
+                    "Questão possui alternativas duplicadas"
+                } else if (q.answerIndex !in q.options.indices) {
+                    "Gabarito answerIndex (${q.answerIndex}) fora do intervalo [0..${q.options.size - 1}]"
+                } else if (q.format == QuestionFormat.CHART && q.chart == null) {
+                    "Questão de interpretação gráfica sem dados de gráfico (chart)"
+                } else {
+                    null
+                }
+            }
+            QuestionFormat.TRUE_FALSE -> {
+                if (q.answerBool == null) "Questão V/F sem gabarito booleano (answerBool)" else null
+            }
+            QuestionFormat.MATCHING -> {
+                if (q.pairs.size < 2 || q.pairs.any { it.first.isBlank() || it.second.isBlank() }) {
+                    "Pares de associação inválidos (${q.pairs.size})"
+                } else {
+                    null
+                }
+            }
+            QuestionFormat.FILL_BLANK -> {
+                if (q.answers.isEmpty() || q.answers.any { it.isBlank() }) {
+                    "Questão de lacuna sem respostas válidas (answers)"
+                } else {
+                    null
+                }
+            }
+            QuestionFormat.NUMERIC -> {
+                if (q.answerNumber == null || !q.answerNumber.isFinite()) {
+                    "Questão numérica sem valor numérico finito (answerNumber)"
+                } else {
+                    null
+                }
+            }
+            QuestionFormat.ESSAY -> {
+                if (q.rubric.isEmpty()) {
+                    "Questão discursiva sem rubrica explícita"
+                } else {
+                    null
+                }
+            }
+            QuestionFormat.CODE -> {
+                if (q.code == null || q.code.tests.isEmpty()) {
+                    "Questão de programação prática sem casos de teste automatizados"
+                } else {
+                    null
+                }
+            }
+        }
     }
 
     private fun buildLegacyBridge(lessons: List<LessonRef>): List<BankQuestion> {
         val bySubject = lessons.groupBy { it.subject }
         val results = mutableListOf<BankQuestion>()
-        _quarantinedQuestions.clear()
 
         val allExercises = try {
             UniversalExerciseBank.getAllExercises()
@@ -153,6 +275,34 @@ object QuestionBankRepository {
                         module = ex.category,
                         subtopic = ex.subtopic,
                         reason = "Disciplina '$subj' não possui aulas cadastradas no índice de aulas",
+                        origin = "UniversalExerciseBank:${ex.discipline.name}"
+                    )
+                )
+                continue
+            }
+
+            if (ex.problemStatement.isBlank() || ex.options.size < 2 || ex.correctIndex !in ex.options.indices) {
+                _quarantinedQuestions.add(
+                    QuarantinedQuestion(
+                        questionId = ex.id,
+                        discipline = ex.discipline.name,
+                        module = ex.category,
+                        subtopic = ex.subtopic,
+                        reason = " Questão legada estruturalmente inválida (options=${ex.options.size}, correctIndex=${ex.correctIndex})".trim(),
+                        origin = "UniversalExerciseBank:${ex.discipline.name}"
+                    )
+                )
+                continue
+            }
+
+            if (ex.options.map { it.trim().lowercase() }.distinct().size != ex.options.size) {
+                _quarantinedQuestions.add(
+                    QuarantinedQuestion(
+                        questionId = ex.id,
+                        discipline = ex.discipline.name,
+                        module = ex.category,
+                        subtopic = ex.subtopic,
+                        reason = "Questão legada possui alternativas duplicadas",
                         origin = "UniversalExerciseBank:${ex.discipline.name}"
                     )
                 )
@@ -217,7 +367,7 @@ object QuestionBankRepository {
                 },
                 source = if (isOfficialEnem) QuestionSource.INEP_ENEM else QuestionSource.LEGACY,
                 options = ex.options,
-                answerIndex = ex.correctIndex.coerceIn(0, (ex.options.size - 1).coerceAtLeast(0)),
+                answerIndex = ex.correctIndex,
                 distractorConcepts = distractorList
             )
             results.add(BankQuestion(question = q, lesson = matchedLesson))
@@ -253,10 +403,25 @@ object QuestionBankRepository {
         return cachedAuthoredQuestions.orEmpty()
     }
 
-    fun getAllQuestions(context: Context? = null, includeLegacy: Boolean = true): List<BankQuestion> {
+    fun getAllQuestions(
+        context: Context? = null,
+        includeLegacy: Boolean = true,
+        includeTranspetro: Boolean = false
+    ): List<BankQuestion> {
         ensureLoaded(context)
         val authored = cachedAuthoredQuestions.orEmpty()
-        return if (includeLegacy) authored + cachedLegacyQuestions.orEmpty() else authored
+        val legacy = if (includeLegacy) cachedLegacyQuestions.orEmpty() else emptyList()
+        val transpetro = if (includeTranspetro) getTranspetroQuestions(context) else emptyList()
+        return authored + legacy + transpetro
+    }
+
+    fun getTranspetroLessons(): List<LessonRef> {
+        return cachedTranspetroLessons ?: com.example.data.transpetro.TranspetroQuestionBankLoader.getAllLessonRefs()
+    }
+
+    fun getTranspetroQuestions(context: Context? = null): List<BankQuestion> {
+        ensureLoaded(context)
+        return cachedTranspetroQuestions ?: com.example.data.transpetro.TranspetroQuestionBankLoader.getAllBankQuestions(context)
     }
 
     fun getSubjects(context: Context? = null): List<String> {
@@ -307,6 +472,9 @@ object QuestionBankRepository {
         includeLegacy: Boolean = true,
         context: Context? = null
     ): List<BankQuestion> {
+        if (lessonId.startsWith("tp_")) {
+            return getTranspetroQuestions(context).filter { it.lesson.lessonId == lessonId }
+        }
         return getAllQuestions(context, includeLegacy).filter { it.lesson.lessonId == lessonId }
     }
 

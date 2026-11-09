@@ -80,10 +80,19 @@ fun ActionBentoGrid(
     onNavigateToEssayLab: () -> Unit,
     onNavigateToRanking: () -> Unit,
     modifier: Modifier = Modifier,
+    activeSubjectName: String = "Python",
+    subjectProgressMap: Map<String, Pair<Int, Int>> = emptyMap(),
+    dailyXp: Int = 0,
+    dailyGoalXp: Int = 50,
+    reviewLessonCount: Int = 0,
     hasStudiedToday: Boolean = false,
     currentStreak: Int = 0,
     onNavigateToSimulados: () -> Unit = {}
 ) {
+    val activeSubjectStats = subjectProgressMap[activeSubjectName] ?: (0 to 1)
+    val activeSubjectPct = if (activeSubjectStats.second > 0) {
+        ((activeSubjectStats.first.toFloat() / activeSubjectStats.second.toFloat()) * 100).toInt().coerceIn(0, 100)
+    } else 0
     Column(
         modifier = modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(14.dp)
@@ -132,19 +141,19 @@ fun ActionBentoGrid(
                         }
                         Column {
                             Text(
-                                text = "CONTINUAR APRENDIZADO",
+                                text = "CONTINUAR APRENDIZADO • ${activeSubjectName.uppercase()}",
                                 style = MaterialTheme.typography.labelSmall.copy(
                                     color = PrimaryViolet,
                                     fontWeight = FontWeight.Bold,
-                                    fontSize = 10.sp,
-                                    letterSpacing = 0.8.sp
+                                    fontSize = 11.sp,
+                                    letterSpacing = 0.7.sp
                                 )
                             )
                             Text(
-                                text = "Próxima lição recomendada",
+                                text = "${activeSubjectStats.first}/${activeSubjectStats.second} aulas concluídas ($activeSubjectPct%)",
                                 style = MaterialTheme.typography.labelSmall.copy(
-                                    color = TextTertiary,
-                                    fontSize = 9.sp
+                                    color = TextSecondary,
+                                    fontSize = 11.sp
                                 )
                             )
                         }
@@ -234,80 +243,110 @@ fun ActionBentoGrid(
         // ========================================================
         // 2. META DIÁRIA & SEQUÊNCIA DE ESTUDOS
         // ========================================================
+        val safeGoal = dailyGoalXp.coerceAtLeast(10)
+        val dailyFraction = (dailyXp.toFloat() / safeGoal.toFloat()).coerceIn(0f, 1f)
         Surface(
             color = ObsidianSurface,
             shape = RoundedCornerShape(12.dp),
             border = BorderStroke(1.dp, BorderSubtle),
             modifier = Modifier.fillMaxWidth()
         ) {
-            Row(
+            Column(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 14.dp, vertical = 12.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Row(
+                    modifier = Modifier.fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.spacedBy(10.dp),
-                    modifier = Modifier.weight(1f)
+                    horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    val isFireActive = hasStudiedToday && currentStreak > 0
-                    Box(
-                        modifier = Modifier
-                            .size(36.dp)
-                            .clip(CircleShape)
-                            .background(if (isFireActive) StreakFire.copy(alpha = 0.15f) else SurfaceElevated),
-                        contentAlignment = Alignment.Center
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(10.dp),
+                        modifier = Modifier.weight(1f)
                     ) {
-                        Icon(
-                            imageVector = if (isFireActive) KnowverseIcons.StreakFire else KnowverseIcons.FlameInactive,
-                            contentDescription = "Sequência",
-                            tint = if (isFireActive) StreakFire else TextTertiary,
-                            modifier = Modifier.size(18.dp)
-                        )
+                        val isFireActive = hasStudiedToday && currentStreak > 0
+                        Box(
+                            modifier = Modifier
+                                .size(36.dp)
+                                .clip(CircleShape)
+                                .background(if (isFireActive) StreakFire.copy(alpha = 0.15f) else SurfaceElevated),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Icon(
+                                imageVector = if (isFireActive) KnowverseIcons.StreakFire else KnowverseIcons.FlameInactive,
+                                contentDescription = "Sequência",
+                                tint = if (isFireActive) StreakFire else TextTertiary,
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
+
+                        Column {
+                            Text(
+                                text = if (hasStudiedToday) "Meta de Hoje Concluída!" else "Meta Diária: $dailyXp / $safeGoal XP",
+                                style = MaterialTheme.typography.bodyMedium.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    color = if (hasStudiedToday) SuccessEmerald else TextPrimary,
+                                    fontSize = 13.5.sp
+                                )
+                            )
+                            Text(
+                                text = if (reviewLessonCount > 0) {
+                                    "Ofensiva: $currentStreak d • $reviewLessonCount ${if (reviewLessonCount == 1) "aula sugerida" else "aulas sugeridas"} para revisão"
+                                } else if (hasStudiedToday) {
+                                    "Sequência mantida: $currentStreak dias ativos seguidos."
+                                } else {
+                                    "Complete uma aula ou bateria de questões para manter sua sequência."
+                                },
+                                style = MaterialTheme.typography.bodySmall.copy(
+                                    color = TextSecondary,
+                                    fontSize = 11.5.sp
+                                )
+                            )
+                        }
                     }
 
-                    Column {
+                    Surface(
+                        color = SurfaceElevated,
+                        shape = RoundedCornerShape(8.dp),
+                        border = BorderStroke(1.dp, BorderSubtle),
+                        modifier = Modifier.clickable { onNavigateToExercises() }
+                    ) {
                         Text(
-                            text = if (hasStudiedToday) "Meta de Hoje Concluída!" else "Meta de Hoje Pendente",
-                            style = MaterialTheme.typography.bodyMedium.copy(
+                            text = if (reviewLessonCount > 0) "Revisar ($reviewLessonCount)" else "Treinar",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = PrimaryViolet,
                                 fontWeight = FontWeight.Bold,
-                                color = if (hasStudiedToday) SuccessEmerald else TextPrimary,
-                                fontSize = 13.sp
-                            )
-                        )
-                        Text(
-                            text = if (hasStudiedToday) "Sequência mantida: $currentStreak dias ativos seguidos." else "Resolva exercícios para acender o fogo da ofensiva.",
-                            style = MaterialTheme.typography.bodySmall.copy(
-                                color = TextSecondary,
                                 fontSize = 11.sp
-                            )
+                            ),
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
                         )
                     }
                 }
 
-                Surface(
-                    color = SurfaceElevated,
-                    shape = RoundedCornerShape(8.dp),
-                    border = BorderStroke(1.dp, BorderSubtle),
-                    modifier = Modifier.clickable { onNavigateToExercises() }
+                // Barra de progresso da meta diária de XP
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(5.dp)
+                        .clip(RoundedCornerShape(3.dp))
+                        .background(SurfaceElevated)
                 ) {
-                    Text(
-                        text = "Treinar",
-                        style = MaterialTheme.typography.labelSmall.copy(
-                            color = PrimaryViolet,
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 11.sp
-                        ),
-                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth(dailyFraction.coerceAtLeast(if (dailyXp > 0) 0.05f else 0f))
+                            .fillMaxHeight()
+                            .clip(RoundedCornerShape(3.dp))
+                            .background(if (hasStudiedToday || dailyFraction >= 1f) SuccessEmerald else PrimaryViolet)
                     )
                 }
             }
         }
 
         // ========================================================
-        // 3. TRILHAS DO KNOWVERSE: GRID 2x3 EQUILIBRADO
+        // 3. TRILHAS DO KNOWVERSE: GRID 4x2 COM PROGRESSO REAL
         // ========================================================
         Column(
             modifier = Modifier
@@ -324,91 +363,136 @@ fun ActionBentoGrid(
                     text = "DISCIPLINAS & TRILHAS",
                     style = MaterialTheme.typography.labelSmall.copy(
                         fontWeight = FontWeight.Bold,
-                        color = TextTertiary,
-                        letterSpacing = 1.sp,
-                        fontSize = 10.sp
+                        color = TextSecondary,
+                        letterSpacing = 0.8.sp,
+                        fontSize = 11.sp
                     )
                 )
 
                 Text(
-                    text = "Acesso Rápido",
+                    text = "Ver Todas as Trilhas",
                     style = MaterialTheme.typography.labelSmall.copy(
                         color = PrimaryViolet,
-                        fontSize = 10.sp,
+                        fontSize = 11.sp,
                         fontWeight = FontWeight.SemiBold
                     ),
                     modifier = Modifier.clickable { onNavigateToTrail() }
                 )
             }
 
-            // Grid de 6 disciplinas em 3 linhas x 2 colunas
+            // Grid de 8 áreas em 4 linhas x 2 colunas com indicadores reais de progresso
             val subjects = listOf(
-                SubjectItem("Matemática", "Geometria, Funções & Álgebra", Color(0xFF3B82F6), KnowverseIcons.Math) { onNavigateToTrail() },
-                SubjectItem("Física", "Mecânica, Termo & Eletricidade", Color(0xFF06B6D4), KnowverseIcons.Brain) { onNavigateToTrail() },
-                SubjectItem("Biologia", "Ecologia, Citologia & Genética", Color(0xFF10B981), KnowverseIcons.DataChart) { onNavigateToTrail() },
-                SubjectItem("Química", "Geral, Ambiental & Reações", Color(0xFFF59E0B), KnowverseIcons.ChemistryFlask) { onNavigateToTrail() },
-                SubjectItem("Redação", "Matriz INEP C1–C5 & Repertório", Color(0xFFEC4899), Icons.Default.Edit) { onNavigateToEssayLab() },
-                SubjectItem("Python", "Algoritmos & Terminal Prático", Color(0xFF8B5CF6), KnowverseIcons.Python) { onNavigateToTrail() }
+                SubjectItem("Matemática", "ENEM, Básica & Cálculo", Color(0xFF3B82F6), KnowverseIcons.Math, subjectProgressMap["Matemática"]) { onNavigateToTrail() },
+                SubjectItem("Física", "Mecânica, Termo & Óptica", Color(0xFF06B6D4), KnowverseIcons.PhysicsAtom, subjectProgressMap["Física"]) { onNavigateToTrail() },
+                SubjectItem("Biologia", "Ecologia, Citologia & DNA", Color(0xFF10B981), KnowverseIcons.BiologyLeaf, subjectProgressMap["Biologia"]) { onNavigateToTrail() },
+                SubjectItem("Química", "Geral, Físico & Orgânica", Color(0xFFF59E0B), KnowverseIcons.ChemistryFlask, subjectProgressMap["Química"]) { onNavigateToTrail() },
+                SubjectItem("Humanas", "História & Geografia ENEM", Color(0xFFFBBF24), KnowverseIcons.GeographyGlobe, subjectProgressMap["Humanas"]) { onNavigateToTrail() },
+                SubjectItem("Linguagens", "Interpretação & Literatura", Color(0xFF818CF8), KnowverseIcons.LanguagesBook, subjectProgressMap["Linguagens"]) { onNavigateToTrail() },
+                SubjectItem("Redação", "Matriz INEP C1–C5", Color(0xFFEC4899), Icons.Default.Edit, null) { onNavigateToEssayLab() },
+                SubjectItem("Python", "Algoritmos & Terminal", Color(0xFF8B5CF6), KnowverseIcons.Python, subjectProgressMap["Python"]) { onNavigateToTrail() }
             )
 
-            for (rowIndex in 0 until 3) {
+            for (rowIndex in 0 until 4) {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(10.dp)
                 ) {
                     for (colIndex in 0 until 2) {
                         val item = subjects[rowIndex * 2 + colIndex]
+                        val prog = item.progress
+                        val progFraction = if (prog != null && prog.second > 0) {
+                            (prog.first.toFloat() / prog.second.toFloat()).coerceIn(0f, 1f)
+                        } else 0f
+
                         Surface(
                             color = ObsidianSurface,
                             shape = RoundedCornerShape(10.dp),
                             border = BorderStroke(1.dp, BorderSubtle),
                             modifier = Modifier
                                 .weight(1f)
-                                .height(72.dp)
+                                .height(82.dp)
                                 .clickable { item.onClick() }
                         ) {
-                            Row(
+                            Column(
                                 modifier = Modifier
-                                    .fillMaxWidth()
+                                    .fillMaxHeight()
                                     .padding(horizontal = 10.dp, vertical = 8.dp),
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.spacedBy(10.dp)
+                                verticalArrangement = Arrangement.SpaceBetween
                             ) {
-                                Box(
-                                    modifier = Modifier
-                                        .size(32.dp)
-                                        .clip(RoundedCornerShape(8.dp))
-                                        .background(item.accentColor.copy(alpha = 0.12f)),
-                                    contentAlignment = Alignment.Center
+                                Row(
+                                    modifier = Modifier.fillMaxWidth(),
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(9.dp)
                                 ) {
-                                    Icon(
-                                        imageVector = item.icon,
-                                        contentDescription = item.title,
-                                        tint = item.accentColor,
-                                        modifier = Modifier.size(17.dp)
-                                    )
+                                    Box(
+                                        modifier = Modifier
+                                            .size(32.dp)
+                                            .clip(RoundedCornerShape(8.dp))
+                                            .background(item.accentColor.copy(alpha = 0.14f)),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = item.icon,
+                                            contentDescription = item.title,
+                                            tint = item.accentColor,
+                                            modifier = Modifier.size(17.dp)
+                                        )
+                                    }
+
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Row(
+                                            modifier = Modifier.fillMaxWidth(),
+                                            horizontalArrangement = Arrangement.SpaceBetween,
+                                            verticalAlignment = Alignment.CenterVertically
+                                        ) {
+                                            Text(
+                                                text = item.title,
+                                                style = MaterialTheme.typography.bodySmall.copy(
+                                                    fontWeight = FontWeight.Bold,
+                                                    color = TextPrimary,
+                                                    fontSize = 12.5.sp
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis
+                                            )
+                                            if (prog != null && prog.second > 0) {
+                                                Text(
+                                                    text = "${prog.first}/${prog.second}",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = if (prog.first > 0) item.accentColor else TextTertiary,
+                                                        fontSize = 10.5.sp,
+                                                        fontWeight = FontWeight.Bold
+                                                    )
+                                                )
+                                            }
+                                        }
+                                        Text(
+                                            text = item.subtitle,
+                                            style = MaterialTheme.typography.labelSmall.copy(
+                                                color = TextSecondary,
+                                                fontSize = 11.sp,
+                                                lineHeight = 14.sp
+                                            ),
+                                            maxLines = 1,
+                                            overflow = TextOverflow.Ellipsis
+                                        )
+                                    }
                                 }
 
-                                Column(modifier = Modifier.weight(1f)) {
-                                    Text(
-                                        text = item.title,
-                                        style = MaterialTheme.typography.bodySmall.copy(
-                                            fontWeight = FontWeight.Bold,
-                                            color = TextPrimary,
-                                            fontSize = 12.sp
-                                        ),
-                                        maxLines = 1,
-                                        overflow = TextOverflow.Ellipsis
-                                    )
-                                    Text(
-                                        text = item.subtitle,
-                                        style = MaterialTheme.typography.labelSmall.copy(
-                                            color = TextSecondary,
-                                            fontSize = 9.5.sp,
-                                            lineHeight = 12.sp
-                                        ),
-                                        maxLines = 1,
-                                        overflow = TextOverflow.Ellipsis
+                                // Barra de progresso sutil da disciplina
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .height(4.dp)
+                                        .clip(RoundedCornerShape(2.dp))
+                                        .background(SurfaceElevated)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .fillMaxWidth(progFraction.coerceAtLeast(if ((prog?.first ?: 0) > 0) 0.05f else 0f))
+                                            .fillMaxHeight()
+                                            .clip(RoundedCornerShape(2.dp))
+                                            .background(item.accentColor)
                                     )
                                 }
                             }
@@ -723,5 +807,6 @@ private data class SubjectItem(
     val subtitle: String,
     val accentColor: Color,
     val icon: ImageVector,
+    val progress: Pair<Int, Int>? = null,
     val onClick: () -> Unit
 )

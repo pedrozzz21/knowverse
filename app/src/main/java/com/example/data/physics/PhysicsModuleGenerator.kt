@@ -138,7 +138,7 @@ object PhysicsModuleGenerator {
             formulas = formulas,
             solvedExamples = listOf(example),
             goldTip = goldTip,
-            status = DidacticContentStatus.REVIEWED
+            status = DidacticContentStatus.PENDING_CURATION
         )
     }
 

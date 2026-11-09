@@ -107,12 +107,30 @@ fun HomeScreen(
     val scrollState = rememberScrollState()
     val onlineUsers by (progressRepository?.onlineLeaderboardState?.collectAsState() ?: remember { mutableStateOf(emptyList()) })
 
-    // Localiza a próxima lição incompleta no currículo
-    val allLessons = PythonCurriculum.getAllLessons()
-    val nextIncomplete = allLessons.firstOrNull { !userProgress.completedLessonIds.contains(it.id) }
-    val nextLesson = PythonCurriculum.findLesson(userProgress.currentLessonId)?.takeIf { !userProgress.completedLessonIds.contains(it.id) }
-        ?: nextIncomplete
-        ?: allLessons.first()
+    // Localiza a próxima lição incompleta real através de todos os currículos do KnowVerse
+    val (nextLesson, activeSubjectName, subjectProgressMap) = remember(
+        userProgress.currentLessonId,
+        userProgress.completedLessonIds,
+        userProgress.favoriteAreaId
+    ) {
+        val subjectPairs = listOf(
+            "Python" to com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "python").flatMap { it.lessons },
+            "Matemática" to (
+                com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "basic_math").flatMap { it.lessons } +
+                    com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "enem_math").flatMap { it.lessons } +
+                    com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "calculus").flatMap { it.lessons }
+                ),
+            "Física" to com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "physics").flatMap { it.lessons },
+            "Biologia" to com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "biology").flatMap { it.lessons },
+            "Química" to com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "chemistry").flatMap { it.lessons },
+            "Humanas" to (
+                com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "history").flatMap { it.lessons } +
+                    com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "geography").flatMap { it.lessons }
+                ),
+            "Linguagens" to com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "languages").flatMap { it.lessons }
+        )
+        resolveContinueLearningTarget(userProgress, subjectPairs)
+    }
 
     val hasStudiedToday = userProgress.hasStudiedToday()
 
@@ -187,6 +205,11 @@ fun HomeScreen(
                 // 2. Painel Central de Atividades & Disciplinas do Knowverse
                 com.example.ui.components.home.ActionBentoGrid(
                     nextLesson = nextLesson,
+                    activeSubjectName = activeSubjectName,
+                    subjectProgressMap = subjectProgressMap,
+                    dailyXp = userProgress.dailyXp,
+                    dailyGoalXp = userProgress.dailyGoalXp,
+                    reviewLessonCount = userProgress.reviewLessonIds.size,
                     userRankPosition = userRankPosition,
                     totalXp = userProgress.totalXp,
                     hasStudiedToday = hasStudiedToday,
@@ -211,3 +234,103 @@ fun HomeScreen(
         }
     }
 }
+
+internal fun defaultSubjectPairs(context: android.content.Context? = null): List<Pair<String, List<Lesson>>> = listOf(
+    "Transpetro" to com.example.data.transpetro.TranspetroCurriculum.getAllLessons().map { it.toAppLesson() },
+    "Python" to com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "python").flatMap { it.lessons },
+    "Matemática" to (
+        com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "basic_math").flatMap { it.lessons } +
+            com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "enem_math").flatMap { it.lessons } +
+            com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "calculus").flatMap { it.lessons }
+        ),
+    "Física" to com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "physics").flatMap { it.lessons },
+    "Biologia" to com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "biology").flatMap { it.lessons },
+    "Química" to com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "chemistry").flatMap { it.lessons },
+    "Humanas" to (
+        com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "history").flatMap { it.lessons } +
+            com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "geography").flatMap { it.lessons }
+        ),
+    "Linguagens" to com.example.data.local.assets.CurriculumAssetLoader.loadAllUnitsForSubject(context, "languages").flatMap { it.lessons }
+)
+
+internal fun resolveContinueLearningTarget(
+    userProgress: UserProgress,
+    subjectPairs: List<Pair<String, List<Lesson>>> = defaultSubjectPairs(null)
+): Triple<Lesson, String, Map<String, Pair<Int, Int>>> {
+    val completedSet = userProgress.completedLessonIds
+    val progressMap = subjectPairs.associate { (subjName, lessons) ->
+        val done = lessons.count { it.id in completedSet }
+        subjName to (done to lessons.size)
+    }
+
+    val currentId = userProgress.currentLessonId
+    val isUntouchedDefault = currentId == "py_b1_l1" &&
+        "py_b1_l1" !in completedSet &&
+        userProgress.favoriteAreaId != "python"
+
+    // 1. Se o usuário tem uma aula atual definida explicitamente (ou concluída), prioriza a disciplina dela
+    if (currentId.isNotBlank() && !isUntouchedDefault) {
+        val currentMatch = subjectPairs.firstNotNullOfOrNull { (subjName, lessons) ->
+            val idx = lessons.indexOfFirst { it.id == currentId }
+            if (idx >= 0) Triple(subjName, lessons, idx) else null
+        }
+        if (currentMatch != null) {
+            val (subjName, lessons, idx) = currentMatch
+            val currentLesson = lessons[idx]
+            if (currentLesson.id !in completedSet) {
+                return Triple(currentLesson, subjName, progressMap)
+            }
+            // Se a aula atual já foi concluída, avança para a próxima aula não concluída da mesma disciplina
+            val nextInSameSubj = lessons.drop(idx + 1).firstOrNull { it.id !in completedSet }
+                ?: lessons.firstOrNull { it.id !in completedSet }
+            if (nextInSameSubj != null) {
+                return Triple(nextInSameSubj, subjName, progressMap)
+            }
+        }
+    }
+
+    // 2. Prioriza a área favorita do usuário, se definida
+    val favoriteSubjectName = when (userProgress.favoriteAreaId.lowercase()) {
+        "transpetro", "transpetro_adm", "adm_controle" -> "Transpetro"
+        "python" -> "Python"
+        "math", "matematica", "matematica_enem", "matematica_basica", "calculus" -> "Matemática"
+        "physics", "fisica" -> "Física"
+        "biology", "biologia" -> "Biologia"
+        "chemistry", "quimica" -> "Química"
+        "humanities", "humanas", "geografia", "historia" -> "Humanas"
+        "languages", "linguagens" -> "Linguagens"
+        else -> null
+    }
+    if (favoriteSubjectName != null) {
+        val favLessons = subjectPairs.firstOrNull { it.first == favoriteSubjectName }?.second.orEmpty()
+        val nextInFav = favLessons.firstOrNull { it.id !in completedSet }
+        if (nextInFav != null) {
+            return Triple(nextInFav, favoriteSubjectName, progressMap)
+        }
+    }
+
+    // 3. Prioriza qualquer disciplina em que o usuário já tenha concluído ao menos 1 aula e ainda tenha aulas pendentes
+    val activeStartedPair = subjectPairs.firstOrNull { (_, lessons) ->
+        lessons.any { it.id in completedSet } && lessons.any { it.id !in completedSet }
+    }
+    if (activeStartedPair != null) {
+        val (subjName, lessons) = activeStartedPair
+        val lastCompletedIdx = lessons.indexOfLast { it.id in completedSet }
+        val nextAfterCompleted = lessons.drop(lastCompletedIdx + 1).firstOrNull { it.id !in completedSet }
+            ?: lessons.firstOrNull { it.id !in completedSet }
+        if (nextAfterCompleted != null) {
+            return Triple(nextAfterCompleted, subjName, progressMap)
+        }
+    }
+
+    // 4. Fallback inicial para novos usuários sem histórico
+    val defaultPair = subjectPairs.firstOrNull { (_, lessons) ->
+        lessons.any { it.id !in completedSet }
+    }
+    val next = defaultPair?.second?.firstOrNull { it.id !in completedSet }
+        ?: subjectPairs.firstOrNull()?.second?.firstOrNull()
+        ?: PythonCurriculum.getAllLessons().first()
+    val subjName = defaultPair?.first ?: "Python"
+    return Triple(next, subjName, progressMap)
+}
+

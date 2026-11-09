@@ -1,0 +1,573 @@
+{
+  "subjectId": "python",
+  "title": "Programação Python",
+  "category": "Programação",
+  "unitCount": 8,
+  "lessonCount": 17,
+  "units": [
+    {
+      "id": "py_b1",
+      "unitNumber": 1,
+      "tier": "BASIC",
+      "title": "Sintaxe, Variáveis & Tipos Primitivos",
+      "description": "Domine a função print(), variáveis dinâmicas, tipos int, float, str, bool e conversões de tipos.",
+      "category": "Programação",
+      "subject": "Python",
+      "lessons": [
+        {
+          "id": "py_b1_l1",
+          "unitId": "py_b1",
+          "title": "Primeiros Passos com print()",
+          "conceptTitle": "A Função print() e Saída Padrão",
+          "explanation": "Em Python, a função print() exibe dados e mensagens no console do terminal. Cadeias de texto devem estar delimitadas por aspas simples ('...') ou aspas duplas (\"...\").\n\n🎯 Objetivo da Missão:\nEscreva um comando usando a função print() para exibir no terminal exatamente a mensagem: Olá, Python!",
+          "lessonType": "LEARN",
+          "initialCode": "# 🎯 Objetivo: Use a função print() para exibir no terminal exatamente a mensagem: Olá, Python!\n# Digite seu código na linha abaixo:\n",
+          "hints": [
+            "Utilize a função print() passando a mensagem entre aspas, por exemplo: print('...')",
+            "Certifique-se de escrever exatamente 'Olá, Python!' com acentuação e pontuação corretas."
+          ],
+          "solutionExplanation": "A função print() recebe argumentos posicionais e envia a representação em texto para stdout.",
+          "xpReward": 25,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Saída padrão",
+              "stdinInput": "",
+              "expectedOutput": "Olá, Python!",
+              "validationType": "CONTAINS_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "py_b1_l2",
+          "unitId": "py_b1",
+          "title": "Variáveis e Tipagem Dinâmica",
+          "conceptTitle": "Declarando Variáveis",
+          "explanation": "Python atribui tipos aos dados automaticamente sem você precisar declarar o tipo antes do nome.\n\n🎯 Objetivo da Missão:\nCrie uma variável chamada 'linguagem' com o valor \"Python\" e uma variável chamada 'versao' com o número 3. Em seguida, utilize print(linguagem, versao) para exibi-las separadas por espaço.",
+          "lessonType": "PRACTICE",
+          "initialCode": "# 🎯 Objetivo: Crie a variável 'linguagem' com \"Python\" e 'versao' com 3.\n# Em seguida, exiba ambas com a instrução print(linguagem, versao).\n# Escreva seu código abaixo:\n",
+          "hints": [
+            "Use o operador de atribuição = para associar os valores aos nomes das variáveis.",
+            "A função print() aceita múltiplos argumentos separados por vírgula e insere espaço entre eles."
+          ],
+          "solutionExplanation": "O Python associa os tipos str e int às variáveis dinamicamente.",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Variáveis impressas",
+              "stdinInput": "",
+              "expectedOutput": "Python 3",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "py_b1_l3",
+          "unitId": "py_b1",
+          "title": "Conversão de Tipos (Type Casting)",
+          "conceptTitle": "Casting com int() e float()",
+          "explanation": "Quando valores numéricos chegam como texto (por exemplo, \"50\"), precisamos convertê-los com int() ou float() antes de realizar operações matemáticas.\n\n🎯 Objetivo da Missão:\nConverta a variável valor_texto para um número inteiro, some 25 ao resultado e imprima o total obtido.",
+          "lessonType": "PRACTICE",
+          "initialCode": "valor_texto = \"50\"\n\n# 🎯 Objetivo: Converta valor_texto para int, some 25 e imprima o valor final.\n# Escreva seu código abaixo:\n",
+          "hints": [
+            "Passe valor_texto como argumento para int(), somando 25 ao resultado obtido.",
+            "Armazene a soma em uma variável e passe-a para a função print()."
+          ],
+          "solutionExplanation": "int('50') converte a string para o número inteiro 50, permitindo a soma aritmética.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Soma convertida",
+              "stdinInput": "",
+              "expectedOutput": "75",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "py_b2",
+      "unitNumber": 2,
+      "tier": "BASIC",
+      "title": "Operadores & Estruturas Condicionais",
+      "description": "Operações aritméticas, divisão inteira, operador de módulo e blocos if, elif e else.",
+      "category": "Programação",
+      "subject": "Python",
+      "lessons": [
+        {
+          "id": "py_b2_l1",
+          "unitId": "py_b2",
+          "title": "Operadores Aritméticos",
+          "conceptTitle": "Divisão Inteira e Módulo (%)",
+          "explanation": "O operador // calcula o quociente inteiro da divisão e % calcula o resto da divisão. O resto da divisão por 2, por exemplo, permite saber se um número é par ou ímpar.\n\n🎯 Objetivo da Missão:\nCalcule e imprima na tela o resto da divisão da variável 'numero' (17) por 5 utilizando o operador %.",
+          "lessonType": "PRACTICE",
+          "initialCode": "numero = 17\n\n# 🎯 Objetivo: Calcule o resto da divisão de 'numero' por 5 e exiba o resultado.\n# Escreva a instrução abaixo:\n",
+          "hints": [
+            "Utilize a sintaxe: print(numero % 5)",
+            "17 dividido por 5 resulta em 3 com resto 2."
+          ],
+          "solutionExplanation": "O operador % é fundamental para controle cíclico e verificação de divisibilidade.",
+          "xpReward": 30,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Resto da divisão",
+              "stdinInput": "",
+              "expectedOutput": "2",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "py_b2_l2",
+          "unitId": "py_b2",
+          "title": "Controle com if, elif e else",
+          "conceptTitle": "Tomada de Decisão com Indentação",
+          "explanation": "Blocos condicionais orientam o fluxo do programa. Em Python, a indentação com 4 espaços define o corpo de cada bloco.\n\n🎯 Objetivo da Missão:\nDada a variável 'nota', crie a seguinte estrutura condicional:\n• Se nota >= 7, imprima \"Aprovado\"\n• Senão se nota >= 5, imprima \"Recuperação\"\n• Caso contrário, imprima \"Reprovado\"",
+          "lessonType": "CHALLENGE",
+          "initialCode": "nota = 8.5\n\n# 🎯 Objetivo: Crie os blocos if, elif e else avaliando a variável 'nota'.\n# Escreva sua estrutura condicional abaixo:\n",
+          "hints": [
+            "Lembre-se dos dois pontos (:) após cada declaração de condição.",
+            "Indente as linhas internas com 4 espaços."
+          ],
+          "solutionExplanation": "O interpretador avalia as expressões sequencialmente e executa o primeiro ramo verdadeiro.",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Verifica aprovação",
+              "stdinInput": "",
+              "expectedOutput": "Aprovado",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "py_b3",
+      "unitNumber": 3,
+      "tier": "BASIC",
+      "title": "Laços de Repetição & Dicionários",
+      "description": "Sequências com range(), laços for e mapeamento de dados com chave-valor em dicionários.",
+      "category": "Programação",
+      "subject": "Python",
+      "lessons": [
+        {
+          "id": "py_b3_l1",
+          "unitId": "py_b3",
+          "title": "Laço for com range()",
+          "conceptTitle": "Acumulando Valores em Sequência",
+          "explanation": "A função range(inicio, fim) gera uma sequência numérica exclusiva no limite final.\n\n🎯 Objetivo da Missão:\nUtilize um laço for com range(1, 6) para somar todos os números de 1 até 5 na variável 'soma'. Ao final do laço, imprima o valor total da soma.",
+          "lessonType": "PRACTICE",
+          "initialCode": "soma = 0\n\n# 🎯 Objetivo: Itere de 1 a 5 usando for i in range(1, 6) acumulando em 'soma'.\n# Ao terminar o laço, imprima o valor de 'soma'.\n# Escreva seu código abaixo:\n",
+          "hints": [
+            "Dentro do laço, incremente a variável com soma += i.",
+            "A instrução print(soma) deve ficar fora do laço (sem indentação)."
+          ],
+          "solutionExplanation": "1 + 2 + 3 + 4 + 5 = 15.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Soma do range",
+              "stdinInput": "",
+              "expectedOutput": "15",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "py_b3_l2",
+          "unitId": "py_b3",
+          "title": "Dicionários (Chave e Valor)",
+          "conceptTitle": "Mapeamentos com dict",
+          "explanation": "Dicionários associam chaves descritivas a seus respectivos valores.\n\n🎯 Objetivo da Missão:\nAcesse o valor correspondente à chave \"nota\" dentro do dicionário 'aluno' e imprima esse valor no console.",
+          "lessonType": "PRACTICE",
+          "initialCode": "aluno = {\"nome\": \"Alice\", \"nota\": 9.5}\n\n# 🎯 Objetivo: Imprima o valor da chave \"nota\" contida no dicionário 'aluno'.\n# Escreva a instrução abaixo:\n",
+          "hints": [
+            "Para recuperar o valor de uma chave, use a sintaxe de colchetes: dicionario[chave].",
+            "Você também pode utilizar o método aluno.get('nota')."
+          ],
+          "solutionExplanation": "Dicionários fornecem acesso imediato O(1) através de tabelas hash.",
+          "xpReward": 35,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Acesso ao dicionário",
+              "stdinInput": "",
+              "expectedOutput": "9.5",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "py_i1",
+      "unitNumber": 4,
+      "tier": "INTERMEDIATE",
+      "title": "Strings Avançadas & Cifras",
+      "description": "F-strings, formatação de precisão, métodos de string e implementação de Cifras de Substituição.",
+      "category": "Programação",
+      "subject": "Python",
+      "lessons": [
+        {
+          "id": "py_i1_l1",
+          "unitId": "py_i1",
+          "title": "F-Strings e Formatação Numérica",
+          "conceptTitle": "Interpolação Moderna de Variáveis",
+          "explanation": "F-strings (f\"...\") permitem inserir variáveis e expressões diretamente dentro do texto, formatando casas decimais com facilidade (ex: {preco:.2f}).\n\n🎯 Objetivo da Missão:\nDada a constante 'pi' (3.14159265), exiba no terminal a string formatada exatamente como: \"Valor: 3.14\" utilizando f-string com :.2f.",
+          "lessonType": "PRACTICE",
+          "initialCode": "pi = 3.14159265\n\n# 🎯 Objetivo: Imprima no console o texto \"Valor: 3.14\" usando f-string com precisão de 2 casas.\n# Escreva seu código abaixo:\n",
+          "hints": [
+            "Utilize uma f-string com a expressão formatada: f\"Valor: {pi:.2f}\"",
+            "O especificador :.2f arredonda e fixa duas casas decimais após o ponto."
+          ],
+          "solutionExplanation": "A formatação :.2f formata números float com duas casas decimais.",
+          "xpReward": 40,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Formatação pi",
+              "stdinInput": "",
+              "expectedOutput": "Valor: 3.14",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "py_i1_l2",
+          "unitId": "py_i1",
+          "title": "Projeto: Cifra de Substituição",
+          "conceptTitle": "Manipulação e Criptografia Clássica",
+          "explanation": "A Cifra de César desloca cada letra do alfabeto por um número fixo de posições.\n\n🎯 Objetivo da Missão:\nDesloque a mensagem \"abc\" em +3 posições no alfabeto. O resultado esperado é a string \"def\". Imprima a mensagem cifrada.",
+          "lessonType": "CHALLENGE",
+          "initialCode": "alfabeto = \"abcdefghijklmnopqrstuvwxyz\"\ndeslocamento = 3\nmensagem = \"abc\"\n\n# 🎯 Objetivo: Percorra 'mensagem', desloque cada letra em +3 no alfabeto e imprima a string cifrada resultante (\"def\").\n# Escreva seu código abaixo:\n",
+          "hints": [
+            "Para cada caractere em mensagem, encontre sua posição com alfabeto.find(char).",
+            "Calcule a nova posição com (pos + deslocamento) % 26 e concatene o caractere correspondente."
+          ],
+          "solutionExplanation": "A Cifra de César demonstra controle de índices cíclicos com operador %.",
+          "xpReward": 50,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Cifra deslocada",
+              "stdinInput": "",
+              "expectedOutput": "def",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "py_i2",
+      "unitNumber": 5,
+      "tier": "INTERMEDIATE",
+      "title": "Compreensões & Exceções",
+      "description": "List comprehension com filtros e tratamento de exceções robusto.",
+      "category": "Programação",
+      "subject": "Python",
+      "lessons": [
+        {
+          "id": "py_i2_l1",
+          "unitId": "py_i2",
+          "title": "List Comprehension com Condicional",
+          "conceptTitle": "Criação Concisa e Elegante de Listas",
+          "explanation": "Compreensões de lista unem laço e filtro em uma única expressão concisa: [expressao for item in colecao if condicao].\n\n🎯 Objetivo da Missão:\nDada a lista 'numeros', crie uma nova lista que contenha apenas os números pares multiplicados por 10 e imprima essa lista.",
+          "lessonType": "PRACTICE",
+          "initialCode": "numeros = [1, 2, 3, 4, 5, 6, 7, 8]\n\n# 🎯 Objetivo: Crie a list comprehension selecionando apenas os números pares (x % 2 == 0)\n# e multiplicando-os por 10. Imprima a lista resultante ([20, 40, 60, 80]).\n# Escreva seu código abaixo:\n",
+          "hints": [
+            "Utilize a estrutura: [x * 10 for x in numeros if x % 2 == 0]",
+            "Imprima a lista resultante com a função print()."
+          ],
+          "solutionExplanation": "List comprehensions operam em nível de bytecode otimizado no interpretador.",
+          "xpReward": 45,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Pares multiplicados",
+              "stdinInput": "",
+              "expectedOutput": "[20, 40, 60, 80]",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "py_i2_l2",
+          "unitId": "py_i2",
+          "title": "Tratamento de Exceções com try / except",
+          "conceptTitle": "Resiliência e Proteção contra Falhas",
+          "explanation": "O bloco try/except intercepta erros em tempo de execução sem interromper abruptamente a execução do sistema.\n\n🎯 Objetivo da Missão:\nAo tentar converter a variável 'entrada' para inteiro com int(entrada), capture o erro ValueError e imprima a mensagem \"Entrada Invalida\".",
+          "lessonType": "CHALLENGE",
+          "initialCode": "entrada = \"abc\"\n\n# 🎯 Objetivo: Coloque a conversão int(entrada) dentro de um bloco try.\n# No bloco except ValueError, imprima a mensagem: Entrada Invalida\n# Escreva seu código abaixo:\n",
+          "hints": [
+            "Abra o bloco try: e tente a conversão int(entrada).",
+            "No bloco except ValueError:, exiba a mensagem 'Entrada Invalida' com print."
+          ],
+          "solutionExplanation": "O bloco try-except evita falhas fatais ao lidar com entradas inseguras.",
+          "xpReward": 45,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Erro capturado",
+              "stdinInput": "",
+              "expectedOutput": "Entrada Invalida",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "py_i3",
+      "unitNumber": 6,
+      "tier": "INTERMEDIATE",
+      "title": "Algoritmos Fundamentais: Busca Binária",
+      "description": "Implementação e análise de complexidade da Busca Binária em listas ordenadas.",
+      "category": "Programação",
+      "subject": "Python",
+      "lessons": [
+        {
+          "id": "py_i3_l1",
+          "unitId": "py_i3",
+          "title": "Algoritmo de Busca Binária",
+          "conceptTitle": "Estratégia de Divisão e Conquista",
+          "explanation": "A busca binária encontra elementos em listas ordenadas dividindo o espaço pela metade a cada passo, com desempenho O(log n).\n\n🎯 Objetivo da Missão:\nImplemente a busca binária para encontrar o índice do número 23 na lista ordenada dada. Imprima o resultado no formato: \"Posição: 5\".",
+          "lessonType": "CHALLENGE",
+          "initialCode": "lista = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]\nalvo = 23\n\n# 🎯 Objetivo: Calcule a posição de 'alvo' na lista ordenada usando busca binária.\n# Ao encontrar, imprima: Posição: {indice}\n# Escreva seu código abaixo:\n",
+          "hints": [
+            "Defina inicio = 0 e fim = len(lista) - 1. Calcule meio = (inicio + fim) // 2.",
+            "Se lista[meio] < alvo, inicio = meio + 1; se for maior, fim = meio - 1."
+          ],
+          "solutionExplanation": "Busca Binária resolve consultas em tempo logarítmico O(log n).",
+          "xpReward": 55,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Posição encontrada",
+              "stdinInput": "",
+              "expectedOutput": "Posição: 5",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "py_a1",
+      "unitNumber": 7,
+      "tier": "ADVANCED",
+      "title": "Classes, Herança & Métodos Mágicos",
+      "description": "Programação Orientada a Objetos profissional com construtor __init__, herança com super() e encapsulamento.",
+      "category": "Programação",
+      "subject": "Python",
+      "lessons": [
+        {
+          "id": "py_a1_l1",
+          "unitId": "py_a1",
+          "title": "Classes, Construtor e Métodos",
+          "conceptTitle": "Modelagem Orientada a Objetos",
+          "explanation": "Classes agrupam dados (atributos) e funções (métodos). O método __init__ é o construtor executado na instanciação.\n\n🎯 Objetivo da Missão:\nCrie a classe 'Livro' com o construtor __init__(self, titulo, autor) e o método detalhes(self) que retorne a string formatada f\"{self.titulo} por {self.autor}\".\nInstancie com (\"Clean Code\", \"Robert Martin\") e imprima o retorno de detalhes().",
+          "lessonType": "PRACTICE",
+          "initialCode": "# 🎯 Objetivo: Declare a classe Livro com __init__(self, titulo, autor) e o método detalhes(self).\n# Em seguida, crie meu_livro = Livro(\"Clean Code\", \"Robert Martin\") e imprima meu_livro.detalhes().\n# Escreva sua classe e execução abaixo:\n",
+          "hints": [
+            "Defina class Livro: com def __init__(self, titulo, autor): associando self.titulo e self.autor.",
+            "No método detalhes(self), retorne a f-string com os dados."
+          ],
+          "solutionExplanation": "Classes encapsulam estado e comportamento de entidades do domínio.",
+          "xpReward": 50,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Detalhes do livro",
+              "stdinInput": "",
+              "expectedOutput": "Clean Code por Robert Martin",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "py_a1_l2",
+          "unitId": "py_a1",
+          "title": "Herança e Polimorfismo com super()",
+          "conceptTitle": "Reaproveitamento e Especialização de Classes",
+          "explanation": "Subclasses herdam comportamentos da classe mãe. A função super() delega a inicialização para a superclasse.\n\n🎯 Objetivo da Missão:\nCrie a classe Funcionario(nome) e a subclasse Desenvolvedor(Funcionario) que recebe (nome, linguagem). Chame super().__init__(nome), implemente apresentacao(self) retornando f\"{self.nome} programa em {self.linguagem}\" e exiba a apresentação para (\"Pedro\", \"Python\").",
+          "lessonType": "CHALLENGE",
+          "initialCode": "class Funcionario:\n    def __init__(self, nome):\n        self.nome = nome\n\n# 🎯 Objetivo: Crie a subclasse Desenvolvedor(Funcionario).\n# No construtor, use super().__init__(nome) e armazene self.linguagem.\n# Crie o método apresentacao(self) retornando \"{self.nome} programa em {self.linguagem}\".\n# Instancie dev = Desenvolvedor(\"Pedro\", \"Python\") e imprima dev.apresentacao().\n# Escreva seu código abaixo:\n",
+          "hints": [
+            "Dentro de Desenvolvedor.__init__(self, nome, linguagem), invoque super().__init__(nome).",
+            "Instancie o desenvolvedor e passe a chamada dev.apresentacao() para a função print()."
+          ],
+          "solutionExplanation": "A herança especializa estruturas reaproveitando código validado da classe ancestral.",
+          "xpReward": 60,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Apresentação dev",
+              "stdinInput": "",
+              "expectedOutput": "Pedro programa em Python",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    },
+    {
+      "id": "py_a2",
+      "unitNumber": 8,
+      "tier": "ADVANCED",
+      "title": "Geradores, Regex & Estruturas de Dados",
+      "description": "Geradores eficientes com yield, expressões regulares com o módulo re e estrutura de Pilha (Stack).",
+      "category": "Programação",
+      "subject": "Python",
+      "lessons": [
+        {
+          "id": "py_a2_l1",
+          "unitId": "py_a2",
+          "title": "Geradores com yield",
+          "conceptTitle": "Iteradores Sob Demanda",
+          "explanation": "O comando yield pausa a função e entrega um item por vez, economizando consumo de memória.\n\n🎯 Objetivo da Missão:\nCrie a função geradora gerar_quadrados(limite) que usa yield para fornecer os quadrados dos números de 1 até limite. Converta gerar_quadrados(4) em lista com list() e imprima o resultado ([1, 4, 9, 16]).",
+          "lessonType": "PRACTICE",
+          "initialCode": "# 🎯 Objetivo: Implemente a função geradora gerar_quadrados(limite) usando laço e yield i * i.\n# Converta list(gerar_quadrados(4)) e imprima no console.\n# Escreva sua função abaixo:\n",
+          "hints": [
+            "No laço for i in range(1, limite + 1): utilize o comando yield i * i.",
+            "Imprima print(list(gerar_quadrados(4)))."
+          ],
+          "solutionExplanation": "Geradores implementam lazy evaluation, fundamental para grandes fluxos de dados.",
+          "xpReward": 50,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Valores gerados",
+              "stdinInput": "",
+              "expectedOutput": "[1, 4, 9, 16]",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "py_a2_l2",
+          "unitId": "py_a2",
+          "title": "Expressões Regulares (re)",
+          "conceptTitle": "Casamento de Padrões em Textos",
+          "explanation": "O módulo re do Python permite buscar padrões complexos em strings.\n\n🎯 Objetivo da Missão:\nUtilize re.findall com o padrão r'\\b\\d{3}\\b' para encontrar todos os números de exatamente 3 dígitos presentes no texto fornecido e imprima a lista encontrada.",
+          "lessonType": "CHALLENGE",
+          "initialCode": "import re\n\ntexto = \"Código 102 confirmado, lote 99 rejeitado, pedido 850 entregue\"\n\n# 🎯 Objetivo: Use re.findall(r'\\b\\d{3}\\b', texto) para extrair os números de 3 dígitos e imprima a lista.\n# Escreva seu código abaixo:\n",
+          "hints": [
+            "O padrão r'\\b\\d{3}\\b' captura sequências numéricas de 3 dígitos cercadas por limites de palavra.",
+            "Atribua o retorno de re.findall a uma variável e use print()."
+          ],
+          "solutionExplanation": "Expressões regulares fornecem busca e validação determinística de strings.",
+          "xpReward": 60,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Números encontrados",
+              "stdinInput": "",
+              "expectedOutput": "['102', '850']",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        },
+        {
+          "id": "py_a2_l3",
+          "unitId": "py_a2",
+          "title": "Estrutura de Dados: Pilha (Stack)",
+          "conceptTitle": "Implementação da Política LIFO",
+          "explanation": "Uma pilha insere e remove elementos sempre pelo topo (Last In, First Out).\n\n🎯 Objetivo da Missão:\nImplemente a classe Pilha com métodos push(item), pop() e topo(). Insira \"A\", \"B\", \"C\", faça um pop() e imprima \"Topo: \" seguido do elemento restante no topo (\"Topo: B\").",
+          "lessonType": "CHALLENGE",
+          "initialCode": "# 🎯 Objetivo: Implemente a classe Pilha com lista interna itens, métodos push, pop e topo.\n# Faça push(\"A\"), push(\"B\"), push(\"C\"), pop(), e imprima f\"Topo: {p.topo()}\".\n# Escreva sua implementação abaixo:\n",
+          "hints": [
+            "No construtor, crie self.itens = []. No push use append(), no pop use pop().",
+            "O método topo() deve retornar self.itens[-1] se houver itens."
+          ],
+          "solutionExplanation": "Pilhas gerenciam escopos de chamada, parsers sintáticos e algoritmos de histórico.",
+          "xpReward": 70,
+          "theorySection": "",
+          "testCases": [
+            {
+              "name": "Topo da pilha",
+              "stdinInput": "",
+              "expectedOutput": "Topo: B",
+              "validationType": "EXACT_OUTPUT",
+              "isHidden": false
+            }
+          ],
+          "mathExercises": [],
+          "formulasOrSyntax": [],
+          "examples": []
+        }
+      ]
+    }
+  ]
+}

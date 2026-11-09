@@ -50,6 +50,8 @@ debug.keystore.base64
 
 # Google Services & secrets
 google-services.json
+!google-services.example.json
+!app/google-services.example.json
 .env
 .env.local
 .env.*.local

@@ -803,7 +803,8 @@ fun MathFormattedText(
     modifier: Modifier = Modifier,
     style: TextStyle = MaterialTheme.typography.bodyMedium,
     color: Color = TextPrimary,
-    lineHeightSp: Float = 21f
+    lineHeightSp: Float = 21f,
+    allowBlockCards: Boolean = true
 ) {
     val mathColor = Color(0xFF67E8F9)
 
@@ -820,17 +821,22 @@ fun MathFormattedText(
     }
 
     // Se o texto contiver blocos em destaque delimitados por \[ ... \] ou $$ ... $$,
-    // quebramos para exibir os blocos via KaTeXFormulaView
+    // quebramos para exibir os blocos via KaTeXFormulaView apenas se allowBlockCards for true
     val blockMarker = "@@MATH_BLOCK@@"
-    val normalizedBlocks = cleanText
-        .replace(Regex("""```(?:latex|math)?\s*([\s\S]*?)\s*```"""), "$blockMarker$1$blockMarker")
-        .replace("\\\\[", blockMarker)
-        .replace("\\\\]", blockMarker)
-        .replace("\\[", blockMarker)
-        .replace("\\]", blockMarker)
-        .replace("$$", blockMarker)
+    val hasBlocks = allowBlockCards && (
+        cleanText.contains("$$") || cleanText.contains("\\[") || cleanText.contains("\\\\[") ||
+        cleanText.contains("```latex") || cleanText.contains("```math")
+    )
 
-    if (normalizedBlocks.contains(blockMarker)) {
+    if (hasBlocks) {
+        val normalizedBlocks = cleanText
+            .replace(Regex("""```(?:latex|math)?\s*([\s\S]*?)\s*```"""), "$blockMarker$1$blockMarker")
+            .replace("\\\\[", blockMarker)
+            .replace("\\\\]", blockMarker)
+            .replace("\\[", blockMarker)
+            .replace("\\]", blockMarker)
+            .replace("$$", blockMarker)
+
         val parts = normalizedBlocks.split(blockMarker)
         Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
             parts.forEachIndexed { index, part ->
@@ -866,7 +872,7 @@ private val INLINE_MATH_TOKEN_REGEX = Regex(
     """('[^'\n]*\\[a-zA-Z]+[^'\n]*')|""" +
     """(`[^`\n]*\\[a-zA-Z]+[^`\n]*`)|""" +
     """(\\\([\s\S]*?\\\))|""" +
-    """(\$[^\$]+\$)|""" +
+    """(\$[^\$\n\r]+?\$)|""" +
     """(\\[a-zA-Z]+(?:\{[^{}]*\}|_[a-zA-Z0-9^{}]+|\^[a-zA-Z0-9^{}]+)+)"""
 )
 
@@ -932,7 +938,7 @@ private fun MarkdownInlineMathText(
                                     fontWeight = FontWeight.SemiBold
                                 )
                             ) {
-                                append(" $cleanInline ")
+                                append(cleanInline)
                             }
                         }
 
@@ -953,7 +959,7 @@ private fun MarkdownInlineMathText(
                                     fontWeight = FontWeight.SemiBold
                                 )
                             ) {
-                                append(" $cleanInline ")
+                                append(cleanInline)
                             }
                         }
 
@@ -968,7 +974,7 @@ private fun MarkdownInlineMathText(
                                     fontWeight = FontWeight.SemiBold
                                 )
                             ) {
-                                append(" $cleanInline ")
+                                append(cleanInline)
                             }
                         }
 

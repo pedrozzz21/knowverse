@@ -406,7 +406,7 @@ object QuestionBankRepository {
     fun getAllQuestions(
         context: Context? = null,
         includeLegacy: Boolean = true,
-        includeTranspetro: Boolean = false
+        includeTranspetro: Boolean = true
     ): List<BankQuestion> {
         ensureLoaded(context)
         val authored = cachedAuthoredQuestions.orEmpty()
@@ -426,15 +426,18 @@ object QuestionBankRepository {
 
     fun getSubjects(context: Context? = null): List<String> {
         ensureLoaded(context)
-        return cachedLessons.orEmpty().map { it.subject }.distinct()
+        val standard = cachedLessons.orEmpty().map { it.subject }
+        val transpetro = getTranspetroLessons().map { it.subject }
+        return (standard + transpetro).distinct()
     }
 
     fun getModulesForSubject(subject: String, context: Context? = null): List<ModuleSummary> {
         ensureLoaded(context)
+        val allLessons = cachedLessons.orEmpty() + getTranspetroLessons()
         val filtered = if (subject.isBlank() || subject.equals("Todas", ignoreCase = true)) {
-            cachedLessons.orEmpty()
+            allLessons
         } else {
-            cachedLessons.orEmpty().filter { it.subject.equals(subject, ignoreCase = true) }
+            allLessons.filter { it.subject.equals(subject, ignoreCase = true) }
         }
         return filtered
             .groupBy { it.moduleId }
@@ -458,7 +461,8 @@ object QuestionBankRepository {
         context: Context? = null
     ): List<String> {
         ensureLoaded(context)
-        return cachedLessons.orEmpty()
+        val allLessons = cachedLessons.orEmpty() + getTranspetroLessons()
+        return allLessons
             .filter {
                 (subject.isBlank() || subject.equals("Todas", ignoreCase = true) || it.subject.equals(subject, ignoreCase = true)) &&
                     (moduleId.isNullOrBlank() || moduleId == "all" || it.moduleId == moduleId)
@@ -475,7 +479,7 @@ object QuestionBankRepository {
         if (lessonId.startsWith("tp_")) {
             return getTranspetroQuestions(context).filter { it.lesson.lessonId == lessonId }
         }
-        return getAllQuestions(context, includeLegacy).filter { it.lesson.lessonId == lessonId }
+        return getAllQuestions(context, includeLegacy, includeTranspetro = true).filter { it.lesson.lessonId == lessonId }
     }
 
     fun filterQuestions(
@@ -487,10 +491,11 @@ object QuestionBankRepository {
         difficulty: QDifficulty? = null,
         query: String = "",
         includeLegacy: Boolean = true,
+        includeTranspetro: Boolean = true,
         context: Context? = null
     ): List<BankQuestion> {
         val q = query.trim().lowercase()
-        return getAllQuestions(context, includeLegacy).filter { item ->
+        return getAllQuestions(context, includeLegacy, includeTranspetro).filter { item ->
             val matchSubject = subject.isBlank() ||
                 subject.equals("Todas", ignoreCase = true) ||
                 subject.equals("all", ignoreCase = true) ||

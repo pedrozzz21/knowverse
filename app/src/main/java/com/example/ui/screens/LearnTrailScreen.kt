@@ -193,70 +193,7 @@ fun LearnTrailScreen(
             item {
                 Spacer(modifier = Modifier.height(6.dp))
 
-                // Room Offline Cache Banner
-                Card(
-                    shape = RoundedCornerShape(10.dp),
-                    colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .border(1.dp, SuccessEmerald.copy(alpha = 0.4f), RoundedCornerShape(10.dp))
-                        .testTag("room_offline_cache_badge")
-                ) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Box(
-                            modifier = Modifier
-                                .size(34.dp)
-                                .clip(CircleShape)
-                                .background(SuccessEmerald.copy(alpha = 0.15f)),
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.CloudDone,
-                                contentDescription = "Cache Local Room",
-                                tint = SuccessEmerald,
-                                modifier = Modifier.size(18.dp)
-                            )
-                        }
-                        Spacer(modifier = Modifier.width(10.dp))
-                        Column(modifier = Modifier.weight(1f)) {
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                Text(
-                                    text = "Cache Local Room Ativo",
-                                    style = MaterialTheme.typography.labelMedium.copy(
-                                        color = SuccessEmerald,
-                                        fontWeight = FontWeight.Bold
-                                    )
-                                )
-                                Spacer(modifier = Modifier.width(6.dp))
-                                Surface(
-                                    color = SuccessEmerald.copy(alpha = 0.2f),
-                                    shape = RoundedCornerShape(4.dp)
-                                ) {
-                                    Text(
-                                        text = "$cachedLessonCount lições offline",
-                                        style = MaterialTheme.typography.labelSmall.copy(
-                                            color = SuccessEmerald,
-                                            fontWeight = FontWeight.Bold,
-                                            fontSize = 11.sp
-                                        ),
-                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
-                                    )
-                                }
-                            }
-                            Text(
-                                text = "Todas as lições e exercícios estão salvos no banco local para estudo sem internet.",
-                                style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary, fontSize = 11.sp)
-                            )
-                        }
-                    }
-                }
 
-                Spacer(modifier = Modifier.height(10.dp))
 
                 // Card "Continuar de onde parou" + Aulas para Revisão
                 val (continueLesson, continueSubjectLabel, continueSubjectMap) = remember(

@@ -36,10 +36,10 @@
               "title": "Tipologia e Gênero Textual no ENEM",
               "problemStatement": "Considere um folheto governamental com o título: 'Campanha Nacional de Vacinação contra a Gripe'. O texto traz: 'Dirija-se ao posto mais próximo de sua residência entre os dias 10 e 30 deste mês. Apresente seu cartão do SUS e vacine seus filhos com menos de 5 anos.' O predomínio tipológico e o objetivo comunicativo deste texto caracterizam-se por:",
               "options": [
-                "dissertativo, com objetivo de debater as causas econômicas da produção de imunizantes.",
                 "descritivo, com objetivo de detalhar minuciosamente a fórmula bioquímica da vacina.",
-                "narrativo, com objetivo de relatar a história da erradicação da gripe no país.",
                 "expositivo, com objetivo de apresentar conceitos acadêmicos neutros sobre virologia.",
+                "narrativo, com objetivo de relatar a história da erradicação da gripe no país.",
+                "dissertativo, com objetivo de debater as causas econômicas da produção de imunizantes.",
                 "injuntivo, com objetivo de prescrever condutas preventivas e orientar a ação do cidadão."
               ],
               "correctIndex": 4,
@@ -52,14 +52,14 @@
               "problemStatement": "Em um jornal de grande circulação, a notícia e o artigo de opinião cumprem funções distintas. Enquanto a notícia preza pela impessoalidade e pelo relato objetivo de fatos, o artigo de opinião destaca-se por:",
               "options": [
                 "adotar sempre a ficcionalização e o verso rimado para sensibilizar o público.",
-                "assumir autoria declarada com defesa explícita de um ponto de vista amparado em argumentos.",
+                "utilizar a primeira pessoa exclusivamente para narrar memórias infantis do articulista.",
                 "limitar-se à transcrição de dados do censo sem qualquer juízo de valor.",
                 "evitar qualquer adjetivação ou marca de subjetividade para manter neutralidade científica.",
-                "utilizar a primeira pessoa exclusivamente para narrar memórias infantis do articulista."
+                "assumir autoria declarada com defesa explícita de um ponto de vista amparado em argumentos."
               ],
-              "correctIndex": 1,
+              "correctIndex": 4,
               "hint": "O artigo de opinião traz a assinatura do articulista expressando seu julgamento crítico sobre um tema polêmico.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. O artigo de opinião pertence à esfera dissertativo-argumentativa com autoria explicitada, permitindo marcas de subjetividade e emprego de estratégias retóricas para convencer a sociedade sobre determinada tomada de posição.\nAlternativa correta: B"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. O artigo de opinião pertence à esfera dissertativo-argumentativa com autoria explicitada, permitindo marcas de subjetividade e emprego de estratégias retóricas para convencer a sociedade sobre determinada tomada de posição.\nAlternativa correta: E"
             }
           ],
           "formulasOrSyntax": [],
@@ -87,15 +87,15 @@
               "title": "Paródia e Intertextualidade",
               "problemStatement": "Ao confrontar o célebre verso de Gonçalves Dias ('Minha terra tem palmeiras / Onde canta o sabiá') com o poema modernista de Oswald de Andrade ('Minha terra tem palmares / onde gorjeia o mar'), percebe-se um processo de intertextualidade marcado por:",
               "options": [
-                "paráfrase, pois o autor moderno reforça o ufanismo ingênuo da era imperial.",
-                "citação direta literal, preservando rigorosamente as rimas e métricas da poesia canônica.",
                 "plágio inconsciente, já que não há intenção de dialogar com o texto de Gonçalves Dias.",
                 "paródia, pois a troca de 'palmeiras' por 'palmares' evoca a luta contra a escravidão e ressignifica a brasilidade criticamente.",
-                "tradução intersemiótica, pois converteu um texto literário em linguagem puramente visual."
+                "paráfrase, pois o autor moderno reforça o ufanismo ingênuo da era imperial.",
+                "tradução intersemiótica, pois converteu um texto literário em linguagem puramente visual.",
+                "citação direta literal, preservando rigorosamente as rimas e métricas da poesia canônica."
               ],
-              "correctIndex": 3,
+              "correctIndex": 1,
               "hint": "A referência ao Quilombo dos Palmares introduz crítica e ruptura com a visão romântica paradisíaca.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. A alusão à palavra 'palmares' altera o foco ecológico e ufanista da palmeira para a dimensão histórica da resistência negra e do Quilombo dos Palmares.\n2. Esse procedimento de subversão crítica do texto original configura paródia e desmistificação das narrativas oficiais.\nAlternativa correta: D"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A alusão à palavra 'palmares' altera o foco ecológico e ufanista da palmeira para a dimensão histórica da resistência negra e do Quilombo dos Palmares.\n2. Esse procedimento de subversão crítica do texto original configura paródia e desmistificação das narrativas oficiais.\nAlternativa correta: B"
             }
           ],
           "formulasOrSyntax": [],
@@ -123,15 +123,15 @@
               "title": "Identificação de Figuras de Linguagem",
               "problemStatement": "No soneto de Luís de Camões, os versos 'Amor é fogo que arde sem se ver; / É ferida que dói e não se sente; / É um descontentamento descontente;' estruturam sua força expressiva prioritariamente mediante o uso de:",
               "options": [
-                "prosopopeia estrita, ao conceder voz humana aos animais da floresta.",
-                "paradoxo, ao associar termos e sensações cujos significados lógicos se contradizem mutuamente no mesmo enunciado.",
-                "pleonasmo e elipse, que enxugam o texto até torná-lo incompreensível.",
+                "metonímia, ao trocar a parte pelo todo em todas as orações.",
                 "eufemismo, ao abrandar a tragédia do término de um relacionamento amoroso.",
-                "metonímia, ao trocar a parte pelo todo em todas as orações."
+                "paradoxo, ao associar termos e sensações cujos significados lógicos se contradizem mutuamente no mesmo enunciado.",
+                "prosopopeia estrita, ao conceder voz humana aos animais da floresta.",
+                "pleonasmo e elipse, que enxugam o texto até torná-lo incompreensível."
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "hint": "Sentir dor sem dor e ardor sem fogo visível são contradições lógicas simultâneas.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. Como uma ferida pode doer e não se sentir? Na lógica estrita, isso é uma contradição insolúvel.\n2. A junção dessas ideias aparentemente inconciliáveis constitui o paradoxo (ou oxímoro), figura primordial para representar a complexidade das paixões humanas.\nAlternativa correta: B"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. Como uma ferida pode doer e não se sentir? Na lógica estrita, isso é uma contradição insolúvel.\n2. A junção dessas ideias aparentemente inconciliáveis constitui o paradoxo (ou oxímoro), figura primordial para representar a complexidade das paixões humanas.\nAlternativa correta: C"
             }
           ],
           "formulasOrSyntax": [],
@@ -159,15 +159,15 @@
               "title": "Humor e Polissemia em Tirinhas",
               "problemStatement": "Em uma tirinha satírica, um náufrago em uma ilha deserta avista uma garrafa com uma mensagem trazida pelas ondas e comemora: 'Finalmente um contato com a civilização!'. Ao abrir o bilhete, lê: 'Sua fatura do cartão está vencida'. O humor e a crítica social da tirinha resultam de:",
               "options": [
+                "uso da ambiguidade não intencional gerada por erros ortográficos na mensagem da garrafa.",
                 "confirmação integral do final feliz esperado para um herói náufrago.",
                 "emprego de linguagem arcaica de difícil compreensão para o leitor comum.",
                 "uma descrição geográfica realista dos métodos de navegação marítima moderna.",
-                "quebra de expectativa, ao contrapor o anseio humano por socorro à onipresença da cobrança financeira nas sociedades de consumo.",
-                "uso da ambiguidade não intencional gerada por erros ortográficos na mensagem da garrafa."
+                "quebra de expectativa, ao contrapor o anseio humano por socorro à onipresença da cobrança financeira nas sociedades de consumo."
               ],
-              "correctIndex": 3,
+              "correctIndex": 4,
               "hint": "Esperava-se socorro ou palavras humanas de acolhimento; veio uma cobrança bancária corporativa.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. A expectativa construída é a chegada de auxílio humanitário ou conexão afetiva.\n2. O desfecho revela a implacabilidade do sistema financeiro, que alcança o indivíduo até nos confins do planeta, constituindo sátira social por quebra de expectativa.\nAlternativa correta: D"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A expectativa construída é a chegada de auxílio humanitário ou conexão afetiva.\n2. O desfecho revela a implacabilidade do sistema financeiro, que alcança o indivíduo até nos confins do planeta, constituindo sátira social por quebra de expectativa.\nAlternativa correta: E"
             }
           ],
           "formulasOrSyntax": [],
@@ -196,14 +196,14 @@
               "problemStatement": "Em um ensaio sobre inclusão educacional, o autor escreve: 'De acordo com dados do Censo Escolar divulgados pelo Inep em 2023, mais de 1,2 milhão de estudantes com deficiência estão matriculados na rede pública, um avanço de 14% em quatro anos. Contudo, menos de 30% das escolas possuem rampas de acesso ou banheiros adaptados.' Ao combinar dados do Inep e a conjunção adversativa 'Contudo', o articulista mobiliza como estratégia:",
               "options": [
                 "ironia sarcástica para ridicularizar as conquistas das pessoas com deficiência.",
-                "apelo emocional irracional sem fundamentação factual.",
                 "argumento por evidência em contraste adversativo, evidenciando o abismo entre o avanço de matrículas e o déficit estrutural de acessibilidade.",
-                "ataque pessoal aos diretores escolares para desqualificar suas gestões individuais.",
-                "generalização apressada baseada em relato anedótico de uma única cidade."
+                "apelo emocional irracional sem fundamentação factual.",
+                "generalização apressada baseada em relato anedótico de uma única cidade.",
+                "ataque pessoal aos diretores escolares para desqualificar suas gestões individuais."
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "Os dados dão sustentação confiável e a adversativa confronta a quantidade de alunos com a precariedade dos prédios.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. A presença de estatísticas oficiais do Inep confere autoridade e factualidade à tese (argumento por evidência).\n2. O conectivo 'Contudo' introduz um contraponto crítico crucial: ter matrícula garantida não significa ter cidadania espacial assegurada se faltam rampas e instalações físicas adequadas.\nAlternativa correta: C"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A presença de estatísticas oficiais do Inep confere autoridade e factualidade à tese (argumento por evidência).\n2. O conectivo 'Contudo' introduz um contraponto crítico crucial: ter matrícula garantida não significa ter cidadania espacial assegurada se faltam rampas e instalações físicas adequadas.\nAlternativa correta: B"
             }
           ],
           "formulasOrSyntax": [],
@@ -242,15 +242,15 @@
               "title": "Identificação de Função da Linguagem",
               "problemStatement": "Analise o trecho de um poema contemporâneo: 'Gastei trinta dias para encontrar o verso exato / Rasguei papéis, descartei rimas / A poesia se faz com palavras, não com sentimentos'. Ao tematizar o próprio processo artesanal de elaboração do poema através da própria poesia, predomina no texto a função:",
               "options": [
-                "conativa, apelando para que o leitor adquira imediatamente a antologia do poeta.",
-                "exotérica, que se propõe a transmitir fórmulas mágicas da alquimia clássica.",
-                "metalinguística, pois o código poético é utilizado para refletir criticamente sobre o próprio código e a produção lírica.",
                 "fática, com o objetivo exclusivo de testar a eficiência sonora do microfone.",
-                "referencial pura, relatando de maneira imparcial uma notícia jornalística sobre a venda de papel."
+                "metalinguística, pois o código poético é utilizado para refletir criticamente sobre o próprio código e a produção lírica.",
+                "conativa, apelando para que o leitor adquira imediatamente a antologia do poeta.",
+                "referencial pura, relatando de maneira imparcial uma notícia jornalística sobre a venda de papel.",
+                "exotérica, que se propõe a transmitir fórmulas mágicas da alquimia clássica."
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "Quando o poema fala de fazer versos, a linguagem explica a própria linguagem.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. A função metalinguística ocorre quando a mensagem tem por foco central o próprio código linguístico utilizado.\n2. O eu lírico discute o ato de selecionar palavras e descartar rimas, explicando a criação poética com os próprios recursos da poesia.\nAlternativa correta: C"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A função metalinguística ocorre quando a mensagem tem por foco central o próprio código linguístico utilizado.\n2. O eu lírico discute o ato de selecionar palavras e descartar rimas, explicando a criação poética com os próprios recursos da poesia.\nAlternativa correta: B"
             }
           ],
           "formulasOrSyntax": [],
@@ -316,8 +316,8 @@
               "options": [
                 "destruir os padrões de coerência textual em qualquer circunstância comunicativa.",
                 "impor uma leitura estritamente linear, obrigando o leitor a percorrer o texto do primeiro ao último caractere sem desvios.",
-                "eliminar a necessidade de pensamento crítico ou interpretação dos dados expostos.",
                 "limitar o acesso à informação a quem possui formação técnica especializada em programação web.",
+                "eliminar a necessidade de pensamento crítico ou interpretação dos dados expostos.",
                 "proporcionar uma experiência de leitura multilinear e interativa, na qual o leitor participa ativamente da definição de sua rota informativa."
               ],
               "correctIndex": 4,
@@ -350,15 +350,15 @@
               "title": "Coesão Referencial e Conectivos",
               "problemStatement": "Considere o período: 'Embora a legislação brasileira preveja sanções severas aos crimes de racismo, muitos casos ainda são registrados cotidianamente nas delegacias do país.' O conectivo 'Embora' estabelece entre as orações uma relação semântica de:",
               "options": [
+                "conclusão formal deduzida a partir de premissas silogísticas clássicas.",
                 "finalidade expressa, sinalizando o objetivo almejado pelas autoridades policiais.",
-                "causa evidente, demonstrando que a existência da lei é o motivo do surgimento do crime.",
-                "consequência direta, mostrando o resultado previsível da promulgação do código penal.",
                 "concessão, introduzindo um fato real que contrasta com a quebra de expectativa expressa na oração principal sem anulá-la.",
-                "conclusão formal deduzida a partir de premissas silogísticas clássicas."
+                "consequência direta, mostrando o resultado previsível da promulgação do código penal.",
+                "causa evidente, demonstrando que a existência da lei é o motivo do surgimento do crime."
               ],
-              "correctIndex": 3,
+              "correctIndex": 2,
               "hint": "A existência de uma lei severa criaria a expectativa de diminuição dos crimes; contudo, eles continuam ocorrendo.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. A conjunção subordinativa 'embora' introduz oração adverbial concessiva.\n2. A concessão expressa uma ideia de contrariedade ou oposição que não é suficiente para impedir o cumprimento da ação principal: a lei existe (fato 1), mas não tem impedido o registro de novos casos (fato 2).\nAlternativa correta: D"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A conjunção subordinativa 'embora' introduz oração adverbial concessiva.\n2. A concessão expressa uma ideia de contrariedade ou oposição que não é suficiente para impedir o cumprimento da ação principal: a lei existe (fato 1), mas não tem impedido o registro de novos casos (fato 2).\nAlternativa correta: C"
             }
           ],
           "formulasOrSyntax": [],
@@ -397,15 +397,15 @@
               "title": "Gregório de Matos e a Sátira Barroca",
               "problemStatement": "Ao escrever sobre a cidade de Salvador no século XVII, Gregório de Matos sentencia: 'Que falta nesta cidade? Verdade. / Que mais por sua desonra? Honra. / Falta mais que se lhe ponha? Vergonha.' Esse trecho da poesia satírica do 'Boca do Inferno' caracteriza-se por:",
               "options": [
-                "celebração ingênua das belezas botânicas e florestais do Recôncavo Baiano.",
                 "crítica mordaz e corrosiva à degradação moral, política e administrativa da capital da colônia sob domínio português.",
                 "versos de temática estritamente mística dedicados à exaltação das freiras enclausuradas.",
+                "ufanismo desmedido e louvor incondicional à honestidade dos magistrados coloniais.",
                 "defesa das práticas idílicas do bucolismo pastoril e lemas latinos neoclássicos.",
-                "ufanismo desmedido e louvor incondicional à honestidade dos magistrados coloniais."
+                "celebração ingênua das belezas botânicas e florestais do Recôncavo Baiano."
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "hint": "O poeta ataca os vícios das autoridades locais, denunciando a ausência de verdade, honra e vergonha.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. A vertente satírica de Gregório de Matos expôs sem meias-palavras as negociatas e a corrupção do governo da Bahia colonial, valendo-lhe o apelido de 'Boca do Inferno' e o posterior degredo para Angola.\nAlternativa correta: B"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A vertente satírica de Gregório de Matos expôs sem meias-palavras as negociatas e a corrupção do governo da Bahia colonial, valendo-lhe o apelido de 'Boca do Inferno' e o posterior degredo para Angola.\nAlternativa correta: A"
             }
           ],
           "formulasOrSyntax": [],
@@ -433,15 +433,15 @@
               "title": "Castro Alves e a Poesia Condoreira",
               "problemStatement": "Nos versos de 'O Navio Negreiro', de Castro Alves: 'Era um sonho dantesco... o tombadilho / Que das luzernas avermelha o brilho, / Em sangue a se banhar. / Tinir de ferros... estalar do açoite... / Legiões de homens negros como a noite, / Horrendos a dançar...', a estética condoreira manifesta-se através de:",
               "options": [
+                "culto formal à métrica parnasiana impassível, desprovida de engajamento social.",
                 "grandiloquência verbal e apelo sensorial dramático para mobilizar a comoção pública contra a desumanidade da escravidão.",
                 "idealização heroica de guerreiros indígenas no molde das novelas de cavalaria medievais.",
-                "culto formal à métrica parnasiana impassível, desprovida de engajamento social.",
-                "fuga introspectiva para o mundo da morte por tédio burguês existencial.",
-                "elogio resignado ao sofrimento dos cativos como caminho exclusivo para a salvação espiritual."
+                "elogio resignado ao sofrimento dos cativos como caminho exclusivo para a salvação espiritual.",
+                "fuga introspectiva para o mundo da morte por tédio burguês existencial."
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "hint": "Castro Alves emprega imagens visuais e sonoras impactantes para despertar indignação política na sociedade.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. A terceira geração romântica (condoreira) é marcada pelo engajamento cívico abolicionista e republicano.\n2. O uso de adjetivação vigorosa ('sonho dantesco', 'banhar em sangue') e efeitos auditivos ('tinir de ferros', 'estalar do açoite') constrói uma cena teatral grandiosa capaz de abalar as consciências contra o cativeiro.\nAlternativa correta: A"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A terceira geração romântica (condoreira) é marcada pelo engajamento cívico abolicionista e republicano.\n2. O uso de adjetivação vigorosa ('sonho dantesco', 'banhar em sangue') e efeitos auditivos ('tinir de ferros', 'estalar do açoite') constrói uma cena teatral grandiosa capaz de abalar as consciências contra o cativeiro.\nAlternativa correta: B"
             }
           ],
           "formulasOrSyntax": [],
@@ -469,15 +469,15 @@
               "title": "Realismo de Machado de Assis",
               "problemStatement": "Em 'Memórias Póstumas de Brás Cubas', o protagonista inicia sua narrativa esclarecendo ao leitor que não é um autor defunto, mas um defunto autor, para quem a cova foi outro berço. Essa escolha narrativa permite a Machado de Assis:",
               "options": [
-                "libertar o narrador das convenções e hipocrisias sociais, permitindo um olhar cínico, irônico e desmascarador sobre a elite de seu tempo.",
-                "exaltar a bondade inata do ser humano e a pureza de sentimentos desinteressados na corte imperial.",
                 "garantir neutralidade jornalística absoluta sem emitir nenhum juízo de valor pessoal.",
                 "produzir uma novela de terror sobrenatural aos moldes góticos de Edgar Allan Poe.",
+                "libertar o narrador das convenções e hipocrisias sociais, permitindo um olhar cínico, irônico e desmascarador sobre a elite de seu tempo.",
+                "exaltar a bondade inata do ser humano e a pureza de sentimentos desinteressados na corte imperial.",
                 "aderir à crença no espiritismo kardecista como verdade doutrinária dogmática."
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "Um defunto não deve satisfações aos vivos, podendo expor sem pudor suas próprias mesquinharias e as da sociedade.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. A condição de defunto autor outorga a Brás Cubas total liberdade enunciativa: ele não teme a opinião pública, o tribunal da moral ou a reprovação de classe.\n2. Com isso, Machado constrói a mais afiada radiografia das vaidades e cinismos da aristocracia patriarcal e escravista do Rio de Janeiro.\nAlternativa correta: A"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A condição de defunto autor outorga a Brás Cubas total liberdade enunciativa: ele não teme a opinião pública, o tribunal da moral ou a reprovação de classe.\n2. Com isso, Machado constrói a mais afiada radiografia das vaidades e cinismos da aristocracia patriarcal e escravista do Rio de Janeiro.\nAlternativa correta: C"
             }
           ],
           "formulasOrSyntax": [],
@@ -507,9 +507,9 @@
               "options": [
                 "a prova irrefutável de que as línguas indígenas são biologicamente inviáveis na modernidade.",
                 "a denúncia da insensibilidade e intolerância das instituições do Estado perante a dissidência crítica e os idealismos patrióticos genuínos.",
-                "o triunfo espetacular do positivismo militar republicano nos sertões brasileiros.",
+                "o conformismo pacífico da classe média carioca com os desmandos da ditadura florianista.",
                 "uma apologia ao imperialismo europeu contra as culturas locais sul-americanas.",
-                "o conformismo pacífico da classe média carioca com os desmandos da ditadura florianista."
+                "o triunfo espetacular do positivismo militar republicano nos sertões brasileiros."
               ],
               "correctIndex": 1,
               "hint": "Policarpo dedica sua vida à pátria e termina fuzilado pelo próprio governo que tentou defender com paixão ingênua.",
@@ -541,15 +541,15 @@
               "title": "Vidas Secas de Graciliano Ramos",
               "problemStatement": "No capítulo 'Baleia' do romance 'Vidas Secas', de Graciliano Ramos, a cadela da família de retirantes, ao agonizar após ser alvejada por Fabiano, sonha com um mundo cheio de preás gordos. Por sua vez, Fabiano muitas vezes se define como 'um bicho'. Esse recurso literário tem como propósito fundamental:",
               "options": [
-                "evidenciar o processo de desumanização imposto pela seca extrema e pela opressão fundiária, que rebaixa o sertanejo ao nível de bicho e confere à cadela a humanidade negada aos retirantes.",
-                "defender que os problemas do Nordeste decorrem unicamente da preguiça de seus habitantes.",
                 "demonstrar que animais possuem raciocínio matemático superior ao dos seres humanos.",
-                "apresentar uma fábula infantil inocente destinada a divertir crianças nas escolas rurais.",
-                "fazer propaganda da pecuária extensiva no semiárido nordestino."
+                "defender que os problemas do Nordeste decorrem unicamente da preguiça de seus habitantes.",
+                "evidenciar o processo de desumanização imposto pela seca extrema e pela opressão fundiária, que rebaixa o sertanejo ao nível de bicho e confere à cadela a humanidade negada aos retirantes.",
+                "fazer propaganda da pecuária extensiva no semiárido nordestino.",
+                "apresentar uma fábula infantil inocente destinada a divertir crianças nas escolas rurais."
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "A miséria e o abandono social privam o ser humano de sua dignidade e da própria linguagem.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. A animalização de Fabiano e a humanização poética de Baleia constituem a denúncia mais pungente de Graciliano Ramos sobre a violência estrutural do latifúndio e da seca, que despoja os trabalhadores rurais de sua humanidade básica.\nAlternativa correta: A"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A animalização de Fabiano e a humanização poética de Baleia constituem a denúncia mais pungente de Graciliano Ramos sobre a violência estrutural do latifúndio e da seca, que despoja os trabalhadores rurais de sua humanidade básica.\nAlternativa correta: C"
             }
           ],
           "formulasOrSyntax": [],
@@ -577,15 +577,15 @@
               "title": "Literatura Contemporânea e Escrevivência",
               "problemStatement": "A escritora Conceição Evaristo cunhou o termo 'escrevivência' para caracterizar sua produção literária, afirmando: 'Nossa escrevivência não é para adormecer os da casa-grande, e sim para acordá-los de seus sonos injustos'. Essa perspectiva autoral manifesta-se através de:",
               "options": [
-                "imitação servil dos sonetos parnasianos de autores franceses do século XIX.",
-                "alienação voluntária em relação às desigualdades raciais e de gênero no país.",
                 "uma escrita comprometida e enraizada nas vivências e memórias coletivas da população negra e periférica, desafiando a hegemonia das narrativas coloniais tradicionais.",
+                "alienação voluntária em relação às desigualdades raciais e de gênero no país.",
+                "imitação servil dos sonetos parnasianos de autores franceses do século XIX.",
                 "desejo de agradar as elites dominantes em troca de patrocínio institucional.",
                 "recusa categórica ao uso de recursos literários ficcionais na produção em prosa."
               ],
-              "correctIndex": 2,
+              "correctIndex": 0,
               "hint": "A escrevivência une escrita e vivência para romper silenciamentos históricos e despertar consciências.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. O conceito de escrevivência coloca a experiência subjetiva, histórica e corpórea das mulheres negras e faveladas no centro do fazer literário, transformando a palavra em instrumento de afirmação, dignidade e justiça social.\nAlternativa correta: C"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. O conceito de escrevivência coloca a experiência subjetiva, histórica e corpórea das mulheres negras e faveladas no centro do fazer literário, transformando a palavra em instrumento de afirmação, dignidade e justiça social.\nAlternativa correta: A"
             }
           ],
           "formulasOrSyntax": [],
@@ -624,15 +624,15 @@
               "title": "Valor Semântico de Preposições",
               "problemStatement": "Analise o fragmento: 'O jovem cientista tremia de entusiasmo ao receber o prêmio internacional conquistado com muito esforço individual'. As preposições destacadas 'de' e 'com' expressam, no contexto, respectivamente as relações semânticas de:",
               "options": [
-                "oposição e concessão.",
-                "origem geográfica e companhia.",
-                "posse e matéria.",
                 "finalidade e tempo.",
-                "causa e instrumento/modo."
+                "oposição e concessão.",
+                "posse e matéria.",
+                "causa e instrumento/modo.",
+                "origem geográfica e companhia."
               ],
-              "correctIndex": 4,
+              "correctIndex": 3,
               "hint": "O que causou o tremor? O entusiasmo (causa). De que forma ou por qual meio ele conquistou o prêmio? Com esforço (modo/meio).",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. 'Tremia de entusiasmo': a preposição 'de' introduz o motivo gerador ou causa do tremor físico involuntário.\n2. 'Conquistado com muito esforço': a preposição 'com' indica o modo ou meio pelo qual o resultado foi alcançado.\nAlternativa correta: E"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. 'Tremia de entusiasmo': a preposição 'de' introduz o motivo gerador ou causa do tremor físico involuntário.\n2. 'Conquistado com muito esforço': a preposição 'com' indica o modo ou meio pelo qual o resultado foi alcançado.\nAlternativa correta: D"
             }
           ],
           "formulasOrSyntax": [],
@@ -660,15 +660,15 @@
               "title": "Efeito Semântico da Oração Adjetiva",
               "problemStatement": "Considere os dois enunciados abaixo extraídos de um relatório de trânsito: \nI. 'Os motoristas de aplicativo que respeitam o limite de velocidade diminuem o risco de colisões graves.'\nII. 'Os motoristas de aplicativo, que respeitam o limite de velocidade, diminuem o risco de colisões graves.'\nA análise comparativa das orações adjetivas permite concluir que:",
               "options": [
-                "em I, a oração restringe o benefício apenas à parcela dos motoristas que cumprem a norma; em II, a oração afirma categoricamente que todos os motoristas de aplicativo respeitam a velocidade.",
                 "o enunciado II indica que apenas os motoristas infratores evitam acidentes.",
-                "o enunciado I está gramaticalmente incorreto por ausência injustificada de pontuação.",
                 "o uso das vírgulas em II transforma a oração adjetiva em uma oração adverbial causal.",
-                "os dois enunciados expressam rigorosamente o mesmo sentido sem qualquer alteração interpretativa."
+                "em I, a oração restringe o benefício apenas à parcela dos motoristas que cumprem a norma; em II, a oração afirma categoricamente que todos os motoristas de aplicativo respeitam a velocidade.",
+                "os dois enunciados expressam rigorosamente o mesmo sentido sem qualquer alteração interpretativa.",
+                "o enunciado I está gramaticalmente incorreto por ausência injustificada de pontuação."
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "A presença de vírgulas torna a oração adjetiva explicativa (abrangendo a totalidade do grupo).",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. A oração adjetiva restritiva (sem vírgula) delimita uma parte do conjunto dos motoristas (somente aqueles que respeitam a velocidade).\n2. A oração adjetiva explicativa (entre vírgulas) atribui a característica a todo o grupo de motoristas de aplicativo como uma qualidade geral de todos eles.\nAlternativa correta: A"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A oração adjetiva restritiva (sem vírgula) delimita uma parte do conjunto dos motoristas (somente aqueles que respeitam a velocidade).\n2. A oração adjetiva explicativa (entre vírgulas) atribui a característica a todo o grupo de motoristas de aplicativo como uma qualidade geral de todos eles.\nAlternativa correta: C"
             }
           ],
           "formulasOrSyntax": [],
@@ -696,15 +696,15 @@
               "title": "Concordância Verbal com Haver e Existir",
               "problemStatement": "De acordo com a norma-padrão da língua portuguesa escrita, a opção em que a concordância verbal está inteiramente correta é:",
               "options": [
-                "Havia muitas pessoas na manifestação pública em frente ao ministério.",
-                "Precisa-se de novos técnicos agrícolas para a colheita no interior.",
                 "Haviam muitas pessoas na manifestação pública em frente ao ministério.",
-                "Vende-se apartamentos mobiliados com vista para a orla marítima.",
-                "Fazem cinco anos que os cientistas pesquisam essa vacina inovadora."
+                "Precisa-se de novos técnicos agrícolas para a colheita no interior.",
+                "Fazem cinco anos que os cientistas pesquisam essa vacina inovadora.",
+                "Havia muitas pessoas na manifestação pública em frente ao ministério.",
+                "Vende-se apartamentos mobiliados com vista para a orla marítima."
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "hint": "O verbo haver no sentido de existir é impessoal e não admite forma no plural.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. O verbo 'haver' com significado de existir é impessoal e deve ficar na 3ª pessoa do singular: 'Havia muitas pessoas'.\n2. 'Fazem cinco anos' está errado (fazer de tempo é impessoal: 'Faz cinco anos').\n3. 'Vende-se apartamentos' está errado (apassivadora: 'Vendem-se apartamentos').\nAlternativa correta: A"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. O verbo 'haver' com significado de existir é impessoal e deve ficar na 3ª pessoa do singular: 'Havia muitas pessoas'.\n2. 'Fazem cinco anos' está errado (fazer de tempo é impessoal: 'Faz cinco anos').\n3. 'Vende-se apartamentos' está errado (apassivadora: 'Vendem-se apartamentos').\nAlternativa correta: D"
             }
           ],
           "formulasOrSyntax": [],
@@ -733,10 +733,10 @@
               "problemStatement": "No período: 'A juventude brasileira — consciente dos desafios climáticos globais — tem liderado manifestações em defesa das florestas', o uso dos travessões duplos cumpre a função de:",
               "options": [
                 "denotar dúvida ou indecisão do narrador quanto à veracidade do fato.",
-                "introduzir a fala de uma personagem em um diálogo teatral.",
+                "marcar a omissão acidental de dados estatísticos do Censo Florestal.",
                 "separar obrigatoriamente o sujeito do predicado por falta de conectivo.",
                 "isolar um comentário explicativo que destaca a postura crítica dos jovens perante o meio ambiente.",
-                "marcar a omissão acidental de dados estatísticos do Censo Florestal."
+                "introduzir a fala de uma personagem em um diálogo teatral."
               ],
               "correctIndex": 3,
               "hint": "O elemento entre travessões caracteriza e qualifica o sujeito 'a juventude brasileira'.",
@@ -779,11 +779,11 @@
               "title": "Vanguardas Europeias no ENEM",
               "problemStatement": "Em 1917, o artista francês Marcel Duchamp enviou para uma exposição de arte em Nova York um mictório de louça comum invertido, assinado com o pseudônimo 'R. Mutt' e intitulado 'A Fonte'. A obra, expoente máximo do Dadaísmo e precursora do ready-made, provocou escândalo porque:",
               "options": [
-                "procurava ensinar noções de encanamento industrial aos críticos de arte nova-iorquinos.",
-                "fazia apologia à poluição dos rios e à destruição das instalações sanitárias urbanas.",
                 "comprovava o domínio virtuoso da escultura em mármore clássico do Renascimento.",
+                "afirmava a superioridade do artesanato grego sobre a produção em massa moderna.",
+                "procurava ensinar noções de encanamento industrial aos críticos de arte nova-iorquinos.",
                 "desafiava os critérios tradicionais de estética e autoria, demonstrando que a obra de arte reside na ideia e na escolha crítica do artista, e não na confecção manual do objeto.",
-                "afirmava a superioridade do artesanato grego sobre a produção em massa moderna."
+                "fazia apologia à poluição dos rios e à destruição das instalações sanitárias urbanas."
               ],
               "correctIndex": 3,
               "hint": "O ready-made tira um objeto industrial comum de seu uso cotidiano e o coloca em um museu, forçando uma reflexão conceitual.",
@@ -815,15 +815,15 @@
               "title": "Tarsila do Amaral e o Abaporu",
               "problemStatement": "A célebre pintura 'Abaporu' (1928), de Tarsila do Amaral, apresenta uma figura humana nua, solitária, com um pé e um braço gigantescos pousados na terra ao lado de um cacto sob um sol radiante, contrastando com uma cabeça minúscula. Na perspectiva do Modernismo brasileiro, essa desproporção anatômica simboliza:",
               "options": [
-                "uma denúncia dos efeitos danosos do calçado inadequado para operários da construção civil.",
-                "a incapacidade técnica da pintora de reproduzir a anatomia humana segundo os manuais médicos.",
-                "uma doença deformadora típica das regiões áridas do semiárido sertanejo.",
                 "a ligação visceral e física do homem brasileiro com a terra e com a natureza tropical, valorizando a força instintiva e o enraizamento telúrico.",
-                "o desdém da artista pelas belezas naturais e pelas tradições folclóricas do país."
+                "uma doença deformadora típica das regiões áridas do semiárido sertanejo.",
+                "o desdém da artista pelas belezas naturais e pelas tradições folclóricas do país.",
+                "a incapacidade técnica da pintora de reproduzir a anatomia humana segundo os manuais médicos.",
+                "uma denúncia dos efeitos danosos do calçado inadequado para operários da construção civil."
               ],
-              "correctIndex": 3,
+              "correctIndex": 0,
               "hint": "Os pés agigantados fincados no solo evocam o contato direto e a sustentação do ser na terra nativa.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. 'Abaporu' (em tupi, 'homem que come carne humana') inaugurou o Movimento Antropofágico. A enorme dimensão dos pés e membros inferiores expressa o enraizamento profundo no solo nativo e a força da materialidade brasileira, em oposição ao intelectualismo europeu hipertrofiado.\nAlternativa correta: D"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. 'Abaporu' (em tupi, 'homem que come carne humana') inaugurou o Movimento Antropofágico. A enorme dimensão dos pés e membros inferiores expressa o enraizamento profundo no solo nativo e a força da materialidade brasileira, em oposição ao intelectualismo europeu hipertrofiado.\nAlternativa correta: A"
             }
           ],
           "formulasOrSyntax": [],
@@ -851,15 +851,15 @@
               "title": "O Corpo como Prática Cultural",
               "problemStatement": "Ao longo da história do Brasil, a capoeira foi perseguida pelas autoridades policiais e criminalizada no Código Penal da República em 1890 como contravenção. Na atualidade, reconhecida como Patrimônio Cultural Imaterial da Humanidade pela UNESCO, a capoeira destaca-se por:",
               "options": [
+                "constituir uma prática corporal exclusiva para o treino de soldados das forças armadas.",
                 "articular luta, dança, música e ancestralidade como forma de resistência cultural e preservação da memória da população afro-brasileira.",
-                "estimular brigas desregradas e violentas para resolução de desavenças comunitárias em locais públicos.",
-                "limitar-se à cópia fiel dos modelos de ginástica militar sueca do século XIX.",
                 "rejeitar qualquer forma de musicalidade ou ritmo sonoro em suas rodas de apresentação.",
-                "constituir uma prática corporal exclusiva para o treino de soldados das forças armadas."
+                "estimular brigas desregradas e violentas para resolução de desavenças comunitárias em locais públicos.",
+                "limitar-se à cópia fiel dos modelos de ginástica militar sueca do século XIX."
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "hint": "A capoeira mescla elementos de jogo corporal, música e resistência histórica contra a opressão.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. A capoeira transcende a mera dimensão física: é um fenômeno de linguagem corporal onde o ritmo do berimbau, os cantos ancestrais e o jogo de esquiva compõem um monumento vivo da resistência negra no Brasil.\nAlternativa correta: A"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A capoeira transcende a mera dimensão física: é um fenômeno de linguagem corporal onde o ritmo do berimbau, os cantos ancestrais e o jogo de esquiva compõem um monumento vivo da resistência negra no Brasil.\nAlternativa correta: B"
             }
           ],
           "formulasOrSyntax": [],
@@ -887,15 +887,15 @@
               "title": "Mídia, Corpo e Indústria Cultural",
               "problemStatement": "Pesquisas sociológicas recentes apontam que a exposição contínua a imagens digitais com filtros de embelezamento nas redes sociais tem provocado o aumento de transtornos de imagem corporal entre jovens e adolescentes. Diante desse fenômeno, a crítica cultural contemporânea alerta para:",
               "options": [
+                "os perigos da imposição mercadológica de padrões estéticos inalcançáveis, que transformam o corpo em produto de consumo e geram sofrimento psíquico decorrente da não aceitação da diversidade real.",
+                "o desinteresse completo dos jovens por qualquer forma de validação estética nas plataformas virtuais.",
                 "a vantagem biológica indiscutível de cirurgias plásticas prematuras na infância.",
                 "a confirmação de que os filtros digitais democratizam democraticamente a beleza biológica sem efeitos colaterais.",
-                "a necessidade de criminalizar a fotografia digital em todas as esferas do cotidiano.",
-                "o desinteresse completo dos jovens por qualquer forma de validação estética nas plataformas virtuais.",
-                "os perigos da imposição mercadológica de padrões estéticos inalcançáveis, que transformam o corpo em produto de consumo e geram sofrimento psíquico decorrente da não aceitação da diversidade real."
+                "a necessidade de criminalizar a fotografia digital em todas as esferas do cotidiano."
               ],
-              "correctIndex": 4,
+              "correctIndex": 0,
               "hint": "A mercantilização do corpo e a cobrança por uma perfeição artificial geram angústia e exclusão.",
-              "stepByStepSolution": "### Resolução Detalhada:\n1. A indústria cultural do consumo estimula a inadequação corporal para lucrar com produtos estéticos, cosméticos e cirurgias. A reflexão crítica do ENEM incentiva o reconhecimento da pluralidade dos corpos contra a ditadura da imagem hegemônica.\nAlternativa correta: E"
+              "stepByStepSolution": "### Resolução Detalhada:\n1. A indústria cultural do consumo estimula a inadequação corporal para lucrar com produtos estéticos, cosméticos e cirurgias. A reflexão crítica do ENEM incentiva o reconhecimento da pluralidade dos corpos contra a ditadura da imagem hegemônica.\nAlternativa correta: A"
             }
           ],
           "formulasOrSyntax": [],

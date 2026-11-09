@@ -123,7 +123,7 @@ class UserProgressRepository(context: Context) {
                     lastQualifyingStudyDate = "",
                     activeStudyDates = emptySet()
                 )
-                saveProgress(updated, pushToRemote = true)
+                saveProgress(updated, pushToRemote = false)
                 updateAchievements(updated)
                 return true
             }
@@ -239,15 +239,31 @@ class UserProgressRepository(context: Context) {
                     val today = getTodayDateString()
                     val yesterday = getYesterdayDateString()
 
+                    val remoteLastActive = snapshot.getString("lastActiveDate") ?: ""
+                    val remoteHasActivity = (remoteXp > 0 || current.totalXp > 0 || (current.completedLessonIds + remoteLessons).isNotEmpty() || remoteStreak > 0)
+                    val remoteStudiedToday = remoteLastQualifying == today || remoteLastActive == today ||
+                            remoteLastCheckIn == today || remoteVerifiedCheckIn == today || remoteDates.contains(today)
+                    val remoteStudiedYesterday = remoteLastQualifying == yesterday || remoteLastActive == yesterday ||
+                            remoteLastCheckIn == yesterday || remoteVerifiedCheckIn == yesterday || remoteDates.contains(yesterday)
+
                     val mergedLastQualifying = when {
-                        current.lastQualifyingStudyDate == today || remoteLastQualifying == today -> today
-                        current.lastQualifyingStudyDate == yesterday || remoteLastQualifying == yesterday -> yesterday
+                        current.lastQualifyingStudyDate == today || remoteStudiedToday -> today
+                        current.lastQualifyingStudyDate == yesterday || remoteStudiedYesterday -> yesterday
+                        remoteHasActivity && remoteStreak > 0 -> today
                         current.lastQualifyingStudyDate.isNotBlank() -> current.lastQualifyingStudyDate
-                        else -> remoteLastQualifying
+                        remoteLastQualifying.isNotBlank() -> remoteLastQualifying
+                        remoteLastActive.isNotBlank() -> remoteLastActive
+                        else -> if (remoteStreak > 0) today else ""
                     }
 
-                    val rawBestStreak = maxOf(current.currentStreak, remoteStreak)
+                    val rawBestStreak = maxOf(
+                        current.currentStreak,
+                        remoteStreak,
+                        if (remoteHasActivity && remoteStreak > 0) maxOf(remoteStreak, 1) else 0
+                    )
                     val validatedStreak = if (mergedLastQualifying == today || mergedLastQualifying == yesterday) {
+                        rawBestStreak
+                    } else if (rawBestStreak > 0 && remoteHasActivity) {
                         rawBestStreak
                     } else {
                         0
@@ -359,15 +375,29 @@ class UserProgressRepository(context: Context) {
                                 val today = getTodayDateString()
                                 val yesterday = getYesterdayDateString()
 
+                                val remoteHasActivity = (highestRemoteXp > 0 || current.totalXp > 0 || (current.completedLessonIds + allRemoteLessons).isNotEmpty() || highestRemoteStreak > 0)
+                                val remoteStudiedToday = remoteLastQualifying == today ||
+                                        remoteLastCheckIn == today || remoteVerifiedCheckIn == today || allRemoteDates.contains(today)
+                                val remoteStudiedYesterday = remoteLastQualifying == yesterday ||
+                                        remoteLastCheckIn == yesterday || remoteVerifiedCheckIn == yesterday || allRemoteDates.contains(yesterday)
+
                                 val mergedLastQualifying = when {
-                                    current.lastQualifyingStudyDate == today || remoteLastQualifying == today -> today
-                                    current.lastQualifyingStudyDate == yesterday || remoteLastQualifying == yesterday -> yesterday
+                                    current.lastQualifyingStudyDate == today || remoteStudiedToday -> today
+                                    current.lastQualifyingStudyDate == yesterday || remoteStudiedYesterday -> yesterday
+                                    remoteHasActivity && highestRemoteStreak > 0 -> today
                                     current.lastQualifyingStudyDate.isNotBlank() -> current.lastQualifyingStudyDate
-                                    else -> remoteLastQualifying
+                                    remoteLastQualifying.isNotBlank() -> remoteLastQualifying
+                                    else -> if (highestRemoteStreak > 0) today else ""
                                 }
 
-                                val rawBestStreak = maxOf(current.currentStreak, highestRemoteStreak)
+                                val rawBestStreak = maxOf(
+                                    current.currentStreak,
+                                    highestRemoteStreak,
+                                    if (remoteHasActivity && highestRemoteStreak > 0) maxOf(highestRemoteStreak, 1) else 0
+                                )
                                 val validatedStreak = if (mergedLastQualifying == today || mergedLastQualifying == yesterday) {
+                                    rawBestStreak
+                                } else if (rawBestStreak > 0 && remoteHasActivity) {
                                     rawBestStreak
                                 } else {
                                     0

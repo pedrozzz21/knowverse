@@ -25,10 +25,11 @@ const MIME_TYPES = {
 
 function resolveApkPath() {
   const candidates = [
+    path.join(PUBLIC_DIR, 'Knowverse-v2.0.0.apk'),
+    path.join(PUBLIC_DIR, 'Knowverse.apk'),
     path.join(APP_DIR, 'Knowverse.apk'),
     path.join(APP_DIR, 'knowverse.apk'),
     path.join(APP_DIR, 'app/build/outputs/apk/debug/app-debug.apk'),
-    path.join(PUBLIC_DIR, 'Knowverse.apk'),
     path.join(PUBLIC_DIR, 'knowverse.apk')
   ];
   for (const candidate of candidates) {
@@ -41,8 +42,9 @@ function resolveApkPath() {
 
 function resolveZipPath() {
   const candidates = [
-    path.join(APP_DIR, 'knowverse_apk.zip'),
+    path.join(PUBLIC_DIR, 'Knowverse-v2.0.0.zip'),
     path.join(PUBLIC_DIR, 'knowverse_apk.zip'),
+    path.join(APP_DIR, 'knowverse_apk.zip'),
     path.join(APP_DIR, 'Knowverse.zip'),
     path.join(PUBLIC_DIR, 'Knowverse.zip')
   ];
@@ -129,8 +131,8 @@ const server = http.createServer((req, res) => {
     res.end(JSON.stringify({
       status: 'ok',
       app: 'Knowverse',
-      version: '1.9.1',
-      build: 18,
+      version: '2.0.0',
+      build: 20,
       apkReady: resolveApkPath() !== null,
       zipReady: resolveZipPath() !== null,
       timestamp: new Date().toISOString()
@@ -154,7 +156,7 @@ const server = http.createServer((req, res) => {
   if (/\.apk$/i.test(pathname)) {
     const apkPath = resolveApkPath();
     if (apkPath) {
-      serveStreamFile(req, res, apkPath, 'application/vnd.android.package-archive', 'Knowverse-v1.9.1.apk');
+      serveStreamFile(req, res, apkPath, 'application/vnd.android.package-archive', 'Knowverse-v2.0.0.apk');
     } else {
       res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end('<h1>APK em compilação</h1><p>O arquivo está sendo gerado. Por favor, aguarde alguns instantes e atualize a página.</p>');
@@ -166,7 +168,7 @@ const server = http.createServer((req, res) => {
   if (/\.zip$/i.test(pathname)) {
     const zipPath = resolveZipPath();
     if (zipPath) {
-      serveStreamFile(req, res, zipPath, 'application/zip', 'Knowverse-v1.9.1.zip');
+      serveStreamFile(req, res, zipPath, 'application/zip', 'Knowverse-v2.0.0.zip');
     } else {
       res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end('<h1>Pacote ZIP não encontrado</h1><p>Por favor, recarregue a página em alguns instantes.</p>');

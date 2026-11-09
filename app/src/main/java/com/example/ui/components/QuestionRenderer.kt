@@ -225,7 +225,7 @@ fun QuestionRendererCard(
                             }
 
                             Row(
-                                verticalAlignment = Alignment.CenterVertically,
+                                verticalAlignment = Alignment.Top,
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .clip(RoundedCornerShape(10.dp))
@@ -254,7 +254,11 @@ fun QuestionRendererCard(
                                 Spacer(modifier = Modifier.width(10.dp))
                                 MathFormattedText(
                                     text = optText,
-                                    style = MaterialTheme.typography.bodyMedium.copy(color = TextPrimary),
+                                    style = MaterialTheme.typography.bodyMedium.copy(
+                                        color = TextPrimary,
+                                        lineHeight = 22.sp
+                                    ),
+                                    allowBlockCards = false,
                                     modifier = Modifier.weight(1f)
                                 )
                             }

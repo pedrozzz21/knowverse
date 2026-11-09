@@ -36,13 +36,13 @@
               "title": "Alcance Relativo no MRU",
               "problemStatement": "Dois veículos, A e B, trafegam em uma rodovia retilínea no mesmo sentido. O veículo A move-se com velocidade constante de 72 km/h. O veículo B, inicialmente a 200 metros atrás de A, desloca-se com velocidade constante de 108 km/h. Em quantos segundos o veículo B alcançará o veículo A?",
               "options": [
-                "40 segundos",
+                "50 segundos",
+                "10 segundos",
                 "20 segundos",
                 "30 segundos",
-                "10 segundos",
-                "50 segundos"
+                "40 segundos"
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "hint": "Converta km/h para m/s dividindo por 3,6 e encontre a velocidade relativa de aproximação.",
               "stepByStepSolution": "vA = 72/3,6 = 20 m/s; vB = 108/3,6 = 30 m/s. v_rel = 30 - 20 = 10 m/s. Δt = ΔS / v_rel = 200 / 10 = 20 segundos."
             },
@@ -51,13 +51,13 @@
               "title": "Distância de Frenagem com Torricelli",
               "problemStatement": "Um motorista trafega a 90 km/h (25 m/s) quando avista um obstáculo e aciona os freios, provocando uma desaceleração constante de módulo 5,0 m/s² até a parada total. A distância percorrida pelo veículo durante a frenagem é igual a:",
               "options": [
-                "75,0 m",
-                "62,5 m",
                 "50,0 m",
                 "80,0 m",
+                "75,0 m",
+                "62,5 m",
                 "100,0 m"
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "hint": "Como o tempo não foi fornecido, aplique a Equação de Torricelli: v² = v₀² + 2·a·ΔS.",
               "stepByStepSolution": "0 = 25² + 2(-5)·ΔS => 0 = 625 - 10·ΔS => 10·ΔS = 625 => ΔS = 62,5 metros."
             },
@@ -66,11 +66,11 @@
               "title": "Área sob o Gráfico de Velocidade",
               "problemStatement": "Um carro parte do repouso e, nos primeiros 10 s, atinge 30 m/s com aceleração constante. Nos 10 s seguintes, mantém 30 m/s constante. A distância total percorrida nesses 20 s é de:",
               "options": [
-                "400 m",
-                "300 m",
-                "450 m",
                 "500 m",
-                "600 m"
+                "400 m",
+                "450 m",
+                "600 m",
+                "300 m"
               ],
               "correctIndex": 2,
               "hint": "No gráfico v × t, calcule a área do trapézio: [(B + b) · h] / 2.",
@@ -102,13 +102,13 @@
               "title": "Atrito Estático e Tendência de Movimento",
               "problemStatement": "Um bloco de massa 10 kg repousa sobre uma mesa horizontal (μe = 0,4; μc = 0,3). Uma força horizontal de 35 N é aplicada. Adotando g = 10 m/s², o valor da força de atrito atuante é:",
               "options": [
-                "30 N",
                 "70 N",
-                "40 N",
                 "35 N",
-                "0 N"
+                "0 N",
+                "40 N",
+                "30 N"
               ],
-              "correctIndex": 3,
+              "correctIndex": 1,
               "hint": "Calcule Fat_máx = μe · N. Se a força aplicada for menor que o atrito máximo, o bloco fica em repouso e Fat = F.",
               "stepByStepSolution": "N = 10 · 10 = 100 N. Fat_máx = 0,4 · 100 = 40 N. Como 35 N < 40 N, o bloco não se move e Fat = 35 N."
             },
@@ -117,13 +117,13 @@
               "title": "Indicação de Balança em Elevador",
               "problemStatement": "Uma pessoa de 70 kg está sobre uma balança dentro de um elevador que desce freando com desaceleração de 2 m/s². Com g = 10 m/s², a balança indicará:",
               "options": [
-                "980 N",
                 "560 N",
-                "700 N",
                 "840 N",
-                "140 N"
+                "140 N",
+                "980 N",
+                "700 N"
               ],
-              "correctIndex": 3,
+              "correctIndex": 1,
               "hint": "Descer freando significa aceleração para CIMA: N - P = m·a.",
               "stepByStepSolution": "N = m(g + a) = 70 · (10 + 2) = 70 · 12 = 840 N."
             }
@@ -154,12 +154,12 @@
               "problemStatement": "Uma bicicleta possui coroa dianteira com raio de 12 cm acoplada por uma corrente inextensível a uma catraca traseira com raio de 4 cm. Se o ciclista pedala fazendo a coroa girar com frequência constante de 1,5 Hz (90 rpm), qual é a frequência de rotação da catraca (e consequentemente da roda traseira)?",
               "options": [
                 "9,0 Hz",
-                "1,5 Hz",
                 "3,0 Hz",
+                "4,5 Hz",
                 "6,0 Hz",
-                "4,5 Hz"
+                "1,5 Hz"
               ],
-              "correctIndex": 4,
+              "correctIndex": 2,
               "hint": "Como as polias estão acopladas por correia/corrente, a velocidade linear periférica é a mesma: R_coroa * f_coroa = R_catraca * f_catraca.",
               "stepByStepSolution": "v_coroa = v_catraca -> R_1 * f_1 = R_2 * f_2\n12 cm * 1,5 Hz = 4 cm * f_2 -> 18 = 4 * f_2 -> f_2 = 18 / 4 = 4,5 Hz."
             }
@@ -192,8 +192,8 @@
                 "60 N",
                 "80 N",
                 "70 N",
-                "200 N",
-                "100 N"
+                "100 N",
+                "200 N"
               ],
               "correctIndex": 2,
               "hint": "Primeiro calcule o atrito estático MÁXIMO (F_at,max = μ_e * N). Se a força aplicada for menor que esse valor, o bloco não se move e o atrito estático iguala a força aplicada!",
@@ -225,10 +225,10 @@
               "title": "ENEM: Vantagem Mecânica em Carrinho de Mão",
               "problemStatement": "Um operário transporta sacos de cimento em um carrinho de mão (alavanca inter-resistente). O centro de gravidade da carga de 60 kg (peso 600 N) fica a 0,5 m do eixo da roda (ponto de apoio). As mãos do operário seguram os braços do carrinho a 1,5 m do eixo da roda. A força vertical mínima que o operário deve aplicar para levantar o carrinho é de:",
               "options": [
-                "400 N",
                 "150 N",
-                "600 N",
                 "300 N",
+                "400 N",
+                "600 N",
                 "200 N"
               ],
               "correctIndex": 4,
@@ -261,13 +261,13 @@
               "title": "ENEM: Usina Hidrelétrica e Potência Mecânica",
               "problemStatement": "Em uma usina hidrelétrica, a água cai de uma represa com desnível vertical efetivo de 50 metros com uma vazão volumétrica de 20 m³/s. Sabendo que a densidade da água é 1.000 kg/m³, a aceleração da gravidade é 10 m/s² e o rendimento global da turbina/gerador é de 80%, a potência elétrica útil gerada é de:",
               "options": [
-                "8 MW",
-                "6 MW",
-                "10 MW",
+                "16 MW",
                 "12 MW",
-                "16 MW"
+                "6 MW",
+                "8 MW",
+                "10 MW"
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "hint": "Massa por segundo = 20.000 kg/s. Potência teórica = (m/Δt) * g * h. Multiplique pelo rendimento de 0,80.",
               "stepByStepSolution": "Massa de água por segundo: 20 m³/s * 1000 kg/m³ = 20.000 kg/s.\nPotência total da queda d'água = 20.000 * 10 * 50 = 10.000.000 W = 10 MW.\nPotência útil = 10 MW * 0,80 = 8 MW."
             }
@@ -297,10 +297,10 @@
               "title": "ENEM: Eficácia do Cinto de Segurança e Airbag",
               "problemStatement": "Durante um teste de colisão frontal contra uma barreira fixa, um boneco 'dummy' de 70 kg sofre uma desaceleração que o leva de 72 km/h (20 m/s) ao repouso. Graças ao airbag e ao cinto retrátil, a duração da desaceleração foi de 0,14 s. A intensidade média da força retardadora suportada pelo boneco foi de:",
               "options": [
-                "28.000 N",
-                "20.000 N",
-                "10.000 N",
                 "14.000 N",
+                "28.000 N",
+                "10.000 N",
+                "20.000 N",
                 "5.000 N"
               ],
               "correctIndex": 2,
@@ -334,8 +334,8 @@
               "problemStatement": "Uma prancha de madeira homogênea de 4,0 m de comprimento e peso 200 N repousa sobre dois apoios A e B, localizados nas extremidades esquerda e direita, respectivamente. Um pintor de peso 800 N fica em pé sobre a prancha a 1,0 m da extremidade A. A força normal de apoio exercida pelo suporte B sobre a prancha é de:",
               "options": [
                 "600 N",
-                "500 N",
                 "400 N",
+                "500 N",
                 "300 N",
                 "200 N"
               ],
@@ -369,13 +369,13 @@
               "title": "ENEM: Flutuação de Balsa e Empuxo",
               "problemStatement": "Uma balsa de fundo chato com área de base igual a 20 m² flutua em águas calmas de um rio (densidade da água = 1.000 kg/m³). Ao ser carregada com caminhões pesados, a balsa afunda 0,30 m adicionais na água sem tombar. Considerando g = 10 m/s², qual é a massa total da carga adicional de caminhões colocada sobre a balsa?",
               "options": [
-                "4.500 kg",
                 "6.000 kg",
-                "12.000 kg",
+                "4.500 kg",
                 "9.000 kg",
-                "3.000 kg"
+                "3.000 kg",
+                "12.000 kg"
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "hint": "O empuxo adicional equilibra o peso da carga: ΔE = ΔP -> ρ_água * ΔV * g = m_carga * g.",
               "stepByStepSolution": "Volume adicional submerso: ΔV = Área * Δh = 20 m² * 0,30 m = 6 m³.\nΔE = ρ * ΔV * g = 1.000 * 6 * 10 = 60.000 N.\nPeso da carga = 60.000 N -> m_carga = 60.000 / 10 = 6.000 kg."
             }
@@ -405,13 +405,13 @@
               "title": "ENEM: Terceira Lei de Kepler e Órbita de Satélite",
               "problemStatement": "Dois satélites artificiais, A e B, orbitam circularmente a Terra. O satélite A possui raio de órbita R e período de revolução de 2 horas. O satélite B é posicionado em uma órbita mais alta com raio igual a 4R. De acordo com a 3ª Lei de Kepler (T²/R³ = constante), qual é o período de revolução do satélite B?",
               "options": [
-                "8 horas",
                 "4 horas",
+                "16 horas",
+                "8 horas",
                 "32 horas",
-                "12 horas",
-                "16 horas"
+                "12 horas"
               ],
-              "correctIndex": 4,
+              "correctIndex": 1,
               "hint": "T_B² / (4R)³ = T_A² / R³ -> T_B² / 64 = 4 / 1 -> T_B² = 256.",
               "stepByStepSolution": "T_B² / (4R)³ = T_A² / R³\nT_B² / 64 = 2² / 1 = 4\nT_B² = 64 * 4 = 256 -> T_B = √256 = 16 horas."
             }
@@ -452,13 +452,13 @@
               "title": "ENEM: Clima Desértico e Escala Fahrenheit",
               "problemStatement": "Em um boletim meteorológico internacional sobre o Vale da Morte nos Estados Unidos, a temperatura máxima registrada no solo foi de 122 °F. Na escala termométrica Celsius adotada oficialmente no Brasil, essa temperatura corresponde a:",
               "options": [
-                "55 °C",
                 "40 °C",
-                "50 °C",
                 "60 °C",
-                "45 °C"
+                "45 °C",
+                "50 °C",
+                "55 °C"
               ],
-              "correctIndex": 2,
+              "correctIndex": 3,
               "hint": "Aplique T_C / 5 = (T_F - 32) / 9.",
               "stepByStepSolution": "T_C / 5 = (122 - 32) / 9 -> T_C / 5 = 90 / 9 = 10 -> T_C = 5 * 10 = 50 °C."
             }
@@ -488,11 +488,11 @@
               "title": "ENEM: Junta de Dilatação em Viadutos",
               "problemStatement": "Uma viga de concreto protendido de 50 metros de comprimento em um viaduto possui coeficiente de dilatação linear α = 1,2 × 10⁻⁵ °C⁻¹. Sabendo que a temperatura da estrutura oscila de 10 °C na madrugada fria de inverno a 50 °C no auge do verão ensolarado (ΔT = 40 °C), a folga mínima que a junta de dilatação deve comportar para evitar trincas estruturais é de:",
               "options": [
+                "12 mm",
                 "48 mm",
                 "36 mm",
-                "1,2 mm",
                 "24 mm",
-                "12 mm"
+                "1,2 mm"
               ],
               "correctIndex": 3,
               "hint": "Calcule ΔL = L_0 * α * ΔT.",
@@ -524,13 +524,13 @@
               "title": "ENEM: Calor Específico e Brisa Marítima",
               "problemStatement": "Durante o dia em uma praia ensolarada, a areia esquenta muito mais rápido do que a água do mar. À noite, a areia esfria rapidamente, enquanto a água do mar permanece morna por muito tempo. Esse fenômeno ocorre primordialmente porque:",
               "options": [
-                "A areia é um isolante térmico que não conduz calor para as camadas inferiores.",
-                "A água possui menor densidade do que os grãos de quartzo da areia.",
-                "O calor específico da água é significativamente maior do que o calor específico da areia.",
                 "A água do mar reflete 100% da radiação solar recebida.",
-                "O calor latente de fusão da areia é muito inferior ao da água salgada."
+                "O calor específico da água é significativamente maior do que o calor específico da areia.",
+                "O calor latente de fusão da areia é muito inferior ao da água salgada.",
+                "A areia é um isolante térmico que não conduz calor para as camadas inferiores.",
+                "A água possui menor densidade do que os grãos de quartzo da areia."
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "Lembre-se de Q = m * c * ΔT: materiais com maior calor específico sofrem menor variação de temperatura para a mesma quantidade de calor.",
               "stepByStepSolution": "A água possui um calor específico elevado (1,0 cal/g°C), exigindo grande quantidade de calor para variar sua temperatura e atuando como moderador térmico (Alternativa B)."
             }
@@ -560,8 +560,8 @@
               "title": "ENEM: Isolamento em Edificações Sustentáveis",
               "problemStatement": "Em regiões com invernos rigorosos, janelas residenciais eficientes são construídas com vidro duplo, mantendo uma camada selada de ar seco ou vácuo entre duas placas de vidro. A presença dessa camada selada reduz o gasto com aquecimento doméstico porque:",
               "options": [
-                "O vidro duplo converte energia mecânica do vento em calor sensível interno.",
                 "A pressão interna entre os vidros duplica a temperatura ambiente por compressão adiabática.",
+                "O vidro duplo converte energia mecânica do vento em calor sensível interno.",
                 "O ar selado impede a passagem de radiação luminosa visível.",
                 "O espaço entre vidros absorve radiação ultravioleta prejudicial.",
                 "O ar e o vácuo são péssimos condutores de calor, dificultando a condução e a convecção térmica com o exterior."
@@ -596,13 +596,13 @@
               "title": "ENEM: Rendimento Máximo de Usina Termelétrica",
               "problemStatement": "Uma usina termelétrica opera com vapor superaquecido a 527 °C gerado na caldeira (fonte quente) e utiliza a água de um rio vizinho a 27 °C como fonte de resfriamento condensador (fonte fria). O rendimento térmico máximo teórico permitido pelas leis da termodinâmica (Ciclo de Carnot) para essa usina é de:",
               "options": [
-                "94,8%",
-                "50,0%",
+                "62,5%",
                 "37,5%",
                 "75,0%",
-                "62,5%"
+                "50,0%",
+                "94,8%"
               ],
-              "correctIndex": 4,
+              "correctIndex": 0,
               "hint": "Converta ambas as temperaturas para Kelvin somando 273 e aplique η = 1 - (T_fria / T_quente).",
               "stepByStepSolution": "T_quente = 527 + 273 = 800 K.\nT_fria = 27 + 273 = 300 K.\nη = 1 - (300 / 800) = 1 - 0,375 = 0,625 = 62,5%."
             }
@@ -644,10 +644,10 @@
               "problemStatement": "Uma estação de rádio FM transmite um sinal eletromagnético com frequência de 100 MHz (100 × 10⁶ Hz). Sabendo que as ondas eletromagnéticas se propagam com velocidade c = 3 × 10⁸ m/s, o comprimento de onda emitido é de:",
               "options": [
                 "3,0 metros",
-                "30 metros",
-                "0,3 metros",
                 "0,03 metros",
-                "300 metros"
+                "300 metros",
+                "30 metros",
+                "0,3 metros"
               ],
               "correctIndex": 0,
               "hint": "Utilize a equação fundamental da ondulatória: v = λ · f, isolando λ = v / f.",
@@ -679,13 +679,13 @@
               "title": "ENEM: Difração do Som e da Luz",
               "problemStatement": "Uma pessoa do lado de fora de uma sala com a porta entreaberta consegue ouvir com clareza a voz de quem conversa lá dentro, mas não consegue ver a imagem da pessoa falante. Do ponto de vista ondulatório, isso decorre do fato de que:",
               "options": [
-                "As ondas de luz são longitudinais e não conseguem contornar cantos pontiagudos.",
-                "O som propaga-se com velocidade superior à da luz no ar.",
-                "O comprimento de onda do som é comparável à abertura da porta, permitindo acentuada difração, enquanto o da luz visível é microscópico.",
                 "O ar quente no interior da sala refrata os raios ópticos para longe da porta.",
-                "A luz sofre reflexão total no batente da porta e não penetra."
+                "O comprimento de onda do som é comparável à abertura da porta, permitindo acentuada difração, enquanto o da luz visível é microscópico.",
+                "O som propaga-se com velocidade superior à da luz no ar.",
+                "A luz sofre reflexão total no batente da porta e não penetra.",
+                "As ondas de luz são longitudinais e não conseguem contornar cantos pontiagudos."
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "A difração só se torna expressiva quando o comprimento de onda λ é da ordem de grandeza da fenda/abertura.",
               "stepByStepSolution": "As ondas sonoras audíveis têm comprimento de onda em torno de 1 metro (ordem da abertura da porta), sofrendo forte difração. A luz visível tem comprimento da ordem de nanômetros (~500 nm), propagando-se em linha reta sem difração perceptível macroscópica (Alternativa C)."
             }
@@ -715,13 +715,13 @@
               "title": "ENEM: Fones com Cancelamento de Ruído Ativo",
               "problemStatement": "Fones de ouvido modernos com cancelamento ativo de ruído possuem um microfone embutido que capta o barulho sonoro externo (como o zumbido contínuo das turbinas de um avião) e um circuito eletrônico que gera instantaneamente um sinal acústico transmitido ao ouvido. O fenômeno ondulatório que viabiliza a anulação desse ruído ambiente é a:",
               "options": [
-                "Interferência totalmente destrutiva entre ondas em oposição de fase.",
-                "Polarização mecânica da onda sonora.",
+                "Ressonância das frequências graves nas conchas acústicas.",
                 "Reflexão difusa na carcaça do fone.",
-                "Refração acústica para frequências inaudíveis de ultrassom.",
-                "Ressonância das frequências graves nas conchas acústicas."
+                "Polarização mecânica da onda sonora.",
+                "Interferência totalmente destrutiva entre ondas em oposição de fase.",
+                "Refração acústica para frequências inaudíveis de ultrassom."
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "hint": "Superpor crista com vale provoca subtração de amplitudes, zerando a oscilação.",
               "stepByStepSolution": "O circuito processa o ruído e emite uma onda com a mesma frequência e amplitude, porém em oposição de fase de 180° (defasagem de meio comprimento de onda), gerando interferência destrutiva que anula o som percebido (Alternativa C)."
             }
@@ -751,13 +751,13 @@
               "title": "ENEM: Altura e Timbre em Instrumentos Musicais",
               "problemStatement": "Quando um trompete e um clarinete tocam exatamente a mesma nota musical Dó central com a mesma intensidade sonora em uma orquestra sinfônica, um ouvinte atento consegue distinguir com facilidade qual é o som de cada instrumento. Essa capacidade de distinção deve-se à diferença de:",
               "options": [
-                "Frequência fundamental emitida pelas palhetas e bocais.",
                 "Timbre, associado ao formato complexo da onda resultante da combinação de harmônicos.",
-                "Altura sonora das notas.",
+                "Velocidade de propagação do som de cada instrumento no ar.",
                 "Intensidade e amplitude da onda primária.",
-                "Velocidade de propagação do som de cada instrumento no ar."
+                "Altura sonora das notas.",
+                "Frequência fundamental emitida pelas palhetas e bocais."
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "hint": "A nota é a mesma (mesma frequência) e o volume é o mesmo (mesma amplitude). O que diferencia instrumentos diferentes tocando a mesma nota é o timbre.",
               "stepByStepSolution": "O timbre é a qualidade fisiológica que permite diferenciar sons de mesma frequência e intensidade emitidos por fontes distintas, devido à quantidade e intensidade dos harmônicos secundários que acompanham a fundamental (Alternativa D)."
             }
@@ -787,13 +787,13 @@
               "title": "ENEM: Efeito Doppler e Aproximação de Veículo",
               "problemStatement": "Um pedestre aguarda na calçada quando uma ambulância se aproxima em alta velocidade com a sirene ligada. Comparando o som ouvido pelo pedestre durante a aproximação com o som ouvido quando a ambulância está parada em repouso no hospital, constata-se que o pedestre percebe um som:",
               "options": [
-                "De frequência aparente mais baixa (mais grave).",
+                "De frequência aparente mais alta (mais agudo).",
                 "Com menor amplitude e mesmo timbre.",
-                "Cuja frequência oscila aleatoriamente entre grave e agudo.",
                 "De mesma frequência, porém com velocidade de propagação maior.",
-                "De frequência aparente mais alta (mais agudo)."
+                "Cuja frequência oscila aleatoriamente entre grave e agudo.",
+                "De frequência aparente mais baixa (mais grave)."
               ],
-              "correctIndex": 4,
+              "correctIndex": 0,
               "hint": "Na aproximação relativa, as frentes de onda são comprimidas, aumentando o número de cristas que chegam ao ouvido por segundo.",
               "stepByStepSolution": "Pelo Efeito Doppler, quando a fonte emissora se aproxima do observador parado, a frequência aparente percebida é superior à frequência real emitida pela sirene (som mais agudo) (Alternativa B)."
             }
@@ -834,13 +834,13 @@
               "title": "ENEM: Câmera Escura de Orifício e Imagem Invertida",
               "problemStatement": "Uma vela acesa de 12 cm de altura está posicionada a 60 cm do orifício de uma câmera escura com profundidade interna de 20 cm. A altura da imagem projetada no anteparo da face posterior da câmera é de:",
               "options": [
+                "6 cm",
                 "2 cm",
                 "4 cm",
-                "6 cm",
-                "10 cm",
-                "8 cm"
+                "8 cm",
+                "10 cm"
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "hint": "Aplique a relação de semelhança da câmera escura: i / o = p' / p.",
               "stepByStepSolution": "i / 12 = 20 / 60 -> i / 12 = 1 / 3 -> i = 12 / 3 = 4 cm."
             }
@@ -870,13 +870,13 @@
               "title": "ENEM: Espelhos Convexos em Segurança de Ônibus",
               "problemStatement": "Em portas traseiras de ônibus urbanos e em corredores de supermercados, utilizam-se espelhos esféricos convexos para monitorar passageiros e clientes. A principal vantagem óptica desses espelhos em relação aos espelhos planos convencionais é que eles:",
               "options": [
-                "Formam imagens reais e invertidas projetadas sobre o motorista.",
                 "Possuem maior campo visual, conjugando imagens sempre virtuais, direitas e reduzidas.",
-                "Eliminam completamente a reflexão de raios ultravioleta.",
+                "Formam imagens reais e invertidas projetadas sobre o motorista.",
                 "Aumentam o tamanho aparente dos objetos, facilitando a leitura de detalhes.",
-                "Invertem a orientação das cores dos objetos refletidos."
+                "Invertem a orientação das cores dos objetos refletidos.",
+                "Eliminam completamente a reflexão de raios ultravioleta."
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "hint": "O espelho convexo diminui o tamanho das imagens para fazer caber um ângulo de visão muito maior.",
               "stepByStepSolution": "O espelho esférico convexo conjuga exclusivamente imagens virtuais, direitas e menores que o objeto, proporcionando um campo visual muito mais amplo para vigilância (Alternativa C)."
             }
@@ -906,13 +906,13 @@
               "title": "ENEM: Fibra Óptica e Reflexão Interna Total",
               "problemStatement": "Cabos submarinos de fibra óptica conduzem gigabits de dados por segundo por meio de pulsos de luz laser guiados em seu interior sem escapar pelas laterais. Para que a luz viaje confinada no núcleo transparente da fibra óptica, é condição necessária que:",
               "options": [
-                "O índice de refração do núcleo seja maior que o índice de refração da casca externa.",
-                "A frequência da onda luminosa varie continuamente ao longo do percurso.",
                 "A velocidade da luz no núcleo seja maior que a velocidade no vácuo.",
+                "A casca externa da fibra seja feita de ouro ou prata espelhada.",
+                "A frequência da onda luminosa varie continuamente ao longo do percurso.",
                 "A luz incida na parede da fibra com ângulo inferior ao ângulo limite.",
-                "A casca externa da fibra seja feita de ouro ou prata espelhada."
+                "O índice de refração do núcleo seja maior que o índice de refração da casca externa."
               ],
-              "correctIndex": 0,
+              "correctIndex": 4,
               "hint": "A reflexão total só ocorre quando a luz tenta passar do meio MAIS refringente para o MENOS refringente (n_núcleo > n_casca).",
               "stepByStepSolution": "A condição fundamental da reflexão total é viajar de um meio de maior índice de refração para outro de menor índice (n_núcleo > n_casca) sob ângulo maior que o limite (Alternativa B)."
             }
@@ -944,9 +944,9 @@
               "options": [
                 "+0,05 di",
                 "+5,0 di",
+                "+20,0 di",
                 "+0,20 di",
-                "+2,0 di",
-                "+20,0 di"
+                "+2,0 di"
               ],
               "correctIndex": 1,
               "hint": "Converta 20 cm em metros (f = 0,20 m) e calcule V = 1 / f.",
@@ -978,10 +978,10 @@
               "title": "ENEM: Correção da Miopia com Lentes Divergentes",
               "problemStatement": "Um jovem com miopia apresenta dificuldade para enxergar com nitidez objetos situados longe de seus olhos, pois as imagens de objetos distantes convergem e se formam antes de atingirem a retina. A prescrição oftalmológica correta para compensar essa ametropia e projetar a imagem sobre a retina consiste no uso de óculos com lentes:",
               "options": [
-                "Convergentes de vergência positiva.",
+                "Polarizadas sem poder dióptrico.",
                 "Divergentes de vergência negativa.",
                 "Cilíndricas de curvatura variável.",
-                "Polarizadas sem poder dióptrico.",
+                "Convergentes de vergência positiva.",
                 "Bifocais com prisma dispersor."
               ],
               "correctIndex": 1,
@@ -1025,13 +1025,13 @@
               "title": "Aplicação ENEM: Eletrodinâmica",
               "problemStatement": "Um resistor ôhmico de resistência constante igual a 20 Ω é submetido a uma diferença de potencial de 120 V. A intensidade da corrente elétrica que o atravessa e a potência dissipada por efeito Joule são, respectivamente:",
               "options": [
-                "0,16 A e 720 W",
                 "6 A e 720 W",
+                "2,4 A e 288 W",
+                "0,16 A e 720 W",
                 "6 A e 2.400 W",
-                "12 A e 1.440 W",
-                "2,4 A e 288 W"
+                "12 A e 1.440 W"
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "hint": "Aplique a 1ª Lei de Ohm: i = U / R. Para a potência: P = U · i.",
               "stepByStepSolution": "Alternativa correta: Letra A.\n\nCálculo Passo a Passo:\n1. Pela 1ª Lei de Ohm: i = U / R = 120 V / 20 Ω = 6 A.\n2. Potência dissipada: P = U · i = 120 V · 6 A = 720 W (ou P = R · i² = 20 · 36 = 720 W)."
             }
@@ -1061,13 +1061,13 @@
               "title": "ENEM: Resistência de Cabo Subterrâneo (2ª Lei de Ohm)",
               "problemStatement": "Um técnico de eletricidade precisa substituir uma linha de cobre de comprimento L e seção reta circular de diâmetro D por outra de mesmo material e mesmo comprimento L, mas que apresente apenas a metade da resistência elétrica original. Para isso, o diâmetro da nova fiação deve ser multiplicado pelo fator:",
               "options": [
-                "√2",
-                "2",
-                "2√2",
                 "4",
-                "1/2"
+                "2√2",
+                "1/2",
+                "√2",
+                "2"
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "hint": "R = ρ * L / A. Para reduzir a resistência pela metade, a área A deve dobrar. Como A = π * (D/2)², duplicar a área exige multiplicar o diâmetro por √2.",
               "stepByStepSolution": "R_novo = R / 2 -> A_novo = 2 * A_antigo.\nπ (D_novo)² / 4 = 2 * [π (D_antigo)² / 4] -> (D_novo)² = 2 (D_antigo)² -> D_novo = D_antigo * √2."
             }
@@ -1097,13 +1097,13 @@
               "title": "ENEM: Dimensionamento de Fusível de Proteção",
               "problemStatement": "Em uma bancada de laboratório com tensão de 120 V, deseja-se ligar simultaneamente um aquecedor de 600 W, duas lâmpadas de 60 W cada e um ferro elétrico de 720 W. Todos os aparelhos são ligados em paralelo e protegidos por um único fusível. O valor comercial mínimo de corrente que esse fusível deve suportar sem queimar é de:",
               "options": [
-                "12 A",
-                "20 A",
-                "15 A",
                 "5 A",
-                "10 A"
+                "10 A",
+                "12 A",
+                "15 A",
+                "20 A"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "Calcule a potência total somando todos os aparelhos e determine a corrente total com P = U * I.",
               "stepByStepSolution": "P_total = 600 + 2*60 + 720 = 600 + 120 + 720 = 1.440 W.\nI_total = P_total / U = 1.440 W / 120 V = 12 A.\nO fusível deve suportar pelo menos 12 A."
             }
@@ -1133,13 +1133,13 @@
               "title": "ENEM: Repulsão Eletrostática e Lei de Coulomb",
               "problemStatement": "Duas partículas eletrizadas com cargas idênticas positivas Q encontram-se fixas no vácuo a uma distância d, repelindo-se com força de intensidade F. Se a distância entre elas for triplicada (3d) e o valor de cada carga for dobrado (2Q), a nova força eletrostática entre as partículas passará a ser de:",
               "options": [
-                "F/9",
                 "2F/3",
                 "6F",
                 "4F/9",
-                "4F/3"
+                "4F/3",
+                "F/9"
               ],
-              "correctIndex": 3,
+              "correctIndex": 2,
               "hint": "Substitua 2Q e 3d na fórmula de Coulomb: F' = k * (2Q * 2Q) / (3d)².",
               "stepByStepSolution": "F_inicial = k * Q² / d².\nF_final = k * (2Q)² / (3d)² = k * 4Q² / (9d²) = (4/9) * (k Q² / d²) = 4F / 9."
             }
@@ -1169,13 +1169,13 @@
               "title": "ENEM: Blindagem Eletrostática em Telefonia Celular",
               "problemStatement": "Um estudante coloca seu telefone celular dentro de uma caixa de biscoitos inteiramente metálica e fecha bem a tampa de metal. Ao ligar de outro aparelho para o telefone contido na caixa, ouve a mensagem de que o número está fora de área de cobertura. O celular não recebeu o sinal eletromagnético porque:",
               "options": [
+                "A tampa fechada impediu a passagem do ar, inviabilizando o som da ligação.",
                 "O metal absorveu a bateria do celular.",
                 "O magnetismo do metal inverteu a polaridade da antena receptora.",
-                "O campo gravitacional dentro da caixa impediu a oscilação das ondas de rádio.",
-                "A tampa fechada impediu a passagem do ar, inviabilizando o som da ligação.",
-                "As paredes metálicas atuaram como blindagem eletrostática (Gaiola de Faraday)."
+                "As paredes metálicas atuaram como blindagem eletrostática (Gaiola de Faraday).",
+                "O campo gravitacional dentro da caixa impediu a oscilação das ondas de rádio."
               ],
-              "correctIndex": 4,
+              "correctIndex": 3,
               "hint": "Lembre-se do comportamento de condutores metálicos fechados: as cargas livres na superfície reorganizam-se e anulam o campo elétrico no interior.",
               "stepByStepSolution": "A caixa metálica atua como uma Gaiola de Faraday, bloqueando a penetração de ondas eletromagnéticas de radiofrequência no seu interior (Alternativa B)."
             }
@@ -1205,13 +1205,13 @@
               "title": "ENEM: Frenagem Magnética e Lei de Lenz",
               "problemStatement": "Um forte ímã de neodímio é solto verticalmente dentro de um longo tubo oco de cobre (material não ferromagnético condutor). Observa-se que, após instantes, o ímã atinge uma velocidade terminal lenta e constante, caindo muito mais devagar do que se caísse no ar livre. Isso ocorre porque:",
               "options": [
-                "A variação de fluxo magnético induz correntes no cobre que geram um campo contrário à queda (Lei de Lenz).",
                 "O campo gravitacional da Terra é anulado pelo cobre condutor.",
+                "A variação de fluxo magnético induz correntes no cobre que geram um campo contrário à queda (Lei de Lenz).",
                 "O ar dentro do tubo sofre compressão adiabática que segura o ímã.",
                 "O cobre atrai magneticamente o ímã como o ferro faria.",
                 "A carga eletrostática acumulada no ímã repele os elétrons do tubo."
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "hint": "A queda do ímã cria variação de fluxo magnético nas paredes do tubo, gerando correntes circulares de Foucault que produzem força retardadora ascendente.",
               "stepByStepSolution": "Pela Lei de Faraday-Lenz, a descida do ímã altera o fluxo magnético no tubo de cobre, induzindo correntes parasitas (de Foucault). Essas correntes geram um campo magnético que se opõe ao movimento da fonte indutora, freando a queda (Alternativa C)."
             }
@@ -1252,13 +1252,13 @@
               "title": "ENEM: Painéis Solares e Efeito Fotoelétrico",
               "problemStatement": "Em células fotovoltaicas, a luz solar incidente promove a ejeção de elétrons do silício, estabelecendo uma corrente elétrica útil. De acordo com a teoria quântica formulada por Einstein para o Efeito Fotoelétrico, se aumentarmos a INTENSIDADE da luz incidente mantendo inalterada a sua frequência (acima da frequência de corte), o efeito observado será:",
               "options": [
-                "O aumento no número de elétrons ejetados por segundo (maior corrente).",
-                "O aumento na velocidade e na energia cinética máxima de cada elétron ejetado.",
                 "A diminuição da corrente elétrica gerada pelo painel.",
-                "A alteração da função trabalho do material semicondutor.",
-                "A interrupção imediata da emissão de fotoelétrons."
+                "O aumento na velocidade e na energia cinética máxima de cada elétron ejetado.",
+                "A interrupção imediata da emissão de fotoelétrons.",
+                "O aumento no número de elétrons ejetados por segundo (maior corrente).",
+                "A alteração da função trabalho do material semicondutor."
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "hint": "Maior intensidade luminosa = mais fótons chegando por segundo = mais elétrons arrancados por segundo.",
               "stepByStepSolution": "A energia de cada fóton depende unicamente de sua frequência (E = h*f). Aumentar a intensidade luminosa significa aumentar a densidade de fluxo de fótons, arrancando um número maior de elétrons por unidade de tempo e elevando a corrente elétrica (Alternativa C)."
             }
@@ -1288,13 +1288,13 @@
               "title": "ENEM: Datação de Fósseis por Carbono-14",
               "problemStatement": "O Carbono-14 é um isótopo radioativo com tempo de meia-vida de aproximadamente 5.730 anos, absorvido pelos seres vivos durante a respiração e alimentação. Em um fragmento de madeira fóssil retirado de um sítio arqueológico, constatou-se que a atividade do Carbono-14 estava reduzida a 12,5% (1/8) do valor medido em uma árvore viva de mesma espécie. A idade estimada desse artefato é de aproximadamente:",
               "options": [
-                "17.190 anos",
-                "5.730 anos",
                 "22.920 anos",
+                "11.460 anos",
+                "17.190 anos",
                 "28.650 anos",
-                "11.460 anos"
+                "5.730 anos"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "1/8 corresponde a 1/(2³), ou seja, decorreram 3 períodos completos de meia-vida.",
               "stepByStepSolution": "A fração remanescente é 12,5% = 1/8 = (1/2)³ -> n = 3 meias-vidas.\nTempo total = 3 * 5.730 anos = 17.190 anos."
             }
@@ -1325,9 +1325,9 @@
               "problemStatement": "No interior do núcleo do Sol, reações contínuas de fusão nuclear transformam quatro prótons de hidrogênio em um núcleo estável de hélio. A massa do núcleo de hélio resultante é cerca de 0,7% menor que a soma das massas dos quatro prótons iniciais. De acordo com a relação relativística de Einstein E = Δm · c², essa massa faltante (defeito de massa) converte-se em:",
               "options": [
                 "Radiação térmica e eletromagnética que aquece o sistema solar.",
-                "Campos magnéticos estáticos nas manchas solares.",
                 "Gás ozônio absorvido na alta atmosfera da Terra.",
                 "Matéria escura gravitacional estável.",
+                "Campos magnéticos estáticos nas manchas solares.",
                 "Aceleração angular na rotação do próprio Sol."
               ],
               "correctIndex": 0,

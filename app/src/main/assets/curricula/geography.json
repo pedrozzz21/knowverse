@@ -36,13 +36,13 @@
               "title": "ENEM: Análise Crítica de Projeções Cartográficas",
               "problemStatement": "A projeção de Mercator, concebida no século XVI durante a expansão marítima europeia, mantém os ângulos e as formas exatas dos continentes, mas apresenta distorções significativas de área. Do ponto de vista geopolítico e ideológico, essa projeção foi criticada no século XX porque:",
               "options": [
-                "Eliminou a linha do Equador e os meridianos para dificultar as rotas de navegação comercial.",
-                "Inverteu os polos magnéticos para favorecer os países recém-descolonizados da África.",
                 "Representou a Antártica como o centro econômico e político do planeta Terra.",
+                "Hipertrofiou as massas continentais do Hemisfério Norte, reforçando uma visão eurocêntrica do mundo.",
+                "Eliminou a linha do Equador e os meridianos para dificultar as rotas de navegação comercial.",
                 "Subestimou o tamanho da Europa e da América do Norte em benefício dos continentes tropicais.",
-                "Hipertrofiou as massas continentais do Hemisfério Norte, reforçando uma visão eurocêntrica do mundo."
+                "Inverteu os polos magnéticos para favorecer os países recém-descolonizados da África."
               ],
-              "correctIndex": 4,
+              "correctIndex": 1,
               "hint": "Mercator preserva formas, mas exagera áreas nas proximidades dos polos (altas latitudes), fazendo a Groenlândia parecer maior que a América do Sul.",
               "stepByStepSolution": "A alternativa A está correta. A projeção cilíndrica conforme de Mercator preserva as formas e os ângulos para facilitar a navegação em linha reta, mas distorce desproporcionalmente as áreas conforme se afasta do Equador. Com isso, a Europa e as potências do Norte aparecem gigantescas em comparação aos países do Sul Global, consolidando uma perspectiva eurocêntrica."
             },
@@ -51,13 +51,13 @@
               "title": "ENEM: Relação entre Escala e Nível de Detalhe",
               "problemStatement": "Um pesquisador precisa analisar a distribuição dos lotes urbanos e das redes de saneamento de um determinado bairro, enquanto outro estuda as bacias hidrográficas em escala continental. Para suas respectivas pesquisas, os mapas mais adequados devem possuir:",
               "options": [
+                "Grande escala para o estudo do bairro e pequena escala para o estudo continental.",
                 "A mesma escala reduzida em ambos os estudos para assegurar comparabilidade métrica.",
-                "Nenhuma escala numérica, utilizando apenas escalas gráficas sem unidades de medida.",
                 "Pequena escala para o estudo do bairro e grande escala para o estudo continental.",
-                "Escala 1:1.000.000 para o bairro e escala 1:1.000 para o continente.",
-                "Grande escala para o estudo do bairro e pequena escala para o estudo continental."
+                "Nenhuma escala numérica, utilizando apenas escalas gráficas sem unidades de medida.",
+                "Escala 1:1.000.000 para o bairro e escala 1:1.000 para o continente."
               ],
-              "correctIndex": 4,
+              "correctIndex": 0,
               "hint": "Grande escala = denominador menor = riqueza de detalhes (ideal para bairros). Pequena escala = denominador gigante = visão panorâmica (continentes).",
               "stepByStepSolution": "A alternativa A está correta. O estudo de um bairro exige grande riqueza de detalhes e pouco nível de redução (grande escala, ex: 1:5.000). Já a análise continental abrange uma área imensa e exige alta generalização gráfica com grande redução (pequena escala, ex: 1:5.000.000)."
             }
@@ -87,13 +87,13 @@
               "title": "ENEM: Estrutura Geológica e Mineração no Brasil",
               "problemStatement": "As grandes jazidas de minério de ferro exploradas no Quadrilátero Ferrífero (Minas Gerais) e na Serra dos Carajás (Pará) estão geologicamente associadas a qual estrutura do relevo brasileiro?",
               "options": [
-                "Bacias sedimentares jovens do período Terciário, ricas em hidrocarbonetos e xisto betuminoso.",
-                "Escudos cristalinos e crátons de idade pré-cambriana, formados por rochas magmáticas e metamórficas antigas.",
-                "Zonas de dobramentos modernos originadas pela convergência entre a Placa de Nazca e a Placa Sul-Americana.",
                 "Planícies aluviais litorâneas formadas exclusivamente por sedimentos marinhos recentes do Quaternário.",
-                "Dorsais mesoceânicas de vulcanismo ativo localizadas no interior do continente."
+                "Zonas de dobramentos modernos originadas pela convergência entre a Placa de Nazca e a Placa Sul-Americana.",
+                "Bacias sedimentares jovens do período Terciário, ricas em hidrocarbonetos e xisto betuminoso.",
+                "Dorsais mesoceânicas de vulcanismo ativo localizadas no interior do continente.",
+                "Escudos cristalinos e crátons de idade pré-cambriana, formados por rochas magmáticas e metamórficas antigas."
               ],
-              "correctIndex": 1,
+              "correctIndex": 4,
               "hint": "Minerais metálicos (ferro, manganês, ouro) ocorrem em terrenos cristalinos muito antigos (Pré-Cambriano). Combustíveis fósseis (petróleo, carvão) ocorrem em bacias sedimentares.",
               "stepByStepSolution": "A alternativa A está correta. Os minerais metálicos encontram-se nos escudos cristalinos ou crátons (cerca de 36% do relevo brasileiro), formados nas eras Arqueozoica e Proterozoica há bilhões de anos, onde a atuação de calor e pressão metamorfoseou a litosfera originando expressivas jazidas minerais."
             }
@@ -123,13 +123,13 @@
               "title": "ENEM: Mecanismo dos Rios Voadores e Clima no Brasil",
               "problemStatement": "A Floresta Amazônica desempenha papel determinante na dinâmica das chuvas nas regiões Centro-Oeste e Sudeste do Brasil através do fenômeno conhecido como 'Rios Voadores'. Esse mecanismo baseia-se fundamentalmente na:",
               "options": [
-                "Incineração de biomassa vegetal que produz núcleos de condensação artificiais em larga escala no outono.",
-                "Descarga subterrânea do Aquífero Alter do Chão que escoa diretamente para a bacia do Rio Tietê.",
+                "Atuação exclusiva da massa Tropical Continental (mTc), que carrega umidade do Deserto do Atacama para o Brasil.",
                 "Elevada evapotranspiração da floresta que alimenta a massa Equatorial Continental (mEc), cujo vapor é bloqueado e defletido pela Cordilheira dos Andes.",
+                "Incineração de biomassa vegetal que produz núcleos de condensação artificiais em larga escala no outono.",
                 "Infiltração de correntes marinhas frias vindas do Oceano Pacífico que transpõem os Andes em altas altitudes.",
-                "Atuação exclusiva da massa Tropical Continental (mTc), que carrega umidade do Deserto do Atacama para o Brasil."
+                "Descarga subterrânea do Aquífero Alter do Chão que escoa diretamente para a bacia do Rio Tietê."
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "A floresta bombeia vapor d'água para a atmosfera (mEc). Esse vapor viaja para oeste, esbarra na Cordilheira dos Andes e faz uma curva em direção ao Centro-Sul.",
               "stepByStepSolution": "A alternativa A está correta. A massa de ar Equatorial Continental (mEc), aquecida e ultraúmida pela intensa evapotranspiração das árvores amazônicas, transporta gigantescos volumes de vapor d'água para o oeste. Ao encontrar a barreira orográfica dos Andes, o fluxo de ar é desviado para o Centro-Oeste e Sudeste, regulando o regime hídrico e a agricultura do país."
             }
@@ -159,13 +159,13 @@
               "title": "ENEM: Importância do Rio São Francisco",
               "problemStatement": "O Rio São Francisco é historicamente denominado 'Rio da Integração Nacional'. Apesar de atravessar uma das áreas mais secas do país (o Polígono das Secas), ele mantém sua perenidade ao longo do ano inteiro porque:",
               "options": [
-                "Suas nascentes estão situadas na Serra da Canastra (MG), sob o clima tropical úmido com altos índices de pluviosidade.",
                 "Atravessa áreas desérticas onde a evaporação superficial foi totalmente neutralizada por barramentos.",
-                "Alimenta-se exclusivamente de água salobra vinda da evaporação do Oceano Atlântico em sua foz.",
+                "Suas nascentes estão situadas na Serra da Canastra (MG), sob o clima tropical úmido com altos índices de pluviosidade.",
+                "Seu leito está totalmente localizado em uma fossa tectônica com degelo regular no inverno.",
                 "Recebe água canalizada do Rio Amazonas através de eclusas transcontinentais artificiais.",
-                "Seu leito está totalmente localizado em uma fossa tectônica com degelo regular no inverno."
+                "Alimenta-se exclusivamente de água salobra vinda da evaporação do Oceano Atlântico em sua foz."
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "hint": "As cabeceiras do São Francisco ficam em Minas Gerais, região com estações chuvosas fartas que alimentam o curso d'água antes de ele adentrar o Semiárido.",
               "stepByStepSolution": "A alternativa A está correta. O São Francisco é um rio perene alóctone (cruza o Semiárido sem secar) porque suas cabeceiras e principais afluentes da margem esquerda drenam áreas de relevo planáltico em Minas Gerais, caracterizadas por chuvas abundantes e regulares no verão."
             }
@@ -195,11 +195,11 @@
               "title": "ENEM: Dinâmica da Inversão Térmica nas Cidades",
               "problemStatement": "Em grandes centros urbanos industrializados, nas manhãs frias de inverno, verifica-se com frequência o fenômeno da inversão térmica. Esse fenômeno gera graves problemas de saúde pública para a população urbana porque:",
               "options": [
+                "A pressão atmosférica cai a zero, impedindo a oxigenação dos pulmões e a circulação de pedestres.",
                 "A umidade relativa do ar atinge 100%, dissolvendo o asfalto e gerando gases de combustão espontânea.",
-                "A radiação ultravioleta é totalmente extinta, provocando o resfriamento permanente de todos os edifícios.",
                 "O aumento descontrolado dos ventos alísios dispersa os poluentes para as áreas rurais vizinhas.",
                 "Uma camada superior de ar quente bloqueia a ascensão do ar frio superficial, aprisionando poluentes tóxicos junto ao nível do solo.",
-                "A pressão atmosférica cai a zero, impedindo a oxigenação dos pulmões e a circulação de pedestres."
+                "A radiação ultravioleta é totalmente extinta, provocando o resfriamento permanente de todos os edifícios."
               ],
               "correctIndex": 3,
               "hint": "Normalmente o ar frio fica em cima e o quente embaixo (que sobe). Na inversão térmica, o ar frio fica preso embaixo com a poluição, sob uma tampa de ar quente.",
@@ -242,13 +242,13 @@
               "title": "ENEM: A Lei de Terras de 1850 e a Concentração Fundiária",
               "problemStatement": "Promulgada no mesmo ano em que o Brasil extinguiu formalmente o tráfico transatlântico de escravizados (1850), a Lei de Terras (Lei nº 601) estabeleceu que as terras devolutas só poderiam ser adquiridas por compra em dinheiro à vista. O impacto social direto dessa legislação para a estrutura agrária brasileira foi:",
               "options": [
-                "Entregar as terras públicas aos povos indígenas do interior como forma de reparação histórica.",
-                "Promover a desapropriação imediata de todas as fazendas cafeeiras do Vale do Paraíba.",
-                "Extinguir os impostos sobre exportação de café e açúcar para estimular a agricultura familiar.",
                 "Garantir a divisão equitativa de todos os latifúndios entre as famílias camponesas sem terra.",
-                "Bloquear o acesso dos trabalhadores livres, libertos e imigrantes pobres à propriedade legal da terra, assegurando mão de obra cativa para os latifúndios."
+                "Extinguir os impostos sobre exportação de café e açúcar para estimular a agricultura familiar.",
+                "Bloquear o acesso dos trabalhadores livres, libertos e imigrantes pobres à propriedade legal da terra, assegurando mão de obra cativa para os latifúndios.",
+                "Promover a desapropriação imediata de todas as fazendas cafeeiras do Vale do Paraíba.",
+                "Entregar as terras públicas aos povos indígenas do interior como forma de reparação histórica."
               ],
-              "correctIndex": 4,
+              "correctIndex": 2,
               "hint": "Ao exigir compra à vista em leilão público, a lei proibiu a posse por ocupação e impediu que escravizados libertos e imigrantes pobres se tornassem pequenos proprietários.",
               "stepByStepSolution": "A alternativa A está correta. A Lei de Terras de 1850 foi concebida pela elite senhorial cafeeira para transformar a terra em mercadoria cara e inacessível às classes populares. Sem recursos para comprar terras em leilão, os trabalhadores empobrecidos ficavam subjugados ao trabalho assalariado ou de parceria nas grandes fazendas."
             }
@@ -278,13 +278,13 @@
               "title": "ENEM: Agricultura Familiar e Segurança Alimentar",
               "problemStatement": "Dados sucessivos do Censo Agropecuário demonstram que, embora ocupe menos de um quarto da área agricultável do país, a agricultura familiar desempenha um papel socioeconômico vital no Brasil porque:",
               "options": [
-                "Concentra 95% do volume financeiro das exportações brasileiras de soja e minério de ferro.",
-                "Recebe a totalidade dos subsídios estatais de crédito rural oferecidos pelo Plano Safra.",
                 "Responde pela maioria dos postos de trabalho no campo e fornece a maior parte dos alimentos básicos consumidos pela população no mercado interno.",
+                "Opera exclusivamente com monoculturas de eucalipto voltadas à indústria de celulose internacional.",
+                "Recebe a totalidade dos subsídios estatais de crédito rural oferecidos pelo Plano Safra.",
                 "Utiliza colheitadeiras autônomas guiadas por satélite com eliminação completa do emprego humano.",
-                "Opera exclusivamente com monoculturas de eucalipto voltadas à indústria de celulose internacional."
+                "Concentra 95% do volume financeiro das exportações brasileiras de soja e minério de ferro."
               ],
-              "correctIndex": 2,
+              "correctIndex": 0,
               "hint": "Pense no prato de comida do brasileiro: feijão, arroz, mandioca, leite, hortaliças e ovos vêm prioritariamente da agricultura familiar e camponesa.",
               "stepByStepSolution": "A alternativa A está correta. A agricultura familiar e camponesa é o esteio da segurança alimentar do Brasil, respondendo pela maior fatia dos alimentos que abastecem os lares e feiras livres, além de fixar o homem no campo gerando a maioria absoluta dos empregos do meio rural."
             }
@@ -314,13 +314,13 @@
               "title": "ENEM: A Modernização Conservadora da Revolução Verde",
               "problemStatement": "A introdução do pacote tecnológico da Revolução Verde no Brasil a partir dos anos 1970 é frequentemente descrita pelos geógrafos como uma 'modernização conservadora' porque:",
               "options": [
-                "Proibiu o cultivo de soja e milho no Centro-Oeste para proteger os cerrados e florestas.",
+                "Promoveu intensa tecnificação e mecanização das fazendas sem alterar a estrutura desigual de concentração de terras.",
+                "Eliminou as multinacionais do setor de sementes e nacionalizou os frigoríficos.",
                 "Priorizou o cultivo de alimentos orgânicos com adubação exclusivamente natural.",
                 "Distribuiu terras para todos os camponeses e baniu o uso de agrotóxicos em território nacional.",
-                "Promoveu intensa tecnificação e mecanização das fazendas sem alterar a estrutura desigual de concentração de terras.",
-                "Eliminou as multinacionais do setor de sementes e nacionalizou os frigoríficos."
+                "Proibiu o cultivo de soja e milho no Centro-Oeste para proteger os cerrados e florestas."
               ],
-              "correctIndex": 3,
+              "correctIndex": 0,
               "hint": "Modernizou a técnica (tratores, veneno, sementes transgênicas), mas conservou a estrutura social arcaica (o latifúndio concentrador).",
               "stepByStepSolution": "A alternativa A está correta. O termo 'modernização conservadora' designa a modernização da base técnica produtiva das lavouras (tratores, fertilizantes, defensivos químicos) mantendo intacta e até aprofundando a secular concentração fundiária e a exclusão social no campo."
             }
@@ -350,10 +350,10 @@
               "title": "ENEM: Conflitos Territoriais na Região do MATOPIBA",
               "problemStatement": "A região do MATOPIBA (confluência de Maranhão, Tocantins, Piauí e Bahia) consolidou-se como a mais recente fronteira agrícola de expansão da soja e do milho no Brasil. Essa expansão tem gerado intensos conflitos territoriais motivados principalmente por:",
               "options": [
-                "Migração em massa de fazendeiros da Europa que compraram todas as terras devolutas sem intermediários.",
-                "Disputas diplomáticas entre os quatro estados pela posse de jazidas de petróleo marítimo no interior do país.",
                 "Tentativa do governo federal de proibir a exportação de grãos produzidos fora do estado de São Paulo.",
                 "Queda dos preços internacionais dos grãos que provocou o abandono total das lavouras pelos grandes produtores.",
+                "Disputas diplomáticas entre os quatro estados pela posse de jazidas de petróleo marítimo no interior do país.",
+                "Migração em massa de fazendeiros da Europa que compraram todas as terras devolutas sem intermediários.",
                 "Apropriação de terras e avanço do agronegócio sobre territórios tradicionalmente ocupados por comunidades geraizeiras, quilombolas e posseiros."
               ],
               "correctIndex": 4,
@@ -397,13 +397,13 @@
               "title": "ENEM: O Bônus Demográfico e seus Desafios",
               "problemStatement": "O Brasil vivencia nas primeiras décadas do século XXI o chamado 'bônus demográfico', fase da transição demográfica caracterizada por:",
               "options": [
-                "Aumento desenfreado da taxa de fecundidade que atingiu mais de 7 filhos por mulher.",
-                "Igualdade matemática perfeita entre o número de nascimentos e o número de óbitos em todas as capitais.",
                 "Extinção completa da população economicamente ativa devido ao avanço da inteligência artificial.",
-                "Redução imediata e definitiva de todos os gastos públicos com saúde e educação básica.",
-                "Maior proporção de pessoas em idade ativa e produtiva em relação ao número de crianças e idosos dependentes."
+                "Igualdade matemática perfeita entre o número de nascimentos e o número de óbitos em todas as capitais.",
+                "Maior proporção de pessoas em idade ativa e produtiva em relação ao número de crianças e idosos dependentes.",
+                "Aumento desenfreado da taxa de fecundidade que atingiu mais de 7 filhos por mulher.",
+                "Redução imediata e definitiva de todos os gastos públicos com saúde e educação básica."
               ],
-              "correctIndex": 4,
+              "correctIndex": 2,
               "hint": "O bônus demográfico acontece quando a maior parte da população está entre 15 e 64 anos, pronta para trabalhar e impulsionar a economia do país.",
               "stepByStepSolution": "A alternativa A está correta. O bônus demográfico (ou janela de oportunidade) é o período em que a razão de dependência cai ao seu nível mínimo, ou seja, a fatia da população em idade ativa (PIA - 15 a 64 anos) é significativamente maior do que a soma de crianças e idosos, criando condições ideais para a geração de riqueza e acúmulo previdenciário."
             }
@@ -434,10 +434,10 @@
               "problemStatement": "Em grandes regiões metropolitanas, como a de São Paulo, Rio de Janeiro e Belo Horizonte, milhões de trabalhadores realizam diariamente deslocamentos pendulares. Esse fenômeno é caracterizado por:",
               "options": [
                 "Êxodo permanente de moradores das capitais para trabalhar exclusivamente no extrativismo da Amazônia.",
-                "Viagens de férias turísticas realizadas por aposentados que se transferem para o litoral.",
                 "Mudança definitiva de cidade motivada exclusivamente por desastres ambientais e cheias de rios.",
+                "Migração forçada de trabalhadores que passam 6 meses no corte de cana e depois migram para a Europa.",
                 "Deslocamentos regulares de ida e volta entre o município de residência e o município de trabalho ou estudo, sem mudança definitiva de domicílio.",
-                "Migração forçada de trabalhadores que passam 6 meses no corte de cana e depois migram para a Europa."
+                "Viagens de férias turísticas realizadas por aposentados que se transferem para o litoral."
               ],
               "correctIndex": 3,
               "hint": "Pendular lembra o movimento do pêndulo do relógio: vai de manhã para o trabalho e volta à noite para casa na cidade dormitório.",
@@ -469,13 +469,13 @@
               "title": "ENEM: O Fenômeno Urbano da Conurbação",
               "problemStatement": "O intenso crescimento horizontal das metrópoles provocou em muitas regiões metropolitanas o fenômeno da conurbação. Esse conceito geográfico designa:",
               "options": [
-                "A unificação física e espacial das áreas urbanas de dois ou mais municípios vizinhos em decorrência de sua expansão contínua.",
-                "A construção de muralhas divisórias entre bairros ricos e periferias sob fiscalização do exército.",
-                "A criação de capitais planejadas no interior do país para desconcentrar as indústrias litorâneas.",
                 "A perda total de população de uma metrópole que é abandonada por seus moradores em direção ao campo.",
-                "O aumento desordenado da taxa de natalidade exclusivo em áreas rurais isoladas."
+                "A unificação física e espacial das áreas urbanas de dois ou mais municípios vizinhos em decorrência de sua expansão contínua.",
+                "O aumento desordenado da taxa de natalidade exclusivo em áreas rurais isoladas.",
+                "A construção de muralhas divisórias entre bairros ricos e periferias sob fiscalização do exército.",
+                "A criação de capitais planejadas no interior do país para desconcentrar as indústrias litorâneas."
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "hint": "Pense no limite entre cidades vizinhas onde você cruza uma rua e já está no outro município sem perceber nenhuma área rural entre eles.",
               "stepByStepSolution": "A alternativa A está correta. Conurbação é o processo pelo qual a expansão urbana contínua de duas ou mais cidades vizinhas faz com que suas manchas urbanas se encontrem e se fundam territorialmente, tornando imperceptível a fronteira geográfica entre os municípios no dia a dia da população."
             }
@@ -505,13 +505,13 @@
               "title": "ENEM: O Processo de Gentrificação Urbana",
               "problemStatement": "O processo de gentrificação, observado em diversas áreas centrais ou portuárias de metrópoles globais e brasileiras, tem como consequência social mais evidente:",
               "options": [
-                "A distribuição gratuita de apartamentos reformados para toda a população de baixa renda da cidade.",
-                "A perda de investimentos públicos e o esvaziamento comercial permanente da região revitalizada.",
-                "A proibição do tráfego de automóveis importados para incentivar o transporte hidroviário público.",
+                "A valorização imobiliária que encarece o custo de vida no bairro e força a expulsão das famílias populares tradicionais para as periferias distantes.",
                 "A demolição total dos edifícios históricos para construção exclusiva de favelas populares.",
-                "A valorização imobiliária que encarece o custo de vida no bairro e força a expulsão das famílias populares tradicionais para as periferias distantes."
+                "A proibição do tráfego de automóveis importados para incentivar o transporte hidroviário público.",
+                "A perda de investimentos públicos e o esvaziamento comercial permanente da região revitalizada.",
+                "A distribuição gratuita de apartamentos reformados para toda a população de baixa renda da cidade."
               ],
-              "correctIndex": 4,
+              "correctIndex": 0,
               "hint": "Revitalizar uma área sem política habitacional aumenta o valor do metro quadrado e dos aluguéis, expulsando os moradores pobres que não conseguem pagar os novos preços.",
               "stepByStepSolution": "A alternativa A está correta. A gentrificação ocorre quando uma intervenção urbanística valoriza esteticamente um bairro histórico ou degradado, atraindo empreendimentos imobiliários e comércio de elite. Com a alta exponencial dos aluguéis, preços de serviços e impostos, a população de menor renda residente histórica é forçada a deixar o local por não conseguir arcar com o novo custo de vida."
             }
@@ -553,12 +553,12 @@
               "problemStatement": "O capitalismo informacional ou cognitivo, consolidado a partir do final do século XX, distingue-se das fases industriais anteriores porque a geração de riqueza e a liderança de mercado deslocaram-se prioritariamente para:",
               "options": [
                 "A extração manual de carvão mineral em minas subterrâneas para alimentar fornos a lenha.",
-                "O controle de dados, pesquisa científica, desenvolvimento de softwares e serviços financeiros automatizados.",
+                "O monopólio exclusivo do transporte marítimo por navios a vela de madeira.",
                 "A produção artesanal de tecidos de lã sem o uso de qualquer ferramenta mecânica.",
-                "A proibição do comércio internacional de patentes para estimular o artesanato doméstico.",
-                "O monopólio exclusivo do transporte marítimo por navios a vela de madeira."
+                "O controle de dados, pesquisa científica, desenvolvimento de softwares e serviços financeiros automatizados.",
+                "A proibição do comércio internacional de patentes para estimular o artesanato doméstico."
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "hint": "Pense no que move as maiores empresas do mundo hoje (Google, Apple, Microsoft, Nvidia): não são chaminés de aço, mas dados, chips e algoritmos.",
               "stepByStepSolution": "A alternativa A está correta. No capitalismo informacional, o conhecimento, a pesquisa e desenvolvimento (P&D), os fluxos de informação em tempo real e os algoritmos tornaram-se os principais vetores de produtividade e poder geopolítico mundial, superando a mera posse física de maquinários pesados da fase fordista."
             }
@@ -588,13 +588,13 @@
               "title": "ENEM: A Crítica de Milton Santos à Globalização",
               "problemStatement": "Em sua obra seminal 'Por uma outra globalização', o geógrafo Milton Santos afirma que a globalização nos é apresentada como uma 'fábula', mas funciona concretamente como uma 'perversidade'. Essa perversidade manifesta-se principalmente pelo fato de que:",
               "options": [
-                "Todos os países do mundo passaram a usufruir da mesma renda per capita e qualidade de vida.",
-                "Os sindicatos operários assumiram o controle de todas as empresas multinacionais americanas.",
-                "A desigualdade social desapareceu completamente devido à expansão da internet de alta velocidade.",
                 "A tecnologia digital extinguiu a pobreza em todos os países da África e da América Latina.",
-                "Enquanto os fluxos de mercadorias e capitais financeiros circulam livremente pelo mundo, a circulação de trabalhadores pobres é barrada por fronteiras vigiadas e xenofobia."
+                "A desigualdade social desapareceu completamente devido à expansão da internet de alta velocidade.",
+                "Os sindicatos operários assumiram o controle de todas as empresas multinacionais americanas.",
+                "Enquanto os fluxos de mercadorias e capitais financeiros circulam livremente pelo mundo, a circulação de trabalhadores pobres é barrada por fronteiras vigiadas e xenofobia.",
+                "Todos os países do mundo passaram a usufruir da mesma renda per capita e qualidade de vida."
               ],
-              "correctIndex": 4,
+              "correctIndex": 3,
               "hint": "Livre circulação para o dinheiro e produtos caros, mas repressão violenta e muros contra imigrantes e refugiados pobres.",
               "stepByStepSolution": "A alternativa A está correta. A crítica de Milton Santos expõe a assimetria da globalização: o discurso apregoa um mundo sem fronteiras para corporações, capitais especulativos e elites turísticas, mas impõe severas barreiras, muros de isolamento, precarização do trabalho e criminalização contra os trabalhadores e refugiados do Sul Global."
             }
@@ -624,13 +624,13 @@
               "title": "ENEM: A Nova Divisão Internacional do Trabalho (Nova DIT)",
               "problemStatement": "Na Nova Divisão Internacional do Trabalho (Nova DIT), países em desenvolvimento e emergentes, como China e México, passaram a ocupar qual posição central na hierarquia da produção global?",
               "options": [
-                "Países importadores de lixo atômico europeu sem capacidade de produzir artigos manufaturados.",
-                "Centros mundiais de emissão de moeda de reserva internacional e controle das patentes de inteligência artificial.",
-                "Monopolizadores exclusivos de todas as bolsas de valores e bancos centrais do G7.",
                 "Plataformas fabris de manufatura voltadas à exportação de mercadorias de consumo e montagem industrial com custos baixos de produção.",
-                "Economias exclusivamente de subsistência indígena sem nenhuma relação com o comércio exterior."
+                "Países importadores de lixo atômico europeu sem capacidade de produzir artigos manufaturados.",
+                "Economias exclusivamente de subsistência indígena sem nenhuma relação com o comércio exterior.",
+                "Centros mundiais de emissão de moeda de reserva internacional e controle das patentes de inteligência artificial.",
+                "Monopolizadores exclusivos de todas as bolsas de valores e bancos centrais do G7."
               ],
-              "correctIndex": 3,
+              "correctIndex": 0,
               "hint": "Muitos países do Sul deixaram de exportar apenas soja ou ferro para se tornarem a 'fábrica do mundo', montando roupas, tênis, peças e eletrônicos para as marcas do Norte.",
               "stepByStepSolution": "A alternativa A está correta. Na Nova DIT, os países centrais concentram a concepção, o design, o marketing e o controle de patentes (alto valor agregado), enquanto países emergentes e periféricos recebem fábricas montadoras de transnacionais atraídas por baixos salários, incentivos tributários e facilidades de exportação."
             }
@@ -660,13 +660,13 @@
               "title": "ENEM: A Lógica Produtiva do Toyotismo",
               "problemStatement": "O modelo de produção flexível toyotista, consolidado nas últimas décadas do século XX em substituição ao modelo fordista tradicional, tem como uma de suas características fundamentais:",
               "options": [
-                "A produção just-in-time, voltada para atender à demanda imediata do mercado consumidor sem acumulação de estoques caros.",
-                "A proibição do controle de qualidade para acelerar o ritmo de saída dos produtos das fábricas.",
-                "A obrigatoriedade de estocar peças suficientes para dez anos de produção ininterrupta.",
                 "A recusa em utilizar qualquer tipo de computador ou robô nas linhas de produção.",
-                "A contratação de trabalhadores para desempenhar apenas uma única função mecânica durante toda a carreira."
+                "A proibição do controle de qualidade para acelerar o ritmo de saída dos produtos das fábricas.",
+                "A contratação de trabalhadores para desempenhar apenas uma única função mecânica durante toda a carreira.",
+                "A obrigatoriedade de estocar peças suficientes para dez anos de produção ininterrupta.",
+                "A produção just-in-time, voltada para atender à demanda imediata do mercado consumidor sem acumulação de estoques caros."
               ],
-              "correctIndex": 0,
+              "correctIndex": 4,
               "hint": "Just-in-time significa 'na hora certa': produz apenas o que já está vendido ou encomendado, evitando desperdício de capital em depósitos cheios de carros encalhados.",
               "stepByStepSolution": "A alternativa A está correta. O toyotismo opera na lógica da produção enxuta e flexível: a fábrica só adquire matéria-prima e produz os lotes de acordo com as encomendas reais do mercado (sistema just-in-time e kanban), exigindo trabalhadores polivalentes e eliminação de desperdícios operacionais."
             }
@@ -707,11 +707,11 @@
               "title": "ENEM: A Natureza da Unimultipolaridade Contemporânea",
               "problemStatement": "A geopolítica mundial pós-Guerra Fria é frequentemente caracterizada pelos analistas como 'unimultipolar'. Esse conceito descreve uma ordem internacional na qual:",
               "options": [
-                "O comércio internacional de petróleo foi totalmente substituído pelo escambo de produtos agrícolas tradicionais.",
-                "A Organização das Nações Unidas aboliu todos os exércitos nacionais e instituiu uma moeda única planetária.",
+                "A União Soviética recuperou o controle sobre todo o Leste Europeu e restabeleceu o Pacto de Varsóvia.",
                 "Todos os países do planeta possuem exatamente o mesmo número de ogivas nucleares e mísseis hipersônicos.",
+                "O comércio internacional de petróleo foi totalmente substituído pelo escambo de produtos agrícolas tradicionais.",
                 "Os Estados Unidos exercem hegemonia bélica e militar incontestada (unipolar), enquanto na economia e comércio o poder é dividido entre múltiplos polos como a União Europeia, China e BRICS (multipolar).",
-                "A União Soviética recuperou o controle sobre todo o Leste Europeu e restabeleceu o Pacto de Varsóvia."
+                "A Organização das Nações Unidas aboliu todos os exércitos nacionais e instituiu uma moeda única planetária."
               ],
               "correctIndex": 3,
               "hint": "Unipolar no poder militar (EUA gastam mais que todos os outros juntos), mas multipolar na riqueza e comércio (China, UE, Japão, emergentes).",
@@ -743,13 +743,13 @@
               "title": "ENEM: Os Níveis de Integração dos Blocos Econômicos",
               "problemStatement": "O MERCOSUL (Mercado Comum do Sul) e a União Europeia representam diferentes estágios do processo de integração regional de mercados. A diferença fundamental entre eles reside no fato de que:",
               "options": [
-                "A União Europeia atingiu o estágio de união econômica e monetária com moeda única (euro) e livre circulação de pessoas, enquanto o Mercosul opera essencialmente como uma união aduaneira imperfeita com tarifa externa comum.",
-                "O Mercosul proíbe a exportação de produtos agrícolas entre seus membros para não competir com a indústria paulista.",
                 "A União Europeia é apenas uma zona de livre comércio onde cada país cobra impostos alfandegários diferentes sobre seus vizinhos.",
                 "Ambos os blocos extinguiram totalmente suas fronteiras políticas e transformaram-se em um único Estado nacional soberano.",
+                "A União Europeia atingiu o estágio de união econômica e monetária com moeda única (euro) e livre circulação de pessoas, enquanto o Mercosul opera essencialmente como uma união aduaneira imperfeita com tarifa externa comum.",
+                "O Mercosul proíbe a exportação de produtos agrícolas entre seus membros para não competir com a indústria paulista.",
                 "O Mercosul já unificou todos os bancos centrais e adotou uma moeda única obrigatória em toda a América do Sul."
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "A Europa tem o Euro, livre circulação de pessoas (Schengen) e Parlamento Europeu. O Mercosul tem a TEC (Tarifa Externa Comum), mas ainda não possui moeda única nem integração monetária plena.",
               "stepByStepSolution": "A alternativa A está correta. A União Europeia é o bloco mais integrado do planeta (União Econômica e Monetária), com livre circulação de capitais, mercadorias, serviços e cidadãos, além de um Banco Central compartilhado e a moeda comum (Euro). Já o Mercosul estacionou no estágio de União Aduaneira imperfeita, mantendo a Tarifa Externa Comum (TEC), mas com diversas listas de exceção nacional e sem unificação monetária."
             }
@@ -779,13 +779,13 @@
               "title": "ENEM: A Condição do Povo Curdo no Oriente Médio",
               "problemStatement": "Os curdos, população estimada em mais de 30 milhões de pessoas distribuída territorialmente entre a Turquia, Síria, Iraque e Irã, constituem o exemplo clássico de:",
               "options": [
+                "Um Estado imperialista que invadiu os países vizinhos para construir ferrovias até o Mar Cáspio.",
+                "Um povo nômade do deserto que não possui idioma próprio e depende exclusivamente do turismo religioso na Arábia Saudita.",
                 "Uma colônia europeia ultramarina que se recusa a adotar a religião islâmica para manter laços com a Coroa britânica.",
                 "Uma nação sem Estado que luta há décadas por autonomia e pelo reconhecimento internacional de seu território soberano (o Curdistão).",
-                "Um Estado imperialista que invadiu os países vizinhos para construir ferrovias até o Mar Cáspio.",
-                "Um grupo terrorista financiado pela OTAN para desestabilizar todas as refinarias de petróleo do Catar.",
-                "Um povo nômade do deserto que não possui idioma próprio e depende exclusivamente do turismo religioso na Arábia Saudita."
+                "Um grupo terrorista financiado pela OTAN para desestabilizar todas as refinarias de petróleo do Catar."
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "hint": "Nação sem Estado: possuem povo, língua, história e cultura compartilhadas, mas não possuem um país independente demarcado no mapa político.",
               "stepByStepSolution": "A alternativa A está correta. Os curdos representam a maior nação sem Estado soberano do mundo. Apesar de possuírem forte identidade cultural, idioma e coesão étnica milenar, suas terras natais foram retalhadas entre quatro Estados nacionais modernos no pós-Primeira Guerra Mundial, sofrendo constantes perseguições e repressão em suas reivindicações de autodeterminação."
             }
@@ -815,13 +815,13 @@
               "title": "ENEM: Chokepoints Marítimos e a Geopolítica do Petróleo",
               "problemStatement": "O Estreito de Ormuz, passagem marítima estratégica que conecta o Golfo Pérsico ao Mar da Arábia e ao Oceano Índico, é considerado um dos pontos mais críticos da geopolítica mundial ('chokepoint') porque:",
               "options": [
-                "Por suas águas estreitas transita diariamente cerca de 20% de todo o petróleo comercializado no mercado global, tornando o abastecimento das potências vulnerável a conflitos na região.",
                 "Constitui uma zona de proteção ambiental rigorosa onde é terminantemente proibida a navegação de qualquer navio a motor.",
-                "Abriga o canal artificial mais longo do mundo, construído para impedir que a marinha chinesa acesse o Mediterrâneo.",
+                "Concentra a totalidade das reservas de ouro e diamantes do continente africano sob tutela da marinha americana.",
                 "É a única passagem marítima aberta que permite o escoamento do gelo potável da Antártica para o hemisfério norte.",
-                "Concentra a totalidade das reservas de ouro e diamantes do continente africano sob tutela da marinha americana."
+                "Abriga o canal artificial mais longo do mundo, construído para impedir que a marinha chinesa acesse o Mediterrâneo.",
+                "Por suas águas estreitas transita diariamente cerca de 20% de todo o petróleo comercializado no mercado global, tornando o abastecimento das potências vulnerável a conflitos na região."
               ],
-              "correctIndex": 0,
+              "correctIndex": 4,
               "hint": "Ormuz é a 'garganta' por onde saem os superpetroleiros da Arábia Saudita, Irã, Iraque, Emirados e Kuwait em direção aos mercados da Ásia, Europa e Américas.",
               "stepByStepSolution": "A alternativa A está correta. O Estreito de Ormuz é o gargalo (chokepoint) energético mais estratégico do planeta. Como grande parte do petróleo extraído nos países exportadores do Golfo Pérsico precisa necessariamente atravessar essa estreita faixa de água vigiada pelo Irã, qualquer bloqueio ou tensão militar tem o poder imediato de disparar as cotações globais de energia e causar desabastecimento internacional."
             }

@@ -66,6 +66,7 @@ import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
@@ -112,6 +113,8 @@ import com.example.ui.components.MathFormattedText
 import com.example.ui.components.MathNotationHelper
 import com.example.ui.components.QuestionRendererCard
 import com.example.ui.components.TopUserStatsBar
+import com.example.ui.theme.AccentCyan
+import com.example.ui.theme.BorderActive
 import com.example.ui.theme.BorderSubtle
 import com.example.ui.theme.CodeTextStyle
 import com.example.ui.theme.DeepNavy
@@ -119,6 +122,7 @@ import com.example.ui.theme.ErrorRose
 import com.example.ui.theme.GoldXp
 import com.example.ui.theme.ObsidianSurface
 import com.example.ui.theme.PrimaryViolet
+import com.example.ui.theme.PrimaryVioletLight
 import com.example.ui.theme.SuccessEmerald
 import com.example.ui.theme.SurfaceCard
 import com.example.ui.theme.SurfaceElevated
@@ -278,6 +282,8 @@ fun ExerciseSolverScreen(
 
     // Estado do Modo Foco (Tela Cheia)
     var activeFocusExercise by remember { mutableStateOf<UniversalExercise?>(null) }
+    var activeFocusBankQuestion by remember { mutableStateOf<com.example.data.assessment.BankQuestion?>(null) }
+    var activeFocusBankQuestionIndex by remember { mutableIntStateOf(0) }
     var focusStreak by remember { mutableIntStateOf(0) }
 
     val coroutineScope = rememberCoroutineScope()
@@ -559,14 +565,63 @@ fun ExerciseSolverScreen(
     }
 
     // Notifica o container principal quando o modo foco está ativo
-    LaunchedEffect(activeFocusExercise) {
-        onFocusModeChange?.invoke(activeFocusExercise != null)
+    LaunchedEffect(activeFocusExercise, activeFocusBankQuestion) {
+        onFocusModeChange?.invoke(activeFocusExercise != null || activeFocusBankQuestion != null)
     }
 
     // BackHandler para sair do Modo Foco se estiver ativo
-    BackHandler(enabled = activeFocusExercise != null) {
+    BackHandler(enabled = activeFocusExercise != null || activeFocusBankQuestion != null) {
         activeFocusExercise = null
+        activeFocusBankQuestion = null
         onFocusModeChange?.invoke(false)
+    }
+
+    // ========================================================
+    // MODO FOCO (TELA CHEIA) ATIVO - BANCO MULTIFORMATO
+    // ========================================================
+    if (activeFocusBankQuestion != null) {
+        val bq = activeFocusBankQuestion!!
+        FocusModeBankQuestionScreen(
+            bankQuestion = bq,
+            questionIndex = activeFocusBankQuestionIndex,
+            totalCount = multiList.size,
+            pythonEngine = pythonEngine,
+            existingAnswer = multiformatAnswers[bq.id],
+            existingFeedback = multiformatFeedbacks[bq.id],
+            onAnswerDraftChanged = { ans ->
+                multiformatAnswers[bq.id] = ans
+            },
+            onEvaluated = { ans, fb ->
+                multiformatAnswers[bq.id] = ans
+                multiformatFeedbacks[bq.id] = fb
+                if (fb.isCorrect) {
+                    progressRepository.recordCheckIn()
+                    progressRepository.recordSolvedExercise(bq.id, 30)
+                } else {
+                    progressRepository.recordWrongQuestion(bq.id, bq.lesson.lessonId)
+                }
+                wrongQuestionsTick += 1
+            },
+            onCloseFocusMode = {
+                activeFocusBankQuestion = null
+                onFocusModeChange?.invoke(false)
+            },
+            onPrevious = if (activeFocusBankQuestionIndex > 0) {
+                {
+                    val newIdx = activeFocusBankQuestionIndex - 1
+                    activeFocusBankQuestionIndex = newIdx
+                    activeFocusBankQuestion = multiList.getOrNull(newIdx)
+                }
+            } else null,
+            onNext = if (activeFocusBankQuestionIndex < multiList.size - 1) {
+                {
+                    val newIdx = activeFocusBankQuestionIndex + 1
+                    activeFocusBankQuestionIndex = newIdx
+                    activeFocusBankQuestion = multiList.getOrNull(newIdx)
+                }
+            } else null
+        )
+        return
     }
 
     // ========================================================
@@ -1130,25 +1185,14 @@ fun ExerciseSolverScreen(
                     modifier = Modifier.fillMaxSize()
                 ) {
                     itemsIndexed(displayedMulti, key = { _, item -> item.id }) { idx, bq ->
-                        QuestionRendererCard(
-                            bankQuestion = bq,
-                            questionNumber = idx + 1,
-                            pythonEngine = pythonEngine,
-                            existingAnswer = multiformatAnswers[bq.id],
-                            existingFeedback = multiformatFeedbacks[bq.id],
-                            onAnswerDraftChanged = { ans ->
-                                multiformatAnswers[bq.id] = ans
-                            },
-                            onEvaluated = { ans, fb ->
-                                multiformatAnswers[bq.id] = ans
-                                multiformatFeedbacks[bq.id] = fb
-                                if (fb.isCorrect) {
-                                    progressRepository.recordCheckIn()
-                                    progressRepository.recordSolvedExercise(bq.id, 30)
-                                } else {
-                                    progressRepository.recordWrongQuestion(bq.id, bq.lesson.lessonId)
-                                }
-                                wrongQuestionsTick += 1
+                        BankQuestionListItemCard(
+                            item = bq,
+                            indexInList = idx,
+                            isSolved = multiformatFeedbacks[bq.id]?.isCorrect == true,
+                            onClick = {
+                                activeFocusBankQuestion = bq
+                                activeFocusBankQuestionIndex = idx
+                                onFocusModeChange?.invoke(true)
                             }
                         )
                     }
@@ -1938,7 +1982,7 @@ fun FocusModeExerciseScreen(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(horizontal = 14.dp, vertical = 12.dp),
-                            verticalAlignment = Alignment.CenterVertically
+                            verticalAlignment = Alignment.Top
                         ) {
                             Surface(
                                 color = when {
@@ -1948,7 +1992,9 @@ fun FocusModeExerciseScreen(
                                     else -> SurfaceCard
                                 },
                                 shape = CircleShape,
-                                modifier = Modifier.size(28.dp)
+                                modifier = Modifier
+                                    .size(28.dp)
+                                    .padding(top = 1.dp)
                             ) {
                                 Box(contentAlignment = Alignment.Center) {
                                     Text(
@@ -1970,24 +2016,28 @@ fun FocusModeExerciseScreen(
                                     style = MaterialTheme.typography.bodyMedium.copy(
                                         color = TextPrimary,
                                         fontSize = 14.sp,
+                                        lineHeight = 22.sp,
                                         fontWeight = if (isOptionSelected) FontWeight.Bold else FontWeight.Normal
-                                    )
+                                    ),
+                                    allowBlockCards = false
                                 )
                             }
 
                             if (showAsCorrect) {
+                                Spacer(modifier = Modifier.width(6.dp))
                                 Icon(
                                     imageVector = Icons.Default.Check,
-                                    contentDescription = "Correto",
+                                    contentDescription = null,
                                     tint = SuccessEmerald,
-                                    modifier = Modifier.size(18.dp)
+                                    modifier = Modifier.size(20.dp).padding(top = 2.dp)
                                 )
                             } else if (showAsIncorrect) {
+                                Spacer(modifier = Modifier.width(6.dp))
                                 Icon(
                                     imageVector = Icons.Default.Close,
-                                    contentDescription = "Incorreto",
+                                    contentDescription = null,
                                     tint = ErrorRose,
-                                    modifier = Modifier.size(18.dp)
+                                    modifier = Modifier.size(20.dp).padding(top = 2.dp)
                                 )
                             }
                         }
@@ -2386,3 +2436,362 @@ private fun RenderVisualTable(table: VisualTable) {
         }
     }
 }
+
+@Composable
+fun BankQuestionListItemCard(
+    item: com.example.data.assessment.BankQuestion,
+    indexInList: Int,
+    isSolved: Boolean,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val q = item.question
+    val diffColor = when (q.difficulty) {
+        QDifficulty.EASY -> SuccessEmerald
+        QDifficulty.MEDIUM -> GoldXp
+        QDifficulty.HARD -> ErrorRose
+    }
+    val diffLabel = q.difficulty.label
+    val formatLabel = q.format.label
+    val disciplineBadgeColor = when {
+        item.subject.contains("Python", ignoreCase = true) -> AccentCyan
+        item.subject.contains("Cálculo", ignoreCase = true) -> GoldXp
+        item.subject.contains("Transpetro", ignoreCase = true) -> PrimaryVioletLight
+        item.subject.contains("Biologia", ignoreCase = true) -> SuccessEmerald
+        item.subject.contains("Física", ignoreCase = true) -> Color(0xFF64B5F6)
+        else -> PrimaryVioletLight
+    }
+
+    Card(
+        shape = RoundedCornerShape(10.dp),
+        colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
+        modifier = modifier
+            .fillMaxWidth()
+            .border(
+                width = 1.dp,
+                color = if (isSolved) SuccessEmerald.copy(alpha = 0.5f) else BorderSubtle,
+                shape = RoundedCornerShape(10.dp)
+            )
+            .clickable(onClick = onClick)
+            .testTag("bank_question_card_${item.id}")
+    ) {
+        Column(modifier = Modifier.padding(12.dp)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    Surface(
+                        color = SurfaceElevated,
+                        shape = RoundedCornerShape(4.dp)
+                    ) {
+                        Text(
+                            text = "#${indexInList + 1}",
+                            style = CodeTextStyle.copy(
+                                color = GoldXp,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 10.sp
+                            ),
+                            modifier = Modifier.padding(horizontal = 5.dp, vertical = 2.dp)
+                        )
+                    }
+
+                    Surface(
+                        color = disciplineBadgeColor.copy(alpha = 0.15f),
+                        shape = RoundedCornerShape(4.dp)
+                    ) {
+                        Text(
+                            text = item.subject,
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                fontWeight = FontWeight.Bold,
+                                color = disciplineBadgeColor,
+                                fontSize = 10.sp
+                            ),
+                            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                        )
+                    }
+
+                    Surface(
+                        color = PrimaryViolet.copy(alpha = 0.15f),
+                        shape = RoundedCornerShape(4.dp)
+                    ) {
+                        Text(
+                            text = formatLabel,
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                fontWeight = FontWeight.Bold,
+                                color = PrimaryVioletLight,
+                                fontSize = 10.sp
+                            ),
+                            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                        )
+                    }
+
+                    Surface(
+                        color = diffColor.copy(alpha = 0.12f),
+                        shape = RoundedCornerShape(4.dp)
+                    ) {
+                        Text(
+                            text = diffLabel,
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                fontWeight = FontWeight.Bold,
+                                color = diffColor,
+                                fontSize = 10.sp
+                            ),
+                            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                        )
+                    }
+                }
+
+                if (isSolved) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            imageVector = Icons.Default.CheckCircle,
+                            contentDescription = "Resolvido",
+                            tint = SuccessEmerald,
+                            modifier = Modifier.size(14.dp)
+                        )
+                        Spacer(modifier = Modifier.width(3.dp))
+                        Text(
+                            text = "Resolvido",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = SuccessEmerald,
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        )
+                    }
+                } else {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Fullscreen,
+                            contentDescription = "Abrir em Tela Cheia",
+                            tint = PrimaryVioletLight,
+                            modifier = Modifier.size(16.dp)
+                        )
+                        Text(
+                            text = "Modo Foco",
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = PrimaryVioletLight,
+                                fontSize = 10.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        )
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(6.dp))
+
+            Text(
+                text = item.lesson.title.ifBlank { item.lesson.subtopic },
+                style = MaterialTheme.typography.labelSmall.copy(
+                    color = TextTertiary,
+                    fontSize = 11.sp
+                ),
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
+
+            Spacer(modifier = Modifier.height(4.dp))
+
+            Text(
+                text = q.statement,
+                style = MaterialTheme.typography.bodySmall.copy(
+                    color = TextPrimary,
+                    fontSize = 12.sp,
+                    lineHeight = 16.sp
+                ),
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis
+            )
+        }
+    }
+}
+
+@Composable
+fun FocusModeBankQuestionScreen(
+    bankQuestion: com.example.data.assessment.BankQuestion,
+    questionIndex: Int,
+    totalCount: Int,
+    pythonEngine: PythonEngine?,
+    existingAnswer: com.example.data.assessment.UserAnswer?,
+    existingFeedback: Feedback?,
+    onAnswerDraftChanged: (com.example.data.assessment.UserAnswer) -> Unit,
+    onEvaluated: (com.example.data.assessment.UserAnswer, Feedback) -> Unit,
+    onCloseFocusMode: () -> Unit,
+    onPrevious: (() -> Unit)?,
+    onNext: (() -> Unit)?
+) {
+    val q = bankQuestion.question
+    val diffColor = when (q.difficulty) {
+        QDifficulty.EASY -> SuccessEmerald
+        QDifficulty.MEDIUM -> GoldXp
+        QDifficulty.HARD -> ErrorRose
+    }
+    val diffLabel = q.difficulty.label
+    val formatLabel = q.format.label
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(DeepNavy)
+            .statusBarsPadding()
+            .navigationBarsPadding()
+    ) {
+        // Barra Superior do Modo Foco
+        Surface(
+            color = ObsidianSurface,
+            modifier = Modifier
+                .fillMaxWidth()
+                .border(width = 1.dp, color = BorderSubtle)
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 12.dp, vertical = 8.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    IconButton(
+                        onClick = onCloseFocusMode,
+                        modifier = Modifier.size(36.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Close,
+                            contentDescription = "Sair do Modo Foco",
+                            tint = TextPrimary,
+                            modifier = Modifier.size(20.dp)
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.width(6.dp))
+
+                    Column {
+                        Text(
+                            text = "Modo Foco • Questão ${questionIndex + 1} de $totalCount",
+                            style = MaterialTheme.typography.titleSmall.copy(
+                                fontWeight = FontWeight.Bold,
+                                color = TextPrimary
+                            )
+                        )
+                        Text(
+                            text = bankQuestion.subject + " • " + bankQuestion.lesson.subtopic,
+                            style = MaterialTheme.typography.labelSmall.copy(color = TextSecondary),
+                            maxLines = 1,
+                            overflow = TextOverflow.Ellipsis
+                        )
+                    }
+                }
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    Surface(
+                        color = PrimaryViolet.copy(alpha = 0.2f),
+                        shape = RoundedCornerShape(4.dp)
+                    ) {
+                        Text(
+                            text = formatLabel,
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = PrimaryVioletLight,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 10.sp
+                            ),
+                            modifier = Modifier.padding(horizontal = 6.dp, vertical = 3.dp)
+                        )
+                    }
+
+                    Surface(
+                        color = diffColor.copy(alpha = 0.2f),
+                        shape = RoundedCornerShape(4.dp)
+                    ) {
+                        Text(
+                            text = diffLabel,
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = diffColor,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 10.sp
+                            ),
+                            modifier = Modifier.padding(horizontal = 6.dp, vertical = 3.dp)
+                        )
+                    }
+                }
+            }
+        }
+
+        // Conteúdo da Questão em Tela Cheia com Scroll
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth()
+                .verticalScroll(rememberScrollState())
+                .padding(14.dp)
+        ) {
+            QuestionRendererCard(
+                bankQuestion = bankQuestion,
+                questionNumber = questionIndex + 1,
+                pythonEngine = pythonEngine,
+                existingAnswer = existingAnswer,
+                existingFeedback = existingFeedback,
+                onAnswerDraftChanged = onAnswerDraftChanged,
+                onEvaluated = onEvaluated
+            )
+        }
+
+        // Barra Inferior de Navegação entre Questões
+        Surface(
+            color = ObsidianSurface,
+            modifier = Modifier
+                .fillMaxWidth()
+                .border(width = 1.dp, color = BorderSubtle)
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 14.dp, vertical = 10.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                OutlinedButton(
+                    onClick = { onPrevious?.invoke() },
+                    enabled = onPrevious != null,
+                    shape = RoundedCornerShape(8.dp)
+                ) {
+                    Text("Anterior")
+                }
+
+                OutlinedButton(
+                    onClick = onCloseFocusMode,
+                    shape = RoundedCornerShape(8.dp)
+                ) {
+                    Text("Lista de Exercícios")
+                }
+
+                Button(
+                    onClick = { onNext?.invoke() },
+                    enabled = onNext != null,
+                    colors = ButtonDefaults.buttonColors(containerColor = PrimaryViolet),
+                    shape = RoundedCornerShape(8.dp)
+                ) {
+                    Text("Próxima")
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                        contentDescription = null,
+                        modifier = Modifier.size(16.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+

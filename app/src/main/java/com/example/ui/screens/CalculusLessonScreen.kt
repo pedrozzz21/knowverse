@@ -54,6 +54,9 @@ import com.example.ui.components.GeoGebraMathGraphView
 import com.example.ui.components.DidacticImageView
 import com.example.ui.components.QuestionRendererCard
 import com.example.data.assessment.QuestionBankRepository
+import com.example.data.assessment.QDifficulty
+import com.example.data.assessment.QuestionFormat
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -72,11 +75,14 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import com.example.data.exercise.UniversalExercise
+import com.example.data.exercise.ExerciseDiscipline
 import androidx.compose.ui.text.style.TextOverflow
 import kotlinx.coroutines.launch
 import androidx.compose.ui.Alignment
@@ -263,6 +269,8 @@ fun CalculusLessonScreen(
     val showSolutions = remember(lesson.id) { mutableStateMapOf<Int, Boolean>() }
     // Map of exercise index to expanded state (primeiro exercício aberto inicialmente)
     val expandedExercises = remember(lesson.id) { mutableStateMapOf<Int, Boolean>(0 to true) }
+    var activeFocusExerciseIndex by remember(lesson.id) { mutableIntStateOf(0) }
+    var focusStreak by remember(lesson.id) { mutableIntStateOf(0) }
     val coroutineScope = rememberCoroutineScope()
 
     val scrollState = rememberScrollState()
@@ -367,6 +375,141 @@ fun CalculusLessonScreen(
         isIntegralsUnit -> "Módulo 3: Integrais e Teorema Fundamental"
         isDerivativesUnit -> "Módulo 2: Derivadas e Aplicações"
         else -> "Módulo 1: Limites e Continuidade"
+    }
+
+    val context = LocalContext.current
+    val allLessonExercises: List<UniversalExercise> = remember(lesson.id, exercises) {
+        val discipline = when {
+            lesson.id.startsWith("calc_") -> ExerciseDiscipline.CALCULUS
+            lesson.id.startsWith("bm_") || lesson.id.startsWith("mb_") -> ExerciseDiscipline.BASIC_MATH
+            lesson.id.startsWith("fis_") -> ExerciseDiscipline.PHYSICS
+            lesson.id.startsWith("quim_") -> ExerciseDiscipline.CHEMISTRY
+            lesson.id.startsWith("bio_") -> ExerciseDiscipline.BIOLOGY
+            lesson.id.startsWith("geo_") -> ExerciseDiscipline.GEOGRAPHY
+            lesson.id.startsWith("hist_") -> ExerciseDiscipline.HISTORY
+            lesson.id.startsWith("ling_") || lesson.id.startsWith("red_") -> ExerciseDiscipline.LANGUAGES
+            else -> ExerciseDiscipline.ENEM
+        }
+
+        val didacticList: List<UniversalExercise> = exercises.mapIndexed { idx, currentEx ->
+            UniversalExercise(
+                id = currentEx.id.ifBlank { "didactic_${lesson.id}_$idx" },
+                discipline = discipline,
+                category = disciplineTitle,
+                subtopic = currentEx.title.ifBlank { "Exercício ${idx + 1} de ${exercises.size}" },
+                difficulty = "Média",
+                source = "Knowverse • ${lesson.title}",
+                problemStatement = currentEx.problemStatement,
+                geoGebraConfig = currentEx.geoGebraConfig,
+                options = currentEx.options,
+                correctIndex = currentEx.correctIndex,
+                solutionSteps = listOf(currentEx.stepByStepSolution),
+                pedagogicalAlert = currentEx.hint,
+                keyMethod = "Passo a passo didático",
+                xpReward = 25
+            )
+        }
+
+        val bankList: List<UniversalExercise> = try {
+            val questions = QuestionBankRepository.getQuestionsForLesson(
+                lessonId = lesson.id,
+                includeLegacy = false,
+                context = context
+            )
+            questions.mapIndexed { idx, bq ->
+                val q = bq.question
+                val (resolvedOptions, resolvedCorrect) = when {
+                    q.options.isNotEmpty() -> {
+                        q.options to q.answerIndex.coerceIn(0, (q.options.size - 1).coerceAtLeast(0))
+                    }
+                    q.format == QuestionFormat.TRUE_FALSE -> {
+                        listOf("Verdadeiro (V)", "Falso (F)") to (if (q.answerBool == true) 0 else 1)
+                    }
+                    q.answers.isNotEmpty() -> {
+                        listOf("Termo correto: ${q.answers.first()}", "Alternativa distratora A", "Alternativa distratora B") to 0
+                    }
+                    q.answerNumber != null -> {
+                        val numStr = "${q.answerNumber} ${q.unit}".trim()
+                        listOf("Valor calculado: $numStr", "Variação alternativa", "Valor incompatível") to 0
+                    }
+                    q.pairs.isNotEmpty() -> {
+                        listOf(
+                            "Associação correta: " + q.pairs.take(3).joinToString("; ") { "${it.first} ➔ ${it.second}" },
+                            "Associação invertida",
+                            "Associação cruzada incorreta"
+                        ) to 0
+                    }
+                    else -> {
+                        listOf("Gabarito de referência", "Análise incompleta", "Revisão conceitual necessária") to 0
+                    }
+                }
+
+                val diffLabel = when (q.difficulty) {
+                    QDifficulty.EASY -> "Fácil"
+                    QDifficulty.MEDIUM -> "Média"
+                    QDifficulty.HARD -> "Difícil"
+                }
+
+                UniversalExercise(
+                    id = q.id.ifBlank { "bank_${lesson.id}_$idx" },
+                    discipline = discipline,
+                    category = disciplineTitle,
+                    subtopic = q.concept.ifBlank { q.skill.ifBlank { "Questão Multiformato ${idx + 1}" } },
+                    difficulty = diffLabel,
+                    source = bq.lesson.moduleTitle.ifBlank { "Banco de Questões Knowverse" },
+                    problemStatement = q.statement,
+                    codeSnippet = q.code?.starter,
+                    options = resolvedOptions,
+                    correctIndex = resolvedCorrect,
+                    solutionSteps = listOf(q.explanation.ifBlank { "Consulte a teoria da aula para conferir a justificativa completa." }),
+                    pedagogicalAlert = q.retryGuidance.ifBlank { "Habilidade testada: ${q.skill}" },
+                    keyMethod = "Análise e Fixação",
+                    xpReward = 30
+                )
+            }
+        } catch (_: Throwable) {
+            emptyList()
+        }
+
+        didacticList + bankList
+    }
+
+    if (currentStage == CalculusStage.EXERCISES && allLessonExercises.isNotEmpty()) {
+        val currentEx = allLessonExercises.getOrNull(activeFocusExerciseIndex) ?: allLessonExercises.first()
+
+        BackHandler {
+            currentStage = CalculusStage.EXAMPLES
+        }
+
+        FocusModeExerciseScreen(
+            exercise = currentEx,
+            focusStreak = focusStreak,
+            onCloseFocusMode = {
+                currentStage = CalculusStage.EXAMPLES
+            },
+            onSelectOption = { optIdx ->
+                selectedOptions[activeFocusExerciseIndex] = optIdx
+                val isCorrect = optIdx == currentEx.correctIndex
+                exerciseResults[activeFocusExerciseIndex] = isCorrect
+                if (isCorrect) {
+                    focusStreak++
+                    progressRepository.recordSolvedExercise("ex_${currentEx.id}", currentEx.xpReward)
+                } else {
+                    focusStreak = 0
+                    wrongAttempts[activeFocusExerciseIndex] = (wrongAttempts[activeFocusExerciseIndex] ?: 0) + 1
+                }
+            },
+            onNextQuestion = { wasCorrect ->
+                if (activeFocusExerciseIndex + 1 < allLessonExercises.size) {
+                    activeFocusExerciseIndex++
+                } else {
+                    isLessonCompletedLocal = true
+                    progressRepository.completeLesson(lesson.id, lesson.xpReward)
+                    currentStage = CalculusStage.THEORY
+                }
+            }
+        )
+        return
     }
 
     Scaffold(

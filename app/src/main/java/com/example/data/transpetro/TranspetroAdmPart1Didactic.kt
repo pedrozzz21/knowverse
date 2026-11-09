@@ -1,6 +1,6 @@
-﻿package com.example.data.transpetro
+package com.example.data.transpetro
 
-import com.example.data.model.CalculusDidacticBundle
+import com.example.data.math.CalculusDidacticBundle
 import com.example.data.model.MathExercise
 
 object TranspetroAdmPart1Didactic {
@@ -62,7 +62,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "A operação demonstrou eficiência operacional no aproveitamento de recursos, mas foi ineficaz no cumprimento do volume total meta planejado.",
             goldTip = "Decore para a Cesgranrio: Eficiência = MEIOS e custos; Eficácia = FINS e cumprimento de metas; Efetividade = IMPACTO e transformação no ambiente externo!"
-        ),
+        )
 
         "tp_adm_m1_a2" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m1_a2",
@@ -122,7 +122,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "Função de Controle (especificamente: comparação de resultados e tomada de ação corretiva).",
             goldTip = "Se o enunciado falar em 'motivar equipe', 'comunicar' ou 'liderar', marque DIREÇÃO. Se falar em 'definir organograma' ou 'atribuir tarefas', marque ORGANIZAÇÃO. Se falar em 'comparar com a meta' ou 'corrigir desvio', marque CONTROLE!"
-        ),
+        )
 
         "tp_adm_m1_a3" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m1_a3",
@@ -180,7 +180,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "Decisão 1 é Estratégica; Decisão 2 é Operacional; Decisão 3 é Tática.",
             goldTip = "Em questões de planejamento: se o horizonte for LONGO PRAZO e envolver a organização como um todo, é ESTRATÉGICO. Se for MÉDIO PRAZO e departamental, é TÁTICO. Se for CURTO PRAZO e focado em tarefas e procedimentos, é OPERACIONAL!"
-        ),
+        )
 
         "tp_adm_m1_a4" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m1_a4",
@@ -231,7 +231,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "O supervisor permanece responsável perante a organização, pois a autoridade pode ser delegada, mas a responsabilidade do cargo superior é indelegável.",
             goldTip = "Frase obrigatória de prova da Cesgranrio: 'A responsabilidade final é indelegável'. O gestor transfere poder de execução (autoridade), mas continua prestando contas pelo resultado final perante a empresa!"
-        ),
+        )
 
         // =====================================================================
         // MÓDULO 2: GESTÃO DE PROCESSOS E QUALIDADE
@@ -289,7 +289,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "Capacidade máxima de 450 frascos/hora; o gargalo é a Etapa 2 (Rotulagem).",
             goldTip = "Em questões da Cesgranrio sobre simbologia de fluxogramas: LOSANGO representa exclusivamente PONTO DE DECISÃO (com duas ou mais saídas alternativas), enquanto RETÂNGULO representa ATIVIDADE OU PROCESSAMENTO!"
-        ),
+        )
 
         "tp_adm_m2_a2" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m2_a2",
@@ -338,7 +338,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "Etapa PLAN (Planejamento) do Ciclo PDCA.",
             goldTip = "Não confunda a função do Ishikawa com a do Pareto na Cesgranrio: Ishikawa identifica e organiza CAUSAS POSSÍVEIS (qualitativo/brainstorming); Pareto PRIORIZA as causas de maior impacto (quantitativo/80-20)!"
-        ),
+        )
 
         // =====================================================================
         // MÓDULO 3: GESTÃO DE PESSOAS (RECURSOS HUMANOS)
@@ -396,7 +396,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "A medida reduz ou elimina a insatisfação com a remuneração, mas não gerará motivação sustentável de longo prazo por se tratar de fatores higiênicos.",
             goldTip = "Item clássico da Cesgranrio: segundo Frederick Herzberg, SALÁRIO É UM FATOR HIGIÊNICO e NÃO motivacional! Ele não motiva; ele apenas evita que o colaborador fique insatisfeito!"
-        ),
+        )
 
         "tp_adm_m3_a2" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m3_a2",
@@ -451,7 +451,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "Renovação do quadro com novos conhecimentos, experiências e práticas de mercado (oxigenação cultural).",
             goldTip = "Em concursos públicos: estatais (sociedades de economia mista e empresas públicas) contratam empregados sob regime da CLT, mas são OBRIGADAS a realizar concurso público por força do artigo 37 da Constituição Federal!"
-        ),
+        )
 
         "tp_adm_m3_a3" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m3_a3",
@@ -503,7 +503,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "O Tópico A é Descrição de Cargos; o Tópico B é Análise de Cargos (Especificação).",
             goldTip = "Pegadinha clássica da Cesgranrio: confundir Descrição com Análise. Lembre-se: DESCRIÇÃO olha para as TAREFAS do cargo; ANÁLISE olha para os REQUISITOS e qualificações da PESSOA que vai ocupar o cargo!"
-        ),
+        )
 
         "tp_adm_m3_a4" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m3_a4",
@@ -553,7 +553,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "Nível 3 do Modelo de Kirkpatrick (Comportamento no Cargo / Transferência de Aprendizagem).",
             goldTip = "Para provas da Cesgranrio: Treinamento = foco no PRESENTE e no CARGO ATUAL; Desenvolvimento = foco no FUTURO e na CARREIRA!"
-        ),
+        )
 
         "tp_adm_m3_a5" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m3_a5",
@@ -606,7 +606,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "O componente deficiente foi a Habilidade (saber fazer prático).",
             goldTip = "Distinção rápida para a prova: Conhecimento é TEORIA (saber); Habilidade é PRÁTICA e técnica (saber fazer); Atitude é COMPORTAMENTO e iniciativa (querer fazer)!"
-        ),
+        )
 
         "tp_adm_m3_a6" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m3_a6",
@@ -657,7 +657,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "Clima Organizacional (percepção psicológica circunstancial do ambiente de trabalho).",
             goldTip = "Pegadinha clássica: 'Cultura' é o clima geográfico de uma região (permanente, profundo e histórico); 'Clima Organizacional' é o tempo do dia (hoje faz sol, amanhã chove, sensível a eventos imediatos)!"
-        ),
+        )
 
         // =====================================================================
         // MÓDULO 4: GESTÃO DE INDICADORES
@@ -718,7 +718,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "Não cumpre. Falta especificidade, falta mensuração numérica e falta definição de prazo temporal.",
             goldTip = "Em provas da Cesgranrio: uma meta bem formulada NUNCA usa termos como 'o máximo possível' ou 'melhorar a qualidade'; ela SEMPRE traz um número (ex.: 15%) e um prazo (ex.: até dezembro)!"
-        ),
+        )
 
         "tp_adm_m4_a2" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m4_a2",
@@ -769,7 +769,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "Produtividade = 4.000 m³/hora; Índice de pontualidade das manutenções = 92%.",
             goldTip = "Em questões de produtividade da Cesgranrio: identifique sempre o numerador (o que foi produzido/entregue) e o denominador (o que foi consumido: horas, homens, máquinas ou reais). Produtividade é sempre OUTPUT sobre INPUT!"
-        ),
+        )
 
         "tp_adm_m4_a3" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m4_a3",
@@ -820,7 +820,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "Indicador 1: Perspectiva do Aprendizado e Crescimento; Indicador 2: Perspectiva Financeira.",
             goldTip = "As 4 perspectivas do BSC caem com altíssima frequência na Cesgranrio! Decore o quarteto: FINANCEIRA, CLIENTES, PROCESSOS INTERNOS e APRENDIZADO/CRESCIMENTO!"
-        ),
+        )
 
         // =====================================================================
         // MÓDULO 5: SISTEMA DE GESTÃO INTEGRADO (SGI)
@@ -877,7 +877,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "ABNT NBR ISO 9001, ISO 14001 e ISO 45001.",
             goldTip = "Em concursos de estatais: guarde que a antiga norma de segurança OHSAS 18001 foi substituída oficialmente pela ISO 45001!"
-        ),
+        )
 
         "tp_adm_m5_a2" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m5_a2",
@@ -924,7 +924,7 @@ object TranspetroAdmPart1Didactic {
             ),
             exampleAnswer = "A primeira foi Correção Imediata (contenção); a segunda foi Ação Corretiva (eliminação da causa raiz).",
             goldTip = "Pegadinha campeã de audiência da Cesgranrio: trocar uma peça quebrada ou limpar um vazamento de óleo é apenas CORREÇÃO IMEDIATA! Só é AÇÃO CORRETIVA quando se descobre a CAUSA RAIZ e se atua sobre ela para evitar que o problema volte a ocorrer!"
-        ),
+        )
 
         "tp_adm_m5_a3" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m5_a3",

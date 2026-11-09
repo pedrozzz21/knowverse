@@ -46,7 +46,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.auth.AuthManager
 import com.example.data.local.UserProgressRepository
 import com.example.data.model.DifficultyTier
@@ -140,6 +142,7 @@ fun MainAppScreen(
     var showDevDashboard by rememberSaveable { mutableStateOf(false) }
     var showEssayLab by rememberSaveable { mutableStateOf(false) }
     var isExerciseFocusMode by rememberSaveable { mutableStateOf(false) }
+    var isSimuladoRunning by rememberSaveable { mutableStateOf(false) }
 
     LaunchedEffect(currentTab) {
         isExerciseFocusMode = false
@@ -195,7 +198,7 @@ fun MainAppScreen(
 
             else -> {
                 // Main Tab Navigation with BackHandler
-                BackHandler(enabled = currentTab != NavigationTab.HOME) {
+                BackHandler(enabled = currentTab != NavigationTab.HOME && !isSimuladoRunning) {
                     currentTab = NavigationTab.HOME
                 }
 
@@ -203,7 +206,7 @@ fun MainAppScreen(
                     containerColor = DeepNavy,
                     contentWindowInsets = WindowInsets(0, 0, 0, 0),
                     bottomBar = {
-                        if (!isExerciseFocusMode) {
+                        if (!isExerciseFocusMode && !isSimuladoRunning) {
                             NavigationBar(
                                 containerColor = ObsidianSurface,
                             tonalElevation = 4.dp,
@@ -226,7 +229,10 @@ fun MainAppScreen(
                                 label = {
                                     Text(
                                         text = "Início",
-                                        style = MaterialTheme.typography.labelSmall,
+                                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                                        maxLines = 1,
+                                        softWrap = false,
+                                        overflow = TextOverflow.Ellipsis,
                                         fontWeight = if (currentTab == NavigationTab.HOME) FontWeight.Bold else FontWeight.Medium
                                     )
                                 },
@@ -254,7 +260,10 @@ fun MainAppScreen(
                                 label = {
                                     Text(
                                         text = "Trilha",
-                                        style = MaterialTheme.typography.labelSmall,
+                                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                                        maxLines = 1,
+                                        softWrap = false,
+                                        overflow = TextOverflow.Ellipsis,
                                         fontWeight = if (currentTab == NavigationTab.TRAIL) FontWeight.Bold else FontWeight.Medium
                                     )
                                 },
@@ -282,7 +291,10 @@ fun MainAppScreen(
                                 label = {
                                     Text(
                                         text = "Exercícios",
-                                        style = MaterialTheme.typography.labelSmall,
+                                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                                        maxLines = 1,
+                                        softWrap = false,
+                                        overflow = TextOverflow.Ellipsis,
                                         fontWeight = if (currentTab == NavigationTab.EXERCISES) FontWeight.Bold else FontWeight.Medium
                                     )
                                 },
@@ -310,7 +322,10 @@ fun MainAppScreen(
                                 label = {
                                     Text(
                                         text = "Simulados",
-                                        style = MaterialTheme.typography.labelSmall,
+                                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                                        maxLines = 1,
+                                        softWrap = false,
+                                        overflow = TextOverflow.Ellipsis,
                                         fontWeight = if (currentTab == NavigationTab.SIMULADOS) FontWeight.Bold else FontWeight.Medium
                                     )
                                 },
@@ -338,7 +353,10 @@ fun MainAppScreen(
                                 label = {
                                     Text(
                                         text = "Ranking",
-                                        style = MaterialTheme.typography.labelSmall,
+                                        style = MaterialTheme.typography.labelSmall.copy(fontSize = 10.sp),
+                                        maxLines = 1,
+                                        softWrap = false,
+                                        overflow = TextOverflow.Ellipsis,
                                         fontWeight = if (currentTab == NavigationTab.LEADERBOARD) FontWeight.Bold else FontWeight.Medium
                                     )
                                 },
@@ -450,7 +468,8 @@ fun MainAppScreen(
                                     SimuladosScreen(
                                         progressRepository = progressRepository,
                                         pythonEngine = pythonEngine,
-                                        userPhotoUrl = currentUser?.photoUrl
+                                        userPhotoUrl = currentUser?.photoUrl,
+                                        onSimuladoRunningChange = { isSimuladoRunning = it }
                                     )
                                 }
 

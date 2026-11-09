@@ -1,5 +1,6 @@
 package com.example.ui.screens
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -36,6 +37,7 @@ import androidx.compose.material.icons.filled.Psychology
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.School
 import androidx.compose.material.icons.filled.Shuffle
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -161,39 +163,49 @@ internal object SimuladoSessionStore {
     private val anyAdapter by lazy { Moshi.Builder().build().adapter(Any::class.java) }
 
     fun toJsonString(): String {
-        val answersMap = LinkedHashMap<String, Any>()
-        for ((qId, ans) in answerMap) {
-            val aObj = when (ans) {
-                is UserAnswer.Choice -> mapOf("type" to "CHOICE", "index" to ans.index)
-                is UserAnswer.Bool -> mapOf("type" to "BOOL", "value" to ans.value)
-                is UserAnswer.Text -> mapOf("type" to "TEXT", "text" to ans.value)
-                is UserAnswer.Pairs -> mapOf("type" to "PAIRS", "pairs" to LinkedHashMap(ans.mapping))
+        return try {
+            val answersMap = LinkedHashMap<String, Any>()
+            for ((qId, ans) in answerMap) {
+                val aObj = when (ans) {
+                    is UserAnswer.Choice -> mapOf("type" to "CHOICE", "index" to ans.index)
+                    is UserAnswer.Bool -> mapOf("type" to "BOOL", "value" to ans.value)
+                    is UserAnswer.Text -> mapOf("type" to "TEXT", "text" to ans.value)
+                    is UserAnswer.Pairs -> mapOf("type" to "PAIRS", "pairs" to LinkedHashMap(ans.mapping))
+                }
+                answersMap[qId] = aObj
             }
-            answersMap[qId] = aObj
-        }
 
-        val feedbacksMap = LinkedHashMap<String, Any>()
-        for ((qId, fb) in feedbackMap) {
-            feedbacksMap[qId] = mapOf(
-                "verdict" to fb.verdict.name,
-                "score" to fb.score,
-                "headline" to fb.headline,
-                "reasoning" to fb.reasoning,
-                "misunderstoodConcept" to (fb.misunderstoodConcept ?: ""),
-                "retryTip" to (fb.retryTip ?: ""),
-                "details" to fb.details
+            val feedbacksMap = LinkedHashMap<String, Any>()
+            for ((qId, fb) in feedbackMap) {
+                val safeDetails: List<String> = when (val d = fb.details) {
+                    is Collection<*> -> d.map { it?.toString().orEmpty() }
+                    null -> emptyList()
+                    else -> listOf(d.toString())
+                }
+                feedbacksMap[qId] = mapOf(
+                    "verdict" to fb.verdict.name,
+                    "score" to fb.score,
+                    "headline" to fb.headline,
+                    "reasoning" to fb.reasoning,
+                    "misunderstoodConcept" to (fb.misunderstoodConcept ?: ""),
+                    "retryTip" to (fb.retryTip ?: ""),
+                    "details" to safeDetails
+                )
+            }
+
+            val root = mapOf(
+                "screenState" to screenState.name,
+                "currentQuestionIdx" to currentQuestionIdx,
+                "examElapsedSeconds" to examElapsedSeconds,
+                "generatedQuestionIds" to generatedQuestionIds,
+                "answers" to answersMap,
+                "feedbacks" to feedbacksMap
             )
+            anyAdapter.toJson(root)
+        } catch (e: Exception) {
+            android.util.Log.e("SimuladoSession", "Erro ao serializar sessão: ${e.message}")
+            "{}"
         }
-
-        val root = mapOf(
-            "screenState" to screenState.name,
-            "currentQuestionIdx" to currentQuestionIdx,
-            "examElapsedSeconds" to examElapsedSeconds,
-            "generatedQuestionIds" to generatedQuestionIds,
-            "answers" to answersMap,
-            "feedbacks" to feedbacksMap
-        )
-        return anyAdapter.toJson(root)
     }
 
     @Suppress("UNCHECKED_CAST")
@@ -272,7 +284,8 @@ internal object SimuladoSessionStore {
 fun SimuladosScreen(
     progressRepository: UserProgressRepository,
     pythonEngine: PythonEngine? = null,
-    userPhotoUrl: String? = null
+    userPhotoUrl: String? = null,
+    onSimuladoRunningChange: (Boolean) -> Unit = {}
 ) {
     val context = LocalContext.current
     val userProgress by progressRepository.progressState.collectAsState()
@@ -288,6 +301,7 @@ fun SimuladosScreen(
         SimuladoSessionStore.ensureRestored(context)
         mutableStateOf(SimuladoSessionStore.screenState)
     }
+    var showExitDialog by rememberSaveable { mutableStateOf(false) }
     var selectedSubject by rememberSaveable { mutableStateOf("Todas") }
     var selectedMode by rememberSaveable { mutableStateOf(SimuladoMode.BY_SUBJECT) }
     var selectedModuleId by rememberSaveable { mutableStateOf<String?>(null) }
@@ -323,6 +337,7 @@ fun SimuladosScreen(
     }
 
     LaunchedEffect(screenState) {
+        onSimuladoRunningChange(screenState == SimuladoScreenState.RUNNING_EXAM)
         SimuladoSessionStore.screenState = screenState
         SimuladoSessionStore.persist(context)
         while (screenState == SimuladoScreenState.RUNNING_EXAM) {
@@ -330,6 +345,11 @@ fun SimuladosScreen(
             examElapsedSeconds += 1
             SimuladoSessionStore.examElapsedSeconds = examElapsedSeconds
         }
+    }
+
+    // Intercepta botão Voltar do sistema durante simulado ativo para exigir confirmação
+    BackHandler(enabled = screenState == SimuladoScreenState.RUNNING_EXAM) {
+        showExitDialog = true
     }
     val generatedQuestions: List<BankQuestion> = remember(generatedQuestionIds, cachedGeneratedQuestions) {
         if (cachedGeneratedQuestions.isNotEmpty() && cachedGeneratedQuestions.map { it.id } == generatedQuestionIds) {
@@ -679,8 +699,7 @@ fun SimuladosScreen(
                     ) {
                         OutlinedButton(
                             onClick = {
-                                screenState = SimuladoScreenState.CONFIGURATOR
-                                syncSessionStore()
+                                showExitDialog = true
                             },
                             contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp),
                             shape = RoundedCornerShape(8.dp)
@@ -1129,6 +1148,48 @@ fun SimuladosScreen(
                 }
             }
         }
+    }
+
+    if (showExitDialog) {
+        AlertDialog(
+            onDismissRequest = { showExitDialog = false },
+            title = {
+                Text(
+                    text = "Sair do Simulado?",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = TextPrimary
+                )
+            },
+            text = {
+                Text(
+                    text = "Seu progresso e respostas respondidas permanecerão salvos. Deseja pausar e voltar para a tela de configuração?",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = TextSecondary
+                )
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showExitDialog = false
+                        screenState = SimuladoScreenState.CONFIGURATOR
+                        syncSessionStore()
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = ErrorRose)
+                ) {
+                    Text("Pausar e Sair")
+                }
+            },
+            dismissButton = {
+                OutlinedButton(
+                    onClick = { showExitDialog = false }
+                ) {
+                    Text("Continuar Simulado")
+                }
+            },
+            containerColor = ObsidianSurface,
+            shape = RoundedCornerShape(16.dp)
+        )
     }
 }
 

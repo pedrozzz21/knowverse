@@ -1,6 +1,6 @@
-﻿package com.example.data.transpetro
+package com.example.data.transpetro
 
-import com.example.data.model.CalculusDidacticBundle
+import com.example.data.math.CalculusDidacticBundle
 import com.example.data.model.MathExercise
 
 object TranspetroAdmPart2Didactic {
@@ -59,7 +59,7 @@ object TranspetroAdmPart2Didactic {
             ),
             exampleAnswer = "Manutenção Preditiva (monitoramento térmico baseado na condição operacional).",
             goldTip = "Falou em 'análise de vibração', 'termografia', 'análise de óleo' ou 'acompanhamento de parâmetros em tempo real', a resposta é sempre MANUTENÇÃO PREDITIVA!"
-        ),
+        )
 
         "tp_adm_m6_a2" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m6_a2",
@@ -120,7 +120,7 @@ object TranspetroAdmPart2Didactic {
             ),
             exampleAnswer = "MTBF = 300 horas; MTTR = 12 horas; Disponibilidade = 96,15%.",
             goldTip = "Fórmula mágica da Cesgranrio: DISPONIBILIDADE = MTBF / (MTBF + MTTR). Se a questão der o MTBF e o MTTR, basta aplicar diretamente essa razão!"
-        ),
+        )
 
         // =====================================================================
         // MÓDULO 7: ADMINISTRAÇÃO PATRIMONIAL
@@ -167,7 +167,7 @@ object TranspetroAdmPart2Didactic {
             ),
             exampleAnswer = "Apenas os projetores multimídia sofrem tombamento, pois são bens permanentes (ativo imobilizado).",
             goldTip = "Bens permanentes exigem OBRIGATORIAMENTE três coisas na Cesgranrio: Cadastramento no sistema, Plaqueta de tombamento no chassi e Termo de Responsabilidade assinado pelo detentor da carga!"
-        ),
+        )
 
         "tp_adm_m7_a2" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m7_a2",
@@ -220,7 +220,7 @@ object TranspetroAdmPart2Didactic {
             ),
             exampleAnswer = "Bem Antieconômico (custo de reparo supera 50% do valor de mercado).",
             goldTip = "Regra de ouro cobrada na Cesgranrio: custo de conserto de até 50% do valor de mercado = RECUPERÁVEL. Custo de conserto acima de 50% do valor de mercado = ANTIECONÔMICO!"
-        ),
+        )
 
         // =====================================================================
         // MÓDULO 8: COMPRAS E CONTRATOS
@@ -277,7 +277,7 @@ object TranspetroAdmPart2Didactic {
             ),
             exampleAnswer = "Estudo Técnico Preliminar (ETP).",
             goldTip = "Em provas de contratações: o ETP avalia a VIABILIDADE e compara ALTERNATIVAS; o Termo de Referência (TR) define e detalha as REGRAS e o OBJETO da solução que foi escolhida no ETP!"
-        ),
+        )
 
         "tp_adm_m8_a2" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m8_a2",
@@ -328,7 +328,7 @@ object TranspetroAdmPart2Didactic {
             ),
             exampleAnswer = "O Fiscal do Contrato (Fiscal Técnico).",
             goldTip = "Para não errar na prova: quem fica no chão de fábrica e mede a obra é o FISCAL; quem fica no escritório assinando aditivo e controlando o orçamento do contrato é o GESTOR!"
-        ),
+        )
 
         // =====================================================================
         // MÓDULO 9: LEGISLAÇÃO APLICADA, ÉTICA E REDAÇÃO OFICIAL
@@ -386,7 +386,7 @@ object TranspetroAdmPart2Didactic {
             ),
             exampleAnswer = "Inexigibilidade de Licitação (Artigo 30, inciso I, da Lei nº 13.303/2016).",
             goldTip = "Cai SEMPRE na Cesgranrio: Se for FORNECEDOR EXCLUSIVO ou PROFISSIONAL DE NOTÓRIA ESPECIALIZAÇÃO, é INEXIGIBILIDADE! Se for EMERGÊNCIA, PEQUENO VALOR ou LICITAÇÃO DESERTA, é DISPENSA!"
-        ),
+        )
 
         "tp_adm_m9_a2" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m9_a2",
@@ -431,7 +431,7 @@ object TranspetroAdmPart2Didactic {
             ),
             exampleAnswer = "O acréscimo máximo permitido por lei é de R$ 1.000.000,00 (25%).",
             goldTip = "Pegadinha de prova: a Nova Lei de Licitações (Lei 14.133/2021) NÃO se aplica à Transpetro nem à Petrobras! Se a questão perguntar qual lei disciplina as licitações de estatais, a resposta correta é a LEI Nº 13.303/2016!"
-        ),
+        )
 
         "tp_adm_m9_a3" -> TranspetroDidacticProvider.buildBundle(
             lessonId = "tp_adm_m9_a3",

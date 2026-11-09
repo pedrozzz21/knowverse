@@ -37,12 +37,12 @@
               "problemStatement": "Um motorista realizou uma viagem de 480 km. O carro tem consumo médio de 12 km por litro de gasolina. Sabendo que o preço do litro de gasolina é R$ 5,60 e que foram pagos R$ 34,00 em pedágios, qual foi o custo total com combustível e pedágios nessa viagem?",
               "options": [
                 "R$ 224,00",
-                "R$ 258,00",
-                "R$ 280,00",
+                "R$ 268,00",
                 "R$ 310,00",
-                "R$ 268,00"
+                "R$ 280,00",
+                "R$ 258,00"
               ],
-              "correctIndex": 1,
+              "correctIndex": 4,
               "hint": "Primeiro calcule a quantidade de litros dividindo a distância pelo consumo médio.",
               "stepByStepSolution": "1. Litros consumidos: 480 / 12 = 40 litros.\n2. Custo com gasolina: 40 * 5,60 = R$ 224,00.\n3. Custo total com pedágio: 224,00 + 34,00 = R$ 258,00."
             },
@@ -51,13 +51,13 @@
               "title": "Expressão Numérica Aplicada",
               "problemStatement": "Em uma promoção, um produto que custava R$ 180,00 teve um desconto de R$ 25,00 e o valor restante foi parcelado em 5 prestações iguais. Qual é o valor de cada prestação?",
               "options": [
-                "R$ 36,00",
                 "R$ 31,00",
                 "R$ 32,50",
+                "R$ 36,00",
                 "R$ 35,00",
                 "R$ 29,00"
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "hint": "Subtraia o desconto do valor original e depois divida pelo número de parcelas.",
               "stepByStepSolution": "1. Valor pós-desconto: 180 - 25 = 155.\n2. Cada parcela: 155 / 5 = R$ 31,00."
             }
@@ -87,13 +87,13 @@
               "title": "Contextualizada: Soma de Frações e Volume",
               "problemStatement": "Uma cozinheira utilizou 3/4 de xícara de açúcar para uma massa e 2/5 de xícara para o recheio. Qual foi o total de açúcar utilizado em número decimal?",
               "options": [
+                "1,15 xícaras",
+                "1,05 xícaras",
                 "1,25 xícaras",
                 "1,20 xícaras",
-                "1,35 xícaras",
-                "1,05 xícaras",
-                "1,15 xícaras"
+                "1,35 xícaras"
               ],
-              "correctIndex": 4,
+              "correctIndex": 0,
               "hint": "Converta 3/4 e 2/5 para decimais ou encontre o MMC(4, 5).",
               "stepByStepSolution": "3/4 = 0,75. 2/5 = 0,40. Total = 0,75 + 0,40 = 1,15 xícaras."
             }
@@ -124,12 +124,12 @@
               "problemStatement": "Dois médicos dão plantão em um hospital de emergência. O médico A dá plantão a cada 6 dias e o médico B a cada 8 dias. Se ambos deram plantão juntos no dia 1º de março, quantos dias depois voltarão a dar plantão juntos?",
               "options": [
                 "48 dias",
-                "36 dias",
-                "12 dias",
                 "16 dias",
-                "24 dias"
+                "12 dias",
+                "24 dias",
+                "36 dias"
               ],
-              "correctIndex": 4,
+              "correctIndex": 3,
               "hint": "Encontre o Menor Múltiplo Comum entre 6 e 8.",
               "stepByStepSolution": "Fatorando 6 e 8 simultaneamente:\n6, 8 | 2\n3, 4 | 2\n3, 2 | 2\n3, 1 | 3\n1, 1 | MMC = 2³ * 3 = 24 dias."
             }
@@ -159,13 +159,13 @@
               "title": "Contextualizada: Escala Cartográfica",
               "problemStatement": "Em uma planta arquitetônica desenhada na escala 1:50, a sala de um apartamento possui 8 cm de comprimento por 6 cm de largura. As dimensões reais dessa sala são:",
               "options": [
-                "4,5 m x 3,5 m",
-                "40 m x 30 m",
-                "4 m x 3 m",
                 "5 m x 4 m",
-                "8 m x 6 m"
+                "8 m x 6 m",
+                "4,5 m x 3,5 m",
+                "4 m x 3 m",
+                "40 m x 30 m"
               ],
-              "correctIndex": 2,
+              "correctIndex": 3,
               "hint": "Multiplique cada dimensão por 50 e converta centímetros para metros.",
               "stepByStepSolution": "Comprimento: 8 cm * 50 = 400 cm = 4 metros.\nLargura: 6 cm * 50 = 300 cm = 3 metros."
             }
@@ -196,12 +196,12 @@
               "problemStatement": "Uma obra é realizada por 6 operários em 20 dias de trabalho contínuo. Se a equipe for reforçada, passando a contar com 8 operários com a mesma produtividade, em quantos dias a mesma obra será concluída?",
               "options": [
                 "18 dias",
-                "15 dias",
                 "16 dias",
-                "12 dias",
-                "14 dias"
+                "14 dias",
+                "15 dias",
+                "12 dias"
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "hint": "Mais operários realizam a obra em MENOS dias (inversamente proporcional). Multiplique em linha.",
               "stepByStepSolution": "6 * 20 = 8 * x -> 120 = 8x -> x = 120 / 8 = 15 dias."
             }
@@ -231,13 +231,13 @@
               "title": "Contextualizada: Aumento Sucessivo",
               "problemStatement": "Uma mercadoria teve seu preço reajustado em 10% no mês de janeiro e, sobre o novo preço, recebeu outro aumento de 20% em fevereiro. O aumento percentual acumulado em relação ao preço inicial foi de:",
               "options": [
-                "32%",
                 "30%",
+                "32%",
                 "33%",
-                "34%",
-                "31%"
+                "31%",
+                "34%"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "hint": "Multiplique os fatores 1,10 e 1,20.",
               "stepByStepSolution": "Fator total = 1,10 * 1,20 = 1,32 -> Aumento real de 32% (e não 30%)."
             }
@@ -269,11 +269,11 @@
               "options": [
                 "R$ 60.000,00",
                 "R$ 36.000,00",
-                "R$ 45.000,00",
+                "R$ 54.000,00",
                 "R$ 72.000,00",
-                "R$ 54.000,00"
+                "R$ 45.000,00"
               ],
-              "correctIndex": 4,
+              "correctIndex": 2,
               "hint": "Se é inversamente proporcional, A recebe k/2 e B recebe k/3.",
               "stepByStepSolution": "k/2 + k/3 = 90.000 -> 5k/6 = 90.000 -> 5k = 540.000 -> k = 108.000.\nSócio A = 108.000 / 2 = R$ 54.000,00."
             }
@@ -303,13 +303,13 @@
               "title": "ENEM: Pavimentação de Rodovia (Regra de Três Composta)",
               "problemStatement": "Uma equipe de 12 operários, trabalhando 8 horas por dia, pavimenta 400 metros de rodovia em 10 dias. Quantos dias serão necessários para que uma equipe de 16 operários, trabalhando 6 horas por dia com a mesma produtividade, pavimente 600 metros dessa mesma rodovia?",
               "options": [
-                "14 dias",
                 "10 dias",
+                "14 dias",
                 "18 dias",
-                "15 dias",
-                "12 dias"
+                "12 dias",
+                "15 dias"
               ],
-              "correctIndex": 3,
+              "correctIndex": 4,
               "hint": "Operários e horas/dia são grandezas inversas aos dias; extensão da rodovia é grandeza direta.",
               "stepByStepSolution": "10/x = (16/12) * (6/8) * (400/600)\n10/x = (4/3) * (3/4) * (2/3) = 1 * (2/3) = 2/3\n2x = 30 -> x = 15 dias."
             }
@@ -339,13 +339,13 @@
               "title": "ENEM: Terreno e Escala Cartográfica de Superfície",
               "problemStatement": "Em um mapa confeccionado na escala linear 1:20.000, uma reserva ecológica retangular é representada com 3 cm de largura por 5 cm de comprimento. A área real dessa reserva, em quilômetros quadrados, é igual a:",
               "options": [
-                "0,6 km²",
-                "12,0 km²",
-                "60,0 km²",
                 "6,0 km²",
+                "0,6 km²",
+                "60,0 km²",
+                "12,0 km²",
                 "3,0 km²"
               ],
-              "correctIndex": 3,
+              "correctIndex": 0,
               "hint": "Na escala linear 1:20.000, 1 cm no mapa vale 20.000 cm = 200 m = 0,2 km no terreno real.",
               "stepByStepSolution": "Largura real = 3 cm * 0,2 km/cm = 0,6 km.\nComprimento real = 5 cm * 0,2 km/cm = 1,0 km.\nÁrea real = 0,6 km * 1,0 km = 6,0 km² (Alternativa C)."
             }
@@ -376,12 +376,12 @@
               "problemStatement": "O aluguel de um imóvel sofreu um reajuste de 15% no início do primeiro semestre e, devido à inflação acumulada, um novo aumento de 10% no final do ano sobre o valor já corrigido. Em relação ao valor inicial do início do ano, qual foi o aumento percentual total acumulado?",
               "options": [
                 "30,0%",
-                "26,5%",
                 "25,0%",
-                "28,5%",
-                "27,0%"
+                "27,0%",
+                "26,5%",
+                "28,5%"
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "hint": "Multiplique os fatores 1,15 e 1,10.",
               "stepByStepSolution": "Fator total = 1,15 * 1,10 = 1,265.\n1,265 - 1 = 0,265 = 26,5% de aumento acumulado (e não 25%)."
             }
@@ -422,15 +422,15 @@
               "title": "ENEM: Valor Numérico de Fórmula Pediátrica",
               "problemStatement": "A dose diária recomendada de um medicamento para crianças é calculada pela fórmula D = (Idade * 12) / (Idade + 12) mg. Para uma criança de 4 anos de idade, a dose diária calculada é de:",
               "options": [
-                "8 mg",
-                "6 mg",
-                "3 mg",
                 "4 mg",
+                "6 mg",
+                "8 mg",
+                "3 mg",
                 "2 mg"
               ],
-              "correctIndex": 2,
+              "correctIndex": 3,
               "hint": "Substitua Idade = 4 na fórmula.",
-              "stepByStepSolution": "Alternativa correta: C (3 mg).\n\nD = (4 * 12) / (4 + 12) = 48 / 16 = 3 mg."
+              "stepByStepSolution": "Alternativa correta: D (3 mg).\n\nD = (4 * 12) / (4 + 12) = 48 / 16 = 3 mg."
             }
           ],
           "formulasOrSyntax": [],
@@ -458,15 +458,15 @@
               "title": "ENEM: Diferença de Quadrados em Terrenos",
               "problemStatement": "Um proprietário possuía um terreno quadrado de lado 53 metros e vendeu dele uma área quadrada menor de lado 47 metros. A área de terreno restante que ainda lhe pertence mede:",
               "options": [
-                "500 m²",
-                "700 m²",
-                "600 m²",
                 "300 m²",
+                "600 m²",
+                "700 m²",
+                "500 m²",
                 "400 m²"
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "Use a fatoração da diferença de quadrados: a² - b² = (a + b)(a - b).",
-              "stepByStepSolution": "Alternativa correta: C (600 m²).\n\n53² - 47² = (53 + 47) * (53 - 47) = 100 * 6 = 600 m²."
+              "stepByStepSolution": "Alternativa correta: B (600 m²).\n\n53² - 47² = (53 + 47) * (53 - 47) = 100 * 6 = 600 m²."
             }
           ],
           "formulasOrSyntax": [],
@@ -494,15 +494,15 @@
               "title": "ENEM: Inequação de Orçamento em Compras",
               "problemStatement": "Um estudante dispõe de R$ 60,00 para comprar canetas que custam R$ 4,50 cada, após já ter pago R$ 15,00 por um caderno. O número máximo de canetas que ele pode comprar é:",
               "options": [
-                "10",
                 "9",
-                "8",
                 "12",
-                "11"
+                "11",
+                "8",
+                "10"
               ],
-              "correctIndex": 0,
+              "correctIndex": 4,
               "hint": "Monte a inequação: 4,50x + 15 <= 60.",
-              "stepByStepSolution": "Alternativa correta: A (10 canetas).\n\n4,50x <= 60 - 15 = 45 -> x <= 45 / 4,50 = 10 canetas."
+              "stepByStepSolution": "Alternativa correta: E (10 canetas).\n\n4,50x <= 60 - 15 = 45 -> x <= 45 / 4,50 = 10 canetas."
             }
           ],
           "formulasOrSyntax": [],
@@ -532,13 +532,13 @@
               "options": [
                 "20 metros",
                 "12 metros",
+                "25 metros",
                 "18 metros",
-                "15 metros",
-                "25 metros"
+                "15 metros"
               ],
-              "correctIndex": 3,
+              "correctIndex": 4,
               "hint": "Monte x * (x + 5) = 300 -> x² + 5x - 300 = 0.",
-              "stepByStepSolution": "Alternativa correta: D (15 metros).\n\nDois números com diferença 5 e produto 300 são 15 e 20 (15 * 20 = 300). Logo, a largura mede 15 m."
+              "stepByStepSolution": "Alternativa correta: E (15 metros).\n\nDois números com diferença 5 e produto 300 são 15 e 20 (15 * 20 = 300). Logo, a largura mede 15 m."
             }
           ],
           "formulasOrSyntax": [],
@@ -566,11 +566,11 @@
               "title": "ENEM: Ingressos de Cinema (Sistema 2x2)",
               "problemStatement": "Em uma sessão de cinema, foram vendidos 120 ingressos entre inteiras (R$ 30,00) e meias-entradas (R$ 15,00), totalizando uma arrecadação de R$ 2.700,00. Quantas meias-entradas foram vendidas?",
               "options": [
-                "80",
-                "60",
                 "40",
+                "60",
+                "70",
                 "50",
-                "70"
+                "80"
               ],
               "correctIndex": 1,
               "hint": "Sistema: x + y = 120 e 30x + 15y = 2.700.",
@@ -613,15 +613,15 @@
               "title": "ENEM: Localização de Ponto no Plano",
               "problemStatement": "Em um sistema de coordenadas cartesianas de monitoramento de tráfego, uma viatura está estacionada no ponto P de coordenadas x = -4 km e y = -6 km. O quadrante em que essa viatura se encontra é o:",
               "options": [
-                "Terceiro quadrante",
-                "Primeiro quadrante",
                 "Eixo das ordenadas",
+                "Primeiro quadrante",
                 "Segundo quadrante",
-                "Quarto quadrante"
+                "Quarto quadrante",
+                "Terceiro quadrante"
               ],
-              "correctIndex": 0,
+              "correctIndex": 4,
               "hint": "Quando tanto a abscissa (x) quanto a ordenada (y) são negativas, o ponto localiza-se no terceiro quadrante.",
-              "stepByStepSolution": "Alternativa correta: A (Terceiro quadrante).\n\nNo plano cartesiano:\nI: (+, +) | II: (-, +) | III: (-, -) | IV: (+, -).\nComo P tem x < 0 e y < 0, ele pertence ao III Quadrante."
+              "stepByStepSolution": "Alternativa correta: E (Terceiro quadrante).\n\nNo plano cartesiano:\nI: (+, +) | II: (-, +) | III: (-, -) | IV: (+, -).\nComo P tem x < 0 e y < 0, ele pertence ao III Quadrante."
             }
           ],
           "formulasOrSyntax": [],
@@ -649,15 +649,15 @@
               "title": "ENEM: Identificação de Função pelo Teste da Reta Vertical",
               "problemStatement": "Dentre os gráficos a seguir que relacionam grandezas econômicas, aquele que NÃO representa uma função y = f(x) é uma curva em que:",
               "options": [
-                "a imagem coincide com o conjunto dos números reais positivos.",
-                "o gráfico intercepta o eixo horizontal em uma única raiz.",
                 "uma reta vertical intercepta o gráfico em mais de um ponto distinto.",
                 "a reta é estritamente crescente em todo o domínio.",
-                "para cada valor de x existe um único valor correspondente de y."
+                "para cada valor de x existe um único valor correspondente de y.",
+                "a imagem coincide com o conjunto dos números reais positivos.",
+                "o gráfico intercepta o eixo horizontal em uma única raiz."
               ],
-              "correctIndex": 2,
+              "correctIndex": 0,
               "hint": "Pela definição de função, um elemento do domínio (x) não pode ter mais de uma imagem (y).",
-              "stepByStepSolution": "Alternativa correta: C.\n\nPelo teste da reta vertical, se uma reta perpendicular ao eixo x cruza a curva em dois ou mais pontos, significa que um mesmo valor de x possui múltiplas saídas y, violando a definição unívoca de função."
+              "stepByStepSolution": "Alternativa correta: A.\n\nPelo teste da reta vertical, se uma reta perpendicular ao eixo x cruza a curva em dois ou mais pontos, significa que um mesmo valor de x possui múltiplas saídas y, violando a definição unívoca de função."
             }
           ],
           "formulasOrSyntax": [],
@@ -685,15 +685,15 @@
               "title": "ENEM: Tarifa de Táxi e Função Afim",
               "problemStatement": "O valor cobrado por uma corrida de táxi é composto por uma taxa fixa de bandeirada no valor de R$ 6,00 mais R$ 2,50 por quilômetro rodado. Se um passageiro pagou R$ 41,00 pela corrida, a distância percorrida pelo veículo foi de:",
               "options": [
-                "16 km",
-                "18 km",
-                "12 km",
                 "14 km",
+                "12 km",
+                "18 km",
+                "16 km",
                 "20 km"
               ],
-              "correctIndex": 3,
+              "correctIndex": 0,
               "hint": "Monte a equação: 2,50x + 6,00 = 41,00 e isole x.",
-              "stepByStepSolution": "Alternativa correta: D (14 km).\n\n2,50x + 6 = 41 -> 2,50x = 35 -> x = 35 / 2,50 = 14 km."
+              "stepByStepSolution": "Alternativa correta: A (14 km).\n\n2,50x + 6 = 41 -> 2,50x = 35 -> x = 35 / 2,50 = 14 km."
             }
           ],
           "formulasOrSyntax": [],
@@ -721,15 +721,15 @@
               "title": "ENEM: Ponto de Máximo e Lucro em Função Quadrática",
               "problemStatement": "Uma empresa calculou que seu lucro mensal L (em milhares de reais) varia com a quantidade produzida x (em centenas de peças) segundo a função quadrática L(x) = -x² + 12x - 20. A quantidade de peças que a empresa deve produzir para maximizar seu lucro mensal é de:",
               "options": [
-                "600 peças",
                 "1.200 peças",
                 "800 peças",
                 "400 peças",
-                "1.000 peças"
+                "1.000 peças",
+                "600 peças"
               ],
-              "correctIndex": 0,
+              "correctIndex": 4,
               "hint": "O ponto de máximo de uma parábola ocorre no vértice x_v = -b / (2a).",
-              "stepByStepSolution": "Alternativa correta: A (600 peças).\n\nx_v = -12 / (2 * (-1)) = -12 / -2 = 6 centenas = 600 peças."
+              "stepByStepSolution": "Alternativa correta: E (600 peças).\n\nx_v = -12 / (2 * (-1)) = -12 / -2 = 6 centenas = 600 peças."
             }
           ],
           "formulasOrSyntax": [],
@@ -757,8 +757,8 @@
               "title": "ENEM: Crescimento Exponencial de Bactérias",
               "problemStatement": "Uma colônia de bactérias possui inicialmente 200 indivíduos e duplica sua população a cada 3 horas. O número total de bactérias presentes nessa cultura após decorridas 12 horas é igual a:",
               "options": [
-                "1.600",
                 "2.400",
+                "1.600",
                 "800",
                 "3.200",
                 "6.400"
@@ -793,15 +793,15 @@
               "title": "ENEM: Comparação na Escala Richter",
               "problemStatement": "A energia liberada por um terremoto de magnitude M na escala Richter relaciona-se com a amplitude das ondas pela expressão M = log₁₀(A / A₀). Se um terremoto na cidade A teve magnitude 7 e outro na cidade B teve magnitude 5, a amplitude das ondas sísmicas em A foi quantas vezes superior à amplitude em B?",
               "options": [
-                "2 vezes",
-                "1.000 vezes",
                 "100 vezes",
                 "200 vezes",
+                "2 vezes",
+                "1.000 vezes",
                 "20 vezes"
               ],
-              "correctIndex": 2,
+              "correctIndex": 0,
               "hint": "Como a base do logaritmo é 10, a diferença de 2 unidades na magnitude equivale a uma razão de 10².",
-              "stepByStepSolution": "Alternativa correta: C (100 vezes).\n\nΔM = 7 - 5 = 2.\nA_A / A_B = 10^(ΔM) = 10² = 100 vezes mais intenso."
+              "stepByStepSolution": "Alternativa correta: A (100 vezes).\n\nΔM = 7 - 5 = 2.\nA_A / A_B = 10^(ΔM) = 10² = 100 vezes mais intenso."
             }
           ],
           "formulasOrSyntax": [],
@@ -840,13 +840,13 @@
               "title": "ENEM: Padrão Geométrico em Azulejos",
               "problemStatement": "Uma sequência de mosaicos é construída com azulejos pretos e brancos. O 1º mosaico tem 8 azulejos brancos; o 2º tem 11; o 3º tem 14, mantendo sempre o mesmo padrão aditivo regular. Quantos azulejos brancos terá o 25º mosaico?",
               "options": [
+                "84",
                 "88",
-                "72",
-                "76",
                 "80",
-                "84"
+                "76",
+                "72"
               ],
-              "correctIndex": 3,
+              "correctIndex": 2,
               "hint": "A sequência é uma PA com a_1 = 8 e razão r = 3.",
               "stepByStepSolution": "a_25 = a_1 + (25 - 1) * r = 8 + 24 * 3 = 8 + 72 = 80 azulejos."
             }
@@ -877,12 +877,12 @@
               "problemStatement": "Uma pessoa planejou guardar dinheiro durante 30 dias: guardou R$ 5,00 no 1º dia, R$ 7,00 no 2º dia, R$ 9,00 no 3º dia, e assim sucessivamente até o trigésimo dia. O valor total acumulado no cofre ao final dos 30 dias foi de:",
               "options": [
                 "R$ 1.080,00",
-                "R$ 1.020,00",
                 "R$ 1.050,00",
                 "R$ 960,00",
-                "R$ 1.120,00"
+                "R$ 1.120,00",
+                "R$ 1.020,00"
               ],
-              "correctIndex": 1,
+              "correctIndex": 4,
               "hint": "Calcule o 30º termo da PA (razão 2) e depois a soma de Gauss dos 30 termos.",
               "stepByStepSolution": "a_30 = 5 + (30 - 1)*2 = 5 + 58 = R$ 63,00.\nS_30 = [(a_1 + a_30) * n] / 2 = [(5 + 63) * 30] / 2 = 68 * 15 = R$ 1.020,00."
             }
@@ -912,13 +912,13 @@
               "title": "ENEM: Depreciação de Equipamento e PG",
               "problemStatement": "Uma máquina industrial avaliada hoje em R$ 80.000,00 sofre uma depreciação anual de 20% sobre o seu valor no ano imediatamente anterior. Qual será o valor estimado dessa máquina após 3 anos de uso contínuo?",
               "options": [
-                "R$ 48.000,00",
-                "R$ 32.000,00",
                 "R$ 38.400,00",
                 "R$ 40.960,00",
+                "R$ 48.000,00",
+                "R$ 32.000,00",
                 "R$ 51.200,00"
               ],
-              "correctIndex": 3,
+              "correctIndex": 1,
               "hint": "A cada ano o valor da máquina passa a ser 80% (fator 0,8) do ano anterior.",
               "stepByStepSolution": "Valor = 80.000 * (0,80)^3 = 80.000 * 0,512 = R$ 40.960,00."
             }
@@ -959,15 +959,15 @@
               "title": "ENEM: Definição de Logaritmo",
               "problemStatement": "Sabendo que a intensidade do som em decibéis é dada por N = 10 * log₁₀(I / I₀), se uma fonte sonora emite com intensidade tal que I / I₀ = 100.000, o nível sonoro em decibéis é de:",
               "options": [
-                "50 dB",
-                "30 dB",
                 "60 dB",
-                "70 dB",
-                "40 dB"
+                "50 dB",
+                "40 dB",
+                "30 dB",
+                "70 dB"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "hint": "100.000 = 10⁵. Logo log₁₀(10⁵) = 5.",
-              "stepByStepSolution": "Alternativa correta: A (50 dB).\n\nN = 10 * log₁₀(10⁵) = 10 * 5 = 50 dB."
+              "stepByStepSolution": "Alternativa correta: B (50 dB).\n\nN = 10 * log₁₀(10⁵) = 10 * 5 = 50 dB."
             }
           ],
           "formulasOrSyntax": [],
@@ -995,15 +995,15 @@
               "title": "ENEM: Propriedade do Produto de Logaritmos",
               "problemStatement": "Considerando log 2 = 0,30 e log 3 = 0,48, o valor de log 18 é igual a:",
               "options": [
-                "1,26",
-                "0,96",
-                "0,78",
+                "1,44",
                 "1,08",
-                "1,44"
+                "0,78",
+                "0,96",
+                "1,26"
               ],
-              "correctIndex": 0,
+              "correctIndex": 4,
               "hint": "Fatore 18 = 2 * 3² -> log 18 = log 2 + 2 * log 3.",
-              "stepByStepSolution": "Alternativa correta: A (1,26).\n\nlog 18 = log(2 * 3²) = log 2 + 2 * log 3 = 0,30 + 2 * 0,48 = 0,30 + 0,96 = 1,26."
+              "stepByStepSolution": "Alternativa correta: E (1,26).\n\nlog 18 = log(2 * 3²) = log 2 + 2 * log 3 = 0,30 + 2 * 0,48 = 0,30 + 0,96 = 1,26."
             }
           ],
           "formulasOrSyntax": [],
@@ -1079,12 +1079,12 @@
               "problemStatement": "Um investidor aplicou R$ 4.000,00 a uma taxa de juros simples de 1,5% ao mês durante 8 meses. Qual é o valor dos juros e o montante final resgatado?",
               "options": [
                 "J = R$ 520,00 e M = R$ 4.520,00",
+                "J = R$ 600,00 e M = R$ 4.600,00",
                 "J = R$ 480,00 e M = R$ 4.480,00",
                 "J = R$ 720,00 e M = R$ 4.720,00",
-                "J = R$ 600,00 e M = R$ 4.600,00",
                 "J = R$ 640,00 e M = R$ 4.640,00"
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "hint": "Aplique J = C * i * t com taxa em formato decimal (0,015).",
               "stepByStepSolution": "J = 4000 * 0,015 * 8 = 480,00.\nMontante = 4000 + 480 = R$ 4.480,00."
             }
@@ -1114,13 +1114,13 @@
               "title": "Contextualizada: Montante Composto",
               "problemStatement": "Um capital de R$ 2.000,00 foi aplicado a juros compostos com taxa de 10% ao ano durante 2 anos. O montante ao final da aplicação foi de:",
               "options": [
-                "R$ 2.420,00",
-                "R$ 2.440,00",
-                "R$ 2.200,00",
                 "R$ 2.500,00",
+                "R$ 2.440,00",
+                "R$ 2.420,00",
+                "R$ 2.200,00",
                 "R$ 2.400,00"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "M = C * (1 + i)^t -> M = 2000 * (1,10)^2.",
               "stepByStepSolution": "1,10^2 = 1,21. M = 2000 * 1,21 = R$ 2.420,00."
             }
@@ -1150,10 +1150,10 @@
               "title": "ENEM: Financiamento Imobiliário no Sistema SAC",
               "problemStatement": "Um cidadão financiou R$ 240.000,00 pelo Sistema de Amortização Constante (SAC) em 120 parcelas mensais, à taxa de juros de 1% ao mês sobre o saldo devedor. Qual será o valor da primeira prestação paga por esse mutuário?",
               "options": [
-                "R$ 4.800,00",
+                "R$ 3.800,00",
                 "R$ 4.000,00",
                 "R$ 2.400,00",
-                "R$ 3.800,00",
+                "R$ 4.800,00",
                 "R$ 4.400,00"
               ],
               "correctIndex": 4,
@@ -1197,10 +1197,10 @@
               "title": "ENEM: Leitura de Gráfico de Setores",
               "problemStatement": "Em uma pesquisa de preferência realizada com 1.200 consumidores, o gráfico de setores indicou que o setor correspondente ao Produto A possui um ângulo central de 72°. O número de consumidores que declararam preferência pelo Produto A foi de:",
               "options": [
-                "288",
-                "120",
                 "180",
+                "288",
                 "360",
+                "120",
                 "240"
               ],
               "correctIndex": 4,
@@ -1233,15 +1233,15 @@
               "title": "ENEM: Meta de Média em Avaliações",
               "problemStatement": "Um estudante obteve as notas 6,0; 7,0 e 5,0 nas três primeiras provas do bimestre. Para que sua média aritmética nas quatro provas seja de no mínimo 7,0, a nota mínima que ele precisa tirar na quarta avaliação é:",
               "options": [
-                "10,0",
+                "9,5",
                 "8,5",
-                "8,0",
                 "9,0",
-                "9,5"
+                "10,0",
+                "8,0"
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "hint": "A soma das 4 notas deve ser no mínimo 4 * 7,0 = 28,0.",
-              "stepByStepSolution": "Alternativa correta: A (10,0).\n\nSoma atual = 6 + 7 + 5 = 18.\nSoma necessária = 4 * 7,0 = 28.\nNota na 4ª prova = 28 - 18 = 10,0."
+              "stepByStepSolution": "Alternativa correta: D (10,0).\n\nSoma atual = 6 + 7 + 5 = 18.\nSoma necessária = 4 * 7,0 = 28.\nNota na 4ª prova = 28 - 18 = 10,0."
             }
           ],
           "formulasOrSyntax": [],
@@ -1270,14 +1270,14 @@
               "problemStatement": "Em um processo seletivo, a prova de Conhecimentos Específicos tem peso 3 e a de Língua Portuguesa tem peso 2. Um candidato tirou nota 80 em Específicos e nota 60 em Português. Sua média ponderada final foi de:",
               "options": [
                 "76",
+                "72",
                 "70",
                 "74",
-                "68",
-                "72"
+                "68"
               ],
-              "correctIndex": 4,
+              "correctIndex": 1,
               "hint": "Mp = (80 * 3 + 60 * 2) / (3 + 2).",
-              "stepByStepSolution": "Alternativa correta: E (72).\n\nMp = (240 + 120) / 5 = 360 / 5 = 72."
+              "stepByStepSolution": "Alternativa correta: B (72).\n\nMp = (240 + 120) / 5 = 360 / 5 = 72."
             }
           ],
           "formulasOrSyntax": [],
@@ -1305,11 +1305,11 @@
               "title": "ENEM: Moda em Vendas de Calçados",
               "problemStatement": "Uma loja registrou os tamanhos dos últimos pares de tênis vendidos: {38, 39, 40, 40, 41, 40, 42, 39, 40, 43}. A moda dessa amostra de calçados vendidos é o número:",
               "options": [
-                "40,2",
                 "39",
-                "41",
+                "42",
+                "40,2",
                 "40",
-                "42"
+                "41"
               ],
               "correctIndex": 3,
               "hint": "A moda é o número que mais se repete na lista.",
@@ -1341,11 +1341,11 @@
               "title": "ENEM: Mediana de Conjunto de Dados",
               "problemStatement": "O tempo diário de treino (em minutos) de um atleta ao longo de 8 dias foi: 45, 60, 30, 50, 40, 55, 65, 35. A mediana desse conjunto de tempos é de:",
               "options": [
-                "50,0 minutos",
+                "52,5 minutos",
                 "47,5 minutos",
                 "45,0 minutos",
-                "55,0 minutos",
-                "52,5 minutos"
+                "50,0 minutos",
+                "55,0 minutos"
               ],
               "correctIndex": 1,
               "hint": "Ordene primeiro a lista em rol crescente e faça a média dos dois valores centrais.",
@@ -1377,15 +1377,15 @@
               "title": "ENEM: Interpretação de Desvio Padrão",
               "problemStatement": "Três máquinas empacotadoras de grãos A, B e C produzem pacotes com média de 1.000 gramas. Os desvios padrão apurados no controle de qualidade foram: Máquina A (σ = 2,5 g), Máquina B (σ = 0,8 g) e Máquina C (σ = 4,2 g). O setor de engenharia deve escolher a máquina com produção mais homogênea e regular. A máquina escolhida deve ser a:",
               "options": [
-                "Máquina C, por ter maior tolerância",
+                "Qualquer uma, pois as médias são iguais",
+                "Máquina C",
                 "Máquina B",
                 "Máquina A",
-                "Qualquer uma, pois as médias são iguais",
-                "Máquina C"
+                "Máquina C, por ter maior tolerância"
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "hint": "Maior regularidade e homogeneidade correspondem ao MENOR desvio padrão.",
-              "stepByStepSolution": "Alternativa correta: B (Máquina B).\n\nO desvio padrão mede a dispersão em torno da média. Como a Máquina B tem o menor desvio padrão (0,8 g), seus pacotes apresentam peso muito mais constante e uniforme."
+              "stepByStepSolution": "Alternativa correta: C (Máquina B).\n\nO desvio padrão mede a dispersão em torno da média. Como a Máquina B tem o menor desvio padrão (0,8 g), seus pacotes apresentam peso muito mais constante e uniforme."
             }
           ],
           "formulasOrSyntax": [],
@@ -1424,15 +1424,15 @@
               "title": "ENEM: Combinações de Roupas pelo PFC",
               "problemStatement": "Um jovem dispõe de 4 camisas de cores diferentes, 3 calças distintas e 2 pares de sapatos. O número de maneiras distintas que ele pode se vestir escolhendo uma camisa, uma calça e um par de sapatos é:",
               "options": [
-                "24",
                 "36",
                 "18",
-                "12",
-                "9"
+                "24",
+                "9",
+                "12"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "Pelo Princípio Multiplicativo: 4 * 3 * 2.",
-              "stepByStepSolution": "Alternativa correta: A (24 maneiras).\n\nN = 4 * 3 * 2 = 24 combinações de vestuário."
+              "stepByStepSolution": "Alternativa correta: C (24 maneiras).\n\nN = 4 * 3 * 2 = 24 combinações de vestuário."
             }
           ],
           "formulasOrSyntax": [],
@@ -1460,15 +1460,15 @@
               "title": "ENEM: Simplificação de Fatoriais",
               "problemStatement": "O valor da expressão numérica (12! + 11!) / 10! é igual a:",
               "options": [
-                "143",
                 "144",
-                "132",
                 "154",
-                "165"
+                "143",
+                "165",
+                "132"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "Fatore 10! no numerador: (12 * 11 * 10! + 11 * 10!) / 10! = 132 + 11.",
-              "stepByStepSolution": "Alternativa correta: A (143).\n\n(132 * 10! + 11 * 10!) / 10! = 132 + 11 = 143."
+              "stepByStepSolution": "Alternativa correta: C (143).\n\n(132 * 10! + 11 * 10!) / 10! = 132 + 11 = 143."
             }
           ],
           "formulasOrSyntax": [],
@@ -1497,10 +1497,10 @@
               "problemStatement": "O número de anagramas diferentes que podem ser formados com as letras da palavra BRASIL mantendo as vogais 'A' e 'I' sempre juntas em qualquer ordem é:",
               "options": [
                 "240",
-                "720",
-                "120",
+                "360",
                 "480",
-                "360"
+                "720",
+                "120"
               ],
               "correctIndex": 0,
               "hint": "Considere o bloco (AI) como 1 elemento. Teremos 5 elementos permutando, multiplicados por 2! da ordem interna das vogais.",
@@ -1532,15 +1532,15 @@
               "title": "ENEM: Criação de Senhas Numéricas (Arranjo)",
               "problemStatement": "Um cofre eletrônico exige uma senha formada por 4 algarismos distintos escolhidos entre os algarismos de 1 a 9. O total de senhas possíveis de serem criadas é:",
               "options": [
+                "504",
                 "3.024",
                 "6.561",
-                "126",
                 "1.512",
-                "504"
+                "126"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "hint": "A ordem importa. A(9, 4) = 9 * 8 * 7 * 6.",
-              "stepByStepSolution": "Alternativa correta: A (3.024 senhas).\n\n9 opções para o 1º dígito, 8 para o 2º, 7 para o 3º e 6 para o 4º: 9 * 8 * 7 * 6 = 3.024."
+              "stepByStepSolution": "Alternativa correta: B (3.024 senhas).\n\n9 opções para o 1º dígito, 8 para o 2º, 7 para o 3º e 6 para o 4º: 9 * 8 * 7 * 6 = 3.024."
             }
           ],
           "formulasOrSyntax": [],
@@ -1568,15 +1568,15 @@
               "title": "ENEM: Formação de Comissão de Trabalho (Combinação)",
               "problemStatement": "Em um hospital, um plantão de emergência deve ser composto por 3 médicos escolhidos entre um grupo de 10 médicos plantonistas disponíveis. Quantas equipes de plantão diferentes podem ser formadas?",
               "options": [
-                "720",
                 "1.000",
-                "360",
                 "240",
-                "120"
+                "120",
+                "360",
+                "720"
               ],
-              "correctIndex": 4,
+              "correctIndex": 2,
               "hint": "A ordem dos médicos não altera a equipe: C(10, 3) = (10 * 9 * 8) / (3 * 2 * 1).",
-              "stepByStepSolution": "Alternativa correta: E (120 equipes).\n\nC(10, 3) = 720 / 6 = 120 equipes."
+              "stepByStepSolution": "Alternativa correta: C (120 equipes).\n\nC(10, 3) = 720 / 6 = 120 equipes."
             }
           ],
           "formulasOrSyntax": [],
@@ -1615,15 +1615,15 @@
               "title": "ENEM: Espaço Amostral no Lançamento de Três Moedas",
               "problemStatement": "Ao lançar 3 moedas honestas simultaneamente, o número total de resultados possíveis no espaço amostral é:",
               "options": [
-                "9",
                 "3",
-                "12",
+                "6",
                 "8",
-                "6"
+                "12",
+                "9"
               ],
-              "correctIndex": 3,
+              "correctIndex": 2,
               "hint": "Cada moeda tem 2 resultados (Cara ou Coroa). n(Ω) = 2³.",
-              "stepByStepSolution": "Alternativa correta: D (8 resultados).\n\n2 * 2 * 2 = 8 sequências possíveis."
+              "stepByStepSolution": "Alternativa correta: C (8 resultados).\n\n2 * 2 * 2 = 8 sequências possíveis."
             }
           ],
           "formulasOrSyntax": [],
@@ -1651,15 +1651,15 @@
               "title": "ENEM: Probabilidade Clássica em Urna",
               "problemStatement": "Uma urna contém 12 bolas brancas, 18 bolas vermelhas e 20 bolas pretas, todas de mesmo tamanho e peso. Retirando-se uma bola ao acaso dessa urna, a probabilidade de ela ser vermelha é de:",
               "options": [
-                "24%",
-                "36%",
                 "30%",
                 "45%",
-                "40%"
+                "24%",
+                "40%",
+                "36%"
               ],
-              "correctIndex": 1,
+              "correctIndex": 4,
               "hint": "Total de bolas = 12 + 18 + 20 = 50. P = 18 / 50.",
-              "stepByStepSolution": "Alternativa correta: B (36%).\n\nP = 18 / 50 = 36 / 100 = 36%."
+              "stepByStepSolution": "Alternativa correta: E (36%).\n\nP = 18 / 50 = 36 / 100 = 36%."
             }
           ],
           "formulasOrSyntax": [],
@@ -1687,11 +1687,11 @@
               "title": "ENEM: Probabilidade da União (Regra da Soma)",
               "problemStatement": "Ao sortear um número de 1 a 50 em uma rifa beneficente, a probabilidade de o número sorteado ser múltiplo de 5 OU múltiplo de 8 é de:",
               "options": [
-                "34%",
+                "24%",
                 "30%",
+                "34%",
                 "26%",
-                "32%",
-                "24%"
+                "32%"
               ],
               "correctIndex": 1,
               "hint": "Múltiplos de 5: 10 números. Múltiplos de 8: 6 números. Múltiplos de 40 (ambos): 1 número. P = (10 + 6 - 1) / 50.",
@@ -1723,15 +1723,15 @@
               "title": "ENEM: Probabilidade de Eventos Independentes",
               "problemStatement": "A probabilidade de um atirador A acertar o alvo é de 80% (4/5) e a de um atirador B acertar é de 70% (7/10). Se ambos atiram de forma independente, a probabilidade de AMBOS acertarem o alvo é de:",
               "options": [
-                "50%",
                 "75%",
-                "64%",
+                "50%",
                 "72%",
-                "56%"
+                "56%",
+                "64%"
               ],
-              "correctIndex": 4,
+              "correctIndex": 3,
               "hint": "Multiplique as probabilidades: P(A e B) = 0,80 * 0,70.",
-              "stepByStepSolution": "Alternativa correta: E (56%).\n\nP = 0,80 * 0,70 = 0,56 = 56%."
+              "stepByStepSolution": "Alternativa correta: D (56%).\n\nP = 0,80 * 0,70 = 0,56 = 56%."
             }
           ],
           "formulasOrSyntax": [],
@@ -1760,14 +1760,14 @@
               "problemStatement": "Em uma escola com 200 alunos, 120 praticam futebol, 80 praticam vôlei e 40 praticam ambos os esportes. Escolhendo-se ao acaso um aluno que sabidamente joga futebol, a probabilidade de ele também praticar vôlei é de:",
               "options": [
                 "25%",
-                "33,3%",
-                "20%",
                 "50%",
-                "40%"
+                "40%",
+                "20%",
+                "33,3%"
               ],
-              "correctIndex": 1,
+              "correctIndex": 4,
               "hint": "O novo espaço amostral são os 120 que jogam futebol. Favoráveis: os 40 que praticam ambos.",
-              "stepByStepSolution": "Alternativa correta: B (33,3% ou 1/3).\n\nP(Vôlei | Futebol) = 40 / 120 = 1/3 ≈ 33,3%."
+              "stepByStepSolution": "Alternativa correta: E (33,3% ou 1/3).\n\nP(Vôlei | Futebol) = 40 / 120 = 1/3 ≈ 33,3%."
             }
           ],
           "formulasOrSyntax": [],
@@ -1795,15 +1795,15 @@
               "title": "ENEM: Probabilidade do Evento Complementar",
               "problemStatement": "A probabilidade de um equipamento de segurança falhar em um dia é de 10% (0,10). Em um sistema com dois equipamentos operando de forma independente, a probabilidade de PELO MENOS UM deles funcionar com sucesso é de:",
               "options": [
+                "90%",
                 "99%",
-                "80%",
                 "81%",
                 "95%",
-                "90%"
+                "80%"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "hint": "P(pelo menos um) = 1 - P(ambos falharem) = 1 - (0,10 * 0,10).",
-              "stepByStepSolution": "Alternativa correta: A (99%).\n\nP(ambos falharem) = 0,10 * 0,10 = 0,01 (1%).\nP(ao menos um funcionar) = 1 - 0,01 = 0,99 = 99%."
+              "stepByStepSolution": "Alternativa correta: B (99%).\n\nP(ambos falharem) = 0,10 * 0,10 = 0,01 (1%).\nP(ao menos um funcionar) = 1 - 0,01 = 0,99 = 99%."
             }
           ],
           "formulasOrSyntax": [],
@@ -1842,10 +1842,10 @@
               "title": "ENEM: Ângulos em Estruturas Metálicas",
               "problemStatement": "Uma treliça metálica é construída com duas vigas paralelas cortadas por uma barra transversal de reforço. Se o menor ângulo formado entre a transversal e uma das vigas mede 38°, o ângulo obtuso colateral interno formado na outra viga mede:",
               "options": [
-                "38°",
-                "128°",
-                "152°",
                 "52°",
+                "38°",
+                "152°",
+                "128°",
                 "142°"
               ],
               "correctIndex": 4,
@@ -1878,15 +1878,15 @@
               "title": "ENEM: Ladrilhamento com Polígonos Regulares",
               "problemStatement": "Um arquiteto deseja revestir um piso plano utilizando exclusivamente ladrilhos cerâmicos que sejam polígonos regulares congruentes, sem que haja sobreposições ou frestas entre as peças. Dentre as opções a seguir, o único polígono regular que permite esse ladrilhamento monoédrico é o:",
               "options": [
-                "Octógono regular",
-                "Decágono regular",
                 "Hexágono regular",
+                "Octógono regular",
                 "Heptágono regular",
-                "Pentágono regular"
+                "Pentágono regular",
+                "Decágono regular"
               ],
-              "correctIndex": 2,
+              "correctIndex": 0,
               "hint": "Para que os vértices se juntem sem frestas, o ângulo interno do polígono regular deve ser divisor exato de 360°.",
-              "stepByStepSolution": "Alternativa correta: C (Hexágono regular).\n\nO ângulo interno do hexágono regular vale (6 - 2)*180° / 6 = 720° / 6 = 120°. Como 360° / 120° = 3 (número inteiro exato), três hexágonos se encontram perfeitamente em torno de cada vértice."
+              "stepByStepSolution": "Alternativa correta: A (Hexágono regular).\n\nO ângulo interno do hexágono regular vale (6 - 2)*180° / 6 = 720° / 6 = 120°. Como 360° / 120° = 3 (número inteiro exato), três hexágonos se encontram perfeitamente em torno de cada vértice."
             }
           ],
           "formulasOrSyntax": [],
@@ -1916,9 +1916,9 @@
               "options": [
                 "é possível construir um triângulo isósceles.",
                 "não é possível construir um triângulo, pois 19 >= 7 + 11.",
-                "é possível construir um triângulo acutângulo.",
                 "é possível construir um triângulo obtusângulo.",
-                "é possível construir um triângulo retângulo pelo teorema de Pitágoras."
+                "é possível construir um triângulo retângulo pelo teorema de Pitágoras.",
+                "é possível construir um triângulo acutângulo."
               ],
               "correctIndex": 1,
               "hint": "Pela desigualdade triangular, o maior lado deve ser estritamente menor que a soma dos outros dois lados.",
@@ -1950,15 +1950,15 @@
               "title": "ENEM: Razão entre Áreas de Terrenos Semelhantes",
               "problemStatement": "Dois terrenos triangulares semelhantes possuem perímetros de 60 metros e 180 metros, respectivamente. Se o terreno menor possui uma área de 150 m², a área do terreno maior é igual a:",
               "options": [
-                "450 m²",
-                "600 m²",
-                "300 m²",
+                "900 m²",
                 "1.350 m²",
-                "900 m²"
+                "600 m²",
+                "450 m²",
+                "300 m²"
               ],
-              "correctIndex": 3,
+              "correctIndex": 1,
               "hint": "A razão entre áreas de figuras semelhantes é o quadrado da razão entre seus comprimentos (perímetros).",
-              "stepByStepSolution": "Alternativa correta: D (1.350 m²).\n\nRazão linear: k = 180 / 60 = 3.\nRazão entre áreas: k² = 3² = 9.\nÁrea maior = 150 * 9 = 1.350 m²."
+              "stepByStepSolution": "Alternativa correta: B (1.350 m²).\n\nRazão linear: k = 180 / 60 = 3.\nRazão entre áreas: k² = 3² = 9.\nÁrea maior = 150 * 9 = 1.350 m²."
             }
           ],
           "formulasOrSyntax": [],
@@ -1986,15 +1986,15 @@
               "title": "ENEM: Teorema de Tales em Loteamento",
               "problemStatement": "Três lotes urbanos paralelos possuem frentes voltadas para a Rua A e fundos para a Rua B. As divisas laterais dos lotes são perpendiculares à Rua A e paralelas entre si. A frente do lote 1 mede 15 m na Rua A e 20 m na Rua B. Se a frente do lote 2 mede 30 m na Rua A, qual é a medida de sua frente voltada para a Rua B?",
               "options": [
+                "35 m",
+                "40 m",
                 "45 m",
                 "50 m",
-                "40 m",
-                "60 m",
-                "35 m"
+                "60 m"
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "Pelo Teorema de Tales: 15 / 20 = 30 / x.",
-              "stepByStepSolution": "Alternativa correta: C (40 m).\n\n15 / 20 = 30 / x -> 15x = 600 -> x = 600 / 15 = 40 metros."
+              "stepByStepSolution": "Alternativa correta: B (40 m).\n\n15 / 20 = 30 / x -> 15x = 600 -> x = 600 / 15 = 40 metros."
             }
           ],
           "formulasOrSyntax": [],
@@ -2022,15 +2022,15 @@
               "title": "ENEM: Cabo de Sustentação de Antena (Pitágoras)",
               "problemStatement": "Uma antena transmissora de rádio vertical de 24 metros de altura deve ser fixada no solo plano por um cabo de aço retilíneo esticado, preso do topo da antena até um ponto de ancoragem no chão situado a 7 metros de distância da base da torre. O comprimento mínimo desse cabo de aço é de:",
               "options": [
-                "31 metros",
                 "26 metros",
-                "30 metros",
+                "31 metros",
+                "25 metros",
                 "28 metros",
-                "25 metros"
+                "30 metros"
               ],
-              "correctIndex": 4,
+              "correctIndex": 2,
               "hint": "Aplique o Teorema de Pitágoras com catetos 24 m e 7 m.",
-              "stepByStepSolution": "Alternativa correta: E (25 metros).\n\nC² = 24² + 7² = 576 + 49 = 625 -> C = √625 = 25 metros."
+              "stepByStepSolution": "Alternativa correta: C (25 metros).\n\nC² = 24² + 7² = 576 + 49 = 625 -> C = √625 = 25 metros."
             }
           ],
           "formulasOrSyntax": [],
@@ -2059,10 +2059,10 @@
               "problemStatement": "Uma praça circular tem raio de 50 metros. Um corredor treina completando exatamente 10 voltas ao redor do contorno externo dessa praça. Adotando π = 3,14, a distância total percorrida pelo atleta é de:",
               "options": [
                 "3.140 m",
-                "4.710 m",
                 "1.570 m",
-                "6.280 m",
-                "7.850 m"
+                "7.850 m",
+                "4.710 m",
+                "6.280 m"
               ],
               "correctIndex": 0,
               "hint": "O comprimento de 1 volta é C = 2 * π * r. Multiplique por 10.",
@@ -2094,15 +2094,15 @@
               "title": "ENEM: Custo de Grama em Terreno Trapezoidal",
               "problemStatement": "Um jardim tem a forma de um trapézio de bases paralelas medindo 18 metros e 12 metros, com altura de 10 metros. Sabendo que o metro quadrado de grama custa R$ 15,00, o valor total gasto para cobrir todo o jardim é:",
               "options": [
-                "R$ 3.000,00",
-                "R$ 4.500,00",
-                "R$ 2.250,00",
                 "R$ 2.700,00",
-                "R$ 1.800,00"
+                "R$ 1.800,00",
+                "R$ 4.500,00",
+                "R$ 3.000,00",
+                "R$ 2.250,00"
               ],
-              "correctIndex": 2,
+              "correctIndex": 4,
               "hint": "Calcule a área do trapézio: A = (B + b) * h / 2 e multiplique pelo preço do m².",
-              "stepByStepSolution": "Alternativa correta: C (R$ 2.250,00).\n\nÁrea = (18 + 12) * 10 / 2 = 30 * 10 / 2 = 150 m².\nCusto = 150 * 15 = R$ 2.250,00."
+              "stepByStepSolution": "Alternativa correta: E (R$ 2.250,00).\n\nÁrea = (18 + 12) * 10 / 2 = 30 * 10 / 2 = 150 m².\nCusto = 150 * 15 = R$ 2.250,00."
             }
           ],
           "formulasOrSyntax": [],
@@ -2130,15 +2130,15 @@
               "title": "ENEM: Área de Pista em Coroa Circular",
               "problemStatement": "Uma pista de caminhada foi construída em formato de coroa circular ao redor de um lago. O raio interno do lago é de 20 metros e o raio externo da pista é de 30 metros. Adotando π = 3, a área pavimentada dessa pista é igual a:",
               "options": [
-                "1.500 m²",
                 "1.200 m²",
                 "1.800 m²",
                 "750 m²",
+                "1.500 m²",
                 "2.700 m²"
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "hint": "Área da coroa circular = π * (R² - r²).",
-              "stepByStepSolution": "Alternativa correta: A (1.500 m²).\n\nA = 3 * (30² - 20²) = 3 * (900 - 400) = 3 * 500 = 1.500 m²."
+              "stepByStepSolution": "Alternativa correta: D (1.500 m²).\n\nA = 3 * (30² - 20²) = 3 * (900 - 400) = 3 * 500 = 1.500 m²."
             }
           ],
           "formulasOrSyntax": [],
@@ -2178,12 +2178,12 @@
               "problemStatement": "Uma rampa de acessibilidade plana deve vencer um desnível vertical de 1,5 metro entre a calçada e a porta de um hospital. A norma técnica exige que o ângulo de inclinação da rampa com o solo seja de exatamente 30°. Qual deve ser o comprimento total da superfície inclinada da rampa?",
               "options": [
                 "2,0 m",
-                "3,0 m",
                 "3,5 m",
                 "2,5 m",
-                "4,0 m"
+                "4,0 m",
+                "3,0 m"
               ],
-              "correctIndex": 1,
+              "correctIndex": 4,
               "hint": "O desnível vertical é o cateto oposto ao ângulo de 30° e o comprimento da rampa é a hipotenusa. sen(30°) = 1/2.",
               "stepByStepSolution": "sen(30°) = Cateto Oposto / Hipotenusa\n1/2 = 1,5 / L -> L = 1,5 * 2 = 3,0 metros."
             }
@@ -2213,13 +2213,13 @@
               "title": "ENEM: Sombra de Poste e Ângulos Notáveis",
               "problemStatement": "Em um dia ensolarado, um poste vertical projeta no chão plano uma sombra horizontal de comprimento igual a 4√3 metros. Sabendo que os raios solares incidem sobre o solo formando um ângulo de 60°, qual é a altura desse poste?",
               "options": [
-                "8 metros",
-                "14 metros",
                 "10 metros",
+                "12 metros",
+                "8 metros",
                 "6 metros",
-                "12 metros"
+                "14 metros"
               ],
-              "correctIndex": 4,
+              "correctIndex": 1,
               "hint": "Use a tangente de 60° = √3.",
               "stepByStepSolution": "tan(60°) = Altura / Sombra\n√3 = h / (4√3) -> h = 4√3 * √3 = 4 * 3 = 12 metros."
             }
@@ -2249,13 +2249,13 @@
               "title": "ENEM: Navegação Marítima e Lei dos Cossenos",
               "problemStatement": "Uma lancha parte de um porto O e navega 6 milhas náuticas em linha reta até o ponto A. Ao mesmo tempo, um veleiro parte do mesmo porto O e navega 10 milhas em linha reta até o ponto B. Sabendo que o ângulo formado entre as duas rotas (AOB) foi de 60°, a distância em linha reta entre os dois barcos nos pontos A e B é de:",
               "options": [
-                "14 milhas",
                 "8 milhas",
-                "4√7 milhas",
                 "2√19 milhas",
-                "2√31 milhas"
+                "14 milhas",
+                "2√31 milhas",
+                "4√7 milhas"
               ],
-              "correctIndex": 3,
+              "correctIndex": 1,
               "hint": "Aplique a Lei dos Cossenos: d² = a² + b² - 2ab cos(60°). Note que cos(60°) = 0,5.",
               "stepByStepSolution": "d² = 6² + 10² - 2 * 6 * 10 * cos(60°)\nd² = 36 + 100 - 120 * 0,5 = 136 - 60 = 76.\nd = √76 = √(4 * 19) = 2√19 milhas náuticas."
             }
@@ -2285,13 +2285,13 @@
               "title": "ENEM: Roda Gigante e Comprimento de Arco",
               "problemStatement": "Uma roda gigante com raio de 18 metros gira no sentido anti-horário. Uma cabine que se encontrava no ponto mais baixo sobe descrevendo um ângulo central de 2π/3 radianos. O comprimento do arco percorrido pela cabine nessa rotação foi de:",
               "options": [
-                "15π metros",
                 "9π metros",
-                "18π metros",
                 "12π metros",
-                "6π metros"
+                "6π metros",
+                "15π metros",
+                "18π metros"
               ],
-              "correctIndex": 3,
+              "correctIndex": 1,
               "hint": "O comprimento do arco é dado por s = θ * R (com θ em radianos).",
               "stepByStepSolution": "s = θ * R = (2π/3) * 18 = 2π * 6 = 12π metros."
             }
@@ -2322,12 +2322,12 @@
               "problemStatement": "A temperatura média diária T (em °C) em uma cidade serrana ao longo dos meses do ano t (onde t = 1 representa janeiro) é modelada pela função periódica:\\nT(t) = 18 + 6 \\\\cdot \\\\cos\\\\left(\\\\frac{\\\\pi(t - 1)}{6}\\\\right)\\nQual é a temperatura máxima prevista para essa cidade e em qual mês do ano ela ocorre?",
               "options": [
                 "24 °C em julho",
-                "22 °C em março",
-                "24 °C em janeiro",
                 "18 °C em abril",
-                "12 °C em outubro"
+                "22 °C em março",
+                "12 °C em outubro",
+                "24 °C em janeiro"
               ],
-              "correctIndex": 2,
+              "correctIndex": 4,
               "hint": "O valor máximo do cosseno é +1, que ocorre quando o argumento é 0 (t = 1).",
               "stepByStepSolution": "T_max = 18 + 6 * 1 = 24 °C. Para cos = 1, π(t - 1)/6 = 0 -> t = 1 (mês de janeiro)."
             }
@@ -2368,15 +2368,15 @@
               "title": "ENEM: Projeção Ortogonal de Trajetória Espiral",
               "problemStatement": "Uma formiga sobe ao longo do corrimão helicoidal de uma escada caracol perfeitamente vertical em direção ao andar superior. Sob a iluminação do sol no zênite (raios solares estritamente verticais), a sombra projetada pelo movimento da formiga no chão plano da sala descreve uma:",
               "options": [
-                "Circunferência",
+                "Parábola",
                 "Reta oblíqua",
-                "Hipérbole",
+                "Circunferência",
                 "Elipse aberta",
-                "Parábola"
+                "Hipérbole"
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "Uma hélice cilíndrica projetada verticalmente em seu eixo coincide com a base circular do cilindro.",
-              "stepByStepSolution": "Alternativa correta: A (Circunferência).\n\nA hélice circular de raio constante R, ao ser projetada ortogonalmente sobre o plano horizontal perpendicular ao seu eixo, resulta em uma circunferência de mesmo raio R."
+              "stepByStepSolution": "Alternativa correta: C (Circunferência).\n\nA hélice circular de raio constante R, ao ser projetada ortogonalmente sobre o plano horizontal perpendicular ao seu eixo, resulta em uma circunferência de mesmo raio R."
             }
           ],
           "formulasOrSyntax": [],
@@ -2405,14 +2405,14 @@
               "problemStatement": "Um rótulo retangular adesivo envolve exatamente toda a superfície lateral de uma lata cilíndrica de tinta de raio 5 cm e altura 20 cm, sem haver folgas ou sobreposições. Adotando π = 3,14, as dimensões desse rótulo retangular são de aproximadamente:",
               "options": [
                 "25 cm x 20 cm",
-                "15,7 cm x 20 cm",
                 "31,4 cm x 20 cm",
-                "78,5 cm x 20 cm",
-                "62,8 cm x 20 cm"
+                "62,8 cm x 20 cm",
+                "15,7 cm x 20 cm",
+                "78,5 cm x 20 cm"
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "A base do retângulo planificado é o comprimento da circunferência 2 * π * r.",
-              "stepByStepSolution": "Alternativa correta: C (31,4 cm x 20 cm).\n\nComprimento da base: C = 2 * 3,14 * 5 = 31,4 cm.\nAltura: h = 20 cm."
+              "stepByStepSolution": "Alternativa correta: B (31,4 cm x 20 cm).\n\nComprimento da base: C = 2 * 3,14 * 5 = 31,4 cm.\nAltura: h = 20 cm."
             }
           ],
           "formulasOrSyntax": [],
@@ -2440,15 +2440,15 @@
               "title": "ENEM: Poliedro e Teorema de Euler",
               "problemStatement": "Um poliedro convexo possui 8 faces triangulares e 6 faces quadrangulares. O número de vértices desse poliedro é igual a:",
               "options": [
-                "16",
-                "12",
                 "14",
+                "10",
                 "24",
-                "10"
+                "12",
+                "16"
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "hint": "Primeiro calcule o total de arestas: 2A = 8*3 + 6*4. Depois use V + F = A + 2.",
-              "stepByStepSolution": "Alternativa correta: B (12 vértices).\n\nTotal de faces: F = 8 + 6 = 14.\nArestas: 2A = 8*3 + 6*4 = 24 + 24 = 48 -> A = 24.\nEuler: V + 14 = 24 + 2 -> V = 26 - 14 = 12."
+              "stepByStepSolution": "Alternativa correta: D (12 vértices).\n\nTotal de faces: F = 8 + 6 = 14.\nArestas: 2A = 8*3 + 6*4 = 24 + 24 = 48 -> A = 24.\nEuler: V + 14 = 24 + 2 -> V = 26 - 14 = 12."
             }
           ],
           "formulasOrSyntax": [],
@@ -2476,15 +2476,15 @@
               "title": "ENEM: Volume de Caixa d'Água Paralelepipédica",
               "problemStatement": "Um condomínio construiu uma caixa-d'água em formato de paralelepípedo reto retângulo com dimensões internas de 3 metros de comprimento, 2 metros de largura e 1,5 metro de profundidade. A capacidade máxima de armazenamento de água desse reservatório, em litros, é de:",
               "options": [
-                "12.000 litros",
                 "4.500 litros",
-                "6.000 litros",
                 "7.500 litros",
-                "9.000 litros"
+                "12.000 litros",
+                "9.000 litros",
+                "6.000 litros"
               ],
-              "correctIndex": 4,
+              "correctIndex": 3,
               "hint": "Calcule o volume em metros cúbicos multiplicando comprimento x largura x altura e lembre-se que 1 m³ = 1.000 litros.",
-              "stepByStepSolution": "Alternativa correta: E (9.000 litros).\n\nV = 3 * 2 * 1,5 = 9 m³.\nComo 1 m³ = 1.000 L -> 9 * 1.000 = 9.000 litros."
+              "stepByStepSolution": "Alternativa correta: D (9.000 litros).\n\nV = 3 * 2 * 1,5 = 9 m³.\nComo 1 m³ = 1.000 L -> 9 * 1.000 = 9.000 litros."
             }
           ],
           "formulasOrSyntax": [],
@@ -2512,15 +2512,15 @@
               "title": "ENEM: Tanque de Combustível Cilíndrico",
               "problemStatement": "Um posto de combustíveis armazena etanol em um tanque subterrâneo com formato cilíndrico circular reto de raio interno 2 metros e comprimento 5 metros. Adotando π = 3, o volume máximo comportado por esse tanque é de:",
               "options": [
-                "40 m³ (40.000 L)",
                 "50 m³ (50.000 L)",
+                "80 m³ (80.000 L)",
                 "30 m³ (30.000 L)",
-                "60 m³ (60.000 L)",
-                "80 m³ (80.000 L)"
+                "40 m³ (40.000 L)",
+                "60 m³ (60.000 L)"
               ],
-              "correctIndex": 3,
+              "correctIndex": 4,
               "hint": "V = π * r² * h.",
-              "stepByStepSolution": "Alternativa correta: D (60 m³ ou 60.000 L).\n\nV = 3 * (2²) * 5 = 3 * 4 * 5 = 60 m³ = 60.000 litros."
+              "stepByStepSolution": "Alternativa correta: E (60 m³ ou 60.000 L).\n\nV = 3 * (2²) * 5 = 3 * 4 * 5 = 60 m³ = 60.000 litros."
             }
           ],
           "formulasOrSyntax": [],
@@ -2548,15 +2548,15 @@
               "title": "ENEM: Volume de Pirâmide Regular",
               "problemStatement": "Uma estufa de plantas tem o formato de uma pirâmide regular de base quadrada com lado de 6 metros e altura vertical de 4 metros. O volume de ar contido no interior dessa estufa é:",
               "options": [
-                "48 m³",
-                "36 m³",
                 "144 m³",
+                "48 m³",
                 "24 m³",
-                "72 m³"
+                "72 m³",
+                "36 m³"
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "hint": "Volume da pirâmide = (Área da Base * altura) / 3.",
-              "stepByStepSolution": "Alternativa correta: A (48 m³).\n\nÁrea da base = 6 * 6 = 36 m².\nVolume = (36 * 4) / 3 = 144 / 3 = 48 m³."
+              "stepByStepSolution": "Alternativa correta: B (48 m³).\n\nÁrea da base = 6 * 6 = 36 m².\nVolume = (36 * 4) / 3 = 144 / 3 = 48 m³."
             }
           ],
           "formulasOrSyntax": [],
@@ -2584,11 +2584,11 @@
               "title": "ENEM: Volume de Cone de Sinalização",
               "problemStatement": "Um cone de trânsito maciço tem raio da base de 10 cm e altura de 30 cm. Adotando π = 3,14, o volume de material plástico utilizado em sua fabricação é de:",
               "options": [
-                "9.420 cm³",
                 "1.570 cm³",
-                "4.710 cm³",
+                "1.046 cm³",
+                "9.420 cm³",
                 "3.140 cm³",
-                "1.046 cm³"
+                "4.710 cm³"
               ],
               "correctIndex": 3,
               "hint": "V = (π * r² * h) / 3.",
@@ -2620,11 +2620,11 @@
               "title": "ENEM: Capacidade de Esfera de Armazenamento",
               "problemStatement": "Um reservatório esférico de gás liquefeito tem raio de 3 metros. Adotando π = 3, o volume interno desse reservatório esférico é de:",
               "options": [
-                "54 m³",
+                "216 m³",
                 "144 m³",
                 "36 m³",
                 "108 m³",
-                "216 m³"
+                "54 m³"
               ],
               "correctIndex": 3,
               "hint": "V = (4/3) * π * R³.",
@@ -2656,15 +2656,15 @@
               "title": "ENEM: Vaso com Formato de Tronco de Cone",
               "problemStatement": "Um vaso decorativo com formato de cone reto de altura total 40 cm e volume total de 800 mL foi seccionado por um plano horizontal a meia altura (20 cm da base). O volume do pequeno cone superior que foi removido equivale a:",
               "options": [
-                "50 mL",
                 "400 mL",
-                "100 mL",
+                "600 mL",
                 "200 mL",
-                "600 mL"
+                "100 mL",
+                "50 mL"
               ],
-              "correctIndex": 2,
+              "correctIndex": 3,
               "hint": "A razão linear é k = 20 / 40 = 1/2. O volume varia com k³.",
-              "stepByStepSolution": "Alternativa correta: C (100 mL).\n\nRazão de semelhança linear k = 20/40 = 1/2.\nRazão de volumes = k³ = (1/2)³ = 1/8.\nVolume do cone superior = 800 * (1/8) = 100 mL."
+              "stepByStepSolution": "Alternativa correta: D (100 mL).\n\nRazão de semelhança linear k = 20/40 = 1/2.\nRazão de volumes = k³ = (1/2)³ = 1/8.\nVolume do cone superior = 800 * (1/8) = 100 mL."
             }
           ],
           "formulasOrSyntax": [],
@@ -2703,13 +2703,13 @@
               "title": "ENEM: Distância entre Cidades em Malha Viária",
               "problemStatement": "Em uma representação cartográfica com coordenadas em quilômetros, a sede de um município A fica no ponto (-2, 1) e a sede de outro município B fica no ponto (6, 7). A distância em linha reta entre essas duas sedes municipais é de:",
               "options": [
-                "9 km",
+                "10 km",
+                "14 km",
                 "12 km",
                 "8 km",
-                "10 km",
-                "14 km"
+                "9 km"
               ],
-              "correctIndex": 3,
+              "correctIndex": 0,
               "hint": "Calcule d = √[(Δx)² + (Δy)²].",
               "stepByStepSolution": "Δx = 6 - (-2) = 8; Δy = 7 - 1 = 6.\nd = √(8² + 6²) = √(64 + 36) = √100 = 10 km."
             }
@@ -2739,13 +2739,13 @@
               "title": "ENEM: Centro de Distribuição e Ponto Médio",
               "problemStatement": "Uma rede de supermercados deseja construir um centro logístico de distribuição exatamente no ponto médio entre duas filiais localizadas nas posições (-4, 8) e (10, 2). As coordenadas cartesianas do centro logístico serão:",
               "options": [
+                "(3, 3)",
+                "(3, 5)",
                 "(5, 3)",
                 "(2, 4)",
-                "(3, 3)",
-                "(6, 6)",
-                "(3, 5)"
+                "(6, 6)"
               ],
-              "correctIndex": 4,
+              "correctIndex": 1,
               "hint": "M = ((x_1 + x_2)/2, (y_1 + y_2)/2).",
               "stepByStepSolution": "x_M = (-4 + 10)/2 = 6/2 = 3.\ny_M = (8 + 2)/2 = 10/2 = 5.\nPonto Médio = (3, 5)."
             }
@@ -2775,13 +2775,13 @@
               "title": "ENEM: Área de Propriedade Triangular no Plano",
               "problemStatement": "Um sítio possui formato triangular com vértices demarcados nos pontos A(0, 0), B(6, 0) e C(4, 5), com coordenadas em centenas de metros. A área total desse sítio é igual a:",
               "options": [
-                "30 centenas de m²",
                 "15 centenas de m²",
                 "20 centenas de m²",
-                "10 centenas de m²",
-                "12 centenas de m²"
+                "12 centenas de m²",
+                "30 centenas de m²",
+                "10 centenas de m²"
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "hint": "Área = (base * altura) / 2 ou pelo determinante 3x3.",
               "stepByStepSolution": "Como os pontos A e B estão sobre o eixo x, a base mede 6 unidades (de 0 a 6) e a altura vertical é a ordenada de C (y = 5). Área = (6 * 5) / 2 = 15 unidades de área."
             }
@@ -2811,13 +2811,13 @@
               "title": "ENEM: Equação da Reta da Rota Aérea",
               "problemStatement": "Um avião comercial mantém rota retilínea descrita no plano cartesiano passando pelos pontos P(2, 3) e Q(4, 7). A equação reduzida que descreve essa trajetória é:",
               "options": [
-                "y = 4x - 5",
                 "y = x + 3",
-                "y = 2x + 1",
+                "y = 2x - 1",
                 "y = 3x - 3",
-                "y = 2x - 1"
+                "y = 4x - 5",
+                "y = 2x + 1"
               ],
-              "correctIndex": 4,
+              "correctIndex": 1,
               "hint": "Calcule a declividade m = (7 - 3)/(4 - 2) e utilize y - y_0 = m(x - x_0).",
               "stepByStepSolution": "m = (7 - 3) / (4 - 2) = 4 / 2 = 2.\ny - 3 = 2(x - 2) -> y - 3 = 2x - 4 -> y = 2x - 1."
             }
@@ -2847,13 +2847,13 @@
               "title": "ENEM: Retas Perpendiculares em Traçado Urbano",
               "problemStatement": "Em um projeto de loteamento urbano, a Avenida Principal tem equação da reta dada por 2x - y + 4 = 0. Uma rua transversal deve ser projetada de forma estritamente perpendicular à Avenida Principal, passando pelo cruzamento (4, 1). Qual é a equação da reta dessa rua transversal?",
               "options": [
-                "x - 2y - 2 = 0",
-                "x + 2y - 6 = 0",
-                "2x + y - 9 = 0",
                 "x + 2y + 6 = 0",
-                "2x - y - 7 = 0"
+                "2x - y - 7 = 0",
+                "x - 2y - 2 = 0",
+                "2x + y - 9 = 0",
+                "x + 2y - 6 = 0"
               ],
-              "correctIndex": 1,
+              "correctIndex": 4,
               "hint": "A reta original tem m_1 = 2. A reta perpendicular deve ter m_2 = -1/2.",
               "stepByStepSolution": "m_1 = 2 -> m_perp = -1/2.\ny - 1 = -1/2 (x - 4) -> 2y - 2 = -x + 4 -> x + 2y - 6 = 0."
             }
@@ -2883,13 +2883,13 @@
               "title": "ENEM: Radar Meteorológico e Equação da Circunferência",
               "problemStatement": "Um radar meteorológico instalado no ponto (2, -3) monitora tempestades em um raio de 4 km. A equação reduzida da circunferência que delimita o alcance máximo de monitoramento desse radar é:",
               "options": [
-                "(x - 2)² + (y - 3)² = 4",
-                "(x - 2)² + (y + 3)² = 8",
+                "(x + 2)² + (y - 3)² = 16",
                 "(x - 2)² + (y + 3)² = 16",
                 "(x + 2)² + (y + 3)² = 4",
-                "(x + 2)² + (y - 3)² = 16"
+                "(x - 2)² + (y + 3)² = 8",
+                "(x - 2)² + (y - 3)² = 4"
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "(x - a)² + (y - b)² = R² com a = 2, b = -3 e R = 4.",
               "stepByStepSolution": "(x - 2)² + (y - (-3))² = 4² -> (x - 2)² + (y + 3)² = 16."
             }
@@ -2930,13 +2930,13 @@
               "title": "ENEM: Matriz de Pontuação de Atletas",
               "problemStatement": "Em um torneio, o número de vitórias (3 pontos), empates (1 ponto) e derrotas (0 ponto) de duas equipes é representado pela matriz 2x3:\\n\\\\[ M = \\\\begin{bmatrix} 5 & 2 & 1 \\\\\\\\ 4 & 4 & 0 \\\\end{bmatrix} \\\\]\\nMultiplicando M pela matriz coluna de pontuação P = [3, 1, 0]^t, qual é a pontuação final obtida pelas duas equipes, respectivamente?",
               "options": [
-                "18 e 16 pontos",
-                "17 e 16 pontos",
-                "17 e 12 pontos",
+                "16 e 16 pontos",
                 "15 e 12 pontos",
-                "16 e 16 pontos"
+                "17 e 12 pontos",
+                "18 e 16 pontos",
+                "17 e 16 pontos"
               ],
-              "correctIndex": 1,
+              "correctIndex": 4,
               "hint": "Faça a multiplicação linha por coluna: 5*3 + 2*1 + 1*0 para a 1ª equipe, e 4*3 + 4*1 + 0*0 para a 2ª.",
               "stepByStepSolution": "Equipe 1 = 5*3 + 2*1 + 1*0 = 15 + 2 + 0 = 17 pontos.\nEquipe 2 = 4*3 + 4*1 + 0*0 = 12 + 4 + 0 = 16 pontos."
             }
@@ -2966,13 +2966,13 @@
               "title": "ENEM: Determinante e Parâmetro Linear",
               "problemStatement": "Para que a matriz quadrada \\\\( A = \\\\begin{bmatrix} k & 6 \\\\\\\\ 2 & 3 \\\\end{bmatrix} \\\\) NÃO seja invertível (ou seja, tenha determinante igual a zero), o valor real da constante k deve ser:",
               "options": [
-                "1",
+                "3",
+                "6",
                 "4",
                 "2",
-                "6",
-                "3"
+                "1"
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "hint": "det(A) = 3k - 12 = 0.",
               "stepByStepSolution": "det(A) = k * 3 - 6 * 2 = 3k - 12.\nPara det = 0: 3k = 12 -> k = 4."
             }
@@ -3002,13 +3002,13 @@
               "title": "ENEM: Sistema Linear de Mistura de Combustíveis",
               "problemStatement": "Um posto de combustíveis vendeu em um determinado dia um total de 1.000 litros entre etanol (R$ 3,50 o litro) e gasolina (R$ 5,50 o litro), totalizando um faturamento diário de R$ 4.700,00. Quantos litros de gasolina foram vendidos nesse dia?",
               "options": [
+                "600 litros",
                 "500 litros",
-                "400 litros",
-                "800 litros",
                 "700 litros",
-                "600 litros"
+                "400 litros",
+                "800 litros"
               ],
-              "correctIndex": 4,
+              "correctIndex": 0,
               "hint": "Monte o sistema: E + G = 1000 e 3,5E + 5,5G = 4700.",
               "stepByStepSolution": "Multiplicando a 1ª equação por -3,5:\n-3,5E - 3,5G = -3500\nSomando com a 2ª (3,5E + 5,5G = 4700):\n2G = 1200 -> G = 600 litros de gasolina (e 400 de etanol)."
             }

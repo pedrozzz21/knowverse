@@ -36,13 +36,13 @@
               "title": "ENEM: Etnocentrismo e Contato Cultural",
               "problemStatement": "Na famosa carta enviada a D. Manuel I em 1500, Pero Vaz de Caminha descreve os habitantes da terra recém-avistada afirmando que eles 'parece-me gente de tal inocência que, se homem os entendesse e eles a nós, seriam logo cristãos, porque eles não têm nem entendem em nenhuma crença'.\n\nSob a ótica da historiografia crítica contemporânea avaliada no ENEM, esse trecho expressa:",
               "options": [
-                "Um diagnóstico científico baseado em estudos linguísticos avançados da família linguística Tupi-Guarani.",
-                "Uma recusa explícita em catequizar os nativos diante da constatação de que eles já possuíam leis e monarquia.",
-                "Uma proposta diplomática de convivência entre reinos soberanos em regime de igualdade jurídica internacional.",
+                "Uma percepção etnocêntrica que interpretava a diferença cultural como ausência moral e justificava a tutela civilizatória europeia.",
                 "Um reconhecimento tolerante da diversidade e da complexidade espiritual das cosmologias originárias.",
-                "Uma percepção etnocêntrica que interpretava a diferença cultural como ausência moral e justificava a tutela civilizatória europeia."
+                "Um diagnóstico científico baseado em estudos linguísticos avançados da família linguística Tupi-Guarani.",
+                "Uma proposta diplomática de convivência entre reinos soberanos em regime de igualdade jurídica internacional.",
+                "Uma recusa explícita em catequizar os nativos diante da constatação de que eles já possuíam leis e monarquia."
               ],
-              "correctIndex": 4,
+              "correctIndex": 0,
               "hint": "Repare na palavra 'inocência' e na suposta 'falta de crença': o colonizador toma seus próprios referenciais religiosos como padrão universal de civilização.",
               "stepByStepSolution": "A alternativa B está correta. A carta de Pero Vaz de Caminha é um clássico exemplo de documento etnocêntrico: o colonizador europeu, ao não encontrar igrejas, templos cristãos ou dogmas monoteístas nos moldes ocidentais, deduz equivocadamente que os indígenas 'não têm fé nem crença'. Essa deslegitimação da cultura e da espiritualidade nativa serviu como justificativa ideológica para a catequese forçada e a submissão dos povos originários à Coroa e à Igreja."
             },
@@ -51,13 +51,13 @@
               "title": "ENEM: A Violência e o Impacto Epidemiológico",
               "problemStatement": "Durante os primeiros cem anos de colonização no litoral brasileiro, estima-se que a população indígena sofreu uma redução demográfica vertiginosa, calculada por historiadores em perdas superiores a 80% dos habitantes das aldeias litorâneas.\n\nAssinale o fator que, aliado aos confrontos militares e à escravização, desempenhou o papel mais devastador nesse processo de dizimação:",
               "options": [
-                "O choque biológico decorrente da introdução de patógenos euroasiáticos (como varíola e gripe) para os quais os nativos não possuíam imunidade prévia.",
-                "A perda de territórios de caça provocada unicamente pelo esgotamento natural das árvores de pau-brasil sem intervenção humana.",
+                "A adoção espontânea do catolicismo que proibia qualquer forma de reprodução biológica nas aldeias nativas.",
                 "A escassez generalizada de alimentos provocada pela recusa dos colonos em praticar o escambo de facas de ferro.",
                 "A transmigração voluntária das comunidades indígenas para a Europa em busca de salários nos portos metropolitanos.",
-                "A adoção espontânea do catolicismo que proibia qualquer forma de reprodução biológica nas aldeias nativas."
+                "A perda de territórios de caça provocada unicamente pelo esgotamento natural das árvores de pau-brasil sem intervenção humana.",
+                "O choque biológico decorrente da introdução de patógenos euroasiáticos (como varíola e gripe) para os quais os nativos não possuíam imunidade prévia."
               ],
-              "correctIndex": 0,
+              "correctIndex": 4,
               "hint": "Pense no conceito de 'armas invisíveis da conquista': o isolamento milenar das Américas deixou as populações nativas biologicamente vulneráveis a vírus comuns no Velho Mundo.",
               "stepByStepSolution": "A alternativa B está correta. As populações das Américas estiveram biologicamente isoladas da Eurásia e África por milênios. A introdução de patógenos como a varíola, o sarampo, a gripe e a tuberculose causou verdadeiras hecatombes demográficas (o 'genocídio biológico'), dizimando aldeias inteiras antes mesmo que houvesse confronto bélico direto."
             }
@@ -87,11 +87,11 @@
               "title": "ENEM: Economia do Açúcar e Estrutura Social",
               "problemStatement": "O sistema produtivo do açúcar implantado pela Coroa portuguesa no Nordeste colonial estruturou-se sob a base da 'plantation'. As principais características dessa estrutura produtiva e social correspondiam a:",
               "options": [
-                "Indústrias têxteis estatais financiadas pela Companhia das Índias Orientais com mão de obra assalariada.",
+                "Propriedades cooperativas com distribuição paritária do lucro entre senhores de engenho e trabalhadores cativos.",
                 "Pequenas propriedades familiares policultoras com produção voltada ao abastecimento dos centros urbanos locais.",
-                "Sistemas comunais de cultivo de trigo e uva para o consumo de colônias vizinhas do Prata.",
+                "Indústrias têxteis estatais financiadas pela Companhia das Índias Orientais com mão de obra assalariada.",
                 "Grandes propriedades monocultoras (latifúndios), trabalho escravo compulsório e produção prioritariamente voltada à exportação mercantil.",
-                "Propriedades cooperativas com distribuição paritária do lucro entre senhores de engenho e trabalhadores cativos."
+                "Sistemas comunais de cultivo de trigo e uva para o consumo de colônias vizinhas do Prata."
               ],
               "correctIndex": 3,
               "hint": "Lembre-se da fórmula da plantation: Latifúndio + Monocultura + Mão de obra Escrava + Mercado Externo.",
@@ -102,13 +102,13 @@
               "title": "ENEM: Mineração e a Integração do Espaço Colonial",
               "problemStatement": "No século XVIII, a descoberta de jazidas de ouro e diamantes na região das Minas Gerais desencadeou profundas transformações socioespaciais na colônia. Dentre essas transformações, destaca-se:",
               "options": [
-                "O abandono completo de qualquer cobrança tributária por parte da Coroa para estimular a livre iniciativa dos garimpeiros.",
-                "A proliferação de centros urbanos com maior complexidade social e a articulação de um inédito mercado interno abastecido por tropas de mulas.",
                 "A dissolução das divisões sociais coloniais em favor de uma república parlamentarista autônoma em Ouro Preto.",
                 "A proibição do tráfico transatlântico de escravizados africanos para substituir toda a mão de obra mineira por artesãos assalariados europeus.",
-                "O esvaziamento total do Rio de Janeiro e a fixação definitiva da capital colonial em Salvador para proteger as rotas da prata."
+                "A proliferação de centros urbanos com maior complexidade social e a articulação de um inédito mercado interno abastecido por tropas de mulas.",
+                "O esvaziamento total do Rio de Janeiro e a fixação definitiva da capital colonial em Salvador para proteger as rotas da prata.",
+                "O abandono completo de qualquer cobrança tributária por parte da Coroa para estimular a livre iniciativa dos garimpeiros."
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "hint": "Ao contrário do isolamento dos engenhos de açúcar no litoral, a mineração atraiu multidões para o interior, exigindo comida, vestimentas e transporte vindos de outras capitanias.",
               "stepByStepSolution": "A alternativa B está correta. A atividade mineradora, por ser eminentemente urbana e concentrada no interior, impulsionou a vida nas cidades (Vila Rica, Mariana), gerou uma classe média de letrados e prestadores de serviços e, fundamentalmente, integrou economicamente a colônia: o Sul passou a fornecer mulas e charque, enquanto o Nordeste enviava açúcar e aguardente para alimentar a população mineira através dos tropeiros."
             }
@@ -139,12 +139,12 @@
               "problemStatement": "A historiografia recente enfatiza que os escravizados africanos e seus descendentes no Brasil não foram receptores passivos da opressão senhorial, mas sim agentes históricos que articularam variadas estratégias de sobrevivência e enfrentamento.\n\nConstitui um exemplo dessa resistência por vias socioculturais e de negociação:",
               "options": [
                 "A renúncia voluntária de suas línguas, rituais e crenças para adotar a ideologia senhorial sem qualquer atrito.",
+                "A criação de irmandades religiosas leigas (como a do Rosário) e a manutenção de práticas de sincretismo para preservar laços identitários e comunitários.",
                 "A assinatura de contratos de trabalho assalariado registrados nos cartórios coloniais antes de cada jornada nas lavouras.",
-                "A recusa em fugir para os quilombos em razão da crença generalizada na benevolência dos capitães do mato.",
                 "A submissão incontestável às determinações do pelourinho como ritual de aceitação da condição de mercadoria.",
-                "A criação de irmandades religiosas leigas (como a do Rosário) e a manutenção de práticas de sincretismo para preservar laços identitários e comunitários."
+                "A recusa em fugir para os quilombos em razão da crença generalizada na benevolência dos capitães do mato."
               ],
-              "correctIndex": 4,
+              "correctIndex": 1,
               "hint": "As irmandades leigas católicas e os terreiros eram espaços onde negros forros e cativos se organizavam para manter solidariedade, comprar alforrias e honrar seus antepassados.",
               "stepByStepSolution": "A alternativa B está correta. A resistência à escravidão operou tanto de forma violenta e de ruptura (quilombos, revoltas) quanto de forma cotidiana e simbólica. As irmandades religiosas de negros, sob a aparência de devoção cristã, funcionavam como importantes redes de solidariedade, apoio mútuo, ajuda para compra de cartas de alforria e preservação camuflada de tradições religiosas de matriz africana (sincretismo)."
             },
@@ -153,11 +153,11 @@
               "title": "ENEM: Significado Histórico do Quilombo dos Palmares",
               "problemStatement": "O Quilombo dos Palmares, que floresceu ao longo de quase todo o século XVII na região da Serra da Barriga, representou para a ordem colonial escravocrata uma ameaça constante porque:",
               "options": [
-                "Era formado exclusivamente por mercadores ingleses contrários ao consumo de açúcar refinado.",
                 "Defendia a restauração da Coroa holandesa no Nordeste em troca da concessão de sesmarias açucareiras para nobres batavos.",
+                "Exigia que a Coroa aumentasse os impostos sobre o gado para financiar o exército real contra os bandeirantes paulistas.",
                 "Contava com frotas de navios de guerra para bloquear o comércio marítimo português em Lisboa.",
                 "Constituía uma experiência de organização social, política e econômica autônoma, provando a viabilidade de uma sociedade fora do cativeiro e do exclusivo metropolitano.",
-                "Exigia que a Coroa aumentasse os impostos sobre o gado para financiar o exército real contra os bandeirantes paulistas."
+                "Era formado exclusivamente por mercadores ingleses contrários ao consumo de açúcar refinado."
               ],
               "correctIndex": 3,
               "hint": "Palmares não era apenas um refúgio: abrigava milhares de pessoas, produzia alimentos diversos, forjava metais e desafiava o mito de que o negro só podia viver na condição de escravo.",
@@ -189,13 +189,13 @@
               "title": "ENEM: Nativismo vs Emancipacionismo",
               "problemStatement": "A historiografia tradicional e as provas do ENEM diferenciam com rigor os movimentos nativistas dos movimentos emancipacionistas ocorridos no Brasil colonial. A diferença fundamental entre essas duas categorias de revoltas reside no fato de que:",
               "options": [
-                "Ambos os movimentos tinham a mesma pauta única: exigir da Coroa portuguesa o aumento dos impostos cobrados nas Casas de Fundição.",
-                "As revoltas nativistas questionavam apenas atritos regionais e monopólios fiscais específicos sem propor a independência, enquanto as emancipacionistas propunham a ruptura com a metrópole e a proclamação republicana.",
                 "As revoltas nativistas pretendiam a anexação do território brasileiro à Coroa espanhola, ao passo que as emancipacionistas queriam manter o pacto colonial com Portugal.",
                 "Os movimentos nativistas contavam exclusivamente com a participação de negros escravizados, enquanto os emancipacionistas eram liderados unicamente por jesuítas estrangeiros.",
+                "As revoltas nativistas questionavam apenas atritos regionais e monopólios fiscais específicos sem propor a independência, enquanto as emancipacionistas propunham a ruptura com a metrópole e a proclamação republicana.",
+                "Ambos os movimentos tinham a mesma pauta única: exigir da Coroa portuguesa o aumento dos impostos cobrados nas Casas de Fundição.",
                 "As revoltas nativistas obtiveram a independência imediata de São Paulo e Pernambuco, enquanto as emancipacionistas foram todas pacificadas sem qualquer punição."
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "hint": "Pense no objetivo final: revoltas como Emboabas e Mascates queriam resolver questões locais com a metrópole; a Inconfidência Mineira e a Conjuração Baiana queriam romper os laços coloniais.",
               "stepByStepSolution": "A alternativa B está correta. Os movimentos nativistas (Guerra dos Emboabas, Guerra dos Mascates, Beckman) eram circunscritos a descontentamentos locais e privilégios de grupos regionais, mantendo lealdade ao Rei. Já as conjurações do final do século XVIII (Inconfidência Mineira de 1789 e Conjuração Baiana de 1798) eram emancipacionistas: influenciadas pelas Revoluções Atlânticas e pelo Iluminismo, questionavam a própria existência do sistema colonial e propunham a independência política e a formação de repúblicas."
             },
@@ -204,13 +204,13 @@
               "title": "ENEM: Comparação Social nas Conjurações do Século XVIII",
               "problemStatement": "Ao comparar a Inconfidência Mineira (1789) com a Conjuração Baiana ou Revolta dos Búzios (1798), percebe-se uma distinção basilar quanto à sua base social e às suas reivindicações populares. Essa distinção evidencia-se no fato de que a Conjuração Baiana:",
               "options": [
-                "Recusou os ideais da Revolução Francesa e se inspirou apenas na teologia escolástica medieval da Contrarreforma.",
-                "Foi perdoada integralmente pela Coroa, diferentemente de Minas Gerais, onde todos os inconfidentes ricos foram executados na forca.",
                 "Apresentou composição predominantemente popular (alfaiates, soldados rasos e forros) e defendeu com firmeza a abolição imediata da escravidão e a igualdade de direitos civis.",
                 "Foi liderada exclusivamente por latifundiários que pretendiam manter intacta a escravidão e expandir o latifúndio açucareiro.",
-                "Defendeu a manutenção da monarquia absolutista portuguesa desde que D. Maria I concedesse títulos de nobreza a todos os baianos."
+                "Defendeu a manutenção da monarquia absolutista portuguesa desde que D. Maria I concedesse títulos de nobreza a todos os baianos.",
+                "Recusou os ideais da Revolução Francesa e se inspirou apenas na teologia escolástica medieval da Contrarreforma.",
+                "Foi perdoada integralmente pela Coroa, diferentemente de Minas Gerais, onde todos os inconfidentes ricos foram executados na forca."
               ],
-              "correctIndex": 2,
+              "correctIndex": 0,
               "hint": "Lembre-se do nome 'Revolta dos Alfaiates': seus líderes eram homens pobres, artesãos e negros livres como Lucas Dantas e Manuel Faustino, que colocaram a luta contra a escravidão e o preconceito racial no centro da pauta.",
               "stepByStepSolution": "A alternativa B está correta. Enquanto a Inconfidência Mineira foi um movimento de elite (mineradores, poetas e magistrados) sem consenso sobre o fim da escravidão, a Conjuração Baiana de 1798 teve forte corte popular, influenciada pela fase radical jacobina da Revolução Francesa e pela Revolução Haitiana. Seus líderes reivindicavam a proclamação da República, o aumento do soldo militar, o livre comércio e a abolição incondicional da escravidão, sofrendo uma repressão desproporcional e violenta por parte das autoridades coloniais."
             }
@@ -251,13 +251,13 @@
               "title": "ENEM: A Constituição de 1824 e a Cidadania Censitária",
               "problemStatement": "A Constituição outorgada de 1824 estruturou o sistema político do Império do Brasil introduzindo o Poder Moderador e definindo os critérios para o exercício dos direitos políticos.\n\nEm relação ao corpo de cidadãos com direito a voto no Primeiro Reinado, a Constituição estabeleceu que:",
               "options": [
-                "As eleições eram dispensadas porque todos os deputados eram nomeados vitaliciamente pela Assembleia Constituinte.",
-                "O voto era facultativo e restrito aos cidadãos com diploma universitário obtido na Europa.",
                 "O voto era censitário e indireto, exigindo uma renda financeira mínima comprovada que excluía grande parte da população pobre e os escravizados.",
-                "Apenas os membros das ordens religiosas jesuíticas e oficiais militares tinham o direito de votar nas províncias.",
-                "O sufrágio era universal, permitindo a homens, mulheres e libertos a escolha direta do Imperador."
+                "O sufrágio era universal, permitindo a homens, mulheres e libertos a escolha direta do Imperador.",
+                "O voto era facultativo e restrito aos cidadãos com diploma universitário obtido na Europa.",
+                "As eleições eram dispensadas porque todos os deputados eram nomeados vitaliciamente pela Assembleia Constituinte.",
+                "Apenas os membros das ordens religiosas jesuíticas e oficiais militares tinham o direito de votar nas províncias."
               ],
-              "correctIndex": 2,
+              "correctIndex": 0,
               "hint": "Lembre-se do critério 'censitário': o direito ao voto estava condicionado à posse de riqueza (renda líquida anual mínima).",
               "stepByStepSolution": "A alternativa B está correta. A Constituição de 1824 estabeleceu o voto censitário e indireto (em dois graus). Para ser votante ou eleitor de paróquia e província, era obrigatório comprovar uma renda mínima anual em dinheiro (ou alqueires de farinha). Essa barreira censitária marginalizou juridicamente os escravizados (que não tinham condição de cidadão), as mulheres e a maioria dos homens livres pobres, concentrando o poder nas mãos dos grandes proprietários de terras e comerciantes ricos."
             },
@@ -266,13 +266,13 @@
               "title": "ENEM: O Poder Moderador e o Autoritarismo Imperial",
               "problemStatement": "O artigo 98 da Constituição de 1824 declarava: 'O Poder Moderador é a chave de toda a organização política, e é delegado privativamente ao Imperador, como Chefe Supremo da Nação'.\n\nNa prática política do Império brasileiro, a função desse quarto poder correspondia a:",
               "options": [
-                "Garantir que a Igreja Católica pudesse revogar qualquer lei aprovada pelo parlamento imperial.",
                 "Garantir a autonomia irrestrita aos municípios para declararem independência sempre que julgassem necessário.",
                 "Permitir ao monarca intervir nos outros três poderes, dissolvendo a Câmara dos Deputados e nomeando senadores vitalícios para assegurar a supremacia da Coroa.",
+                "Transferir o comando das Forças Armadas para o Primeiro-Ministro eleito pela bancada de oposição.",
                 "Subordinar a figura do Imperador às decisões do Supremo Tribunal de Justiça em todos os atos civis.",
-                "Transferir o comando das Forças Armadas para o Primeiro-Ministro eleito pela bancada de oposição."
+                "Garantir que a Igreja Católica pudesse revogar qualquer lei aprovada pelo parlamento imperial."
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "O Poder Moderador foi idealizado pelo pensador suíço Benjamin Constant, mas no Brasil de D. Pedro I serviu como instrumento de controle absolutista sobre o Legislativo e o Judiciário.",
               "stepByStepSolution": "A alternativa B está correta. O Poder Moderador concedia a D. Pedro I (e posteriormente a D. Pedro II) amplos poderes constitucionais para interferir diretamente nas deliberações do Legislativo, dissolver a Câmara dos Deputados quando esta entrava em atrito com o imperador, vetar leis, nomear senadores vitalícios (a partir de uma lista tríplice) e destituir juízes, consolidando o caráter centralizador e autoritário do Estado imperial."
             }
@@ -302,13 +302,13 @@
               "title": "ENEM: As Revoltas do Período Regencial",
               "problemStatement": "Durante a década de 1830, o Brasil viveu uma onda de rebeliões provinciais (Cabanagem, Farroupilha, Sabinada, Balaiada e Revolta dos Malês). A eclosão simultânea desses conflitos decorreu principalmente:",
               "options": [
-                "Da crise econômica gerada pelo vácuo de poder centralizado com a abdicação de D. Pedro I e da insatisfação com a cobrança de impostos e a exclusão social.",
                 "Da decisão do regente Feijó de abolir sumariamente a escravidão e distribuir terras para todas as famílias do Norte.",
+                "Da tentativa de invasão da marinha francesa para restabelecer a colônia no Rio de Janeiro.",
                 "Da recusa dos governadores provinciais em aceitar a proclamação da República promovida pelo imperador D. Pedro II aos cinco anos.",
-                "Do fechamento de todas as rotas comerciais marítimas pelos imperadores da Tríplice Aliança platina.",
-                "Da tentativa de invasão da marinha francesa para restabelecer a colônia no Rio de Janeiro."
+                "Da crise econômica gerada pelo vácuo de poder centralizado com a abdicação de D. Pedro I e da insatisfação com a cobrança de impostos e a exclusão social.",
+                "Do fechamento de todas as rotas comerciais marítimas pelos imperadores da Tríplice Aliança platina."
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "hint": "Com a renúncia de D. Pedro I em 1831, o governo regencial não detinha a legitimidade monárquica plena, estimulando tanto as elites regionais quanto as massas marginalizadas a se insurgirem.",
               "stepByStepSolution": "A alternativa B está correta. O Período Regencial foi marcado por uma profunda crise de legitimidade do poder central. A ausência de um imperador coroado, somada às disputas entre facções políticas no Rio de Janeiro, à miséria das camadas populares no interior e aos pesados impostos cobrados das províncias, criou o cenário propício para revoltas tanto de caráter popular e identitário (Cabanagem, Malês) quanto de protesto das elites regionais (Farroupilha)."
             },
@@ -317,13 +317,13 @@
               "title": "ENEM: A Especificidade da Revolta dos Malês (1835)",
               "problemStatement": "Em janeiro de 1835, eclodiu em Salvador a Revolta dos Malês. Este levante urbano é considerado singular na história das resistências escravas no Brasil porque:",
               "options": [
+                "Pretendia transformar a Bahia em uma monarquia constitucional chefiada por D. Pedro I após seu retorno de Portugal.",
+                "Defendia a manutenção do cativeiro no campo e a libertação apenas dos trabalhadores domésticos da capital.",
                 "Foi articulado por africanos islamizados (iorubás e haussás), muitos alfabetizados em língua árabe, que contestavam a escravidão e a imposição da religião católica oficial.",
                 "Contou com o apoio financeiro integral da aristocracia cafeeira paulista para desestabilizar o Império.",
-                "Resultou na libertação pacífica e imediata de todos os escravizados da província baiana com anistia do governo regencial.",
-                "Defendia a manutenção do cativeiro no campo e a libertação apenas dos trabalhadores domésticos da capital.",
-                "Pretendia transformar a Bahia em uma monarquia constitucional chefiada por D. Pedro I após seu retorno de Portugal."
+                "Resultou na libertação pacífica e imediata de todos os escravizados da província baiana com anistia do governo regencial."
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "Observe o termo 'Malês', derivado de 'imalê' (muçulmano em iorubá). Seus líderes utilizavam amuletos com versículos do Alcorão escritos em árabe para organizar o movimento.",
               "stepByStepSolution": "A alternativa B está correta. A Revolta dos Malês em 1835 foi liderada por escravizados e negros forros urbanos convertidos ao Islã. Ao contrário do estereótipo colonial de ignorância dos escravizados, muitos dos rebeldes malês sabiam ler e escrever em árabe fluente, utilizando cartas cifradas para planejar o levante contra a opressão senhorial e as restrições religiosas católicas impostas pelo Estado imperial."
             }
@@ -354,12 +354,12 @@
               "problemStatement": "O arranjo político que vigorou no Segundo Reinado sob o reinado de D. Pedro II ficou conhecido historiograficamente como 'Parlamentarismo às Avessas'. Esse modelo se caracterizava pelo fato de que:",
               "options": [
                 "O Parlamento tinha o poder exclusivo de destituir a monarquia e proclamar a república a qualquer momento.",
-                "Os partidos Liberal e Conservador foram banidos, permitindo apenas a eleição de generais veteranos do Exército.",
-                "O poder legislativo era chefiado pelo bispo do Rio de Janeiro, sem qualquer interferência de deputados ou senadores civis.",
                 "O povo elegia diretamente o Primeiro-Ministro, e este decidia se o Imperador continuaria no trono.",
-                "O Imperador utilizava o Poder Moderador para nomear o Presidente do Conselho de Ministros, que posteriormente forjava as eleições para obter maioria no Parlamento."
+                "O poder legislativo era chefiado pelo bispo do Rio de Janeiro, sem qualquer interferência de deputados ou senadores civis.",
+                "O Imperador utilizava o Poder Moderador para nomear o Presidente do Conselho de Ministros, que posteriormente forjava as eleições para obter maioria no Parlamento.",
+                "Os partidos Liberal e Conservador foram banidos, permitindo apenas a eleição de generais veteranos do Exército."
               ],
-              "correctIndex": 4,
+              "correctIndex": 3,
               "hint": "Pense na ordem inversa: na Inglaterra, o Parlamento vem antes do Primeiro-Ministro. No Brasil imperial, o Imperador vinha antes de tudo.",
               "stepByStepSolution": "A alternativa B está correta. No parlamentarismo clássico britânico, o poder emana do parlamento eleito pelos cidadãos. No Brasil do Segundo Reinado, ocorria a inversão ('às avessas'): D. Pedro II escolhia discricionariamente o Primeiro-Ministro com base no Poder Moderador. Uma vez empossado, esse ministro organizava as eleições através de fraudes, coronéis locais e coerção policial, garantindo a maioria dos assentos na Câmara para a sua legenda política."
             },
@@ -368,13 +368,13 @@
               "title": "ENEM: As Transformações do Café e o Oeste Paulista",
               "problemStatement": "A partir da segunda metade do século XIX, a expansão cafeeira no Oeste Paulista diferenciou-se estruturalmente da cafeicultura tradicional do Vale do Paraíba por apresentar:",
               "options": [
-                "O cultivo exclusivo em pequenas terras comunais sem latifúndio e sem fins de exportação internacional.",
-                "A proibição do ingresso de imigrantes italianos e alemães em razão da lealdade exclusiva aos senhores de engenho de açúcar.",
-                "A presença de solos férteis de terra roxa, investimentos em redes ferroviárias e a substituição progressiva do trabalho escravo pelo braço imigrante assalariado.",
                 "O abandono total do cultivo do café para se dedicar exclusivamente à mineração e à metalurgia pesada.",
-                "A destruição de todas as linhas de trem em prol do transporte manual de sacas por tropeiros montados."
+                "A presença de solos férteis de terra roxa, investimentos em redes ferroviárias e a substituição progressiva do trabalho escravo pelo braço imigrante assalariado.",
+                "A proibição do ingresso de imigrantes italianos e alemães em razão da lealdade exclusiva aos senhores de engenho de açúcar.",
+                "A destruição de todas as linhas de trem em prol do transporte manual de sacas por tropeiros montados.",
+                "O cultivo exclusivo em pequenas terras comunais sem latifúndio e sem fins de exportação internacional."
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "O Oeste Paulista (região de Campinas e Ribeirão Preto) tinha topografia favorável a trilhos de trem, terras vulcânicas férteis e fazendeiros voltados para o mercado financeiro e a imigração.",
               "stepByStepSolution": "A alternativa B está correta. Enquanto o Vale do Paraíba entrou em colapso devido à erosão dos morros e ao apego irracional à escravidão tradicional, o Oeste Paulista emergiu como um polo dinâmico. Beneficiando-se do solo riquíssimo de terra roxa e do relevo plano, os fazendeiros investiram nas ferrovias (como a Santos-Jundiaí) e patrocinaram o sistema de colonato com imigrantes europeus assalariados, liderando a posterior proclamação da República."
             }
@@ -404,10 +404,10 @@
               "title": "ENEM: A Lei de Terras de 1850 e o Fechamento Social",
               "problemStatement": "Aprovada no mesmo ano em que a Lei Eusébio de Queirós extinguiu o tráfico transatlântico de escravizados, a Lei de Terras de 1850 estabeleceu novas regras para a posse do solo brasileiro. A finalidade sociopolítica central dessa lei consistiu em:",
               "options": [
-                "Estatizar todos os latifúndios de café e transformá-los em cooperativas agrícolas geridas pelo Ministério da Justiça.",
+                "Restituir todas as sesmarias da Coroa às comunidades indígenas originárias do interior de São Paulo.",
                 "Determinar que as terras públicas só poderiam ser obtidas por compra em dinheiro à vista, impedindo o acesso à terra aos trabalhadores livres e imigrantes pobres.",
                 "Distribuir pequenas propriedades rurais gratuitas para todos os negros libertos e imigrantes pobres que chegassem ao país.",
-                "Restituir todas as sesmarias da Coroa às comunidades indígenas originárias do interior de São Paulo.",
+                "Estatizar todos os latifúndios de café e transformá-los em cooperativas agrícolas geridas pelo Ministério da Justiça.",
                 "Proibir terminantemente que qualquer proprietário de terras pudesse vender café para o mercado externo britânico."
               ],
               "correctIndex": 1,
@@ -419,10 +419,10 @@
               "title": "ENEM: A Queda do Império e o Golpe de 1889",
               "problemStatement": "O colapso da monarquia brasileira em 15 de novembro de 1889 é amplamente analisado pelos historiadores como resultado da quebra dos laços de sustentação política do trono com a Igreja, o Exército e os cafeicultores escravistas. A esse respeito, a famosa expressão do jornalista Aristides Lobo — 'O povo assistiu àquilo tudo bestializado' — sintetiza:",
               "options": [
-                "O caráter de insurreição popular armada com massas operárias ocupando as ruas do Rio de Janeiro para derrubar a família real.",
+                "A alegria incontrolável dos escravizados recém-libertos que elegeram Marechal Deodoro como o primeiro presidente socialista do continente.",
                 "O apoio irrestrito dos camponeses pobres à restauração imediata do absolutismo português sob o comando do Papa Pio IX.",
                 "O caráter cupular e militar do movimento republicano, conduzido sem a participação efetiva ou a mobilização das camadas populares, que viram a proclamação como um mero desfile militar.",
-                "A alegria incontrolável dos escravizados recém-libertos que elegeram Marechal Deodoro como o primeiro presidente socialista do continente.",
+                "O caráter de insurreição popular armada com massas operárias ocupando as ruas do Rio de Janeiro para derrubar a família real.",
                 "A tristeza generalizada da população que derrotou os militares golpistas e reinstalou D. Pedro II no trono no dia seguinte."
               ],
               "correctIndex": 2,
@@ -467,12 +467,12 @@
               "problemStatement": "Na Primeira República brasileira (1889–1930), a sustentação do poder oligárquico apoiava-se na articulação entre o plano municipal e o governo federal. Essa dinâmica estruturava-se a partir de:",
               "options": [
                 "Supressão total das Câmaras Municipais e nomeação direta de generais do exército para governar todos os municípios cafeeiros.",
-                "Financiamento estatal obrigatório de comícios para incentivar o voto espontâneo dos trabalhadores rurais analfabetos.",
-                "Controle do voto aberto pelos coronéis locais ('voto de cabresto'), integrado à troca de favores com as oligarquias estaduais e o presidente ('política dos governadores').",
+                "Monopólio absoluto do Partido Republicano Gaúcho, que governou ininterruptamente de 1889 a 1930 sem a participação de São Paulo.",
                 "Eleições secretas e auditadas pela Justiça Eleitoral, garantindo a alternância pacífica dos partidos de esquerda.",
-                "Monopólio absoluto do Partido Republicano Gaúcho, que governou ininterruptamente de 1889 a 1930 sem a participação de São Paulo."
+                "Financiamento estatal obrigatório de comícios para incentivar o voto espontâneo dos trabalhadores rurais analfabetos.",
+                "Controle do voto aberto pelos coronéis locais ('voto de cabresto'), integrado à troca de favores com as oligarquias estaduais e o presidente ('política dos governadores')."
               ],
-              "correctIndex": 2,
+              "correctIndex": 4,
               "hint": "Lembre-se da rede de favores: o coronel coagia o eleitor no município, o governador elegia deputados federais leais, e o presidente protegia a oligarquia estadual.",
               "stepByStepSolution": "A alternativa B está correta. O sistema de poder da República Velha articulava o coronelismo na base municipal (onde o voto aberto permitia o 'voto de cabresto' e a perseguição a oposicionistas) com a 'política dos governadores' no plano federal concebida por Campos Sales. Esse arranjo garantia a estabilidade das oligarquias estaduais e o domínio alternado de São Paulo e Minas Gerais ('café com leite')."
             },
@@ -481,13 +481,13 @@
               "title": "ENEM: A Revolta da Vacina e o Higienismo",
               "problemStatement": "A Revolta da Vacina, ocorrida no Rio de Janeiro em 1904, não pode ser reduzida a um simples obscurantismo popular contra a ciência. Sob a ótica das tensões sociais urbanas da época, o levante foi provocado:",
               "options": [
-                "Pela proibição do comércio de café no porto carioca imposta pelo sanitarista Oswaldo Cruz.",
-                "Pela imposição de vacinas vindas da França que exigiam a renúncia do direito de voto dos operários de fábrica.",
-                "Pela recusa da população de classe alta em aceitar o fim da monarquia absolutista e a proclamação da república.",
                 "Pela insatisfação generalizada contra as reformas urbanas autoritárias do 'bota-abaixo' de Pereira Passos, que demoliram cortiços e expulsaram as classes populares do centro para as favelas.",
-                "Pelo apoio entusiasta dos revoltosos à invasão da marinha alemã na Baía de Guanabara."
+                "Pela recusa da população de classe alta em aceitar o fim da monarquia absolutista e a proclamação da república.",
+                "Pela proibição do comércio de café no porto carioca imposta pelo sanitarista Oswaldo Cruz.",
+                "Pelo apoio entusiasta dos revoltosos à invasão da marinha alemã na Baía de Guanabara.",
+                "Pela imposição de vacinas vindas da França que exigiam a renúncia do direito de voto dos operários de fábrica."
               ],
-              "correctIndex": 3,
+              "correctIndex": 0,
               "hint": "A vacinação obrigatória foi a gota d'água em um contexto de demolição de moradias populares e higienismo autoritário que violentava a privacidade das famílias.",
               "stepByStepSolution": "A alternativa B está correta. A historiografia consolidada no ENEM compreende a Revolta da Vacina de 1904 como uma explosão social contra o autoritarismo e a exclusão da reforma urbana de Pereira Passos. As demolições em massa de cortiços e habitações coletivas no centro da capital ('bota-abaixo') empurraram a população pobre para os morros sem assistência. A invasão dos lares por agentes sanitários armados para a vacinação obrigatória funcionou como o estopim de uma revolta contra o desprezo do Estado republicano pelas camadas populares."
             }
@@ -517,10 +517,10 @@
               "title": "ENEM: Cidadania Regulada e Corporativismo Varguista",
               "problemStatement": "A criação da Consolidação das Leis do Trabalho (CLT) em 1943 e a política sindical do governo Vargas são caracterizadas pelos sociólogos pela noção de 'cidadania regulada'. Esse conceito expressa o fato de que:",
               "options": [
+                "As greves foram incentivadas e legalizadas como principal instrumento de formulação de políticas econômicas pelo presidente.",
                 "Todos os brasileiros, mesmo sem profissão ou residência, tinham acesso automático a todos os direitos sociais e políticos.",
                 "Apenas os latifundiários e cafeicultores podiam filiar-se a sindicatos e negociar salários.",
                 "O Estado brasileiro abriu mão de intervir na economia para permitir a livre negociação capital-trabalho sem nenhuma lei estatal.",
-                "As greves foram incentivadas e legalizadas como principal instrumento de formulação de políticas econômicas pelo presidente.",
                 "O usufruto dos direitos sociais e previdenciários estava condicionado à vinculação formal a uma ocupação reconhecida pelo Estado e ao controle sindical ministerial."
               ],
               "correctIndex": 4,
@@ -532,13 +532,13 @@
               "title": "ENEM: A Propaganda do Estado Novo e o DIP",
               "problemStatement": "Durante o Estado Novo (1937–1945), o Departamento de Imprensa e Propaganda (DIP) exerceu um papel determinante na legitimação do regime autoritário de Getúlio Vargas por meio de:",
               "options": [
-                "Defesa pública da anexação de territórios da Argentina e do Paraguai como missão sagrada do povo brasileiro.",
-                "Incentivo financeiro irrestrito à circulação de jornais comunistas e anarquistas que criticassem abertamente as leis trabalhistas.",
                 "Fechamento de todas as emissoras de rádio do país para evitar que o povo tivesse acesso a músicas e noticiários.",
                 "Exercício da censura sistemática sobre os meios de comunicação aliada à propaganda oficial do culto à figura de Vargas como líder protetor e educador da nação.",
-                "Proibição do ensino da língua portuguesa nas escolas primárias para favorecer o dialeto regional gaúcho."
+                "Incentivo financeiro irrestrito à circulação de jornais comunistas e anarquistas que criticassem abertamente as leis trabalhistas.",
+                "Proibição do ensino da língua portuguesa nas escolas primárias para favorecer o dialeto regional gaúcho.",
+                "Defesa pública da anexação de territórios da Argentina e do Paraguai como missão sagrada do povo brasileiro."
               ],
-              "correctIndex": 3,
+              "correctIndex": 1,
               "hint": "O DIP combinava duas armas: a tesoura da censura prévia para calar opositores e a buzina da propaganda oficial ('Hora do Brasil') para promover o governante.",
               "stepByStepSolution": "A alternativa B está correta. O DIP funcionou como a máquina de controle ideológico do Estado Novo: censurava previamente notícias, letras de música e peças de teatro que destoassem da narrativa oficial e, ao mesmo tempo, produzia cartilhas infantis, programas radiofônicos ('A Hora do Brasil') e desfiles patrióticos que construíam a mística de Getúlio Vargas como o 'Pai dos Pobres' e arquiteto da nova identidade nacional."
             }
@@ -568,13 +568,13 @@
               "title": "ENEM: As Reformas de Base e o Golpe de 1964",
               "problemStatement": "O governo de João Goulart (1961–1964) foi marcado pela radicalização do debate político em torno das 'Reformas de Base'. A reação dos setores conservadores que culminou no golpe civil-militar deveu-se principalmente ao fato de que essas reformas:",
               "options": [
-                "Visavam a alterações estruturais distributivas (reforma agrária, fiscal e educacional) que contrariavam os interesses do latifúndio tradicional e das elites empresariais.",
-                "Defendiam a invasão militar imediata de Cuba e a prisão de todos os estudantes universitários brasileiros.",
-                "Pretendiam transformar o Brasil em uma monarquia absolutista dinástica sob o comando da família real portuguesa.",
                 "Extinguiam todos os direitos trabalhistas conquistados na CLT para baratear a mão de obra industrial.",
-                "Propunham a entrega de todas as reservas de petróleo brasileiras para empresas multinacionais petrolíferas dos Estados Unidos."
+                "Visavam a alterações estruturais distributivas (reforma agrária, fiscal e educacional) que contrariavam os interesses do latifúndio tradicional e das elites empresariais.",
+                "Pretendiam transformar o Brasil em uma monarquia absolutista dinástica sob o comando da família real portuguesa.",
+                "Propunham a entrega de todas as reservas de petróleo brasileiras para empresas multinacionais petrolíferas dos Estados Unidos.",
+                "Defendiam a invasão militar imediata de Cuba e a prisão de todos os estudantes universitários brasileiros."
               ],
-              "correctIndex": 0,
+              "correctIndex": 1,
               "hint": "Pense na palavra 'agrária': mexer na propriedade da terra no Brasil sempre foi o maior tabu para as elites dominantes.",
               "stepByStepSolution": "A alternativa B está correta. As Reformas de Base de Jango propunham desapropriações de terras improdutivas para reforma agrária, controle de remessa de lucros para o exterior, reforma tributária progressiva e extensão do direito de voto aos analfabetos. Essas propostas distributivas e democratizantes ameaçavam os privilégios da oligarquia agrária, de grandes empresários e de multinacionais, que se articularam com a cúpula militar e o governo norte-americano para derrubar o presidente legítimo em 1964."
             },
@@ -583,11 +583,11 @@
               "title": "ENEM: O Modelo Desenvolvimentista de JK",
               "problemStatement": "O Plano de Metas do presidente Juscelino Kubitschek (1956–1961), sintetizado no lema '50 anos em 5', promoveu uma acelerada modernização da economia brasileira. Uma das consequências estruturais dessa política desenvolvimentista foi:",
               "options": [
+                "A proibição do ingresso de capitais estrangeiros e a estatização total de todos os bancos comerciais e indústrias leves.",
                 "A fixação da sede administrativa do governo brasileiro na cidade de Salvador para priorizar a exportação de cana-de-açúcar.",
-                "O abandono do transporte rodoviário em favor de uma gigantesca e moderna malha ferroviária que cobriu todo o território nacional.",
                 "A consolidação do modelo rodoviarista com a atração de multinacionais automotivas e o aumento das disparidades regionais e da inflação.",
                 "A eliminação definitiva da dívida externa brasileira por meio do corte de todos os gastos em infraestrutura energética.",
-                "A proibição do ingresso de capitais estrangeiros e a estatização total de todos os bancos comerciais e indústrias leves."
+                "O abandono do transporte rodoviário em favor de uma gigantesca e moderna malha ferroviária que cobriu todo o território nacional."
               ],
               "correctIndex": 2,
               "hint": "Lembre-se da montagem da fábrica da Volkswagen no ABC e das grandes rodovias abertas para ligar o país a Brasília.",
@@ -619,13 +619,13 @@
               "title": "ENEM: O Significado Autoritário do AI-5",
               "problemStatement": "O Ato Institucional nº 5 (AI-5), baixado em 13 de dezembro de 1968 durante o governo do general Costa e Silva, é considerado pelos historiadores o marco mais sombrio da Ditadura Civil-Militar brasileira porque:",
               "options": [
-                "Decretou o fim imediato das Forças Armadas e transferiu o governo nacional para a Assembleia Geral da ONU.",
+                "Institucionalizou o terrorismo de Estado ao suspender o habeas corpus para crimes políticos, fechar o Congresso e instaurar a censura prévia irrestrita.",
                 "Convocou eleições presidenciais diretas imediatas com a participação de todos os partidos de oposição clandestinos.",
-                "Proibiu a presença de qualquer militar em cargos da administração pública federal e estadual.",
                 "Concedeu anistia ampla e irrestrita a todos os estudantes e operários presos durante os protestos de rua de 1968.",
-                "Institucionalizou o terrorismo de Estado ao suspender o habeas corpus para crimes políticos, fechar o Congresso e instaurar a censura prévia irrestrita."
+                "Decretou o fim imediato das Forças Armadas e transferiu o governo nacional para a Assembleia Geral da ONU.",
+                "Proibiu a presença de qualquer militar em cargos da administração pública federal e estadual."
               ],
-              "correctIndex": 4,
+              "correctIndex": 0,
               "hint": "Pense no que acontecia se você fosse preso sob o AI-5: não havia advogado ou juiz que pudesse pedir sua soltura via habeas corpus.",
               "stepByStepSolution": "A alternativa B está correta. O AI-5 conferiu poderes quase absolutos ao Poder Executivo militar, permitindo fechar o Congresso, cassar mandatos de opositores, demitir juízes, suspender a garantia de habeas corpus para acusados de crimes contra a segurança nacional e censurar previamente a imprensa e as artes. Na prática, abriu caminho para a atuação clandestina dos órgãos de repressão (DOI-CODI, OBAN), legitimando prisões ilegais, torturas sistemáticas e assassinatos políticos cometidos por agentes do Estado."
             },
@@ -634,13 +634,13 @@
               "title": "ENEM: O Milagre Econômico e a Distribuição de Renda",
               "problemStatement": "Durante os anos do chamado 'Milagre Econômico' (1969–1973), o Brasil registrou taxas recordes de crescimento do Produto Interno Bruto (PIB). No entanto, sob o ponto de vista social e da cidadania avaliado no ENEM, esse período caracterizou-se:",
               "options": [
+                "Por uma expressiva redução da miséria e distribuição equitativa das riquezas entre todas as camadas sociais.",
+                "Pelo arrocho dos salários dos trabalhadores, expansão da dívida externa e drástico agravamento da concentração de renda no país.",
                 "Por uma política de pleno emprego que erradicou o analfabetismo funcional nas capitais do Nordeste.",
                 "Pela extinção de todos os bancos privados para transformar o crédito em um serviço comunal gerido por sindicatos operários.",
-                "Por uma expressiva redução da miséria e distribuição equitativa das riquezas entre todas as camadas sociais.",
-                "Pela triplicação do poder de compra do salário mínimo e pela concessão de terras na Amazônia para indígenas sem desmatamento.",
-                "Pelo arrocho dos salários dos trabalhadores, expansão da dívida externa e drástico agravamento da concentração de renda no país."
+                "Pela triplicação do poder de compra do salário mínimo e pela concessão de terras na Amazônia para indígenas sem desmatamento."
               ],
-              "correctIndex": 4,
+              "correctIndex": 1,
               "hint": "Lembre-se da metáfora do bolo: 'Fazer o bolo crescer para depois dividir'. Quem comeu o bolo foram as classes mais ricas.",
               "stepByStepSolution": "A alternativa B está correta. O crescimento acelerado do PIB no Milagre Econômico foi obtido às custas da repressão violenta aos sindicatos, do arrocho salarial imposto à classe trabalhadora e de pesados empréstimos internacionais. O resultado foi um dos momentos de maior aumento da desigualdade social e da concentração de renda da história brasileira, enquanto o custo de vida aumentava e os serviços públicos básicos de saúde e educação eram negligenciados."
             }
@@ -670,13 +670,13 @@
               "title": "ENEM: A Constituição Cidadã de 1988 e os Direitos Sociais",
               "problemStatement": "A Constituição Federal de 1988, apelidada por Ulysses Guimarães de 'Constituição Cidadã', representou uma ruptura com a tradição autoritária brasileira ao consagrar:",
               "options": [
+                "A ampliação histórica dos direitos fundamentais, estabelecendo a saúde como dever do Estado (SUS), tipificando o racismo como crime inafiançável e reconhecendo os direitos originários dos povos indígenas e quilombolas.",
+                "A concessão de poderes plenipotenciários ao Presidente da República para governar por meio de atos institucionais sem intervenção judicial.",
                 "A extinção do Ministério Público e a proibição da previdência social pública para trabalhadores do campo.",
                 "A restauração do voto censitário baseado na renda financeira e a subordinação das leis civis ao direito canônico católico.",
-                "A proibição do voto feminino e a criminalização de qualquer manifestação pública de trabalhadores grevistas.",
-                "A concessão de poderes plenipotenciários ao Presidente da República para governar por meio de atos institucionais sem intervenção judicial.",
-                "A ampliação histórica dos direitos fundamentais, estabelecendo a saúde como dever do Estado (SUS), tipificando o racismo como crime inafiançável e reconhecendo os direitos originários dos povos indígenas e quilombolas."
+                "A proibição do voto feminino e a criminalização de qualquer manifestação pública de trabalhadores grevistas."
               ],
-              "correctIndex": 4,
+              "correctIndex": 0,
               "hint": "A Carta de 1988 é o pilar do Estado Democrático de Direito brasileiro contemporâneo e universalizou a saúde e a cidadania.",
               "stepByStepSolution": "A alternativa B está correta. A Constituição de 1988 ampliou substantivamente a cidadania e os direitos sociais no Brasil. Criou o Sistema Único de Saúde (SUS) universal e público, declarou o racismo crime inafiançável e imprescritível, proibiu a tortura, assegurou o direito de greve e a liberdade sindical, garantiu direitos territoriais ancestrais a indígenas e remanescentes de quilombos e instituiu o voto facultativo para jovens de 16 e 17 anos e analfabetos."
             },
@@ -685,13 +685,13 @@
               "title": "ENEM: A Luta pela Efetivação dos Direitos Contemporâneos",
               "problemStatement": "Apesar dos avanços formais e jurídicos trazidos pela Constituição de 1988 e pelos governos democráticos da Nova República, a realidade social brasileira ainda se depara com o desafio de:",
               "options": [
-                "Restabelecer a censura prévia nos jornais para garantir a moralização da administração pública.",
                 "Efetivar na prática cotidiana as garantias de dignidade humana, combatendo as históricas desigualdades socioespaciais, a violência policial seletiva e a lentidão na demarcação de terras e na reforma agrária.",
-                "Extinguir o uso de moedas fiduciárias em prol do retorno ao escambo de açúcar nos centros urbanos.",
+                "Impedir que os cidadãos pobres tenham acesso gratuito ao ensino superior público e ao voto secreto.",
                 "Superar a monarquia parlamentarista que ainda comanda as Forças Armadas a partir de Petrópolis.",
-                "Impedir que os cidadãos pobres tenham acesso gratuito ao ensino superior público e ao voto secreto."
+                "Extinguir o uso de moedas fiduciárias em prol do retorno ao escambo de açúcar nos centros urbanos.",
+                "Restabelecer a censura prévia nos jornais para garantir a moralização da administração pública."
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "hint": "Existe um abismo entre o texto da lei ('a lei no papel') e a vida concreta de milhões de brasileiros nas periferias e no campo.",
               "stepByStepSolution": "A alternativa B está correta. O ENEM frequentemente aborda o descompasso entre a igualdade jurídica formal prometida pela Constituição de 1988 e as contradições da realidade brasileira contemporânea. A luta dos movimentos sociais (indígenas, negros, camponeses, sem-teto e LGBTQIA+) concentra-se na concretização desses direitos no dia a dia, enfrentando o racismo estrutural, a concentração de terras, a violência do Estado e a precarização dos serviços essenciais de saúde, moradia e educação."
             }
@@ -732,13 +732,13 @@
               "title": "ENEM: A Natureza Excludente da Democracia Ateniense",
               "problemStatement": "Na famosa oração fúnebre pronunciada por Péricles no século V a.C., ele celebrava: 'Nossa constituição política não copia as leis dos países vizinhos; antes, nós é que servimos de modelo a alguns deles. Seu nome é Democracia, porque o governo pertence não a uma minoria, mas à maioria'.\n\nNo entanto, ao analisar a organização socioespacial de Atenas à luz da crítica histórica do ENEM, constata-se que a democracia ateniense era caracterizada por:",
               "options": [
-                "Um sistema representativo em que apenas sacerdotes do templo de Delfos podiam se candidatar ao parlamento ateniense.",
                 "Uma república feudal camponesa sem moeda e sem comércio marítimo com o mar Mediterrâneo.",
-                "Uma monarquia absolutista em que o rei de Atenas concentrava todo o poder legislativo e religioso sem assembleias.",
                 "Um sufrágio universal irrestrito que concedia plenos direitos eleitorais a homens, mulheres e estrangeiros residentes.",
-                "Um modelo direto de deliberação na Ágora sustentado pelo trabalho compulsório de uma maioria desprovida de direitos de cidadania (escravizados, mulheres e metecos)."
+                "Uma monarquia absolutista em que o rei de Atenas concentrava todo o poder legislativo e religioso sem assembleias.",
+                "Um modelo direto de deliberação na Ágora sustentado pelo trabalho compulsório de uma maioria desprovida de direitos de cidadania (escravizados, mulheres e metecos).",
+                "Um sistema representativo em que apenas sacerdotes do templo de Delfos podiam se candidatar ao parlamento ateniense."
               ],
-              "correctIndex": 4,
+              "correctIndex": 3,
               "hint": "Lembre-se de quem ficava de fora da praça pública: mulheres, estrangeiros e a enorme população escravizada que realizava o trabalho produtivo.",
               "stepByStepSolution": "A alternativa B está correta. A democracia clássica em Atenas era direta para os cidadãos, mas radicalmente excludente: os considerados cidadãos (homens adultos, livres e filhos de pais atenienses) somavam menos de 10% a 15% da população total da pólis. A ampla maioria — mulheres, estrangeiros residentes (metecos) e a massa de trabalhadores escravizados — não possuía qualquer direito de voto ou participação nas decisões políticas."
             },
@@ -748,12 +748,12 @@
               "problemStatement": "A Grécia Clássica caracterizava-se pela coexistência de diversas cidades-estado (póleis) que, embora compartilhassem a mesma matriz linguística e religiosa, desenvolveram estruturas institucionais profundamente distintas.\n\nA comparação entre Esparta e Atenas revela que a sociedade espartana diferenciava-se pelo predomínio de:",
               "options": [
                 "Um governo teocrático comandado por imperadores divinizados que proibiam a posse de escudos e lanças.",
-                "Uma economia exclusivamente financeira baseada na emissão de papel-moeda e no livre comércio com a Pérsia.",
-                "Uma organização aristocrática militarizada, onde a formação do cidadão-guerreiro priorizava a disciplina física e a submissão dos servos hilotas ao Estado.",
                 "Uma democracia participativa de vanguarda artística e grande tolerância às liberdades individuais.",
-                "Uma confederação de marinheiros mercantes dedicados exclusivamente à colonização do oceano Pacífico."
+                "Uma economia exclusivamente financeira baseada na emissão de papel-moeda e no livre comércio com a Pérsia.",
+                "Uma confederação de marinheiros mercantes dedicados exclusivamente à colonização do oceano Pacífico.",
+                "Uma organização aristocrática militarizada, onde a formação do cidadão-guerreiro priorizava a disciplina física e a submissão dos servos hilotas ao Estado."
               ],
-              "correctIndex": 2,
+              "correctIndex": 4,
               "hint": "Pense na educação guerreira espartana (a 'agoge') e no papel dos hilotas como população escravizada pelo Estado.",
               "stepByStepSolution": "A alternativa B está correta. Esparta era uma pólis oligárquica e guerreira, governada por dois reis e pela Gerúsia. Os espartíatas (iguais) dedicavam-se com exclusividade ao treinamento militar desde os 7 anos de idade. Essa máquina bélica destinava-se a manter a segurança territorial e, internamente, policiar e reprimir a imensa população de hilotas (servos coletivos do Estado espartano), submetidos a regimes anuais de intimidação armada."
             }
@@ -785,11 +785,11 @@
               "options": [
                 "A transformação de Roma em um feudo autossuficiente isolado de qualquer contato com o Mar Mediterrâneo.",
                 "A submissão voluntária dos plebeus à escravidão perpétua em troca do direito de assistir às corridas do Circo Máximo.",
+                "A proibição do Senado romano e a expulsão imediata de todos os proprietários de terras da península itálica.",
                 "A criação do tribunato da plebe com poder de veto legislativo e a publicação da Lei das Doze Tábuas, conferindo publicidade e impessoalidade às leis escritas.",
-                "A abolição imediata da propriedade privada da terra e a fundação de um Estado socialista comandado por gladiadores.",
-                "A proibição do Senado romano e a expulsão imediata de todos os proprietários de terras da península itálica."
+                "A abolição imediata da propriedade privada da terra e a fundação de um Estado socialista comandado por gladiadores."
               ],
-              "correctIndex": 2,
+              "correctIndex": 3,
               "hint": "Lembre-se da Lei das Doze Tábuas e do poder dos Tribunos da Plebe de dizer 'Veto!' aos senadores.",
               "stepByStepSolution": "A alternativa B está correta. Diante da ameaça plebeia de não servir no exército e abandonar Roma (Secessão no Monte Sagrado), os patrícios foram forçados a ceder. Criaram-se os Tribunos da Plebe (magistrados invioláveis defensores dos direitos populares com poder de veto) e foi redigida a Lei das Doze Tábuas (450 a.C.), fundamental por registrar o direito por escrito, rompendo o monopólio oral dos patrícios sobre a justiça."
             },
@@ -798,13 +798,13 @@
               "title": "ENEM: A Política do Pão e Circo e a Crise do Império",
               "problemStatement": "No período imperial romano, a política de 'Pão e Circo' (panem et circenses) consistia na distribuição gratuita de trigo e na organização de combates de gladiadores no Coliseu. No contexto sociopolítico de Roma, essa política funcionava como:",
               "options": [
-                "Um modelo democrático de escolha do imperador com base no aplauso popular aos gladiadores vitoriosos.",
                 "Um mecanismo de apaziguamento e controle social para desmobilizar a massa de plebeus desempregados e prevenir insurreições urbanas contra o imperador.",
-                "Uma punição civil para cidadãos que se recusassem a cultuar as divindades pagãs tradicionais.",
+                "Um modelo democrático de escolha do imperador com base no aplauso popular aos gladiadores vitoriosos.",
+                "Um projeto de escolarização universal para capacitar os escravizados a exercerem funções científicas.",
                 "Um tratado de paz assinado com os reis bárbaros para desmilitarizar as legiões das fronteiras imperiais.",
-                "Um projeto de escolarização universal para capacitar os escravizados a exercerem funções científicas."
+                "Uma punição civil para cidadãos que se recusassem a cultuar as divindades pagãs tradicionais."
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "hint": "População faminta e sem emprego é perigosa para o poder imperial: comida grátis e entretenimento violento mantêm o povo ocupado e dócil.",
               "stepByStepSolution": "A alternativa B está correta. A política de 'Pão e Circo' era uma estratégia calculada dos imperadores romanos para neutralizar as tensões da plebe marginalizada. A concentração de terras e a expansão do escravismo haviam expulsado os pequenos camponeses do campo, criando em Roma uma massa de centenas de milhares de desocupados. Distribuindo rações periódicas de trigo e oferecendo diversão pública alienante (gladiadores e corridas), o governo impedia rebeliões populares."
             }
@@ -835,9 +835,9 @@
               "problemStatement": "Na sociedade feudal da Europa Ocidental, as relações de produção e de poder eram caracterizadas por:",
               "options": [
                 "Uma economia estritamente capitalista com indústrias automatizadas e salários pagos semanalmente aos camponeses.",
-                "Um governo democrático direto onde os servos votavam anualmente para escolher quem seria o papa católico.",
-                "Uma forte mobilidade social ascendente viabilizada pela aprovação em concursos públicos organizados pelo rei.",
                 "Uma sociedade de consumo de massas com importação contínua de trigo e café das colônias americanas.",
+                "Uma forte mobilidade social ascendente viabilizada pela aprovação em concursos públicos organizados pelo rei.",
+                "Um governo democrático direto onde os servos votavam anualmente para escolher quem seria o papa católico.",
                 "Uma organização estamental fundamentada na posse da terra, onde os servos estavam presos ao feudo e sustentavam a nobreza e o clero por meio de pesadas obrigações servis (como a corveia e a talha)."
               ],
               "correctIndex": 4,
@@ -849,13 +849,13 @@
               "title": "ENEM: As Cruzadas e o Renascimento Comercial",
               "problemStatement": "Convocadas a partir do final do século XI pelo papado sob a justificativa de libertar os lugares sagrados do Cristianismo, as Cruzadas produziram impactos econômicos e socioculturais decisivos no Ocidente, entre os quais se destaca:",
               "options": [
-                "A abolição pacífica e universal de todos os tributos cobrados pelos nobres e o desarmamento dos exércitos reais.",
-                "A destruição total de todas as cidades portuárias italianas e o retorno definitivo ao isolamento primitivo das florestas.",
+                "A proibição definitiva da circulação de moedas na Europa e o fechamento do mar Mediterrâneo por mais mil anos.",
                 "A conversão de toda a população de Paris e Londres à fé islâmica e o fim do Sacro Império Romano-Germânico.",
                 "A reabertura das rotas marítimas no Mediterrâneo ao comércio europeu, estimulando o renascimento urbano, as feiras comerciais e a ascensão da burguesia mercantil.",
-                "A proibição definitiva da circulação de moedas na Europa e o fechamento do mar Mediterrâneo por mais mil anos."
+                "A destruição total de todas as cidades portuárias italianas e o retorno definitivo ao isolamento primitivo das florestas.",
+                "A abolição pacífica e universal de todos os tributos cobrados pelos nobres e o desarmamento dos exércitos reais."
               ],
-              "correctIndex": 3,
+              "correctIndex": 2,
               "hint": "As Cruzadas levaram multidões ao Oriente Médio e restabeleceram o comércio de sedas, especiarias e tecidos finos, enriquecendo cidades como Veneza e Gênova.",
               "stepByStepSolution": "A alternativa B está correta. Embora tenham falhado em seu objetivo religioso e militar permanente em Jerusalém, as Cruzadas reabriram o Mar Mediterrâneo ao comércio ocidental. Cidades italianas (Gênova e Veneza) acumularam fortunas transportando cruzados e mercadorias orientais (especiarias, perfumes, tecidos de seda). Esse fluxo comercial reanimou a circulação monetária, revitalizou as cidades (burgos) e fortaleceu a nova classe burguesa, abalando as bases tradicionais do isolamento feudal."
             }
@@ -887,11 +887,11 @@
               "options": [
                 "Uma rejeição violenta a qualquer forma de conhecimento clássico grego ou romano, com a destruição sistemática de todas as bibliotecas antigas.",
                 "A imposição de uma economia puramente nômade que proibia o cultivo agrícola e a edificação de cidades e hospitais.",
-                "A submissão voluntária de todos os califas à autoridade espiritual exclusiva do Papa católico de Roma.",
                 "A proibição do comércio marítimo e das trocas mercantis com mercadores europeus e asiáticos.",
-                "Avanços extraordinários na astronomia, óptica, medicina e matemática (introdução do zero e desenvolvimento da álgebra), combinados à preservação e tradução de textos clássicos."
+                "Avanços extraordinários na astronomia, óptica, medicina e matemática (introdução do zero e desenvolvimento da álgebra), combinados à preservação e tradução de textos clássicos.",
+                "A submissão voluntária de todos os califas à autoridade espiritual exclusiva do Papa católico de Roma."
               ],
-              "correctIndex": 4,
+              "correctIndex": 3,
               "hint": "Pense na palavra 'Álgebra', no uso do número zero e nas obras de medicina de Avicena que ensinaram a Europa.",
               "stepByStepSolution": "A alternativa B está correta. A civilização islâmica medieval alcançou um extraordinário apogeu científico e intelectual. Os sábios muçulmanos preservaram, traduziram e ampliaram a herança filosófica grega de Aristóteles e Platão, criaram a Álgebra, consolidaram os algarismos arábicos com o zero, aperfeiçoaram o astrolábio e produziram compêndios médicos avançados (como os de Avicena) que revolucionaram o conhecimento ocidental séculos mais tarde."
             },
@@ -901,12 +901,12 @@
               "problemStatement": "A rápida expansão islâmica a partir do século VII articulou um vasto espaço geográfico que interligava o Oriente Médio, o Norte da África, a Ásia Central e a Península Ibérica. Essa articulação proporcionou:",
               "options": [
                 "A unificação de todas as monarquias europeias sob o comando militar direto dos generais persas.",
+                "O isolamento total das civilizações asiáticas, que deixaram de manter qualquer comércio com o continente africano.",
                 "A formação de uma rede mercantil e cultural cosmopolita que integrou as rotas transaarianas de ouro e sal às rotas marítimas asiáticas de especiarias e tecidos.",
                 "A decadência definitiva da navegação astronômica e o retorno ao uso exclusivo de carruagens terrestres na África.",
-                "O isolamento total das civilizações asiáticas, que deixaram de manter qualquer comércio com o continente africano.",
                 "A obrigatoriedade de que todos os produtos comercializados fossem doados gratuitamente às autoridades de Meca."
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "hint": "Lembre-se da Rota da Seda e das caravanas pelo deserto do Saara: o Islã era uma civilização de mercadores urbanos que ligavam o mundo.",
               "stepByStepSolution": "A alternativa B está correta. O mundo islâmico funcionou como o grande elo de conexão global medieval. Através de uma rede integrada de rotas terrestres (caravanas de camelos pelo Saara comercializando ouro dos reinos de Mali e Gana) e rotas marítimas no Oceano Índico e Mediterrâneo, os mercadores muçulmanos conectavam os mercados da China, Índia, África e Europa, promovendo intensa circulação de bens materiais, tecnologias e ideias científicas."
             }
@@ -947,13 +947,13 @@
               "title": "ENEM: Antropocentrismo e o Pensamento Renascentista",
               "problemStatement": "O Renascimento cultural e científico dos séculos XV e XVI operou uma profunda inflexão na história do pensamento ocidental. Essa inflexão caracterizou-se pela:",
               "options": [
+                "Rejeição completa de qualquer texto ou escultura da Antiguidade Clássica greco-romana.",
+                "Defesa intransigente do modelo geocêntrico de Ptolomeu como única verdade científica autorizada pelos sábios humanistas.",
                 "Substituição da matriz exclusivamente teocêntrica medieval pelo antropocentrismo humanista, valorizando a capacidade da razão e da observação empírica para decifrar a natureza.",
                 "Imposição de uma visão puramente rural que proibia o comércio monetário e a vida urbana nas cidades portuárias.",
-                "Defesa intransigente do modelo geocêntrico de Ptolomeu como única verdade científica autorizada pelos sábios humanistas.",
-                "Proclamação do ateísmo universal e pela destruição violenta de todos os templos e imagens católicas da Itália.",
-                "Rejeição completa de qualquer texto ou escultura da Antiguidade Clássica greco-romana."
+                "Proclamação do ateísmo universal e pela destruição violenta de todos os templos e imagens católicas da Itália."
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "Lembre-se do Humanismo: o ser humano passa a ser visto como dotado de razão, inteligência e criatividade para investigar o mundo.",
               "stepByStepSolution": "A alternativa B está correta. O Renascimento não significou uma negação da religiosidade, mas uma ruptura com o teocentrismo estéril medieval. Ao colocar o ser humano no centro das investigações (antropocentrismo humanista) e resgatar a herança clássica greco-romana, os renascentistas valorizaram o racionalismo, a experimentação e a observação da natureza, abrindo as portas para a Revolução Científica moderna (Copérnico, Galileu, Da Vinci)."
             },
@@ -962,13 +962,13 @@
               "title": "ENEM: A Revolução da Imprensa de Gutenberg",
               "problemStatement": "A invenção e o aperfeiçoamento da prensa de tipos móveis por Johannes Gutenberg por volta de 1450 gerou impactos socioculturais revolucionários na Europa porque:",
               "options": [
-                "Permitiu a reprodução em escala inédita de obras impressas, democratizando a circulação de novas ideias científicas e teológicas e enfraquecendo o monopólio clerical sobre a cultura letrada.",
+                "Elevou em dez vezes o custo financeiro dos livros, impedindo que a burguesia mercantil tivesse acesso a compêndios cartográficos.",
                 "Proibiu terminantemente a publicação de qualquer livro que não estivesse escrito em latim eclesiástico.",
-                "Substituiu a leitura de textos escritos por rituais tribais transmitidos unicamente por via oral.",
+                "Permitiu a reprodução em escala inédita de obras impressas, democratizando a circulação de novas ideias científicas e teológicas e enfraquecendo o monopólio clerical sobre a cultura letrada.",
                 "Foi prontamente proibida por todos os monarcas absolutistas da Europa até o século XIX.",
-                "Elevou em dez vezes o custo financeiro dos livros, impedindo que a burguesia mercantil tivesse acesso a compêndios cartográficos."
+                "Substituiu a leitura de textos escritos por rituais tribais transmitidos unicamente por via oral."
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "Antes de Gutenberg, monges levavam meses copiando um único livro à mão. Com a prensa, centenas de bíblias e tratados científicos podiam ser impressos rapidamente.",
               "stepByStepSolution": "A alternativa B está correta. A tecnologia da prensa de tipos móveis de Gutenberg revolucionou a comunicação e a circulação do saber: barateou a produção de livros, acelerou a difusão dos clássicos humanistas renascentistas e, crucialmente, permitiu que a Bíblia traduzida para as línguas locais por Lutero fosse lida por milhares de fiéis, quebrando o monopólio milenar que a Igreja Católica exercia sobre a cópia e a interpretação dos textos."
             }
@@ -998,13 +998,13 @@
               "title": "ENEM: Luteranismo e o Rompimento Teológico",
               "problemStatement": "Em 1517, ao publicar as 95 Teses contra a venda de indulgências pela Igreja Católica, Martinho Lutero inaugurou a Reforma Protestante, cujo núcleo doutrinário estabelecia:",
               "options": [
-                "A extinção do Cristianismo e o retorno ao politeísmo clássico grego de Zeus e Atena.",
-                "A obrigação de que todos os fiéis realizassem peregrinações anuais a Roma para serem batizados pessoalmente pelo Papa.",
-                "A necessidade de que o Papa tivesse poder imperial sobre todos os reis da Europa e cobrasse dízimos em dobro.",
                 "A proibição do casamento dos pastores protestantes e a obrigatoriedade da reclusão de todos os fiéis em mosteiros fechados.",
-                "A doutrina da justificação pela fé, pela qual a salvação da alma é uma graça divina individual que prescinde da compra de indulgências e da mediação sacerdotal romana."
+                "A necessidade de que o Papa tivesse poder imperial sobre todos os reis da Europa e cobrasse dízimos em dobro.",
+                "A extinção do Cristianismo e o retorno ao politeísmo clássico grego de Zeus e Atena.",
+                "A doutrina da justificação pela fé, pela qual a salvação da alma é uma graça divina individual que prescinde da compra de indulgências e da mediação sacerdotal romana.",
+                "A obrigação de que todos os fiéis realizassem peregrinações anuais a Roma para serem batizados pessoalmente pelo Papa."
               ],
-              "correctIndex": 4,
+              "correctIndex": 3,
               "hint": "Lembre-se dos dois grandes pilares de Lutero: Sola Fide (só a fé salva) e Sola Scriptura (só a Bíblia como autoridade de fé).",
               "stepByStepSolution": "A alternativa B está correta. A ruptura de Martinho Lutero contestou a mercantilização da fé (venda de indulgências para financiar a Basílica de São Pedro). Lutero sustentava a tese da 'justificação pela fé': o fiel é salvo pela graça divina mediante sua fé sincera, e não por pagamentos pecuniários à Igreja ou por ritos eclesiásticos. Ao pregar a livre interpretação da Bíblia e traduzi-la para a língua do povo, retirou do clero católico o monopólio da salvação."
             },
@@ -1013,13 +1013,13 @@
               "title": "ENEM: A Ética Calvinista e o Espírito Capitalista",
               "problemStatement": "Na clássica obra 'A Ética Protestante e o Espírito do Capitalismo', o sociólogo Max Weber analisa como a teologia calvinista da Predestinação Absoluta favoreceu a expansão do capitalismo moderno. Segundo essa análise, isso ocorreu porque o calvinismo:",
               "options": [
+                "Restabeleceu a condenação medieval da usura e do lucro com penas de prisão perpétua para comerciantes de tecidos.",
+                "Interpretava a disciplina, o trabalho árduo e o enriquecimento lícito como sinais visíveis da bênção e da eleição divina, legitimando moralmente a acumulação e o reinvestimento burguês.",
                 "Defendia que a preguiça e a mendicância eram virtudes sagradas que garantiam o paraíso imediato aos homens de negócios.",
                 "Exigia a devolução de todas as propriedades privadas à Coroa católica de Portugal.",
-                "Interpretava a disciplina, o trabalho árduo e o enriquecimento lícito como sinais visíveis da bênção e da eleição divina, legitimando moralmente a acumulação e o reinvestimento burguês.",
-                "Proibiu o trabalho assalariado e determinou que os lucros comerciais fossem queimados em fogueiras públicas.",
-                "Restabeleceu a condenação medieval da usura e do lucro com penas de prisão perpétua para comerciantes de tecidos."
+                "Proibiu o trabalho assalariado e determinou que os lucros comerciais fossem queimados em fogueiras públicas."
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "Para Calvino, o sucesso material honesto não era pecado (como dizia o catolicismo medieval), mas a confirmação de que Deus abençoou seu trabalho diário.",
               "stepByStepSolution": "A alternativa B está correta. O calvinismo operou uma revolução ética fundamental: ao pregar que a salvação era predestinada por Deus e que a dedicação metódica ao trabalho e a prosperidade material sem ostentação eram indícios da graça divina, retirou o estigma de pecado do lucro e do empréstimo a juros. Essa moral do dever profissional (ascese laica) casou-se perfeitamente com os interesses de poupança e reinvestimento produtivo da burguesia mercantil europeia."
             }
@@ -1049,13 +1049,13 @@
               "title": "ENEM: O Mercantilismo e a Balança Comercial",
               "problemStatement": "O mercantilismo caracterizou a política econômica das monarquias absolutistas na Europa Moderna. O princípio basilar dessa política, voltado para assegurar a riqueza e a soberania do Estado, consistia em:",
               "options": [
-                "Extinguir todas as taxas alfandegárias para promover o livre-comércio mundial desregulado.",
-                "Proibir o comércio das metrópoles com suas possessões coloniais na América.",
                 "Estimular as importações de tecidos ingleses para desvalorizar a moeda nacional.",
-                "Manter uma balança comercial favorável (exportar mais e importar menos) para reter metais preciosos (ouro e prata) dentro do reino.",
-                "Distribuir a totalidade das reservas de ouro do tesouro real aos camponeses pobres das aldeias."
+                "Distribuir a totalidade das reservas de ouro do tesouro real aos camponeses pobres das aldeias.",
+                "Proibir o comércio das metrópoles com suas possessões coloniais na América.",
+                "Extinguir todas as taxas alfandegárias para promover o livre-comércio mundial desregulado.",
+                "Manter uma balança comercial favorável (exportar mais e importar menos) para reter metais preciosos (ouro e prata) dentro do reino."
               ],
-              "correctIndex": 3,
+              "correctIndex": 4,
               "hint": "Lembre-se da fórmula: Exportações > Importações = superávit comercial e acúmulo de metais nos cofres do rei (metalismo).",
               "stepByStepSolution": "A alternativa B está correta. A lógica do mercantilismo partia da premissa do metalismo: a força de uma monarquia absolutista media-se pela quantidade de metais preciosos (ouro e prata) retidos em seus cofres. Para conseguir esse acúmulo, o Estado adotava o protecionismo alfandegário e buscava manter uma balança comercial favorável (vendendo produtos manufaturados caros e comprando apenas o indispensável), apoiando-se no exclusivo do pacto colonial."
             },
@@ -1064,13 +1064,13 @@
               "title": "ENEM: Teóricos do Absolutismo e a Justificação do Poder",
               "problemStatement": "Na Inglaterra do século XVII, Thomas Hobbes publicou o 'Leviatã', justificando a existência de um poder monárquico absolutista centralizado. Segundo a teoria contratualista de Hobbes, a legitimidade do soberano repousa no fato de que:",
               "options": [
-                "As leis devem ser votadas diretamente por plebiscito popular semanal sem a existência de nenhum chefe de Estado.",
-                "O poder político emana do comando exclusivo dos bispos católicos de Roma.",
                 "O povo tem o direito constitucional de destituir e enforcar o rei toda vez que houver aumento de impostos sobre o gado.",
-                "O rei é um anjo divino sem corpo carnal que desceu do céu para governar sem necessitar de súditos.",
-                "Os indivíduos, vivendo em um estado de natureza de medo constante e guerra de todos contra todos, renunciaram à sua liberdade irrestrita através de um pacto social para que um governante forte garantisse a ordem e a sobrevivência coletiva."
+                "As leis devem ser votadas diretamente por plebiscito popular semanal sem a existência de nenhum chefe de Estado.",
+                "Os indivíduos, vivendo em um estado de natureza de medo constante e guerra de todos contra todos, renunciaram à sua liberdade irrestrita através de um pacto social para que um governante forte garantisse a ordem e a sobrevivência coletiva.",
+                "O poder político emana do comando exclusivo dos bispos católicos de Roma.",
+                "O rei é um anjo divino sem corpo carnal que desceu do céu para governar sem necessitar de súditos."
               ],
-              "correctIndex": 4,
+              "correctIndex": 2,
               "hint": "Lembre-se da célebre frase: 'O homem é o lobo do próprio homem'. Sem um poder forte para impor a lei, a humanidade se autodestrói.",
               "stepByStepSolution": "A alternativa B está correta. Thomas Hobbes fundamenta o absolutismo em uma perspectiva laica e contratualista: no estado de natureza primitivo, sem autoridade constituída, prevalecia o egoísmo, o medo violento e a guerra civil permanente ('o homem é o lobo do homem'). Para escapar dessa barbárie autodestrutiva, os seres humanos celebram um contrato social irrevogável, transferindo o monopólio da força ao Estado/monarca (o Leviatã), que impõe a ordem, a paz e a segurança jurídica."
             }
@@ -1101,12 +1101,12 @@
               "problemStatement": "Portugal foi a primeira nação europeia a empreender com sucesso as Grandes Navegações no Oceano Atlântico ao longo do século XV. O fator fundamental que explica esse pioneirismo lusitano foi:",
               "options": [
                 "A crença unânime entre os sábios renascentistas de que a Terra era plana e quadrada.",
-                "A vitória militar sobre a Inglaterra na Guerra dos Cem Anos, que obrigou os britânicos a cederem suas frotas a Portugal.",
                 "A precoce centralização monárquica consolidada com a Revolução de Avis (1385), articulando os interesses da Coroa com a experiência e os capitais da burguesia mercantil lusa.",
-                "A renúncia voluntária do Império Otomano em cobrar qualquer pedágio sobre o comércio de especiarias no mar Mediterrâneo.",
-                "A abundância de jazidas de prata encontradas nas margens do Rio Tejo em Lisboa."
+                "A vitória militar sobre a Inglaterra na Guerra dos Cem Anos, que obrigou os britânicos a cederem suas frotas a Portugal.",
+                "A abundância de jazidas de prata encontradas nas margens do Rio Tejo em Lisboa.",
+                "A renúncia voluntária do Império Otomano em cobrar qualquer pedágio sobre o comércio de especiarias no mar Mediterrâneo."
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "Enquanto Espanha, França e Inglaterra guerreavam ou enfrentavam disputas dinásticas internas, Portugal já tinha um Estado unificado e focado no mar desde o século XIV.",
               "stepByStepSolution": "A alternativa B está correta. O pioneirismo português decorreu de uma combinação favorável de fatores: posição geográfica atlantica, paz interna e conhecimento náutico (Escola de Sagres, bússola, caravelas). O fator político decisivo foi a Revolução de Avis (1385), que unificou precocemente o Estado Nacional em torno do rei D. João I, forjando uma aliança indissolúvel entre a Coroa e os mercadores lisboetas em busca de novas rotas mercantis e lucros ultramarinos."
             },
@@ -1115,13 +1115,13 @@
               "title": "ENEM: A Conquista da América e o Choque Colonial",
               "problemStatement": "A conquista dos grandes impérios pré-colombianos (Astecas e Incas) pelos espanhóis no início do século XVI resultou na rápida subjugação de civilizações que contavam com exércitos de centenas de milhares de guerreiros. O fator decisivo para a vitória dos conquistadores europeus foi:",
               "options": [
-                "A recusa pacífica dos imperadores Montezuma e Atahualpa em utilizar qualquer tipo de arma em confrontos armados.",
-                "A superioridade numérica esmagadora dos soldados espanhóis em relação à população nativa americana.",
-                "A combinação de alianças militares com povos indígenas subjugados pelos impérios locais, a superioridade de armamentos e o impacto demográfico devastador das epidemias trazidas da Europa.",
                 "O uso de frotas de submarinos modernos que bombardearam as pirâmides de Machu Picchu e Tenochtitlán.",
-                "A conversão voluntária e imediata de todos os guerreiros astecas ao luteranismo alemão antes das batalhas."
+                "A superioridade numérica esmagadora dos soldados espanhóis em relação à população nativa americana.",
+                "A conversão voluntária e imediata de todos os guerreiros astecas ao luteranismo alemão antes das batalhas.",
+                "A recusa pacífica dos imperadores Montezuma e Atahualpa em utilizar qualquer tipo de arma em confrontos armados.",
+                "A combinação de alianças militares com povos indígenas subjugados pelos impérios locais, a superioridade de armamentos e o impacto demográfico devastador das epidemias trazidas da Europa."
               ],
-              "correctIndex": 2,
+              "correctIndex": 4,
               "hint": "Poucos espanhóis conquistaram impérios gigantescos porque exploraram rivalidades étnicas locais e contaram com o auxílio letal de vírus como a varíola.",
               "stepByStepSolution": "A alternativa B está correta. A queda de impérios complexos como o Asteca e o Inca não ocorreu por magia ou heroísmo isolado: Hernán Cortés e Francisco Pizarro exploraram com astúcia as divisões e rivalidades étnicas locais, aliando-se a povos subjugados pelos astecas que queriam se libertar dos tributos imperiais. Isso foi potencializado pelo terror das armas de fogo, dos cavalos e, sobretudo, pelo choque biológico das epidemias (como a varíola e o sarampo), que causaram hecatombes demográficas dizimando as estruturas militares e políticas nativas."
             }
@@ -1162,13 +1162,13 @@
               "title": "ENEM: A Teoria dos Três Poderes de Montesquieu",
               "problemStatement": "Na obra 'O Espírito das Leis' (1748), o filósofo iluminista Montesquieu propôs a célebre separação dos poderes do Estado. A finalidade política dessa formulação era:",
               "options": [
-                "Extinguir os parlamentos nacionais e transferir a soberania das leis para os sindicatos operários.",
-                "Garantir a liberdade civil e evitar o despotismo através de um sistema de freios e contrapesos em que o poder controle o próprio poder.",
-                "Restaurar a democracia direta ateniense com a proibição de qualquer eleição representativa.",
+                "Fortalecer a autoridade absoluta do rei sobre a Igreja para permitir a cobrança irrestrita de tributos sobre a nobreza.",
                 "Subordinar os juízes civis aos tribunais eclesiásticos da Santa Inquisição católica em todas as causas penais.",
-                "Fortalecer a autoridade absoluta do rei sobre a Igreja para permitir a cobrança irrestrita de tributos sobre a nobreza."
+                "Garantir a liberdade civil e evitar o despotismo através de um sistema de freios e contrapesos em que o poder controle o próprio poder.",
+                "Extinguir os parlamentos nacionais e transferir a soberania das leis para os sindicatos operários.",
+                "Restaurar a democracia direta ateniense com a proibição de qualquer eleição representativa."
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "hint": "Lembre-se da célebre máxima: 'Para que não se possa abusar do poder, é preciso que, pela disposição das coisas, o poder freie o poder'.",
               "stepByStepSolution": "A alternativa B está correta. Montesquieu visava desmontar o modelo absolutista, no qual o monarca concentrava em suas mãos as atribuições de fazer a lei (Legislativo), aplicá-la (Executivo) e julgar seus opositores (Judiciário). Ao propor três esferas autônomas e harmônicas com prerrogativas mútuas de fiscalização (freios e contrapesos), estabeleceu a base jurídica que protege a sociedade contra governantes autoritários."
             },
@@ -1178,12 +1178,12 @@
               "problemStatement": "Aprovada pela Assembleia Nacional francesa em agosto de 1789, a Declaração dos Direitos do Homem e do Cidadão estabeleceu princípios universais que abalaram as estruturas do Antigo Regime ao consagrar:",
               "options": [
                 "A abolição total de qualquer forma de propriedade privada e a estatização das oficinas artesanais de Paris.",
-                "O direito hereditário da nobreza de nascer isenta de impostos e de ocupar com exclusividade os postos de comando militar.",
-                "A obrigatoriedade de que todos os cidadãos franceses se convertessem ao protestantismo calvinista.",
                 "A dissolução do exército nacional e a entrega da cidade de Paris aos reis da Áustria e da Prússia.",
-                "A igualdade jurídica de todos os homens perante a lei, a liberdade de opinião e a consagração da propriedade como um direito inviolável e sagrado."
+                "A igualdade jurídica de todos os homens perante a lei, a liberdade de opinião e a consagração da propriedade como um direito inviolável e sagrado.",
+                "A obrigatoriedade de que todos os cidadãos franceses se convertessem ao protestantismo calvinista.",
+                "O direito hereditário da nobreza de nascer isenta de impostos e de ocupar com exclusividade os postos de comando militar."
               ],
-              "correctIndex": 4,
+              "correctIndex": 2,
               "hint": "A Declaração de 1789 destruiu os privilégios medievais de nascimento: a lei passou a ser igual para todos, independentemente de ser nobre ou plebeu.",
               "stepByStepSolution": "A alternativa B está correta. A Declaração de 1789 foi o manifesto supremo da vitória burguesa na Revolução Francesa. Ao proclamar que 'os homens nascem e permanecem livres e iguais em direitos', sepultou a sociedade de ordens do feudalismo absolutista, consolidou as liberdades individuais e garantiu o direito à propriedade privada como base do novo ordenamento jurídico ocidental."
             }
@@ -1214,12 +1214,12 @@
               "problemStatement": "Durante as primeiras décadas da Revolução Industrial na Inglaterra, o cotidiano das fábricas de tecidos e das minas de carvão caracterizou-se:",
               "options": [
                 "Pelo monopólio do trabalho concedido exclusivamente a nobres arruinados que recebiam aposentadoria integral da Coroa britânica.",
-                "Por jornadas extenuantes que superavam catorze horas diárias em ambientes insalubres, acompanhadas pela exploração maciça do trabalho infantil e feminino com salários rebaixados.",
-                "Por jornadas reduzidas de seis horas diárias e ampla concessão de férias remuneradas custeadas pelos proprietários de tear.",
                 "Pela proibição do uso de máquinas a vapor para preservar a saúde e a integridade física dos trabalhadores rurais.",
-                "Pela distribuição paritária das ações das companhias industriais entre patrões e operários através de assembleias fabris."
+                "Pela distribuição paritária das ações das companhias industriais entre patrões e operários através de assembleias fabris.",
+                "Por jornadas extenuantes que superavam catorze horas diárias em ambientes insalubres, acompanhadas pela exploração maciça do trabalho infantil e feminino com salários rebaixados.",
+                "Por jornadas reduzidas de seis horas diárias e ampla concessão de férias remuneradas custeadas pelos proprietários de tear."
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "hint": "Lembre-se dos relatos de crianças de 8 anos limpando engrenagens de teares em movimento e de mulheres trabalhando 16 horas sem direitos.",
               "stepByStepSolution": "A alternativa B está correta. A fase pioneira da industrialização capitalista operou em um vácuo de regulamentação estatal. A burguesia impunha jornadas brutais de 14 a 16 horas sem intervalos de descanso, recorrendo intensivamente ao trabalho de crianças e mulheres devido à sua docilidade de disciplina e para pagar salários de miséria, resultando em mutilações frequentes e expectativa de vida operária que mal ultrapassava os 20 anos de idade em cidades industriais como Manchester."
             },
@@ -1228,13 +1228,13 @@
               "title": "ENEM: A Crítica de Marx e o Conceito de Mais-Valia",
               "problemStatement": "No século XIX, Karl Marx e Friedrich Engels formularam o 'Socialismo Científico', apresentando uma crítica radical à economia política liberal. Na análise marxista, o conceito de 'mais-valia' refere-se:",
               "options": [
-                "À doação voluntária feita pelos sindicatos para a compra de matérias-primas importadas das colônias.",
-                "À perda financeira sofrida pelos capitalistas quando as máquinas industriais quebram por desgaste mecânico.",
-                "À parcela do valor do trabalho executado pelo operário que não é remunerada pelo salário e é apropriada privadamente pelo proprietário dos meios de produção como lucro.",
                 "Ao imposto cobrado pelo rei sobre a venda de grãos nas feiras medievais de Champanhe.",
-                "Ao bônus de produtividade pago em dinheiro aos artesãos mais eficientes das corporações de ofício."
+                "À doação voluntária feita pelos sindicatos para a compra de matérias-primas importadas das colônias.",
+                "Ao bônus de produtividade pago em dinheiro aos artesãos mais eficientes das corporações de ofício.",
+                "À perda financeira sofrida pelos capitalistas quando as máquinas industriais quebram por desgaste mecânico.",
+                "À parcela do valor do trabalho executado pelo operário que não é remunerada pelo salário e é apropriada privadamente pelo proprietário dos meios de produção como lucro."
               ],
-              "correctIndex": 2,
+              "correctIndex": 4,
               "hint": "O operário trabalha 8 horas, mas seu salário equivale a apenas 2 horas do que ele produziu. As 6 horas restantes vão para o bolso do patrão.",
               "stepByStepSolution": "A alternativa B está correta. A teoria da mais-valia é o alicerce da crítica econômica de Marx: demonstra que a fonte do lucro burguês não nasce da simples revenda de mercadorias no mercado, mas da exploração direta do proletariado no processo produtivo. O trabalhador gera um montante de valor muito superior à quantia que recebe na forma de salário; essa diferença (a mais-valia) é retida pelo capitalista, alimentando a acumulação e aprofundando a desigualdade entre as classes sociais."
             }
@@ -1264,13 +1264,13 @@
               "title": "ENEM: A Conferência de Berlim e as Fronteiras Artificiais",
               "problemStatement": "A Conferência de Berlim (1884–1885), realizada na Alemanha com a presença exclusiva de potências imperialistas europeias e dos Estados Unidos, produziu consequências históricas devastadoras para o continente africano ao determinar:",
               "options": [
-                "A devolução pacífica de todas as colônias aos reinos tradicionais da África Ocidental sob supervisão do Vaticano.",
                 "A partilha arbitrária do território africano em fronteiras artificiais desenhadas para atender aos interesses de exploração colonial, desrespeitando identidades étnicas e culturais ancestrais.",
                 "A proibição definitiva da extração de ouro e diamantes na África do Sul e no Congo belga.",
                 "A independência imediata de todas as nações africanas com ajuda financeira da rainha Vitória.",
-                "A unificação de toda a África em uma única república federativa chefiada por generais etíopes."
+                "A unificação de toda a África em uma única república federativa chefiada por generais etíopes.",
+                "A devolução pacífica de todas as colônias aos reinos tradicionais da África Ocidental sob supervisão do Vaticano."
               ],
-              "correctIndex": 1,
+              "correctIndex": 0,
               "hint": "Diplomatas europeus traçaram linhas retas no mapa da África com régua e caneta, forçando povos rivais a viverem juntos e separando famílias.",
               "stepByStepSolution": "A alternativa B está correta. A Conferência de Berlim consagrou o princípio da ocupação efetiva da África pelas potências neocoloniais. O retalhamento do continente traçou fronteiras artificiais sem qualquer consulta aos povos originários, agrupando nações historicamente hostis sob a mesma autoridade colonial e dividindo etnias com laços ancestrais profundos. Essa herança perversa gerou guerras civis sangrentas e instabilidade crônica que se estendem até a África contemporânea."
             },
@@ -1279,13 +1279,13 @@
               "title": "ENEM: O Darwinismo Social como Legitimador do Imperialismo",
               "problemStatement": "Para justificar a conquista e a espoliação violenta da África e da Ásia no século XIX, ideólogos europeus formularam teorias como o 'Darwinismo Social'. Esse discurso ideológico sustentava que:",
               "options": [
-                "A civilização branca ocidental representava o ápice da evolução biológica e social, possuindo o 'dever natural' de colonizar e civilizar os povos considerados inferiores e atrasados.",
                 "O uso de armas de fogo contra qualquer ser humano constituía um pecado mortal que impedia a salvação da alma.",
-                "A Europa deveria submeter-se à liderança militar e religiosa dos imperadores chineses da Dinastia Qing.",
+                "Todas as culturas humanas possuem o mesmo valor moral e devem ser preservadas do contato com a tecnologia moderna.",
                 "A miscigenação entre todas as raças era a única garantia de progresso e inteligência para as futuras gerações.",
-                "Todas as culturas humanas possuem o mesmo valor moral e devem ser preservadas do contato com a tecnologia moderna."
+                "A civilização branca ocidental representava o ápice da evolução biológica e social, possuindo o 'dever natural' de colonizar e civilizar os povos considerados inferiores e atrasados.",
+                "A Europa deveria submeter-se à liderança militar e religiosa dos imperadores chineses da Dinastia Qing."
               ],
-              "correctIndex": 0,
+              "correctIndex": 3,
               "hint": "Pense no conceito de 'O Fardo do Homem Branco': a ideia racista de que os brancos tinham a obrigação de 'civilizar' os povos negros e indígenas.",
               "stepByStepSolution": "A alternativa B está correta. O Darwinismo Social de Herbert Spencer foi uma apropriação pseudocientífica da biologia de Darwin aplicada à sociologia. Defendia que a vitória imperialista das nações europeias era a comprovação da 'sobrevivência do mais apto' e da superioridade inata da raça branca. Essa falácia eugênica conferiu uma roupagem de missão humanitária e civilizatória ('o fardo do homem branco') ao massacre militar e à pilhagem sistemática de matérias-primas e vidas na África e Ásia."
             }
@@ -1315,13 +1315,13 @@
               "title": "ENEM: O Tratado de Versalhes e a Germinação do Nazismo",
               "problemStatement": "O Tratado de Versalhes (1919), imposto à Alemanha ao término da Primeira Guerra Mundial, é considerado pelos historiadores um dos fatores determinantes para a ascensão do Partido Nazista na década de 1930 porque:",
               "options": [
-                "Premiou a Alemanha com territórios coloniais abundantes no Pacífico e empréstimos a juros nulos dos Estados Unidos.",
+                "Exigiu que todos os cidadãos alemães adotassem o catolicismo romano como religião compulsória de Estado.",
+                "Extinguiu a propriedade privada e instaurou uma ditadura comunista sob a liderança direta de Leon Trotsky em Berlim.",
                 "Proibiu a circulação de jornais e obrigou todos os generais alemães a se tornarem operários industriais na França.",
                 "Impôs cláusulas de humilhação e pesadas indenizações econômicas que destruíram a economia alemã, alimentando o sentimento de revanchismo chauvinista explorado por Adolf Hitler.",
-                "Extinguiu a propriedade privada e instaurou uma ditadura comunista sob a liderança direta de Leon Trotsky em Berlim.",
-                "Exigiu que todos os cidadãos alemães adotassem o catolicismo romano como religião compulsória de Estado."
+                "Premiou a Alemanha com territórios coloniais abundantes no Pacífico e empréstimos a juros nulos dos Estados Unidos."
               ],
-              "correctIndex": 2,
+              "correctIndex": 3,
               "hint": "A chamada 'paz punitiva': a Alemanha perdeu terras, foi obrigada a desarmar seu exército e a pagar quantias astronômicas, gerando ódio e orgulho ferido.",
               "stepByStepSolution": "A alternativa B está correta. O Tratado de Versalhes impôs à Alemanha a 'cláusula de culpa da guerra' (Artigo 231), confiscando suas colônias, retirando a Alsácia-Lorena, desmilitarizando a Renânia e exigindo reparações financeiras impagáveis. A crise socioeconômica decorrente dessa punição gerou humilhação nacional e hiperinflação, terreno fértil que foi habilmente explorado pela propaganda nazista de Hitler para canalizar o rancor popular contra a democracia liberal de Weimar e os judeus."
             },
@@ -1330,13 +1330,13 @@
               "title": "ENEM: A Singularidade do Holocausto no Nazismo",
               "problemStatement": "O Holocausto (Shoah), perpetrado pelo regime nazista durante a Segunda Guerra Mundial e que resultou no assassinato de seis milhões de judeus, é compreendido pela filosofia e história contemporâneas como um marco inédito da barbárie moderna porque:",
               "options": [
+                "Atingiu exclusivamente generais ricos que possuíam fábricas de aviões e tanques na Alemanha.",
+                "Foi liderado pela Cruz Vermelha Internacional como método de combate a epidemias de cólera nos campos de refugiados.",
                 "Mobilizou todo o aparato burocrático, tecnológico e industrial do Estado para planejar e executar o extermínio sistemático de um grupo humano com base em preceitos racistas.",
                 "Ocorreu sem o conhecimento ou a autorização de Adolf Hitler e da cúpula da SS em Berlim.",
-                "Foi liderado pela Cruz Vermelha Internacional como método de combate a epidemias de cólera nos campos de refugiados.",
-                "Atingiu exclusivamente generais ricos que possuíam fábricas de aviões e tanques na Alemanha.",
                 "Foi fruto exclusivo de combates militares acidentais ocorridos no front russo durante os invernos rigorosos."
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "Lembre-se dos trens pontuais, das câmaras de gás, da contabilidade macabra e da cumplicidade da burocracia estatal: o genocídio como linha de produção industrial.",
               "stepByStepSolution": "A alternativa B está correta. A singularidade histórica do Holocausto reside no fato de que o extermínio de seres humanos foi planejado e executado com frieza burocrática e tecnologia fabril moderna ('a Solução Final'). Médicos, engenheiros, operadores de trens, contadores e administradores de Estado foram mobilizados pelo regime nazista para classificar, transportar e assassinar milhões de judeus, ciganos e dissidentes em escala industrial em câmaras de gás (Auschwitz, Treblinka), revelando os perigos da razão instrumental despida de ética humana."
             }
@@ -1366,13 +1366,13 @@
               "title": "ENEM: A Bipolaridade da Guerra Fria e as Guerras por Procuração",
               "problemStatement": "A ordem geopolítica da Guerra Fria (1947–1991) caracterizou-se pela rivalidade ideológica e estratégica entre os Estados Unidos e a União Soviética. Embora nunca tenha ocorrido um confronto bélico direto entre as duas potências nucleares, essa rivalidade manifestou-se:",
               "options": [
-                "Na unificação de Washington e Moscou sob uma única constituição republicana presidida pelo secretário-geral da ONU.",
                 "Na paz absoluta em todos os continentes e na dissolução espontânea de todos os exércitos nacionais da Ásia e da América Latina.",
+                "Na unificação de Washington e Moscou sob uma única constituição republicana presidida pelo secretário-geral da ONU.",
                 "No boicote conjunto de EUA e URSS contra o comércio de petróleo dos países do Oriente Médio.",
-                "Em intensos conflitos regionais por procuração (como as Guerras da Coreia e do Vietnã), na corrida armamentista e espacial e no apoio a ditaduras alinhadas.",
-                "Na renúncia de ambas as superpotências em produzir armas atômicas em prol de acordos ecológicos de preservação da floresta amazônica."
+                "Na renúncia de ambas as superpotências em produzir armas atômicas em prol de acordos ecológicos de preservação da floresta amazônica.",
+                "Em intensos conflitos regionais por procuração (como as Guerras da Coreia e do Vietnã), na corrida armamentista e espacial e no apoio a ditaduras alinhadas."
               ],
-              "correctIndex": 3,
+              "correctIndex": 4,
               "hint": "A guerra foi 'fria' apenas entre Washington e Moscou por medo da bomba atômica; na periferia (Coreia, Vietnã, América Latina), ela foi quente e sangrenta.",
               "stepByStepSolution": "A alternativa B está correta. O equilíbrio do terror nuclear (destruição mútua assegurada) impediu que Estados Unidos e União Soviética se enfrentassem diretamente. Contudo, a Guerra Fria foi pontuada por sangrentos conflitos periféricos ('guerras por procuração'), nos quais cada superpotência financiava e armava facções rivais (como na Guerra da Coreia, Guerra do Vietnã e guerras civis africanas), combinados à espionagem (CIA e KGB), à corrida espacial e ao suporte ativo a golpes militares na América Latina."
             },
@@ -1382,12 +1382,12 @@
               "problemStatement": "Realizada em 1955 na Indonésia, a Conferência de Bandung reuniu representantes de 29 nações recém-independentes da Ásia e da África. A importância histórica dessa conferência consistiu em:",
               "options": [
                 "Exigir a recolonização imediata do continente africano por frotas navais britânicas e portuguesas.",
-                "Consolidar a condenação formal ao colonialismo e ao racismo, inaugurando o conceito de 'Terceiro Mundo' e a política do Não Alinhamento ativo diante da bipolaridade da Guerra Fria.",
-                "Declarar guerra nuclear contra a França e os Estados Unidos para forçar a exportação obrigatória de arroz.",
                 "Aprovar a criação de uma monarquia imperial absolutista unificada entre a Índia e o Egito.",
-                "Subordinar formalmente todos os países participantes à liderança militar e financeira do Pacto de Varsóvia soviético."
+                "Subordinar formalmente todos os países participantes à liderança militar e financeira do Pacto de Varsóvia soviético.",
+                "Consolidar a condenação formal ao colonialismo e ao racismo, inaugurando o conceito de 'Terceiro Mundo' e a política do Não Alinhamento ativo diante da bipolaridade da Guerra Fria.",
+                "Declarar guerra nuclear contra a França e os Estados Unidos para forçar a exportação obrigatória de arroz."
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "hint": "Bandung foi o grito do Sul Global: os países da África e Ásia disseram 'não' ao imperialismo e recusaram ser peões no jogo entre EUA e URSS.",
               "stepByStepSolution": "A alternativa B está correta. A Conferência de Bandung (1955) foi o grande marco diplomático e político da descolonização afro-asiática. Seus líderes (como Nehru da Índia, Sukarno da Indonésia e Zhou Enlai da China) repudiaram o racismo colonialista e afirmaram a soberania dos povos que acabavam de conquistar sua liberdade. Ao formularem o princípio do 'Não Alinhamento' ativo, recusaram a subordinação automática a qualquer dos blocos hegemônicos da Guerra Fria, forjando a identidade política do chamado 'Terceiro Mundo'."
             }

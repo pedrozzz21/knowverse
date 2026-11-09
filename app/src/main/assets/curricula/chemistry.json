@@ -36,13 +36,13 @@
               "title": "ENEM: Processos de Separação em Desastres Ambientais",
               "problemStatement": "Em um grave acidente ecológico, ocorreu o rompimento de uma barragem de rejeitos de mineração, liberando uma lama espessa composta por água, argila suspensa finamente dividida e óxidos de ferro insolúveis em um rio próximo. Para clarificar a água em larga escala em uma Estação de Tratamento de Água (ETA) emergencial, quais processos sequenciais de separação física são empregados?",
               "options": [
-                "Levigação hidráulica com bateias manuais para decantar a argila dissolvida.",
                 "Centrifugação térmica a vácuo com extração por solventes orgânicos apolares.",
                 "Destilação fracionada com aquecimento contínuo até a vaporização total da água.",
                 "Coagulação/floculação seguida de decantação dos flocos e posterior filtração em leito de areia.",
+                "Levigação hidráulica com bateias manuais para decantar a argila dissolvida.",
                 "Cromatografia líquida de alta eficiência seguida de cristalização fracionada."
               ],
-              "correctIndex": 3,
+              "correctIndex": 2,
               "hint": "Rejeitos insolúveis finos precisam ser aglomerados por coagulação para formarem flocos densos que decantam sob ação da gravidade antes da retenção por filtros.",
               "stepByStepSolution": "A alternativa A está correta. A argila e os óxidos de ferro formam suspensões coloidais que não sedimentam espontaneamente em tempo hábil. A adição de coagulantes (como sulfato de alumínio) neutraliza as cargas das partículas, promovendo a floculação. Os flocos maiores e mais densos depositam-se no fundo dos tanques de decantação, e as partículas residuais menores são retidas na filtração em camadas de cascalho, areia e carvão antracito."
             },
@@ -51,11 +51,11 @@
               "title": "ENEM: Análise de Curvas de Aquecimento",
               "problemStatement": "Em um laboratório de controle de qualidade, uma amostra desconhecida foi aquecida a pressão constante de 1 atm. Observou-se que durante a fusão a temperatura variou continuamente entre 45°C e 58°C, porém, durante a ebulição, a temperatura permaneceu rigorosamente constante em 118°C até a completa vaporização do sistema. Com base nesse perfil térmico, a amostra analisada é classificada como:",
               "options": [
-                "Uma substância pura composta.",
+                "Uma substância pura simples alotrópica.",
                 "Uma mistura eutética.",
                 "Uma mistura azeotrópica.",
-                "Uma mistura heterogênea coloidal.",
-                "Uma substância pura simples alotrópica."
+                "Uma substância pura composta.",
+                "Uma mistura heterogênea coloidal."
               ],
               "correctIndex": 2,
               "hint": "Temperatura de fusão variável + temperatura de ebulição constante = comportamento característico de mistura azeotrópica.",
@@ -88,12 +88,12 @@
               "problemStatement": "O teste de chama é uma técnica analítica clássica utilizada para identificar cátions metálicos em amostras. Ao introduzir um fio de platina embebido em cloreto de bário (BaCl_2) na chama do bico de Bunsen, observa-se uma intensa coloração verde brilhante. De acordo com o modelo atômico de Bohr, a emissão dessa radiação luminosa ocorre quando:",
               "options": [
                 "O núcleo atômico decai por fissão espontânea liberando partículas gama no espectro visível.",
-                "Os elétrons de valência absorvem radiação ultravioleta e se convertem instantaneamente em nêutrons.",
-                "Prótons do núcleo atômico absorvem energia térmica e saltam para a eletrosfera desocupada.",
                 "O átomo de bário se fragmenta em partículas subatômicas após colisão destrutiva com a chama.",
-                "Elétrons previamente excitados pelo calor retornam para níveis de menor energia, emitindo fótons com frequências bem definidas."
+                "Elétrons previamente excitados pelo calor retornam para níveis de menor energia, emitindo fótons com frequências bem definidas.",
+                "Os elétrons de valência absorvem radiação ultravioleta e se convertem instantaneamente em nêutrons.",
+                "Prótons do núcleo atômico absorvem energia térmica e saltam para a eletrosfera desocupada."
               ],
-              "correctIndex": 4,
+              "correctIndex": 2,
               "hint": "A luz é emitida no RETORNO do elétron excitado para órbitas de menor energia, liberando a diferença energética em forma de fóton.",
               "stepByStepSolution": "A alternativa A está correta. Pelo modelo de Bohr, a energia térmica da chama promove elétrons para níveis mais externos e instáveis (estado excitado). Ao retornar aos níveis originais mais internos, o elétron devolve a energia absorvida na forma de fótons eletromagnéticos, cujo comprimento de onda específico no espectro visível confere a cor verde característica ao bário."
             }
@@ -123,13 +123,13 @@
               "title": "ENEM: Tendências Periódicas e Eletronegatividade",
               "problemStatement": "O gás cloro (Cl_2) e o oxigênio (O_2) são amplamente utilizados em processos industriais de desinfecção e alvejamento devido ao seu elevado poder oxidante, que está intimamente relacionado à facilidade com que seus átomos atraem e capturam elétrons de outras espécies químicas. Na tabela periódica, essa propriedade periódica e a tendência geral de seu crescimento correspondem a:",
               "options": [
-                "Raio atômico, que cresce da direita para a esquerda nos períodos e de cima para baixo nas famílias.",
-                "Energia de ionização, que decresce conforme o raio atômico diminui em direção aos gases nobres.",
                 "Eletronegatividade, que cresce da esquerda para a direita ao longo dos períodos e de baixo para cima nas famílias.",
                 "Massa atômica relativa, que decresce uniformemente com o aumento do número de nêutrons.",
+                "Raio atômico, que cresce da direita para a esquerda nos períodos e de cima para baixo nas famílias.",
+                "Energia de ionização, que decresce conforme o raio atômico diminui em direção aos gases nobres.",
                 "Eletropositividade, que cresce nos metais alcalinos localizados no canto inferior esquerdo da tabela."
               ],
-              "correctIndex": 2,
+              "correctIndex": 0,
               "hint": "A capacidade de atrair elétrons em ligações é a eletronegatividade, maior quanto menor o raio atômico e maior a carga nuclear efetiva (canto superior direito).",
               "stepByStepSolution": "A alternativa A está correta. A eletronegatividade é a medida da força de atração exercida por um átomo sobre elétrons em uma ligação. Ela aumenta em direção ao canto superior direito da tabela periódica (maior atração nuclear por camadas mais próximas do núcleo), sendo o flúor, o oxigênio, o nitrogênio e o cloro os elementos mais eletronegativos existentes."
             }
@@ -159,13 +159,13 @@
               "title": "ENEM: Geometria Molecular e Efeito Estufa",
               "problemStatement": "O gás carbônico (CO_2) e a água (H_2O) são substâncias triatômicas fundamentais no balanço térmico da Terra. No entanto, enquanto a molécula de dióxido de carbono é apolar com ângulo de ligação de 180°, a molécula de água é altamente polar e exibe ângulo de ligação de aproximadamente 104,5°. Essa disparidade geométrica é explicada pelo fato de que:",
               "options": [
-                "O oxigênio na água sofreu hibridização do tipo sp linear, enquanto o carbono no CO_2 é sp³ tetraédrico.",
                 "A água estabelece ligações triplas entre seus átomos, enquanto o carbono realiza apenas ligações simples coordenadas.",
-                "O átomo central de oxigênio na água possui dois pares de elétrons não ligantes que repelem as ligações, enquanto o carbono no CO_2 não possui elétrons livres.",
+                "O oxigênio na água sofreu hibridização do tipo sp linear, enquanto o carbono no CO_2 é sp³ tetraédrico.",
                 "A molécula de CO_2 é formada exclusivamente por ligações iônicas que forçam o arranjo rígido plano.",
-                "O átomo de carbono possui eletronegatividade superior à do oxigênio, cancelando as cargas por repulsão iônica."
+                "O átomo de carbono possui eletronegatividade superior à do oxigênio, cancelando as cargas por repulsão iônica.",
+                "O átomo central de oxigênio na água possui dois pares de elétrons não ligantes que repelem as ligações, enquanto o carbono no CO_2 não possui elétrons livres."
               ],
-              "correctIndex": 2,
+              "correctIndex": 4,
               "hint": "Teoria VSEPR: pares eletrônicos isolados no átomo central exercem repulsão angular sobre os pares ligantes, curvando a molécula.",
               "stepByStepSolution": "A alternativa A está correta. No CO2, o carbono central forma duas duplas ligações (O=C=O) e não tem elétrons de valência sobrando, adotando geometria linear (180°) com momentos de dipolo que se anulam mutuamente. Na água (H2O), o oxigênio tem 4 nuvens eletrônicas (2 ligações simples e 2 pares de elétrons livres), que se repelem e forçam a geometria angular (~104,5°), tornando a molécula polar."
             }
@@ -195,13 +195,13 @@
               "title": "ENEM: Forças Intermoleculares e Volatilidade de Combustíveis",
               "problemStatement": "O metano (CH_4, massa molar 16 g/mol) é o principal componente do gás natural veicular (GNV) e apresenta ponto de ebulição extremamente baixo (-161°C), sendo gás em condições ambientais. Por outro lado, a água (H_2O, massa molar 18 g/mol), com massa molar muito próxima à do metano, é líquida e ferve apenas a 100°C. Essa enorme diferença nas temperaturas de ebulição deve-se prioritariamente:",
               "options": [
-                "À maior facilidade do metano em se ionizar espontaneamente na atmosfera sob temperatura ambiente.",
                 "Ao fato de a ligação C-H no metano ser infinitamente mais fraca que a ligação iônica que une os átomos na água.",
-                "Às forças dipolo-dipolo que atuam no metano devido à sua estrutura tetraédrica assimétrica.",
+                "À presença de ligações metálicas deslocalizadas na estrutura cristalina da água líquida.",
                 "Às fortes ligações de hidrogênio estabelecidas entre as moléculas de água, contrastando com as fracas forças de dispersão de London no metano apolar.",
-                "À presença de ligações metálicas deslocalizadas na estrutura cristalina da água líquida."
+                "Às forças dipolo-dipolo que atuam no metano devido à sua estrutura tetraédrica assimétrica.",
+                "À maior facilidade do metano em se ionizar espontaneamente na atmosfera sob temperatura ambiente."
               ],
-              "correctIndex": 3,
+              "correctIndex": 2,
               "hint": "Moléculas de massas parecidas: a água possui H ligado a O (ligação de hidrogênio muito forte), enquanto o metano é um hidrocarboneto apolar (dipolo induzido fraco).",
               "stepByStepSolution": "A alternativa A está correta. A água é uma substância polar que estabelece ligações de hidrogênio intermoleculares intensas entre o hidrogênio eletropositivo e o oxigênio eletronegativo de moléculas vizinhas, exigindo grande quantidade de energia térmica para passar ao estado gasoso. O metano é uma molécula apolar que interage unicamente por fracas forças de dispersão de London (dipolo induzido), exigindo pouca energia para sua vaporização."
             }
@@ -242,13 +242,13 @@
               "title": "ENEM: Estequiometria e Reagente Limitante na Síntese da Amônia",
               "problemStatement": "O processo Haber-Bosch é responsável pela síntese industrial da amônia (NH_3), matéria-prima essencial para a fabricação de fertilizantes agrícolas que alimentam bilhões de pessoas: N2(g) + 3 H2(g) -> 2 NH3(g). Em um reator estequiométrico alimentado com 280 kg de gás nitrogênio (N_2, massa molar 28 g/mol) e 90 kg de gás hidrogênio (H_2, massa molar 2 g/mol), sabendo que a reação opera com rendimento de 80%, qual é a massa aproximada de amônia produzida?",
               "options": [
-                "510 kg de amônia.",
-                "340 kg de amônia.",
-                "170 kg de amônia.",
                 "272 kg de amônia.",
-                "425 kg de amônia."
+                "340 kg de amônia.",
+                "425 kg de amônia.",
+                "170 kg de amônia.",
+                "510 kg de amônia."
               ],
-              "correctIndex": 3,
+              "correctIndex": 0,
               "hint": "Calcule o número de mols de cada reagente. Verifique a proporção 1:3. O N2 e H2 estão na proporção exata de 10.000 mols de N2 para 45.000 mols de H2? Não, então verifique o limitante!",
               "stepByStepSolution": "A alternativa A está correta. Mols de N2: 280.000 g / 28 g/mol = 10.000 mols. Mols de H2: 90.000 g / 2 g/mol = 45.000 mols. Pela proporção 1 N2 : 3 H2, 10.000 mols de N2 requerem 30.000 mols de H2. Como dispomos de 45.000 mols de H2, o N2 é o reagente limitante! A quantidade teórica de NH3 é 2 * 10.000 mols = 20.000 mols de NH3 (massa molar 17 g/mol) = 340.000 g (340 kg). Aplicando o rendimento de 80%: 340 kg * 0,80 = 272 kg de amônia."
             }
@@ -279,8 +279,8 @@
               "problemStatement": "O soro caseiro é uma solução aquosa hipotônica recomendada pela Organização Mundial da Saúde (OMS) para evitar a desidratação infantil decorrente de diarreias agudas. Para preparar 1 litro dessa solução, dissolvem-se 3,5 g de cloreto de sódio (NaCl, massa molar 58,5 g/mol) e 20 g de sacarose (C_{12}H_{22}O_{11}, massa molar 342 g/mol) em água potável fervida. A concentração em quantidade de matéria (molaridade) aproximada de íons sódio (Na^+) nessa solução hidratante é de:",
               "options": [
                 "0,060 mol/L.",
-                "0,035 mol/L.",
                 "0,600 mol/L.",
+                "0,035 mol/L.",
                 "0,120 mol/L.",
                 "1,000 mol/L."
               ],
@@ -314,13 +314,13 @@
               "title": "ENEM: Termoquímica e Comparação Energética de Biocombustíveis",
               "problemStatement": "A busca por matrizes de menor impacto de carbono intensificou a utilização do bioetanol (C_2H_5OH, 46 g/mol) em substituição à gasolina automotiva representada pelo isoctano (C_8H_{18}, 114 g/mol). Dadas as entalpias padrão de combustão completa: C2H5OH(l) = -1368 kJ/mol e C8H18(l) = -5472 kJ/mol. Comparando a energia térmica liberada exclusivamente por unidade de massa (em kJ por grama de combustível queimado), conclui-se que:",
               "options": [
+                "O etanol libera o dobro de energia por grama em relação à gasolina, devido à presença do oxigênio em sua molécula.",
+                "Ambos os combustíveis liberam rigorosamente a mesma energia específica por grama, pois ambos derivam do carbono.",
                 "A gasolina libera aproximadamente 48 kJ/g, enquanto o etanol libera aproximadamente 30 kJ/g, justificando o maior consumo em volume dos veículos a etanol.",
                 "O etanol apresenta reação de combustão endotérmica, enquanto a gasolina queima por processo exotérmico espontâneo.",
-                "Ambos os combustíveis liberam rigorosamente a mesma energia específica por grama, pois ambos derivam do carbono.",
-                "O etanol libera o dobro de energia por grama em relação à gasolina, devido à presença do oxigênio em sua molécula.",
                 "A gasolina libera menos energia por grama que o etanol, exigindo maiores tanques de abastecimento."
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "Divida o ΔH de combustão pela respectiva massa molar de cada combustível (kJ/g).",
               "stepByStepSolution": "A alternativa A está correta. Para o etanol: 1368 kJ / 46 g ≈ 29,7 kJ/g (~30 kJ/g). Para a gasolina (isoctano): 5472 kJ / 114 g ≈ 48,0 kJ/g. A gasolina fornece cerca de 60% a mais de energia por grama consumida do que o etanol, razão pela qual motores flex exigem maior vazão volumétrica de etanol para produzir a mesma potência mecânica."
             }
@@ -350,13 +350,13 @@
               "title": "ENEM: Conversores Catalíticos e Energia de Ativação",
               "problemStatement": "Os conversores catalíticos instalados no escapamento dos veículos automotores utilizam metais nobres como platina (Pt), paládio (Pd) e ródio (Rh) finamente dispersos em uma cerâmica porosa para catalisar a oxidação do monóxido de carbono (CO), um gás tóxico e letal, a dióxido de carbono (CO_2): 2 CO(g) + O2(g) -> 2 CO2(g). O papel primordial do conversor catalítico nessa transformação é:",
               "options": [
-                "Aumentar a entalpia dos produtos para transformar o monóxido de carbono em oxigênio respirável.",
                 "Consumir-se integralmente durante a viagem para fornecer elétrons livres aos gases residuais.",
-                "Aumentar a energia de ativação para desacelerar a emissão de gases estufa pelo cano de descarga.",
+                "Diminuir a energia de ativação da reação química sem alterar a variação de entalpia (ΔH) do processo.",
                 "Deslocar o equilíbrio químico no sentido endotérmico absorvendo calor dos gases de combustão.",
-                "Diminuir a energia de ativação da reação química sem alterar a variação de entalpia (ΔH) do processo."
+                "Aumentar a energia de ativação para desacelerar a emissão de gases estufa pelo cano de descarga.",
+                "Aumentar a entalpia dos produtos para transformar o monóxido de carbono em oxigênio respirável."
               ],
-              "correctIndex": 4,
+              "correctIndex": 1,
               "hint": "Catalisadores fornecem um caminho reacional alternativo com menor barreira de energia de ativação, sem alterar a entalpia final.",
               "stepByStepSolution": "A alternativa A está correta. Os catalisadores heterogêneos adsorvem as moléculas gasosas em sua superfície metálica, enfraquecendo as ligações químicas e reduzindo consideravelmente a Energia de Ativação (Ea) necessária para a ocorrência da colisão eficaz. Como consequência, a conversão ocorre em frações de segundo à temperatura do escapamento, sem qualquer modificação no ΔH e sem que o catalisador seja consumido."
             }
@@ -387,10 +387,10 @@
               "problemStatement": "O pH do sangue humano é estritamente tamponado em torno de 7,35 a 7,45 pelo sistema de equilíbrio ácido-base: CO2(dissolvido) + H2O(l) <=> H2CO3(aq) <=> H+(aq) + HCO3-(aq). Durante uma crise de ansiedade ou pânico com hiperventilação respiratória acelerada, o indivíduo elimina excessivamente gás carbônico (CO_2) pelos pulmões. Pelo Princípio de Le Chatelier, essa hiperventilação provoca:",
               "options": [
                 "Deslocamento do equilíbrio para a esquerda, diminuindo a concentração de íons H+ e elevando o pH sanguíneo (alcalose respiratória).",
-                "Aumento da pressão osmótica nas artérias sem qualquer alteração na concentração de íons hidrogênio.",
                 "Inversão completa do pH do sangue para valores inferiores a 2,0, destruindo as proteínas plasmáticas.",
                 "Solidificação imediata do bicarbonato dissolvido nas hemácias devido à elevação da temperatura.",
-                "Deslocamento do equilíbrio para a direita, aumentando a concentração de H+ e reduzindo o pH (acidose respiratória)."
+                "Deslocamento do equilíbrio para a direita, aumentando a concentração de H+ e reduzindo o pH (acidose respiratória).",
+                "Aumento da pressão osmótica nas artérias sem qualquer alteração na concentração de íons hidrogênio."
               ],
               "correctIndex": 0,
               "hint": "Se o CO2 é retirado do sistema (eliminado na respiração), o equilíbrio desloca-se para a esquerda para repor o CO2 perdido, consumindo H+.",
@@ -422,13 +422,13 @@
               "title": "ENEM: Proteção Catódica e Metal de Sacrifício em Cascos de Navios",
               "problemStatement": "Para evitar que o casco de aço de navios e plataformas petrolíferas (composto predominantemente por ferro, Fe) seja danificado pela corrosão marinha provocada pelo oxigênio e salinidade da água do mar, placas de zinco (Zn) ou magnésio (Mg) são parafusadas diretamente à estrutura submersa. Sabendo que os potenciais de redução padrão são E°(Fe²⁺/Fe) = -0,44V, E°(Zn²⁺/Zn) = -0,76V e E°(Mg²⁺/Mg) = -2,37V, a utilização dessas placas protege o ferro porque:",
               "options": [
-                "O ferro atua como ânodo sacrificial, desgastando-se para proteger quimicamente as placas metálicas externas.",
-                "O zinco e o magnésio possuem menores potenciais de redução que o ferro, oxidando-se preferencialmente no lugar da estrutura de aço.",
-                "A diferença de potencial torna-se negativa, invertendo o sentido da gravidade sobre a ferrugem.",
                 "As placas liberam íons que neutralizam a água do mar tornando o oceano perfeitamente alcalino ao redor do navio.",
-                "O zinco atua como cátodo da pilha, recebendo elétrons do ferro e impedindo o contato da água com o metal."
+                "A diferença de potencial torna-se negativa, invertendo o sentido da gravidade sobre a ferrugem.",
+                "O zinco atua como cátodo da pilha, recebendo elétrons do ferro e impedindo o contato da água com o metal.",
+                "O zinco e o magnésio possuem menores potenciais de redução que o ferro, oxidando-se preferencialmente no lugar da estrutura de aço.",
+                "O ferro atua como ânodo sacrificial, desgastando-se para proteger quimicamente as placas metálicas externas."
               ],
-              "correctIndex": 1,
+              "correctIndex": 3,
               "hint": "Metal de sacrifício tem MENOR potencial de redução (ou seja, MAIOR facilidade de oxidação) e se desgasta protegendo o ferro.",
               "stepByStepSolution": "A alternativa A está correta. O zinco (-0,76V) e o magnésio (-2,37V) possuem potenciais de redução mais baixos do que o ferro (-0,44V), o que significa que possuem maior potencial de oxidação (maior tendência eletroquímica a doar elétrons). Em contato elétrico com o casco, o magnésio ou zinco atua como ânodo de sacrifício, sofrendo corrosão eletroquímica e mantendo o ferro na forma metálica reduzida."
             }
@@ -470,12 +470,12 @@
               "problemStatement": "O grafeno é um nanomaterial revolucionário formado por uma única camada bidimensional de átomos de carbono dispostos em uma malha hexagonal contínua semelhante a favos de mel. Devido à sua altíssima condutividade elétrica e extrema resistência mecânica, é apontado como o material do futuro na eletrônica. Em cada folha de grafeno, todos os átomos de carbono apresentam hibridização e geometria molecular do tipo:",
               "options": [
                 "Hibridização sp³d² com geometria octaédrica tridimensional.",
-                "Nenhuma hibridização, estabelecendo apenas ligações iônicas puras.",
-                "Hibridização sp³ com geometria tetraédrica e ângulos de 109,5°.",
                 "Hibridização sp² com geometria trigonal plana e ângulos de ligação de 120°.",
+                "Hibridização sp³ com geometria tetraédrica e ângulos de 109,5°.",
+                "Nenhuma hibridização, estabelecendo apenas ligações iônicas puras.",
                 "Hibridização sp com geometria linear e ligações triplas alternadas."
               ],
-              "correctIndex": 3,
+              "correctIndex": 1,
               "hint": "Uma folha plana em hexágonos: cada carbono liga-se a outros 3 carbonos por 3 ligações sigma no plano e possui 1 elétron pi deslocalizado.",
               "stepByStepSolution": "A alternativa A está correta. No grafeno (assim como no grafite), cada átomo de carbono realiza 3 ligações sigma com 3 carbonos vizinhos em um arranjo plano bidimensional de hexágonos regulares, o que caracteriza a hibridização sp² com geometria trigonal plana (ângulos de 120°). O quarto elétron de cada carbono ocupa um orbital 'p' puro deslocalizado em uma nuvem pi conjugada condutora, responsável pela excepcional condução de eletricidade do grafeno."
             }
@@ -505,13 +505,13 @@
               "title": "ENEM: Identificação de Funções no Ácido Acetilsalicílico (Aspirina)",
               "problemStatement": "O ácido acetilsalicílico (conhecido popularmente como aspirina) é um dos analgésicos e anti-inflamatórios mais consumidos no mundo. Sua estrutura química é sintetizada a partir da reação de esterificação do ácido salicílico e apresenta a fórmula molecular C9H8O4. Analisando a fórmula estrutural plana da aspirina, quais funções orgânicas oxigenadas estão presentes em sua molécula?",
               "options": [
-                "Amida e fenol.",
                 "Fenol e aldeído.",
                 "Ácido carboxílico e éster.",
-                "Éter e anidrido.",
-                "Álcool e cetona."
+                "Álcool e cetona.",
+                "Amida e fenol.",
+                "Éter e anidrido."
               ],
-              "correctIndex": 2,
+              "correctIndex": 1,
               "hint": "A aspirina possui um grupo -COOH (carboxila) e um grupo -O-C(=O)-CH3 ligado ao anel aromático.",
               "stepByStepSolution": "A alternativa A está correta. A molécula de aspirina possui um grupo carboxila (-COOH) ligado diretamente ao anel aromático, configurando a função ÁCIDO CARBOXÍLICO. Além disso, a antiga hidroxila fenólica do ácido salicílico foi acetilada, formando um grupamento acetoxi (-O-CO-CH3), que caracteriza a função ÉSTER."
             }
@@ -542,10 +542,10 @@
               "problemStatement": "O índice de octanagem mede a resistência da gasolina à detonação prematura no motor de combustão interna. O padrão de referência de máxima eficiência antidetonante (100 octanas) é o composto orgânico conhecido usualmente como 'isoctano', cuja cadeia carbônica ramificada é constituída por 8 átomos de carbono e apresenta a fórmula estrutural plana: (CH3)3C - CH2 - CH(CH3)2. De acordo com as regras oficiais de nomenclatura da IUPAC, o nome correto desse hidrocarboneto é:",
               "options": [
                 "2,2,4-Trimetilpentano.",
-                "2,2-Dimetil-4-metilpentano.",
-                "2,4,4-Trimetilpentano.",
+                "Octano normal.",
                 "2-Metilisopentano.",
-                "Octano normal."
+                "2,4,4-Trimetilpentano.",
+                "2,2-Dimetil-4-metilpentano."
               ],
               "correctIndex": 0,
               "hint": "A cadeia principal tem 5 carbonos (pentano). Numere pela extremidade que confere os menores números aos radicais metil.",
@@ -578,9 +578,9 @@
               "problemStatement": "O ibuprofeno é um anti-inflamatório não esteroidal muito utilizado para alívio de febres e dores musculares. Sua estrutura contém a fórmula molecular C13H18O2 e exibe atividade óptica, de modo que apenas o enantiômero (S)-ibuprofeno é biologicamente ativo no organismo, enquanto o enantiômero (R) é inativo. A existência desses dois enantiômeros decorre da presença de:",
               "options": [
                 "Uma ligação peptídica formada pela união de aminoácidos com radicais livres.",
-                "Um anel aromático benzenoide contendo elétrons pi deslocalizados por ressonância.",
-                "Uma ligação dupla entre carbonos que impede a rotação espacial dos radicais.",
                 "Um heteroátomo de oxigênio que inverte a polaridade da luz polarizada.",
+                "Uma ligação dupla entre carbonos que impede a rotação espacial dos radicais.",
+                "Um anel aromático benzenoide contendo elétrons pi deslocalizados por ressonância.",
                 "Um átomo de carbono quiral (assimétrico) sp³ ligado a quatro substituintes diferentes."
               ],
               "correctIndex": 4,
@@ -613,13 +613,13 @@
               "title": "ENEM: Reação de Saponificação e Química do Sabão",
               "problemStatement": "O descarte inadequado de óleo de cozinha usado nas redes de esgoto doméstico causa graves entupimentos nas tubulações e impermeabilização dos leitos de rios. Um projeto comunitário coleta esse óleo residual e o submete a aquecimento moderado na presença de uma solução aquosa concentrada de hidróxido de sódio (NaOH), obtendo barras de sabão e um subproduto solúvel em água de alto valor cosmético. Essa reação química e o subproduto formado são, respectivamente:",
               "options": [
-                "Oxidação catalítica branda e propanona anidra.",
                 "Fermentação acética anaeróbia e etanol absoluto.",
+                "Oxidação catalítica branda e propanona anidra.",
+                "Polimerização por adição e polietileno de alta densidade.",
                 "Esterificação de Fischer e ácido sulfúrico concentrado.",
-                "Saponificação (hidrólise alcalina de ésteres) e glicerol (glicerina).",
-                "Polimerização por adição e polietileno de alta densidade."
+                "Saponificação (hidrólise alcalina de ésteres) e glicerol (glicerina)."
               ],
-              "correctIndex": 3,
+              "correctIndex": 4,
               "hint": "Óleo (triglicerídeo) + Soda Cáustica (NaOH) -> Sabão (sal de ácido graxo) + Glicerol (triálcool).",
               "stepByStepSolution": "A alternativa A está correta. Os óleos e gorduras são triglicerídeos (triésteres derivados do glicerol). Ao reagirem com soda cáustica (NaOH) sob aquecimento, ocorre a quebra das ligações éster por hidrólise alcalina (reação de saponificação), liberando os sais sódicos dos ácidos graxos (os sabões) e o glicerol (glicerina, propan-1,2,3-triol), um poliálcool amplamente empregado na indústria farmacêutica e cosmética."
             }
@@ -660,13 +660,13 @@
               "title": "ENEM: Função da Cal na Coagulação do Tratamento de Água",
               "problemStatement": "Em uma Estação de Tratamento de Água (ETA), a adição do coagulante sulfato de alumínio [Al_2(SO_4)_3] na água bruta provoca a hidrólise ácida dos íons alumínio, tornando a água ligeiramente ácida. Para que ocorra a formação ótima do precipitado gelatinoso de hidróxido de alumínio [Al(OH)_3], que aglomerará as impurezas coloidais em flocos decantáveis, é indispensável adicionar conjuntamente:",
               "options": [
-                "Ácido clorídrico concentrado para acidificar ainda mais a solução e quebrar as moléculas de argila.",
-                "Álcool etílico anidro para desidratar as bactérias e dissolver os flocos de argila.",
-                "Gás carbônico sob alta pressão para borbulhar a solução e acelerar a evaporação da água.",
                 "Hidróxido de cálcio (cal hidratada) ou óxido de cálcio para elevar o pH e fornecer íons hidroxila.",
-                "Cloreto de sódio em pó para aumentar a salinidade e promover a flotação superficial."
+                "Álcool etílico anidro para desidratar as bactérias e dissolver os flocos de argila.",
+                "Ácido clorídrico concentrado para acidificar ainda mais a solução e quebrar as moléculas de argila.",
+                "Cloreto de sódio em pó para aumentar a salinidade e promover a flotação superficial.",
+                "Gás carbônico sob alta pressão para borbulhar a solução e acelerar a evaporação da água."
               ],
-              "correctIndex": 3,
+              "correctIndex": 0,
               "hint": "O Al(OH)3 precisa de meio básico/neutro com abundância de íons OH- fornecidos por uma base como Ca(OH)2 para se formar e precipitar.",
               "stepByStepSolution": "A alternativa A está correta. A hidrólise do cátion Al³⁺ consome íons hidroxila da água e libera íons H⁺, acidificando o meio. Se o pH cair excessivamente, o hidróxido de alumínio não se forma como precipitado gelatinoso, comprometendo toda a floculação. A cal (CaO ou Ca(OH)2) neutraliza a acidez e fornece íons OH⁻ necessários para a formação quantitativa do precipitado de Al(OH)3, viabilizando a remoção da turbidez por decantação."
             }
@@ -696,13 +696,13 @@
               "title": "ENEM: Mecanismo de Degradação da Camada de Ozônio por Radicais Cloro",
               "problemStatement": "O Protocolo de Montreal (1987) foi um marco histórico global ao estabelecer o banimento progressivo da produção e consumo de substâncias que destroem a camada de ozônio estratosférica, em especial os clorofluorcarbonetos (CFCs). Do ponto de vista químico e cinético, o átomo de cloro liberado na estratosfera após a fotólise dos CFCs é extremamente danoso à camada de ozônio porque atua como:",
               "options": [
-                "Um reagente consumido estequiometricamente na proporção de um átomo de cloro para cada molécula de ozônio.",
                 "Um filtro óptico que bloqueia a radiação infravermelha provocando resfriamento global extremo.",
-                "Um inibidor cinético que desacelera a velocidade natural de regeneração do ozônio pelo oxigênio.",
                 "Um catalisador homogêneo que acelera a quebra do ozônio e se regenera ao final do ciclo, destruindo milhares de moléculas de O3.",
+                "Um inibidor cinético que desacelera a velocidade natural de regeneração do ozônio pelo oxigênio.",
+                "Um reagente consumido estequiometricamente na proporção de um átomo de cloro para cada molécula de ozônio.",
                 "Um agente redutor que converte o ozônio em ácido clorídrico gasoso na alta atmosfera."
               ],
-              "correctIndex": 3,
+              "correctIndex": 1,
               "hint": "O radical de cloro (Cl•) participa das etapas intermediárias acelerando a decomposição e é liberado intacto no final da reação.",
               "stepByStepSolution": "A alternativa A está correta. O radical livre de cloro (Cl•) atua como um autêntico catalisador: ele reage com o ozônio formando monóxido de cloro (ClO• + O2) e, em seguida, o ClO• colide com oxigênio atômico regenerando o radical Cl• e gerando mais O2. Como o catalisador não é consumido no balanço global, uma única espécie de cloro pode participar sucessivamente de dezenas de milhares de ciclos catalíticos de destruição de O3."
             }
@@ -732,13 +732,13 @@
               "title": "ENEM: Rota Química de Síntese do Biodiesel",
               "problemStatement": "O Programa Nacional de Produção e Uso do Biodiesel (PNPB) incentiva a substituição gradual do diesel derivado do petróleo pelo biodiesel de fontes agrícolas renováveis. Na indústria, a principal rota química de obtenção do biodiesel a partir de óleos vegetais (como o de soja) consiste em fazer reagir os triglicerídeos com um álcool de cadeia curta (metanol ou etanol) na presença de soda cáustica. Essa transformação química é classificada como:",
               "options": [
-                "Hidrogenação catalítica de ligações duplas para produzir margarina vegetal sólida.",
-                "Transesterificação, que converte um triéster de ácidos graxos em três ésteres de cadeia curta e glicerol.",
-                "Esterificação direta de Fischer entre alcanos e ácido sulfúrico fumante.",
                 "Craqueamento térmico com despolimerização do polietileno em hidrocarbonetos leves.",
-                "Oxidação enérgica de álcoois terciários produzindo gás carbônico e água pura."
+                "Esterificação direta de Fischer entre alcanos e ácido sulfúrico fumante.",
+                "Oxidação enérgica de álcoois terciários produzindo gás carbônico e água pura.",
+                "Hidrogenação catalítica de ligações duplas para produzir margarina vegetal sólida.",
+                "Transesterificação, que converte um triéster de ácidos graxos em três ésteres de cadeia curta e glicerol."
               ],
-              "correctIndex": 1,
+              "correctIndex": 4,
               "hint": "Reação que troca a cadeia alcóxi de um éster (glicerídeo) por outra cadeia alcóxi (metila ou etila) = Transesterificação.",
               "stepByStepSolution": "A alternativa A está correta. A transesterificação (ou alcoólise de ésteres) é a reação entre um éster existente (os triglicerídeos do óleo vegetal) e um álcool (metanol ou etanol) catalisada por base (NaOH/KOH). As três ligações éster do triglicerídeo são clivadas, gerando três ésteres alquílicos de ácidos graxos (que constituem o biodiesel pronto para queima) e liberando o glicerol (glicerina) como subproduto de alto valor agregado."
             },
@@ -747,13 +747,13 @@
               "title": "ENEM: Etanol de Segunda Geração (2G) e Biomassa Lignocelulósica",
               "problemStatement": "O etanol de primeira geração é obtido no Brasil pela fermentação alcoólica da sacarose do caldo de cana por leveduras. Para aumentar a produtividade energética sem expandir a área plantada, desenvolveu-se o etanol de segunda geração (2G), que utiliza o bagaço e a palha da cana-de-açúcar. A etapa química crucial para viabilizar a produção do etanol 2G a partir do bagaço consiste na:",
               "options": [
-                "Combustão completa do bagaço em fornalhas a vácuo para sintetizar gás oxigênio puro.",
+                "Hidrólise enzimática ou ácida da celulose e hemicelulose, quebrando esses polissacarídeos em monômeros de glicose fermentáveis.",
                 "Esterificação da lignina com ácido sulfúrico concentrado para produzir ésteres de alta octanagem.",
+                "Combustão completa do bagaço em fornalhas a vácuo para sintetizar gás oxigênio puro.",
                 "Polimerização por adição dos resíduos vegetais gerando plásticos biodegradáveis de cana.",
-                "Filtração mecânica do bagaço para extrair diretamente etanol puro contido nas fibras.",
-                "Hidrólise enzimática ou ácida da celulose e hemicelulose, quebrando esses polissacarídeos em monômeros de glicose fermentáveis."
+                "Filtração mecânica do bagaço para extrair diretamente etanol puro contido nas fibras."
               ],
-              "correctIndex": 4,
+              "correctIndex": 0,
               "hint": "A celulose é um polímero de glicose. Para as leveduras fermentarem, a celulose precisa primeiro ser quebrada (hidrolisada) em moléculas de glicose simples.",
               "stepByStepSolution": "A alternativa A está correta. A biomassa lignocelulósica (bagaço e palha) é rica em celulose, que é um polissacarídeo estrutural de cadeia longa. Como as leveduras Saccharomyces cerevisiae não conseguem fermentar diretamente a celulose intacta, é necessária a prévia quebra das ligações glicosídicas beta-1,4 através de hidrólise enzimática ou ácida, liberando as moléculas de glicose livres, as quais entram na via da fermentação alcoólica para gerar etanol (C2H5OH)."
             }
@@ -783,13 +783,13 @@
               "title": "ENEM: Comportamento de Sabões em Regiões de Água Dura",
               "problemStatement": "Em certas regiões do sertão nordestino e em áreas cársticas ricas em rochas de calcário (CaCO_3), a água de poços artesianos é classificada como 'água dura' devido à elevada concentração de cátions dissolvidos de cálcio (Ca^{2+}) e magnésio (Mg^{2+}). Os moradores dessas localidades relatam que o sabão comum em barra 'não espuma direito' e deixa resíduos esbranquiçados nas roupas e vasilhas. Esse fenômeno ocorre quimicamente porque:",
               "options": [
-                "Os cátions metálicos tornam as caudas carbônicas do sabão polares, impedindo a interação com a água.",
-                "A dureza da água reduz o pH para zero, convertendo o sabão em éter volátil.",
-                "Os íons cálcio e magnésio reagem com os ânions carboxilato do sabão formando precipitados insolúveis sem propriedades tensoativas.",
                 "A água dura decompõe a glicerina em gases tóxicos que anulam a viscosidade da solução.",
-                "O calcário dissolve o oxigênio da água tornando a combustão do sabão impossível."
+                "O calcário dissolve o oxigênio da água tornando a combustão do sabão impossível.",
+                "A dureza da água reduz o pH para zero, convertendo o sabão em éter volátil.",
+                "Os cátions metálicos tornam as caudas carbônicas do sabão polares, impedindo a interação com a água.",
+                "Os íons cálcio e magnésio reagem com os ânions carboxilato do sabão formando precipitados insolúveis sem propriedades tensoativas."
               ],
-              "correctIndex": 2,
+              "correctIndex": 4,
               "hint": "Cátions Ca2+ e Mg2+ precipitam com os sais de ácidos graxos, formando sabões de cálcio insolúveis em água.",
               "stepByStepSolution": "A alternativa A está correta. O sabão comum é composto por sais solúveis de sódio ou potássio de ácidos graxos (R-COO⁻ Na⁺). Na presença de cátions bivalentes como Ca²⁺ e Mg²⁺, ocorre uma reação de dupla troca formando sais de cálcio e magnésio [(R-COO)2Ca], que são insolúveis em água e precipitam como uma borra insolúvel ('sabão de cálcio'). Essa precipitação neutraliza a capacidade anfifílica do produto, impedindo a formação de micelas e espuma até que todos os íons metálicos tenham sido precipitados."
             },
@@ -799,12 +799,12 @@
               "problemStatement": "Nas décadas de 1960 e 1970, rios urbanos sofriam com espumas persistentes gigantescas que cobriam as águas devido ao descarte de detergentes sintéticos derivados do petróleo. A legislação brasileira passou a exigir que todos os detergentes fossem biodegradáveis. Do ponto de vista da química orgânica estrutural, um detergente é considerado biodegradável pelas bactérias decompositoras quando sua cadeia carbônica apolar hidrofóbica é:",
               "options": [
                 "Formada exclusivamente por anéis aromáticos condensados com pontes de chumbo.",
-                "Altamente ramificada com múltiplos carbonos quaternários que impedem a degradação.",
+                "Composta por átomos alternados de silício e flúor altamente resistentes.",
                 "Cíclica saturada contendo halogênios tóxicos aos microrganismos aquáticos.",
-                "Linear (reta e sem ramificações), o que permite o encaixe das enzimas bacterianas para oxidação biológica.",
-                "Composta por átomos alternados de silício e flúor altamente resistentes."
+                "Altamente ramificada com múltiplos carbonos quaternários que impedem a degradação.",
+                "Linear (reta e sem ramificações), o que permite o encaixe das enzimas bacterianas para oxidação biológica."
               ],
-              "correctIndex": 3,
+              "correctIndex": 4,
               "hint": "Cadeias lineares facilitam o ataque enzimático das bactérias (biodegradáveis); cadeias ramificadas causam impedimento estérico (não biodegradáveis).",
               "stepByStepSolution": "A alternativa A está correta. As enzimas digestivas das bactérias decompositoras aeróbias reconhecem e clivam eficientemente as extremidades de cadeias carbônicas alifáticas lineares (lineares alquilbenzenossulfonatos - LAS). Quando a cadeia é ramificada com carbonos terciários e quaternários, ocorre grande impedimento estérico, impedindo a ação enzimática microbiana e tornando o detergente não biodegradável e persistente no meio ambiente."
             }
@@ -834,13 +834,13 @@
               "title": "ENEM: Termoplásticos versus Termofixos na Indústria e Reciclagem",
               "problemStatement": "Dentre os polímeros consumidos pela sociedade contemporânea, as garrafas de refrigerante feitas de politereftalato de etileno (PET) e as sacolas de polietileno (PE) são facilmente coletadas, trituradas, aquecidas, fundidas e remoldadas em novos produtos plásticos em usinas de reciclagem mecânica. Por outro lado, a borracha vulcanizada de pneus velhos e os cabos de panelas de baquelite não podem ser reciclados por simples fusão. Essa diferença crucial no comportamento térmico deve-se:",
               "options": [
-                "À presença de uma rede tridimensional rígida de ligações cruzadas covalentes nos termofixos, que não se rompem com o calor sem decompor o polímero.",
-                "Ao fato de os termoplásticos serem formados exclusivamente por monômeros inorgânicos metálicos.",
                 "Às ligações iônicas dos termoplásticos que facilitam o derretimento a temperaturas criogênicas.",
+                "Ao fato de os termoplásticos serem formados exclusivamente por monômeros inorgânicos metálicos.",
+                "À presença de uma rede tridimensional rígida de ligações cruzadas covalentes nos termofixos, que não se rompem com o calor sem decompor o polímero.",
                 "À ausência total de carbono nas moléculas que constituem os termofixos como a borracha vulcanizada.",
                 "À biodegradabilidade instantânea dos pneus quando descartados em contato com a luz solar."
               ],
-              "correctIndex": 0,
+              "correctIndex": 2,
               "hint": "Termoplásticos fundem porque só têm atrações intermoleculares fracas entre cadeias; Termofixos possuem ligações cruzadas covalentes permanentes.",
               "stepByStepSolution": "A alternativa A está correta. Os termoplásticos (como o PET e o polietileno) são constituídos por cadeias lineares ou ramificadas mantidas unidas por forças intermoleculares. Ao serem aquecidos, a energia térmica supera essas atrações fracas e as cadeias deslizam umas sobre as outras, fundindo o plástico para nova moldagem mecânica. Já os termofixos (como a borracha vulcanizada com enxofre e a baquelite) contêm ligações cruzadas covalentes permanentes entre as cadeias, formando uma rede molecular tridimensional única que não funde com o calor, carbonizando se superaquecida."
             },
@@ -850,12 +850,12 @@
               "problemStatement": "Como alternativa ao acúmulo de plásticos convencionais derivados do petróleo que levam séculos para se decompor nos oceanos, pesquisadores sintetizaram o poliácido lático (PLA) a partir da fermentação do amido de milho e cana. O PLA é um polímero biodegradável e compostável utilizado em copos descartáveis e fios de sutura cirúrgica absorvíveis. A degradação ambiental do PLA ocorre porque suas ligações éster são clivadas por:",
               "options": [
                 "Dissolução em solventes clorados artificiais presentes na chuva ácida.",
+                "Combustão espontânea anaeróbia quando enterrado em aterros sanitários.",
                 "Hidrólise provocada por umidade e microrganismos do solo, liberando ácido lático atóxico que é metabolizado em CO2 e água.",
                 "Reação com o gás nitrogênio da atmosfera convertendo-se em diamantes microscópicos.",
-                "Sublimação instantânea do plástico na presença de radiação solar direta.",
-                "Combustão espontânea anaeróbia quando enterrado em aterros sanitários."
+                "Sublimação instantânea do plástico na presença de radiação solar direta."
               ],
-              "correctIndex": 1,
+              "correctIndex": 2,
               "hint": "Poliésteres contêm grupos éster (-COO-) que sofrem hidrólise na presença de água e enzimas microbianas.",
               "stepByStepSolution": "A alternativa A está correta. O PLA é um poliéster alifático cujas ligações éster sofrem quebra hidrolítica (hidrólise) catalisada por enzimas bacterianas e fúngicas na compostagem. Esse processo fragmenta as macromoléculas em monômeros de ácido lático (CH3-CH(OH)-COOH), uma substância atóxica natural presente no metabolismo biológico que é posteriormente oxidada a dióxido de carbono e água, completando o ciclo biogeoquímico sem gerar resíduos sintéticos persistentes."
             }

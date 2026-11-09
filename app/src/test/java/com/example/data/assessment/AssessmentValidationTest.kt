@@ -272,4 +272,81 @@ class AssessmentValidationTest {
         val noExplanation = validMc.copy(explanation = "   ")
         assertNotNull(QuestionBankRepository.validateQuestionIntegrity(noExplanation))
     }
+
+    @Test
+    fun testSpecificExamPresetsEnemDia1Dia2AndTranspetro() {
+        // 1. ENEM Dia 1 Oficial (90 questões): 45 Linguagens + 45 Ciências Humanas (História, Geografia, Filosofia e Sociologia)
+        val dia1Config = SimuladoConfig(
+            questionCount = 90,
+            preset = SpecificExamPreset.ENEM_DIA_1
+        )
+        val dia1Simulado1 = QuestionBankRepository.generateSimulado(dia1Config, random = kotlin.random.Random(101L))
+        assertEquals(90, dia1Simulado1.size)
+        assertTrue(
+            "Todas as questões do ENEM Dia 1 devem manter o formato oficial Múltipla Escolha",
+            dia1Simulado1.all { it.question.format == QuestionFormat.MULTIPLE_CHOICE }
+        )
+        val dia1Subjects = dia1Simulado1.map { it.subject }.toSet()
+        assertTrue("ENEM Dia 1 deve conter Linguagens", dia1Subjects.contains("Linguagens"))
+        assertTrue("ENEM Dia 1 deve conter História", dia1Subjects.contains("História"))
+        assertTrue("ENEM Dia 1 deve conter Geografia", dia1Subjects.contains("Geografia"))
+        assertTrue("ENEM Dia 1 deve conter Filosofia", dia1Subjects.contains("Filosofia"))
+        assertTrue("ENEM Dia 1 deve conter Sociologia", dia1Subjects.contains("Sociologia"))
+        assertEquals(45, dia1Simulado1.count { it.subject == "Linguagens" })
+        assertEquals(
+            45,
+            dia1Simulado1.count { it.subject in setOf("História", "Geografia", "Filosofia", "Sociologia") }
+        )
+
+        // Verifica controle de semelhança entre simulados seguidos (evita repetir o mesmo padrão exato ou >= 90% igual)
+        val dia1Simulado2 = QuestionBankRepository.generateSimulado(dia1Config, random = kotlin.random.Random(202L))
+        assertEquals(90, dia1Simulado2.size)
+        val ids1 = dia1Simulado1.map { it.id }.toSet()
+        val ids2 = dia1Simulado2.map { it.id }.toSet()
+        val overlapDia1 = ids1.intersect(ids2).size
+        assertTrue(
+            "Simulados seguidos do ENEM Dia 1 não devem repetir o mesmo padrão (>35% de sobreposição): overlap=$overlapDia1/90",
+            overlapDia1 <= 31
+        )
+
+        // 2. ENEM Dia 2 Oficial (90 questões): 45 Ciências da Natureza (15 Biologia, 15 Física, 15 Química) + 45 Matemática
+        val dia2Config = SimuladoConfig(
+            questionCount = 90,
+            preset = SpecificExamPreset.ENEM_DIA_2
+        )
+        val dia2Questions = QuestionBankRepository.generateSimulado(dia2Config, random = kotlin.random.Random(303L))
+        assertEquals(90, dia2Questions.size)
+        assertTrue(
+            "Todas as questões do ENEM Dia 2 devem manter o formato oficial Múltipla Escolha",
+            dia2Questions.all { it.question.format == QuestionFormat.MULTIPLE_CHOICE }
+        )
+        assertEquals(15, dia2Questions.count { it.subject == "Biologia" })
+        assertEquals(15, dia2Questions.count { it.subject == "Física" })
+        assertEquals(15, dia2Questions.count { it.subject == "Química" })
+        assertEquals(45, dia2Questions.count { it.subject in setOf("Matemática", "Matemática Básica") })
+
+        // 3. Transpetro Oficial Cesgranrio (60 questões): 20 Básicos (10 Português + 10 Matemática) + 40 Específicos
+        val tpConfig = SimuladoConfig(
+            questionCount = 60,
+            preset = SpecificExamPreset.TRANSPETRO
+        )
+        val tpQuestions = QuestionBankRepository.generateSimulado(tpConfig, random = kotlin.random.Random(404L))
+        assertEquals(60, tpQuestions.size)
+        assertTrue(
+            "Todas as questões do simulado Transpetro devem pertencer ao currículo Transpetro (tp_) e formato Múltipla Escolha",
+            tpQuestions.all { it.lesson.lessonId.startsWith("tp_") && it.question.format == QuestionFormat.MULTIPLE_CHOICE }
+        )
+        assertEquals(10, tpQuestions.count { it.lesson.lessonId.startsWith("tp_por_") })
+        assertEquals(10, tpQuestions.count { it.lesson.lessonId.startsWith("tp_mat_") })
+        assertEquals(
+            40,
+            tpQuestions.count {
+                it.lesson.lessonId.startsWith("tp_adm_") ||
+                    it.lesson.lessonId.startsWith("tp_fin_") ||
+                    it.lesson.lessonId.startsWith("tp_log_") ||
+                    it.lesson.lessonId.startsWith("tp_inf_")
+            }
+        )
+    }
 }
+

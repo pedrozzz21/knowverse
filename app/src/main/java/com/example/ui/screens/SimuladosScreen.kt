@@ -75,6 +75,7 @@ import com.example.data.assessment.QuestionBankRepository
 import com.example.data.assessment.QuestionFormat
 import com.example.data.assessment.SimuladoConfig
 import com.example.data.assessment.SimuladoMode
+import com.example.data.assessment.SpecificExamPreset
 import com.example.data.assessment.UserAnswer
 import com.example.data.assessment.Verdict
 import com.example.data.local.UserProgressRepository
@@ -118,6 +119,7 @@ internal object SimuladoSessionStore {
     private const val KEY_SESSION_JSON = "active_simulado_json"
 
     var screenState: SimuladoScreenState = SimuladoScreenState.CONFIGURATOR
+    var activePreset: SpecificExamPreset = SpecificExamPreset.CUSTOM
     var generatedQuestionIds: List<String> = emptyList()
     var currentQuestionIdx: Int = 0
     var examElapsedSeconds: Int = 0
@@ -195,6 +197,7 @@ internal object SimuladoSessionStore {
 
             val root = mapOf(
                 "screenState" to screenState.name,
+                "activePreset" to activePreset.name,
                 "currentQuestionIdx" to currentQuestionIdx,
                 "examElapsedSeconds" to examElapsedSeconds,
                 "generatedQuestionIds" to generatedQuestionIds,
@@ -216,6 +219,12 @@ internal object SimuladoSessionStore {
             SimuladoScreenState.valueOf(stateName)
         } catch (_: Exception) {
             SimuladoScreenState.CONFIGURATOR
+        }
+        val presetName = root["activePreset"] as? String ?: SpecificExamPreset.CUSTOM.name
+        activePreset = try {
+            SpecificExamPreset.valueOf(presetName)
+        } catch (_: Exception) {
+            SpecificExamPreset.CUSTOM
         }
         currentQuestionIdx = ((root["currentQuestionIdx"] as? Number)?.toInt() ?: 0).coerceAtLeast(0)
         examElapsedSeconds = ((root["examElapsedSeconds"] as? Number)?.toInt() ?: 0).coerceAtLeast(0)
@@ -301,6 +310,10 @@ fun SimuladosScreen(
         SimuladoSessionStore.ensureRestored(context)
         mutableStateOf(SimuladoSessionStore.screenState)
     }
+    var selectedPreset by rememberSaveable {
+        SimuladoSessionStore.ensureRestored(context)
+        mutableStateOf(SimuladoSessionStore.activePreset)
+    }
     var showExitDialog by rememberSaveable { mutableStateOf(false) }
     var selectedSubject by rememberSaveable { mutableStateOf("Todas") }
     var selectedMode by rememberSaveable { mutableStateOf(SimuladoMode.BY_SUBJECT) }
@@ -376,6 +389,7 @@ fun SimuladosScreen(
 
     fun syncSessionStore() {
         SimuladoSessionStore.screenState = screenState
+        SimuladoSessionStore.activePreset = selectedPreset
         SimuladoSessionStore.generatedQuestionIds = generatedQuestionIds
         SimuladoSessionStore.currentQuestionIdx = currentQuestionIdx
         SimuladoSessionStore.examElapsedSeconds = examElapsedSeconds
@@ -384,6 +398,29 @@ fun SimuladosScreen(
         SimuladoSessionStore.feedbackMap.clear()
         SimuladoSessionStore.feedbackMap.putAll(feedbackMap)
         SimuladoSessionStore.persist(context)
+    }
+
+    fun launchSimulado(presetToRun: SpecificExamPreset, countToRun: Int) {
+        selectedPreset = presetToRun
+        val cfg = SimuladoConfig(
+            subject = selectedSubject,
+            mode = selectedMode,
+            moduleId = selectedModuleId,
+            subtopic = selectedSubtopic,
+            questionCount = countToRun,
+            preset = presetToRun
+        )
+        val questions = QuestionBankRepository.generateSimulado(cfg, context)
+        if (questions.isNotEmpty()) {
+            cachedGeneratedQuestions = questions
+            generatedQuestionIds = questions.map { it.id }
+            currentQuestionIdx = 0
+            examElapsedSeconds = 0
+            feedbackMap.clear()
+            answerMap.clear()
+            screenState = SimuladoScreenState.RUNNING_EXAM
+            syncSessionStore()
+        }
     }
 
     fun finalizeSimuladoAndOpenReport() {
@@ -503,52 +540,300 @@ fun SimuladosScreen(
                         }
                     }
 
-                    // 1. Seleção da Matéria / Disciplina
-                    SectionCard(title = "1. Escolha a Matéria") {
-                        FlowRow(
-                            horizontalArrangement = Arrangement.spacedBy(8.dp),
-                            verticalArrangement = Arrangement.spacedBy(8.dp)
-                        ) {
-                            subjects.forEach { subj ->
-                                SelectableChip(
-                                    label = subj,
-                                    selected = selectedSubject == subj,
-                                    onClick = { selectedSubject = subj }
-                                )
+                    val maxQuestionsForPreset = selectedPreset.maxQuestionCount
+                    val targetCount = questionCountSlider.roundToInt().coerceIn(1, maxQuestionsForPreset)
+
+                    // 1. Simulados Específicos (ENEM Dia 1, ENEM Dia 2, Transpetro e Personalizado)
+                    SectionCard(title = "1. Simulados Específicos & Cadernos Oficiais") {
+                        Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                            val specificPresets = listOf(
+                                SpecificExamPreset.ENEM_DIA_1,
+                                SpecificExamPreset.ENEM_DIA_2,
+                                SpecificExamPreset.TRANSPETRO,
+                                SpecificExamPreset.CUSTOM
+                            )
+                            specificPresets.forEach { preset ->
+                                val isSel = selectedPreset == preset
+                                val badgeColor = when (preset) {
+                                    SpecificExamPreset.ENEM_DIA_1 -> AccentCyan
+                                    SpecificExamPreset.ENEM_DIA_2 -> SuccessEmerald
+                                    SpecificExamPreset.TRANSPETRO -> WarningAmber
+                                    SpecificExamPreset.CUSTOM -> PrimaryVioletLight
+                                }
+                                Column(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .clip(RoundedCornerShape(10.dp))
+                                        .background(if (isSel) PrimaryViolet.copy(alpha = 0.14f) else SurfaceCard)
+                                        .border(
+                                            width = 1.dp,
+                                            color = if (isSel) BorderActive else BorderSubtle,
+                                            shape = RoundedCornerShape(10.dp)
+                                        )
+                                        .clickable {
+                                            selectedPreset = preset
+                                            questionCountSlider = preset.defaultQuestionCount.toFloat()
+                                        }
+                                        .padding(12.dp)
+                                        .testTag("preset_card_${preset.id}")
+                                ) {
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.SpaceBetween,
+                                        modifier = Modifier.fillMaxWidth()
+                                    ) {
+                                        Row(
+                                            verticalAlignment = Alignment.CenterVertically,
+                                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                            modifier = Modifier.weight(1f)
+                                        ) {
+                                            Text(
+                                                text = preset.title,
+                                                style = MaterialTheme.typography.titleSmall,
+                                                fontWeight = FontWeight.Bold,
+                                                color = if (isSel) PrimaryVioletLight else TextPrimary
+                                            )
+                                            Surface(
+                                                color = badgeColor.copy(alpha = 0.16f),
+                                                shape = RoundedCornerShape(6.dp)
+                                            ) {
+                                                Text(
+                                                    text = preset.badge,
+                                                    style = MaterialTheme.typography.labelSmall,
+                                                    fontWeight = FontWeight.SemiBold,
+                                                    color = badgeColor,
+                                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                )
+                                            }
+                                        }
+
+                                        if (preset != SpecificExamPreset.CUSTOM) {
+                                            Button(
+                                                onClick = {
+                                                    val countToUse = if (isSel) targetCount else preset.defaultQuestionCount
+                                                    selectedPreset = preset
+                                                    questionCountSlider = countToUse.toFloat()
+                                                    launchSimulado(preset, countToUse)
+                                                },
+                                                colors = ButtonDefaults.buttonColors(
+                                                    containerColor = if (isSel) PrimaryViolet else SurfaceElevated
+                                                ),
+                                                contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp),
+                                                shape = RoundedCornerShape(8.dp),
+                                                modifier = Modifier
+                                                    .height(32.dp)
+                                                    .testTag("btn_quick_start_${preset.id}")
+                                            ) {
+                                                Icon(
+                                                    imageVector = Icons.Default.PlayArrow,
+                                                    contentDescription = null,
+                                                    modifier = Modifier.size(14.dp)
+                                                )
+                                                Spacer(modifier = Modifier.width(4.dp))
+                                                Text(
+                                                    text = "Iniciar",
+                                                    style = MaterialTheme.typography.labelSmall,
+                                                    fontWeight = FontWeight.Bold
+                                                )
+                                            }
+                                        }
+                                    }
+
+                                    Spacer(modifier = Modifier.height(4.dp))
+                                    Text(
+                                        text = "Banca: ${preset.banca} • Formato: ${preset.examFormatLabel}",
+                                        style = MaterialTheme.typography.labelSmall,
+                                        fontWeight = FontWeight.SemiBold,
+                                        color = AccentCyan
+                                    )
+                                    Spacer(modifier = Modifier.height(2.dp))
+                                    Text(
+                                        text = preset.subtitle,
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = TextSecondary
+                                    )
+                                    Spacer(modifier = Modifier.height(2.dp))
+                                    Text(
+                                        text = preset.compositionSummary,
+                                        style = MaterialTheme.typography.labelSmall,
+                                        color = TextTertiary
+                                    )
+                                }
                             }
                         }
                     }
 
-                    // 2. Modalidade de Avaliação (Geral, Módulo, Cumulativa, Subtópico)
-                    SectionCard(title = "2. Modalidade da Avaliação") {
-                        Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                            SimuladoMode.entries.forEach { mode ->
-                                val isSel = selectedMode == mode
-                                Row(
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .clip(RoundedCornerShape(10.dp))
-                                        .background(if (isSel) PrimaryViolet.copy(alpha = 0.15f) else SurfaceCard)
-                                        .border(
-                                            1.dp,
-                                            if (isSel) BorderActive else BorderSubtle,
-                                            RoundedCornerShape(10.dp)
-                                        )
-                                        .clickable { selectedMode = mode }
-                                        .padding(12.dp)
-                                ) {
-                                    Column(modifier = Modifier.weight(1f)) {
+                    if (selectedPreset != SpecificExamPreset.CUSTOM) {
+                        // 2. Resumo da Matriz Oficial para o Caderno Específico Selecionado
+                        SectionCard(title = "2. Matriz Oficial da Prova • ${selectedPreset.title}") {
+                            Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                                Text(
+                                    text = "Banca Examinadora: ${selectedPreset.banca} • ${selectedPreset.examFormatLabel}",
+                                    style = MaterialTheme.typography.labelSmall,
+                                    fontWeight = FontWeight.SemiBold,
+                                    color = AccentCyan
+                                )
+                                when (selectedPreset) {
+                                    SpecificExamPreset.ENEM_DIA_1 -> {
+                                        val lingCount = (targetCount * 0.50).roundToInt().coerceAtLeast(1)
+                                        val humCount = (targetCount - lingCount).coerceAtLeast(0)
+                                        val histCount = (humCount * (15.0 / 45.0)).roundToInt()
+                                        val geoCount = (humCount * (15.0 / 45.0)).roundToInt()
+                                        val filCount = (humCount * (8.0 / 45.0)).roundToInt()
+                                        val socCount = (humCount - histCount - geoCount - filCount).coerceAtLeast(0)
                                         Text(
-                                            text = mode.label,
-                                            style = MaterialTheme.typography.bodyMedium,
-                                            fontWeight = FontWeight.Bold,
-                                            color = if (isSel) PrimaryVioletLight else TextPrimary
+                                            text = "• Bloco 1 — Linguagens, Códigos e suas Tecnologias (50%): $lingCount questões (Língua Portuguesa, Literatura, Inglês/Espanhol e Artes)",
+                                            style = MaterialTheme.typography.bodySmall,
+                                            color = TextPrimary
                                         )
                                         Text(
-                                            text = mode.description,
+                                            text = "• Bloco 2 — Ciências Humanas e suas Tecnologias (50%): $humCount questões ($histCount História • $geoCount Geografia • $filCount Filosofia • $socCount Sociologia)",
+                                            style = MaterialTheme.typography.bodySmall,
+                                            color = TextPrimary
+                                        )
+                                    }
+                                    SpecificExamPreset.ENEM_DIA_2 -> {
+                                        val natCount = (targetCount * 0.50).roundToInt().coerceAtLeast(1)
+                                        val matCount = (targetCount - natCount).coerceAtLeast(0)
+                                        val bioCount = natCount / 3
+                                        val fisCount = (natCount - bioCount) / 2
+                                        val quiCount = (natCount - bioCount - fisCount).coerceAtLeast(0)
+                                        Text(
+                                            text = "• Bloco 1 — Ciências da Natureza e suas Tecnologias (50%): $natCount questões ($bioCount Biologia • $fisCount Física • $quiCount Química)",
+                                            style = MaterialTheme.typography.bodySmall,
+                                            color = TextPrimary
+                                        )
+                                        Text(
+                                            text = "• Bloco 2 — Matemática e suas Tecnologias (50%): $matCount questões (Matemática ENEM e Matemática Básica)",
+                                            style = MaterialTheme.typography.bodySmall,
+                                            color = TextPrimary
+                                        )
+                                    }
+                                    SpecificExamPreset.TRANSPETRO -> {
+                                        val countPor = (targetCount * (10.0 / 60.0)).roundToInt().coerceAtLeast(if (targetCount >= 3) 1 else 0)
+                                        val countMat = (targetCount * (10.0 / 60.0)).roundToInt().coerceAtLeast(if (targetCount >= 3) 1 else 0)
+                                        val countEsp = (targetCount - countPor - countMat).coerceAtLeast(1)
+                                        val countAdm = countEsp / 4
+                                        val countFin = (countEsp - countAdm) / 3
+                                        val countLog = (countEsp - countAdm - countFin) / 2
+                                        val countInf = (countEsp - countAdm - countFin - countLog).coerceAtLeast(0)
+                                        Text(
+                                            text = "• Bloco I — Conhecimentos Básicos (33,3%): ${countPor + countMat} questões ($countPor Língua Portuguesa + $countMat Matemática)",
+                                            style = MaterialTheme.typography.bodySmall,
+                                            color = TextPrimary
+                                        )
+                                        Text(
+                                            text = "• Bloco II — Conhecimentos Específicos (66,7%): $countEsp questões ($countAdm Processos Adm. • $countFin Finanças • $countLog Logística • $countInf Informática)",
+                                            style = MaterialTheme.typography.bodySmall,
+                                            color = TextPrimary
+                                        )
+                                        Text(
+                                            text = "Critério Oficial Cesgranrio: mínimo de 50% de acertos no Bloco I, 50% no Bloco II e proibição de zerar Português ou Matemática.",
                                             style = MaterialTheme.typography.labelSmall,
-                                            color = TextSecondary
+                                            color = WarningAmber
+                                        )
+                                    }
+                                    SpecificExamPreset.CUSTOM -> {}
+                                }
+                            }
+                        }
+                    } else {
+                        // 2. Seleção da Matéria / Disciplina (Modo Personalizado)
+                        SectionCard(title = "2. Escolha a Matéria") {
+                            FlowRow(
+                                horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                verticalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                subjects.forEach { subj ->
+                                    SelectableChip(
+                                        label = subj,
+                                        selected = selectedSubject == subj,
+                                        onClick = { selectedSubject = subj }
+                                    )
+                                }
+                            }
+                        }
+
+                        // 3. Modalidade de Avaliação (Geral, Módulo, Cumulativa, Subtópico)
+                        SectionCard(title = "3. Modalidade da Avaliação") {
+                            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                                SimuladoMode.entries.forEach { mode ->
+                                    val isSel = selectedMode == mode
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .clip(RoundedCornerShape(10.dp))
+                                            .background(if (isSel) PrimaryViolet.copy(alpha = 0.15f) else SurfaceCard)
+                                            .border(
+                                                1.dp,
+                                                if (isSel) BorderActive else BorderSubtle,
+                                                RoundedCornerShape(10.dp)
+                                            )
+                                            .clickable { selectedMode = mode }
+                                            .padding(12.dp)
+                                    ) {
+                                        Column(modifier = Modifier.weight(1f)) {
+                                            Text(
+                                                text = mode.label,
+                                                style = MaterialTheme.typography.bodyMedium,
+                                                fontWeight = FontWeight.Bold,
+                                                color = if (isSel) PrimaryVioletLight else TextPrimary
+                                            )
+                                            Text(
+                                                text = mode.description,
+                                                style = MaterialTheme.typography.labelSmall,
+                                                color = TextSecondary
+                                            )
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // 3b. Seleção de Módulo (para Avaliação de Módulo ou Cumulativa)
+                        if (selectedMode == SimuladoMode.BY_MODULE || selectedMode == SimuladoMode.CUMULATIVE) {
+                            val sectionTitle = if (selectedMode == SimuladoMode.CUMULATIVE) {
+                                "Selecione até qual Módulo cobrar (Avaliação Cumulativa)"
+                            } else {
+                                "Selecione o Módulo da Avaliação"
+                            }
+                            SectionCard(title = sectionTitle) {
+                                if (selectedMode == SimuladoMode.CUMULATIVE) {
+                                    Text(
+                                        text = "O simulado misturará questões do módulo selecionado com questões de módulos e aulas anteriores para exigir recuperação ativa.",
+                                        style = MaterialTheme.typography.labelSmall,
+                                        color = AccentCyan,
+                                        modifier = Modifier.padding(bottom = 8.dp)
+                                    )
+                                }
+                                FlowRow(
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                                ) {
+                                    availableModules.forEach { mod ->
+                                        SelectableChip(
+                                            label = "${mod.moduleTitle} (${mod.lessonCount} aulas)",
+                                            selected = selectedModuleId == mod.moduleId,
+                                            onClick = { selectedModuleId = mod.moduleId }
+                                        )
+                                    }
+                                }
+                            }
+                        }
+
+                        // 3c. Seleção de Subtópico (quando modo = BY_SUBTOPIC)
+                        if (selectedMode == SimuladoMode.BY_SUBTOPIC) {
+                            SectionCard(title = "Escolha o Subtópico da Aula") {
+                                FlowRow(
+                                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                                ) {
+                                    availableSubtopics.take(30).forEach { sub ->
+                                        SelectableChip(
+                                            label = sub,
+                                            selected = selectedSubtopic == sub,
+                                            onClick = { selectedSubtopic = sub }
                                         )
                                     }
                                 }
@@ -556,110 +841,57 @@ fun SimuladosScreen(
                         }
                     }
 
-                    // 3. Seleção de Módulo (para Avaliação de Módulo ou Cumulativa)
-                    if (selectedMode == SimuladoMode.BY_MODULE || selectedMode == SimuladoMode.CUMULATIVE) {
-                        val sectionTitle = if (selectedMode == SimuladoMode.CUMULATIVE) {
-                            "3. Selecione até qual Módulo cobrar (Avaliação Cumulativa)"
-                        } else {
-                            "3. Selecione o Módulo da Avaliação"
-                        }
-                        SectionCard(title = sectionTitle) {
-                            if (selectedMode == SimuladoMode.CUMULATIVE) {
-                                Text(
-                                    text = "O simulado misturará questões do módulo selecionado com questões de módulos e aulas anteriores para exigir recuperação ativa.",
-                                    style = MaterialTheme.typography.labelSmall,
-                                    color = AccentCyan,
-                                    modifier = Modifier.padding(bottom = 8.dp)
-                                )
-                            }
-                            FlowRow(
-                                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                                verticalArrangement = Arrangement.spacedBy(8.dp)
-                            ) {
-                                availableModules.forEach { mod ->
-                                    SelectableChip(
-                                        label = "${mod.moduleTitle} (${mod.lessonCount} aulas)",
-                                        selected = selectedModuleId == mod.moduleId,
-                                        onClick = { selectedModuleId = mod.moduleId }
-                                    )
-                                }
-                            }
-                        }
+                    // Quantidade de Questões (proporcional ao caderno oficial ou modo personalizado)
+                    val presetChips = when (selectedPreset) {
+                        SpecificExamPreset.ENEM_DIA_1, SpecificExamPreset.ENEM_DIA_2 -> listOf(15, 30, 45, 60, 90)
+                        SpecificExamPreset.TRANSPETRO -> listOf(15, 30, 45, 60)
+                        SpecificExamPreset.CUSTOM -> listOf(5, 10, 15, 25, 35, 45)
                     }
-
-                    // 3b. Seleção de Subtópico (quando modo = BY_SUBTOPIC)
-                    if (selectedMode == SimuladoMode.BY_SUBTOPIC) {
-                        SectionCard(title = "3. Escolha o Subtópico da Aula") {
-                            FlowRow(
-                                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                                verticalArrangement = Arrangement.spacedBy(8.dp)
-                            ) {
-                                availableSubtopics.take(30).forEach { sub ->
-                                    SelectableChip(
-                                        label = sub,
-                                        selected = selectedSubtopic == sub,
-                                        onClick = { selectedSubtopic = sub }
-                                    )
-                                }
-                            }
-                        }
-                    }
-
-                    // 4. Quantidade de Questões (1 a 45 — Máximo 45)
-                    val targetCount = questionCountSlider.roundToInt().coerceIn(1, QuestionBankRepository.MAX_SIMULADO_QUESTIONS)
-                    SectionCard(title = "4. Quantidade de Questões: $targetCount (Máx. 45)") {
+                    SectionCard(title = "Quantidade de Questões: $targetCount (Máx. $maxQuestionsForPreset)") {
                         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             Row(
                                 horizontalArrangement = Arrangement.spacedBy(8.dp),
                                 modifier = Modifier.fillMaxWidth()
                             ) {
-                                listOf(5, 10, 15, 25, 35, 45).forEach { preset ->
+                                presetChips.forEach { presetCount ->
                                     SelectableChip(
-                                        label = "$preset",
-                                        selected = targetCount == preset,
-                                        onClick = { questionCountSlider = preset.toFloat() }
+                                        label = if (presetCount == selectedPreset.defaultQuestionCount && selectedPreset != SpecificExamPreset.CUSTOM) {
+                                            "$presetCount (Oficial)"
+                                        } else {
+                                            "$presetCount"
+                                        },
+                                        selected = targetCount == presetCount,
+                                        onClick = { questionCountSlider = presetCount.toFloat() }
                                     )
                                 }
                             }
                             Slider(
-                                value = questionCountSlider,
+                                value = questionCountSlider.coerceIn(1f, maxQuestionsForPreset.toFloat()),
                                 onValueChange = { questionCountSlider = it },
-                                valueRange = 1f..45f,
-                                steps = 43,
+                                valueRange = 1f..maxQuestionsForPreset.toFloat(),
+                                steps = (maxQuestionsForPreset - 2).coerceAtLeast(1),
                                 colors = SliderDefaults.colors(
                                     thumbColor = PrimaryViolet,
                                     activeTrackColor = PrimaryViolet
                                 )
                             )
                             Text(
-                                text = "Distribuição orientativa automática: ~30% Fácil • ~45% Média • ~25% Difícil",
+                                text = "Sorteio aleatório balanceado (~30% Fácil • ~45% Média • ~25% Difícil) com controle anti-repetição de padrão entre simulados.",
                                 style = MaterialTheme.typography.labelSmall,
                                 color = TextTertiary
                             )
                         }
                     }
 
-                    // Botão Gerar Simulado Aleatório
+                    // Botão Gerar Simulado
+                    val buttonTitle = if (selectedPreset == SpecificExamPreset.CUSTOM) {
+                        "Gerar Simulado Personalizado ($targetCount questões)"
+                    } else {
+                        "Iniciar Simulado ${selectedPreset.title} ($targetCount questões)"
+                    }
                     Button(
                         onClick = {
-                            val cfg = SimuladoConfig(
-                                subject = selectedSubject,
-                                mode = selectedMode,
-                                moduleId = selectedModuleId,
-                                subtopic = selectedSubtopic,
-                                questionCount = targetCount
-                            )
-                            val questions = QuestionBankRepository.generateSimulado(cfg, context)
-                            if (questions.isNotEmpty()) {
-                                cachedGeneratedQuestions = questions
-                                generatedQuestionIds = questions.map { it.id }
-                                currentQuestionIdx = 0
-                                examElapsedSeconds = 0
-                                feedbackMap.clear()
-                                answerMap.clear()
-                                screenState = SimuladoScreenState.RUNNING_EXAM
-                                syncSessionStore()
-                            }
+                            launchSimulado(selectedPreset, targetCount)
                         },
                         colors = ButtonDefaults.buttonColors(containerColor = PrimaryViolet),
                         shape = RoundedCornerShape(12.dp),
@@ -675,7 +907,7 @@ fun SimuladosScreen(
                         )
                         Spacer(modifier = Modifier.width(8.dp))
                         Text(
-                            text = "Gerar Simulado Aleatório ($targetCount questões)",
+                            text = buttonTitle,
                             style = MaterialTheme.typography.titleSmall,
                             fontWeight = FontWeight.Bold
                         )
@@ -717,8 +949,13 @@ fun SimuladosScreen(
                             val mins = (examElapsedSeconds / 60).toString().padStart(2, '0')
                             val secs = (examElapsedSeconds % 60).toString().padStart(2, '0')
                             val answeredCount = maxOf(answerMap.size, feedbackMap.size)
+                            val presetHeaderPrefix = if (selectedPreset != SpecificExamPreset.CUSTOM) {
+                                "${selectedPreset.title} • "
+                            } else {
+                                ""
+                            }
                             Text(
-                                text = "Questão ${currentQuestionIdx + 1} de $total • $answeredCount/$total respondidas",
+                                text = "${presetHeaderPrefix}Questão ${currentQuestionIdx + 1} de $total • $answeredCount/$total",
                                 style = MaterialTheme.typography.labelLarge,
                                 fontWeight = FontWeight.Bold,
                                 color = TextPrimary
@@ -922,6 +1159,71 @@ fun SimuladosScreen(
                             style = MaterialTheme.typography.bodyMedium,
                             color = TextSecondary
                         )
+                    }
+
+                    // Critérios Oficiais de Habilitação Cesgranrio (quando simulado = Transpetro)
+                    if (selectedPreset == SpecificExamPreset.TRANSPETRO) {
+                        val basicQuestions = generatedQuestions.filter {
+                            it.lesson.lessonId.startsWith("tp_por_") || it.lesson.lessonId.startsWith("tp_mat_")
+                        }
+                        val specificQuestions = generatedQuestions.filter {
+                            it.lesson.lessonId.startsWith("tp_adm_") ||
+                                it.lesson.lessonId.startsWith("tp_fin_") ||
+                                it.lesson.lessonId.startsWith("tp_log_") ||
+                                it.lesson.lessonId.startsWith("tp_inf_")
+                        }
+                        val porQuestions = generatedQuestions.filter { it.lesson.lessonId.startsWith("tp_por_") }
+                        val matQuestions = generatedQuestions.filter { it.lesson.lessonId.startsWith("tp_mat_") }
+
+                        val basicHits = basicQuestions.sumOf { feedbackMap[it.id]?.score ?: 0.0 }
+                        val specificHits = specificQuestions.sumOf { feedbackMap[it.id]?.score ?: 0.0 }
+                        val porHits = porQuestions.sumOf { feedbackMap[it.id]?.score ?: 0.0 }
+                        val matHits = matQuestions.sumOf { feedbackMap[it.id]?.score ?: 0.0 }
+
+                        val basicPct = if (basicQuestions.isNotEmpty()) ((basicHits / basicQuestions.size) * 100).roundToInt() else 0
+                        val specificPct = if (specificQuestions.isNotEmpty()) ((specificHits / specificQuestions.size) * 100).roundToInt() else 0
+                        val isQualified = basicPct >= 50 && specificPct >= 50 &&
+                            (porQuestions.isEmpty() || porHits > 0.0) &&
+                            (matQuestions.isEmpty() || matHits > 0.0)
+
+                        SectionCard(title = "Critérios de Habilitação • Edital Fundação Cesgranrio") {
+                            Text(
+                                text = if (isQualified) "HABILITADO PELOS CRITÉRIOS DO EDITAL" else "NÃO HABILITADO (REVISAR MÍNIMOS POR BLOCO)",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.Bold,
+                                color = if (isQualified) SuccessEmerald else ErrorRose
+                            )
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = "• Bloco I (Conhecimentos Básicos ≥ 50%): $basicPct% (${basicHits.roundToInt()}/${basicQuestions.size})",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = if (basicPct >= 50) SuccessEmerald else ErrorRose
+                            )
+                            Text(
+                                text = "• Bloco II (Conhecimentos Específicos ≥ 50%): $specificPct% (${specificHits.roundToInt()}/${specificQuestions.size})",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = if (specificPct >= 50) SuccessEmerald else ErrorRose
+                            )
+                            Text(
+                                text = "• Língua Portuguesa (> 0 acertos): ${porHits.roundToInt()}/${porQuestions.size} • Matemática (> 0 acertos): ${matHits.roundToInt()}/${matQuestions.size}",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = if (porHits > 0.0 && matHits > 0.0) TextPrimary else ErrorRose
+                            )
+                        }
+                    }
+
+                    // Desempenho por Disciplina da Prova
+                    SectionCard(title = "Desempenho por Disciplina da Prova") {
+                        generatedQuestions.groupBy { it.subject }.forEach { (subj, list) ->
+                            val hits = list.sumOf { feedbackMap[it.id]?.score ?: 0.0 }
+                            val subjPct = ((hits / list.size) * 100).roundToInt()
+                            Text(
+                                text = "• $subj: $subjPct% (${hits.roundToInt()}/${list.size} questões)",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = if (subjPct >= 70) SuccessEmerald else if (subjPct >= 50) TextPrimary else WarningAmber,
+                                modifier = Modifier.padding(vertical = 2.dp)
+                            )
+                        }
                     }
 
                     // Desempenho por Dificuldade

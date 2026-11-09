@@ -348,6 +348,59 @@ object EnemTaxonomy {
         )
     )
 
+    // =========================================================================
+    // 8. FILOSOFIA (CIÊNCIAS HUMANAS) ENEM
+    // =========================================================================
+    val TAXONOMIA_FILOSOFIA: Map<String, List<String>> = linkedMapOf(
+        "Filosofia Antiga e Medieval" to listOf(
+            "Do Mito ao Logos e os Pré-Socráticos",
+            "Sócrates, os Sofistas e a Maiêutica",
+            "Platão: Mundo das Ideias e Política",
+            "Aristóteles: Metafísica, Lógica e Ética",
+            "Filosofia Helenística, Patrística e Escolástica"
+        ),
+        "Filosofia Moderna e Teoria do Conhecimento" to listOf(
+            "Racionalismo Cartesiano (Dúvida Metódica e Cogito)",
+            "Empirismo Britânico (Bacon, Locke e Hume)",
+            "Criticismo de Immanuel Kant e Esclarecimento"
+        ),
+        "Filosofia Política e Ética" to listOf(
+            "Maquiavel e a Autonomia da Política",
+            "Contratualismo: Hobbes, Locke e Rousseau",
+            "Ética Deontológica, Utilitarismo e Justiça (Rawls)"
+        ),
+        "Filosofia Contemporânea" to listOf(
+            "Nietzsche e a Crítica da Moral Ocidental",
+            "Escola de Frankfurt e Hannah Arendt",
+            "Michel Foucault, Jurgen Habermas e Bioética"
+        )
+    )
+
+    // =========================================================================
+    // 9. SOCIOLOGIA (CIÊNCIAS HUMANAS) ENEM
+    // =========================================================================
+    val TAXONOMIA_SOCIOLOGIA: Map<String, List<String>> = linkedMapOf(
+        "Os Clássicos da Sociologia" to listOf(
+            "Positivismo e Émile Durkheim (Fato Social e Coesão)",
+            "Sociologia Compreensiva de Max Weber (Ação Social)",
+            "Materialismo Histórico de Karl Marx (Trabalho e Mais-Valia)"
+        ),
+        "Cultura, Identidade e Indústria Cultural" to listOf(
+            "Antropologia: Etnocentrismo e Relativismo Cultural",
+            "Patrimônio Cultural Material e Imaterial",
+            "Indústria Cultural, Consumo e Cibercultura"
+        ),
+        "Cidadania, Estado e Movimentos Sociais" to listOf(
+            "Cidadania e Direitos Civis, Políticos e Sociais (Marshall)",
+            "Movimentos Sociais Contemporâneos e Direitos Humanos",
+            "Democracia Participativa, Representativa e Constituição de 1988"
+        ),
+        "Mundo do Trabalho e Estratificação Social" to listOf(
+            "Fordismo, Toyotismo, Flexibilização e Uberização",
+            "Estratificação, Mobilidade e Desigualdade Social (Bourdieu e Bauman)"
+        )
+    )
+
     /**
      * Módulos estruturantes do ENEM com identificadores únicos para mapeamento de dados.
      */
@@ -399,7 +452,19 @@ object EnemTaxonomy {
         EnemTaxonomyModule("mod_geo_02_agraria", "Módulo 2: Geografia Agrária", "Geografia", TAXONOMIA_GEOGRAFIA["Geografia Agrária (O Espaço Rural)"] ?: emptyList()),
         EnemTaxonomyModule("mod_geo_03_urbana_demografia", "Módulo 3: Geografia Urbana e Demografia", "Geografia", TAXONOMIA_GEOGRAFIA["Geografia Urbana e Demografia"] ?: emptyList()),
         EnemTaxonomyModule("mod_geo_04_economica", "Módulo 4: Geografia Econômica e Globalização", "Geografia", TAXONOMIA_GEOGRAFIA["Geografia Econômica e Globalização"] ?: emptyList()),
-        EnemTaxonomyModule("mod_geo_05_geopolitica", "Módulo 5: Geopolítica e Ordem Mundial", "Geografia", TAXONOMIA_GEOGRAFIA["Geopolítica e Ordem Mundial"] ?: emptyList())
+        EnemTaxonomyModule("mod_geo_05_geopolitica", "Módulo 5: Geopolítica e Ordem Mundial", "Geografia", TAXONOMIA_GEOGRAFIA["Geopolítica e Ordem Mundial"] ?: emptyList()),
+
+        // Filosofia
+        EnemTaxonomyModule("mod_fil_01_antiga", "Módulo 1: Filosofia Antiga e Medieval", "Filosofia", TAXONOMIA_FILOSOFIA["Filosofia Antiga e Medieval"] ?: emptyList()),
+        EnemTaxonomyModule("mod_fil_02_moderna", "Módulo 2: Filosofia Moderna e Teoria do Conhecimento", "Filosofia", TAXONOMIA_FILOSOFIA["Filosofia Moderna e Teoria do Conhecimento"] ?: emptyList()),
+        EnemTaxonomyModule("mod_fil_03_politica_etica", "Módulo 3: Filosofia Política e Ética", "Filosofia", TAXONOMIA_FILOSOFIA["Filosofia Política e Ética"] ?: emptyList()),
+        EnemTaxonomyModule("mod_fil_04_contemporanea", "Módulo 4: Filosofia Contemporânea", "Filosofia", TAXONOMIA_FILOSOFIA["Filosofia Contemporânea"] ?: emptyList()),
+
+        // Sociologia
+        EnemTaxonomyModule("mod_soc_01_classicos", "Módulo 1: Os Clássicos da Sociologia", "Sociologia", TAXONOMIA_SOCIOLOGIA["Os Clássicos da Sociologia"] ?: emptyList()),
+        EnemTaxonomyModule("mod_soc_02_cultura", "Módulo 2: Cultura, Identidade e Indústria Cultural", "Sociologia", TAXONOMIA_SOCIOLOGIA["Cultura, Identidade e Indústria Cultural"] ?: emptyList()),
+        EnemTaxonomyModule("mod_soc_03_cidadania", "Módulo 3: Cidadania, Estado e Movimentos Sociais", "Sociologia", TAXONOMIA_SOCIOLOGIA["Cidadania, Estado e Movimentos Sociais"] ?: emptyList()),
+        EnemTaxonomyModule("mod_soc_04_trabalho", "Módulo 4: Mundo do Trabalho e Estratificação Social", "Sociologia", TAXONOMIA_SOCIOLOGIA["Mundo do Trabalho e Estratificação Social"] ?: emptyList())
     )
 
     fun getAllDisciplines(): List<String> = listOf(
@@ -409,7 +474,9 @@ object EnemTaxonomy {
         "Química",
         "Linguagens",
         "História",
-        "Geografia"
+        "Geografia",
+        "Filosofia",
+        "Sociologia"
     )
 
     fun getModulesForDiscipline(discipline: String): List<EnemTaxonomyModule> {
@@ -417,7 +484,7 @@ object EnemTaxonomy {
         return MODULES_REGISTRY.filter {
             it.discipline.lowercase().contains(d) ||
             (d.contains("natureza") && (it.discipline == "Física" || it.discipline == "Biologia" || it.discipline == "Química")) ||
-            (d.contains("humanas") && (it.discipline == "História" || it.discipline == "Geografia"))
+            (d.contains("humanas") && (it.discipline == "História" || it.discipline == "Geografia" || it.discipline == "Filosofia" || it.discipline == "Sociologia"))
         }
     }
 
@@ -432,7 +499,9 @@ object EnemTaxonomy {
         TAXONOMIA_QUIMICA.keys.toList() +
         TAXONOMIA_LINGUAGENS.keys.toList() +
         TAXONOMIA_HISTORIA.keys.toList() +
-        TAXONOMIA_GEOGRAFIA.keys.toList()
+        TAXONOMIA_GEOGRAFIA.keys.toList() +
+        TAXONOMIA_FILOSOFIA.keys.toList() +
+        TAXONOMIA_SOCIOLOGIA.keys.toList()
 
     fun getSubtopicsForTopic(topic: String): List<String> =
         TAXONOMIA_MATEMATICA[topic] ?:
@@ -442,5 +511,7 @@ object EnemTaxonomy {
         TAXONOMIA_LINGUAGENS[topic] ?:
         TAXONOMIA_HISTORIA[topic] ?:
         TAXONOMIA_GEOGRAFIA[topic] ?:
+        TAXONOMIA_FILOSOFIA[topic] ?:
+        TAXONOMIA_SOCIOLOGIA[topic] ?:
         emptyList()
 }

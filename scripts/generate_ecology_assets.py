@@ -1,11 +1,15 @@
 import os
 from PIL import Image, ImageDraw, ImageFont
 
-# Set up paths for both Web and Android
+# Set up paths dynamically for Android and Web without leaking user profile paths
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+parent_dir = os.path.dirname(base_dir)
 DEST_DIRS = [
-    r"c:\Users\phcco\OneDrive\Área de Trabalho\knowverse-web\public\assets\images\ecologia",
-    r"c:\Users\phcco\OneDrive\Área de Trabalho\knowverse\app\src\main\assets\images\ecologia"
+    os.path.join(base_dir, "app", "src", "main", "assets", "images", "ecologia")
 ]
+web_target = os.path.join(parent_dir, "knowverse-web", "public", "assets", "images", "ecologia")
+if os.path.exists(os.path.dirname(web_target)):
+    DEST_DIRS.append(web_target)
 
 for d in DEST_DIRS:
     os.makedirs(d, exist_ok=True)

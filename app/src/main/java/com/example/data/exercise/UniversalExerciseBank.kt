@@ -4,6 +4,7 @@ import com.example.R
 import com.example.data.math.BasicMathCurriculum
 import com.example.data.math.CalculusExercisesBank
 import com.example.data.math.GeoGebraGraphConfig
+import com.example.data.math.GeoGebraCurriculumPresets
 
 enum class ExerciseDiscipline(val label: String, val tag: String) {
     ALL("Todas as Matérias", "all"),
@@ -761,6 +762,8 @@ print(f"Resultado: {res}")""",
         // ========================================================
         // 3. CÁLCULO I COM ELEMENTOS VISUAIS E DIAGNÓSTICO
         // ========================================================
+        // 3. CÁLCULO I COM ELEMENTOS VISUAIS E DIAGNÓSTICO INTERATIVO
+        // ========================================================
         UniversalExercise(
             id = "calc_vis_01",
             discipline = ExerciseDiscipline.CALCULUS,
@@ -768,8 +771,8 @@ print(f"Resultado: {res}")""",
             subtopic = "Limites & Continuidade",
             difficulty = "Fácil",
             source = "UFRJ / Análise Visual de Gráficos",
-            problemStatement = """Com base no gráfico diagnóstico dos limites laterais ao lado, analise o comportamento da função degrau modular f(x) = |x| / x na vizinhança de x = 0. Quais são os valores de lim_{x -> 0⁻} f(x), lim_{x -> 0⁺} f(x) e do limite bilateral lim_{x -> 0} f(x)?""",
-            visualDrawableRes = R.drawable.grafico_limites_laterais,
+            problemStatement = """Com base no gráfico interativo dos limites laterais, analise o comportamento da função degrau modular f(x) = |x| / x na vizinhança de x = 0. Quais são os valores de lim_{x -> 0⁻} f(x), lim_{x -> 0⁺} f(x) e do limite bilateral lim_{x -> 0} f(x)?""",
+            geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l2"),
             options = listOf(
                 "Pela esquerda = 1; Pela direita = -1; Limite bilateral = 0",
                 "Pela esquerda = -1; Pela direita = 1; Limite bilateral = Não Existe",
@@ -796,8 +799,8 @@ print(f"Resultado: {res}")""",
             subtopic = "Assíntotas & Infinito",
             difficulty = "Mediano",
             source = "UFRJ / Assíntotas Horizontais e Verticais",
-            problemStatement = """Observe o gráfico das assíntotas ao lado correspondente à função racional f(x) = (2x² + 3) / (x² - 4). Identifique as equações das assíntotas verticais e da assíntota horizontal da curva:""",
-            visualDrawableRes = R.drawable.grafico_assintotas,
+            problemStatement = """Observe a construção interativa das assíntotas correspondente à função racional f(x) = (2x² + 3) / (x² - 4). Identifique as equações das assíntotas verticais e da assíntota horizontal da curva:""",
+            geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l8"),
             options = listOf(
                 "Verticais: x = 2 e x = -2; Horizontal: y = 2",
                 "Verticais: x = 4 e x = -4; Horizontal: y = 0",
@@ -824,8 +827,8 @@ print(f"Resultado: {res}")""",
             subtopic = "Domínio & Gráficos",
             difficulty = "Mediano",
             source = "UFRJ / Furo e Indeterminação 0/0",
-            problemStatement = """O gráfico ao lado ilustra uma descontinuidade removível (furo) na função f(x) = (x² - 4) / (x - 2) no ponto x = 2. Embora a função não esteja definida em x = 2, calcule o valor do limite lim_{x -> 2} f(x) que preenche visualmente o furo:""",
-            visualDrawableRes = R.drawable.grafico_furo_indeterminacao,
+            problemStatement = """A construção gráfica ilustra uma descontinuidade removível (furo) na função f(x) = (x² - 4) / (x - 2) no ponto x = 2. Embora a função não esteja definida em x = 2, calcule o valor do limite lim_{x -> 2} f(x) que preenche visualmente o furo:""",
+            geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l4"),
             options = listOf(
                 "2",
                 "4",
@@ -853,8 +856,8 @@ print(f"Resultado: {res}")""",
             subtopic = "Derivadas & Retas Tangentes",
             difficulty = "Mediano",
             source = "UFRJ / Reta Tangente",
-            problemStatement = """No gráfico da reta tangente ao lado, a curva representa a parábola y = x². Determine a equação da reta tangente à curva no ponto P(1, 1):""",
-            visualDrawableRes = R.drawable.grafico_reta_tangente,
+            problemStatement = """No gráfico interativo com reta tangente deslizante, a curva representa a parábola y = x². Determine a equação da reta tangente à curva no ponto P(1, 1):""",
+            geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l11"),
             options = listOf(
                 "y = 2x - 1",
                 "y = 2x + 1",
@@ -882,8 +885,8 @@ print(f"Resultado: {res}")""",
             subtopic = "Otimização & Estudo de Funções",
             difficulty = "Mediano",
             source = "UFRJ / Pontos Críticos e Extremos",
-            problemStatement = """Com base no gráfico diagnóstico de estudo de funções ao lado, identifique a condição matemática necessária para a existência de um ponto de máximo ou mínimo local diferenciável em x = c:""",
-            visualDrawableRes = R.drawable.grafico_estudo_funcao_max_min,
+            problemStatement = """Com base no gráfico interativo de estudo de funções, identifique a condição matemática necessária para a existência de um ponto de máximo ou mínimo local diferenciável em x = c:""",
+            geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l16"),
             options = listOf(
                 "f(c) = 0 e f'(c) > 0",
                 "f'(c) = 0 (reta tangente horizontal) ou f'(c) não existe",
@@ -909,8 +912,8 @@ print(f"Resultado: {res}")""",
             subtopic = "Integrais & TFC",
             difficulty = "Fácil",
             source = "UFRJ / Área sob a Curva e TFC",
-            problemStatement = """O gráfico visual da integral ao lado ilustra a região plana delimitada sob a parábola f(x) = x², o eixo x e as retas verticais x = 0 e x = 3. Calcule o valor exato da área dessa região utilizando o Teorema Fundamental do Cálculo: ∫₀³ x² dx.""",
-            visualDrawableRes = R.drawable.grafico_integral_area,
+            problemStatement = """A visualização gráfica interativa da integral ilustra a região plana delimitada sob a parábola f(x) = x², o eixo x e as retas verticais x = 0 e x = 3. Calcule o valor exato da área dessa região utilizando o Teorema Fundamental do Cálculo: ∫₀³ x² dx.""",
+            geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l20"),
             options = listOf(
                 "3",
                 "6",
@@ -939,8 +942,8 @@ print(f"Resultado: {res}")""",
             subtopic = "Derivadas & Retas Tangentes",
             difficulty = "Mediano",
             source = "UFRJ / Aproximação Linear e Diferenciais",
-            problemStatement = """Com base no gráfico de aproximação linear ao lado, a linearização de uma função diferenciável f(x) em torno de x = a é dada pela equação da reta tangente L(x) = f(a) + f'(a)(x - a). Utilize a linearização de f(x) = √x em a = 4 para estimar o valor aproximado de √4,08:""",
-            visualDrawableRes = R.drawable.grafico_aproximacao_linear,
+            problemStatement = """Com base no gráfico interativo de aproximação linear, a linearização de uma função diferenciável f(x) em torno de x = a é dada pela equação da reta tangente L(x) = f(a) + f'(a)(x - a). Utilize a linearização de f(x) = √x em a = 4 para estimar o valor aproximado de √4,08:""",
+            geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l15"),
             options = listOf(
                 "2,01",
                 "2,02",
@@ -1522,6 +1525,7 @@ print(f"Área do Quadrado: {q.area()} cm²")""",
             }
 
             val hasVisuals = item.visualDrawableRes != null ||
+                    item.geoGebraConfig != null ||
                     item.visualTable != null ||
                     item.codeSnippet != null ||
                     item.terminalOutput != null

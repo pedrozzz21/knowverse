@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="prok" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#022C22" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="euk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="34" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">
+    Organização Celular Comparada: Procarionte vs. Eucarionte
+  </text>
+  <text x="400" y="52" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">
+    Diferenças estruturais fundamentais exigidas na Matriz de Ciências da Natureza do ENEM
+  </text>
+
+  <!-- Left: Procarionte -->
+  <g transform="translate(30, 70)">
+    <rect width="350" height="350" rx="10" fill="url(#prok)" stroke="#10B981" stroke-width="1.5"/>
+    <rect x="15" y="15" width="130" height="24" rx="4" fill="#10B981" fill-opacity="0.2"/>
+    <text x="25" y="32" fill="#34D399" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">PROCARIONTE</text>
+    <text x="160" y="32" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="11">(Bactérias e Arqueas)</text>
+
+    <!-- Capsule & Cell Wall & Membrane -->
+    <rect x="40" y="60" width="270" height="150" rx="40" fill="#065F46" fill-opacity="0.4" stroke="#059669" stroke-width="2"/>
+    <rect x="48" y="68" width="254" height="134" rx="34" fill="#047857" fill-opacity="0.2" stroke="#34D399" stroke-width="1.5"/>
+    <rect x="56" y="76" width="238" height="118" rx="28" fill="#022C22" stroke="#6EE7B7" stroke-width="1"/>
+
+    <!-- Flagellum -->
+    <path d="M 40 135 C 10 130, -10 160, -25 150 C -40 140, -45 170, -60 165" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+    <text x="10" y="180" fill="#6EE7B7" font-family="system-ui, sans-serif" font-size="10">Flagelo</text>
+
+    <!-- Nucleoid DNA (circular/desnudo) -->
+    <path d="M 120 120 C 140 100, 160 140, 190 125 C 220 110, 240 145, 210 155 C 180 165, 150 130, 130 150 Z" fill="none" stroke="#FBBF24" stroke-width="2.5" stroke-dasharray="2,2"/>
+    <text x="175" y="138" fill="#FDE68A" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Nucleoide</text>
+    <text x="175" y="152" fill="#FDE68A" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">(DNA circular s/ histonas)</text>
+
+    <!-- Plasmid -->
+    <circle cx="250" cy="110" r="10" fill="none" stroke="#F59E0B" stroke-width="2"/>
+    <text x="250" y="96" fill="#FBBF24" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">Plasmídeo</text>
+
+    <!-- Ribosomes 70S -->
+    <circle cx="95" cy="105" r="3" fill="#6EE7B7"/>
+    <circle cx="105" cy="155" r="3" fill="#6EE7B7"/>
+    <circle cx="230" cy="165" r="3" fill="#6EE7B7"/>
+    <circle cx="260" cy="140" r="3" fill="#6EE7B7"/>
+    <text x="100" y="96" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="9">Ribossomos 70S</text>
+
+    <!-- Features list -->
+    <g transform="translate(20, 230)">
+      <text x="0" y="15" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="11">• Sem envoltório nuclear (carioteca ausente)</text>
+      <text x="0" y="35" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="11">• Sem organelas membranosas (sem mitocôndria)</text>
+      <text x="0" y="55" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="11">• Parede de peptidoglicano (alvo de antibióticos)</text>
+      <text x="0" y="75" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="11">• Divisão rápida por fissão binária simples</text>
+      <text x="0" y="95" fill="#34D399" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Destaque ENEM: Plasmídeos conferem resistência</text>
+    </g>
+  </g>
+
+  <!-- Right: Eucarionte -->
+  <g transform="translate(420, 70)">
+    <rect width="350" height="350" rx="10" fill="url(#euk)" stroke="#818CF8" stroke-width="1.5"/>
+    <rect x="15" y="15" width="130" height="24" rx="4" fill="#6366F1" fill-opacity="0.2"/>
+    <text x="25" y="32" fill="#A5B4FC" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">EUCARIONTE</text>
+    <text x="160" y="32" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="11">(Animais, Vegetais, Fungos)</text>
+
+    <!-- Plasma membrane -->
+    <ellipse cx="175" cy="135" rx="145" ry="80" fill="#1E293B" stroke="#818CF8" stroke-width="1.8"/>
+
+    <!-- Nucleus with double membrane & nucleolus -->
+    <ellipse cx="130" cy="135" rx="45" ry="38" fill="#312E81" stroke="#A5B4FC" stroke-width="2"/>
+    <circle cx="125" cy="135" r="14" fill="#C7D2FE"/>
+    <text x="130" y="122" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Núcleo</text>
+    <text x="130" y="158" fill="#E0E7FF" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">(Carioteca + DNA linear)</text>
+
+    <!-- Mitochondria -->
+    <g transform="translate(240, 100)">
+      <ellipse cx="25" cy="18" rx="28" ry="16" fill="#B45309" stroke="#F59E0B" stroke-width="1.5"/>
+      <path d="M 8 18 Q 15 10 25 18 T 42 18" fill="none" stroke="#FDE68A" stroke-width="1.5"/>
+      <text x="25" y="44" fill="#FCD34D" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">Mitocôndria</text>
+    </g>
+
+    <!-- Golgi / Reticulum hints -->
+    <path d="M 180 145 Q 200 135 190 160 Q 210 150 200 175" fill="none" stroke="#F43F5E" stroke-width="3"/>
+    <text x="235" y="165" fill="#FDA4AF" font-family="system-ui, sans-serif" font-size="9">Golgi &amp; RER</text>
+
+    <!-- Ribosomes 80S -->
+    <circle cx="210" cy="115" r="3.5" fill="#818CF8"/>
+    <circle cx="270" cy="145" r="3.5" fill="#818CF8"/>
+    <text x="245" y="85" fill="#C7D2FE" font-family="system-ui, sans-serif" font-size="9">Ribossomos 80S</text>
+
+    <!-- Features list -->
+    <g transform="translate(20, 230)">
+      <text x="0" y="15" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="11">• Núcleo delimitado por carioteca com poros</text>
+      <text x="0" y="35" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="11">• Compartimentação: Mitocôndria, Golgi, Retículo</text>
+      <text x="0" y="55" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="11">• Citoesqueleto dinâmico (actina, microtúbulos)</text>
+      <text x="0" y="75" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="11">• DNA linear condensado em cromossomos (histonas)</text>
+      <text x="0" y="95" fill="#A5B4FC" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Destaque ENEM: Endossimbiose originou organelas</text>
+    </g>
+  </g>
+</svg>

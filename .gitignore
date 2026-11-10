@@ -59,6 +59,22 @@ google-services.json
 *.pem
 secrets/
 
+# Material didático externo / apostilas de terceiros e dados extraídos
+apostila/
+app/src/main/assets/images/apostila/
+app/src/main/assets/questoes_apostila.json
+
+# Scratch, temporários e caches de desenvolvimento
+scratch/
+temp/
+tmp/
+.kotlin/
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
 # AI Studio and agent internal artifacts
 .aistudio/
 public/assets/aistudio/

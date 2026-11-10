@@ -1224,8 +1224,14 @@ fun GeoGebraMathGraphView(
                                                 .border(1.5.dp, chipColor, CircleShape)
                                         )
                                         Spacer(modifier = Modifier.width(6.dp))
+                                        val coordsStr = "(${pt.x}, ${pt.y})"
+                                        val displayLabel = if (pt.label.contains(coordsStr) || pt.label.contains("(") || pt.label.endsWith(")")) {
+                                            pt.label
+                                        } else {
+                                            "${pt.label}: $coordsStr"
+                                        }
                                         Text(
-                                            text = "${pt.label}: (${pt.x}, ${pt.y}) ${if (pt.isOpenCircle) "[Buraco/Não Definida]" else ""}",
+                                            text = "$displayLabel ${if (pt.isOpenCircle) "[Descontinuidade]" else ""}".trim(),
                                             style = MaterialTheme.typography.bodySmall.copy(
                                                 color = TextSecondary,
                                                 fontSize = 11.sp
@@ -2072,7 +2078,12 @@ fun NativeMathGraphCanvas(
 
                     // Posicionamento inteligente anti-colisão do rótulo
                     drawIntoCanvas { canvas ->
-                        val label = "${pt.label} (${formatCoord(pt.x)}, ${formatCoord(pt.y)})"
+                        val coordsStr = "(${formatCoord(pt.x)}, ${formatCoord(pt.y)})"
+                        val label = if (pt.label.contains(coordsStr) || pt.label.contains("(") || pt.label.endsWith(")")) {
+                            pt.label
+                        } else {
+                            "${pt.label} $coordsStr"
+                        }
                         val textWidth = ptPaint.measureText(label)
                         val textHeight = 22f
 

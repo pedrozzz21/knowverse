@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="950" height="560" fill="url(#bg)" rx="16"/>
+
+  <!-- Title & Header -->
+  <text x="475" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+    2ª Lei de Mendel vs. Ligação Gênica (Linkage)
+  </text>
+  <text x="475" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">
+    Segregação Independente em Cromossomos Distintos versus Genes Sintênicos e Crossing-Over
+  </text>
+
+  <!-- LEFT PANEL: 2ª Lei de Mendel (Segregação Independente) -->
+  <g transform="translate(30, 90)">
+    <rect width="425" height="435" rx="12" fill="url(#cardGrad)" stroke="#38BDF8" stroke-width="1.5" filter="url(#shadow)"/>
+    
+    <rect x="20" y="18" width="240" height="28" rx="14" fill="#0369A1" opacity="0.35"/>
+    <text x="140" y="37" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#38BDF8" text-anchor="middle">
+      SEGREGAÇÃO INDEPENDENTE
+    </text>
+
+    <text x="25" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">
+      • Genes em <tspan fill="#38BDF8" font-weight="bold">pares de cromossomos homólogos distintos</tspan>.
+    </text>
+    <text x="25" y="95" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">
+      • Orientação aleatória na Metáfase I da Meiose.
+    </text>
+
+    <!-- Chromosomes visual -->
+    <g transform="translate(45, 120)">
+      <!-- Pair 1: Aa -->
+      <rect x="0" y="10" width="22" height="120" rx="10" fill="#38BDF8" opacity="0.85"/>
+      <circle cx="11" cy="40" r="7" fill="#0284C7"/>
+      <text x="11" y="44" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">A</text>
+
+      <rect x="36" y="10" width="22" height="120" rx="10" fill="#0284C7" opacity="0.65"/>
+      <circle cx="47" cy="40" r="7" fill="#0369A1"/>
+      <text x="47" y="44" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">a</text>
+      <text x="30" y="145" font-family="sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">Par Homólogo 1</text>
+
+      <!-- Pair 2: Bb -->
+      <rect x="110" y="25" width="20" height="90" rx="10" fill="#34D399" opacity="0.85"/>
+      <circle cx="120" cy="55" r="7" fill="#059669"/>
+      <text x="120" y="59" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">B</text>
+
+      <rect x="142" y="25" width="20" height="90" rx="10" fill="#059669" opacity="0.65"/>
+      <circle cx="152" cy="55" r="7" fill="#047857"/>
+      <text x="152" y="59" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">b</text>
+      <text x="136" y="145" font-family="sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">Par Homólogo 2</text>
+    </g>
+
+    <!-- Gametes box -->
+    <rect x="25" y="285" width="375" height="125" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+    <text x="40" y="310" font-family="sans-serif" font-size="12" font-weight="bold" fill="#F8FAFC">
+      Gametas Formados por Di-híbrido (AaBb):
+    </text>
+    
+    <!-- 4 Gametes 25% each -->
+    <g transform="translate(35, 325)">
+      <rect x="0" y="0" width="75" height="42" rx="6" fill="#0369A1" opacity="0.4" stroke="#38BDF8" stroke-width="1"/>
+      <text x="37" y="20" font-family="sans-serif" font-size="13" font-weight="bold" fill="#38BDF8" text-anchor="middle">AB</text>
+      <text x="37" y="35" font-family="sans-serif" font-size="11" fill="#F8FAFC" text-anchor="middle">25% (1/4)</text>
+
+      <rect x="90" y="0" width="75" height="42" rx="6" fill="#0369A1" opacity="0.4" stroke="#38BDF8" stroke-width="1"/>
+      <text x="127" y="20" font-family="sans-serif" font-size="13" font-weight="bold" fill="#38BDF8" text-anchor="middle">Ab</text>
+      <text x="127" y="35" font-family="sans-serif" font-size="11" fill="#F8FAFC" text-anchor="middle">25% (1/4)</text>
+
+      <rect x="180" y="0" width="75" height="42" rx="6" fill="#0369A1" opacity="0.4" stroke="#38BDF8" stroke-width="1"/>
+      <text x="217" y="20" font-family="sans-serif" font-size="13" font-weight="bold" fill="#38BDF8" text-anchor="middle">aB</text>
+      <text x="217" y="35" font-family="sans-serif" font-size="11" fill="#F8FAFC" text-anchor="middle">25% (1/4)</text>
+
+      <rect x="270" y="0" width="75" height="42" rx="6" fill="#0369A1" opacity="0.4" stroke="#38BDF8" stroke-width="1"/>
+      <text x="307" y="20" font-family="sans-serif" font-size="13" font-weight="bold" fill="#38BDF8" text-anchor="middle">ab</text>
+      <text x="307" y="35" font-family="sans-serif" font-size="11" fill="#F8FAFC" text-anchor="middle">25% (1/4)</text>
+    </g>
+
+    <text x="40" y="395" font-family="sans-serif" font-size="11" fill="#38BDF8">
+      Proporção Fenotípica F2: 9 A_B_ : 3 A_bb : 3 aaB_ : 1 aabb
+    </text>
+  </g>
+
+  <!-- RIGHT PANEL: Linkage e Crossing-Over -->
+  <g transform="translate(495, 90)">
+    <rect width="425" height="435" rx="12" fill="url(#cardGrad)" stroke="#A78BFA" stroke-width="1.5" filter="url(#shadow)"/>
+    
+    <rect x="20" y="18" width="220" height="28" rx="14" fill="#6D28D9" opacity="0.35"/>
+    <text x="130" y="37" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#C084FC" text-anchor="middle">
+      LIGAÇÃO GÊNICA (LINKAGE)
+    </text>
+
+    <text x="25" y="75" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">
+      • Genes no <tspan fill="#C084FC" font-weight="bold">mesmo cromossomo (genes sintênicos)</tspan>.
+    </text>
+    <text x="25" y="95" font-family="system-ui, sans-serif" font-size="12" fill="#CBD5E1">
+      • Segregam juntos a menos que ocorra <tspan fill="#F43F5E" font-weight="bold">crossing-over</tspan>.
+    </text>
+
+    <!-- Chromosomes visual with Linkage and crossing -->
+    <g transform="translate(50, 115)">
+      <!-- Homolog 1 -->
+      <rect x="10" y="10" width="24" height="125" rx="11" fill="#8B5CF6" opacity="0.9"/>
+      <circle cx="22" cy="35" r="7" fill="#6D28D9"/>
+      <text x="22" y="39" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">A</text>
+      
+      <circle cx="22" cy="100" r="7" fill="#6D28D9"/>
+      <text x="22" y="104" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">B</text>
+
+      <!-- Crossing-over crossover indicator -->
+      <path d="M 38 65 L 56 65" stroke="#F43F5E" stroke-width="2" stroke-dasharray="3,3"/>
+      <text x="47" y="60" font-family="sans-serif" font-size="9" fill="#FB7185" text-anchor="middle">Quiasma</text>
+
+      <!-- Homolog 2 -->
+      <rect x="60" y="10" width="24" height="125" rx="11" fill="#EC4899" opacity="0.8"/>
+      <circle cx="72" cy="35" r="7" fill="#BE185D"/>
+      <text x="72" y="39" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">a</text>
+      
+      <circle cx="72" cy="100" r="7" fill="#BE185D"/>
+      <text x="72" y="104" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">b</text>
+
+      <text x="47" y="148" font-family="sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">Cromossomos Homólogos (Configuração Cis: AB / ab)</text>
+    </g>
+
+    <!-- Gametes box: Parentais vs Recombinantes -->
+    <rect x="25" y="285" width="375" height="125" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1"/>
+    
+    <g transform="translate(35, 300)">
+      <!-- Parentais -->
+      <text x="0" y="14" font-family="sans-serif" font-size="11" font-weight="bold" fill="#34D399">
+        Gametas Parentais (>50%):
+      </text>
+      <rect x="0" y="22" width="75" height="38" rx="6" fill="#065F46" opacity="0.5" stroke="#34D399" stroke-width="1"/>
+      <text x="37" y="38" font-family="sans-serif" font-size="12" font-weight="bold" fill="#34D399" text-anchor="middle">AB</text>
+      <text x="37" y="52" font-family="sans-serif" font-size="10" fill="#D1FAE5" text-anchor="middle">(100-FR)/2</text>
+
+      <rect x="85" y="22" width="75" height="38" rx="6" fill="#065F46" opacity="0.5" stroke="#34D399" stroke-width="1"/>
+      <text x="122" y="38" font-family="sans-serif" font-size="12" font-weight="bold" fill="#34D399" text-anchor="middle">ab</text>
+      <text x="122" y="52" font-family="sans-serif" font-size="10" fill="#D1FAE5" text-anchor="middle">(100-FR)/2</text>
+
+      <!-- Recombinantes -->
+      <text x="185" y="14" font-family="sans-serif" font-size="11" font-weight="bold" fill="#F43F5E">
+        Recombinantes (&lt;50%):
+      </text>
+      <rect x="185" y="22" width="75" height="38" rx="6" fill="#881337" opacity="0.5" stroke="#FB7185" stroke-width="1"/>
+      <text x="222" y="38" font-family="sans-serif" font-size="12" font-weight="bold" fill="#FB7185" text-anchor="middle">Ab</text>
+      <text x="222" y="52" font-family="sans-serif" font-size="10" fill="#FFE4E6" text-anchor="middle">FR / 2</text>
+
+      <rect x="270" y="22" width="75" height="38" rx="6" fill="#881337" opacity="0.5" stroke="#FB7185" stroke-width="1"/>
+      <text x="307" y="38" font-family="sans-serif" font-size="12" font-weight="bold" fill="#FB7185" text-anchor="middle">aB</text>
+      <text x="307" y="52" font-family="sans-serif" font-size="10" fill="#FFE4E6" text-anchor="middle">FR / 2</text>
+
+      <!-- Formula Note -->
+      <text x="0" y="95" font-family="sans-serif" font-size="11" fill="#C084FC">
+        Taxa de Recombinação (FR) = Distância Gênica em centimorgans (cM)
+      </text>
+    </g>
+  </g>
+</svg>

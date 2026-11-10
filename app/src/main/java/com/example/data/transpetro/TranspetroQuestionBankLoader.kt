@@ -127,6 +127,7 @@ object TranspetroQuestionBankLoader {
                 if (id.isEmpty() || options.size < 2 || correctAnswer.isNullOrEmpty()) {
                     return@mapNotNull null
                 }
+                val itemLessonId = (item["lessonId"] as? String)?.trim().orEmpty()
                 TranspetroRawQuestion(
                     id = id,
                     subject = subject,
@@ -138,7 +139,7 @@ object TranspetroQuestionBankLoader {
                     correct_answer = correctAnswer,
                     explanation = explanation,
                     origin_label = originLabel,
-                    lessonId = resolveLessonId(id, subject, topic)
+                    lessonId = if (itemLessonId.isNotEmpty()) itemLessonId else resolveLessonId(id, subject, topic)
                 )
             }
         }.getOrDefault(emptyList())
@@ -237,18 +238,43 @@ object TranspetroQuestionBankLoader {
     }
 
     private fun resolveLessonId(id: String, subject: String, topic: String): String {
-        return explicitQuestionLessonMap[id] ?: run {
-            when {
-                subject.contains("Administrativos", ignoreCase = true) -> "tp_adm_m1_a1"
-                subject.contains("Finanças", ignoreCase = true) -> "tp_fin_m1_a1"
-                subject.contains("Logística", ignoreCase = true) -> "tp_log_m1_a1"
-                subject.contains("Informática", ignoreCase = true) -> "tp_inf_m1_a1"
-                subject.contains("Portuguesa", ignoreCase = true) -> "tp_por_m1_a1"
-                subject.contains("Matemática", ignoreCase = true) -> "tp_mat_m1_a1"
-                else -> "tp_adm_m1_a1"
-            }
+        explicitQuestionLessonMap[id]?.let { return it }
+        val realMatch = Regex("""TP-REAL-\d{4}-(\d{2})""").find(id)
+        if (realMatch != null) {
+            val num = realMatch.groupValues[1].toIntOrNull() ?: 1
+            realQuestionLessonIdMap[num]?.let { return it }
+        }
+        return when {
+            subject.contains("Administrativos", ignoreCase = true) -> "tp_adm_m1_a1"
+            subject.contains("Finanças", ignoreCase = true) -> "tp_fin_m1_a1"
+            subject.contains("Logística", ignoreCase = true) -> "tp_log_m1_a1"
+            subject.contains("Informática", ignoreCase = true) -> "tp_inf_m1_a1"
+            subject.contains("Portuguesa", ignoreCase = true) -> "tp_por_m1_a1"
+            subject.contains("Matemática", ignoreCase = true) -> "tp_mat_m1_a1"
+            else -> "tp_adm_m1_a1"
         }
     }
+
+    private val realQuestionLessonIdMap: Map<Int, String> = mapOf(
+        1 to "tp_por_m1_a1", 2 to "tp_por_m1_a2", 3 to "tp_por_m2_a1", 4 to "tp_por_m2_a2",
+        5 to "tp_por_m3_a1", 6 to "tp_por_m3_a2", 7 to "tp_por_m7_a1", 8 to "tp_por_m8_a1",
+        9 to "tp_por_m9_a1", 10 to "tp_por_m11_a1",
+        11 to "tp_mat_m1_a1", 12 to "tp_mat_m1_a2", 13 to "tp_mat_m1_a2", 14 to "tp_mat_m2_a1",
+        15 to "tp_mat_m2_a2", 16 to "tp_mat_m3_a1", 17 to "tp_mat_m4_a1", 18 to "tp_mat_m6_a1",
+        19 to "tp_mat_m8_a1", 20 to "tp_mat_m9_a1",
+        21 to "tp_adm_m1_a2", 22 to "tp_adm_m1_a3", 23 to "tp_adm_m1_a4", 24 to "tp_adm_m2_a1",
+        25 to "tp_adm_m2_a2", 26 to "tp_adm_m3_a1", 27 to "tp_adm_m3_a2", 28 to "tp_adm_m3_a3",
+        29 to "tp_adm_m3_a4", 30 to "tp_adm_m3_a5", 31 to "tp_adm_m3_a6", 32 to "tp_adm_m4_a2",
+        33 to "tp_adm_m5_a1", 34 to "tp_adm_m6_a1", 35 to "tp_adm_m9_a1",
+        36 to "tp_fin_m1_a1", 37 to "tp_fin_m1_a2", 38 to "tp_fin_m2_a1", 39 to "tp_fin_m2_a2",
+        40 to "tp_fin_m3_a1", 41 to "tp_fin_m3_a2", 42 to "tp_fin_m3_a3", 43 to "tp_fin_m4_a1",
+        44 to "tp_fin_m4_a2",
+        45 to "tp_log_m1_a1", 46 to "tp_log_m1_a1", 47 to "tp_log_m1_a2", 48 to "tp_log_m2_a1",
+        49 to "tp_log_m2_a2", 50 to "tp_log_m2_a3", 51 to "tp_log_m3_a1", 52 to "tp_log_m4_a1",
+        53 to "tp_log_m5_a1", 54 to "tp_log_m6_a1",
+        55 to "tp_inf_m1_a1", 56 to "tp_inf_m1_a2", 57 to "tp_inf_m1_a2", 58 to "tp_inf_m1_a2",
+        59 to "tp_inf_m2_a1", 60 to "tp_inf_m4_a1"
+    )
 
     private val explicitQuestionLessonMap: Map<String, String> = mapOf(
         // Processos Administrativos e Legislação (41)

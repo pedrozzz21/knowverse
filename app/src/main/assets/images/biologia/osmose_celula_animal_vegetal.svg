@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="30" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">
+    Osmose Comparada: Célula Animal (Hemácia) vs. Célula Vegetal
+  </text>
+  <text x="400" y="48" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">
+    A influência da parede celular celulósica frente a gradientes de concentração osmótica
+  </text>
+
+  <!-- Column Headers -->
+  <!-- Col 1: Meio Hipertônico -->
+  <g transform="translate(40, 65)">
+    <rect width="220" height="35" rx="6" fill="#EF4444" fill-opacity="0.2" stroke="#EF4444" stroke-width="1"/>
+    <text x="110" y="20" fill="#FCA5A5" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">MEIO HIPERTÔNICO</text>
+    <text x="110" y="31" fill="#F87171" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">(Solução mais concentrada / Perda de H₂O)</text>
+  </g>
+
+  <!-- Col 2: Meio Isotônico -->
+  <g transform="translate(290, 65)">
+    <rect width="220" height="35" rx="6" fill="#3B82F6" fill-opacity="0.2" stroke="#3B82F6" stroke-width="1"/>
+    <text x="110" y="20" fill="#93C5FD" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">MEIO ISOTÔNICO</text>
+    <text x="110" y="31" fill="#60A5FA" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">(Concentrações iguais / Equilíbrio)</text>
+  </g>
+
+  <!-- Col 3: Meio Hipotônico -->
+  <g transform="translate(540, 65)">
+    <rect width="220" height="35" rx="6" fill="#10B981" fill-opacity="0.2" stroke="#10B981" stroke-width="1"/>
+    <text x="110" y="20" fill="#6EE7B7" font-family="system-ui, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">MEIO HIPOTÔNICO</text>
+    <text x="110" y="31" fill="#34D399" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">(Solução diluída / Influxo de H₂O)</text>
+  </g>
+
+  <!-- Row 1: Célula Animal (Hemácia) -->
+  <text x="40" y="125" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">
+    1. Célula Animal (Hemácia Humana — Sem Parede Celular):
+  </text>
+
+  <!-- Animal Col 1: Crenada -->
+  <g transform="translate(70, 140)">
+    <rect width="160" height="110" rx="8" fill="#1E293B" stroke="#334155"/>
+    <!-- Shriveled red blood cell (Crenada) -->
+    <path d="M 60 40 Q 70 30 80 42 Q 90 32 100 45 Q 110 55 98 65 Q 105 75 92 82 Q 78 85 70 78 Q 55 82 58 68 Q 48 55 60 40 Z" fill="#991B1B" stroke="#F87171" stroke-width="1.5"/>
+    <!-- Water arrows leaving -->
+    <path d="M 80 55 L 125 35" stroke="#38BDF8" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="80" y="98" fill="#FCA5A5" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">CRENAÇÃO</text>
+    <text x="80" y="107" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="8.5" text-anchor="middle">(Célula murcha / desidratada)</text>
+  </g>
+
+  <!-- Animal Col 2: Normal / Isotônica -->
+  <g transform="translate(320, 140)">
+    <rect width="160" height="110" rx="8" fill="#1E293B" stroke="#334155"/>
+    <!-- Normal biconcave disc -->
+    <ellipse cx="80" cy="55" rx="38" ry="24" fill="#DC2626" stroke="#F87171" stroke-width="1.5"/>
+    <ellipse cx="80" cy="55" rx="18" ry="10" fill="#991B1B" opacity="0.6"/>
+    <text x="80" y="98" fill="#93C5FD" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">VOLUME NORMAL</text>
+    <text x="80" y="107" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="8.5" text-anchor="middle">(Fluxo de H₂O em equilíbrio)</text>
+  </g>
+
+  <!-- Animal Col 3: Hemólise / Lise -->
+  <g transform="translate(570, 140)">
+    <rect width="160" height="110" rx="8" fill="#1E293B" stroke="#EF4444" stroke-width="1.2" stroke-dasharray="3,3"/>
+    <!-- Burst cell with hemoglobin droplets -->
+    <path d="M 55 40 Q 75 35 90 45 M 105 50 Q 115 65 100 80 M 80 85 Q 60 85 55 70" stroke="#EF4444" stroke-width="2" fill="none"/>
+    <circle cx="80" cy="58" r="6" fill="#DC2626"/>
+    <circle cx="95" cy="45" r="4" fill="#DC2626"/>
+    <circle cx="65" cy="72" r="5" fill="#DC2626"/>
+    <circle cx="110" cy="75" r="3" fill="#DC2626"/>
+    <text x="80" y="98" fill="#F87171" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">LISE CELULAR (HEMÓLISE)</text>
+    <text x="80" y="107" fill="#FCA5A5" font-family="system-ui, sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">Célula Rompe e Estoura!</text>
+  </g>
+
+  <!-- Row 2: Célula Vegetal -->
+  <text x="40" y="275" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">
+    2. Célula Vegetal (Com Parede Celular Celulósica Rígida):
+  </text>
+
+  <!-- Plant Col 1: Plasmolisada -->
+  <g transform="translate(70, 290)">
+    <rect width="160" height="135" rx="8" fill="#1E293B" stroke="#334155"/>
+    <!-- Rigid cell wall -->
+    <rect x="25" y="15" width="110" height="75" rx="4" fill="none" stroke="#059669" stroke-width="3"/>
+    <!-- Detached plasma membrane -->
+    <rect x="42" y="28" width="75" height="50" rx="8" fill="#065F46" stroke="#34D399" stroke-width="1.5"/>
+    <!-- Small shriveled vacuole -->
+    <ellipse cx="80" cy="53" rx="18" ry="12" fill="#0284C7" fill-opacity="0.8"/>
+    <text x="80" y="108" fill="#FCA5A5" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">PLASMÓLISE</text>
+    <text x="80" y="120" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="8.5" text-anchor="middle">(Membrana descola da parede)</text>
+  </g>
+
+  <!-- Plant Col 2: Flácida -->
+  <g transform="translate(320, 290)">
+    <rect width="160" height="135" rx="8" fill="#1E293B" stroke="#334155"/>
+    <rect x="25" y="15" width="110" height="75" rx="4" fill="none" stroke="#059669" stroke-width="3"/>
+    <rect x="29" y="19" width="102" height="67" rx="3" fill="#065F46" stroke="#34D399" stroke-width="1.2"/>
+    <ellipse cx="80" cy="53" rx="30" ry="18" fill="#0284C7" fill-opacity="0.8"/>
+    <text x="80" y="108" fill="#93C5FD" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">CÉLULA FLÁCIDA</text>
+    <text x="80" y="120" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="8.5" text-anchor="middle">(Equilíbrio sem tensão elástica)</text>
+  </g>
+
+  <!-- Plant Col 3: Túrgida -->
+  <g transform="translate(570, 290)">
+    <rect width="160" height="135" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.2"/>
+    <rect x="25" y="15" width="110" height="75" rx="4" fill="none" stroke="#10B981" stroke-width="3.5"/>
+    <!-- Plasma membrane pressed against wall -->
+    <rect x="27" y="17" width="106" height="71" rx="3" fill="#047857" stroke="#6EE7B7" stroke-width="1.5"/>
+    <!-- Giant pressurized vacuole -->
+    <rect x="35" y="24" width="90" height="57" rx="6" fill="#38BDF8" fill-opacity="0.9"/>
+    <text x="80" y="56" fill="#0C4A6E" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" text-anchor="middle">Vacúolo Cheio</text>
+    <text x="80" y="108" fill="#6EE7B7" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">TURGÊNCIA (TÚRGIDA)</text>
+    <text x="80" y="120" fill="#34D399" font-family="system-ui, sans-serif" font-size="8.5" font-weight="bold" text-anchor="middle">NÃO ESTOURA! Parede protege.</text>
+  </g>
+</svg>

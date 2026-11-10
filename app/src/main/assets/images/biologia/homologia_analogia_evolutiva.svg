@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+
+  <text x="400" y="32" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">
+    Evidências da Evolução: Homologia vs. Analogia
+  </text>
+  <text x="400" y="50" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">
+    Irradiação adaptativa (mesma origem) vs. Convergência adaptativa (mesma função)
+  </text>
+
+  <!-- Left: HOMOLOGIA (Irradiação Adaptativa) -->
+  <g transform="translate(40, 75)">
+    <rect width="340" height="245" rx="8" fill="#1E293B" stroke="#6366F1" stroke-width="1.5"/>
+    <rect x="15" y="12" width="220" height="24" rx="4" fill="#6366F1" fill-opacity="0.2"/>
+    <text x="25" y="28" fill="#A5B4FC" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">
+      HOMOLOGIA (Irradiação)
+    </text>
+
+    <!-- Scheme: Common Ancestor radiating to different niches -->
+    <g transform="translate(170, 110)">
+      <!-- Common Ancestor -->
+      <circle cx="0" cy="0" r="18" fill="#4338CA" stroke="#818CF8" stroke-width="2"/>
+      <text x="0" y="4" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="8" font-weight="bold" text-anchor="middle">Ancestral</text>
+
+      <!-- Radiating lines -->
+      <line x1="15" y1="-10" x2="80" y2="-45" stroke="#818CF8" stroke-width="2"/>
+      <line x1="18" y1="0" x2="90" y2="0" stroke="#818CF8" stroke-width="2"/>
+      <line x1="15" y1="10" x2="80" y2="45" stroke="#818CF8" stroke-width="2"/>
+      <line x1="-15" y1="10" x2="-80" y2="45" stroke="#818CF8" stroke-width="2"/>
+
+      <!-- End points (Mammals Forelimbs) -->
+      <text x="90" y="-48" fill="#C7D2FE" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">Braço Humano (Manipular)</text>
+      <text x="100" y="4" fill="#C7D2FE" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">Asa de Morcego (Voar)</text>
+      <text x="90" y="55" fill="#C7D2FE" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">Nadadeira de Baleia (Nadar)</text>
+      <text x="-90" y="55" fill="#C7D2FE" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold" text-anchor="end">Pata de Cavalo (Correr)</text>
+    </g>
+
+    <!-- Key rule -->
+    <g transform="translate(15, 175)">
+      <rect width="310" height="58" rx="4" fill="#0F172A" stroke="#334155"/>
+      <text x="10" y="18" fill="#FBBF24" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">CONCEITO CHAVE:</text>
+      <text x="10" y="34" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">• <tspan fill="#34D399" font-weight="bold">MESMA origem embrionária</tspan> (esqueleto ósseo homólogo)</text>
+      <text x="10" y="48" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">• Funções iguais OU diferentes em nichos ecológicos distintos</text>
+    </g>
+  </g>
+
+  <!-- Right: ANALOGIA (Convergência Adaptativa) -->
+  <g transform="translate(420, 75)">
+    <rect width="340" height="245" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.5"/>
+    <rect x="15" y="12" width="220" height="24" rx="4" fill="#10B981" fill-opacity="0.2"/>
+    <text x="25" y="28" fill="#6EE7B7" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">
+      ANALOGIA (Convergência)
+    </text>
+
+    <!-- Scheme: Different Ancestors converging to same niche -->
+    <g transform="translate(170, 110)">
+      <!-- Distinct Ancestors on left -->
+      <circle cx="-90" cy="-35" r="14" fill="#047857" stroke="#34D399" stroke-width="1.5"/>
+      <text x="-90" y="-31" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="7.5" text-anchor="middle">Inseto</text>
+
+      <circle cx="-90" cy="35" r="14" fill="#047857" stroke="#34D399" stroke-width="1.5"/>
+      <text x="-90" y="39" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="7.5" text-anchor="middle">Ave</text>
+
+      <!-- Converging lines -->
+      <line x1="-70" y1="-25" x2="20" y2="0" stroke="#34D399" stroke-width="2"/>
+      <line x1="-70" y1="25" x2="20" y2="0" stroke="#34D399" stroke-width="2"/>
+
+      <!-- Common Adaptation Goal -->
+      <rect x="30" y="-22" width="105" height="44" rx="6" fill="#065F46" stroke="#10B981"/>
+      <text x="82" y="-3" fill="#BBF7D0" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">MESMA FUNÇÃO</text>
+      <text x="82" y="12" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">(Voo / Asa)</text>
+    </g>
+
+    <!-- Key rule -->
+    <g transform="translate(15, 175)">
+      <rect width="310" height="58" rx="4" fill="#0F172A" stroke="#334155"/>
+      <text x="10" y="18" fill="#FBBF24" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">CONCEITO CHAVE:</text>
+      <text x="10" y="34" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">• <tspan fill="#F87171" font-weight="bold">ORIGENS embrionárias DIFERENTES</tspan> (linhagens distantes)</text>
+      <text x="10" y="48" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">• MESMA função adaptativa selecionada pela pressão ambiental</text>
+    </g>
+  </g>
+
+  <!-- Bottom Synthesis Banner -->
+  <g transform="translate(40, 335)">
+    <rect width="720" height="95" rx="8" fill="#0F172A" stroke="#334155"/>
+    <text x="20" y="22" fill="#FBBF24" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">
+      EXEMPLOS CLÁSSICOS QUE MAIS CAEM NO ENEM:
+    </text>
+    <text x="20" y="44" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10.5">
+      • <tspan fill="#A5B4FC" font-weight="bold">Homologia:</tspan> Nadadeira da baleia e asa do morcego (ambos mamíferos, mesmo ancestral comum, membros adaptados a nichos diferentes).
+    </text>
+    <text x="20" y="66" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10.5">
+      • <tspan fill="#6EE7B7" font-weight="bold">Analogia:</tspan> Corpo hidrodinâmico do Tubarão (peixe cartilaginoso) e Golfinho (mamífero) ou asa da ave e asa da borboleta.
+    </text>
+  </g>
+</svg>

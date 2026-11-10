@@ -329,19 +329,23 @@ def main():
         "gravitacao.png": generate_gravitacao
     }
     
-    # Pastas de destino
-    android_dir = r"c:\Users\phcco\OneDrive\Área de Trabalho\knowverse\app\src\main\assets\images\fisica"
-    web_dir = r"c:\Users\phcco\OneDrive\Área de Trabalho\knowverse-web\public\assets\images\fisica"
+    # Pastas de destino dinâmicas
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    parent_dir = os.path.dirname(base_dir)
+    android_dir = os.path.join(base_dir, "app", "src", "main", "assets", "images", "fisica")
+    web_dir = os.path.join(parent_dir, "knowverse-web", "public", "assets", "images", "fisica")
     
     os.makedirs(android_dir, exist_ok=True)
-    os.makedirs(web_dir, exist_ok=True)
+    if os.path.exists(os.path.dirname(os.path.dirname(web_dir))):
+        os.makedirs(web_dir, exist_ok=True)
     
     for filename, gen_fn in generators.items():
         img = gen_fn()
         android_path = os.path.join(android_dir, filename)
-        web_path = os.path.join(web_dir, filename)
         img.save(android_path, "PNG")
-        img.save(web_path, "PNG")
+        if os.path.exists(web_dir):
+            web_path = os.path.join(web_dir, filename)
+            img.save(web_path, "PNG")
         print(f"[OK] Gerada imagem em português: {filename}")
 
 if __name__ == "__main__":

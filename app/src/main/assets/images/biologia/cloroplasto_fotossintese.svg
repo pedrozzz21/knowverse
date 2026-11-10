@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="chloroplastBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#022C22"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10B981"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+
+  <text x="400" y="30" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">
+    A Fotossíntese no Cloroplasto: Fase Fotoquímica vs. Fase Química
+  </text>
+  <text x="400" y="48" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">
+    Origem do oxigênio na fotólise da água e fixação do carbono pelo ciclo de Calvin
+  </text>
+
+  <!-- Giant Chloroplast Outline -->
+  <g transform="translate(40, 65)">
+    <rect width="720" height="260" rx="20" fill="url(#chloroplastBg)" stroke="#10B981" stroke-width="2.5"/>
+    <text x="30" y="30" fill="#6EE7B7" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">ESTROMA DO CLOROPLASTO</text>
+
+    <!-- LEFT: FASE FOTOQUÍMICA (Tilacoides / Grana) -->
+    <g transform="translate(30, 45)">
+      <rect width="280" height="195" rx="10" fill="#065F46" stroke="#34D399" stroke-width="1.5"/>
+      <text x="140" y="24" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">
+        1. FASE CLARA (Tilacoides)
+      </text>
+
+      <!-- Light ray entering -->
+      <path d="M -15 -10 L 25 35" stroke="#FBBF24" stroke-width="3" stroke-dasharray="3,2"/>
+      <text x="10" y="8" fill="#FDE68A" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">Luz Solar ☀️</text>
+
+      <!-- Water input -->
+      <rect x="25" y="45" width="80" height="26" rx="4" fill="#0284C7" stroke="#38BDF8"/>
+      <text x="65" y="62" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">H₂O (Água)</text>
+
+      <!-- Thylakoid Granum Stack -->
+      <g transform="translate(180, 50)">
+        <ellipse cx="35" cy="15" rx="35" ry="10" fill="#15803D" stroke="#4ADE80" stroke-width="1.5"/>
+        <ellipse cx="35" cy="27" rx="35" ry="10" fill="#15803D" stroke="#4ADE80" stroke-width="1.5"/>
+        <ellipse cx="35" cy="39" rx="35" ry="10" fill="#15803D" stroke="#4ADE80" stroke-width="1.5"/>
+        <text x="35" y="65" fill="#86EFAC" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">Tilacoides (Grana)</text>
+      </g>
+
+      <!-- Photolysis of water reaction -->
+      <text x="25" y="95" fill="#FBBF24" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">Fotólise da Água (Hill):</text>
+      <text x="25" y="110" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="9">2 H₂O → 4 H⁺ + 4 e⁻ + O₂ ↑</text>
+
+      <!-- Oxygen output (Crucial ENEM concept) -->
+      <rect x="25" y="125" width="120" height="30" rx="4" fill="#166534" stroke="#4ADE80" stroke-width="1.5"/>
+      <text x="85" y="144" fill="#BBF7D0" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">O₂ LIBERADO!</text>
+      <text x="25" y="175" fill="#6EE7B7" font-family="system-ui, sans-serif" font-size="9">Todo O₂ provém da ÁGUA!</text>
+    </g>
+
+    <!-- Connectors between Light & Dark Reactions: ATP and NADPH -->
+    <g transform="translate(325, 90)">
+      <!-- ATP and NADPH going right -->
+      <path d="M 0 10 Q 30 -5 65 10" fill="none" stroke="#FBBF24" stroke-width="2.5" marker-end="url(#arrow)"/>
+      <text x="32" y="2" fill="#FDE68A" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" text-anchor="middle">ATP + NADPH</text>
+
+      <!-- ADP and NADP+ returning left -->
+      <path d="M 65 40 Q 30 55 0 40" fill="none" stroke="#94A3B8" stroke-width="1.8" stroke-dasharray="2,2"/>
+      <text x="32" y="62" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="8.5" text-anchor="middle">ADP + NADP⁺</text>
+    </g>
+
+    <!-- RIGHT: FASE QUÍMICA / ESCURA (Estroma / Ciclo de Calvin) -->
+    <g transform="translate(410, 45)">
+      <rect width="280" height="195" rx="10" fill="#047857" stroke="#34D399" stroke-width="1.5"/>
+      <text x="140" y="24" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" text-anchor="middle">
+        2. FASE QUÍMICA (Ciclo de Calvin)
+      </text>
+
+      <!-- CO2 Input -->
+      <rect x="25" y="45" width="95" height="26" rx="4" fill="#78350F" stroke="#F59E0B"/>
+      <text x="72" y="62" fill="#FEF3C7" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">CO₂ do Ar</text>
+
+      <!-- Calvin Cycle Circle -->
+      <path d="M 175 60 A 30 30 0 1 1 235 60" fill="none" stroke="#FBBF24" stroke-width="3" stroke-dasharray="4,2"/>
+      <text x="205" y="65" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">RuBisCO</text>
+
+      <!-- Calvin Cycle Explanations -->
+      <text x="25" y="95" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="9.5">• Fixação enzimática pela RuBisCO</text>
+      <text x="25" y="112" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="9.5">• Consome o ATP e NADPH gerados</text>
+
+      <!-- Glucose Output -->
+      <rect x="25" y="130" width="230" height="36" rx="6" fill="#065F46" stroke="#4ADE80" stroke-width="1.5"/>
+      <text x="140" y="148" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold" text-anchor="middle">GLICOSE &amp; CARBOIDRATOS</text>
+      <text x="140" y="160" fill="#BBF7D0" font-family="system-ui, sans-serif" font-size="8.5" text-anchor="middle">(C₆H₁₂O₆ → Amido e Celulose)</text>
+    </g>
+  </g>
+
+  <!-- Bottom Synthesis Box -->
+  <g transform="translate(40, 340)">
+    <rect width="720" height="90" rx="8" fill="#0F172A" stroke="#334155"/>
+    <text x="20" y="22" fill="#34D399" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">
+      AS DUAS LEIS DE OURO DO ENEM SOBRE FOTOSSÍNTESE:
+    </text>
+    <text x="20" y="44" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10.5">
+      1. <tspan fill="#6EE7B7" font-weight="bold">De onde vem o Oxigênio que respiramos?</tspan> Vem EXCLUSIVAMENTE da molécula de <tspan fill="#38BDF8" font-weight="bold">H₂O</tspan> quebrada na fase clara, e NUNCA do gás carbônico!
+    </text>
+    <text x="20" y="66" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10.5">
+      2. <tspan fill="#FBBF24" font-weight="bold">A fase escura precisa de escuridão para ocorrer?</tspan> NÃO! Ela depende dos produtos (ATP e NADPH) sintetizados na presença de luz.
+    </text>
+  </g>
+</svg>

@@ -33,13 +33,31 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.filled.AutoAwesome
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material3.BasicAlertDialog
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.window.Dialog
+import com.example.R
+import com.example.data.lore.KnowverseCharacter
+import com.example.data.lore.KnowverseLoreRepository
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -93,6 +111,8 @@ fun ActionBentoGrid(
     val activeSubjectPct = if (activeSubjectStats.second > 0) {
         ((activeSubjectStats.first.toFloat() / activeSubjectStats.second.toFloat()) * 100).toInt().coerceIn(0, 100)
     } else 0
+    var selectedMentorForDetail by remember { mutableStateOf<KnowverseCharacter?>(null) }
+
     Column(
         modifier = modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(14.dp)
@@ -382,14 +402,14 @@ fun ActionBentoGrid(
 
             // Grid de 8 áreas em 4 linhas x 2 colunas com indicadores reais de progresso
             val subjects = listOf(
-                SubjectItem("Matemática", "ENEM, Básica & Cálculo", Color(0xFF3B82F6), KnowverseIcons.Math, subjectProgressMap["Matemática"]) { onNavigateToTrail() },
-                SubjectItem("Física", "Mecânica, Termo & Óptica", Color(0xFF06B6D4), KnowverseIcons.PhysicsAtom, subjectProgressMap["Física"]) { onNavigateToTrail() },
-                SubjectItem("Biologia", "Ecologia, Citologia & DNA", Color(0xFF10B981), KnowverseIcons.BiologyLeaf, subjectProgressMap["Biologia"]) { onNavigateToTrail() },
-                SubjectItem("Química", "Geral, Físico & Orgânica", Color(0xFFF59E0B), KnowverseIcons.ChemistryFlask, subjectProgressMap["Química"]) { onNavigateToTrail() },
-                SubjectItem("Humanas", "História & Geografia ENEM", Color(0xFFFBBF24), KnowverseIcons.GeographyGlobe, subjectProgressMap["Humanas"]) { onNavigateToTrail() },
-                SubjectItem("Linguagens", "Interpretação & Literatura", Color(0xFF818CF8), KnowverseIcons.LanguagesBook, subjectProgressMap["Linguagens"]) { onNavigateToTrail() },
-                SubjectItem("Redação", "Matriz INEP C1–C5", Color(0xFFEC4899), Icons.Default.Edit, null) { onNavigateToEssayLab() },
-                SubjectItem("Python", "Algoritmos & Terminal", Color(0xFF8B5CF6), KnowverseIcons.Python, subjectProgressMap["Python"]) { onNavigateToTrail() }
+                SubjectItem("Matemática", "ENEM, Básica & Cálculo", Color(0xFF3B82F6), KnowverseIcons.Math, subjectProgressMap["Matemática"], KnowverseLoreRepository.THEO) { onNavigateToTrail() },
+                SubjectItem("Física", "Mecânica, Termo & Óptica", Color(0xFF06B6D4), KnowverseIcons.PhysicsAtom, subjectProgressMap["Física"], KnowverseLoreRepository.NESTOR) { onNavigateToTrail() },
+                SubjectItem("Biologia", "Ecologia, Citologia & DNA", Color(0xFF10B981), KnowverseIcons.BiologyLeaf, subjectProgressMap["Biologia"], KnowverseLoreRepository.NESTOR) { onNavigateToTrail() },
+                SubjectItem("Química", "Geral, Físico & Orgânica", Color(0xFFF59E0B), KnowverseIcons.ChemistryFlask, subjectProgressMap["Química"], KnowverseLoreRepository.NESTOR) { onNavigateToTrail() },
+                SubjectItem("Humanas", "História & Geografia ENEM", Color(0xFFFBBF24), KnowverseIcons.GeographyGlobe, subjectProgressMap["Humanas"], KnowverseLoreRepository.DANTE) { onNavigateToTrail() },
+                SubjectItem("Linguagens", "Interpretação & Literatura", Color(0xFF818CF8), KnowverseIcons.LanguagesBook, subjectProgressMap["Linguagens"], KnowverseLoreRepository.CLARA) { onNavigateToTrail() },
+                SubjectItem("Redação", "Matriz INEP C1–C5", Color(0xFFEC4899), Icons.Default.Edit, null, KnowverseLoreRepository.CLARA) { onNavigateToEssayLab() },
+                SubjectItem("Python", "Algoritmos & Terminal", Color(0xFF8B5CF6), KnowverseIcons.Python, subjectProgressMap["Python"], KnowverseLoreRepository.PIPA) { onNavigateToTrail() }
             )
 
             for (rowIndex in 0 until 4) {
@@ -466,16 +486,34 @@ fun ActionBentoGrid(
                                                 )
                                             }
                                         }
-                                        Text(
-                                            text = item.subtitle,
-                                            style = MaterialTheme.typography.labelSmall.copy(
-                                                color = TextSecondary,
-                                                fontSize = 11.sp,
-                                                lineHeight = 14.sp
-                                            ),
-                                            maxLines = 1,
-                                            overflow = TextOverflow.Ellipsis
-                                        )
+                                        Row(
+                                            modifier = Modifier.fillMaxWidth(),
+                                            horizontalArrangement = Arrangement.SpaceBetween,
+                                            verticalAlignment = Alignment.CenterVertically
+                                        ) {
+                                            Text(
+                                                text = item.subtitle,
+                                                style = MaterialTheme.typography.labelSmall.copy(
+                                                    color = TextSecondary,
+                                                    fontSize = 11.sp,
+                                                    lineHeight = 14.sp
+                                                ),
+                                                maxLines = 1,
+                                                overflow = TextOverflow.Ellipsis,
+                                                modifier = Modifier.weight(1f, fill = false)
+                                            )
+                                            if (item.mentor != null) {
+                                                Text(
+                                                    text = "• ${item.mentor.name}",
+                                                    style = MaterialTheme.typography.labelSmall.copy(
+                                                        color = item.mentor.accentColor,
+                                                        fontSize = 10.sp,
+                                                        fontWeight = FontWeight.SemiBold
+                                                    ),
+                                                    maxLines = 1
+                                                )
+                                            }
+                                        }
                                     }
                                 }
 
@@ -495,6 +533,130 @@ fun ActionBentoGrid(
                                             .background(item.accentColor)
                                     )
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // ========================================================
+        // 3.5. MENTORES DO SABER: COMPANHEIROS PEDAGÓGICOS DA LORE
+        // ========================================================
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .testTag("bento_mentors_hub"),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .size(6.dp)
+                            .clip(CircleShape)
+                            .background(PrimaryViolet)
+                    )
+                    Text(
+                        text = "MENTORES DO SABER",
+                        style = MaterialTheme.typography.labelSmall.copy(
+                            fontWeight = FontWeight.Bold,
+                            color = TextSecondary,
+                            letterSpacing = 0.8.sp,
+                            fontSize = 11.sp
+                        )
+                    )
+                }
+
+                Text(
+                    text = "Toque para conselhos",
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        color = TextTertiary,
+                        fontSize = 11.sp
+                    )
+                )
+            }
+
+            LazyRow(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                items(KnowverseLoreRepository.ALL_CHARACTERS) { mentor ->
+                    Surface(
+                        color = ObsidianSurface,
+                        shape = RoundedCornerShape(12.dp),
+                        border = BorderStroke(1.dp, BorderSubtle),
+                        modifier = Modifier
+                            .width(136.dp)
+                            .clickable { selectedMentorForDetail = mentor }
+                    ) {
+                        Column(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(10.dp),
+                            verticalArrangement = Arrangement.spacedBy(6.dp),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .size(46.dp)
+                                    .clip(CircleShape)
+                                    .background(mentor.accentColor.copy(alpha = 0.12f))
+                                    .border(1.dp, mentor.accentColor.copy(alpha = 0.5f), CircleShape),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Image(
+                                    painter = painterResource(id = mentor.drawableRes),
+                                    contentDescription = mentor.name,
+                                    modifier = Modifier
+                                        .size(40.dp)
+                                        .clip(CircleShape),
+                                    contentScale = ContentScale.Crop
+                                )
+                            }
+
+                            Text(
+                                text = mentor.name,
+                                style = MaterialTheme.typography.bodySmall.copy(
+                                    fontWeight = FontWeight.Bold,
+                                    color = TextPrimary,
+                                    fontSize = 12.sp
+                                ),
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis
+                            )
+
+                            Text(
+                                text = mentor.title,
+                                style = MaterialTheme.typography.labelSmall.copy(
+                                    color = mentor.accentColor,
+                                    fontSize = 9.5.sp,
+                                    fontWeight = FontWeight.SemiBold
+                                ),
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis
+                            )
+
+                            Surface(
+                                color = SurfaceElevated,
+                                shape = RoundedCornerShape(4.dp)
+                            ) {
+                                Text(
+                                    text = mentor.badgeLabel,
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        color = TextTertiary,
+                                        fontSize = 9.sp
+                                    ),
+                                    modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
+                                    maxLines = 1
+                                )
                             }
                         }
                     }
@@ -799,6 +961,224 @@ fun ActionBentoGrid(
                 }
             }
         }
+
+        // ========================================================
+        // MODAL DE DETALHES & CONSELHO DO MENTOR
+        // ========================================================
+        selectedMentorForDetail?.let { mentor ->
+            Dialog(onDismissRequest = { selectedMentorForDetail = null }) {
+                Surface(
+                    color = ObsidianSurface,
+                    shape = RoundedCornerShape(16.dp),
+                    border = BorderStroke(1.dp, mentor.accentColor.copy(alpha = 0.5f)),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(12.dp)
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(18.dp),
+                        verticalArrangement = Arrangement.spacedBy(12.dp)
+                    ) {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(10.dp)
+                            ) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(50.dp)
+                                        .clip(CircleShape)
+                                        .background(mentor.accentColor.copy(alpha = 0.15f))
+                                        .border(1.5.dp, mentor.accentColor, CircleShape),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Image(
+                                        painter = painterResource(id = mentor.drawableRes),
+                                        contentDescription = mentor.name,
+                                        modifier = Modifier
+                                            .size(44.dp)
+                                            .clip(CircleShape),
+                                        contentScale = ContentScale.Crop
+                                    )
+                                }
+                                Column {
+                                    Text(
+                                        text = mentor.name,
+                                        style = MaterialTheme.typography.titleMedium.copy(
+                                            fontWeight = FontWeight.Bold,
+                                            color = TextPrimary,
+                                            fontSize = 16.sp
+                                        )
+                                    )
+                                    Text(
+                                        text = "${mentor.title} • ${mentor.species}",
+                                        style = MaterialTheme.typography.bodySmall.copy(
+                                            color = mentor.accentColor,
+                                            fontWeight = FontWeight.Medium,
+                                            fontSize = 11.5.sp
+                                        )
+                                    )
+                                }
+                            }
+
+                            Surface(
+                                color = SurfaceElevated,
+                                shape = CircleShape,
+                                modifier = Modifier.clickable { selectedMentorForDetail = null }
+                            ) {
+                                Icon(
+                                    imageVector = Icons.Default.Close,
+                                    contentDescription = "Fechar",
+                                    tint = TextSecondary,
+                                    modifier = Modifier
+                                        .padding(6.dp)
+                                        .size(16.dp)
+                                )
+                            }
+                        }
+
+                        // Lore Backstory
+                        Surface(
+                            color = SurfaceElevated,
+                            shape = RoundedCornerShape(10.dp),
+                            border = BorderStroke(1.dp, BorderSubtle),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Column(
+                                modifier = Modifier.padding(12.dp),
+                                verticalArrangement = Arrangement.spacedBy(4.dp)
+                            ) {
+                                Text(
+                                    text = "SOBRE O MENTOR",
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        color = TextTertiary,
+                                        fontSize = 9.5.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        letterSpacing = 0.6.sp
+                                    )
+                                )
+                                Text(
+                                    text = mentor.lore,
+                                    style = MaterialTheme.typography.bodySmall.copy(
+                                        color = TextSecondary,
+                                        fontSize = 11.5.sp,
+                                        lineHeight = 15.sp
+                                    )
+                                )
+                            }
+                        }
+
+                        // Pedagogical Advice Quote
+                        Surface(
+                            color = mentor.accentColor.copy(alpha = 0.1f),
+                            shape = RoundedCornerShape(10.dp),
+                            border = BorderStroke(1.dp, mentor.accentColor.copy(alpha = 0.3f)),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Column(
+                                modifier = Modifier.padding(12.dp),
+                                verticalArrangement = Arrangement.spacedBy(4.dp)
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(6.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.AutoAwesome,
+                                        contentDescription = null,
+                                        tint = mentor.accentColor,
+                                        modifier = Modifier.size(13.dp)
+                                    )
+                                    Text(
+                                        text = "DICA DO MENTOR",
+                                        style = MaterialTheme.typography.labelSmall.copy(
+                                            color = mentor.accentColor,
+                                            fontWeight = FontWeight.Bold,
+                                            fontSize = 9.5.sp,
+                                            letterSpacing = 0.5.sp
+                                        )
+                                    )
+                                }
+                                Text(
+                                    text = "\"${mentor.tips.firstOrNull() ?: mentor.philosophy}\"",
+                                    style = MaterialTheme.typography.bodySmall.copy(
+                                        color = TextPrimary,
+                                        fontStyle = FontStyle.Italic,
+                                        fontSize = 11.5.sp,
+                                        lineHeight = 15.sp
+                                    )
+                                )
+                            }
+                        }
+
+                        // Disciplines handled
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.spacedBy(6.dp)
+                        ) {
+                            Surface(
+                                color = SurfaceElevated,
+                                shape = RoundedCornerShape(6.dp),
+                                border = BorderStroke(1.dp, BorderSubtle)
+                            ) {
+                                Text(
+                                    text = mentor.badgeLabel,
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        color = mentor.accentColor,
+                                        fontSize = 9.5.sp,
+                                        fontWeight = FontWeight.Bold
+                                    ),
+                                    modifier = Modifier.padding(horizontal = 7.dp, vertical = 3.dp)
+                                )
+                            }
+                            Surface(
+                                color = SurfaceElevated,
+                                shape = RoundedCornerShape(6.dp),
+                                border = BorderStroke(1.dp, BorderSubtle),
+                                modifier = Modifier.weight(1f)
+                            ) {
+                                Text(
+                                    text = mentor.domain,
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        color = TextSecondary,
+                                        fontSize = 9.5.sp,
+                                        fontWeight = FontWeight.Medium
+                                    ),
+                                    modifier = Modifier.padding(horizontal = 7.dp, vertical = 3.dp),
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis
+                                )
+                            }
+                        }
+
+                        Button(
+                            onClick = {
+                                selectedMentorForDetail = null
+                                onNavigateToTrail()
+                            },
+                            colors = ButtonDefaults.buttonColors(containerColor = mentor.accentColor),
+                            shape = RoundedCornerShape(10.dp),
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            Text(
+                                text = "Estudar com ${mentor.name}",
+                                style = MaterialTheme.typography.labelMedium.copy(
+                                    color = Color.White,
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 12.5.sp
+                                )
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -808,5 +1188,6 @@ private data class SubjectItem(
     val accentColor: Color,
     val icon: ImageVector,
     val progress: Pair<Int, Int>? = null,
+    val mentor: KnowverseCharacter? = null,
     val onClick: () -> Unit
 )

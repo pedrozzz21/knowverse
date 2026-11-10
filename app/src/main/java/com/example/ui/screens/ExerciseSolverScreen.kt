@@ -105,6 +105,7 @@ import com.example.data.exercise.UniversalExercise
 import com.example.data.exercise.UniversalExerciseBank
 import com.example.data.exercise.VisualTable
 import com.example.data.local.UserProgressRepository
+import com.example.data.lore.KnowverseLoreRepository
 import com.example.data.python.PythonEngine
 import com.example.ui.components.GeoGebraMathGraphView
 import com.example.ui.components.DidacticImageView
@@ -2175,42 +2176,88 @@ fun FocusModeExerciseScreen(
                     }
                 } else {
                     // ==========================================
-                    // DICA PEDAGÓGICA (CASO DE ERRO)
+                    // DICA PEDAGÓGICA (CASO DE ERRO) COM MENTOR DA LORE
                     // ==========================================
+                    val mentor = remember(exercise.discipline) {
+                        KnowverseLoreRepository.getMentorForDiscipline(exercise.discipline.label)
+                    }
+
                     Card(
                         shape = RoundedCornerShape(10.dp),
                         colors = CardDefaults.cardColors(containerColor = ObsidianSurface),
-                        border = androidx.compose.foundation.BorderStroke(1.dp, GoldXp.copy(alpha = 0.5f)),
+                        border = androidx.compose.foundation.BorderStroke(1.dp, mentor.accentColor.copy(alpha = 0.5f)),
                         modifier = Modifier
                             .fillMaxWidth()
                             .testTag("pedagogical_hint_card")
                     ) {
                         Column(modifier = Modifier.padding(16.dp)) {
                             Row(
+                                modifier = Modifier.fillMaxWidth(),
                                 verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                                horizontalArrangement = Arrangement.SpaceBetween
                             ) {
-                                Icon(
-                                    imageVector = Icons.Default.Lightbulb,
-                                    contentDescription = null,
-                                    tint = GoldXp,
-                                    modifier = Modifier.size(20.dp)
-                                )
-                                Text(
-                                    text = "DICA PEDAGÓGICA (Pense na Lógica)",
-                                    style = MaterialTheme.typography.titleSmall.copy(
-                                        fontWeight = FontWeight.Bold,
-                                        color = GoldXp,
-                                        fontSize = 12.5.sp,
-                                        letterSpacing = 0.5.sp
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                                ) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(36.dp)
+                                            .clip(CircleShape)
+                                            .background(mentor.accentColor.copy(alpha = 0.15f))
+                                            .border(1.dp, mentor.accentColor.copy(alpha = 0.5f), CircleShape),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Image(
+                                            painter = painterResource(id = mentor.drawableRes),
+                                            contentDescription = mentor.name,
+                                            modifier = Modifier
+                                                .size(30.dp)
+                                                .clip(CircleShape),
+                                            contentScale = ContentScale.Crop
+                                        )
+                                    }
+                                    Column {
+                                        Text(
+                                            text = "ORIENTAÇÃO COM ${mentor.name.uppercase()}",
+                                            style = MaterialTheme.typography.titleSmall.copy(
+                                                fontWeight = FontWeight.Bold,
+                                                color = mentor.accentColor,
+                                                fontSize = 12.sp,
+                                                letterSpacing = 0.5.sp
+                                            )
+                                        )
+                                        Text(
+                                            text = "${mentor.title} • ${mentor.species}",
+                                            style = MaterialTheme.typography.labelSmall.copy(
+                                                color = TextSecondary,
+                                                fontSize = 10.sp
+                                            )
+                                        )
+                                    }
+                                }
+
+                                Surface(
+                                    color = SurfaceElevated,
+                                    shape = RoundedCornerShape(4.dp),
+                                    border = androidx.compose.foundation.BorderStroke(1.dp, BorderSubtle)
+                                ) {
+                                    Text(
+                                        text = "Reflexão Pedagógica",
+                                        style = MaterialTheme.typography.labelSmall.copy(
+                                            color = GoldXp,
+                                            fontSize = 9.5.sp,
+                                            fontWeight = FontWeight.Bold
+                                        ),
+                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
                                     )
-                                )
+                                }
                             }
 
-                            Spacer(modifier = Modifier.height(8.dp))
+                            Spacer(modifier = Modifier.height(10.dp))
 
                             Text(
-                                text = "Não se preocupe com o erro! Analise a pista abaixo para refletir sobre a linha de raciocínio antes de tentar novamente:",
+                                text = "Não se preocupe com o erro! Analise a reflexão de ${mentor.name} para recalibrar o raciocínio antes de tentar novamente:",
                                 style = MaterialTheme.typography.bodySmall.copy(
                                     color = TextSecondary,
                                     fontSize = 11.5.sp,

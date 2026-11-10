@@ -139,6 +139,56 @@ fun UserAvatarDisplay(
                     .clip(CircleShape)
             )
         }
+        effectivePhotoSource == "pipa_hipo" || effectivePhotoSource == "char_pipa" || effectivePhotoSource == "pipa" -> {
+            Image(
+                painter = painterResource(id = R.drawable.char_pipa_hipo),
+                contentDescription = "Mentora Pipa Hipopótamo",
+                contentScale = ContentScale.Crop,
+                modifier = modifier
+                    .size(sizeDp.dp)
+                    .clip(CircleShape)
+            )
+        }
+        effectivePhotoSource == "theo_coelho" || effectivePhotoSource == "char_theo" || effectivePhotoSource == "theo" -> {
+            Image(
+                painter = painterResource(id = R.drawable.char_theo_coelho),
+                contentDescription = "Mentor Theo Coelho",
+                contentScale = ContentScale.Crop,
+                modifier = modifier
+                    .size(sizeDp.dp)
+                    .clip(CircleShape)
+            )
+        }
+        effectivePhotoSource == "clara_boto" || effectivePhotoSource == "char_clara" || effectivePhotoSource == "clara" -> {
+            Image(
+                painter = painterResource(id = R.drawable.char_clara_boto),
+                contentDescription = "Mestra Clara Boto-Cor-de-Rosa",
+                contentScale = ContentScale.Crop,
+                modifier = modifier
+                    .size(sizeDp.dp)
+                    .clip(CircleShape)
+            )
+        }
+        effectivePhotoSource == "nestor_jabuti" || effectivePhotoSource == "char_nestor" || effectivePhotoSource == "nestor" -> {
+            Image(
+                painter = painterResource(id = R.drawable.char_nestor_jabuti),
+                contentDescription = "Prof. Nestor Jabuti",
+                contentScale = ContentScale.Crop,
+                modifier = modifier
+                    .size(sizeDp.dp)
+                    .clip(CircleShape)
+            )
+        }
+        effectivePhotoSource == "dante_tamandua" || effectivePhotoSource == "char_dante" || effectivePhotoSource == "dante" -> {
+            Image(
+                painter = painterResource(id = R.drawable.char_dante_tamandua),
+                contentDescription = "Pesquisador Dante Tamanduá",
+                contentScale = ContentScale.Crop,
+                modifier = modifier
+                    .size(sizeDp.dp)
+                    .clip(CircleShape)
+            )
+        }
         effectivePhotoSource == "mascot_otter_girl" || effectivePhotoSource == "avatar_girl" || effectivePhotoSource == "otter_girl" -> {
             Image(
                 painter = painterResource(id = R.drawable.img_mascot_otter_girl),

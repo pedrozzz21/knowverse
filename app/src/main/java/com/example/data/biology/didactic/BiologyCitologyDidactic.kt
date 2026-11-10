@@ -48,21 +48,27 @@ A célula é a unidade morfofisiológica fundamental de todos os seres vivos na 
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. Organização Celular: Procariontes vs. Eucariontes
+![Organização Celular Comparada: Procarionte vs Eucarionte](images/biologia/celula_procarionte_eucarionte.svg)
+
 - **Procariontes:** Ausência de envoltório nuclear delimitador (DNA circular disperso na região nucleoide), ausência de sistema de endomembranas e organelas compartimentadas (sem mitocôndrias, Golgi ou retículo); possuem ribossomos menores do tipo 70S e plasmídeos (pequenos anéis de DNA móvel com genes de resistência a antibióticos).
 - **Eucariontes:** Núcleo verdadeiro revestido por dupla membrana com poros (carioteca), cromatina condensada com histonas, citoesqueleto complexo e organelas membranosas especializadas (ribossomos 80S).
 
 ### 2. A Membrana Plasmática: O Modelo do Mosaico Fluido
-A membrana plasmática tem espessura de \( 7\text{ a } 10\text{ nm} \):
+![O Modelo do Mosaico Fluido da Membrana Plasmática](images/biologia/mosaico_fluido_membrana.svg)
+
+A membrana plasmática tem espessura de 7 a 10 nm:
 - **Bicamada Fosfolipídica:** Moléculas anfifílicas com cabeça polar hidrofílica (fosfato e glicerol) voltada para os meios aquosos intra e extracelular, e duas caudas apolares hidrofóbicas (ácidos graxos) voltadas para o interior da bicamada.
 - **Fluidez da Membrana:** Os lipídios realizam movimentos laterais rápidos e rotações. Nos animais, o **Colesterol** intercalado atua como regulador térmico de fluidez: em altas temperaturas impede fluidez excessiva; em baixas temperaturas impede o empacotamento e congelamento da membrana.
 - **Glicocálix:** Rede de glicoproteínas e glicolipídios na face externa que atua no reconhecimento celular (sistema sanguíneo ABO), ancoragem e proteção mecânica.
 
 ### 3. Citoesqueleto
-- **Microfilamentos de Actina (\( \approx 7\text{ nm} \)):** Movimentos celulares (emissão de pseudópodes na fagocitose), ciclose em células vegetais e citocinese na divisão animal.
-- **Microtúbulos de Tubulina (\( \approx 25\text{ nm} \)):** Formam os centríolos, o fuso mitótico, cílios e flagelos (arranjo \( 9+2 \)) e atuam como "trilhos" para motores moleculares (cinesina e dineína).
-- **Filamentos Intermediários (\( \approx 10\text{ nm} \), ex.: Queratina):** Conferem resistência mecânica contra estiramento e tensão aos tecidos epiteliais.
+- **Microfilamentos de Actina (~7 nm):** Movimentos celulares (emissão de pseudópodes na fagocitose), ciclose em células vegetais e citocinese na divisão animal.
+- **Microtúbulos de Tubulina (~25 nm):** Formam os centríolos, o fuso mitótico, cílios e flagelos (arranjo 9+2) e atuam como "trilhos" para motores moleculares (cinesina e dineína).
+- **Filamentos Intermediários (~10 nm, ex.: Queratina):** Conferem resistência mecânica contra estiramento e tensão aos tecidos epiteliais.
 
 ### 4. Dinâmica Osmótica: Célula Animal vs. Vegetal
+![Osmose Comparada: Hemácia vs Célula Vegetal em Soluções](images/biologia/osmose_celula_animal_vegetal.svg)
+
 A osmose é a difusão da água através de uma membrana semipermeável do meio **hipotônico** (menor concentração de soluto / mais diluído) para o meio **hipertônico** (maior concentração de soluto / mais concentrado):
 1. **Em Meio Hipertônico:**
    - Célula Animal (Hemácia): Perde água e enruga-se (**Crenação**).
@@ -71,10 +77,10 @@ A osmose é a difusão da água através de uma membrana semipermeável do meio 
    - Célula Animal: Absorve água continuamente até romper a membrana plasmática (**Lise Celular / Hemólise**).
    - Célula Vegetal: Absorve água até o vacúolo distender-se contra a parede celulósica. A parede celular rígida exerce uma contra-pressão elástica mecânica que equilibra o influxo de água: a célula fica **Túrgida**, mas **NUNCA sofre lise celular**!
 
-### 5. A Bomba de Sódio-Potássio (\( \text{Na}^+/\text{K}^+ \text{-ATPase} \))
+### 5. A Bomba de Sódio-Potássio (Na⁺/K⁺-ATPase)
 Transportador ativo primário fundamental para a homeostase celular:
-- Para cada molécula de ATP hidrolisada em ADP + Pi, a bomba ejeta **\( 3\text{ íons Na}^+ \)** para o meio extracelular e internaliza **\( 2\text{ íons K}^+ \)** para o meio intracelular, ambos contra seus gradientes químicos de concentração.
-- Mantém o meio intracelular rico em \( \text{K}^+ \) e o meio extracelular rico em \( \text{Na}^+ \), gerando a polarização elétrica de repouso das membranas (\( \approx -70\text{ mV} \)) nos neurônios e fibras musculares.
+- Para cada molécula de ATP hidrolisada em ADP + Pi, a bomba ejeta **3 íons Na⁺** para o meio extracelular e internaliza **2 íons K⁺** para o meio intracelular, ambos contra seus gradientes químicos de concentração.
+- Mantém o meio intracelular rico em K⁺ e o meio extracelular rico em Na⁺, gerando a polarização elétrica de repouso das membranas (~ -70 mV) nos neurônios e fibras musculares.
 
 ## 5. Definições e Conceitos
 - **Permeabilidade Seletiva:** Capacidade da membrana de controlar ativamente a entrada e saída de substâncias: gases (\( \text{O}_2, \text{CO}_2 \)) e moléculas lipossolúveis atravessam livremente; íons carregados e glicose exigem proteínas carreadoras ou canais.
@@ -129,31 +135,38 @@ Por que os moluscos terrestres (lesmas e caracóis) morrem desidratados quando s
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Equilíbrio Osmótico e Pressão de Parede",
-                syntax = """\\text{DPD} = \\text{PO} - \\text{PT} \\quad (\\text{ou } S_c = S_i - M)""",
-                description = "Capacidade de sucção de água por uma célula vegetal integrando a pressão osmótica interna e a turgência elástica da parede celulósica.",
-                parametersInfo = """DPD: \\text{déficit de pressão de difusão}; \\quad PO: \\text{pressão osmótica}; \\quad PT: \\text{pressão de turgor da parede}"""
+                termOrFunction = "Arquitetura do Mosaico Fluido da Membrana",
+                syntax = "Bicamada Fosfolipídica (Anfifílica) + Proteínas Transmembrana + Colesterol Modulador + Glicocálix",
+                description = "Estrutura fluida e semipermeável que delimita a célula, regulando ativamente as trocas entre os meios intra e extracelular.",
+                parametersInfo = "Colesterol regula a fluidez térmica; Glicocálix atua no reconhecimento celular e antígenos sanguíneos ABO."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Estequiometria da Bomba de Sódio-Potássio",
-                syntax = """1\\text{ ATP} + 3\\text{ Na}^+_{\\text{int}} + 2\\text{ K}^+_{\\text{ext}} \\to 1\\text{ ADP} + \\text{Pi} + 3\\text{ Na}^+_{\\text{ext}} + 2\\text{ K}^+_{\\text{int}}""",
-                description = "Ciclo eletrogênico de transporte ativo primário gerador do potencial de membrana de repouso.",
-                parametersInfo = "Gera gradiente eletroquímico celular vital para condução nervosa e transporte secundário de glicose."
+                termOrFunction = "Bomba de Sódio-Potássio (Na⁺/K⁺-ATPase)",
+                syntax = "3 Na⁺ (intracelular) + 2 K⁺ (extracelular) + 1 ATP → 3 Na⁺ (extracelular) + 2 K⁺ (intracelular) + ADP + Pi",
+                description = "Transporte ativo primário que mantém a assimetria iônica e o potencial de repouso elétrico das membranas celulares (-70 mV).",
+                parametersInfo = "Consome cerca de 30% do ATP basal do corpo para viabilizar impulsos nervosos e transporte acoplado de glicose."
+            ),
+            FormulaOrSyntaxItem(
+                termOrFunction = "Equilíbrio Osmótico: Animal vs. Vegetal",
+                syntax = "Meio Hipotônico: Hemácia sofre Lise Celular (Estoura) | Célula Vegetal fica Túrgida (Parede de celulose impede rompimento)",
+                description = "A presença da parede celulósica rígida em vegetais exerce contra-pressão de turgor mecânica, evitando a lise celular.",
+                parametersInfo = "Em meio hipertônico: Hemácia sofre Crenação; Célula vegetal sofre Plasmólise (membrana descola da parede)."
             )
         ),
         solvedExamples = listOf(
             LessonExample(
-                title = "Hemólise de Hemácias em Água Destilada",
-                codeOrFormula = """\\text{Hemácia em Meio Hipotônico} \\implies \\text{Influxo Maciço de } \\text{H}_2\\text{O} \\implies \\text{Lise Celular (Estouro)}""",
-                explanation = "Sem parede celular celulósica, a membrana plasmática lipídica não resiste à pressão osmótica interna da entrada de água."
+                title = "Hemólise de Hemácias por Infusão Intravenosa Incorreta",
+                codeOrFormula = "Paciente desidratado recebe acidentalmente na veia água destilada pura (hipotônica) em vez de soro fisiológico 0,9% (isotônico).",
+                explanation = "A água destilada pura possui concentração de solutos nula, sendo fortemente hipotônica em relação ao citoplasma das hemácias (que equivale a 0,9% de NaCl). Por osmose, a água entra maciçamente nas hemácias. Sem parede celular para conter a pressão hidrostática, as hemácias se expandem e sofrem lise celular (hemólise), liberando hemoglobina livre que obstrui os túbulos renais."
             ),
             LessonExample(
-                title = "Célula Vegetal Túrgida",
-                codeOrFormula = """\\text{PO} = \\text{PT} \\implies \\text{DPD} = 0 \\implies \\text{Célula Túrgida em Equilíbrio Dinâmico}""",
-                explanation = "A resistência mecânica da parede celulósica impede que a célula vegetal rompa, garantindo a sustentação hidráulica de plantas herbáceas."
+                title = "Conservação de Alimentos por Salgamento e Osmose",
+                codeOrFormula = "Método milenar de salga da carne-seca (charque) ou produção de compotas de frutas em calda densa de açúcar.",
+                explanation = "O meio externo torna-se extremamente hipertônico em relação ao citoplasma celular de fungos e bactérias decompositores. Ao entrarem em contato com o sal ou calda, os microrganismos perdem água por osmose e sofrem plasmólise irreversível, desidratando e cessando seu metabolismo, o que preserva o alimento por longos períodos."
             )
         ),
-        goldTip = "O ENEM adora a comparação: Célula vegetal em meio hipotônico NÃO ESTOURA (fica túrgida, pois a parede de celulose protege contra o rompimento). Já a célula animal (como a hemácia) ESTOURA (sofre lise/hemólise) porque possui apenas a fina e frágil membrana plasmática!"
+        goldTip = "O ENEM adora a comparação: Célula vegetal em meio hipotônico NÃO ESTOURA (fica túrgida, pois a parede de celulose protege contra o rompimento). Já a célula animal (como a hemácia) ESTOURA (sofre lise/hemólise) porque possui apenas a fina e frágil membrana plasmática!",
+        assetImagePath = "images/biologia/osmose_celula_animal_vegetal.svg"
     )
 
     // =========================================================================
@@ -193,6 +206,8 @@ A evolução da célula eucariótica foi marcada pelo desenvolvimento de um comp
     3. **Armazenamento e Liberação de Cálcio (\( \text{Ca}^{2+} \)):** No tecido muscular estriado é chamado de retículo sarcoplasmático, liberando cálcio para disparar a contração muscular.
 
 ### 2. O Complexo Golgiense (Aparelho de Golgi)
+![O Fluxo na Rota de Secreção Celular e Endomembranas](images/biologia/rota_secrecao_celular.svg)
+
 Conjunto de discos membranosos empilhados (dictiossomos) com polaridade funcional: face *cis* (receptora de vesículas do RER) e face *trans* (despachante de vesículas secretoras):
 - **Glicosilação Final e Modificação Pós-Traducional:** Adiciona carboidratos a proteínas e lipídios formando glicoproteínas e glicolipídios.
 - **Empacotamento e Secreção:** Direciona proteínas em vesículas secretoras que sofrem exocitose na membrana plasmática.
@@ -210,10 +225,12 @@ Bolsas membranosas contendo cerca de 50 tipos de **hidrolases ácidas** (proteas
 Organelas vesiculares contendo enzimas oxidativas (oxidases) que realizam a beta-oxidação de ácidos graxos de cadeia muito longa.
 - Esse metabolismo produz um subproduto altamente tóxico e oxidante: o **Peróxido de Hidrogênio (\( \text{H}_2\text{O}_2 \) - água oxigenada)**.
 - A enzima **Catalase** presente no interior dos peroxissomos quebra imediatamente o peróxido em água pura e gás oxigênio:
-  \[ 2 \, \text{H}_2\text{O}_2 \xrightarrow{\text{Catalase}} 2 \, \text{H}_2\text{O} + \text{O}_2 \]
+  2 H₂O₂ ⎯(Catalase)⎯→ 2 H₂O + O₂ ↑
   (É por isso que a água oxigenada borbulha vigorosamente ao ser jogada sobre um corte na pele: a catalase dos tecidos lesados e do sangue decompõe o composto liberando gás oxigênio, matando bactérias anaeróbias como o tétano!).
 
 ### 5. Comparativo Mandatório: Célula Animal vs. Célula Vegetal
+![Organelas da Célula Animal vs Célula Vegetal](images/biologia/celula_animal_vegetal.svg)
+
 - **Estruturas Exclusivas (ou quase) da Célula Vegetal:**
   1. **Parede Celular Celulósica:** Rígida, impede a lise osmótica e confere sustentação mecânica.
   2. **Plastos (Cloroplastos):** Realizam fotossíntese contendo clorofila e tilacoides.
@@ -281,30 +298,37 @@ Por que os girinos de sapos e rãs perdem completamente a sua cauda durante a me
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Decomposição do Peróxido de Hidrogênio pela Catalase",
-                syntax = """2\\text{ H}_2\\text{O}_2 \\xrightarrow{\\text{Catalase}} 2\\text{ H}_2\\text{O} + \\text{O}_2 \\uparrow""",
-                description = "Reação antioxidante de defesa enzimática nos peroxissomos que neutraliza radicais livres e estresse oxidativo.",
-                parametersInfo = "Ação de altíssima velocidade cinética com desprendimento visível de gás oxigênio em ferimentos."
+                syntax = "2 H₂O₂ ⎯(Catalase)⎯→ 2 H₂O + O₂ ↑ (Efervescência Gasosa)",
+                description = "Reação antioxidante de defesa enzimática nos peroxissomos que neutraliza espécies reativas de oxigênio.",
+                parametersInfo = "Velocidade catalítica extrema com liberação visível de O₂ em ferimentos com sangue."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Fluxo na Rota Secreta Clássica",
-                syntax = """\\text{Ribossomos no RER} \\xrightarrow{\\text{vesícula}} \\text{Golgi (cis} \\to \\text{trans)} \\xrightarrow{\\text{vesícula secretora}} \\text{Exocitose}""",
-                description = "Sequência compartimentada de síntese, enovelamento, glicosilação e exportação de proteínas secretoras.",
-                parametersInfo = "Governada por sinais peptídicos de endereçamento e proteínas de revestimento COP-II e clatrina."
+                termOrFunction = "Fluxo na Rota Secreta de Endomembranas",
+                syntax = "Ribossomos no RER → Vesículas COP-II → Complexo de Golgi (cis → trans) → Vesícula Secretora → Exocitose",
+                description = "Sequência compartimentada de síntese, enovelamento inicial, glicosilação final e exportação celular de proteínas.",
+                parametersInfo = "Hiperdesenvolvida em células acinares do pâncreas e em plasmócitos secretores de anticorpos."
+            ),
+            FormulaOrSyntaxItem(
+                termOrFunction = "Organelas Diferenciais: Vegetal vs. Animal",
+                syntax = "Vegetal: Parede Celulósica + Cloroplastos + Vacúolo Central | Animal: Centríolos + Lisossomos evidentes",
+                description = "Principais contrastes morfológicos e funcionais entre a célula animal e vegetal cobrados no ENEM.",
+                parametersInfo = "Plantas angiospermas não possuem centríolos típicos; vacúolo vegetal assume função lítica análoga a lisossomos."
             )
         ),
         solvedExamples = listOf(
             LessonExample(
-                title = "Autofagia em Períodos de Restrição Nutricional",
-                codeOrFormula = """\\text{Isolamento de Mitocôndria Velha} + \\text{Lisossomo Primário} \\implies \\text{Autofagossomo} \\implies \\text{Nutrientes Reciclados}""",
-                explanation = "O Prêmio Nobel de Medicina de 2016 (Yoshinori Ohsumi) elucidou os genes da autofagia lisossômica que mantém o fornecimento de aminoácidos durante a privação alimentar."
+                title = "Autofagia Lisossômica em Períodos de Restrição Nutricional",
+                codeOrFormula = "Organela envelhecida (mitocôndria senescente) isolada em vacúolo autofágico + fusão com Lisossomo primário.",
+                explanation = "As hidrolases ácidas do lisossomo digerem a organela degradando proteínas e fosfolipídios em aminoácidos e ácidos graxos livres, que são devolvidos ao citosol para manter a sobrevivência celular durante o jejum ou carência de nutrientes (Prêmio Nobel de Fisiologia de 2016 - Yoshinori Ohsumi)."
             ),
             LessonExample(
-                title = "Acrossomo e Fecundação",
-                codeOrFormula = """\\text{Acrossomo do Espermatozoide} \\xrightarrow{\\text{Hialuronidase}} \\text{Digestão da Corona Radiata e Zona Pelúcida}""",
-                explanation = "A vesícula derivada do Golgi posicionada na cabeça do espermatozoide perfura os envoltórios do óvulo viabilizando o cariogamia."
+                title = "Biogênese do Acrossomo no Espermatozoide",
+                codeOrFormula = "Vesículas do Complexo Golgiense fundem-se na extremidade anterior do núcleo espermático formando o acrossomo.",
+                explanation = "O acrossomo armazena enzimas hidrolíticas (como a hialuronidase) indispensáveis para digerir a corona radiata e a zona pelúcida do ovócito na fertilização. Homens com anomalias golgienses na espermatogênese produzem espermatozoides sem acrossomo funcional, gerando infertilidade."
             )
         ),
-        goldTip = "O ENEM adora correlacionar função do tecido com a organela que se destaca nele! Memorize esta trinca clássica: (1) Célula do FÍGADO -> Muito Retículo Liso (desintoxicação); (2) Célula do PÂNCREAS ou PLASMÓCITO -> Muito Retículo Rugoso (secreção de enzimas/anticorpos); (3) Célula do MÚSCULO ou ESPERMATOZOIDE -> Muitas Mitocôndrias (gasto brutal de ATP)!"
+        goldTip = "O ENEM adora correlacionar função do tecido com a organela que se destaca nele! Memorize esta trinca clássica: (1) Célula do FÍGADO -> Muito Retículo Liso (desintoxicação); (2) Célula do PÂNCREAS ou PLASMÓCITO -> Muito Retículo Rugoso (secreção de enzimas/anticorpos); (3) Célula do MÚSCULO ou ESPERMATOZOIDE -> Muitas Mitocôndrias (gasto brutal de ATP)!",
+        assetImagePath = "images/biologia/celula_animal_vegetal.svg"
     )
 
     // =========================================================================
@@ -332,6 +356,8 @@ Como surgiu a complexa célula eucariótica a partir de ancestrais procariontes 
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. O Cenário Evolutivo da Endossimbiose
+![A Teoria Endossimbiótica de Lynn Margulis](images/biologia/teoria_endossimbiotica.svg)
+
 Há cerca de 2 bilhões de anos, a proliferação das cianobactérias fotossintetizantes causou a **Grande Crise do Oxigênio** (a catástrofe do oxigênio), tornando a atmosfera rica em \( \text{O}_2 \), um gás altamente tóxico para os organismos anaeróbios primitivos da época:
 1. Uma célula hospedeira anaeróbia ancestral fagocitou uma **bactéria aeróbia primitiva** (ancestral das alfa-proteobactérias).
 2. A bactéria fagocitada encontrou no citoplasma hospedeiro um ambiente protegido e rico em nutrientes (piruvato); em troca, a bactéria consumia o oxigênio tóxico e gerava uma quantidade colossal de energia na forma de ATP pela respiração aeróbia.
@@ -339,6 +365,8 @@ Há cerca de 2 bilhões de anos, a proliferação das cianobactérias fotossinte
 4. Posteriormente, uma linhagem de eucariotos primitivos fagocitou uma **cianobactéria fotossintetizante**, dando origem aos **Cloroplastos** nos ancestrais de algas e plantas terrestres.
 
 ### 2. Evidências que Comprovam a Teoria de Margulis
+![Ultraestrutura e Compartimentos da Mitocôndria](images/biologia/ultraestrutura_mitocondria.svg)
+
 Qualquer estudante do ENEM deve dominar o quarteto de evidências:
 1. **Genoma Próprio Circular:** Mitocôndrias e cloroplastos contêm seu próprio DNA (DNAmt), circular, dupla-fita e desprovido de histonas, exatamente como o nucleoide das eubactérias.
 2. **Ribossomos Próprios 70S:** Enquanto o citoplasma eucarioto possui ribossomos 80S, a matriz mitocondrial e o estroma dos cloroplastos possuem ribossomos 70S funcionais que realizam síntese proteica própria e são inibidos por antibióticos antibacterianos.
@@ -414,31 +442,38 @@ Por que os organismos procariontes primitivos nunca conseguiram desenvolver form
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Padrão de Transmissão da Herança Mitocondrial Materna",
-                syntax = """\\text{Mãe Mutada } (\\text{DNAmt}) \\implies \\text{100\\% dos Filhos e Filhas Afetados} \\quad | \\quad \\text{Pai Mutado} \\implies 0\\% \\text{ Afetados}""",
-                description = "Regra genética mandatória em heredogramas decorrente da eliminação das organelas paternas no zigoto.",
-                parametersInfo = "Utilizado no diagnóstico clínico de neuropatias, encefalopatias mitocondriais e miopatias."
+                termOrFunction = "Teoria Endossimbiótica Sequencial",
+                syntax = "Célula Hospedeira Anaeróbia + Alfa-Proteobactéria (Mitocôndria) + Cianobactéria Fotossintetizante (Cloroplasto)",
+                description = "Origem simbiótica das organelas bioenergéticas a partir de bactérias de vida livre englobadas por fagocitose.",
+                parametersInfo = "Consolidou a evolução celular eucariótica e a base bioenergética da vida pluricelular aeróbia."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Estrutura do Genoma Mitocondrial Humano",
-                syntax = """\\text{DNAmt} \\approx 16.569\\text{ pares de bases} \\implies 37\\text{ genes} \\quad (13\\text{ polipeptídeos} + 22\\text{ RNAt} + 2\\text{ RNAr})""",
-                description = "Genoma circular compacto que não possui íntrons e codifica subunidades críticas da fosforilação oxidativa.",
-                parametersInfo = "Taxa de mutação cerca de 10 a 20 vezes superior à do genoma nuclear por falta de histonas protetoras."
+                termOrFunction = "Padrão de Herança Mitocondrial Materna",
+                syntax = "Herança Estritamente Materna: Mãe Afetada → 100% dos Filhos e Filhas Afetados | Pai Afetado → 0% Afetados",
+                description = "Regra genética mandatória em heredogramas humanos devido ao oócito fornecer todo o citoplasma do zigoto.",
+                parametersInfo = "Mitocôndrias do espermatozoide situam-se na peça intermediária e são destruídas no óvulo."
+            ),
+            FormulaOrSyntaxItem(
+                termOrFunction = "Evidências Moleculares de Margulis",
+                syntax = "DNA Circular Próprio Desnudo + Ribossomos 70S + Dupla Membrana (Cardiolipina) + Autoduplicação por Bipartição",
+                description = "Quarteto de provas experimentais irrefutáveis da filogenia bacteriana das mitocôndrias e cloroplastos.",
+                parametersInfo = "Ribossomos mitocondriais 70S sofrem inibição seletiva por antibióticos antibacterianos (ex.: cloranfenicol)."
             )
         ),
         solvedExamples = listOf(
             LessonExample(
-                title = "Herança Mitocondrial em Heredograma",
-                codeOrFormula = """\\text{Mãe (afetada)} \\times \\text{Pai (normal)} \\implies \\text{Todos os 4 filhos e filhas nascem afetados}""",
-                explanation = "A transmissão universal da mãe para toda a prole independentemente do sexo biológico comprova a herança citoplasmática mitocondrial."
+                title = "Análise de Heredograma com Herança Mitocondrial",
+                codeOrFormula = "Mulher afetada por neuropatia mitocondrial casa-se com homem saudável e tem 5 filhos (3 meninas e 2 meninos).",
+                explanation = "Como a herança mitocondrial é transmitida unicamente pelo citoplasma do óvulo materno, todos os 5 filhos herdarão as mitocôndrias mutadas e manifestarão o fenótipo (100% afetados). Posteriormente, apenas as filhas transmitirão a mutação aos seus respectivos descendentes; os filhos homens não repassarão o defeito à sua prole."
             ),
             LessonExample(
-                title = "DNAmt na Identificação Forense",
-                codeOrFormula = """\\text{Confronto} = \\text{DNAmt da Ossada} \\equiv \\text{DNAmt de Irmão, Mãe ou Sobrinho Matrilinear}""",
-                explanation = "A invariância do DNAmt ao longo da linhagem feminina direta possibilita identificação criminal e histórica precisa mesmo gerações depois."
+                title = "DNAmt na Identificação Forense e Genealogia",
+                codeOrFormula = "Confronto genético entre ossadas degradadas e parentes vivos da linhagem matrilinear da vítima.",
+                explanation = "Por não sofrer recombinação genética meiótica e apresentar milhares de cópias por célula, o DNAmt mantém-se intacto ao longo de séculos e permite confirmação forense com qualquer parente da linhagem materna direta (irmãos uterinos, mãe, tios maternos ou sobrinhos da irmã da vítima)."
             )
         ),
-        goldTip = "Em questões de genética do ENEM com heredogramas: se uma doença afetar TODOS os filhos e filhas de uma mulher afetada, e NENHUM filho de um homem afetado herdar a doença, mate a questão na hora: trata-se de HERANÇA MITOCONDRIAL (materna)!"
+        goldTip = "Em questões de genética do ENEM com heredogramas: se uma doença afetar TODOS os filhos e filhas de uma mulher afetada, e NENHUM filho de um homem afetado herdar a doença, mate a questão na hora: trata-se de HERANÇA MITOCONDRIAL (materna)!",
+        assetImagePath = "images/biologia/ultraestrutura_mitocondria.svg"
     )
 
     // =========================================================================
@@ -474,8 +509,10 @@ Composto por uma base nitrogenada adenina, uma ribose e três grupos fosfato lig
 A célula recicla continuamente essa molécula: a energia liberada na oxidação da glicose acopla-se para refosforilar o ADP em ATP.
 
 ### 2. Respiração Celular Aeróbia: As Três Etapas
+![Metabolismo Energético Integrado: Glicólise, Krebs e Cadeia](images/biologia/metabolismo_energetico_integrado.svg)
+
 Equação global balanceada:
-\[ \text{C}_6\text{H}_{12}\text{O}_6 + 6 \, \text{O}_2 \to 6 \, \text{CO}_2 + 6 \, \text{H}_2\text{O} + \text{Energia (}\sim 30\text{ a } 32\text{ ATP)} \]
+C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + Energia (~30 a 32 ATP)
 1. **Glicólise (Citosol / Hialoplasma):**
    - Processo anaeróbio universal em todos os domínios da vida.
    - Uma molécula de glicose (\( 6\text{C} \)) é clivada em duas moléculas de ácido pirúvico / piruvato (\( 3\text{C} \)).
@@ -508,14 +545,17 @@ Ocorrem no citosol na ausência de oxigênio ou em organismos anaeróbios. O obj
      - Na fabricação de **Bebidas e Etanol Combustível:** o mosto fermentado de uva ou cana-de-açúcar produz o etanol retido no meio líquido.
 
 ### 4. Fotossíntese: O Motor Autotrófico da Biosfera
-Equação global:
-\[ 6 \, \text{CO}_2 + 6 \, \text{H}_2\text{O} + \text{Luz Solar} \to \text{C}_6\text{H}_{12}\text{O}_6 + 6 \, \text{O}_2 \uparrow \]
+![A Fotossíntese no Cloroplasto: Fase Clara e Ciclo de Calvin](images/biologia/cloroplasto_fotossintese.svg)
+
+Equação global balanceada:
+6 CO₂ + 6 H₂O + Luz Solar ⎯(Clorofila)⎯→ C₆H₁₂O₆ + 6 O₂ ↑
+
 1. **Fase Fotoquímica (Reações de Claro / Tilacoides):**
    - A clorofila absorve luz visível (principalmente nos comprimentos azul e vermelho; reflete o verde).
-   - **Fotólise da Água (Reação de Hill):** A luz quebra a molécula de água liberando elétrons, prótons e **Gás Oxigênio (\( \text{O}_2 \))**. Todo o \( \text{O}_2 \) liberado na fotossíntese provém exclusivamente da quebra da ÁGUA, e NÃO do \( \text{CO}_2 \)!
-   - Produz **ATP** (fotofosforilação) e **\( \text{NADPH} \)** para a etapa seguinte.
+   - **Fotólise da Água (Reação de Hill):** A luz quebra a molécula de água liberando elétrons, prótons e **Gás Oxigênio (O₂)**. Todo o O₂ liberado na fotossíntese provém exclusivamente da quebra da ÁGUA, e NÃO do CO₂!
+   - Produz **ATP** (fotofosforilação) e **NADPH** para a etapa seguinte.
 2. **Fase Química / Ciclo de Calvin-Benson (Estroma do Cloroplasto):**
-   - Fixação do \( \text{CO}_2 \) atmosférico pela enzima **RuBisCO**, utilizando o ATP e o NADPH produzidos na fase clara para sintetizar trioses que formarão glicose, amido e celulose.
+   - Fixação do CO₂ atmosférico pela enzima **RuBisCO**, utilizando o ATP e o NADPH produzidos na fase clara para sintetizar trioses que formarão glicose, amido e celulose.
 
 ## 5. Definições e Conceitos
 - **Ponto de Compensação Fótico (PCF):** Intensidade luminosa na qual a velocidade da fotossíntese iguala rigorosamente a velocidade da respiração celular da planta (\( \text{Taxa Fotossíntese} = \text{Taxa Respiração} \)): o consumo de \( \text{O}_2 \) iguala a produção, e a troca gasosa com o ambiente é nula.
@@ -567,31 +607,38 @@ O dinitrofenol (DNP) é uma substância química proibida historicamente usada e
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Equação Global da Respiração Celular Aeróbia",
-                syntax = """\\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{ O}_2 \\to 6\\text{ CO}_2 + 6\\text{ H}_2\\text{O} + \\Delta G^\\circ \\approx -2870\\text{ kJ/mol} \\quad (\\sim 30\\text{ a } 32\\text{ ATP})""",
-                description = "Oxidação catabólica completa da glicose com alto rendimento energético acoplado por fosforilação oxidativa.",
-                parametersInfo = "Realizada sucessivamente no citosol (glicólise) e mitocôndria (Krebs e cristas respiratórias)."
+                termOrFunction = "Respiração Celular Aeróbia: Equação Global Balanceada",
+                syntax = "C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O + Energia Livre (~30 a 32 ATP)",
+                description = "Oxidação catabólica completa da glicose em 3 fases: Glicólise (citosol), Ciclo de Krebs (matriz mitocondrial) e Cadeia Respiratória / Fosforilação Oxidativa (cristas).",
+                parametersInfo = "O oxigênio (O₂) atua nas cristas como o aceptor final de elétrons e prótons, formando água (H₂O)."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Equação Geral da Fotossíntese Oxigênica",
-                syntax = """6\\text{ CO}_2 + 6\\text{ H}_2\\text{O} + \\text{Luz} \\to \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{ O}_2 \\uparrow""",
-                description = "Conversão anabólica de energia radiante solar em energia química estável nas ligações de açúcares.",
-                parametersInfo = "Todo o oxigênio liberado provém comprovadamente da fotólise das moléculas de água nos tilacoides."
+                termOrFunction = "Fotossíntese Oxigênica Global",
+                syntax = "6 CO₂ + 6 H₂O + Luz Solar ⎯(Clorofila)⎯→ C₆H₁₂O₆ + 6 O₂ ↑",
+                description = "Conversão anabólica de energia luminosa em energia química de ligação em açúcares. Fase clara nos tilacoides e ciclo de Calvin no estroma.",
+                parametersInfo = "Comprovado experimentalmente: todo o oxigênio liberado na atmosfera provém da fotólise da água, e nunca do CO₂!"
+            ),
+            FormulaOrSyntaxItem(
+                termOrFunction = "Vias de Fermentação Anaeróbia",
+                syntax = "Glicose → 2 Piruvato → 2 Etanol + 2 CO₂ ↑ + 2 ATP (Alcoólica) | Glicose → 2 Lactato + 2 ATP (Láctica)",
+                description = "Vias citoplasmáticas na ausência de O₂ com objetivo primordial de reoxidar o NADH em NAD⁺ para que a glicólise continue funcionando.",
+                parametersInfo = "Fermentação alcoólica por leveduras (pão e etanol); Fermentação láctica no músculo esquelético sob esforço extenuante."
             )
         ),
         solvedExamples = listOf(
             LessonExample(
-                title = "Fermentação Alcoólica na Panificação",
-                codeOrFormula = """\\text{Glicose} \\xrightarrow{\\text{Levedura}} 2\\text{ Etanol} + 2\\text{ CO}_2 \\uparrow \\implies \\text{Crescimento e Aeração da Massa do Pão}""",
-                explanation = "O desprendimento de gás carbônico pelas leveduras forma alvéolos gasosos internos que conferem maciez e volume ao pão."
+                title = "Origem do Oxigênio na Fotossíntese (Experimento de Ruben e Kamen)",
+                codeOrFormula = "Algas cultivadas com água isotopicamente marcada com ¹⁸O (H₂¹⁸O) e CO₂ comum liberam gás oxigênio marcado (¹⁸O₂).",
+                explanation = "A detecção de oxigênio ¹⁸O₂ exclusivamente no gás atmosférico provou que a luz solar quebra a água (fotólise da água nos tilacoides) para fornecer elétrons à clorofila, liberando O₂ gasoso. Já os átomos de oxigênio do CO₂ são incorporados na glicose sintetizada no ciclo de Calvin."
             ),
             LessonExample(
-                title = "O Papel do Aceptor Final na Cadeia Respiratória",
-                codeOrFormula = """\\text{O}_2 + 4\\text{ e}^- + 4\\text{ H}^+ \\to 2\\text{ H}_2\\text{O} \\implies \\text{Manutenção da Força Próton-Motriz}""",
-                explanation = "A redução do oxigênio molecular em água no complexo IV garante o fluxo contínuo de elétrons e a geração contínua de ATP."
+                title = "Fermentação Alcoólica na Fabricação do Pão",
+                codeOrFormula = "Adição de fermento biológico vivo (levedura Saccharomyces cerevisiae) à massa de farinha de trigo aquecida.",
+                explanation = "Em anaerobiose no interior da massa, as leveduras fermentam a glicose liberando gás carbônico (CO₂). O gás fica retido na malha de glúten, formando alvéolos que expandem e tornam o pão macio e volumoso. O etanol formado evapora completamente durante o cozimento no forno."
             )
         ),
-        goldTip = "Duas regras de ouro absolutas do ENEM: (1) O oxigênio liberado na fotossíntese vem da ÁGUA (fotólise nos tilacoides) e NUNCA do gás carbônico! (2) Na respiração celular, o oxigênio que respiramos NÃO vira gás carbônico: ele é o ACEPTOR FINAL de elétrons e vira ÁGUA pura no final das cristas mitocondriais!"
+        goldTip = "Duas regras de ouro absolutas do ENEM: (1) O oxigênio liberado na fotossíntese vem da ÁGUA (fotólise nos tilacoides) e NUNCA do gás carbônico! (2) Na respiração celular, o oxigênio que respiramos NÃO vira gás carbônico: ele é o ACEPTOR FINAL de elétrons e vira ÁGUA pura no final das cristas mitocondriais!",
+        assetImagePath = "images/biologia/metabolismo_energetico_integrado.svg"
     )
 
     // =========================================================================
@@ -727,31 +774,38 @@ Por que os ursos polares e esquimós que consomem uma dieta exclusivamente carn�
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Formação da Ligação Peptídica",
-                syntax = """\\text{R}_1\\text{-COOH} + \\text{R}_2\\text{-NH}_2 \\to \\text{R}_1\\text{-CO-NH-R}_2 + \\text{H}_2\\text{O} \\quad (\\text{Síntese por Desidratação})""",
-                description = "Reação de condensação covalente entre o carbono da carboxila de um aminoácido e o nitrogênio amínico do seguinte.",
-                parametersInfo = "Catalisada no sítio peptidil-transferase do ribossomo durante a tradução celular."
+                termOrFunction = "Síntese por Desidratação: Ligação Peptídica",
+                syntax = "Aminoácido 1 (-COOH) + Aminoácido 2 (-NH₂) → Dipeptídeo (-CO-NH-) + H₂O",
+                description = "Reação de condensação covalente entre a carboxila de um aminoácido e a amina do seguinte, liberando uma molécula de água.",
+                parametersInfo = "Catalisada no sítio peptidil-transferase do ribossomo durante a tradução proteica."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Equação Cinética de Michaelis-Menten",
-                syntax = """v = \\frac{V_{\\text{máx}} \\cdot [S]}{K_m + [S]}""",
-                description = "Velocidade catalítica inicial da enzima em função da concentração de substrato livre disponível.",
-                parametersInfo = """V_{\\text{máx}}: \\text{velocidade de saturação}; \\quad K_m: \\text{constante de afinidade (metade de } V_{\\text{máx}})"""
+                termOrFunction = "Cinética Catalítica e Desnaturação Enzimática",
+                syntax = "Enzima + Substrato ⇌ Complexo Enzima-Substrato → Enzima Livre + Produtos",
+                description = "As enzimas reduzem a energia de ativação reacional sem serem consumidas. Possuem faixas ótimas de pH e temperatura.",
+                parametersInfo = "Temperaturas extremas ou pH desfavorável rompem pontes de hidrogênio e causam desnaturação irreversível do sítio ativo."
+            ),
+            FormulaOrSyntaxItem(
+                termOrFunction = "Ciclo de Hidrólise e Fosforilação do ATP",
+                syntax = "ATP + H₂O ⇌ ADP + Pi + 7,3 kcal/mol (~30,5 kJ/mol de energia livre útil)",
+                description = "A quebra da ligação fosfoanidro terminal de alta energia fornece o trabalho químico, mecânico e osmótico de todas as células vivas.",
+                parametersInfo = "A energia liberada na oxidação da glicose refosforila continuamente o ADP em ATP."
             )
         ),
         solvedExamples = listOf(
             LessonExample(
-                title = "Efeito do pH na Pepsina vs Tripsina",
-                codeOrFormula = """\\text{Pepsina Estomacal: pH Ótimo} \\approx 2 \\quad | \\quad \\text{Tripsina Pancreática: pH Ótimo} \\approx 8""",
-                explanation = "A alteração brusca do quimo ácido ao entrar no duodeno neutraliza a pepsina por desnaturação e ativa a tripsina alcalina."
+                title = "Influência do pH nas Enzimas Digestórias Humanas",
+                codeOrFormula = "Pepsina gástrica do estômago atua em pH ótimo ~ 2 (ácido); Tripsina pancreática atua no duodeno em pH ótimo ~ 8 (básico).",
+                explanation = "A chegada do quimo estomacal ao intestino delgado estimula a secreção de bicarbonato pelo pâncreas. A elevação brusca do pH inativa e desnatura a pepsina ácida, ao mesmo tempo em que cria o ambiente químico alcalino ideal para a tripsina continuar a hidrólise de proteínas."
             ),
             LessonExample(
-                title = "Perfil Lipídico e Aterosclerose",
-                codeOrFormula = """\\uparrow [\\text{LDL Oxidado}] + \\downarrow [\\text{HDL}] \\implies \\text{Formação de Placas de Ateroma e Risco de Infarto}""",
-                explanation = "O balanço entre os transportadores lipoproteicos modula o risco cardiovascular e a deposição arterial de placas lipídicas."
+                title = "Perfil Lipídico, Colesterol e Aterosclerose",
+                codeOrFormula = "Balanço sanguíneo entre lipoproteínas de baixa densidade (LDL) e de alta densidade (HDL).",
+                explanation = "O LDL transporta colesterol do fígado para as artérias; em excesso oxidado, é fagocitado por macrófagos gerando placas de ateroma que enrijecem vasos. O HDL realiza o transporte reverso recolhendo o colesterol das artérias de volta para o fígado, reduzindo o risco de infarto."
             )
         ),
-        goldTip = "Para o ENEM, não confunda o papel das vitaminas: Vitamina C tem a ver com COLÁGENO e vasos (carência dá ESCORBUTO com sangramento de gengiva). Vitamina D tem a ver com CÁLCIO e ossos (carência dá RAQUITISMO). Vitamina A tem a ver com a VISÃO (carência dá CEGUEIRA NOTURNA). Vitamina K tem a ver com COAGULAÇÃO (carência dá HEMORRAGIA)!"
+        goldTip = "Para o ENEM, não confunda o papel das vitaminas: Vitamina C tem a ver com COLÁGENO e vasos (carência dá ESCORBUTO com sangramento de gengiva). Vitamina D tem a ver com CÁLCIO e ossos (carência dá RAQUITISMO). Vitamina A tem a ver com a VISÃO (carência dá CEGUEIRA NOTURNA). Vitamina K tem a ver com COAGULAÇÃO (carência dá HEMORRAGIA)!",
+        assetImagePath = "images/biologia/celula_procarionte_eucarionte.svg"
     )
 }
 

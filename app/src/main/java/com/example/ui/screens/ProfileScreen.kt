@@ -97,6 +97,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
@@ -1505,92 +1506,129 @@ fun ProfileScreen(
                     }
 
                     Text(
-                        text = "Ou escolha um avatar predefinido:",
-                        style = MaterialTheme.typography.labelSmall.copy(color = TextTertiary, fontSize = 11.sp)
+                        text = "Ou escolha seu Mentor / Companheiro de Estudos:",
+                        style = MaterialTheme.typography.labelSmall.copy(color = TextSecondary, fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
                     )
 
-                    Row(
-                        horizontalArrangement = Arrangement.spacedBy(10.dp),
-                        verticalAlignment = Alignment.CenterVertically
+                    // Seletor de Mentores Oficiais do Knowverse (Lore)
+                    androidx.compose.foundation.lazy.LazyRow(
+                        horizontalArrangement = Arrangement.spacedBy(12.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)
                     ) {
-                        // Preset 1: Otter Boy Mascot (Default)
-                        Box(
-                            modifier = Modifier
-                                .size(50.dp)
-                                .clip(CircleShape)
-                                .border(
-                                    2.dp,
-                                    if (selectedAvatarKey == "mascot_otter_boy" || selectedAvatarKey == "mascot_sealion" || selectedAvatarKey.isBlank()) PrimaryViolet else BorderSubtle,
-                                    CircleShape
+                        items(com.example.data.lore.KnowverseLoreRepository.ALL_CHARACTERS.size) { idx ->
+                            val character = com.example.data.lore.KnowverseLoreRepository.ALL_CHARACTERS[idx]
+                            val isSelected = selectedAvatarKey == character.id || (selectedAvatarKey.isBlank() && character.id == "otto_lontra")
+                            
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier
+                                    .width(68.dp)
+                                    .clickable { selectedAvatarKey = character.id }
+                            ) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(54.dp)
+                                        .clip(CircleShape)
+                                        .background(character.accentColor.copy(alpha = if (isSelected) 0.25f else 0.08f))
+                                        .border(
+                                            width = if (isSelected) 2.5.dp else 1.dp,
+                                            color = if (isSelected) character.accentColor else BorderSubtle,
+                                            shape = CircleShape
+                                        ),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Image(
+                                        painter = painterResource(id = character.drawableRes),
+                                        contentDescription = character.name,
+                                        contentScale = ContentScale.Crop,
+                                        modifier = Modifier.size(48.dp).clip(CircleShape)
+                                    )
+                                }
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text(
+                                    text = character.name,
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        fontSize = 11.sp,
+                                        fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium,
+                                        color = if (isSelected) TextPrimary else TextSecondary
+                                    ),
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis
                                 )
-                                .clickable { selectedAvatarKey = "mascot_otter_boy" },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.img_mascot_otter_boy),
-                                contentDescription = "Mascote Lontra Estudante",
-                                modifier = Modifier.size(46.dp).clip(CircleShape)
-                            )
+                                Text(
+                                    text = character.species,
+                                    style = MaterialTheme.typography.labelSmall.copy(
+                                        fontSize = 9.sp,
+                                        color = TextTertiary
+                                    ),
+                                    maxLines = 1,
+                                    overflow = TextOverflow.Ellipsis
+                                )
+                            }
                         }
 
-                        // Preset 2: Otter Girl Mascot (Girls option requested by user)
-                        Box(
-                            modifier = Modifier
-                                .size(50.dp)
-                                .clip(CircleShape)
-                                .border(
-                                    2.dp,
-                                    if (selectedAvatarKey == "mascot_otter_girl" || selectedAvatarKey == "avatar_girl") PrimaryViolet else BorderSubtle,
-                                    CircleShape
-                                )
-                                .clickable { selectedAvatarKey = "mascot_otter_girl" },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.img_mascot_otter_girl),
-                                contentDescription = "Mascote Lontra Menina",
-                                modifier = Modifier.size(46.dp).clip(CircleShape)
-                            )
+                        // Presets clássicos de programador
+                        item {
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier
+                                    .width(68.dp)
+                                    .clickable { selectedAvatarKey = "avatar_male" }
+                            ) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(54.dp)
+                                        .clip(CircleShape)
+                                        .background(PrimaryViolet.copy(alpha = if (selectedAvatarKey == "avatar_male") 0.25f else 0.08f))
+                                        .border(
+                                            width = if (selectedAvatarKey == "avatar_male") 2.5.dp else 1.dp,
+                                            color = if (selectedAvatarKey == "avatar_male") PrimaryViolet else BorderSubtle,
+                                            shape = CircleShape
+                                        ),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Image(
+                                        painter = painterResource(id = R.drawable.ic_avatar_coder_male),
+                                        contentDescription = "Programador",
+                                        modifier = Modifier.size(46.dp).clip(CircleShape)
+                                    )
+                                }
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text("Dev Alpha", fontSize = 11.sp, color = if (selectedAvatarKey == "avatar_male") TextPrimary else TextSecondary)
+                                Text("Avatar", fontSize = 9.sp, color = TextTertiary)
+                            }
                         }
 
-                        // Preset 3: Male Coder Avatar
-                        Box(
-                            modifier = Modifier
-                                .size(50.dp)
-                                .clip(CircleShape)
-                                .border(
-                                    2.dp,
-                                    if (selectedAvatarKey == "avatar_male") PrimaryViolet else BorderSubtle,
-                                    CircleShape
-                                )
-                                .clickable { selectedAvatarKey = "avatar_male" },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.ic_avatar_coder_male),
-                                contentDescription = "Programador",
-                                modifier = Modifier.size(46.dp).clip(CircleShape)
-                            )
-                        }
-
-                        // Preset 4: Female Coder Avatar
-                        Box(
-                            modifier = Modifier
-                                .size(50.dp)
-                                .clip(CircleShape)
-                                .border(
-                                    2.dp,
-                                    if (selectedAvatarKey == "avatar_female") PrimaryViolet else BorderSubtle,
-                                    CircleShape
-                                )
-                                .clickable { selectedAvatarKey = "avatar_female" },
-                            contentAlignment = Alignment.Center
-                        ) {
-                            Image(
-                                painter = painterResource(id = R.drawable.ic_avatar_coder_female),
-                                contentDescription = "Programadora",
-                                modifier = Modifier.size(46.dp).clip(CircleShape)
-                            )
+                        item {
+                            Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier
+                                    .width(68.dp)
+                                    .clickable { selectedAvatarKey = "avatar_female" }
+                            ) {
+                                Box(
+                                    modifier = Modifier
+                                        .size(54.dp)
+                                        .clip(CircleShape)
+                                        .background(PrimaryViolet.copy(alpha = if (selectedAvatarKey == "avatar_female") 0.25f else 0.08f))
+                                        .border(
+                                            width = if (selectedAvatarKey == "avatar_female") 2.5.dp else 1.dp,
+                                            color = if (selectedAvatarKey == "avatar_female") PrimaryViolet else BorderSubtle,
+                                            shape = CircleShape
+                                        ),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Image(
+                                        painter = painterResource(id = R.drawable.ic_avatar_coder_female),
+                                        contentDescription = "Programadora",
+                                        modifier = Modifier.size(46.dp).clip(CircleShape)
+                                    )
+                                }
+                                Spacer(modifier = Modifier.height(4.dp))
+                                Text("Dev Beta", fontSize = 11.sp, color = if (selectedAvatarKey == "avatar_female") TextPrimary else TextSecondary)
+                                Text("Avatar", fontSize = 9.sp, color = TextTertiary)
+                            }
                         }
                     }
 

@@ -5,6 +5,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.rememberTransformableState
+import androidx.compose.foundation.gestures.transformable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -39,8 +41,11 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -49,7 +54,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import coil.ImageLoader
 import coil.compose.SubcomposeAsyncImage
+import coil.decode.SvgDecoder
 import coil.request.ImageRequest
 import com.example.ui.theme.BorderSubtle
 import com.example.ui.theme.GoldXp
@@ -77,7 +84,11 @@ fun DidacticImageView(
     val context = LocalContext.current
     var isFullScreenOpen by remember { mutableStateOf(false) }
 
-    val effectivePath = (imagePath ?: imagePathOrRes).trim()
+    val rawPath = (imagePath ?: imagePathOrRes).trim()
+    val effectivePath = remember(rawPath) {
+        val mdMatch = Regex("""!\[.*?\]\((.*?)\)""").find(rawPath)
+        if (mdMatch != null) mdMatch.groupValues[1].trim() else rawPath
+    }
     val effectiveAlt = (caption ?: altText).trim().ifBlank { "Esquema Visual Didático" }
 
     // Limpeza de caminho relativo de assets
@@ -90,9 +101,9 @@ fun DidacticImageView(
             .removePrefix("/")
     }
 
-    // Tentativa prioritária de carregamento síncrono offline via assets
+    // Tentativa prioritária de carregamento síncrono offline via assets (para PNG/JPEG/WEBP)
     val assetBitmap = remember(cleanAssetPath) {
-        if (cleanAssetPath.isNotBlank()) {
+        if (cleanAssetPath.isNotBlank() && !cleanAssetPath.endsWith(".svg", ignoreCase = true)) {
             try {
                 context.assets.open(cleanAssetPath).use { inputStream ->
                     BitmapFactory.decodeStream(inputStream)?.asImageBitmap()
@@ -102,6 +113,23 @@ fun DidacticImageView(
             }
         } else {
             null
+        }
+    }
+
+    val imageLoader = remember(context) {
+        ImageLoader.Builder(context)
+            .components {
+                add(SvgDecoder.Factory())
+            }
+            .build()
+    }
+
+    val coilModel = remember(cleanAssetPath, effectivePath) {
+        when {
+            effectivePath.startsWith("http://") || effectivePath.startsWith("https://") -> effectivePath
+            cleanAssetPath.isNotBlank() -> "file:///android_asset/$cleanAssetPath"
+            effectivePath.startsWith("file:") -> effectivePath
+            else -> null
         }
     }
 
@@ -182,7 +210,7 @@ fun DidacticImageView(
                             contentScale = ContentScale.Fit,
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .heightIn(min = 160.dp, max = 260.dp)
+                                .heightIn(min = 120.dp, max = 360.dp)
                                 .padding(4.dp)
                         )
                     }
@@ -194,17 +222,19 @@ fun DidacticImageView(
                             contentScale = ContentScale.Fit,
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .heightIn(min = 160.dp, max = 260.dp)
+                                .heightIn(min = 120.dp, max = 360.dp)
                                 .padding(4.dp)
                         )
                     }
 
-                    effectivePath.startsWith("http://") || effectivePath.startsWith("https://") || effectivePath.startsWith("file:") -> {
+                    coilModel != null -> {
                         SubcomposeAsyncImage(
                             model = ImageRequest.Builder(context)
-                                .data(effectivePath)
+                                .data(coilModel)
+                                .setHeader("User-Agent", "Knowverse/2.0 (Android; Mobile)")
                                 .crossfade(true)
                                 .build(),
+                            imageLoader = imageLoader,
                             contentDescription = altText,
                             contentScale = ContentScale.Fit,
                             loading = {
@@ -239,7 +269,7 @@ fun DidacticImageView(
                             },
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .heightIn(min = 160.dp, max = 260.dp)
+                                .heightIn(min = 120.dp, max = 360.dp)
                                 .padding(4.dp)
                         )
                     }
@@ -283,12 +313,24 @@ fun DidacticImageView(
         }
     }
 
-    // Modal de Visualização em Tela Cheia
+    // Modal de Visualização em Tela Cheia com Zoom e Pan interativos
     if (isFullScreenOpen) {
         Dialog(
             onDismissRequest = { isFullScreenOpen = false },
             properties = DialogProperties(usePlatformDefaultWidth = false)
         ) {
+            var scale by remember { mutableStateOf(1f) }
+            var offset by remember { mutableStateOf(Offset.Zero) }
+            val transformState = rememberTransformableState { zoomChange, offsetChange, _ ->
+                val newScale = (scale * zoomChange).coerceIn(1f, 5f)
+                scale = newScale
+                offset = if (newScale > 1f) {
+                    Offset(offset.x + offsetChange.x, offset.y + offsetChange.y)
+                } else {
+                    Offset.Zero
+                }
+            }
+
             Surface(
                 modifier = Modifier.fillMaxSize(),
                 color = Color(0xFF050811)
@@ -310,12 +352,26 @@ fun DidacticImageView(
                             ),
                             modifier = Modifier.weight(1f)
                         )
-                        IconButton(onClick = { isFullScreenOpen = false }) {
-                            Icon(
-                                imageVector = Icons.Default.Close,
-                                contentDescription = "Fechar",
-                                tint = TextPrimary
-                            )
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            if (scale > 1.05f) {
+                                Text(
+                                    text = "Resetar Zoom",
+                                    style = MaterialTheme.typography.labelSmall.copy(color = GoldXp),
+                                    modifier = Modifier
+                                        .clickable {
+                                            scale = 1f
+                                            offset = Offset.Zero
+                                        }
+                                        .padding(horizontal = 8.dp, vertical = 4.dp)
+                                )
+                            }
+                            IconButton(onClick = { isFullScreenOpen = false }) {
+                                Icon(
+                                    imageVector = Icons.Default.Close,
+                                    contentDescription = "Fechar",
+                                    tint = TextPrimary
+                                )
+                            }
                         }
                     }
 
@@ -323,6 +379,14 @@ fun DidacticImageView(
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxWidth()
+                            .clipToBounds()
+                            .transformable(state = transformState)
+                            .graphicsLayer(
+                                scaleX = scale,
+                                scaleY = scale,
+                                translationX = offset.x,
+                                translationY = offset.y
+                            )
                             .padding(16.dp),
                         contentAlignment = Alignment.Center
                     ) {
@@ -345,7 +409,12 @@ fun DidacticImageView(
                             }
                             else -> {
                                 SubcomposeAsyncImage(
-                                    model = effectivePath,
+                                    model = ImageRequest.Builder(context)
+                                        .data(coilModel ?: effectivePath)
+                                        .setHeader("User-Agent", "Knowverse/2.0 (Android; Mobile)")
+                                        .crossfade(true)
+                                        .build(),
+                                    imageLoader = imageLoader,
                                     contentDescription = effectiveAlt,
                                     contentScale = ContentScale.Fit,
                                     modifier = Modifier.fillMaxSize()

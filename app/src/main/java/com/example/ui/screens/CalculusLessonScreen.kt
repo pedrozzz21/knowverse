@@ -293,7 +293,7 @@ fun CalculusLessonScreen(
     val isPhysicsLesson = lesson.id.startsWith("fis_")
     val isEnemLesson = lesson.id.startsWith("enem_")
     val isBasicMath = lesson.id.startsWith("mb_") || lesson.unitId.contains("basic_math")
-    val isNonFormulaSubject = isLanguagesLesson || isHistoryLesson || isGeographyLesson || 
+    val isNonFormulaSubject = isBiologyLesson || isLanguagesLesson || isHistoryLesson || isGeographyLesson || 
         (isTranspetroLesson && !lesson.id.startsWith("tp_mat_") && !lesson.id.startsWith("tp_fin_"))
     val isIntegralsUnit = lesson.unitId.contains("integral") || 
         lesson.id.startsWith("calc_l19") || lesson.id.startsWith("calc_l20") ||
@@ -608,6 +608,10 @@ fun CalculusLessonScreen(
                         CalculusStage.values().forEach { stage ->
                             val isSelected = currentStage == stage
                             val stageLabelText = when {
+                                isBiologyLesson && stage == CalculusStage.THEORY -> "1. Teoria"
+                                isBiologyLesson && stage == CalculusStage.FORMULAS -> "2. Processos"
+                                isBiologyLesson && stage == CalculusStage.EXAMPLES -> "3. Estudos de Caso"
+                                isBiologyLesson && stage == CalculusStage.EXERCISES -> "4. Questões ENEM"
                                 isNonFormulaSubject && stage == CalculusStage.THEORY -> "1. Teoria"
                                 isNonFormulaSubject && stage == CalculusStage.FORMULAS -> "2. Conceitos"
                                 isNonFormulaSubject && stage == CalculusStage.EXAMPLES -> "3. Análises"
@@ -673,7 +677,12 @@ fun CalculusLessonScreen(
                                 shape = RoundedCornerShape(8.dp),
                                 modifier = Modifier.fillMaxWidth().height(44.dp)
                             ) {
-                                Text(if (isNonFormulaSubject) "Avançar para 2. Conceitos-Chave" else "Avançar para 2. Fórmulas & Regras", fontWeight = FontWeight.Bold)
+                                val nextText = when {
+                                    isBiologyLesson -> "Avançar para 2. Processos Biológicos"
+                                    isNonFormulaSubject -> "Avançar para 2. Conceitos-Chave"
+                                    else -> "Avançar para 2. Fórmulas & Regras"
+                                }
+                                Text(nextText, fontWeight = FontWeight.Bold)
                                 Spacer(modifier = Modifier.width(8.dp))
                                 Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null, modifier = Modifier.size(16.dp))
                             }
@@ -692,7 +701,12 @@ fun CalculusLessonScreen(
                                 shape = RoundedCornerShape(8.dp),
                                 modifier = Modifier.weight(1.5f).height(44.dp)
                             ) {
-                                Text(if (isNonFormulaSubject) "Ver Análises & Textos" else "Ver Exemplos", fontWeight = FontWeight.Bold)
+                                val nextText = when {
+                                    isBiologyLesson -> "Ver Estudos de Caso"
+                                    isNonFormulaSubject -> "Ver Análises & Textos"
+                                    else -> "Ver Exemplos"
+                                }
+                                Text(nextText, fontWeight = FontWeight.Bold)
                                 Spacer(modifier = Modifier.width(6.dp))
                                 Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null, modifier = Modifier.size(16.dp))
                             }
@@ -703,7 +717,12 @@ fun CalculusLessonScreen(
                                 shape = RoundedCornerShape(8.dp),
                                 modifier = Modifier.weight(1f).height(44.dp)
                             ) {
-                                Text(if (isNonFormulaSubject) "Conceitos" else "Fórmulas", color = TextSecondary)
+                                val prevText = when {
+                                    isBiologyLesson -> "Processos"
+                                    isNonFormulaSubject -> "Conceitos"
+                                    else -> "Fórmulas"
+                                }
+                                Text(prevText, color = TextSecondary)
                             }
                             Button(
                                 onClick = { currentStage = CalculusStage.EXERCISES },
@@ -711,7 +730,12 @@ fun CalculusLessonScreen(
                                 shape = RoundedCornerShape(8.dp),
                                 modifier = Modifier.weight(1.5f).height(44.dp)
                             ) {
-                                Text(if (isNonFormulaSubject) "Ir para as Questões" else "Ir para os Exercícios", fontWeight = FontWeight.Bold)
+                                val nextText = when {
+                                    isBiologyLesson -> "Ir para as Questões ENEM"
+                                    isNonFormulaSubject -> "Ir para as Questões"
+                                    else -> "Ir para os Exercícios"
+                                }
+                                Text(nextText, fontWeight = FontWeight.Bold)
                                 Spacer(modifier = Modifier.width(6.dp))
                                 Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null, modifier = Modifier.size(16.dp))
                             }
@@ -857,21 +881,23 @@ fun CalculusLessonScreen(
                         )
                     }
 
-                    // Imagem Didática ou Gráfico Diagnóstico em Alta Resolução
-                    val assetImg = didacticBundle.assetImagePath
-                    val imgRes = didacticBundle.imageResId ?: lesson.imageResId
-                    if (assetImg != null) {
-                        DidacticImageView(
-                            imagePath = assetImg,
-                            caption = "Gráfico Diagnóstico: ${lesson.title}",
-                            modifier = Modifier.fillMaxWidth()
-                        )
-                    } else if (imgRes != null && imgRes != 0) {
-                        DidacticImageView(
-                            drawableResId = imgRes,
-                            caption = "Gráfico Diagnóstico em Alta Resolução",
-                            modifier = Modifier.fillMaxWidth()
-                        )
+                    // Imagem Didática ou Gráfico Diagnóstico em Alta Resolução (somente quando não houver GeoGebra interativo)
+                    if (geoConfig == null) {
+                        val assetImg = didacticBundle.assetImagePath
+                        val imgRes = didacticBundle.imageResId ?: lesson.imageResId
+                        if (assetImg != null) {
+                            DidacticImageView(
+                                imagePath = assetImg,
+                                caption = "Gráfico Diagnóstico: ${lesson.title}",
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                        } else if (imgRes != null && imgRes != 0) {
+                            DidacticImageView(
+                                drawableResId = imgRes,
+                                caption = "Gráfico Diagnóstico em Alta Resolução",
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                        }
                     }
 
                     // Gold Tip Card
@@ -918,17 +944,22 @@ fun CalculusLessonScreen(
                 // ========================================================
                 CalculusStage.FORMULAS -> {
                     Text(
-                        text = if (isNonFormulaSubject) "Conceitos-Chave e Fundamentos Teóricos" else "Quadro de Fórmulas e Regras Operatórias",
+                        text = when {
+                            isBiologyLesson -> "Processos Biológicos e Reações Químicas"
+                            isNonFormulaSubject -> "Conceitos-Chave e Fundamentos Teóricos"
+                            else -> "Quadro de Fórmulas e Regras Operatórias"
+                        },
                         style = MaterialTheme.typography.titleMedium.copy(
                             fontWeight = FontWeight.Bold,
                             color = TextPrimary
                         )
                     )
                     Text(
-                        text = if (isNonFormulaSubject)
-                            "Categorias analíticas, termos técnicos e estruturas essenciais para a interpretação:"
-                        else
-                            "Entenda cada termo matemático e o papel de cada variável nas equações:",
+                        text = when {
+                            isBiologyLesson -> "Mecanismos celulares, reações bioquímicas balanceadas e vias moleculares explicadas em detalhes:"
+                            isNonFormulaSubject -> "Categorias analíticas, termos técnicos e estruturas essenciais para a interpretação:"
+                            else -> "Entenda cada termo matemático e o papel de cada variável nas equações:"
+                        },
                         style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary)
                     )
 
@@ -953,7 +984,7 @@ fun CalculusLessonScreen(
                                             contentAlignment = Alignment.Center
                                         ) {
                                             Icon(
-                                                imageVector = Icons.Default.Bookmark,
+                                                imageVector = if (isBiologyLesson) Icons.Default.AutoStories else Icons.Default.Bookmark,
                                                 contentDescription = null,
                                                 tint = subjectAccentColor,
                                                 modifier = Modifier.size(14.dp)
@@ -979,15 +1010,44 @@ fun CalculusLessonScreen(
                                         border = androidx.compose.foundation.BorderStroke(1.dp, subjectAccentColor.copy(alpha = 0.25f)),
                                         modifier = Modifier.fillMaxWidth()
                                     ) {
-                                        Text(
-                                            text = formulaItem.syntax,
-                                            style = MaterialTheme.typography.bodyMedium.copy(
-                                                color = TextPrimary,
-                                                fontWeight = FontWeight.Medium,
-                                                lineHeight = 20.sp
-                                            ),
-                                            modifier = Modifier.padding(12.dp)
-                                        )
+                                        Column(modifier = Modifier.padding(12.dp)) {
+                                            if (isBiologyLesson) {
+                                                val isChemical = formulaItem.syntax.contains("→") ||
+                                                        formulaItem.syntax.contains("\\to") ||
+                                                        formulaItem.syntax.contains("\\rightleftharpoons") ||
+                                                        formulaItem.syntax.contains("CO_2") ||
+                                                        formulaItem.syntax.contains("H_2O") ||
+                                                        formulaItem.syntax.contains("ATP") ||
+                                                        formulaItem.syntax.contains("O_2") ||
+                                                        formulaItem.syntax.contains("C_6") ||
+                                                        formulaItem.syntax.contains("SO_") ||
+                                                        formulaItem.syntax.contains("NO_")
+
+                                                Surface(
+                                                    color = if (isChemical) Color(0xFF065F46).copy(alpha = 0.4f) else subjectAccentColor.copy(alpha = 0.15f),
+                                                    shape = RoundedCornerShape(4.dp),
+                                                    modifier = Modifier.padding(bottom = 6.dp)
+                                                ) {
+                                                    Text(
+                                                        text = if (isChemical) "REAÇÃO BIOQUÍMICA / PROCESSO QUÍMICO" else "MECANISMO CELULAR / ESTRUTURA",
+                                                        style = MaterialTheme.typography.labelSmall.copy(
+                                                            color = if (isChemical) Color(0xFF34D399) else subjectAccentColor,
+                                                            fontWeight = FontWeight.Bold,
+                                                            fontSize = 9.5.sp
+                                                        ),
+                                                        modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                                    )
+                                                }
+                                            }
+                                            MathFormattedText(
+                                                text = formulaItem.syntax,
+                                                style = MaterialTheme.typography.bodyMedium.copy(
+                                                    color = TextPrimary,
+                                                    fontWeight = FontWeight.SemiBold,
+                                                    lineHeight = 20.sp
+                                                )
+                                            )
+                                        }
                                     }
                                 } else {
                                     // Formula Box com suporte a Símbolos Matemáticos Visuais
@@ -1010,14 +1070,15 @@ fun CalculusLessonScreen(
                                     Spacer(modifier = Modifier.height(6.dp))
                                     if (isNonFormulaSubject) {
                                         Surface(
-                                            color = PrimaryViolet.copy(alpha = 0.08f),
+                                            color = subjectAccentColor.copy(alpha = 0.08f),
                                             shape = RoundedCornerShape(6.dp),
                                             modifier = Modifier.fillMaxWidth()
                                         ) {
+                                            val badgePrefix = if (isBiologyLesson) "Contexto Biológico & ENEM: " else "Aplicação ENEM: "
                                             Text(
-                                                text = "Aplicação ENEM: ${formulaItem.parametersInfo}",
+                                                text = badgePrefix + formulaItem.parametersInfo,
                                                 style = MaterialTheme.typography.labelSmall.copy(
-                                                    color = PrimaryViolet,
+                                                    color = subjectAccentColor,
                                                     fontWeight = FontWeight.SemiBold,
                                                     lineHeight = 15.sp
                                                 ),
@@ -1043,17 +1104,22 @@ fun CalculusLessonScreen(
                 // ========================================================
                 CalculusStage.EXAMPLES -> {
                     Text(
-                        text = if (isNonFormulaSubject) "Textos Didáticos & Análises Comentadas" else "Exemplos Resolvidos e Comentados",
+                        text = when {
+                            isBiologyLesson -> "Estudos de Caso e Aplicações Biológicas"
+                            isNonFormulaSubject -> "Textos Didáticos & Análises Comentadas"
+                            else -> "Exemplos Resolvidos e Comentados"
+                        },
                         style = MaterialTheme.typography.titleMedium.copy(
                             fontWeight = FontWeight.Bold,
                             color = TextPrimary
                         )
                     )
                     Text(
-                        text = if (isNonFormulaSubject)
-                            "Interpretação passo a passo de fontes, textos e estudos de caso do ENEM:"
-                        else
-                            "Veja como aplicar as fórmulas e o raciocínio analítico na prática:",
+                        text = when {
+                            isBiologyLesson -> "Análise passo a passo de experimentos científicos, fisiologia e cenários práticos do ENEM:"
+                            isNonFormulaSubject -> "Interpretação passo a passo de fontes, textos e estudos de caso do ENEM:"
+                            else -> "Veja como aplicar as fórmulas e o raciocínio analítico na prática:"
+                        },
                         style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary)
                     )
 
@@ -1084,7 +1150,7 @@ fun CalculusLessonScreen(
                                     ) {
                                         Column(modifier = Modifier.padding(10.dp)) {
                                             Text(
-                                                text = "FONTE / TRECHO DIDÁTICO:",
+                                                text = if (isBiologyLesson) "CENÁRIO / ESTUDO DE CASO BIOLÓGICO:" else "FONTE / TRECHO DIDÁTICO:",
                                                 style = MaterialTheme.typography.labelSmall.copy(
                                                     color = subjectAccentColor,
                                                     fontWeight = FontWeight.Bold,
@@ -1092,7 +1158,7 @@ fun CalculusLessonScreen(
                                                 )
                                             )
                                             Spacer(modifier = Modifier.height(4.dp))
-                                            Text(
+                                            MathFormattedText(
                                                 text = example.codeOrFormula,
                                                 style = MaterialTheme.typography.bodySmall.copy(
                                                     color = TextPrimary,
@@ -1102,6 +1168,7 @@ fun CalculusLessonScreen(
                                             )
                                         }
                                     }
+
                                 } else {
                                     MathFormulaCard(
                                         formula = example.codeOrFormula,

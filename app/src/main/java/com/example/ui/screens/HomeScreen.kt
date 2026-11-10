@@ -192,12 +192,13 @@ fun HomeScreen(
                 verticalArrangement = Arrangement.spacedBy(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                // 1. Cabeçalho Consolidado com Otto Mentor + Boas-vindas + Notificações
+                // 1. Cabeçalho Consolidado com Mentor Oficial + Boas-vindas + Notificações
                 com.example.ui.components.home.HeroHeader(
                     userName = userName,
                     currentStreak = userProgress.currentStreak,
                     hasStudiedToday = hasStudiedToday,
                     unreadNotificationsCount = unreadNotificationsCount,
+                    userPhotoKey = userPhotoUrl,
                     onNotificationsClick = onNotificationsClick,
                     onStreakClick = onNavigateToRanking
                 )

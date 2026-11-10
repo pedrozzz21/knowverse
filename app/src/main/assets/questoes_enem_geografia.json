@@ -267,7 +267,7 @@
     "subtopic": "Módulo 4: Geografia Econômica e Globalização",
     "moduleId": "mod_geo_04_economica",
     "moduleTitle": "Módulo 4: Geografia Econômica e Globalização",
-    "statement": "![](https://enem.dev/broken-image.svg)\n\nNas reportagens publicadas sobre a inauguração de Museu de Arte de São Paulo, em 1947, quando ele ainda ocupava um edifício na rua Sete de Abril, Lina Bo Bardi não foi mencionada nenhuma vez. A arquiteta era responsável pelo projeto do museu que mudaria para sempre a posição de São Paulo no circuito mundial das artes. Mas não houve nenhum registro disso. O louvor se concentrou em seu marido e parceiro profissional, o respeitado crítico de arte Pietro Maria Bardi. Passados 75 anos, a mulher então ignorada recebeu um Leão de Ouro póstumo, a maior homenagem da Bienal de Arquitetura de Veneza, e tem agora sua história contada em duas biografias de peso, que procuram destrinchar uma carreira marcada pela ousadia e pela contradição.\n\nPORTO, W. L**ina Bo Bardi tem sua arquitetura contraditória destrinchada em biografias**. Disponível em: www1.folha.uol.com.br. Acesso em: 10 nov. 2021 (adaptado).\n\nAs transformações pelas quais passaram as sociedades ocidentais e que possibilitaram o reconhecimento recente do trabalho da arquiteta mencionada no texto foram resultado das mobilizações sociais pela",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/86-images/context_img_0.png)\n\nNas reportagens publicadas sobre a inauguração de Museu de Arte de São Paulo, em 1947, quando ele ainda ocupava um edifício na rua Sete de Abril, Lina Bo Bardi não foi mencionada nenhuma vez. A arquiteta era responsável pelo projeto do museu que mudaria para sempre a posição de São Paulo no circuito mundial das artes. Mas não houve nenhum registro disso. O louvor se concentrou em seu marido e parceiro profissional, o respeitado crítico de arte Pietro Maria Bardi. Passados 75 anos, a mulher então ignorada recebeu um Leão de Ouro póstumo, a maior homenagem da Bienal de Arquitetura de Veneza, e tem agora sua história contada em duas biografias de peso, que procuram destrinchar uma carreira marcada pela ousadia e pela contradição.\n\nPORTO, W. L**ina Bo Bardi tem sua arquitetura contraditória destrinchada em biografias**. Disponível em: www1.folha.uol.com.br. Acesso em: 10 nov. 2021 (adaptado).\n\nAs transformações pelas quais passaram as sociedades ocidentais e que possibilitaram o reconhecimento recente do trabalho da arquiteta mencionada no texto foram resultado das mobilizações sociais pela",
     "options": [
       "A) Equidade de genêro.",
       "B) Liberdade de expressão.",
@@ -277,7 +277,10 @@
     ],
     "correctLetter": "A",
     "explanation": "Resolução comentada ENEM 2023 (Questão 65): Análise geográfica de processos espaciais e socioambientais em Módulo 4: Geografia Econômica e Globalização. Alternativa correta: A.",
-    "difficulty": "Média"
+    "difficulty": "Média",
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/86-images/context_img_0.png"
+    ]
   },
   {
     "id": "enem_geo_2023_q66",
@@ -307,7 +310,7 @@
     "subtopic": "Módulo 2: Geografia Agrária",
     "moduleId": "mod_geo_02_agraria",
     "moduleTitle": "Módulo 2: Geografia Agrária",
-    "statement": "No sul da Bahia, desde o século XVIII, tem-se registros de um tipo de sistema agroflorestal. Até hoje, esse sistema é característica marcante da paisagem da região, conhecido como cabruca, que consiste no cultivo do cacau à sombra do dossel da floresta nativa. Esse sistema de cultivo do cacau (graças à tolerância da espécie à sombra) é considerado amigável para a vida silvestre, pois apresenta superioridade em termos de conservação da biodiversidade quando comparado com outras plantações tropicais (monoculturas de dendê, seringa ou café), agricultura ou pastagens.\nSOLLBERG, I.; SCHIAVETTI, A. MORAES M. E. B. Manejo agrícola no Refúgio de Vida Silvestre de Una: agroflorestas como uma perspectiva de conservação. Revista Árvore. n. 2, 2014 (adaptado)\nA prática produtiva apresentada é um exemplo de",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/94-images/context_img_0.png)\n\nNo sul da Bahia, desde o século XVIII, tem-se registros de um tipo de sistema agroflorestal. Até hoje, esse sistema é característica marcante da paisagem da região, conhecido como cabruca, que consiste no cultivo do cacau à sombra do dossel da floresta nativa. Esse sistema de cultivo do cacau (graças à tolerância da espécie à sombra) é considerado amigável para a vida silvestre, pois apresenta superioridade em termos de conservação da biodiversidade quando comparado com outras plantações tropicais (monoculturas de dendê, seringa ou café), agricultura ou pastagens.\nSOLLBERG, I.; SCHIAVETTI, A. MORAES M. E. B. Manejo agrícola no Refúgio de Vida Silvestre de Una: agroflorestas como uma perspectiva de conservação. Revista Árvore. n. 2, 2014 (adaptado)\nA prática produtiva apresentada é um exemplo de",
     "options": [
       "A) Difusão comercial de lavouras temporárias.",
       "B) Utilização sustentável dos recursos naturais.",
@@ -317,7 +320,10 @@
     ],
     "correctLetter": "B",
     "explanation": "Resolução comentada ENEM 2023 (Questão 67): Análise geográfica de processos espaciais e socioambientais em Módulo 2: Geografia Agrária. Alternativa correta: B.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/94-images/context_img_0.png"
+    ]
   },
   {
     "id": "enem_geo_2023_q68",
@@ -487,7 +493,7 @@
     "subtopic": "Módulo 3: Geografia Urbana e Demografia",
     "moduleId": "mod_geo_03_urbana",
     "moduleTitle": "Módulo 3: Geografia Urbana e Demografia",
-    "statement": "**TEXTO I**\n\nGerineldo dorme porque já está conformado com o seu mundo. Porque já sabe tudo o que lhe pode acontecer após haver submetido todos os objetos que o rodeiam a um minucioso inventário de possibilidades. Seu apartamento, mais que um apartamento, é uma teoria de sorte e de azar. Melhor que ninguém, Gerineldo conhece o coeficiente da dilatação de suas janelas e mantém marcado no termômetro, com uma linha vermelha, o ponto em que se quebrarão os vidros, despedaçados em estilhaços de morte. Sabe que os arquitetos e os engenheiros já previram tudo, menos o que nunca já aconteceu.\n\nMARQUEZ, G. G. O pessimista. In: Textos do Caribe. Rio de Janeiro: Record, 1981.\n\n**ТЕХТО II**\n\nA situação é o sujeito inteiro (ele não é nada a não ser a sua situação) e é também a coisa inteira (nunca há mais nada senão as coisas). É o sujeito a elucidar as coisas pela sua própria superação, se assim quisermos; ou são as coisas a reenviar ao sujeito a imagem dele. É a total facticidade, a contingência absoluta do mundo, do meu nascimento, do meu lugar, do meu passado, dos meus redores — e é a minha liberdade sem limites que faz com que haja para mim uma facticidade.\n\nSARTRE, J.-P. O ser e o nada: ensaio de ontologia fenomenológica. Petrópolis: Vozes, 1997 (adaptado).\n\nA postura determinista adotada pelo personagem Gerineldo contrasta com a ideia existencialista contida no pensamento filosófico de Sartre porque",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/79-images/context_img_0.png)\n\n**TEXTO I**\n\nGerineldo dorme porque já está conformado com o seu mundo. Porque já sabe tudo o que lhe pode acontecer após haver submetido todos os objetos que o rodeiam a um minucioso inventário de possibilidades. Seu apartamento, mais que um apartamento, é uma teoria de sorte e de azar. Melhor que ninguém, Gerineldo conhece o coeficiente da dilatação de suas janelas e mantém marcado no termômetro, com uma linha vermelha, o ponto em que se quebrarão os vidros, despedaçados em estilhaços de morte. Sabe que os arquitetos e os engenheiros já previram tudo, menos o que nunca já aconteceu.\n\nMARQUEZ, G. G. O pessimista. In: Textos do Caribe. Rio de Janeiro: Record, 1981.\n\n**ТЕХТО II**\n\nA situação é o sujeito inteiro (ele não é nada a não ser a sua situação) e é também a coisa inteira (nunca há mais nada senão as coisas). É o sujeito a elucidar as coisas pela sua própria superação, se assim quisermos; ou são as coisas a reenviar ao sujeito a imagem dele. É a total facticidade, a contingência absoluta do mundo, do meu nascimento, do meu lugar, do meu passado, dos meus redores — e é a minha liberdade sem limites que faz com que haja para mim uma facticidade.\n\nSARTRE, J.-P. O ser e o nada: ensaio de ontologia fenomenológica. Petrópolis: Vozes, 1997 (adaptado).\n\nA postura determinista adotada pelo personagem Gerineldo contrasta com a ideia existencialista contida no pensamento filosófico de Sartre porque",
     "options": [
       "A) Evidencia a manifestação do inconsciente.",
       "B) Nega a possibilidade de transcendência.",
@@ -497,7 +503,10 @@
     ],
     "correctLetter": "B",
     "explanation": "Resolução comentada ENEM 2023 (Questão 79): Análise geográfica de processos espaciais e socioambientais em Módulo 3: Geografia Urbana e Demografia. Alternativa correta: B.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/79-images/context_img_0.png"
+    ]
   },
   {
     "id": "enem_geo_2023_q80",
@@ -847,7 +856,7 @@
     "subtopic": "Módulo 4: Geografia Econômica e Globalização",
     "moduleId": "mod_geo_04_economica",
     "moduleTitle": "Módulo 4: Geografia Econômica e Globalização",
-    "statement": "O número cada vez maior de mulheres letradas e interessadas pela literatura e pelas novelas, muitas divulgadas em capítulos, seções, classificadas comumente como folhetim, alçou a um gênero de ficção corrente já em 1840, fazendo parte do florescimento da literatura nacional brasileira, instigando a formação e a ampliação de um público leitor feminino, ávido por novidades, pelo apelo dos folhetins e “narrativas modernas” que encenavam “os dramas e os conflitos de uma mulher em processo de transformação patriarcal e provinciana que, progressivamente, começava a se abrir para modernizar seus costumes”. No Segundo Reinado, as mulheres foram se tornando público determinante na construção da literatura e da imprensa nacional. E não apenas público, porquanto crescerá o número de escritoras que colaboram para isso e emergirá uma imprensa feminina, editada, escrita e dirigida por e para mulheres.\n\n**ABRANTES, A. Do álbum de família à vitrine impressa: trajetos de retratos (PB, 1920), Revista Temas em Educação, n. 24, 2015 (adaptado).**\n\nO registro das atividades descritas associa a inserção da figura feminina nos espaços de leitura e escrita do Segundo Reinado ao(à)",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/53-images/context_img_0.png)\n\nO número cada vez maior de mulheres letradas e interessadas pela literatura e pelas novelas, muitas divulgadas em capítulos, seções, classificadas comumente como folhetim, alçou a um gênero de ficção corrente já em 1840, fazendo parte do florescimento da literatura nacional brasileira, instigando a formação e a ampliação de um público leitor feminino, ávido por novidades, pelo apelo dos folhetins e “narrativas modernas” que encenavam “os dramas e os conflitos de uma mulher em processo de transformação patriarcal e provinciana que, progressivamente, começava a se abrir para modernizar seus costumes”. No Segundo Reinado, as mulheres foram se tornando público determinante na construção da literatura e da imprensa nacional. E não apenas público, porquanto crescerá o número de escritoras que colaboram para isso e emergirá uma imprensa feminina, editada, escrita e dirigida por e para mulheres.\n\n**ABRANTES, A. Do álbum de família à vitrine impressa: trajetos de retratos (PB, 1920), Revista Temas em Educação, n. 24, 2015 (adaptado).**\n\nO registro das atividades descritas associa a inserção da figura feminina nos espaços de leitura e escrita do Segundo Reinado ao(à)",
     "options": [
       "A) Surgimento de novas práticas culturais.",
       "B) Contestação de antigos hábitos masculinos.",
@@ -857,7 +866,10 @@
     ],
     "correctLetter": "A",
     "explanation": "Resolução comentada ENEM 2022 (Questão 53): Análise geográfica de processos espaciais e socioambientais em Módulo 4: Geografia Econômica e Globalização. Alternativa correta: A.",
-    "difficulty": "Média"
+    "difficulty": "Média",
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/53-images/context_img_0.png"
+    ]
   },
   {
     "id": "enem_geo_2022_q54",
@@ -2089,11 +2101,11 @@
     "moduleTitle": "Módulo 1: Geografia Física e Meio Ambiente",
     "statement": "No cultivo por hidroponia, são utilizados soluções nutritivas contendo macronutrientes e micronutrientes essenciais. Além dos nutrientes, o pH é um parâmetro de extrema importância, uma vez que ele afeta a preparação da solução nutritiva e a absorção dos nutrientes pelas plantas. Para o cultivo de alface, valores de pH entre 5,5 e 6,5 são ideais para o seu desenvolvimento. As correções de pH são feitas pela adição de compostos ácidos ou básicos, mas não devem introduzir elementos nocivos às plantas. Na tabela, são apresentados alguns dados da composição da solução nutritiva de referência para esse cultivo. Também é apresentada a composição de uma solução preparada por um produtor de cultivo hidropônico.\n\n![](https://enem.dev/2021/questions/91/1dc57326-df5b-4852-aedc-5839a54129ec.png)\n\nLENZI, E; FAVERO, L. O. B; LUCHESE, E. B. **Introdução à química da água:** ciência, vida e sobrevivência. Rio de Janeiro: LTC, 2012 (adaptado).\n\nPara correção do pH da solução nutritiva preparada, esse produtor pode empregar uma solução de",
     "options": [
-      "A) ",
-      "B) ",
-      "C) ",
-      "D) ",
-      "E) "
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/133-images/alt_img_0.png)",
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/133-images/alt_img_1.png)",
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/133-images/alt_img_2.png)",
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/133-images/alt_img_3.png)",
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/133-images/alt_img_4.png)"
     ],
     "correctLetter": "E",
     "explanation": "Resolução comentada ENEM 2021 (Questão 91): Análise geográfica de processos espaciais e socioambientais em Módulo 1: Geografia Física e Meio Ambiente. Alternativa correta: E.",

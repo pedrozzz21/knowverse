@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="950" height="560" fill="url(#bg)" rx="16"/>
+
+  <!-- Title & Header -->
+  <text x="475" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+    Teorias Evolutivas: Lamarckismo vs. Darwinismo / Neodarwinismo
+  </text>
+  <text x="475" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">
+    O Papel do Meio: Modificador Ativo (Lamarck) versus Agente Seletivo da Variabilidade Prévia (Darwin)
+  </text>
+
+  <!-- LEFT: Lamarckismo -->
+  <g transform="translate(30, 90)">
+    <rect width="425" height="435" rx="12" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadow)"/>
+    
+    <rect x="20" y="16" width="200" height="26" rx="13" fill="#78350F" opacity="0.4"/>
+    <text x="120" y="34" font-family="sans-serif" font-size="12" font-weight="bold" fill="#FBBF24" text-anchor="middle">
+      LAMARCKISMO (1809)
+    </text>
+
+    <!-- Lamarck premise -->
+    <g transform="translate(20, 55)">
+      <text x="5" y="16" font-family="sans-serif" font-size="12" font-weight="bold" fill="#F8FAFC">
+        O Meio Induz a Modificação no Indivíduo
+      </text>
+
+      <rect x="0" y="28" width="385" height="75" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="48" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FBBF24">1. Lei do Uso e Desuso:</text>
+      <text x="15" y="66" font-family="sans-serif" font-size="11" fill="#CBD5E1">Órgãos muito utilizados desenvolvem-se e hipertrofiam;</text>
+      <text x="15" y="84" font-family="sans-serif" font-size="11" fill="#CBD5E1">órgãos em desuso atrofiam e desaparecem progressivamente.</text>
+
+      <rect x="0" y="115" width="385" height="75" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="135" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FBBF24">2. Lei da Herança dos Caracteres Adquiridos:</text>
+      <text x="15" y="153" font-family="sans-serif" font-size="11" fill="#CBD5E1">Modificações corporais somáticas adquiridas em vida</text>
+      <text x="15" y="171" font-family="sans-serif" font-size="11" fill="#CBD5E1">seriam transmitidas diretamente aos descendentes.</text>
+
+      <!-- Giraffe Lamarck Flow -->
+      <rect x="0" y="202" width="385" height="145" rx="8" fill="#1E293B" stroke="#D97706" stroke-width="1"/>
+      <text x="15" y="224" font-family="sans-serif" font-size="11" font-weight="bold" fill="#F59E0B">Exemplo Clássico: O Pescoço da Girafa</text>
+      <text x="15" y="246" font-family="sans-serif" font-size="11" fill="#F8FAFC">1. Girafas ancestrais tinham pescoço curto.</text>
+      <text x="15" y="266" font-family="sans-serif" font-size="11" fill="#F8FAFC">2. Escassez de folhas rasteiras forçou esforço constante.</text>
+      <text x="15" y="286" font-family="sans-serif" font-size="11" fill="#F8FAFC">3. Esticar o pescoço fez a estrutura alongar em vida.</text>
+      <text x="15" y="306" font-family="sans-serif" font-size="11" fill="#F8FAFC">4. Filhotes nasceram com pescoço mais longo.</text>
+      <text x="15" y="332" font-family="sans-serif" font-size="10" fill="#EF4444" font-weight="bold">Erro Científico: Alterações somáticas não alteram o DNA gamético!</text>
+    </g>
+  </g>
+
+  <!-- RIGHT: Darwinismo e Neodarwinismo -->
+  <g transform="translate(495, 90)">
+    <rect width="425" height="435" rx="12" fill="url(#cardGrad)" stroke="#10B981" stroke-width="1.5" filter="url(#shadow)"/>
+    
+    <rect x="20" y="16" width="260" height="26" rx="13" fill="#065F46" opacity="0.4"/>
+    <text x="150" y="34" font-family="sans-serif" font-size="12" font-weight="bold" fill="#34D399" text-anchor="middle">
+      DARWINISMO & NEODARWINISMO
+    </text>
+
+    <!-- Darwin premise -->
+    <g transform="translate(20, 55)">
+      <text x="5" y="16" font-family="sans-serif" font-size="12" font-weight="bold" fill="#F8FAFC">
+        O Meio Seleciona a Variação Mais Apta
+      </text>
+
+      <rect x="0" y="28" width="385" height="75" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="48" font-family="sans-serif" font-size="11" font-weight="bold" fill="#34D399">1. Variabilidade Prévia:</text>
+      <text x="15" y="66" font-family="sans-serif" font-size="11" fill="#CBD5E1">Indivíduos de uma mesma população nascem com variações</text>
+      <text x="15" y="84" font-family="sans-serif" font-size="11" fill="#CBD5E1">decorrentes de <tspan fill="#38BDF8">mutações aleatórias</tspan> e <tspan fill="#38BDF8">recombinação gênica</tspan>.</text>
+
+      <rect x="0" y="115" width="385" height="75" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+      <text x="15" y="135" font-family="sans-serif" font-size="11" font-weight="bold" fill="#34D399">2. Seleção Natural e Sucesso Reprodutivo Diferencial:</text>
+      <text x="15" y="153" font-family="sans-serif" font-size="11" fill="#CBD5E1">Indivíduos com características vantajosas sobrevivem,</text>
+      <text x="15" y="171" font-family="sans-serif" font-size="11" fill="#CBD5E1">reproduzem-se mais e transmitem esses alelos à prole.</text>
+
+      <!-- Giraffe Darwin Flow -->
+      <rect x="0" y="202" width="385" height="145" rx="8" fill="#1E293B" stroke="#059669" stroke-width="1"/>
+      <text x="15" y="224" font-family="sans-serif" font-size="11" font-weight="bold" fill="#34D399">Exemplo Científico: O Pescoço da Girafa</text>
+      <text x="15" y="246" font-family="sans-serif" font-size="11" fill="#F8FAFC">1. Já existiam girafas de pescoço curto e pescoço longo.</text>
+      <text x="15" y="266" font-family="sans-serif" font-size="11" fill="#F8FAFC">2. Na seca, girafas de pescoço longo alcançaram copas altas.</text>
+      <text x="15" y="286" font-family="sans-serif" font-size="11" fill="#F8FAFC">3. Girafas de pescoço curto sofreram maior mortalidade.</text>
+      <text x="15" y="306" font-family="sans-serif" font-size="11" fill="#F8FAFC">4. A frequência dos alelos para pescoço longo aumentou.</text>
+      <text x="15" y="332" font-family="sans-serif" font-size="10" fill="#10B981" font-weight="bold">Neodarwinismo: A síntese moderna uniu Darwin à Genética Mendeliana.</text>
+    </g>
+  </g>
+</svg>

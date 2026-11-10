@@ -137,6 +137,7 @@ dependencies {
   implementation(libs.androidx.room.ktx)
   implementation(libs.androidx.room.runtime)
   implementation(libs.coil.compose)
+  implementation(libs.coil.svg)
   implementation(libs.converter.moshi)
   implementation(libs.firebase.ai)
   // Firestore and Firebase Auth with Google Sign-In via Credential Manager:

@@ -76,7 +76,8 @@ object CalculusCurriculum {
                             Passo 4: Cálculo do limite por substituição na expressão simplificada:
                             \[ \lim_{x \to 1} (x + 1) = 1 + 1 = 2 \]
                             Conclusão: Embora f(1) seja indefinido (um ponto aberto no gráfico), o limite bilateral existe e converge para 2.
-                        """.trimIndent()
+                        """.trimIndent(),
+                        geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l1")
                     ),
                     MathExercise(
                         id = "ex_calc_l1_2",
@@ -128,7 +129,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "O salto quebra a existência do limite bilateral.",
                 xpReward = 35,
-                imageResId = R.drawable.grafico_limites_laterais,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l2_1",
@@ -170,7 +170,8 @@ object CalculusCurriculum {
                             \[ \lim_{x \to 2^-} f(x) \neq \lim_{x \to 2^+} f(x) \implies (3 \neq 1) \]
                             Passo 3: Interpretação geométrica. O gráfico sofre uma quebra vertical abrupta com salto |3 - 1| = 2.
                             Conclusão: O limite bilateral não existe no ponto x = 2.
-                        """.trimIndent()
+                        """.trimIndent(),
+                        geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l2")
                     )
                 )
             ),
@@ -271,7 +272,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "O cancelamento remove o termo nulo.",
                 xpReward = 35,
-                imageResId = R.drawable.grafico_furo_indeterminacao,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l4_1",
@@ -295,7 +295,8 @@ object CalculusCurriculum {
                             Passo 4: Cálculo do limite sobre a forma simplificada:
                             \[ \lim_{x \to 2} (x + 2) = 2 + 2 = 4 \]
                             Conclusão: O limite existe e converge para 4.
-                        """.trimIndent()
+                        """.trimIndent(),
+                        geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l4")
                     ),
                     MathExercise(
                         id = "ex_calc_l4_2",
@@ -315,7 +316,8 @@ object CalculusCurriculum {
                             Passo 2: Análise pontual em x = 2. Como 2 não pertence ao domínio original, o ponto não é preenchido.
                             Passo 3: Análise do limite. Como lim_{x->2} f(x) = 4, a vizinhança aponta para a coordenada (2, 4).
                             Conclusão: O gráfico é exatamente a reta y = x + 2 com um ponto aberto (furo) em (2, 4).
-                        """.trimIndent()
+                        """.trimIndent(),
+                        geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l4")
                     )
                 )
             ),
@@ -566,7 +568,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "Os termos dominantes determinam a assíntota horizontal.",
                 xpReward = 40,
-                imageResId = R.drawable.grafico_assintotas,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l8_1",
@@ -587,7 +588,8 @@ object CalculusCurriculum {
                             Passo 2: Aplicação do limite quando x -> ∞, sabendo que 1/x -> 0:
                             \[ \lim_{x \to \infty} \frac{2 + \frac{1}{x}}{1 - \frac{1}{x}} = \frac{2 + 0}{1 - 0} = \frac{2}{1} = 2 \]
                             Conclusão: O limite é 2, o que define a assíntota horizontal na reta y = 2.
-                        """.trimIndent()
+                        """.trimIndent(),
+                        geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l8")
                     ),
                     MathExercise(
                         id = "ex_calc_l8_2",
@@ -708,7 +710,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "A derivada é o limite da inclinação das retas secantes.",
                 xpReward = 45,
-                imageResId = R.drawable.grafico_reta_tangente,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l10_1",
@@ -733,7 +734,8 @@ object CalculusCurriculum {
                             Passo 4: Avaliação do limite quando h -> 0:
                             \[ \lim_{h \to 0} (6 + h) = 6 + 0 = 6 \]
                             Conclusão: A taxa instantânea de variação (derivada) f'(3) é exatamente 6.
-                        """.trimIndent()
+                        """.trimIndent(),
+                        geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l10")
                     ),
                     MathExercise(
                         id = "ex_calc_l10_2",
@@ -800,7 +802,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "A reta tangente é o limite geométrico das retas secantes.",
                 xpReward = 35,
-                imageResId = R.drawable.grafico_reta_tangente,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l11_1",
@@ -823,7 +824,8 @@ object CalculusCurriculum {
                             Passo 3: Avaliação em t = 1:
                             \[ v_{\text{inst}}(1) = s'(1) = 2(1) = 2\text{ m/s} \]
                             Conclusão: A velocidade média no intervalo é 4 m/s e a velocidade instantânea em t = 1s é 2 m/s.
-                        """.trimIndent()
+                        """.trimIndent(),
+                        geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l11")
                     ),
                     MathExercise(
                         id = "ex_calc_l11_2",
@@ -1134,7 +1136,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "A linearização substitui a curva pela tangente nas proximidades de 'a'.",
                 xpReward = 40,
-                imageResId = R.drawable.grafico_aproximacao_linear,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l15_1",
@@ -1158,7 +1159,8 @@ object CalculusCurriculum {
                             Passo 4: Avaliação para x = 4.2 (onde Δx = 0.2):
                             \[ L(4.2) = 2 + 0.25(4.2 - 4) = 2 + 0.25(0.2) = 2 + 0.05 = 2.05 \]
                             Conclusão: A aproximação linear fornece √4.2 ≈ 2.05.
-                        """.trimIndent()
+                        """.trimIndent(),
+                        geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l15")
                     ),
                     MathExercise(
                         id = "ex_calc_l15_2",
@@ -1219,7 +1221,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "A 1ª derivada rege inclinação e a 2ª derivada rege concavidade.",
                 xpReward = 45,
-                imageResId = R.drawable.grafico_estudo_funcao_max_min,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l16_1",
@@ -1241,7 +1242,8 @@ object CalculusCurriculum {
                             - Se f''(c) > 0: concavidade para cima ∪ (Mínimo Local).
                             - Se f''(c) < 0: concavidade para baixo ∩ (Máximo Local).
                             Conclusão: Como f''(3) = -8 < 0, x = 3 é indiscutivelmente um Ponto de Máximo Local.
-                        """.trimIndent()
+                        """.trimIndent(),
+                        geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l16")
                     ),
                     MathExercise(
                         id = "ex_calc_l16_2",
@@ -1879,7 +1881,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "A integral indefinida representa toda a família de primitivas de uma função.",
                 xpReward = 35,
-                imageResId = R.drawable.grafico_integral_area,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l19_1",
@@ -1944,7 +1945,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "Soma-se 1 ao expoente e divide-se pelo novo valor.",
                 xpReward = 35,
-                imageResId = R.drawable.grafico_integral_area,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l20_1",
@@ -2014,7 +2014,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "Integrais imediatas que desfazem as derivadas fundamentais.",
                 xpReward = 35,
-                imageResId = R.drawable.grafico_integral_area,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l21_1",
@@ -2058,7 +2057,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "Aplicação de linearidade direta.",
                 xpReward = 35,
-                imageResId = R.drawable.grafico_integral_area,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l22_1",
@@ -2107,7 +2105,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "A u-substituição transforma integrais complexas em integrais imediatas.",
                 xpReward = 40,
-                imageResId = R.drawable.grafico_integral_area,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l23_1",
@@ -2158,7 +2155,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "Integração por partes reduz integrais de produtos a formas simples.",
                 xpReward = 40,
-                imageResId = R.drawable.grafico_integral_area,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l24_1",
@@ -2210,7 +2206,6 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "Frações parciais transformam quocientes polinomiais em somas de logaritmos.",
                 xpReward = 40,
-                imageResId = R.drawable.grafico_integral_area,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l25_1",
@@ -2258,11 +2253,11 @@ object CalculusCurriculum {
                 ),
                 solutionExplanation = "O TFC estabelece a ligação definitiva entre a antiderivada e o cálculo de áreas.",
                 xpReward = 45,
-                imageResId = R.drawable.grafico_integral_area,
                 mathExercises = listOf(
                     MathExercise(
                         id = "ex_calc_l26_1",
                         title = "Área sob Curva pelo TFC (Exercício 50401)",
+                        geoGebraConfig = GeoGebraCurriculumPresets.get("calc_l26"),
                         problemStatement = """Calcule o valor numérico da integral definida aplicando o Teorema Fundamental do Cálculo: \[ \int_{0}^{2} 3x^2 \, dx \]""",
                         options = listOf(
                             """8""",

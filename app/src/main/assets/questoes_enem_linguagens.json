@@ -7,7 +7,7 @@
     "subtopic": "Módulo 1: Interpretação de Texto e Semântica",
     "moduleId": "mod_ling_01_interpretacao",
     "moduleTitle": "Módulo 1: Interpretação de Texto e Semântica",
-    "statement": "**TEXTO I**\n\n¿QUÉ ME PASA?:  \n¿PorQUE ME CUESTA TANTO ESTUDIAR?  \n¿PORQUE ME CUESTA TANTO CONCENTRARME?  \n¿PoRQUE……  \n¿PORQUÉ…..  \n¿PORQUÉ NO CONSIGO APRENDER COMO LOS DEMÁS?\n\n![](https://enem.dev/broken-image.svg)\n\nDisponível em: www.otrasvoceseneducacion.org. Acesso em: 8 nov. 2022.\n\n**ТЕХТО II**\n\nIshaan Awashi es un niño de 8 años cuyo mundo está plagado de maravillas que nadie más parece apreciar: colores, peces, perros y cometas, que simplemente no son importantes en la vida de los adultos, que parecen más interesados en cosas como los deberes, las notas o la limpieza. E Ishaan parece no poder hacer nada bien en clase. Cuando los problemas que ocasiona superan a sus padres, es internado en un colegio para que le disciplinen. Las cosas no mejoran en el nuevo colegio, donde Ishaan tiene además que aceptar estar lejos de sus padres. Hasta que un dia, el nuevo profesor de arte, Ram Shankar Nikumbh, entra en escena, se interesa por el pequeño Ishaan y todo cambia.\n\nDisponível em: https://elfinalde.com. Acesso em: 26 out. 2021 (adaptado)\n\nO filme Como estrellas en la tierra aborda o tema da dislexia. Relacionando o cartaz do filme com a sinopse, constata-se que o(a)",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/5-images/context_img_0.png)\n\n**TEXTO I**\n\n¿QUÉ ME PASA?:  \n¿PorQUE ME CUESTA TANTO ESTUDIAR?  \n¿PORQUE ME CUESTA TANTO CONCENTRARME?  \n¿PoRQUE……  \n¿PORQUÉ…..  \n¿PORQUÉ NO CONSIGO APRENDER COMO LOS DEMÁS?\n\nDisponível em: www.otrasvoceseneducacion.org. Acesso em: 8 nov. 2022.\n\n**ТЕХТО II**\n\nIshaan Awashi es un niño de 8 años cuyo mundo está plagado de maravillas que nadie más parece apreciar: colores, peces, perros y cometas, que simplemente no son importantes en la vida de los adultos, que parecen más interesados en cosas como los deberes, las notas o la limpieza. E Ishaan parece no poder hacer nada bien en clase. Cuando los problemas que ocasiona superan a sus padres, es internado en un colegio para que le disciplinen. Las cosas no mejoran en el nuevo colegio, donde Ishaan tiene además que aceptar estar lejos de sus padres. Hasta que un dia, el nuevo profesor de arte, Ram Shankar Nikumbh, entra en escena, se interesa por el pequeño Ishaan y todo cambia.\n\nDisponível em: https://elfinalde.com. Acesso em: 26 out. 2021 (adaptado)\n\nO filme Como estrellas en la tierra aborda o tema da dislexia. Relacionando o cartaz do filme com a sinopse, constata-se que o(a)",
     "options": [
       "A) Olhar diferenciado para com o outro gera mudanças.",
       "B) Estudante com dislexia apresenta um tom questionador.",
@@ -17,7 +17,10 @@
     ],
     "correctLetter": "A",
     "explanation": "Resolução comentada ENEM 2023 (Questão 1): Analisa a competência leitora e comunicativa em Módulo 1: Interpretação de Texto e Semântica. A alternativa A atende com rigor às exigências do enunciado.",
-    "difficulty": "Fácil"
+    "difficulty": "Fácil",
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/5-images/context_img_0.png"
+    ]
   },
   {
     "id": "enem_2023_q2",
@@ -847,7 +850,7 @@
     "subtopic": "Módulo 1: Interpretação de Texto e Semântica",
     "moduleId": "mod_ling_01_interpretacao",
     "moduleTitle": "Módulo 1: Interpretação de Texto e Semântica",
-    "statement": "![](https://enem.dev/broken-image.svg)\n\nEssa campanha publicitária do Ministério da Saúde visa",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/27-images/context_img_0.png)\n\nEssa campanha publicitária do Ministério da Saúde visa",
     "options": [
       "A) Divulgar um conjunto de benefícios proporcionados pela amamentação.",
       "B) Apresentar tratamentos para infecções respiratórias em bebês.",
@@ -4487,7 +4490,7 @@
     "subtopic": "Artes Visuais e Cultura Corporal",
     "moduleId": "mod_ling_05_artes",
     "moduleTitle": "Módulo 5: Artes e Expressão Corporal",
-    "statement": "**TEXTO I**\n\n¿QUÉ ME PASA?:  \n¿PorQUE ME CUESTA TANTO ESTUDIAR?  \n¿PORQUE ME CUESTA TANTO CONCENTRARME?  \n¿PoRQUE……  \n¿PORQUÉ…..  \n¿PORQUÉ NO CONSIGO APRENDER COMO LOS DEMÁS?\n\n![](https://enem.dev/broken-image.svg)\n\nDisponível em: www.otrasvoceseneducacion.org. Acesso em: 8 nov. 2022.\n\n**ТЕХТО II**\n\nIshaan Awashi es un niño de 8 años cuyo mundo está plagado de maravillas que nadie más parece apreciar: colores, peces, perros y cometas, que simplemente no son importantes en la vida de los adultos, que parecen más interesados en cosas como los deberes, las notas o la limpieza. E Ishaan parece no poder hacer nada bien en clase. Cuando los problemas que ocasiona superan a sus padres, es internado en un colegio para que le disciplinen. Las cosas no mejoran en el nuevo colegio, donde Ishaan tiene además que aceptar estar lejos de sus padres. Hasta que un dia, el nuevo profesor de arte, Ram Shankar Nikumbh, entra en escena, se interesa por el pequeño Ishaan y todo cambia.\n\nDisponível em: https://elfinalde.com. Acesso em: 26 out. 2021 (adaptado)\n\nO filme Como estrellas en la tierra aborda o tema da dislexia. Relacionando o cartaz do filme com a sinopse, constata-se que o(a)",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/5-images/context_img_0.png)\n\n**TEXTO I**\n\n¿QUÉ ME PASA?:  \n¿PorQUE ME CUESTA TANTO ESTUDIAR?  \n¿PORQUE ME CUESTA TANTO CONCENTRARME?  \n¿PoRQUE……  \n¿PORQUÉ…..  \n¿PORQUÉ NO CONSIGO APRENDER COMO LOS DEMÁS?\n\nDisponível em: www.otrasvoceseneducacion.org. Acesso em: 8 nov. 2022.\n\n**ТЕХТО II**\n\nIshaan Awashi es un niño de 8 años cuyo mundo está plagado de maravillas que nadie más parece apreciar: colores, peces, perros y cometas, que simplemente no son importantes en la vida de los adultos, que parecen más interesados en cosas como los deberes, las notas o la limpieza. E Ishaan parece no poder hacer nada bien en clase. Cuando los problemas que ocasiona superan a sus padres, es internado en un colegio para que le disciplinen. Las cosas no mejoran en el nuevo colegio, donde Ishaan tiene además que aceptar estar lejos de sus padres. Hasta que un dia, el nuevo profesor de arte, Ram Shankar Nikumbh, entra en escena, se interesa por el pequeño Ishaan y todo cambia.\n\nDisponível em: https://elfinalde.com. Acesso em: 26 out. 2021 (adaptado)\n\nO filme Como estrellas en la tierra aborda o tema da dislexia. Relacionando o cartaz do filme com a sinopse, constata-se que o(a)",
     "options": [
       "A) Olhar diferenciado para com o outro gera mudanças.",
       "B) Estudante com dislexia apresenta um tom questionador.",
@@ -4497,7 +4500,10 @@
     ],
     "correctLetter": "A",
     "explanation": "Resolução comentada ENEM 2023 (Questão 1): Leitura crítica e análise textual em Módulo 5: Artes e Expressão Corporal. Alternativa correta: A.",
-    "difficulty": "Média"
+    "difficulty": "Média",
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/5-images/context_img_0.png"
+    ]
   },
   {
     "id": "enem_api_2023_q2",
@@ -5327,7 +5333,7 @@
     "subtopic": "Gêneros Textuais e Intertextualidade",
     "moduleId": "mod_ling_01_interpretacao",
     "moduleTitle": "Módulo 1: Interpretação e Semântica",
-    "statement": "![](https://enem.dev/broken-image.svg)\n\nEssa campanha publicitária do Ministério da Saúde visa",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/27-images/context_img_0.png)\n\nEssa campanha publicitária do Ministério da Saúde visa",
     "options": [
       "A) Divulgar um conjunto de benefícios proporcionados pela amamentação.",
       "B) Apresentar tratamentos para infecções respiratórias em bebês.",

@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="proteinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4338CA"/>
+    </linearGradient>
+    <linearGradient id="channelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0EA5E9"/>
+      <stop offset="100%" stop-color="#0369A1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+
+  <!-- Title -->
+  <text x="400" y="34" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">
+    A Membrana Plasmática: O Modelo do Mosaico Fluido
+  </text>
+  <text x="400" y="52" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">
+    Singer &amp; Nicolson (1972) — Bicamada fosfolipídica anfifílica, proteínas e colesterol
+  </text>
+
+  <!-- Zones labels -->
+  <rect x="40" y="65" width="220" height="24" rx="4" fill="#38BDF8" fill-opacity="0.15"/>
+  <text x="50" y="81" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">MEIO EXTRACELULAR (Aquoso)</text>
+
+  <rect x="40" y="375" width="220" height="24" rx="4" fill="#34D399" fill-opacity="0.15"/>
+  <text x="50" y="391" fill="#34D399" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">CITOPLASMA / CITOSOL (Aquoso)</text>
+
+  <!-- Glycocalyx Trees on top -->
+  <g stroke="#F59E0B" stroke-width="2" fill="none">
+    <path d="M 230 140 L 220 100 L 205 90 M 220 100 L 235 85"/>
+    <circle cx="205" cy="90" r="4" fill="#FBBF24"/>
+    <circle cx="235" cy="85" r="4" fill="#FBBF24"/>
+    <circle cx="220" cy="100" r="3" fill="#F59E0B"/>
+
+    <path d="M 520 120 L 510 80 L 495 70 M 510 80 L 525 65"/>
+    <circle cx="495" cy="70" r="4" fill="#FBBF24"/>
+    <circle cx="525" cy="65" r="4" fill="#FBBF24"/>
+  </g>
+  <text x="210" y="70" fill="#FDE68A" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Glicocálix (Carboidratos)</text>
+  <text x="210" y="82" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="9">Reconhecimento &amp; Imunidade</text>
+
+  <!-- Upper Phospholipid Monolayer -->
+  <!-- Heads at Y=145, tails pointing down to Y=210 -->
+  <g fill="#0284C7" stroke="#38BDF8" stroke-width="1.2">
+    <!-- loop of heads across X=40 to X=760 with gaps for proteins -->
+    <!-- Segment 1: X=40 to 180 -->
+    <circle cx="50" cy="145" r="9"/><circle cx="70" cy="145" r="9"/><circle cx="90" cy="145" r="9"/>
+    <circle cx="110" cy="145" r="9"/><circle cx="130" cy="145" r="9"/><circle cx="150" cy="145" r="9"/><circle cx="170" cy="145" r="9"/>
+
+    <!-- Segment 2: X=270 to 390 -->
+    <circle cx="280" cy="145" r="9"/><circle cx="300" cy="145" r="9"/><circle cx="320" cy="145" r="9"/>
+    <circle cx="340" cy="145" r="9"/><circle cx="360" cy="145" r="9"/><circle cx="380" cy="145" r="9"/>
+
+    <!-- Segment 3: X=470 to 620 -->
+    <circle cx="560" cy="145" r="9"/><circle cx="580" cy="145" r="9"/><circle cx="600" cy="145" r="9"/>
+    <circle cx="620" cy="145" r="9"/><circle cx="640" cy="145" r="9"/><circle cx="660" cy="145" r="9"/>
+    <circle cx="680" cy="145" r="9"/><circle cx="700" cy="145" r="9"/><circle cx="720" cy="145" r="9"/><circle cx="740" cy="145" r="9"/>
+  </g>
+
+  <!-- Fatty acid tails (upper) -->
+  <g stroke="#0284C7" stroke-width="1.6" fill="none">
+    <path d="M 47 154 Q 45 180 47 205 M 53 154 Q 56 180 54 205"/>
+    <path d="M 67 154 Q 65 180 67 205 M 73 154 Q 76 180 74 205"/>
+    <path d="M 87 154 Q 85 180 87 205 M 93 154 Q 96 180 94 205"/>
+    <path d="M 107 154 Q 105 180 107 205 M 113 154 Q 116 180 114 205"/>
+    <path d="M 127 154 Q 125 180 127 205 M 133 154 Q 136 180 134 205"/>
+    <path d="M 147 154 Q 145 180 147 205 M 153 154 Q 156 180 154 205"/>
+    <path d="M 167 154 Q 165 180 167 205 M 173 154 Q 176 180 174 205"/>
+
+    <path d="M 277 154 Q 275 180 277 205 M 283 154 Q 286 180 284 205"/>
+    <path d="M 297 154 Q 295 180 297 205 M 303 154 Q 306 180 304 205"/>
+    <path d="M 317 154 Q 315 180 317 205 M 323 154 Q 326 180 324 205"/>
+    <path d="M 337 154 Q 335 180 337 205 M 343 154 Q 346 180 344 205"/>
+    <path d="M 357 154 Q 355 180 357 205 M 363 154 Q 366 180 364 205"/>
+    <path d="M 377 154 Q 375 180 377 205 M 383 154 Q 386 180 384 205"/>
+
+    <path d="M 557 154 Q 555 180 557 205 M 563 154 Q 566 180 564 205"/>
+    <path d="M 577 154 Q 575 180 577 205 M 583 154 Q 586 180 584 205"/>
+    <path d="M 617 154 Q 615 180 617 205 M 623 154 Q 626 180 624 205"/>
+    <path d="M 637 154 Q 635 180 637 205 M 643 154 Q 646 180 644 205"/>
+    <path d="M 657 154 Q 655 180 657 205 M 663 154 Q 666 180 664 205"/>
+    <path d="M 697 154 Q 695 180 697 205 M 703 154 Q 706 180 704 205"/>
+    <path d="M 737 154 Q 735 180 737 205 M 743 154 Q 746 180 744 205"/>
+  </g>
+
+  <!-- Hydrophobic core label -->
+  <rect x="580" y="200" width="180" height="30" rx="4" fill="#0F172A" stroke="#475569" stroke-width="1"/>
+  <text x="670" y="215" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">INTERIOR HIDROFÓBICO</text>
+  <text x="670" y="226" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">(Caudas apolares de ácidos graxos)</text>
+
+  <!-- Lower Phospholipid Monolayer -->
+  <!-- Heads at Y=285, tails pointing up to Y=220 -->
+  <g fill="#0284C7" stroke="#38BDF8" stroke-width="1.2">
+    <circle cx="50" cy="285" r="9"/><circle cx="70" cy="285" r="9"/><circle cx="90" cy="285" r="9"/>
+    <circle cx="110" cy="285" r="9"/><circle cx="130" cy="285" r="9"/><circle cx="150" cy="285" r="9"/><circle cx="170" cy="285" r="9"/>
+
+    <circle cx="280" cy="285" r="9"/><circle cx="300" cy="285" r="9"/><circle cx="320" cy="285" r="9"/>
+    <circle cx="340" cy="285" r="9"/><circle cx="360" cy="285" r="9"/><circle cx="380" cy="285" r="9"/>
+
+    <circle cx="560" cy="285" r="9"/><circle cx="580" cy="285" r="9"/><circle cx="600" cy="285" r="9"/>
+    <circle cx="620" cy="285" r="9"/><circle cx="640" cy="285" r="9"/><circle cx="660" cy="285" r="9"/>
+    <circle cx="680" cy="285" r="9"/><circle cx="700" cy="285" r="9"/><circle cx="720" cy="285" r="9"/><circle cx="740" cy="285" r="9"/>
+  </g>
+
+  <!-- Fatty acid tails (lower) -->
+  <g stroke="#0284C7" stroke-width="1.6" fill="none">
+    <path d="M 47 276 Q 45 250 47 225 M 53 276 Q 56 250 54 225"/>
+    <path d="M 67 276 Q 65 250 67 225 M 73 276 Q 76 250 74 225"/>
+    <path d="M 87 276 Q 85 250 87 225 M 93 276 Q 96 250 94 225"/>
+    <path d="M 107 276 Q 105 250 107 225 M 113 276 Q 116 250 114 225"/>
+    <path d="M 127 276 Q 125 250 127 225 M 133 276 Q 136 250 134 225"/>
+    <path d="M 147 276 Q 145 250 147 225 M 153 276 Q 156 250 154 225"/>
+    <path d="M 167 276 Q 165 250 167 225 M 173 276 Q 176 250 174 225"/>
+
+    <path d="M 277 276 Q 275 250 277 225 M 283 276 Q 286 250 284 225"/>
+    <path d="M 297 276 Q 295 250 297 225 M 303 276 Q 306 250 304 225"/>
+    <path d="M 317 276 Q 315 250 317 225 M 323 276 Q 326 250 324 225"/>
+    <path d="M 337 276 Q 335 250 337 225 M 343 276 Q 346 250 344 225"/>
+    <path d="M 357 276 Q 355 250 357 225 M 363 276 Q 366 250 364 225"/>
+    <path d="M 377 276 Q 375 250 377 225 M 383 276 Q 386 250 384 225"/>
+
+    <path d="M 557 276 Q 555 250 557 225 M 563 276 Q 566 250 564 225"/>
+    <path d="M 577 276 Q 575 250 577 225 M 583 276 Q 586 250 584 225"/>
+    <path d="M 617 276 Q 615 250 617 225 M 623 276 Q 626 250 624 225"/>
+    <path d="M 637 276 Q 635 250 637 225 M 643 276 Q 646 250 644 225"/>
+    <path d="M 657 276 Q 655 250 657 225 M 663 276 Q 666 250 664 225"/>
+    <path d="M 697 276 Q 695 250 697 225 M 703 276 Q 706 250 704 225"/>
+    <path d="M 737 276 Q 735 250 737 225 M 743 276 Q 746 250 744 225"/>
+  </g>
+
+  <!-- Cholesterol molecules (yellow rings in hydrophobic region) -->
+  <g fill="#EAB308" stroke="#CA8A04" stroke-width="1">
+    <ellipse cx="100" cy="215" rx="6" ry="14"/>
+    <ellipse cx="330" cy="215" rx="6" ry="14"/>
+    <ellipse cx="590" cy="215" rx="6" ry="14"/>
+  </g>
+  <text x="330" y="248" fill="#FACC15" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Colesterol</text>
+  <text x="330" y="259" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">Modulador Térmico da Fluidez</text>
+
+  <!-- Integral Transmembrane Protein (Protein Carrier) -->
+  <g transform="translate(205, 125)">
+    <rect width="55" height="180" rx="14" fill="url(#proteinGrad)" stroke="#818CF8" stroke-width="1.8"/>
+    <text x="27" y="90" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" transform="rotate(-90 27 90)">Proteína Integral</text>
+  </g>
+
+  <!-- Protein Channel (Aquaporin / Ion Channel) -->
+  <g transform="translate(420, 120)">
+    <path d="M 0 10 Q 15 95 0 180 L 25 180 Q 35 95 25 10 Z" fill="url(#channelGrad)" stroke="#38BDF8" stroke-width="1.5"/>
+    <path d="M 45 10 Q 35 95 45 180 L 70 180 Q 55 95 70 10 Z" fill="url(#channelGrad)" stroke="#38BDF8" stroke-width="1.5"/>
+    <!-- Ion / Water passing through -->
+    <circle cx="35" cy="40" r="5" fill="#A7F3D0" stroke="#10B981"/>
+    <circle cx="35" cy="100" r="5" fill="#A7F3D0" stroke="#10B981"/>
+    <circle cx="35" cy="160" r="5" fill="#A7F3D0" stroke="#10B981"/>
+    <path d="M 35 20 L 35 175" stroke="#34D399" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <text x="35" y="202" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Canal Proteico (Canal / Poro)</text>
+    <text x="35" y="214" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">Difusão Facilitada &amp; Osmose</text>
+  </g>
+
+  <!-- Peripheral Protein (at cytoplasm) -->
+  <ellipse cx="670" cy="315" rx="35" ry="18" fill="#9333EA" stroke="#C084FC" stroke-width="1.5"/>
+  <text x="670" y="318" fill="#F3E8FF" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" text-anchor="middle">Proteína Periférica</text>
+  <text x="670" y="342" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">Ancoragem ao Citoesqueleto</text>
+
+  <!-- Cytoskeleton Microfilaments (Actin) at bottom -->
+  <path d="M 50 340 Q 200 350 400 340 T 750 350" stroke="#EC4899" stroke-width="3" fill="none"/>
+  <path d="M 70 350 Q 250 360 450 350 T 730 360" stroke="#EC4899" stroke-width="2.5" fill="none" stroke-dasharray="4,2"/>
+  <text x="400" y="365" fill="#F472B6" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Microfilamentos de Actina do Citoesqueleto</text>
+</svg>

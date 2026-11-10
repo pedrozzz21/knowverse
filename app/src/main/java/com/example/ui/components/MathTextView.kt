@@ -8,11 +8,13 @@ import android.webkit.JavascriptInterface
 import android.webkit.WebView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
@@ -25,15 +27,19 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Calculate
 import androidx.compose.material.icons.filled.Cancel
 import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Functions
+import androidx.compose.material.icons.filled.Image
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Lightbulb
 import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.SquareFoot
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -46,6 +52,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.SpanStyle
@@ -59,6 +66,10 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
+import coil.compose.SubcomposeAsyncImage
+import coil.request.ImageRequest
 import com.example.ui.theme.BorderSubtle
 import com.example.ui.theme.ErrorRose
 import com.example.ui.theme.GoldXp
@@ -797,6 +808,159 @@ fun MathFormulaCard(
  * e notações matemáticas inline com serifa itálica e símbolos matemáticos autênticos.
  * Elimina vazamentos de asteriscos (**...) e códigos crus.
  */
+private val MARKDOWN_IMAGE_REGEX = Regex("""!\[(.*?)\]\((.*?)\)""")
+
+private sealed class FormattedContentPart {
+    data class Text(val content: String) : FormattedContentPart()
+    data class Image(val alt: String, val url: String) : FormattedContentPart()
+}
+
+private fun splitFormattedContentParts(text: String): List<FormattedContentPart> {
+    if (!text.contains("![")) return listOf(FormattedContentPart.Text(text))
+    val matches = MARKDOWN_IMAGE_REGEX.findAll(text).toList()
+    if (matches.isEmpty()) return listOf(FormattedContentPart.Text(text))
+
+    val result = mutableListOf<FormattedContentPart>()
+    var cursor = 0
+    for (match in matches) {
+        if (match.range.first > cursor) {
+            val chunk = text.substring(cursor, match.range.first).trim()
+            if (chunk.isNotEmpty()) {
+                result.add(FormattedContentPart.Text(chunk))
+            }
+        }
+        val alt = match.groupValues[1].trim()
+        val url = match.groupValues[2].trim()
+        if (url.isNotEmpty()) {
+            result.add(FormattedContentPart.Image(alt = alt, url = url))
+        }
+        cursor = match.range.last + 1
+    }
+    if (cursor < text.length) {
+        val remaining = text.substring(cursor).trim()
+        if (remaining.isNotEmpty()) {
+            result.add(FormattedContentPart.Text(remaining))
+        }
+    }
+    return result
+}
+
+@Composable
+fun OptionImageView(
+    imageUrl: String,
+    altText: String = "",
+    modifier: Modifier = Modifier
+) {
+    val context = LocalContext.current
+    var isExpanded by remember { mutableStateOf(false) }
+
+    val cleanUrl = remember(imageUrl) {
+        val m = MARKDOWN_IMAGE_REGEX.find(imageUrl)
+        if (m != null) m.groupValues[2].trim() else imageUrl.trim()
+    }
+
+    Box(
+        modifier = modifier
+            .clip(RoundedCornerShape(8.dp))
+            .background(ObsidianSurface)
+            .border(1.dp, BorderSubtle, RoundedCornerShape(8.dp))
+            .clickable { isExpanded = true }
+            .padding(6.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        SubcomposeAsyncImage(
+            model = ImageRequest.Builder(context)
+                .data(cleanUrl)
+                .setHeader("User-Agent", "Knowverse/2.0 (Android; Mobile)")
+                .crossfade(true)
+                .build(),
+            contentDescription = altText.ifBlank { "Figura da alternativa" },
+            contentScale = ContentScale.Fit,
+            loading = {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(60.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    CircularProgressIndicator(
+                        color = GoldXp,
+                        strokeWidth = 2.dp,
+                        modifier = Modifier.size(18.dp)
+                    )
+                }
+            },
+            error = {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(4.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Image,
+                        contentDescription = null,
+                        tint = TextSecondary,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(
+                        text = altText.ifBlank { "Ver imagem" },
+                        style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary, fontSize = 11.sp)
+                    )
+                }
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .heightIn(min = 40.dp, max = 110.dp)
+        )
+    }
+
+    if (isExpanded) {
+        Dialog(
+            onDismissRequest = { isExpanded = false },
+            properties = DialogProperties(usePlatformDefaultWidth = false)
+        ) {
+            Surface(
+                modifier = Modifier.fillMaxSize(),
+                color = Color.Black.copy(alpha = 0.94f)
+            ) {
+                Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+                    IconButton(
+                        onClick = { isExpanded = false },
+                        modifier = Modifier
+                            .align(Alignment.TopEnd)
+                            .padding(16.dp)
+                            .size(40.dp)
+                            .clip(CircleShape)
+                            .background(SurfaceElevated.copy(alpha = 0.7f))
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Close,
+                            contentDescription = "Fechar",
+                            tint = Color.White
+                        )
+                    }
+
+                    SubcomposeAsyncImage(
+                        model = ImageRequest.Builder(context)
+                            .data(cleanUrl)
+                            .setHeader("User-Agent", "Knowverse/2.0 (Android; Mobile)")
+                            .crossfade(true)
+                            .build(),
+                        contentDescription = altText,
+                        contentScale = ContentScale.Fit,
+                        modifier = Modifier
+                            .fillMaxWidth(0.92f)
+                            .heightIn(max = 500.dp)
+                            .clip(RoundedCornerShape(12.dp))
+                            .background(ObsidianSurface)
+                            .padding(8.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
 @Composable
 fun MathFormattedText(
     text: String,
@@ -820,16 +984,75 @@ fun MathFormattedText(
         trimmed
     }
 
+    val parts = remember(cleanText) { splitFormattedContentParts(cleanText) }
+
+    if (parts.size == 1 && parts[0] is FormattedContentPart.Text) {
+        RenderMathFormattedBlock(
+            text = (parts[0] as FormattedContentPart.Text).content,
+            modifier = modifier,
+            style = style,
+            color = color,
+            lineHeightSp = lineHeightSp,
+            allowBlockCards = allowBlockCards,
+            mathColor = mathColor
+        )
+    } else {
+        Column(
+            modifier = modifier,
+            verticalArrangement = Arrangement.spacedBy(if (allowBlockCards) 12.dp else 6.dp)
+        ) {
+            parts.forEach { part ->
+                when (part) {
+                    is FormattedContentPart.Text -> {
+                        RenderMathFormattedBlock(
+                            text = part.content,
+                            style = style,
+                            color = color,
+                            lineHeightSp = lineHeightSp,
+                            allowBlockCards = allowBlockCards,
+                            mathColor = mathColor
+                        )
+                    }
+                    is FormattedContentPart.Image -> {
+                        if (allowBlockCards) {
+                            DidacticImageView(
+                                imagePath = part.url,
+                                altText = part.alt.ifBlank { "Figura da questão" },
+                                modifier = Modifier.fillMaxWidth()
+                            )
+                        } else {
+                            OptionImageView(
+                                imageUrl = part.url,
+                                altText = part.alt.ifBlank { "Figura da alternativa" }
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun RenderMathFormattedBlock(
+    text: String,
+    modifier: Modifier = Modifier,
+    style: TextStyle = MaterialTheme.typography.bodyMedium,
+    color: Color = TextPrimary,
+    lineHeightSp: Float = 21f,
+    allowBlockCards: Boolean = true,
+    mathColor: Color = Color(0xFF67E8F9)
+) {
     // Se o texto contiver blocos em destaque delimitados por \[ ... \] ou $$ ... $$,
     // quebramos para exibir os blocos via KaTeXFormulaView apenas se allowBlockCards for true
     val blockMarker = "@@MATH_BLOCK@@"
     val hasBlocks = allowBlockCards && (
-        cleanText.contains("$$") || cleanText.contains("\\[") || cleanText.contains("\\\\[") ||
-        cleanText.contains("```latex") || cleanText.contains("```math")
+        text.contains("$$") || text.contains("\\[") || text.contains("\\\\[") ||
+        text.contains("```latex") || text.contains("```math")
     )
 
     if (hasBlocks) {
-        val normalizedBlocks = cleanText
+        val normalizedBlocks = text
             .replace(Regex("""```(?:latex|math)?\s*([\s\S]*?)\s*```"""), "$blockMarker$1$blockMarker")
             .replace("\\\\[", blockMarker)
             .replace("\\\\]", blockMarker)
@@ -837,9 +1060,9 @@ fun MathFormattedText(
             .replace("\\]", blockMarker)
             .replace("$$", blockMarker)
 
-        val parts = normalizedBlocks.split(blockMarker)
+        val blockParts = normalizedBlocks.split(blockMarker)
         Column(modifier = modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            parts.forEachIndexed { index, part ->
+            blockParts.forEachIndexed { index, part ->
                 val partTrimmed = part.trim()
                 if (index % 2 == 1 && partTrimmed.isNotBlank()) {
                     MathFormulaCard(formula = partTrimmed, label = "Fórmula")
@@ -856,7 +1079,7 @@ fun MathFormattedText(
         }
     } else {
         MarkdownInlineMathText(
-            text = cleanText,
+            text = text,
             modifier = modifier,
             style = style,
             color = color,

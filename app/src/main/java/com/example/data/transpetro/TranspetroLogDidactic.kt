@@ -1,4 +1,4 @@
-﻿package com.example.data.transpetro
+package com.example.data.transpetro
 
 import com.example.data.math.CalculusDidacticBundle
 import com.example.data.model.MathExercise

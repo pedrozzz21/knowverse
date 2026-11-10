@@ -121,6 +121,9 @@ data class EnemQuestion(
             else -> topic
         }
 
+        val imgRegex = Regex("""!\[.*?\]\((.*?)\)""")
+        val extractedImage = imgRegex.find(title)?.groupValues?.get(1)?.trim()
+
         return UniversalExercise(
             id = id,
             discipline = resolvedDiscipline,
@@ -136,6 +139,7 @@ data class EnemQuestion(
             problemStatement = title,
             codeSnippet = null,
             visualDrawableRes = null,
+            assetImagePath = extractedImage,
             visualTable = null,
             terminalOutput = null,
             geoGebraConfig = null,

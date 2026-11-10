@@ -287,11 +287,11 @@
     "disciplina": "Física",
     "statement": "O bluetooth é uma tecnologia de comunicação sem fio, de curto alcance, presente em diferentes dispositivos eletrônicos de consumo. Ela permite que aparelhos eletrônicos diferentes se conectem e troquem dados entre si. No padrão bluetooth, denominado de Classe 2, as antenas transmitem sinais de potência igual a 2,4 mW e possibilitam conectar dois dispositivos distanciados até 10 m. Considere que essas antenas se comportam como fontes puntiformes que emitem ondas eletromagnéticas esféricas e que a intensidade do sinal é calculada pela potência por unidade de área. Considere 3 como valor aproximado para π. \nPara que o sinal de bluetooth seja detectado pelas antenas, o valor mínimo de sua intensidade, em W/m²?, e mais próximo de",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2023/questions/113/8d968451-63ce-4bb6-9fc1-2a9997a962bf.png)",
+      "B) ![](https://enem.dev/2023/questions/113/7c34bc21-998f-433e-8687-e08b95f9b871.png)",
+      "C) ![](https://enem.dev/2023/questions/113/7286e182-5f71-4bbd-a08e-95b6b020028b.png)",
+      "D) ![](https://enem.dev/2023/questions/113/335c851b-35c6-4c99-8bd1-50cada05ce2e.png)",
+      "E) ![](https://enem.dev/2023/questions/113/efe618e1-ecf9-47c4-81eb-00060a2954e0.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -596,11 +596,11 @@
     "disciplina": "Física",
     "statement": "O físico Hans C. Oersted observou que um fio transportando corrente elétrica produz um campo magnético. A presença  \ndo campo magnético foi verificada ao aproximar uma bússola de um fio conduzindo corrente elétrica.  \nA figura ilustra um fio percorrido por uma corrente elétrica i, constante e com sentido para cima. Os pontos A, B e C  \nestão num plano transversal e equidistantes do fio. Em cada ponto foi colocada uma bússola.\n\n![](https://enem.dev/2022/questions/95/2a216ed1-eeab-4213-bcac-34e5166e97dd.png)\n\nConsiderando apenas o campo magnético por causa da corrente i, as respectivas configurações das bússolas nos pontos A, B e C serão",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/118-images/alt_img_0.png)",
+      "B) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/118-images/alt_img_1.png)",
+      "C) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/118-images/alt_img_2.png)",
+      "D) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/118-images/alt_img_3.png)",
+      "E) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/118-images/alt_img_4.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -621,11 +621,11 @@
     "disciplina": "Física",
     "statement": "![](https://enem.dev/2022/questions/96/970c1d36-8b55-4012-b912-db3efb32fbe4.png)\n\nO quadro mostra valores de corrente elétrica e seus efeitos sobre o corpo humano.\n\nA corrente elétrica que percorrerá o corpo de um indivíduo depende da tensão aplicada e da resistência  \nelétrica média do corpo humano. Esse último fator está intimamente relacionado com a umidade da pele, que seca apresenta resistência elétrica da ordem de 500 kΩ, mas, se molhada, pode chegar a apenas 1 kΩ.  \nApesar de incomum, é possível sofrer um acidente utilizando baterias de 12 V. Considere que um indivíduo com a pele molhada sofreu uma parada respiratória ao tocar simultaneamente nos pontos A e B de uma associação de duas dessas baterias.\n\nDURAN, J. E. R. **Biofísica: fundamentos e aplicações**. São Paulo: Pearson Prentice Hall, 2003 (adaptado).\n\nQual associação de baterias foi responsável pelo acidente?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2022/questions/96/430f5ad8-c181-4e82-8b90-364514a5e80d.png)",
+      "B) ![](https://enem.dev/2022/questions/96/9ccc03d3-49a3-45fa-bd85-aabe825984a6.png)",
+      "C) ![](https://enem.dev/2022/questions/96/32b31925-79f3-4809-bdb7-93b2e00c87d4.png)",
+      "D) ![](https://enem.dev/2022/questions/96/5ba7ae4b-c03e-457f-8a35-47bf0db1cef1.png)",
+      "E) ![](https://enem.dev/2022/questions/96/ff6f131d-afb1-4c4b-a8d4-f1f201170062.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -694,11 +694,11 @@
     "disciplina": "Física",
     "statement": "Tribologia é o estudo da interação entre duas superfícies em contato, como desgaste e atrito, sendo de extrema importância na avaliação de diferentes  \nprodutos e de bens de consumo em geral. Para testar a conformidade de uma muleta, realiza-se um ensaio tribológico, pressionando-a verticalmente contra o piso com uma força ![](https://enem.dev/2022/questions/103/731a52b0-b8d4-4a15-8a7c-aabc67d6dcde.jpg), conforme ilustra a imagem, em que CM representa o centro de massa da muleta.\n\nMantendo-se a força ![](https://enem.dev/2022/questions/103/04cf32d8-f517-483e-b0d5-189de111bc7a.jpg) paralela à muleta, varia-se lentamente o ângulo entre a muleta e a vertical, até o máximo ângulo imediatamente anterior ao de escorregamento, denominado ângulo crítico. Esse ângulo também pode ser calculado a partir da identificação dos pontos de aplicação, da direção e do sentido das forças peso ![](https://enem.dev/2022/questions/103/9027d4f1-c0a1-4b18-ac9f-2639e6b4360b.jpg), normal ![](https://enem.dev/2022/questions/103/e11f6a77-dda3-4525-a045-894baf71d307.jpg) e de atrito estático ![](https://enem.dev/2022/questions/103/d65b67dc-a285-43d4-a72b-a9c1b521c3b5.jpg).\n\n![](https://enem.dev/2022/questions/103/7cfea492-83f7-4ea1-bf6a-a3dc29d4edb9.jpg)\n\nO esquema que representa corretamente todas as forças que atuam sobre a muleta quando ela atinge o ângulo crítico é:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2022/questions/103/fd96af11-5014-46d5-a810-7f61cecce1ee.jpg)",
+      "B) ![](https://enem.dev/2022/questions/103/35328d99-51d3-48e1-b68f-77e985df73c4.jpg)",
+      "C) ![](https://enem.dev/2022/questions/103/09db4a77-899d-485e-b0a1-8cbfba70022a.jpg)",
+      "D) ![](https://enem.dev/2022/questions/103/87896c19-ad0d-4a19-a31e-c48d5e4e06fc.jpg)",
+      "E) ![](https://enem.dev/2022/questions/103/a530523b-e354-44f7-b52b-4424587daa4e.jpg)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -1400,10 +1400,10 @@
     "disciplina": "Física",
     "statement": "Duas esferas carregadas com cargas iguais em módulo e sinais contrários estão ligadas por uma haste rígida isolante na forma de haltere. O sistema se movimenta sob ação da gravidade numa região que tem um campo magnético horizontal uniforme  ![](https://enem.dev/2021/questions/105/81f45a24-eda2-40b3-8e46-768ee75a8807.jpg), da esquerda para a direita. A imagem apresenta o sistema visto de cima para baixo, no mesmo sentido da aceleração da gravidade ![](https://enem.dev/2021/questions/105/57f95cd7-65b6-4b83-8f6d-f86599749ee5.jpg) que atua na região.\n\n![](https://enem.dev/2021/questions/105/6e9bf09f-092e-49cf-b2f9-2885d0f29c26.jpg)\n\nVisto de cima, o diagrama esquemático das forças magnéticas que atuam no sistema, no momento inicial em que as cargas penetram na região de campo magnético, está representado em",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2021/questions/105/687ce5ec-dd77-42de-b36f-2783bcb67736.jpg)",
+      "B) ![](https://enem.dev/2021/questions/105/91a18cde-42ad-42f5-862d-b78c16ee7f0a.jpg)",
+      "C) ![](https://enem.dev/2021/questions/105/67c0a2c9-deab-456f-8508-1099c98277f8.jpg)",
+      "D) ![](https://enem.dev/2021/questions/105/b68b115c-a5ed-4665-99a7-01cdc4305c38.jpg)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -1814,11 +1814,11 @@
     "disciplina": "Física",
     "statement": "Um garoto precisa montar um circuito que acenda três lâmpadas de cores diferentes, uma de cada vez. Ele dispõe das lâmpadas, de fios, uma bateria e dois interruptores, como ilustrado, junto com seu símbolo de três pontos. Quando esse interruptor fecha AB, abre BC e vice-versa.\n\n![](https://enem.dev/2021/questions/126/0628bf6f-7d5c-4dc6-befa-149ef1567926.png)\n\nO garoto fez cinco circuitos elétricos usando os dois interruptores, mas apenas um satisfaz a sua necessidade. Esse circuito é representado por",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2021/questions/126/25d6d416-c4fd-44ab-a585-e6bfc841f167.png)",
+      "B) ![](https://enem.dev/2021/questions/126/0a7dfcb5-69d0-4c21-b3e9-8d8c3e3855d6.png)",
+      "C) ![](https://enem.dev/2021/questions/126/870e3957-2d89-4115-ba0b-653d28d95f19.png)",
+      "D) ![](https://enem.dev/2021/questions/126/1557b1da-03f1-4bd4-a456-05a62bebb592.png)",
+      "E) ![](https://enem.dev/2021/questions/126/d9e73712-b6a3-4e5d-afd8-ce5a8cfa379f.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -1933,11 +1933,11 @@
     "disciplina": "Biologia",
     "statement": "O Prêmio Nobel de Química de 2000 deveu-se à descoberta e ao desenvolvimento de polímeros condutores. Esses materiais têm ampla aplicação em novos dispositivos eletroluminescentes (LEDs), células fotovoltaicas etc. Uma propriedade-chave de um polímero condutor é a presença de ligações duplas conjugadas ao longo da cadeia principal do polímero.\n\nROCHA FILHO, R. C. Polímeros condutores: descoberta e aplicações. **Química Nova na Escola**. n. 12, 2000 (adaptado).\n\nUm exemplo desse polímero é representado pela estrutura",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2021/questions/135/92f582f4-0041-4251-a9d7-8feabaaa8bfa.png)",
+      "B) ![](https://enem.dev/2021/questions/135/1d579e5b-921a-4afb-90f1-49618e3a2269.png)",
+      "C) ![](https://enem.dev/2021/questions/135/94c80fa9-2e44-4853-8079-0ae4478a6016.png)",
+      "D) ![](https://enem.dev/2021/questions/135/33d1ee01-ba72-4108-97ce-5e4307659fff.png)",
+      "E) ![](https://enem.dev/2021/questions/135/99804a25-fcf0-4a95-be82-d601f1e98a33.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -1979,11 +1979,11 @@
     "disciplina": "Física",
     "statement": "Uma pessoa percebe que a bateria de seu veículo fica descarregada após cinco dias sem uso. No início desse período, a bateria funcionava normalmente e estava com o total de sua carga nominal, de 60 Ah. Pensando na possibilidade de haver uma corrente de fuga, que se estabelece mesmo com os dispositivos elétricos do veículo desligados, ele associa um amperímetro digital ao circuito do veículo.\n\nQual dos esquemas indica a maneira com que o amperímetro deve ser ligado e a leitura por ele realizada?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/106-images/alt_img_0.png)",
+      "B) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/106-images/alt_img_1.png)",
+      "C) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/106-images/alt_img_2.png)",
+      "D) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/106-images/alt_img_3.png)",
+      "E) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/106-images/alt_img_4.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -2293,11 +2293,11 @@
     "disciplina": "Física",
     "statement": "Nos desenhos animados, com frequência se vê um personagem correndo na direção de um abismo, mas, ao invés de cair, ele continua andando no vazio e só quando percebe que não há nada sob seus pés é que ele para de andar e cai verticalmente. No entanto, para observar uma trajetória de queda num experimento real, pode-se lançar uma bolinha, com velocidade constante (V0), sobre a superfície de uma mesa e verificar o seu movimento de queda até o chão.\n\nQual figura melhor representa a trajetória de queda da bolinha?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/113/93881bb9-4eb6-4d30-bcaf-2254ce3e837c.png)",
+      "B) ![](https://enem.dev/2020/questions/113/ffe496b7-7c83-4a43-97e2-75287d63305e.png)",
+      "C) ![](https://enem.dev/2020/questions/113/ad12af23-b876-49f9-99a1-e6536b5c80a9.png)",
+      "D) ![](https://enem.dev/2020/questions/113/207108f6-f71e-49a2-9d39-dc1d100678d0.png)",
+      "E) ![](https://enem.dev/2020/questions/113/da16bf97-bac6-407f-b7b9-813cfd8c39d0.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -3464,11 +3464,11 @@
     "disciplina": "Física",
     "statement": "Ao pesquisar um resistor feito de um novo tipo de material, um cientista observou o comportamento mostrado no gráico tensão _versus_ corrente.\n\n![](https://enem.dev/2018/questions/108/24817521-13ac-4999-a992-3c2380ec7141.png)\n\nApós a análise do gráfico, ele concluiu que a tensão em função da corrente é dada pela equação \nO gráfico da resistência elétrica (R) do resistor em função\nda corrente (i) é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/108/5bf4be63-9cdc-4345-9373-3ac1c875eecf.png)",
+      "B) ![](https://enem.dev/2018/questions/108/46eada6c-6947-40db-a273-d617a5c919fb.png)",
+      "C) ![](https://enem.dev/2018/questions/108/001d6f5b-f5c2-4515-9473-cc7f7fbd7fbc.png)",
+      "D) ![](https://enem.dev/2018/questions/108/01b43818-603a-4b13-989c-4b35205fb693.png)",
+      "E) ![](https://enem.dev/2018/questions/108/d6e28a0e-c225-4098-9735-31a69e9072ba.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -3535,11 +3535,11 @@
     "disciplina": "Física",
     "statement": "Muitos _smartphones_ e _tablets_ não precisam mais de teclas, uma vez que todos os comandos podem ser dados ao se pressionar a própria tela. Inicialmente essa tecnologia foi proporcionada por meio das telas resistivas, formadas basicamente por duas camadas de material condutor transparente que não se encostam até que alguém as pressione, modificando a resistência total do circuito de acordo com o ponto onde ocorre o toque.\n\nA imagem é uma simplificação do circuito formado pelas placas, em que **A** e **B** representam pontos onde o circuito pode ser fechado por meio do toque\n\n![](https://enem.dev/2018/questions/112/fe59e8fd-4175-4ab2-b2f5-3928a9780c42.png)\n\nQual é a resistência equivalente no circuito provocada por um toque que fecha o circuito no ponto A?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/112/a8daacce-2963-4265-b69d-59f96f3fb4c6.png)",
+      "B) ![](https://enem.dev/2018/questions/112/4f0d6fdc-8e57-4a96-8b66-fb746604c8af.png)",
+      "C) ![](https://enem.dev/2018/questions/112/5273706e-79db-463f-a8aa-3a7b49fe04d1.png)",
+      "D) ![](https://enem.dev/2018/questions/112/e668e88c-a069-4cba-9e81-8259219a152e.png)",
+      "E) ![](https://enem.dev/2018/questions/112/7caf2b8c-8ebe-403b-a7cb-ef0fde264fb3.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -3757,11 +3757,11 @@
     "disciplina": "Física",
     "statement": "Em desenhos animados é comum vermos a personagem tentando impulsionar um barco soprando ar contra a vela para compensar a falta de vento. Algumas vezes usam o próprio fôlego, foles ou ventiladores. Estudantes de um laboratório didático resolveram investigar essa possibilidade. Para isso, usaram dois pequenos carros de plástico, **A** e **B**, instalaram sobre estes pequenas ventoinhas e fixaram verticalmente uma cartolina de curvatura  \nparabólica para desempenhar uma função análoga á vela de um barco. No carro **B** inverteu-se o sentido da ventoinha e manteve-se a vela, a fim de manter as características físicas do barco, massa e formato da cartolina. As figuras representam os carros produzidos. A montagem do carro **A** busca simular a situação dos desenhos  \nanimados, pois a ventoinha está direcionada para a vela.\n\n![](https://enem.dev/2018/questions/128/d495fbfc-cf80-4e39-b7c7-6f0535ddac0a.png)\n\nCom os carros orientados de acordo com as figuras, os estudantes ligaram as ventoinhas, aguardaram o fluxo de ar ficar permanente e determinaram os módulos das velocidades médias dos carros ![](https://enem.dev/2018/questions/128/05a5be22-7db9-49d7-bfef-aa2c714bdfad.png) e ![](https://enem.dev/2018/questions/128/db724714-6e79-48e0-b29d-63add6f356cc.png) para o mesmo intervalo de tempo.\n\nA respeito das intensidades das velocidades médias e do sentido de movimento do carro A, os estudantes observaram que:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/128/ede4adfd-1e77-4e98-bb85-8bffcad6e198.png)",
+      "B) ![](https://enem.dev/2018/questions/128/ceda7adf-3ef3-4eba-8a94-29e2860b55c7.png)",
+      "C) ![](https://enem.dev/2018/questions/128/491fca7f-e493-4082-9fba-5f11c5a99b7d.png)",
+      "D) ![](https://enem.dev/2018/questions/128/b8ef24ad-f22f-44e5-af5c-18e94e3c8a10.png)",
+      "E) ![](https://enem.dev/2018/questions/128/c7002ed9-1acb-47ef-b652-132264c0402f.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -3809,11 +3809,11 @@
     "disciplina": "Biologia",
     "statement": "O grafeno é uma forma alotrópica do carbono constituído por uma folha planar (arranjo bidimensional) de átomos de carbono compactados e com a espessura de apenas um átomo. Sua estrutura é hexagonal, conforme a figura.\n\n![](https://enem.dev/2018/questions/130/f157dd85-9329-4b99-b81a-87bcc30eddad.png)\n\nNesse arranjo, os átomos de carbono possuem hibridação",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/130/d029f546-2caa-4c45-af74-7356a1af2896.png)",
+      "B) ![](https://enem.dev/2018/questions/130/ef61175f-00ef-4ff1-b880-6538aae6b88c.png)",
+      "C) ![](https://enem.dev/2018/questions/130/aa335cca-aea9-48dc-a827-5f70251932e0.png)",
+      "D) ![](https://enem.dev/2018/questions/130/cf09ab18-09eb-4f8b-9eea-9a279f075603.png)",
+      "E) ![](https://enem.dev/2018/questions/130/a920f72f-4765-460a-bc91-7181db910d5b.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -3905,11 +3905,11 @@
     "disciplina": "Física",
     "statement": "De acordo com a Lei Universal da Gravitação, proposta por Isaac Newton, a intensidade da força gravitacional _F_ que a Terra exerce sobre um satélite em órbita circular é proporcional à massa _m_ do satélite e inversamente proporcional ao quadrado do raio r da órbita, ou seja,\n\n![](https://enem.dev/2018/questions/142/dc1a457c-9fe4-4646-b999-1da5174f0402.png)\n\nNo plano cartesiano, três satélites, A, B e C, estão representados, cada um, por um ponto (m ; r) cujas coordenadas são, respectivamente, a massa do satélite e o raio da sua órbita em torno da Terra.\n\n![](https://enem.dev/2018/questions/142/e0273eee-f427-4e03-8aba-d467449a753c.png)\n\nCom base nas posições relativas dos pontos no gráfico, deseja-se comparar as intensidades ![](https://enem.dev/2018/questions/142/d3968814-fa4b-40eb-921d-9b874a4e1392.png) da força gravitacional que a Terra exerce sobre os satélites A, B e C, respectivamente.\n\nAs intensidades  expressas no gráfico satisfazem a relação",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/142/993e8313-806c-473d-8428-0b3492e00ac1.png)",
+      "B) ![](https://enem.dev/2018/questions/142/195a22d0-866c-4e0e-8f3c-a7a8ba722a6f.png)",
+      "C) ![](https://enem.dev/2018/questions/142/60ef05e0-6434-4896-a3ac-8b276be82837.png)",
+      "D) ![](https://enem.dev/2018/questions/142/afd76d6b-e678-477b-ac84-be18a9bfb155.png)",
+      "E) ![](https://enem.dev/2018/questions/142/1f581f02-617c-46ec-8e9d-dca345861942.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -4623,11 +4623,11 @@
     "disciplina": "Física",
     "statement": "![](https://enem.dev/2016/questions/49/c694a7ba-780c-4ea0-aa71-df3cbe4a300a.png)\n\nQual esboço gráfico representa a frequência fo (t) detectada pelo observador?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2016/questions/49/b6ee57bb-4657-4507-b4dd-d3a90d0fdf5c.png)",
+      "B) ![](https://enem.dev/2016/questions/49/83020533-7aa3-43c8-8ecb-1c935d334df9.png)",
+      "C) ![](https://enem.dev/2016/questions/49/0be3b2b3-3e5f-4e97-b33a-eba2bbdf9ad6.png)",
+      "D) ![](https://enem.dev/2016/questions/49/8d73abe7-f8be-486d-9404-91eca4acf47b.png)",
+      "E) ![](https://enem.dev/2016/questions/49/18d92fb3-eac0-47f2-b405-898112bbce22.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -4865,11 +4865,11 @@
     "disciplina": "Física",
     "statement": "Considerando a situação descrita, qual esboço gráfico representa a velocidade do automóvel em relação à distância percorrida até parar totalmente?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2016/questions/63/38b23660-032c-403e-b938-8b64e40af10d.png)",
+      "B) ![](https://enem.dev/2016/questions/63/4597eef6-a364-4579-951a-18539ab724f0.png)",
+      "C) ![](https://enem.dev/2016/questions/63/9126bd93-a8bb-4f82-8426-47b0c234b526.png)",
+      "D) ![](https://enem.dev/2016/questions/63/5c565c97-56e7-4e0e-9f84-86534984bb58.png)",
+      "E) ![](https://enem.dev/2016/questions/63/b0952a42-0246-43f6-b3c6-2fee3ad589d5.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -5226,11 +5226,11 @@
     "disciplina": "Biologia",
     "statement": "![](https://enem.dev/2016/questions/85/905b1535-8032-4140-b20e-0f06b840ed90.png)\n\nEsse arranjo é representado esquematicamente por:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2016/questions/85/833fc836-0f12-40c2-9c58-7e388e19f961.png)",
+      "B) ![](https://enem.dev/2016/questions/85/36cd457b-9a51-46ad-b1d2-9d001cfea3fb.png)",
+      "C) ![](https://enem.dev/2016/questions/85/b9f7a6b9-8121-4c65-b09e-4edd8cd7686e.png)",
+      "D) ![](https://enem.dev/2016/questions/85/734af3d9-bff8-4170-87d8-173ed2430611.png)",
+      "E) ![](https://enem.dev/2016/questions/85/1e609441-aae0-4ddc-b65f-a436905f8033.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -5345,11 +5345,11 @@
     "disciplina": "Biologia",
     "statement": "Muitos estudos de síntese e endereçamento de proteínas utilizam aminoácidos marcados radioativamente para acompanhar as proteínas, desde fases iniciais de sua produção até seu destino final. Esses ensaios foram muito empregados para estudo e caracterização de células secretoras.\n\nApós esses ensaios de radioatividade, qual o gráfico que representa a evolução temporal da produção de proteínas e sua localização em uma célula secretora?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2015/questions/48/a0420351-2ef4-4350-b87d-a981e53cb803.png)",
+      "B) ![](https://enem.dev/2015/questions/48/9ac61859-d0e6-4afa-88a8-f79258b1f54d.png)",
+      "C) ![](https://enem.dev/2015/questions/48/0a8633af-74c1-4373-8f3e-425dde9748d3.png)",
+      "D) ![](https://enem.dev/2015/questions/48/3ab18620-6564-4cf9-8eda-d0f33fd7f131.png)",
+      "E) ![](https://enem.dev/2015/questions/48/d68afb79-6de2-441b-b9e2-ce74660b28cb.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -5656,11 +5656,11 @@
     "disciplina": "Física",
     "statement": "“O circuito deve ser tal que as tomadas e a lâmpada devem estar submetidas à tensão nominal da rede elétrica e a lâmpada deve poder ser ligada ou desligada por um interruptor sem afetar os outros dispositivos” – pensou.\n\nSímbolos adotados:\n\n![](https://enem.dev/2015/questions/68/4f4ca8f0-ec3a-4332-9567-1633095f1fe6.png)\n\nQual dos circuitos esboçados atende às exigências?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2015/questions/68/2b767291-cd8c-4261-bf76-af9104270bc9.png)",
+      "B) ![](https://enem.dev/2015/questions/68/2868d5b7-0d2c-4b80-971d-0b9d9097f0ae.png)",
+      "C) ![](https://enem.dev/2015/questions/68/2349b86b-8dfd-4dfd-a31f-7e7186fb444e.png)",
+      "D) ![](https://enem.dev/2015/questions/68/09b086a5-c497-449d-8526-5bca976ce76d.png)",
+      "E) ![](https://enem.dev/2015/questions/68/298fbfd3-dbc6-4eb0-9183-88ac3ba32f8a.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -6299,11 +6299,11 @@
     "disciplina": "Física",
     "statement": "![](https://enem.dev/2014/questions/64/8647fc4b-cf74-4480-84ae-3a7c8dbf1ade.png)\n\nO movimento dos pêndulos após a primeira colisão está representado em:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2014/questions/64/5465b02d-b7c0-4634-ab50-9c90553c64eb.png)",
+      "B) ![](https://enem.dev/2014/questions/64/71612cad-5d0b-4aad-9ffb-6734c3a014a0.png)",
+      "C) ![](https://enem.dev/2014/questions/64/304c0652-3f78-45a7-9a5a-26f66cac172a.png)",
+      "D) ![](https://enem.dev/2014/questions/64/3986d28d-2218-4e4d-8fb0-364108801ec1.png)",
+      "E) ![](https://enem.dev/2014/questions/64/04085268-f5b2-4487-8e07-811ef753a830.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -6324,11 +6324,11 @@
     "disciplina": "Biologia",
     "statement": "O grupo responsável pela bioatividade desse fármaco é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2014/questions/65/a4137bfb-c853-4a14-913b-a98b7b61a017.png)",
+      "B) ![](https://enem.dev/2014/questions/65/a49ceb57-72cd-446e-a70d-71001bc9594d.png)",
+      "C) ![](https://enem.dev/2014/questions/65/65d62c42-c830-4a69-a5f5-5778f55507f1.png)",
+      "D) ![](https://enem.dev/2014/questions/65/f4c89421-78f1-4667-97e1-9966c978d6bc.png)",
+      "E) ![](https://enem.dev/2014/questions/65/591a492e-5806-4574-bf95-72849dd6ee86.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -6873,11 +6873,11 @@
     "disciplina": "Biologia",
     "statement": "A pílula anticoncepcional é um dos métodos contraceptivos de maior segurança, sendo constituída basicamente de dois hormônios sintéticos semelhantes aos hormônios produzidos pelo organismo feminino, o estrogênio (E) e a progesterona (P). Em um experimento médico, foi analisado o sangue de uma mulher que ingeriu ininterruptamente um comprimido desse medicamento por dia durante seis meses.\n\nQual gráfico representa a concentração sanguínea desses hormônios durante o período do experimento?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2013/questions/55/0eb7cde6-4cb0-41e1-be62-f1b89da96fe8.png)",
+      "B) ![](https://enem.dev/2013/questions/55/393900eb-c7a3-4029-81aa-9d239b245aaf.png)",
+      "C) ![](https://enem.dev/2013/questions/55/37c4ce43-ffb7-4f90-ab8b-1c60dcdc77c4.png)",
+      "D) ![](https://enem.dev/2013/questions/55/c4987b7b-86b9-4639-b00f-411f9ff2a79b.png)",
+      "E) ![](https://enem.dev/2013/questions/55/8c70acab-8fef-4ead-b349-d2a1d8b76581.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -7065,11 +7065,11 @@
     "disciplina": "Biologia",
     "statement": "![](https://enem.dev/2013/questions/68/d1879686-065c-4be3-8a4b-2a2867bff97e.png)\n\nA partir do texto e dos produtos de degradação apresentados, a estrutura química que representa o glifosato é:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2013/questions/68/00126fb3-e9d1-415c-8317-21c1f867b546.png)",
+      "B) ![](https://enem.dev/2013/questions/68/c9174073-9a44-4ae8-8502-deb2fbf107aa.png)",
+      "C) ![](https://enem.dev/2013/questions/68/e41cd9d3-2caa-4b26-a270-e126daada9c8.png)",
+      "D) ![](https://enem.dev/2013/questions/68/68b4527e-078b-488f-8ac0-1d8a007d3329.png)",
+      "E) ![](https://enem.dev/2013/questions/68/5a61ddab-1a34-4e3e-bc93-dd4173432d86.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -7138,11 +7138,11 @@
     "disciplina": "Biologia",
     "statement": "![](https://enem.dev/2013/questions/72/023b2cf4-ae6c-41cf-b2b5-920ff8018158.png)\n\nPara realizar essas medidas, o esquema da ligação desses instrumentos está representado em:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2013/questions/72/06868b02-e288-4d3f-9bf6-8304070e3aa6.png)",
+      "B) ![](https://enem.dev/2013/questions/72/c9c4791b-8cea-4d3d-b65e-92f674d40a1c.png)",
+      "C) ![](https://enem.dev/2013/questions/72/ae887644-3f4a-42c8-bfbe-f19c94025eb6.png)",
+      "D) ![](https://enem.dev/2013/questions/72/8d002a3b-e23e-4ffa-b10a-ba6f976b8766.png)",
+      "E) ![](https://enem.dev/2013/questions/72/3cafe3f7-385f-46c8-b0e3-8d6c9691c84d.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -7403,11 +7403,11 @@
     "disciplina": "Física",
     "statement": "Em um dia sem vento, ao saltar de um avião, um paraquedista cai verticalmente até atingir a velocidade limite. No instante em que o paraquedas é aberto (instante TA), ocorre a diminuição de sua velocidade de queda. Algum tempo após a abertura do paraquedas, ele passa a ter velocidade de queda constante, que possibilita sua aterrissagem em segurança\n\nQue gráfico representa a força resultante sobre o paraquedista, durante o seu movimento de queda?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2013/questions/87/4f8b0ada-6d51-47a7-a70e-e34ffcc300a7.png)",
+      "B) ![](https://enem.dev/2013/questions/87/d3ed2f2f-5c06-4aeb-9f24-5d76bb01a111.png)",
+      "C) ![](https://enem.dev/2013/questions/87/36abe86d-fe7d-4400-9fee-99de6602a337.png)",
+      "D) ![](https://enem.dev/2013/questions/87/5a456a8a-c6a9-4a62-b94a-d623937af626.png)",
+      "E) ![](https://enem.dev/2013/questions/87/30438e52-cbce-4c18-bda0-5aa8ae08f2d9.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -7635,11 +7635,11 @@
     "disciplina": "Biologia",
     "statement": "O mecanismo que permite articular uma porta (de um móvel ou de acesso) é a dobradiça. Normalmente, são necessárias duas ou mais dobradiças para que a porta seja fixada no móvel ou no portal, permanecendo em equilíbrio e podendo ser articulada com facilidade.\n\nNo plano, o diagrama vetorial das forças que as dobradiças exercem na porta está representado em",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2012/questions/55/f1199eea-114e-43c3-9b5e-ba88da456c68.png)",
+      "B) ![](https://enem.dev/2012/questions/55/1903d014-dd0c-4719-886b-3f72a192f660.png)",
+      "C) ![](https://enem.dev/2012/questions/55/0c7efc5c-2689-4b0d-8e34-11cf1e5d61d4.png)",
+      "D) ![](https://enem.dev/2012/questions/55/383792c5-776f-4276-8b2a-03a6e0efb342.png)",
+      "E) ![](https://enem.dev/2012/questions/55/55f94d4e-af4e-4378-b63e-738fe244d8c6.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -7729,11 +7729,11 @@
     "disciplina": "Biologia",
     "statement": "Qual é o gráfico de posição (eixo vertical) em função do tempo (eixo horizontal) que representa o movimento desse trem?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2012/questions/60/f75fbb9b-e2dd-4abf-8796-5b2fc09bb90d.png)",
+      "B) ![](https://enem.dev/2012/questions/60/5cac9f80-9281-4486-9340-9d99e77b59b1.png)",
+      "C) ![](https://enem.dev/2012/questions/60/38bf386c-b484-4f24-aea8-c351b55ab365.png)",
+      "D) ![](https://enem.dev/2012/questions/60/d72eb90a-ce8b-401a-97ab-a62e182a6fd3.png)",
+      "E) ![](https://enem.dev/2012/questions/60/ef17337d-941b-4a83-9815-a2c35a3999d9.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -7940,11 +7940,11 @@
     "disciplina": "Física",
     "statement": "![](https://enem.dev/2012/questions/73/2e962c95-a64e-494c-891f-43188f52c16c.png)\n\nO circuito que cumpre a finalidade de funcionamento descrita no texto é:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2012/questions/73/b8407863-66cd-4a4f-8b54-a001a7c77abf.png)",
+      "B) ![](https://enem.dev/2012/questions/73/2ac61f8c-80c6-4b18-b182-15e501064831.png)",
+      "C) ![](https://enem.dev/2012/questions/73/24a1a70f-c88e-4e3d-87ee-7d319551eff5.png)",
+      "D) ![](https://enem.dev/2012/questions/73/d9f98d87-211f-4047-952a-d26f91ff8d89.png)",
+      "E) ![](https://enem.dev/2012/questions/73/eafd5a16-c75c-4635-a008-45795263edff.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -8059,11 +8059,11 @@
     "disciplina": "Física",
     "statement": "Os freios ABS são uma importante medida de segurança no trânsito, os quais funcionam para impedir o travamento das rodas do carro quando o sistema de freios é acionado, liberando as rodas quando estão no limiar do deslizamento. Quando as rodas travam, a força de frenagem é governada pelo atrito cinético.\n\nAs representações esquemáticas da força de atrito fat entre os pneus e a pista, em função da pressão ρ aplicada no pedal de freio, para carros sem ABS e com ABS, respectivamente, são:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2012/questions/78/642f46b9-6a48-4788-9c92-c6340a3c832e.png)",
+      "B) ![](https://enem.dev/2012/questions/78/47d7b6a2-f129-4456-9946-966f51f21323.png)",
+      "C) ![](https://enem.dev/2012/questions/78/8306a37e-6f93-45c8-984a-6190441316d6.png)",
+      "D) ![](https://enem.dev/2012/questions/78/19c51806-866c-4272-9984-258e22b08a90.png)",
+      "E) ![](https://enem.dev/2012/questions/78/75781572-77f0-459a-b554-17642fa454d9.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -9636,11 +9636,11 @@
     "disciplina": "Física",
     "statement": "Um grupo de cientistas liderado por pesquisadores do instituto de Tecnologia da Califórnia (Caltech), nos Estados Unidos, construiu o primeiro metamaterial que apresenta valor negativo do índice de refração relativo para a luz visível. Denomina-se metamaterial um material óptico artificial, tridimensional, formado por pequenas estruturas menores do que o comprimento de onda da luz, o que lhe dá propriedades e comportamentos que não são encontrados em materiais naturais. Esse material tem sido chamado de “canhoto”.\n\nDisponível em: http://www.invocaçãotecnologica.com.br. Acesso em: 28 abr. (adaptado).\n\nConsiderando o comportamento atípico desse metamaterial, qual é a figura que representa a refração da luz ao passar do ar para esse meio?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2010/questions/84/c79b38d7-6730-4f9c-9ecd-1afe898f868e.png)",
+      "B) ![](https://enem.dev/2010/questions/84/e9a2a50f-7259-413d-a68e-748f26f9bd93.png)",
+      "C) ![](https://enem.dev/2010/questions/84/ae9996a3-2b96-48b9-9fb0-63529cfd6059.png)",
+      "D) ![](https://enem.dev/2010/questions/84/6a342700-2e07-4f06-92e9-e96e35418f2b.png)",
+      "E) ![](https://enem.dev/2010/questions/84/3302afe8-7fca-45b0-b1c3-59e696c5865f.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -10042,11 +10042,11 @@
     "disciplina": "Biologia",
     "statement": "Os seres vivos apresentam diferentes ciclos de vida, caracterizados pelas fases nas quais gametas são produzidos e pelos processos reprodutivos que resultam na geração de novos indivíduos.\n\nConsiderando-se um modelo simplificado padrão para geração de indivíduos viáveis, a alternativa que corresponde ao observado em seres humanos é:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2009/questions/21/9d7cdc06-4397-4fc8-8e79-5a7933931cce.png)",
+      "B) ![](https://enem.dev/2009/questions/21/7a052a7f-b258-4365-8370-16a8757a233a.png)",
+      "C) ![](https://enem.dev/2009/questions/21/6a5e3a17-5062-4a35-bc1a-267da70919e3.png)",
+      "D) ![](https://enem.dev/2009/questions/21/482b95e7-e9a6-4631-bdb6-52d196282473.png)",
+      "E) ![](https://enem.dev/2009/questions/21/a7fa1fd3-06fa-488f-8389-b8dd42eef74e.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -10257,11 +10257,11 @@
     "disciplina": "Biologia",
     "statement": "O uso de protetores solares em situações de grande exposição aos raios solares como, por exemplo, nas praias, é de grande importância para a saúde. As moléculas ativas de um protetor apresentam, usualmente, anéis aromáticos conjugados com grupos carbonila, pois esses sistemas são capazes de absorver a radiação ultravioleta mais nociva aos seres humanos. A conjugação é definida como a ocorrência de alternância entre ligações simples e duplas em uma molécula. Outra propriedade das moléculas em questão é apresentar, em uma de suas extremidades, uma parte apolar responsável por reduzir a solubilidade do composto em água, o que impede sua rápida remoção quando do contato com a água.\n\nDe acordo com as considerações do texto, qual das moléculas apresentadas a seguir é a mais adequada para funcionar como molécula ativa de protetores solares?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2009/questions/36/d5883437-d621-4f4e-8d6d-7f2d7e4bdb42.jpg)",
+      "B) ![](https://enem.dev/2009/questions/36/7eaa6df0-91be-4cc0-aa1d-84d854129628.jpg)",
+      "C) ![](https://enem.dev/2009/questions/36/14126a76-2d70-4112-bcd2-8f71e7a35eb6.jpg)",
+      "D) ![](https://enem.dev/2009/questions/36/7a0856d3-7bbb-4c7e-8ca2-fb1ba38e004a.jpg)",
+      "E) ![](https://enem.dev/2009/questions/36/a17be85c-ff54-499f-92ff-3a224fe7928d.jpg)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -10807,17 +10807,19 @@
     "subtopic": "Módulo 1: Ecologia",
     "moduleId": "mod_bio_01_ecologia",
     "moduleTitle": "Módulo 1: Ecologia",
-    "statement": "O bluetooth é uma tecnologia de comunicação sem fio, de curto alcance, presente em diferentes dispositivos eletrônicos de consumo. Ela permite que aparelhos eletrônicos diferentes se conectem e troquem dados entre si. No padrão bluetooth, denominado de Classe 2, as antenas transmitem sinais de potência igual a 2,4 mW e possibilitam conectar dois dispositivos distanciados até 10 m. Considere que essas antenas se comportam como fontes puntiformes que emitem ondas eletromagnéticas esféricas e que a intensidade do sinal é calculada pela potência por unidade de área. Considere 3 como valor aproximado para π. \nPara que o sinal de bluetooth seja detectado pelas antenas, o valor mínimo de sua intensidade, em W/m²?, e mais próximo de",
+    "statement": "O bluetooth é uma tecnologia de comunicação sem fio, de curto alcance, presente em diferentes dispositivos eletrônicos de consumo. Ela permite que aparelhos eletrônicos diferentes se conectem e troquem dados entre si. No padrão bluetooth, denominado de Classe 2, as antenas transmitem sinais de potência igual a 2,4 mW e possibilitam conectar dois dispositivos distanciados até 10 m. Considere que essas antenas se comportam como fontes puntiformes que emitem ondas eletromagnéticas esféricas e que a intensidade do sinal é calculada pela potência por unidade de área. Considere 3 como valor aproximado para π.\n\nPara que o sinal de bluetooth seja detectado pelas antenas, o valor mínimo de sua intensidade, em W/m², é mais próximo de:",
     "options": [
-      "A) ",
-      "B) ",
-      "C) ",
-      "D) ",
-      "E) "
+      "A) 2,0 × 10⁻⁶",
+      "B) 2,0 × 10⁻⁵",
+      "C) 2,4 × 10⁻⁵",
+      "D) 2,4 × 10⁻³",
+      "E) 2,4 × 10⁻¹"
     ],
     "correctLetter": "A",
     "explanation": "Resolução comentada ENEM 2023 (Questão 113): Conceitos fundamentais de Biologia. Alternativa correta: A.",
-    "difficulty": "Média"
+    "difficulty": "Média",
+    "correctAnswer": "A",
+    "correctIndex": 0
   },
   {
     "id": "enem_api_2023_q114",
@@ -11069,11 +11071,11 @@
     "moduleTitle": "Módulo 1: Ecologia",
     "statement": "O manual de um automóvel alerta sobre os cuidados em relação à pressão do ar no interior dos pneus. Recomenda-se que a pressão seja verificada com os pneus frios (à temperatura ambiente). Um motorista, desatento a essa informação, realizou uma viagem longa sobre o asfalto quente e, em seguida, verificou que a pressão![](https://enem.dev/2023/questions/132/99a53ed4-bbd2-4aa0-9301-ee4cd640a4b6.jpg) no interior dos pneus não era a recomendada pelo fabricante. Na ocasião, a temperatura dos pneus era ![](https://enem.dev/2023/questions/132/2367c9cb-2c1a-4b79-b582-86fc01088ff8.jpg). Após um longo período em repouso, os pneus do carro atingiram a temperatura ambiente T. Durante o resfriamento, não há alteração no volume dos pneus e na quantidade de ar no seu interior. Considere o ar dos pneus um gás perfeito (também denominado gás ideal).\n\nDurante o processo de resfriamento, os valores de pressão em relação à temperatura (P x T) são representados pelo gráfico:",
     "options": [
-      "A) ",
-      "B) ",
-      "C) ",
-      "D) ",
-      "E) "
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/119-images/alt_img_0.png)",
+      "B) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/119-images/alt_img_1.png)",
+      "C) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/119-images/alt_img_2.png)",
+      "D) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/119-images/alt_img_3.png)",
+      "E) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/119-images/alt_img_4.png)"
     ],
     "correctLetter": "E",
     "explanation": "Resolução comentada ENEM 2023 (Questão 132): Conceitos fundamentais de Biologia. Alternativa correta: E.",
@@ -11209,11 +11211,11 @@
     "moduleTitle": "Módulo 1: Ecologia",
     "statement": "O físico Hans C. Oersted observou que um fio transportando corrente elétrica produz um campo magnético. A presença  \ndo campo magnético foi verificada ao aproximar uma bússola de um fio conduzindo corrente elétrica.  \nA figura ilustra um fio percorrido por uma corrente elétrica i, constante e com sentido para cima. Os pontos A, B e C  \nestão num plano transversal e equidistantes do fio. Em cada ponto foi colocada uma bússola.\n\n![](https://enem.dev/2022/questions/95/2a216ed1-eeab-4213-bcac-34e5166e97dd.png)\n\nConsiderando apenas o campo magnético por causa da corrente i, as respectivas configurações das bússolas nos pontos A, B e C serão",
     "options": [
-      "A) ",
-      "B) ",
-      "C) ",
-      "D) ",
-      "E) "
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/118-images/alt_img_0.png)",
+      "B) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/118-images/alt_img_1.png)",
+      "C) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/118-images/alt_img_2.png)",
+      "D) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/118-images/alt_img_3.png)",
+      "E) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/118-images/alt_img_4.png)"
     ],
     "correctLetter": "D",
     "explanation": "Resolução comentada ENEM 2022 (Questão 95): Conceitos fundamentais de Biologia. Alternativa correta: D.",
@@ -11229,11 +11231,11 @@
     "moduleTitle": "Módulo 1: Ecologia",
     "statement": "![](https://enem.dev/2022/questions/96/970c1d36-8b55-4012-b912-db3efb32fbe4.png)\n\nO quadro mostra valores de corrente elétrica e seus efeitos sobre o corpo humano.\n\nA corrente elétrica que percorrerá o corpo de um indivíduo depende da tensão aplicada e da resistência  \nelétrica média do corpo humano. Esse último fator está intimamente relacionado com a umidade da pele, que seca apresenta resistência elétrica da ordem de 500 kΩ, mas, se molhada, pode chegar a apenas 1 kΩ.  \nApesar de incomum, é possível sofrer um acidente utilizando baterias de 12 V. Considere que um indivíduo com a pele molhada sofreu uma parada respiratória ao tocar simultaneamente nos pontos A e B de uma associação de duas dessas baterias.\n\nDURAN, J. E. R. **Biofísica: fundamentos e aplicações**. São Paulo: Pearson Prentice Hall, 2003 (adaptado).\n\nQual associação de baterias foi responsável pelo acidente?",
     "options": [
-      "A) ",
-      "B) ",
-      "C) ",
-      "D) ",
-      "E) "
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/119-images/alt_img_0.png)",
+      "B) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/119-images/alt_img_1.png)",
+      "C) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/119-images/alt_img_2.png)",
+      "D) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/119-images/alt_img_3.png)",
+      "E) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/119-images/alt_img_4.png)"
     ],
     "correctLetter": "A",
     "explanation": "Resolução comentada ENEM 2022 (Questão 96): Conceitos fundamentais de Biologia. Alternativa correta: A.",
@@ -11289,11 +11291,11 @@
     "moduleTitle": "Módulo 1: Mecânica",
     "statement": "Tribologia é o estudo da interação entre duas superfícies em contato, como desgaste e atrito, sendo de extrema importância na avaliação de diferentes  \nprodutos e de bens de consumo em geral. Para testar a conformidade de uma muleta, realiza-se um ensaio tribológico, pressionando-a verticalmente contra o piso com uma força ![](https://enem.dev/2022/questions/103/731a52b0-b8d4-4a15-8a7c-aabc67d6dcde.jpg), conforme ilustra a imagem, em que CM representa o centro de massa da muleta.\n\nMantendo-se a força ![](https://enem.dev/2022/questions/103/04cf32d8-f517-483e-b0d5-189de111bc7a.jpg) paralela à muleta, varia-se lentamente o ângulo entre a muleta e a vertical, até o máximo ângulo imediatamente anterior ao de escorregamento, denominado ângulo crítico. Esse ângulo também pode ser calculado a partir da identificação dos pontos de aplicação, da direção e do sentido das forças peso ![](https://enem.dev/2022/questions/103/9027d4f1-c0a1-4b18-ac9f-2639e6b4360b.jpg), normal ![](https://enem.dev/2022/questions/103/e11f6a77-dda3-4525-a045-894baf71d307.jpg) e de atrito estático ![](https://enem.dev/2022/questions/103/d65b67dc-a285-43d4-a72b-a9c1b521c3b5.jpg).\n\n![](https://enem.dev/2022/questions/103/7cfea492-83f7-4ea1-bf6a-a3dc29d4edb9.jpg)\n\nO esquema que representa corretamente todas as forças que atuam sobre a muleta quando ela atinge o ângulo crítico é:",
     "options": [
-      "A) ",
-      "B) ",
-      "C) ",
-      "D) ",
-      "E) "
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/108-images/alt_img_0.png)",
+      "B) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/108-images/alt_img_1.png)",
+      "C) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/108-images/alt_img_2.png)",
+      "D) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/108-images/alt_img_3.png)",
+      "E) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2022/108-images/alt_img_4.png)"
     ],
     "correctLetter": "E",
     "explanation": "Resolução comentada ENEM 2022 (Questão 103): Conceitos fundamentais de Física. Alternativa correta: E.",
@@ -11929,10 +11931,11 @@
     "moduleTitle": "Módulo 1: Mecânica",
     "statement": "Duas esferas carregadas com cargas iguais em módulo e sinais contrários estão ligadas por uma haste rígida isolante na forma de haltere. O sistema se movimenta sob ação da gravidade numa região que tem um campo magnético horizontal uniforme  ![](https://enem.dev/2021/questions/105/81f45a24-eda2-40b3-8e46-768ee75a8807.jpg), da esquerda para a direita. A imagem apresenta o sistema visto de cima para baixo, no mesmo sentido da aceleração da gravidade ![](https://enem.dev/2021/questions/105/57f95cd7-65b6-4b83-8f6d-f86599749ee5.jpg) que atua na região.\n\n![](https://enem.dev/2021/questions/105/6e9bf09f-092e-49cf-b2f9-2885d0f29c26.jpg)\n\nVisto de cima, o diagrama esquemático das forças magnéticas que atuam no sistema, no momento inicial em que as cargas penetram na região de campo magnético, está representado em",
     "options": [
-      "A) ",
-      "B) ",
-      "C) ",
-      "D) "
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/121-images/alt_img_0.png)",
+      "B) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/121-images/alt_img_1.png)",
+      "C) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/121-images/alt_img_2.png)",
+      "D) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/121-images/alt_img_3.png)",
+      "E) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/121-images/alt_img_4.png)"
     ],
     "correctLetter": "A",
     "explanation": "Resolução comentada ENEM 2021 (Questão 105): Conceitos fundamentais de Física. Alternativa correta: A.",
@@ -12308,11 +12311,11 @@
     "moduleTitle": "Módulo 1: Mecânica",
     "statement": "Um garoto precisa montar um circuito que acenda três lâmpadas de cores diferentes, uma de cada vez. Ele dispõe das lâmpadas, de fios, uma bateria e dois interruptores, como ilustrado, junto com seu símbolo de três pontos. Quando esse interruptor fecha AB, abre BC e vice-versa.\n\n![](https://enem.dev/2021/questions/126/0628bf6f-7d5c-4dc6-befa-149ef1567926.png)\n\nO garoto fez cinco circuitos elétricos usando os dois interruptores, mas apenas um satisfaz a sua necessidade. Esse circuito é representado por",
     "options": [
-      "A) ",
-      "B) ",
-      "C) ",
-      "D) ",
-      "E) "
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/105-images/alt_img_0.png)",
+      "B) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/105-images/alt_img_1.png)",
+      "C) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/105-images/alt_img_2.png)",
+      "D) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/105-images/alt_img_3.png)",
+      "E) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/105-images/alt_img_4.png)"
     ],
     "correctLetter": "D",
     "explanation": "Resolução comentada ENEM 2021 (Questão 126): Conceitos fundamentais de Física. Alternativa correta: D.",
@@ -12408,11 +12411,11 @@
     "moduleTitle": "Módulo 1: Ecologia",
     "statement": "O Prêmio Nobel de Química de 2000 deveu-se à descoberta e ao desenvolvimento de polímeros condutores. Esses materiais têm ampla aplicação em novos dispositivos eletroluminescentes (LEDs), células fotovoltaicas etc. Uma propriedade-chave de um polímero condutor é a presença de ligações duplas conjugadas ao longo da cadeia principal do polímero.\n\nROCHA FILHO, R. C. Polímeros condutores: descoberta e aplicações. **Química Nova na Escola**. n. 12, 2000 (adaptado).\n\nUm exemplo desse polímero é representado pela estrutura",
     "options": [
-      "A) ",
-      "B) ",
-      "C) ",
-      "D) ",
-      "E) "
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/94-images/alt_img_0.png)",
+      "B) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/94-images/alt_img_1.png)",
+      "C) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/94-images/alt_img_2.png)",
+      "D) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/94-images/alt_img_3.png)",
+      "E) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/94-images/alt_img_4.png)"
     ],
     "correctLetter": "D",
     "explanation": "Resolução comentada ENEM 2021 (Questão 135): Conceitos fundamentais de Biologia. Alternativa correta: D.",
@@ -12488,11 +12491,11 @@
     "moduleTitle": "Módulo 1: Mecânica",
     "statement": "Uma pessoa percebe que a bateria de seu veículo fica descarregada após cinco dias sem uso. No início desse período, a bateria funcionava normalmente e estava com o total de sua carga nominal, de 60 Ah. Pensando na possibilidade de haver uma corrente de fuga, que se estabelece mesmo com os dispositivos elétricos do veículo desligados, ele associa um amperímetro digital ao circuito do veículo.\n\nQual dos esquemas indica a maneira com que o amperímetro deve ser ligado e a leitura por ele realizada?",
     "options": [
-      "A) ",
-      "B) ",
-      "C) ",
-      "D) ",
-      "E) "
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/106-images/alt_img_0.png)",
+      "B) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/106-images/alt_img_1.png)",
+      "C) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/106-images/alt_img_2.png)",
+      "D) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/106-images/alt_img_3.png)",
+      "E) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/106-images/alt_img_4.png)"
     ],
     "correctLetter": "B",
     "explanation": "Resolução comentada ENEM 2020 (Questão 93): Conceitos fundamentais de Física. Alternativa correta: B.",
@@ -12768,11 +12771,11 @@
     "moduleTitle": "Módulo 1: Mecânica",
     "statement": "Nos desenhos animados, com frequência se vê um personagem correndo na direção de um abismo, mas, ao invés de cair, ele continua andando no vazio e só quando percebe que não há nada sob seus pés é que ele para de andar e cai verticalmente. No entanto, para observar uma trajetória de queda num experimento real, pode-se lançar uma bolinha, com velocidade constante (V0), sobre a superfície de uma mesa e verificar o seu movimento de queda até o chão.\n\nQual figura melhor representa a trajetória de queda da bolinha?",
     "options": [
-      "A) ",
-      "B) ",
-      "C) ",
-      "D) ",
-      "E) "
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/108-images/alt_img_0.png)",
+      "B) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/108-images/alt_img_1.png)",
+      "C) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/108-images/alt_img_2.png)",
+      "D) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/108-images/alt_img_3.png)",
+      "E) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/108-images/alt_img_4.png)"
     ],
     "correctLetter": "D",
     "explanation": "Resolução comentada ENEM 2020 (Questão 113): Conceitos fundamentais de Física. Alternativa correta: D.",

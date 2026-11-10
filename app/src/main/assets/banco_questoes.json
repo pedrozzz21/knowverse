@@ -30,7 +30,7 @@
     "index": 129,
     "disciplina": "Matemática",
     "topic": "Matemática ENEM",
-    "statement": "O Aldrin é um inseticida agrícola organoclorado sintético de baixa polaridade, cuja estrutura molecular simétrica, de fórmula ![](https://enem.dev/broken-image.svg), está representada na figura. Introduzido na agricultura a partir da década de 1950, esse composto apresenta alta persistência no meio ambiente e acumulação nos organismos, sendo danoso para a saúde.\n\n![](https://enem.dev/broken-image.svg)\n\nVIEGAS JÚNIOR, C. Terpenos com atividade inseticida: uma alternativa para o controle químico de insetos. **Química Nova**, v. 26, n. 3, 2003 (adaptado).\n\nUm pesquisador coletou fluidos biológicos de indivíduos de uma população contaminada por esse inseticida agrícola. Ele analisou amostras de saliva, sangue, lágrima, urina e leite quanto à presença dessa substância.\n\nEm qual dos fluidos o pesquisador provavelmente encontrou a maior concentração dessa substância?",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/129-images/context_img_1.png)\n\nO Aldrin é um inseticida agrícola organoclorado sintético de baixa polaridade, cuja estrutura molecular simétrica, de fórmula , está representada na figura. Introduzido na agricultura a partir da década de 1950, esse composto apresenta alta persistência no meio ambiente e acumulação nos organismos, sendo danoso para a saúde.\n\nVIEGAS JÚNIOR, C. Terpenos com atividade inseticida: uma alternativa para o controle químico de insetos. **Química Nova**, v. 26, n. 3, 2003 (adaptado).\n\nUm pesquisador coletou fluidos biológicos de indivíduos de uma população contaminada por esse inseticida agrícola. Ele analisou amostras de saliva, sangue, lágrima, urina e leite quanto à presença dessa substância.\n\nEm qual dos fluidos o pesquisador provavelmente encontrou a maior concentração dessa substância?",
     "options": [
       "A) Saliva, por consequência da atividade de enzimas.",
       "B) Sangue, em função das hemácias e leucócitos.",
@@ -40,7 +40,9 @@
     ],
     "correctIndex": 4,
     "correctLetter": "E",
-    "files": [],
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/129-images/context_img_1.png"
+    ],
     "hint": "Questão oficial 129 do ENEM 2023 de Matemática.",
     "explanation": "Gabarito oficial do ENEM: Alternativa E.",
     "moduleId": "mod_mat_01_basica",
@@ -104,11 +106,11 @@
     "topic": "Matemática ENEM",
     "statement": "O manual de um automóvel alerta sobre os cuidados em relação à pressão do ar no interior dos pneus. Recomenda-se que a pressão seja verificada com os pneus frios (à temperatura ambiente). Um motorista, desatento a essa informação, realizou uma viagem longa sobre o asfalto quente e, em seguida, verificou que a pressão![](https://enem.dev/2023/questions/132/99a53ed4-bbd2-4aa0-9301-ee4cd640a4b6.jpg) no interior dos pneus não era a recomendada pelo fabricante. Na ocasião, a temperatura dos pneus era ![](https://enem.dev/2023/questions/132/2367c9cb-2c1a-4b79-b582-86fc01088ff8.jpg). Após um longo período em repouso, os pneus do carro atingiram a temperatura ambiente T. Durante o resfriamento, não há alteração no volume dos pneus e na quantidade de ar no seu interior. Considere o ar dos pneus um gás perfeito (também denominado gás ideal).\n\nDurante o processo de resfriamento, os valores de pressão em relação à temperatura (P x T) são representados pelo gráfico:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/119-images/alt_img_0.png)",
+      "B) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/119-images/alt_img_1.png)",
+      "C) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/119-images/alt_img_2.png)",
+      "D) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/119-images/alt_img_3.png)",
+      "E) ![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/119-images/alt_img_4.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -257,13 +259,13 @@
     "index": 141,
     "disciplina": "Matemática",
     "topic": "Matemática ENEM",
-    "statement": "Qual a probabilidade de o vencedor do sorteio ser um estudante do terceiro ano?",
+    "statement": "Para comemorar o aniversário de uma escola, um grupo de alunos organiza uma rifa. Foram vendidos bilhetes para os alunos dos três anos do ensino médio: 200 bilhetes para os estudantes do 1º ano, 150 bilhetes para os do 2º ano e 100 bilhetes para os do 3º ano. Cada estudante do 1º ano comprou 1 bilhete, cada um do 2º ano comprou 2 e cada um do 3º ano comprou 3.\n\nQual a probabilidade de o vencedor do sorteio ser um estudante do terceiro ano?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2023/questions/141/e698edb1-adc0-416b-9370-c20a7e878259.jpg)",
+      "B) ![](https://enem.dev/2023/questions/141/b5f5bdf5-2251-4326-9877-ce9c2d831600.jpg)",
+      "C) ![](https://enem.dev/2023/questions/141/d241fadb-6516-4ca8-aa9b-e72fff314881.jpg)",
+      "D) ![](https://enem.dev/2023/questions/141/1dcce683-4ef7-4862-b554-3e3c66de54c3.jpg)",
+      "E) ![](https://enem.dev/2023/questions/141/7b4de18d-92ca-488f-8419-ec95d852a135.jpg)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -281,7 +283,7 @@
     "index": 142,
     "disciplina": "Matemática",
     "topic": "Matemática ENEM",
-    "statement": "Qual é a quantidade mínima de água, em litro, que cada morador, em média, deverá economizar por dia, de modo que o reservatório não fique sem água nos próximos 10 dias?",
+    "statement": "O reservatório de água de um condomínio tem o formato de um cilindro circular reto com raio da base medindo 5 m e altura da coluna de água restante de 1,5 m. O condomínio tem 75 moradores cujo consumo habitual é de 200 litros de água por dia por morador. Devido a uma estiagem, a água restante no reservatório deve durar exatamente 10 dias. Adote π = 3.\n\nQual é a quantidade mínima de água, em litro, que cada morador, em média, deverá economizar por dia, de modo que o reservatório não fique sem água nos próximos 10 dias?",
     "options": [
       "A) 50",
       "B) 60",
@@ -358,11 +360,11 @@
     "topic": "Matemática ENEM",
     "statement": "Num certo momento de um jogo digital, a tela apresenta a imagem representada na figura. O ponto Q1 representa a posição de um jogador que está com a bola, os pontos Q2, Q3, Q4 , Q5 e Q6  \ntambém indicam posições de jogadores da mesma equipe, e os pontos A e B indicam os dois pés da trave mais próxima deles. No momento da partida retratado, o jogador Q1 tem a posse da bola, que será passada para um dos outros jogadores das posições Qn, n ∈ {2, 3, 4, 5, 6}, cujo ângulo AQnB tenha a mesma medida do ângulo AQ1 B.\n\n![](https://enem.dev/2023/questions/145/f338280e-33fe-4896-b296-cfb94ca78430.png)\n\nQual é o jogador que receberá a bola?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2023/questions/145/b794885b-0519-4e72-87e0-93de02461252.png)",
+      "B) ![](https://enem.dev/2023/questions/145/57b5461f-1924-4599-9914-4b148b722d7c.png)",
+      "C) ![](https://enem.dev/2023/questions/145/d7e46a12-9912-4fad-8d9d-225859b42312.png)",
+      "D) ![](https://enem.dev/2023/questions/145/7a03bf64-9ae1-4137-924d-e1c6110fd1a3.png)",
+      "E) ![](https://enem.dev/2023/questions/145/5be53460-7a9a-4138-8d62-ac01b26993d6.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -713,11 +715,11 @@
     "topic": "Matemática ENEM",
     "statement": "Uma empresa de segurança domiciliar oferece o serviço de patrulha noturna, no qual vigilantes em motocicletas fazem o monitoramento periódico de residências. A empresa conta com uma base, de onde acompanha o trajeto realizado pelos vigilantes durante as patrulhas e orienta o deslocamento de equipes de reforço quando necessário. Numa patrulha rotineira, sem ocorrências, um vigilante conduziu sua motocicleta a uma velocidade constante durante todo o itinerário estabelecido, levando 30 minutos para conclusão. De acordo com os registros do GPS alocado na motocicleta, a distância da posição do vigilante à base, ao longo do tempo de realização do trajeto, é descrita pelo gráfico.\n\n![](https://enem.dev/2023/questions/163/ff0caefb-56e7-4c17-bae7-b65b91037e9c.png)\n\nA vista superior da trajetória realizada pelo vigilante durante a patrulha registrada no gráfico é descrita pela representação",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2023/questions/163/71c51165-c400-4d10-bb4b-c03ed19ff5ad.png)",
+      "B) ![](https://enem.dev/2023/questions/163/e04c3016-712a-4e6b-a9e5-be3505a57d41.png)",
+      "C) ![](https://enem.dev/2023/questions/163/1706f84a-c72a-48c1-982b-708ed91bcc8a.png)",
+      "D) ![](https://enem.dev/2023/questions/163/d49e3db4-31ee-4123-9a19-599e0b473503.png)",
+      "E) ![](https://enem.dev/2023/questions/163/7f6e3bbf-ef4c-4a6f-9fdb-407513158e78.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -842,11 +844,11 @@
     "topic": "Matemática ENEM",
     "statement": "Em um colégio público, a admissão no primeiro ano se dá por sorteio. Neste ano há 55 candidatos, cujas inscrições são numeradas de 01 a 55. O sorteio de cada número de inscrição será realizado em etapas, utilizando-se duas urnas. Da primeira urna será sorteada uma bola, dentre bolas numeradas de 0 a 9, que representará o algarismo das unidades do número de inscrição a ser sorteado e, em seguida, da segunda urna, será sorteada uma bola para representar o algarismo das dezenas desse número. Depois do primeiro sorteio, e antes de se sortear o algarismo das dezenas, as bolas que estarão presentes na segunda urna serão apenas aquelas cujos números formam, com o algarismo já sorteado, um número de 01 a 55.\n\nAs probabilidades de os candidatos de inscrição número 50 e 02 serem sorteados são, respectivamente,",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2023/questions/168/a5689a77-7cbd-4f5f-b548-eef2a3fee87f.png)",
+      "B) ![](https://enem.dev/2023/questions/168/67248715-8948-439d-9770-a652c76ac110.png)",
+      "C) ![](https://enem.dev/2023/questions/168/4d9a67e0-9136-42e4-855e-c72b0b876d28.png)",
+      "D) ![](https://enem.dev/2023/questions/168/24184847-9c76-40d3-9c78-44a35f0600e8.png)",
+      "E) ![](https://enem.dev/2023/questions/168/adeb932f-030f-4190-9b20-33a4a5f968f5.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -866,11 +868,11 @@
     "topic": "Matemática ENEM",
     "statement": "O esquema mostra como a intensidade luminosa decresce com o aumento da profundidade em um rio, sendo ![](https://enem.dev/2023/questions/169/76239f15-d46d-4067-bb38-bb40ca2f87c0.png) a intensidade na sua superfície.\n\n![](https://enem.dev/2023/questions/169/3af229c8-e385-4ca2-891a-22bdf6b2d593.png)\n\nConsidere que a intensidade luminosa diminui, a cada metro acrescido na profundidade, segundo o mesmo padrão do esquema.\n\nA intensidade luminosa correspondente à profundidade de 6 m é igual a",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2023/questions/169/0ad62fa9-ccdd-40b7-95e6-024319a5c9bc.png)",
+      "B) ![](https://enem.dev/2023/questions/169/74afb699-867b-4b47-8fa9-9c0fddd6db14.png)",
+      "C) ![](https://enem.dev/2023/questions/169/23fe5ab4-dc1d-4693-8a62-c17abdd5c5cb.png)",
+      "D) ![](https://enem.dev/2023/questions/169/9394f679-b291-4e10-9384-b1f2c2dba975.png)",
+      "E) ![](https://enem.dev/2023/questions/169/5037e73b-aa7f-43fd-baa8-4f70d9f0f498.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -972,11 +974,11 @@
     "topic": "Matemática ENEM",
     "statement": "Entre maratonistas, um parâmetro utilizado é o de economia de corrida (EC). O valor desse parâmetro é calculado pela razão entre o consumo de oxigênio, em mililitro (mL) por minuto (min), e a massa, em quilograma (kg), do atleta correndo a uma velocidade constante.\n\nDisponível em: www.treinamentoonline.com.br. Acesso em: 23 out. 2019 (adaptado).\n\nUm maratonista, visando melhorar sua performance, auxiliado por um médico, mensura o seu consumo de oxigênio por minuto a velocidade constante. Com base nesse consumo e na massa do atleta, o médico calcula o EC do atleta.\nA unidade de medida da grandeza descrita pelo parâmetro EC é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2023/questions/173/58763f45-39e0-4355-b932-75233adbdf21.png)",
+      "B) ![](https://enem.dev/2023/questions/173/81adc538-3ad2-4ced-9a2f-9a7f5f247c20.png)",
+      "C) ![](https://enem.dev/2023/questions/173/5d5d774d-009d-44a6-a774-55719c5547bf.png)",
+      "D) ![](https://enem.dev/2023/questions/173/3464da35-f15a-4506-b75a-168a26ff4664.png)",
+      "E) ![](https://enem.dev/2023/questions/173/146d0f23-94de-4fd7-ae01-2d31285103d3.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -1046,11 +1048,11 @@
     "topic": "Matemática ENEM",
     "statement": "A figura ilustra uma roda-gigante no exato instante em que a cadeira onde se encontra a pessoa P está no ponto mais alto dessa roda-gigante.\n\n![](https://enem.dev/2023/questions/177/27c49bd5-ad8c-450c-9f56-970b9ca9c53c.png)\n\nCom o passar do tempo, à medida que a roda-gigante gira, com velocidade angular constante e no sentido horário, a altura da cadeira onde se encontra a pessoa P, em relação ao solo, vai se alterando.\n\nO gráfico que melhor representa a variação dessa altura, em função do tempo, contado a partir do instante em que a cadeira da pessoa P se encontra na posição mais alta da roda-gigante, é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2023/questions/177/3837d9d0-2ff6-49d7-affa-9bb60aacb00a.png)",
+      "B) ![](https://enem.dev/2023/questions/177/262c33a1-0c7b-494c-9bd4-92d308154b59.png)",
+      "C) ![](https://enem.dev/2023/questions/177/b9b5c23e-3ae9-4f92-9500-a1bda3ed5638.png)",
+      "D) ![](https://enem.dev/2023/questions/177/03cd2618-be50-4803-b159-da8033fdeb8d.png)",
+      "E) ![](https://enem.dev/2023/questions/177/0624eace-e934-40dc-895c-a505c0c9f183.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -1070,17 +1072,19 @@
     "index": 178,
     "disciplina": "Matemática",
     "topic": "Matemática ENEM",
-    "statement": "Estudantes trabalhando com robótica criaram uma “torneira inteligente” que automatiza sua abertura e seu fechamento durante a limpeza das mãos. A tecnologia funciona da seguinte forma: ao se colocarem as mãos sob a torneira, ela libera água durante 3 segundos para que a pessoa possa molhá-las. Em seguida, interrompe o fornecimento de água por 5 segundos, enquanto a pessoa ensaboa suas mãos, e finaliza o ciclo liberando água para o enxágue por mais 3 segundos. Considere o tempo (_t_), em segundo, contado a partir do instante em que se inicia o ciclo. A vazão de água nessa torneira é constante.\n\nUm esboço de gráfico que descreve o volume de água acumulado, em litro, liberado por essa torneira durante um ciclo de lavagem das mãos, em função do tempo (t), em segundo, é",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/178-images/context_img_0.png)\n\nEstudantes trabalhando com robótica criaram uma “torneira inteligente” que automatiza sua abertura e seu fechamento durante a limpeza das mãos. A tecnologia funciona da seguinte forma: ao se colocarem as mãos sob a torneira, ela libera água durante 3 segundos para que a pessoa possa molhá-las. Em seguida, interrompe o fornecimento de água por 5 segundos, enquanto a pessoa ensaboa suas mãos, e finaliza o ciclo liberando água para o enxágue por mais 3 segundos. Considere o tempo (_t_), em segundo, contado a partir do instante em que se inicia o ciclo. A vazão de água nessa torneira é constante.\n\nUm esboço de gráfico que descreve o volume de água acumulado, em litro, liberado por essa torneira durante um ciclo de lavagem das mãos, em função do tempo (t), em segundo, é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2023/questions/178/ad5cc202-0c4f-44fb-aa1a-ec86c2f86da4.png)",
+      "B) ![](https://enem.dev/2023/questions/178/c3b0946f-0e59-4928-858d-3f0a8887fb80.png)",
+      "C) ![](https://enem.dev/2023/questions/178/f9e8ae9f-c9d6-4b83-9376-55b5ecba8a38.png)",
+      "D) ![](https://enem.dev/2023/questions/178/46326c50-0f0b-42cf-a1d5-65299d39a4fd.png)",
+      "E) ![](https://enem.dev/2023/questions/178/7ebc0f53-95db-497b-bc23-30cf64649c3a.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
-    "files": [],
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2023/178-images/context_img_0.png"
+    ],
     "hint": "Questão oficial 178 do ENEM 2023 de Matemática.",
     "explanation": "Gabarito oficial do ENEM: Alternativa B.",
     "moduleId": "mod_mat_03_geometria",
@@ -1172,11 +1176,11 @@
     "topic": "Matemática ENEM",
     "statement": "A World Series é a decisão do campeonato norte-americano de beisebol. Os dois times que chegam  \na essa fase jogam, entre si, até sete partidas. O primeiro desses times que completar quatro vitórias é declarado campeão.\n\nConsidere que, em todas as partidas, a probabilidade de qualquer um dos dois times vencer é sempre ![](https://enem.dev/2022/questions/137/091aafba-f2dd-4f19-9655-73e6bd1599b6.png)\n\nQual é a probabilidade de o time campeão ser aquele que venceu a primeira partida da World Series?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2022/questions/137/a62b92ab-65a1-4608-a3ac-3a1e08008845.png)",
+      "B) ![](https://enem.dev/2022/questions/137/bcc4e92c-3d8c-40e8-8651-b1829f138eb3.png)",
+      "C) ![](https://enem.dev/2022/questions/137/b783250d-3cdc-48c4-b60a-44d5b2ccc932.png)",
+      "D) ![](https://enem.dev/2022/questions/137/ccd84f4e-31eb-4dfe-85be-202683fe5af7.png)",
+      "E) ![](https://enem.dev/2022/questions/137/1cb4062d-0ed1-45ac-a1f7-ce783f591515.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -1272,11 +1276,11 @@
     "topic": "Matemática ENEM",
     "statement": "Em um jogo de bingo, as cartelas contêm 16 quadrículas dispostas em linhas e colunas. Cada quadrícula tem impresso um número, dentre os inteiros de 1 a 50, sem repetição de número. Na primeira rodada, um número é sorteado, aleatoriamente, dentre os 50 possíveis. Em todas as rodadas, o número sorteado é descartado e não participa dos sorteios das rodadas seguintes. Caso o jogador tenha em sua cartela o número sorteado, ele o assinala na cartela. Ganha o jogador que primeiro conseguir preencher quatro quadrículas que formam uma linha, uma coluna ou uma diagonal, conforme os tipos de situações ilustradas na Figura 1.\n\n![](https://enem.dev/2022/questions/141/e8e788ea-4e28-4ceb-b928-494d2ca68033.png)\n\nO jogo inicia e, nas quatro primeiras rodadas, foram sorteados os seguintes números: 03, 27, 07 e 48. Ao final da quarta rodada, somente Pedro possuía uma cartela que continha esses quatro números sorteados, sendo que todos os demais jogadores conseguiram assinalar, no máximo, um desses números em suas cartelas. Observe na Figura 2 o cartão de Pedro após as quatro primeiras rodadas.\n\n![](https://enem.dev/2022/questions/141/1e77b1bf-38e6-4145-b78b-91be4088bc11.png)\n\nA probabilidade de Pedro ganhar o jogo em uma das duas próximas rodadas é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2022/questions/141/cd5a2722-63ec-4baf-bb68-20df7b0342b6.png)",
+      "B) ![](https://enem.dev/2022/questions/141/3098c816-0b2d-4a41-bd93-48a7103007d3.png)",
+      "C) ![](https://enem.dev/2022/questions/141/f1b1ddb0-011b-422f-ad9c-be16c2322ab9.png)",
+      "D) ![](https://enem.dev/2022/questions/141/182be64f-689b-4ab6-b35b-f0dfae3b5a54.png)",
+      "E) ![](https://enem.dev/2022/questions/141/3d293613-50b5-494a-b8f3-52e16ae9f866.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -1323,11 +1327,11 @@
     "topic": "Matemática ENEM",
     "statement": "Dentre as diversas planificações possíveis para o cubo, uma delas é a que se encontra apresentada na Figura 1.\n\n![](https://enem.dev/2022/questions/143/4da64c40-da53-4205-b673-aa5b6274e3e2.jpg)\n\nEm um cubo, foram pintados, em três de suas faces, quadrados de cor cinza escura, que ocupam um quarto dessas faces, tendo esses três quadrados um vértice em comum, conforme ilustrado na Figura 2.\n\n![](https://enem.dev/2022/questions/143/a05cd294-5321-4c85-a081-a86ed7aa3e39.jpg)\n\nA planificação do cubo da Figura 2, conforme o tipo de planificação apresentada na Figura 1, é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2022/questions/143/37b0d8a0-5992-4fac-8f58-93924c6877e2.jpg)",
+      "B) ![](https://enem.dev/2022/questions/143/c2a2bae5-e20a-4bdb-af9e-b6d37b0cdc81.jpg)",
+      "C) ![](https://enem.dev/2022/questions/143/bfd0a9ed-5ff2-444f-b297-e2f37eba789b.jpg)",
+      "D) ![](https://enem.dev/2022/questions/143/b76f04c7-e485-4c93-8e57-60d5ce9f5623.jpg)",
+      "E) ![](https://enem.dev/2022/questions/143/2e478466-a3b6-4a44-8c04-a6187dc164df.jpg)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -1422,11 +1426,11 @@
     "topic": "Matemática ENEM",
     "statement": "A luminosidade _L_ de uma estrela está relacionada com o raio _R_ e com a temperatura _T_ dessa estrela segundo a Lei de Stefan-Boltzmann: ![](https://enem.dev/2022/questions/148/00e98ef8-6901-4d38-91f1-1fa1afda8b14.png) em que c é uma constante igual para todas as estrelas.\n\nDisponível em: http://ciencia.hsw.uol.com.br. Acesso em: 22 nov. 2013 (adaptado)\n\nConsidere duas estrelas _E_ e _F_, sendo que a estrela _E_ tem metade do raio da estrela _F_ e o dobro da temperatura de _F_.\n\nIndique por LE  e LF suas respectivas luminosidades.\nA relação entre as luminosidades dessas duas estrelas é dada por",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2022/questions/148/623219f3-b839-4f65-b990-99e2416e78ac.png)",
+      "B) ![](https://enem.dev/2022/questions/148/ac0ff64f-89bb-4e7c-a004-f3a22719d728.png)",
+      "C) ![](https://enem.dev/2022/questions/148/282300db-f32c-4e24-b4ec-da66e734e9c4.png)",
+      "D) ![](https://enem.dev/2022/questions/148/2e2fa9f3-4c51-4920-8048-790d9f42ed80.png)",
+      "E) ![](https://enem.dev/2022/questions/148/c37d4dda-0f9a-4756-a282-99e7ddd27c64.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -1601,11 +1605,11 @@
     "topic": "Matemática ENEM",
     "statement": "Um prédio, com 9 andares e 8 apartamentos de 2 quartos por andar, está com todos os seus apartamentos à venda. Os apartamentos são identificados por números formados por dois algarismos, sendo que a dezena indica o andar onde se encontra o apartamento, e a unidade, um algarismo de 1 a 8, que diferencia os apartamentos de um mesmo andar. Quanto à incidência de sol nos quartos desses apartamentos, constatam-se as seguintes características, em função de seus números de identificação:  \n• naqueles que finalizam em 1 ou 2, ambos os quartos recebem sol apenas na parte da manhã;  \n• naqueles que finalizam em 3, 4, 5 ou 6, apenas um dos quartos recebe sol na parte da manhã;  \n• naqueles que finalizam em 7 ou 8, ambos os quartos recebem sol apenas na parte da tarde.\n\nUma pessoa pretende comprar 2 desses apartamentos em um mesmo andar, mas quer que, em ambos, pelo menos um dos quartos receba sol na parte da manhã.\n\nDe quantas maneiras diferentes essa pessoa poderá escolher 2 desses apartamentos para compra nas condições desejadas?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2022/questions/155/4e4d5692-b3ea-4434-aaef-74309d2d3b2a.png)",
+      "B) ![](https://enem.dev/2022/questions/155/2b0fcee8-c3b1-4c03-ac2a-342792f7ab28.png)",
+      "C) ![](https://enem.dev/2022/questions/155/e2dfe176-9a1a-49e7-aee5-62794ac8242b.png)",
+      "D) ![](https://enem.dev/2022/questions/155/0681d716-28d4-4521-801f-5a20871829e5.png)",
+      "E) ![](https://enem.dev/2022/questions/155/027b58bd-d5b6-4ab1-afb6-a17dd85e31c8.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -1625,11 +1629,11 @@
     "topic": "Matemática ENEM",
     "statement": "O professor de artes orientou seus estudantes a realizarem a seguinte sequência de atividades:  \n• Dobrar uma folha de papel em formato quadrado duas vezes, em sequência, ao longo das linhas tracejadas, conforme ilustrado nas figuras 1 e 2, para obter o papel dobrado, conforme Figura 3.\n\n![](https://enem.dev/2022/questions/156/2b1f4d30-ed72-40af-824d-6d394c9d948d.png)\n\n• Em seguida, no papel dobrado da Figura 3, considerar o ponto _R_, sobre o segmento _OM_, sendo  o ponto médio do lado do quadrado original, de modo que ![](https://enem.dev/2022/questions/156/2a89a0e4-1a8b-4b3f-a678-97fa60066bcc.png), traçar um arco de circunferência de raio medindo ![](https://enem.dev/2022/questions/156/1665e780-8437-449e-b389-8d9729b2980c.png) com centro no ponto _R_, obtendo a Figura 4. Por último, recortar o papel ao longo do arco de circunferência e excluir a parte que contém o setor circular, obtendo o papel dobrado, conforme Figura 5.\n\n![](https://enem.dev/2022/questions/156/bf9a172b-bd1e-4e83-9d95-6bc3fd29eadc.png)\n\nApós desdobrado o papel que restou na Figura 5, a figura plana que os estudantes obterão será",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2022/questions/156/538392d5-583a-4aa5-a47c-61ee0bc6b98d.png)",
+      "B) ![](https://enem.dev/2022/questions/156/78436952-5965-4c7f-80c3-ca2eee79bb4e.png)",
+      "C) ![](https://enem.dev/2022/questions/156/ddf97279-7187-4bc2-be7b-25bd70510a73.png)",
+      "D) ![](https://enem.dev/2022/questions/156/b09ad37a-893e-4709-8b48-bded413fc77f.png)",
+      "E) ![](https://enem.dev/2022/questions/156/c3221442-88b6-455d-bf9f-5097c75188a2.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -1654,11 +1658,11 @@
     "topic": "Matemática ENEM",
     "statement": "O funcionário de uma loja tem seu salário mensal formado por uma parcela fixa de 675 reais mais uma comissão que depende da quantidade de peças vendidas por ele no mês. O cálculo do valor dessa comissão é feito de acordo com estes critérios:  \n• até a quinquagésima peça vendida, paga-se 5 reais por peça;  \n• a partir da quinquagésima primeira peça vendida, o valor pago é de 7 reais por peça.  \nRepresente por q a quantidade de peças vendidas no mês por esse funcionário, e por S(q) o seu salário mensal, em real, nesse mês.\n\nA expressão algébrica que descreve S(q) em função de q é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2022/questions/157/fc471085-2399-4726-8cde-a72bae7ac9c5.png)",
+      "B) ![](https://enem.dev/2022/questions/157/e90bf791-5ee8-4ecf-8c11-34988750ed2b.png)",
+      "C) ![](https://enem.dev/2022/questions/157/693a22d0-61e8-4f3b-ad77-5b73fc16bc0f.png)",
+      "D) ![](https://enem.dev/2022/questions/157/62e359c4-eecb-4120-861f-eb5af04c9fec.png)",
+      "E) ![](https://enem.dev/2022/questions/157/af3c085b-7eb0-4462-a0b1-f79fd1291f67.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -1705,11 +1709,11 @@
     "topic": "Matemática ENEM",
     "statement": "Um atleta iniciou seu treinamento visando as competições de fim de ano. Seu treinamento consiste em cinco tipos diferentes de treinos: treino ![](https://enem.dev/2022/questions/159/1de0b45e-d38b-4536-8661-c1c388ecd03d.png),  treino ![](https://enem.dev/2022/questions/159/0ab1a35f-7889-478e-a862-0edb86d335e6.png), treino  ![](https://enem.dev/2022/questions/159/8b00bc00-9af3-465a-89f2-3345b604b54b.png), treino ![](https://enem.dev/2022/questions/159/14be4d1d-8e19-41a5-bb02-cec32e90d007.png) e treino ![](https://enem.dev/2022/questions/159/136e1c72-59e2-41e7-95d7-b55e4ae92da3.png). A sequência dos treinamentos deve seguir esta ordem:\n\n![](https://enem.dev/2022/questions/159/1c8945f7-b377-4bf6-9eb8-2a44c3c69e2a.png)\n\nA letra R significa repouso. Após completar a sequência de treinamentos, o atleta começa novamente a sequência a partir do treino ![](https://enem.dev/2022/questions/159/660fa349-2c52-41aa-adae-bcd4adaad92e.png), e segue a ordem descrita. Após 24 semanas completas de treinamento, se dará o inicio das competições.\n\nPlease select text to grab.\n\nCopyfish\n\nestöes20112Fonteestões2011\n\nOCR successful\n\n##### OCR Result(Auto-Detect)\n\nN/A\n\n##### Translated(English)\n\nRedo OCR Recapture Re-Translate Copy to clipboard\n\nA sequência de treinamentos que o atleta realizará na 24ª semana de treinos é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2022/questions/159/63615e39-7138-4ae8-9e1b-5096335cc20f.png)",
+      "B) ![](https://enem.dev/2022/questions/159/cd6feba8-05d7-401f-87d8-c35ddbc366ef.png)",
+      "C) ![](https://enem.dev/2022/questions/159/f321765a-d92c-4247-b7eb-941db32d9552.png)",
+      "D) ![](https://enem.dev/2022/questions/159/0a5dac06-c82a-415a-9ab0-311e0d2138cf.png)",
+      "E) ![](https://enem.dev/2022/questions/159/a9fa3b63-1dae-4542-9b0f-4338e80df580.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -1737,11 +1741,11 @@
     "topic": "Matemática ENEM",
     "statement": "Um robô, que tem um ímã em sua base, se desloca sobre a superfície externa de um cubo metálico, ao longo de segmentos de reta cujas extremidades são pontos médios de arestas e centros de faces. Ele inicia seu deslocamento no ponto **P**, centro da face superior do cubo, segue para o centro da próxima face, converte à esquerda e segue para o centro da face seguinte, converte à direita e continua sua movimentação, sempre alternando entre conversões à esquerda e à direita quando alcança o centro de uma face. O robô só termina sua movimentação quando retorna ao ponto **P**. A figura apresenta os deslocamentos iniciais desse robô.\n\n![](https://enem.dev/2022/questions/160/c9e8168c-5f91-45a5-82a3-c5a2948bf0a9.png)\n\nA projeção ortogonal do trajeto descrito por esse robô sobre o plano da base, após terminada sua movimentação, visualizada da posição em que se está enxergando esse cubo, é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2022/questions/160/5d7821fa-37c8-4d86-b71d-4b70a0e1d096.png)",
+      "B) ![](https://enem.dev/2022/questions/160/6a4daa1c-7f24-439f-b2a3-43eddb2b2400.png)",
+      "C) ![](https://enem.dev/2022/questions/160/41ab922d-57a6-428b-a207-4dc213ec6481.png)",
+      "D) ![](https://enem.dev/2022/questions/160/79a7fd8e-7800-4a2f-86d6-33dcbe3aef84.png)",
+      "E) ![](https://enem.dev/2022/questions/160/2dacf59f-b682-45fb-bd03-29f25ba41487.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -2238,11 +2242,11 @@
     "topic": "Matemática ENEM",
     "statement": "Na figura estão destacadas duas trajetórias sobre a superfície do globo terrestre, descritas ao se percorrer parte dos meridianos 1, 2 e da Linha do Equador, sendo que os meridianos 1 e 2 estão contidos em planos perpendiculares entre si. O plano α é paralelo ao que contém a Linha do Equador.\n\n![](https://enem.dev/2022/questions/180/f3e0feaa-a265-4d9f-894f-63135acff616.png)\n\nA vista superior da projeção ortogonal sobre o plano α dessas duas trajetórias é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2022/questions/180/05cb2bb8-e0d9-4b65-b5cf-8b286af2b395.png)",
+      "B) ![](https://enem.dev/2022/questions/180/23fc7b65-ca58-4a35-967f-ac9c73b89e03.png)",
+      "C) ![](https://enem.dev/2022/questions/180/5be81d3b-c2c8-4856-a7b6-9f265a813436.png)",
+      "D) ![](https://enem.dev/2022/questions/180/c29e4144-4fce-43b2-a402-0ff7de72f3d0.png)",
+      "E) ![](https://enem.dev/2022/questions/180/5e135009-dbc9-4b08-bdf9-ad95f8f3d14f.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -2320,11 +2324,11 @@
     "topic": "Matemática ENEM",
     "statement": "O Atomiuim, representado na imagem é um  \ndos principais pontos turísticos de Bruxelas. Ele foi  \nconstruído em 1958 para a primeira grande exposição  \nmundial depois da Segunda Guerra Mundial, a Feira  \nMundial de Bruxelas.  \nTrata-se de uma estrutura metálica construída no  \nformato de um cubo. Essa estrutura está apoiada por um  \ndos vértices sobre uma base paralela ao plano do solo,  \ne a diagonal do cubo, contendo esse vértice, é ortogonal  \nao plano da base. Centradas nos vértices desse cubo,  \nforam construídas oito esferas metálicas, e uma outra  \nesfera foi construída centrada no ponto de interseção das  \ndiagonais do cubo. As oito esferas sobre os vértices são  \ninterligadas segundo suas arestas, e a esfera central se  \nconecta a elas pelas diagonais do cubo.  \nTodas essas interligações são feitas por tubos  \ncilíndricos que possuem escadas em seu interior,  \npermitindo o deslocamento de pessoas pela parte  \ninterna da estrutura. Na diagonal ortogonal à base, o  \ndeslocamento é feito por um elevador, que permite o  \ndeslocamento entre as esferas da base e a esfera do  \nponto mais alto, passando pela esfera central.\n\nConsidere um visitante que se deslocou pelo interior  \ndo Atomium sempre em linha reta e seguindo o menor trajeto entre dois vértices, passand0 por todas as arestas e todas as diagonais do cubo.\n\n![](https://enem.dev/2021/questions/137/adb90310-f1c2-41fa-a3a4-a250c1141a16.png)\n\nA projeção ortogonal sobre o plano do solo do trajeto percorrido por esse visitante é representada por",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2021/questions/137/79821b1f-7009-4322-8af7-3ae58951064a.png)",
+      "B) ![](https://enem.dev/2021/questions/137/a5e4c57e-4230-4b52-b3ea-e1b06cb99fa8.png)",
+      "C) ![](https://enem.dev/2021/questions/137/035954ad-5098-40f0-91bd-d0e2946fc930.png)",
+      "D) ![](https://enem.dev/2021/questions/137/2110fe80-816b-4c42-841b-746be19abc6a.png)",
+      "E) ![](https://enem.dev/2021/questions/137/92f0272e-9fb9-4787-9fe3-fe0051a11e8e.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -2627,11 +2631,11 @@
     "topic": "Matemática ENEM",
     "statement": "Para a comunicação entre dois navios é utilizado um sistema de codificação com base em valores numéricos. Para isso, são consideradas as operações triângulo ![](https://enem.dev/2021/questions/152/566c5d72-c957-4664-b7f7-e1b92f024e70.png) e estrela \\*, definidas sobre o conjunto dos números reais por x![](https://enem.dev/2021/questions/152/60957aae-73c8-44ad-8f75-7191b1d65c70.png)y = x² + xy – y² e x \\* y = xy + x.\n\nO navio que deseja enviar uma mensagem deve fornecer um valor de entrada b, que irá gerar um valor de saída, a ser enviado ao navio receptor, dado pela soma da duas maiores soluções da equação (a![](https://enem.dev/2021/questions/152/b78eb0e6-f154-443d-a6f5-1ffeb2ff1252.png)b)\\*(b![](https://enem.dev/2021/questions/152/54a56c94-9682-42f3-98b2-fc5a0fef2dba.png)a) = 0. Cada valor possível de entrada e saída representa uma mensagem diferente já conhecida pelos dois navios.\n\nUm navio deseja enviar ao outro a mensagem “ATENÇÃO!”. Para isso, deve utilizar o valor de entrada b=1.\n\nDessa forma, o valor recebido pelo navio receptor será",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2021/questions/152/c1747ad2-3295-4d07-af4a-018d7c412877.png)",
+      "B) ![](https://enem.dev/2021/questions/152/e3a76aed-69fd-4c41-a7ac-532a64efbcf3.png)",
+      "C) ![](https://enem.dev/2021/questions/152/2340c837-a802-4570-be90-91fc8a3a0a6f.png)",
+      "D) ![](https://enem.dev/2021/questions/152/fc88fa35-1166-4a50-8b3e-98825f086b76.png)",
+      "E) ![](https://enem.dev/2021/questions/152/51026f4e-2d93-4516-b1e1-65e937a6e88a.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -2840,7 +2844,7 @@
     "index": 160,
     "disciplina": "Matemática",
     "topic": "Matemática ENEM",
-    "statement": "Um  nutricionista verificou, na dieta diária do seu cliente, a falta de 800mg do mineral A, de 1 000 mg do mineral B e de 1 200 mg do mineral C. Por isso, recomendou a compra de suplementos alimentares que forneçam os minerais faltantes e informou que não haveria problema se consumisse mais desses minerais do que o recomendado.\n\nO cliente encontrou cinco suplementos, vendidos em sachês unitários, cujos preços e as quantidades dos minerais estão apresentados a seguir:\n\n*   Suplemento I: contém 50mg do mineral A, 100mg do mineral B e 200 mg do mineral C e custa R$2,00;\n*   Suplemento II: contém 800mg do mineral A, 250mg do mineral B e 200 mg do mineral C e custa R$3,00;\n*   Suplemento III: contém 250mg do mineral A, 1 000mg do mineral B e 300 mg do mineral C e custa R$5,00;\n*   Suplemento IV: contém 600mg do mineral A, 500mg do mineral B e 1 000 mg do mineral C e custa R$6,00;\n*   Suplemento V: contém 400mg do mineral A, 800mg do mineral B e 1 200 mg do mineral C e custa R$8,00;\n\nO cliente decidiu comprar sachês de um único suplemento no qual gastasse menos dinheiro e ainda suprisse a falta de minerais indicada pelo nutricionista, mesmo que consumisse alguns deles além de sua necessidade.\n\nNessas condições, o cliente deverá comprar sachês do suplemento",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/160-images/context_img_0.png)\n\nUm  nutricionista verificou, na dieta diária do seu cliente, a falta de 800mg do mineral A, de 1 000 mg do mineral B e de 1 200 mg do mineral C. Por isso, recomendou a compra de suplementos alimentares que forneçam os minerais faltantes e informou que não haveria problema se consumisse mais desses minerais do que o recomendado.\n\nO cliente encontrou cinco suplementos, vendidos em sachês unitários, cujos preços e as quantidades dos minerais estão apresentados a seguir:\n\n*   Suplemento I: contém 50mg do mineral A, 100mg do mineral B e 200 mg do mineral C e custa R$2,00;\n*   Suplemento II: contém 800mg do mineral A, 250mg do mineral B e 200 mg do mineral C e custa R$3,00;\n*   Suplemento III: contém 250mg do mineral A, 1 000mg do mineral B e 300 mg do mineral C e custa R$5,00;\n*   Suplemento IV: contém 600mg do mineral A, 500mg do mineral B e 1 000 mg do mineral C e custa R$6,00;\n*   Suplemento V: contém 400mg do mineral A, 800mg do mineral B e 1 200 mg do mineral C e custa R$8,00;\n\nO cliente decidiu comprar sachês de um único suplemento no qual gastasse menos dinheiro e ainda suprisse a falta de minerais indicada pelo nutricionista, mesmo que consumisse alguns deles além de sua necessidade.\n\nNessas condições, o cliente deverá comprar sachês do suplemento",
     "options": [
       "A) I",
       "B) II",
@@ -2850,7 +2854,9 @@
     ],
     "correctIndex": 3,
     "correctLetter": "D",
-    "files": [],
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/160-images/context_img_0.png"
+    ],
     "hint": "Questão oficial 160 do ENEM 2021 de Matemática.",
     "explanation": "Gabarito oficial do ENEM: Alternativa D.",
     "moduleId": "mod_mat_01_basica",
@@ -2864,17 +2870,23 @@
     "index": 161,
     "disciplina": "Matemática",
     "topic": "Matemática ENEM",
-    "statement": "O administrador de um teatro percebeu que, com o ingresso do evento a R$20,00, um show conseguia atrair 200 pessoas e que, a cada R$1,00 de redução no preço do ingresso, o número de pessoas aumentava em 40. Ele sabe que os donos do teatro só admitem trabalhar com valores inteiros para os ingressos, pela dificuldade de disponibilizar troco, e pretende convencê-los a diminuir o preço do ingresso. Assim, apresentará um gráfico da arrecadação em função do valor do desconto no preço atual do ingresso.\n\nO gráfico que mais se assemelha ao que deve ser elaborado pelo administrador é",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/161-images/context_img_0.png)\n\n![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/161-images/context_img_1.png)\n\n![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/161-images/context_img_2.png)\n\n![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/161-images/context_img_3.png)\n\n![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/161-images/context_img_4.png)\n\nO administrador de um teatro percebeu que, com o ingresso do evento a R$20,00, um show conseguia atrair 200 pessoas e que, a cada R$1,00 de redução no preço do ingresso, o número de pessoas aumentava em 40. Ele sabe que os donos do teatro só admitem trabalhar com valores inteiros para os ingressos, pela dificuldade de disponibilizar troco, e pretende convencê-los a diminuir o preço do ingresso. Assim, apresentará um gráfico da arrecadação em função do valor do desconto no preço atual do ingresso.\n\nO gráfico que mais se assemelha ao que deve ser elaborado pelo administrador é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2021/questions/161/71c29cd7-d512-4f07-a66b-d9c7384ebcf1.png)",
+      "B) ![](https://enem.dev/2021/questions/161/a22cdccd-2be3-48b7-b37e-3253586d2fe0.png)",
+      "C) ![](https://enem.dev/2021/questions/161/13b92c32-cd4b-4f3c-9699-3d0916f6d516.png)",
+      "D) ![](https://enem.dev/2021/questions/161/83ffed50-3e9d-46d0-9cb6-5acf0cd42d98.png)",
+      "E) ![](https://enem.dev/2021/questions/161/9536b3b7-3d03-40b4-abea-658166fee917.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
-    "files": [],
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/161-images/context_img_0.png",
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/161-images/context_img_1.png",
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/161-images/context_img_2.png",
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/161-images/context_img_3.png",
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2021/161-images/context_img_4.png"
+    ],
     "hint": "Questão oficial 161 do ENEM 2021 de Matemática.",
     "explanation": "Gabarito oficial do ENEM: Alternativa E.",
     "moduleId": "mod_mat_01_basica",
@@ -2890,11 +2902,11 @@
     "topic": "Matemática ENEM",
     "statement": "O quadro representa a relação entre o preço de um produto (R) e seu respectivo imposto devido (l).\n\n![](https://enem.dev/2021/questions/162/cc601335-5c45-493b-aa9d-b7c58c7b107a.png)\n\nO gráfico que melhor representa essa relação é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2021/questions/162/41839cfc-4413-4111-b228-b6f835d314f6.png)",
+      "B) ![](https://enem.dev/2021/questions/162/8e1d0658-17c6-447f-8852-a80221b9661f.png)",
+      "C) ![](https://enem.dev/2021/questions/162/070fd147-aeb8-4211-9ace-d2ddecb2bc76.png)",
+      "D) ![](https://enem.dev/2021/questions/162/a69d9997-7244-40d9-b945-11e7ac108a91.png)",
+      "E) ![](https://enem.dev/2021/questions/162/b9498a83-138e-4d4e-8eb9-b9ec50dcf5f4.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -2916,11 +2928,11 @@
     "topic": "Matemática ENEM",
     "statement": "A relação de Newton-Laplace estabelece que o módulo volumétrico de um fluído é diretamente proporcional ao quadrado da velocidade do som (em metro por segundo) no fluido e à sua densidade (em quilograma por meto cúbico), com uma constante de proporcionalidade adimensional.\n\nNessa relação, a unidade de medida adequada para o módulo volumétrico é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2021/questions/163/b08497a6-4df2-4f61-96f2-f125293d21a4.png)",
+      "B) ![](https://enem.dev/2021/questions/163/e8929184-06b7-4b2c-a7bf-8682d4d92231.png)",
+      "C) ![](https://enem.dev/2021/questions/163/381b63e2-88a8-405f-ab1e-ae5e1ef6b266.png)",
+      "D) ![](https://enem.dev/2021/questions/163/ef0b4b69-a758-420e-a3fa-b7b5e0a2b06c.png)",
+      "E) ![](https://enem.dev/2021/questions/163/2770886b-3ccc-4ff7-8e35-59674a921fa9.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -3317,11 +3329,11 @@
     "topic": "Matemática ENEM",
     "statement": "Uma pessoa produzirá uma fantasia utilizando como materiais: 2 tipos de tecidos diferentes e 5 tipos distintos de pedras ornamentais. Essa pessoa tem à sua disposição 6 tecidos diferentes e 15 pedras ornamentais distintas.\n\nA quantidade de fantasias com materiais diferentes que podem ser produzidas é representada pela expressão",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2021/questions/179/7551285a-0dd2-404f-9756-f6153809bb6b.png)",
+      "B) ![](https://enem.dev/2021/questions/179/ec6aed66-8609-4de8-8e4e-e352f8504ff0.png)",
+      "C) ![](https://enem.dev/2021/questions/179/e7db8ec1-87ee-4181-8cdc-f3de1667bd46.png)",
+      "D) ![](https://enem.dev/2021/questions/179/7e9a8152-4cad-499f-a704-e336986e83a5.png)",
+      "E) ![](https://enem.dev/2021/questions/179/0e4dc469-3dcf-46e2-abb9-7218a2ae6fff.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -3391,11 +3403,11 @@
     "topic": "Matemática ENEM",
     "statement": "Uma empresa de ônibus utiliza um sistema de vendas de passagens que fornece a imagem de todos os assentos do ônibus, diferenciando os assentos já vendidos, por uma cor mais escura, dos assentos ainda disponíveis. A empresa monitora, permanentemente, o número de assentos já vendidos e compara-o com o número total de assentos do ônibus para avaliar a necessidade de alocação de veículos extras.\n\nNa imagem tem-se a informação dos assentos já vendidos e dos assentos ainda disponíveis em um determinado instante.\n\n![](https://enem.dev/2020/questions/137/ff9b404e-91ec-42e5-af3a-e9aa62f10112.png)\n\nA razão entre o número de assentos já vendidos e o total de assentos desse ônibus, no instante considerado na image, é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/137/17b0e46c-f67a-4fdb-88d2-c3c62f028274.png)",
+      "B) ![](https://enem.dev/2020/questions/137/231c1dc0-6132-49f1-96e9-6122a7ea609b.png)",
+      "C) ![](https://enem.dev/2020/questions/137/08971458-249f-4b7b-a76e-58ba41f9b9fa.png)",
+      "D) ![](https://enem.dev/2020/questions/137/6387c790-e6aa-43b8-96a5-608f7df083cf.png)",
+      "E) ![](https://enem.dev/2020/questions/137/1e9528c7-0911-4685-a8c0-657950a04b5f.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -3516,11 +3528,11 @@
     "topic": "Matemática ENEM",
     "statement": "O Estatuto do Idoso, no Brasil, prevê certos direitos às pessoas com idade avançada, concedendo a estas, entre outros benefícios, a restituição de imposto de renda antes dos demais contribuintes. A tabela informa os nomes e as idades de 12 idosos que aguardam suas restituições de imposto de renda. Considere que, entre os idosos, a restituição seja concedida em ordem decrescente de idade e que, em subgrupos de pessoas com a mesma idade, a ordem seja decidida por sorteio.\n\n![](https://enem.dev/2020/questions/142/b2b35329-a61a-40a8-a643-097c520ea8bb.png)\n\nNessas condições, a probabilidade de João ser a sétima pessoa do grupo a receber sua restituição é igual a",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/142/5815f253-790c-489e-aa9e-8b734eca7eba.png)",
+      "B) ![](https://enem.dev/2020/questions/142/28e9c57b-3044-4216-8654-9b6058c015f3.png)",
+      "C) ![](https://enem.dev/2020/questions/142/168da0c8-5c83-4d49-a935-878c5999aef4.png)",
+      "D) ![](https://enem.dev/2020/questions/142/a70cee23-ba5d-4f3c-b76d-8a86b13bdb6b.png)",
+      "E) ![](https://enem.dev/2020/questions/142/c1567e92-2b0f-4ee8-9b31-81dc1cdc1be6.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -3620,11 +3632,11 @@
     "topic": "Matemática ENEM",
     "statement": "Muitos modelos atuais de veículos possuem computador de bordo. Os computadores informam em uma tela diversas variações de grandezas associadas ao desempenho do carro, dentre elas o consumo médio de combustível. Um veículo, de um determinado modelo, pode vir munido de um dos dois tipos de computadores de bordo:\n\n*   Tipo A: informa a quantidade X de litro de combustível gasto para percorrer 100 quilômetros\n*   Tipo B: informa a quantidade de quilômetro que o veículo é capaz de percorrer com um litro de combustível.\n\nUm veículo utiliza o computador do Tipo A, e ao final de uma viagem o condutor viu apresentada na tela a informação “X/100”.\n\nCaso o seu veículo utilizasse o computador do Tipo B, o valor informado na tela seria obtido pela operação",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/147/69c7e5f8-93ce-4ecd-8e44-ac7c28af96f2.png)",
+      "B) ![](https://enem.dev/2020/questions/147/f0b8be29-d7d6-419e-8c6b-0b87bc3d2335.png)",
+      "C) ![](https://enem.dev/2020/questions/147/f0df66d2-c7fe-423b-8513-79ade98380ae.png)",
+      "D) ![](https://enem.dev/2020/questions/147/12128e5e-c71c-4946-904b-156196ea62fd.png)",
+      "E) ![](https://enem.dev/2020/questions/147/0f541af7-0c49-4ce9-bfe8-de20e82ea2b7.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -3670,11 +3682,11 @@
     "topic": "Matemática ENEM",
     "statement": "A Lei de Zipf, batizada com o nome do linguista americano George Zipf, é uma lei empírica que relaciona a frequência (_f_) de uma palavra em um dado texto com o seu ranking (_r_). Ela é dada por\n\n![](https://enem.dev/2020/questions/149/2d8babc0-0742-463e-81ce-b59315ecfef6.png)\n\nO ranking da palavra é a sua posição ao ordenar as palavras por ordem de frequência. Ou seja, _r_ = 1 para a palavra mais frequente, _r_ = 2 para a segunda palavra mais frequente e assim sucessivamente. A e B são constantes positivas.\n\nDisponível em: http://klein.sbm.org.br. Acesso em: 12 ago. 2020 (adaptado).\n\nCom base nos valores de X = log (r) e Y = log (f), é possível estimar valores para A e B.\nNo caso hipotético em que a lei é verificada exatamente, a relação entre Y e X é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/149/2d21dea0-30c0-4149-80c4-e787a1ea4b0a.png)",
+      "B) ![](https://enem.dev/2020/questions/149/3da19e5d-4355-4e19-8ca2-f2350bd05c81.png)",
+      "C) ![](https://enem.dev/2020/questions/149/967ee169-6628-4c0b-b11d-52892773875f.png)",
+      "D) ![](https://enem.dev/2020/questions/149/86c3898b-ea61-4713-9f98-8f45bb6e81b7.png)",
+      "E) ![](https://enem.dev/2020/questions/149/4f3b7abd-f603-4692-9c84-7db33533c78c.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -3694,7 +3706,7 @@
     "index": 151,
     "disciplina": "Matemática",
     "topic": "Matemática ENEM",
-    "statement": "Uma das Sete Maravilhas do Mundo Moderno é o Templo de Kukulkán, localizado na cidade de Chichén Itzá, no México. Geometricamente, esse templo pode ser representado por um tronco reto de pirâmide de base quadrada.\n\nAs quantidades de cada tipo de figura plana que formam esse tronco de pirâmide são",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/151-images/context_img_0.png)\n\n![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/151-images/context_img_1.png)\n\nUma das Sete Maravilhas do Mundo Moderno é o Templo de Kukulkán, localizado na cidade de Chichén Itzá, no México. Geometricamente, esse templo pode ser representado por um tronco reto de pirâmide de base quadrada.\n\nAs quantidades de cada tipo de figura plana que formam esse tronco de pirâmide são",
     "options": [
       "A) 2 quadrados e 4 retângulos.",
       "B) 1 retângulo e 4 triângulos isósceles.",
@@ -3704,7 +3716,10 @@
     ],
     "correctIndex": 2,
     "correctLetter": "C",
-    "files": [],
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/151-images/context_img_0.png",
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/151-images/context_img_1.png"
+    ],
     "hint": "Questão oficial 151 do ENEM 2020 de Matemática.",
     "explanation": "Gabarito oficial do ENEM: Alternativa C.",
     "moduleId": "mod_mat_03_geometria",
@@ -3718,7 +3733,7 @@
     "index": 151,
     "disciplina": "Matemática",
     "topic": "Matemática ENEM",
-    "statement": "Uma das Sete Maravilhas do Mundo Moderno é o Templo de Kukulkán, localizado na cidade de Chichén Itzá, no México. Geometricamente, esse templo pode ser representado por um tronco reto de pirâmide de base quadrada.\n\nAs quantidades de cada tipo de figura plana que formam esse tronco de pirâmide são",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/151-images/context_img_0.png)\n\n![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/151-images/context_img_1.png)\n\nUma das Sete Maravilhas do Mundo Moderno é o Templo de Kukulkán, localizado na cidade de Chichén Itzá, no México. Geometricamente, esse templo pode ser representado por um tronco reto de pirâmide de base quadrada.\n\nAs quantidades de cada tipo de figura plana que formam esse tronco de pirâmide são",
     "options": [
       "A) 2 quadrados e 4 retângulos.",
       "B) 1 retângulo e 4 triângulos isósceles.",
@@ -3728,7 +3743,10 @@
     ],
     "correctIndex": 2,
     "correctLetter": "C",
-    "files": [],
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/151-images/context_img_0.png",
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2020/151-images/context_img_1.png"
+    ],
     "hint": "Questão oficial 151 do ENEM 2020 de Matemática.",
     "explanation": "Gabarito oficial do ENEM: Alternativa C.",
     "moduleId": "mod_mat_03_geometria",
@@ -3796,11 +3814,11 @@
     "topic": "Matemática ENEM",
     "statement": "O artista gráfico holandês Maurits Cornelius Escher criou belíssimas obras nas quais as imagens se repetiam, com diferentes tamanhos, induzindo ao raciocínio de repetição infinita das imagens. Inspirado por ele, um artista fez um rascunho de uma obra na qual propunha a ideia de construção de uma sequência de infinitos quadrados, cada vez menores, uns sob os outros, conforme indicado na figura.\n\n![](https://enem.dev/2020/questions/155/616a68ac-c5eb-4ba7-9ee9-d77bf3e76567.png)\n\nO quadrado _PRST_, com lado de medida 1, é o ponto de partida. O segundo quadrado é construído sob ele tomando-se o ponto médio da base do quadrado anterior e criando-se um novo quadrado, cujo lado corresponde à metade dessa base. Essa sequência de construção se repete recursivamente.\n\nQual é a medida do lado do centésimo quadrado construído de acordo com esse padrão?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/155/a5ad527d-b464-4305-bf0f-ea26a64a918e.png)",
+      "B) ![](https://enem.dev/2020/questions/155/e4dc8aff-576c-4a0b-8c94-34032a22579f.png)",
+      "C) ![](https://enem.dev/2020/questions/155/d93d2235-0dab-4fe1-bab4-2404d153f893.png)",
+      "D) ![](https://enem.dev/2020/questions/155/cc6d3cae-5262-44ea-8556-e2ce886bdda2.png)",
+      "E) ![](https://enem.dev/2020/questions/155/8fbc6313-98de-4749-9887-04d7816cb7f6.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -3849,11 +3867,11 @@
     "topic": "Matemática ENEM",
     "statement": "Amigo secreto é uma brincadeira tradicional nas festas de fim de ano. Um grupo de amigos se reúne e cada um deles sorteia o nome da pessoa que irá presentear. No dia da troca de presentes, uma primeira pessoa presenteia seu amigo secreto. Em seguida, o presenteado revela seu amigo secreto e o presenteia. A brincadeira continua até que todos sejam presenteados, mesmo no caso em que o ciclo se fecha. Dez funcionários de uma empresa, entre eles um casal, participarão de um amigo secreto. A primeira pessoa a revelar será definida por sorteio.\n\nQual é a probabilidade de que a primeira pessoa a revelar o seu amigo secreto e a última presenteada sejam as duas pessoas do casal?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/157/11963c8b-6d88-40b5-b189-58c6ea572472.png)",
+      "B) ![](https://enem.dev/2020/questions/157/a3ce0158-40d5-4e6e-b25e-399f3cc4aef3.png)",
+      "C) ![](https://enem.dev/2020/questions/157/c97483d0-179e-4411-9ea7-d2e2a997439a.png)",
+      "D) ![](https://enem.dev/2020/questions/157/4e85053e-beba-4bc7-a878-b526b4ed5291.png)",
+      "E) ![](https://enem.dev/2020/questions/157/fab55269-3063-4362-b2e0-8bf56dfaf3e2.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -3949,11 +3967,11 @@
     "topic": "Matemática ENEM",
     "statement": "Uma loja de materiais de construção vende dois tipos de caixas-d’água: tipo A e tipo B. Ambas têm formato cilíndrico e possuem o mesmo volume, e a altura da caixa-d’água do tipo B é igual a 25% da altura da caixa-d’água do tipo A.\n\nSe R denota o raio da caixa-d’água do tipo A, então o raio da caixa-d’água do tipo B é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/161/b1c014ca-a24a-413c-94fa-3a9738e43d15.png)",
+      "B) ![](https://enem.dev/2020/questions/161/82d66f6a-b63c-4dbe-aff4-db60a505a377.png)",
+      "C) ![](https://enem.dev/2020/questions/161/44c4f327-14d4-4977-aba5-fc772822fab0.png)",
+      "D) ![](https://enem.dev/2020/questions/161/88450c4c-cd06-4802-b378-c9fd4157e5d9.png)",
+      "E) ![](https://enem.dev/2020/questions/161/f2ebf7bd-9cea-4c0c-b51b-3ab66f0856b2.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -3999,11 +4017,11 @@
     "topic": "Matemática ENEM",
     "statement": "Nos livros _Harry Potter_, um anagrama do nome do personagem “TOM MARVOLO RIDDLE” gerou a frase “I AM LORD VOLDEMORT”.\n\nSuponha que Harry quisesse formar todos os anagramas da frase “I AM POTTER”, de tal forma que as vogais e consoantes aparecessem sempre intercaladas, e sem considerar o espaçamento entre as letras.\n\nNessas condições, o número de anagramas formados é dado por",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/163/75af1ea2-c22d-4cdc-954a-2e3405bda3a4.png)",
+      "B) ![](https://enem.dev/2020/questions/163/2b88f67f-6135-45cc-b784-a8d530654d81.png)",
+      "C) ![](https://enem.dev/2020/questions/163/0f57a362-6c02-488c-8816-3ea8662979ba.png)",
+      "D) ![](https://enem.dev/2020/questions/163/d6537744-f3f3-46a2-b282-65bb82cf3ad4.png)",
+      "E) ![](https://enem.dev/2020/questions/163/a18fbd88-bdd0-4253-b707-a55e63714394.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -4073,11 +4091,11 @@
     "topic": "Matemática ENEM",
     "statement": "O consumo de espumantes no Brasil tem aumentado nos últimos anos. Uma das etapas do seu processo de produção consiste no envasamento da bebida em garrafas semelhantes às da imagem. Nesse processo, a vazão do líquido no interior da garrafa é constante e cessa quando atinge o nível de envasamento.\n\n![](https://enem.dev/2020/questions/166/1a4fc8c3-fe70-4f86-a2ea-6c1259c52930.png)\n\nQual esboço de gráfico melhor representa a variação da altura do líquido em função do tempo, na garrafa indicada na imagem?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/166/235d67a9-8f1e-49c2-8193-ce2399d4ab4c.png)",
+      "B) ![](https://enem.dev/2020/questions/166/2c4e5792-2a0c-4eb6-bbfa-4342fdc07977.png)",
+      "C) ![](https://enem.dev/2020/questions/166/6f1c120f-9e46-49ed-bd7e-41dc29be3b21.png)",
+      "D) ![](https://enem.dev/2020/questions/166/008dc49b-7aca-41ba-bc68-60b5683a35e2.png)",
+      "E) ![](https://enem.dev/2020/questions/166/e96561ab-4696-4165-bb85-dba7f6650dec.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -4149,11 +4167,11 @@
     "topic": "Matemática ENEM",
     "statement": "Antônio, Joaquim e José são sócios de uma empresa cujo capital é dividido, entre os três, em partes proporcionais a: 4, 6 e 6, respectivamente. Com a intenção de igualar a participação dos três sócios no capital da empresa, Antônio pretende adquirir uma fração do capital de cada um dos outros dois sócios.\n\nA fração do capital de cada sócio que Antônio deverá adquirir é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/170/80262705-c8d8-4938-b3f9-4e2d3221e530.png)",
+      "B) ![](https://enem.dev/2020/questions/170/1cb92205-9cf0-4d92-836d-964f17757a64.png)",
+      "C) ![](https://enem.dev/2020/questions/170/86d7f914-5ec5-4877-a793-0be80fae45ed.png)",
+      "D) ![](https://enem.dev/2020/questions/170/d0486bb1-a21f-4b8e-9362-5c7800a2a4b9.png)",
+      "E) ![](https://enem.dev/2020/questions/170/ffbeb7f2-cdbe-4f49-8acd-939a629ec5fc.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -4277,11 +4295,11 @@
     "topic": "Matemática ENEM",
     "statement": "Um administrador resolve estudar o lucro de sua empresa e, para isso, traça o gráfico da receita e do custo de produção de seus itens, em real, em função da quantidade de itens produzidos.\n\n![](https://enem.dev/2020/questions/175/33aa811b-1dc7-4083-a8c0-2aeeb9fd52d6.png)\n\nO lucro é determinado pela diferença: Receita – Custo.\n\nO gráfico que representa o lucro dessa empresa, em função da quantidade de itens produzidos, é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/175/b3298ba7-589f-4ca3-a510-3cebdb9903cd.png)",
+      "B) ![](https://enem.dev/2020/questions/175/fdcc74b5-e93d-42c8-9cce-7e018e43eb67.png)",
+      "C) ![](https://enem.dev/2020/questions/175/8d380a8c-6b10-40a5-bafa-cfe75141c412.png)",
+      "D) ![](https://enem.dev/2020/questions/175/5c8b1402-d364-4c5f-beaa-559cb23d0891.png)",
+      "E) ![](https://enem.dev/2020/questions/175/f718a2fc-7a30-4e17-b4b3-28dfb028a6f5.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -4303,11 +4321,11 @@
     "topic": "Matemática ENEM",
     "statement": "Em um jogo desenvolvido para uso no computador, objetos tridimensionais vão descendo do alto da tela até alcançarem o plano da base. O usuário pode mover ou girar cada objeto durante sua descida para posicioná-lo convenientemente no plano horizontal. Um desses objetos é formado pela justaposição de quatro cubos idênticos, formando assim um sólido rígido, como ilustrado na figura\n\n![](https://enem.dev/2020/questions/176/a2a0721b-5aab-4802-a096-4da3fd68828b.png)\n\nPara facilitar a movimentação do objeto pelo usuário, o programa projeta ortogonalmente esse sólido em três planos quadriculados perpendiculares entre si, durante sua descida.\n\nA figura que apresenta uma possível posição desse sólido, com suas respectivas projeções ortogonais sobre os três planos citados, durante sua descida é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/176/12650113-adeb-44d9-bab9-5f322b12a945.png)",
+      "B) ![](https://enem.dev/2020/questions/176/0d5af792-b0f2-4d56-bb8f-263822707a1e.png)",
+      "C) ![](https://enem.dev/2020/questions/176/32d4ff53-fb72-426e-b6f1-4ecb7cca2855.png)",
+      "D) ![](https://enem.dev/2020/questions/176/80664cc4-530f-455b-83b9-2cc381ef7bec.png)",
+      "E) ![](https://enem.dev/2020/questions/176/4a0cbbd6-844f-445a-b758-4b01e2711e39.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -4329,11 +4347,11 @@
     "topic": "Matemática ENEM",
     "statement": "A Figura 1 apresenta uma casa e a planta do seu telhado, em que as setas indicam o sentido do escoamento da água de chuva. Um pedreiro precisa fazer a planta do escoamento da água de chuva de um telhado que tem três caídas de água, como apresentado na Figura 2.\n\n![](https://enem.dev/2020/questions/177/08467fa4-373b-4fdf-911d-7354e2aab602.png)\n\nA figura que representa a planta do telhado da Figura 2 com o escoamento da água de chuva que o pedreiro precisa fazer é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2020/questions/177/2a3a5b2b-7a9e-40a9-90d0-ed34e630fb4c.png)",
+      "B) ![](https://enem.dev/2020/questions/177/2936adf7-c7d7-41f8-9eb4-3aca045da1a7.png)",
+      "C) ![](https://enem.dev/2020/questions/177/e7ee9d94-a985-4e88-9bb2-e4583cef4d23.png)",
+      "D) ![](https://enem.dev/2020/questions/177/c14a7589-de74-41cd-a1d8-6117b0ac0909.png)",
+      "E) ![](https://enem.dev/2020/questions/177/9d34c268-f0e2-4b2b-8bcd-a8896ba52ea0.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -4405,11 +4423,11 @@
     "topic": "Matemática ENEM",
     "statement": "Um grupo de países criou uma instituição responsável por organizar o Programa Internacional de Nivelamento de Estudos (PINE) com o objetivo de melhorar os índices mundiais de educação. Em sua sede foi construída uma escultura suspensa, com a logomarca oficial do programa, em três dimensões, que é formada por suas iniciais, conforme mostrada na figura.\n\n![](https://enem.dev/2019/questions/136/9375a019-d7c2-4cdc-8207-889ec77d0bc2.png)\n\nEssa escultura está suspensa por cabos de aço, de maneira que o espaçamento entre letras adjacentes é o mesmo, todas têm igual espessura e ficam dispostas em posição ortogonal ao solo, como ilustrado a seguir.\n\n![](https://enem.dev/2019/questions/136/42ff3b17-ad26-4814-9e64-2eca3a162056.png)\n\nAo meio-dia, com o sol a pino, as letras que formam essa escultura projetam ortogonalmente suas sombras sobre o solo.\n\nA sombra projetada no solo é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2019/questions/136/71677fa0-eb8a-43db-be5b-498a3aaea496.png)",
+      "B) ![](https://enem.dev/2019/questions/136/e19c648c-acee-4a4b-8f51-31c5551f40a8.png)",
+      "C) ![](https://enem.dev/2019/questions/136/1611bf86-7b6f-4bfa-9cf0-01668feece5a.png)",
+      "D) ![](https://enem.dev/2019/questions/136/3547286b-a306-4e5a-ad4e-f6f157cc4b70.png)",
+      "E) ![](https://enem.dev/2019/questions/136/f977a763-5a7d-4e53-a44e-90c12026ba73.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -4478,17 +4496,20 @@
     "index": 139,
     "disciplina": "Matemática",
     "topic": "Matemática ENEM",
-    "statement": "Uma empresa presta serviço de abastecimento de água em uma cidade. O valor mensal a pagar por esse serviço é determinado pela aplicação de tarifas, por faixas de consumo de água, sendo obtido pela adição dos valores correspondentes a cada faixa.\n\n**•** Faixa 1: para consumo de até 6 m², valor fixo de R$12,00;\n\n**•** Faixa 2: para consumo superior a 6 m³ e até 10 m³, tarifa de R$ 3,00 por metro cúbico ao que exceder a 6m³;\n\n**•** Faixa 3: para consumo superior a 10 m³, tarifa de R$ 6,00 por metro cúbico ao que exceder a 10 m³. Sabe-se que nessa cidade o consumo máximo de água por residência é de 15 m² por mês.\n\nO gráfico que melhor descreve o valor P, em real, a ser pago por mês, em função do volume V de água consumido, em metro cúbico, é",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2019/139-images/context_img_0.png)\n\n![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2019/139-images/context_img_1.png)\n\nUma empresa presta serviço de abastecimento de água em uma cidade. O valor mensal a pagar por esse serviço é determinado pela aplicação de tarifas, por faixas de consumo de água, sendo obtido pela adição dos valores correspondentes a cada faixa.\n\n**•** Faixa 1: para consumo de até 6 m², valor fixo de R$12,00;\n\n**•** Faixa 2: para consumo superior a 6 m³ e até 10 m³, tarifa de R$ 3,00 por metro cúbico ao que exceder a 6m³;\n\n**•** Faixa 3: para consumo superior a 10 m³, tarifa de R$ 6,00 por metro cúbico ao que exceder a 10 m³. Sabe-se que nessa cidade o consumo máximo de água por residência é de 15 m² por mês.\n\nO gráfico que melhor descreve o valor P, em real, a ser pago por mês, em função do volume V de água consumido, em metro cúbico, é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2019/questions/139/de1f40fe-ace0-453b-8b47-506e0bbd1e76.png)",
+      "B) ![](https://enem.dev/2019/questions/139/498952c5-4133-4895-a958-a5bb5a11da9b.png)",
+      "C) ![](https://enem.dev/2019/questions/139/2b93a78d-1ed0-42e1-ba89-342c53c8aed2.png)",
+      "D) ![](https://enem.dev/2019/questions/139/fd969b0c-70d7-4e15-b7c7-ebb4b413b6fe.png)",
+      "E) ![](https://enem.dev/2019/questions/139/8ebb5528-ddb8-4a6a-b8e7-c15a497c088c.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
-    "files": [],
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2019/139-images/context_img_0.png",
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2019/139-images/context_img_1.png"
+    ],
     "hint": "Questão oficial 139 do ENEM 2019 de Matemática.",
     "explanation": "Gabarito oficial do ENEM: Alternativa A.",
     "moduleId": "mod_mat_01_basica",
@@ -5153,11 +5174,11 @@
     "topic": "Matemática ENEM",
     "statement": "O álcool é um depressor do sistema nervoso central e age diretamente em diversos órgãos. A concentração de álcool no sangue pode ser entendida como a razão entre a quantidade _**q**_ de álcool ingerido, medida em grama, e o volume de sangue, em litro, presente no organismo do indivíduo. Em geral, considera-se que esse volume corresponda ao valor numérico dado por 8% da massa corporal **_m_** desse indivíduo, medida em quilograma. De acordo com a Associação Médica Americana, uma concentração alcoólica superior a 0,4 grama por litro de sangue é capaz de trazer prejuízos à saúde do indivíduo.\n\n_Disponível em: http://cisa.org.br._ _Acesso em: 1 dez. 2018 (adaptado)._\n\nA expressão relacionando q e m que representa a concentração alcoólica prejudicial à saúde do indivíduo, de acordo com a Associação Médica Americana, é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2019/questions/165/ba0a23a6-915a-4461-8310-3aca3741ad1d.jpg)",
+      "B) ![](https://enem.dev/2019/questions/165/b0a0c5d2-4770-40fc-822a-d7d826a2132b.jpg)",
+      "C) ![](https://enem.dev/2019/questions/165/440296e3-1711-46e2-a640-4151c45ceee2.jpg)",
+      "D) ![](https://enem.dev/2019/questions/165/df0a84a8-428b-4d06-9346-b6a1c34f12c1.jpg)",
+      "E) ![](https://enem.dev/2019/questions/165/1a1d1fc2-bbc4-4442-a821-86875297945d.jpg)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -5612,11 +5633,11 @@
     "topic": "Matemática ENEM",
     "statement": "Sobre um sistema cartesiano considera-se uma malha formada por circunferências de raios com medidas dadas por números naturais e por 12 semirretas com extremidades na origem, separadas por ângulos de ![](https://enem.dev/2018/questions/139/d84b3e68-0894-4239-a9ec-c8e469562e5c.png) conforme a figura.\n\n![](https://enem.dev/2018/questions/139/156b89f8-d720-4f70-a5d9-81bbfe878262.png)\n\nSuponha que os objetos se desloquem apenas pelas semirretas e pelas circunferências dessa malha, não podendo passar pela origem (0;0).  \nConsidere o valor de _π_ com aproximação de, pelo menos, uma casa decimal.\n\nPara realizar o percurso mais curto possível ao longo da malha, do ponto B até o ponto A, um objeto deve percorrer uma distância igual a:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/139/1d1d2cb9-d3f2-40bd-8788-ceb1aaaf1252.png)",
+      "B) ![](https://enem.dev/2018/questions/139/3d56d354-9153-49b1-bfe6-34dba6a2b043.png)",
+      "C) ![](https://enem.dev/2018/questions/139/6adf9c16-37c7-4686-89e7-dc05a22c1a47.png)",
+      "D) ![](https://enem.dev/2018/questions/139/8161d961-7997-4971-b30d-427924fc0ac8.png)",
+      "E) ![](https://enem.dev/2018/questions/139/aa89cb88-6296-4a65-8d57-ebe259edc4b0.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -5739,11 +5760,11 @@
     "topic": "Matemática ENEM",
     "statement": "Numa atividade de treinamento realizada no Exército de um determinado país, três equipes – Alpha, Beta e Gama – foram designadas a percorrer diferentes caminhos, todos com os mesmos pontos de partida e de chegada.  \n• A equipe Alpha realizou seu percurso em 90 minutos com uma velocidade média de 6,0 km/h.  \n• A equipe Beta também percorreu sua trajetória em 90 minutos, mas sua velocidade média foi de 5,0 km/h.  \n• Com uma velocidade média de 6,5 km/h, a equipe Gama concluiu seu caminho em 60 minutos.  \nCom base nesses dados, foram comparadas as distâncias ![](https://enem.dev/2018/questions/146/fb3e90c2-53bf-4913-98a9-f14b290c135d.png) percorridas pelas três equipes.\n\nA ordem das distâncias percorridas pelas equipes Alpha, Beta e Gama é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/146/1fb8607c-0374-442f-a914-d45118679f4f.png)",
+      "B) ![](https://enem.dev/2018/questions/146/9652da77-3886-44df-909f-c3a7f1cc66d7.png)",
+      "C) ![](https://enem.dev/2018/questions/146/94830fa5-25d8-499d-a527-501c1c28c8cb.png)",
+      "D) ![](https://enem.dev/2018/questions/146/03f32730-2de7-4b08-a122-d4dc42b8bcce.png)",
+      "E) ![](https://enem.dev/2018/questions/146/f9dece31-c3d4-4018-adce-a72296ef5aaa.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -5791,11 +5812,11 @@
     "topic": "Matemática ENEM",
     "statement": "Uma empresa deseja iniciar uma campanha publicitária divulgando uma promoção para seus possíveis consumidores. Para esse tipo de campanha, os meios mais viáveis são a distribuição de panfletos na rua e anúncios na rádio local. Considera-se que a população alcançada pela distribuição de panfletos seja igual ã quantidade de panfletos distribuídos, enquanto que a alcançada por um anúncio na rádio seja igual à quantidade de ouvintes desse anúncio. O custo de cada anúncio na rádio é de R$ 120,00, e a estimativa é de que seja ouvido por 1 500 pessoas. Já a produção e a distribuição dos panfletos custam R$ 180,00 cada 1 000 unidades. Considerando que cada pessoa será alcançada por um único desses meios de divulgação, a empresa pretende investir em ambas as mídias.\n\nConsidere X e Y os valores (em real) gastos em anúncios na rádio e com panfletos, respectivamente.\n\nO número de pessoas alcançadas pela campanha será dado pela expressão",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/148/815e56d4-7cf2-461e-b709-d3b3cc046213.png)",
+      "B) ![](https://enem.dev/2018/questions/148/a81a1d03-16e2-4934-8f48-901d1c2c8d0a.png)",
+      "C) ![](https://enem.dev/2018/questions/148/3b53ea9e-c3b3-47f1-a112-d94a02a89929.png)",
+      "D) ![](https://enem.dev/2018/questions/148/69efff97-2140-4f41-a084-51cb3aa9d1fb.png)",
+      "E) ![](https://enem.dev/2018/questions/148/4f37fa96-41c0-48d4-b071-319fe84388a3.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -5894,11 +5915,11 @@
     "topic": "Matemática ENEM",
     "statement": "Para criar um logotipo, um profissional da área de _design_ gráfico deseja construí-lo utilizando o conjunto de pontos do plano na forma de um triângulo,  exatamente como mostra a imagem.\n\n![](https://enem.dev/2018/questions/152/30a16007-c0c0-48d8-afa8-5a4b353de0ab.png)\n\nPara construir tal imagem utilizando uma ferramenta gráfica, será necessário escrever algebricamente o conjunto que representa os pontos desse gráfico.\n\nEsse conjunto é dado pelos pares ordenados tais que",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/152/ba7275fc-dc07-4b42-94d6-da6c53844fa8.png)",
+      "B) ![](https://enem.dev/2018/questions/152/fea69a4e-b568-4a4e-a2a3-bf30a6e8d34c.png)",
+      "C) ![](https://enem.dev/2018/questions/152/a3a18021-6219-406f-81a0-8057aceea09e.png)",
+      "D) ![](https://enem.dev/2018/questions/152/37ae63c0-96c9-40d4-b88f-75223b31607a.png)",
+      "E) ![](https://enem.dev/2018/questions/152/e9743309-471e-43e8-a2de-71d1739329df.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -6076,11 +6097,11 @@
     "topic": "Matemática ENEM",
     "statement": "_Minecraft_ é um jogo virtual que pode auxiliar no desenvolvimento de conhecimentos relacionados a espaço e forma. É possível criar casas, edifícios, monumentos e até naves espaciais, tudo em escala real, através do empilhamento de cubinhos.  \nUm jogador deseja construir um cubo com dimensões 4 x 4 x 4. Ele já empilhou alguns dos cubinhos necessários, conforme a figura.\n\n![](https://enem.dev/2018/questions/159/3165700a-a712-45c3-9e96-cbcc942d98e7.png)\n\nOs cubinhos que ainda faltam empilhar para finalizar a construção do cubo, juntos, formam uma peça única, capaz de completar a tarefa.\n\nO formato da peça capaz de completar o cubo 4 x 4 x 4 é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/159/7e00d062-f3ef-413c-a6c6-8101297adb78.png)",
+      "B) ![](https://enem.dev/2018/questions/159/fac127c0-476f-4865-95e1-fc57636f7213.png)",
+      "C) ![](https://enem.dev/2018/questions/159/cbc5a41d-a91a-4869-b508-c47eab7acea0.png)",
+      "D) ![](https://enem.dev/2018/questions/159/2f93160d-cde0-4da6-914c-8be65a4cf0e6.png)",
+      "E) ![](https://enem.dev/2018/questions/159/e953ba55-bf4d-433f-8d1a-514afba2a67e.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -6224,11 +6245,11 @@
     "topic": "Matemática ENEM",
     "statement": "O Salão do Automóvel de São Paulo é um evento no qual vários fabricantes expõem seus modelos mais recentes de veículos, mostrando, principalmente, suas inovações em design e tecnologia.  \nDisponível em: http://g1.globo.com. Acesso em: 4 fev. 2015 (adaptado).\n\nUma montadora pretende participar desse evento com dois estandes, um na entrada e outro na região central do salão, expondo, em cada um deles, um carro compacto e uma caminhonete. Para compor os estandes, foram disponibilizados pela montadora quatro carros compactos, de modelos distintos, e seis caminhonetes de diferentes cores para serem escolhidos aqueles que serão expostos. A posição dos carros dentro de cada estande é irrelevante.\n\nUma expressão que fornece a quantidade de maneiras diferentes que os estandes podem ser compostos é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/165/8a4d9acc-9b18-4293-9f6c-497c494f016d.png)",
+      "B) ![](https://enem.dev/2018/questions/165/2ebeb5be-8227-4178-9641-4b0a73914b53.png)",
+      "C) ![](https://enem.dev/2018/questions/165/e6a7bd56-205b-4909-b7e2-997d45edf6d5.png)",
+      "D) ![](https://enem.dev/2018/questions/165/a309bdb0-fe6a-4deb-86a0-2b602347e266.png)",
+      "E) ![](https://enem.dev/2018/questions/165/af3980ac-cba2-48cd-aa9c-75da41077140.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -6424,11 +6445,11 @@
     "topic": "Matemática ENEM",
     "statement": "Os guindastes são fundamentais em canteiros de obras, no manejo de materiais pesados como vigas de aço. A figura ilustra uma sequência de estágios em que um  guindaste iça uma viga de aço que se encontra inicialmente no solo.\n\n![](https://enem.dev/2018/questions/173/ace966fb-7b1a-431d-9b54-2c57b1e78d0d.png)\n\nNa figura, o ponto O representa a projeção ortogonal do cabo de aço sobre o plano do chão e este se mantém na vertical durante todo o movimento de içamento da viga, que se inicia no tempo t = 0 (estágio 1) e finaliza no ![](https://enem.dev/2018/questions/173/a57ff676-4fd7-4821-b75c-cf675966c899.png) (estágio 3). Uma das extremidades da viga é içada verticalmente a partir do ponto O, enquanto que a outra extremidade desliza sobre o solo em direção ao ponto O. Considere que o cabo de aço utilizado pelo guindaste para içar a viga fique sempre na posição vertical. Na figura, o ponto M representa o ponto médio do segmento que representa a viga.\n\n![](https://enem.dev/2018/questions/173/a776c7e1-aebd-4f91-b40e-861331c1db77.png)\n\nO gráfico que descreve a distância do ponto M ao ponto O, em função do tempo, entre, é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/173/ff2abae2-528e-4337-8115-3f45241150f7.png)",
+      "B) ![](https://enem.dev/2018/questions/173/f1baf187-1d0f-440c-bf5e-ddf90a972eb9.png)",
+      "C) ![](https://enem.dev/2018/questions/173/be3758af-749d-40c8-861c-79e0cc06eaa0.png)",
+      "D) ![](https://enem.dev/2018/questions/173/744395ff-a1d2-4989-9c4e-ab3599aae57f.png)",
+      "E) ![](https://enem.dev/2018/questions/173/a2c79be7-a0af-4389-a011-16d1b661007d.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -6577,11 +6598,11 @@
     "topic": "Matemática ENEM",
     "statement": "Um quebra-cabeça consiste em recobrir um quadrado com triângulos retângulos isósceles, como ilustra a figura.\n\n![](https://enem.dev/2018/questions/179/f90ac045-3059-4503-a9c5-2275ede0c308.png)\n\nUma artesã confecciona um quebra-cabeça como o descrito, de tal modo que a menor das peças é um triângulo retângulo isósceles cujos catetos medem 2 cm.\n\n![](https://enem.dev/2018/questions/179/3fc75c6b-0e16-4686-857b-155ddd7ad50c.png) ![](https://enem.dev/2018/questions/179/5eabdb02-5a5d-4cc2-befb-903521158327.png) ![](https://enem.dev/2018/questions/179/6cbaacc0-e621-4e81-9314-bbd6d9120ad2.png)\n\nO quebra-cabeça, quando montado, resultará em um quadrado cuja medida do lado, em centímetro, é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/179/cffd9e29-a8e1-4ab9-8e46-24ec536138c5.png)",
+      "B) ![](https://enem.dev/2018/questions/179/80266f09-674e-4edd-a349-05c7d22ad5fc.png)",
+      "C) ![](https://enem.dev/2018/questions/179/8d325c60-94d7-4eb0-a780-db03877a4d0b.png)",
+      "D) ![](https://enem.dev/2018/questions/179/2e70100e-b60a-4924-adfc-ed2d2a8e6ea4.png)",
+      "E) ![](https://enem.dev/2018/questions/179/4903bfee-6848-4a2f-b393-2a45fa498cef.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -6606,11 +6627,11 @@
     "topic": "Matemática ENEM",
     "statement": "Para decorar um cilindro circular reto será usada uma faixa retangular de papel transparente, na qual está desenhada em negrito uma diagonal que forma 30° com a borda inferior. O raio da base do cilindro mede 6/π cm, e ao enrolar a faixa obtém-se uma linha em formato de hélice, como na figura.\n\n![](https://enem.dev/2018/questions/180/aefa4129-634d-4a56-9c4b-704b4c98c97b.png)\n\nO valor da medida da altura do cilindro, em centímetro, é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2018/questions/180/790c259f-eca9-4bdb-b3ec-55577fcedf9c.png)",
+      "B) ![](https://enem.dev/2018/questions/180/da175caf-5e27-4ecf-8caa-f4ac6440c4bb.png)",
+      "C) ![](https://enem.dev/2018/questions/180/6dab86df-3603-49cd-b6a0-b25f4906eb77.png)",
+      "D) ![](https://enem.dev/2018/questions/180/6fc6dddc-7fe1-4dab-85c8-e43fa3eda51c.png)",
+      "E) ![](https://enem.dev/2018/questions/180/6f7a278d-b55a-499d-a86c-5afdf99a748c.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -6632,11 +6653,11 @@
     "topic": "Matemática ENEM",
     "statement": "Um empréstimo foi feito à taxa mensal de i%, usando juros compostos, em oito parcelas fixas e iguais a P.\n\nO devedor tem a possibilidade de quitar a dívida antecipadamente a qualquer momento, pagando para isso o valor atual das parcelas ainda a pagar. Após pagar a 5ª parcela, resolve quitar a dívida no ato de pagar a 6ª parcela.\n\nA expressão que corresponde ao valor total pago pela quitação do empréstimo é:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2017/questions/136/095d9fee-b0a3-4486-a6f7-5905be8a8aee.png)",
+      "B) ![](https://enem.dev/2017/questions/136/9b318931-f44c-47f6-bde1-7629aaf7b6e2.png)",
+      "C) ![](https://enem.dev/2017/questions/136/2a676854-c439-49bc-8187-107963dc04ef.png)",
+      "D) ![](https://enem.dev/2017/questions/136/0338bf3c-70fc-4cb5-b6d5-28ee0508731e.png)",
+      "E) ![](https://enem.dev/2017/questions/136/07869d30-eb4d-4450-a76a-ea0654e459f8.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -6991,11 +7012,11 @@
     "topic": "Matemática ENEM",
     "statement": "A água para o abastecimento de um prédio é armazenada em um sistema formado por dois reservatórios idênticos, em formato de bloco retangular, ligados entre si por um cano igual ao cano de entrada, conforme ilustra a figura.\n\n![](https://enem.dev/2017/questions/152/8a5c8c84-dc4a-434c-95d8-ac7e8a188f0b.png)\n\nA água entra no sistema pelo cano de entrada no Reservatório 1 a uma vazão constante e, ao atingir o nível do cano de ligação, passa a abastecer o Reservatório 2. Suponha que, inicialmente, os dois reservatórios estejam vazios.\n\nQual dos gráficos melhor descreverá a altura h do nível da água no Reservatório 1, em função do volume V de água no sistema?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2017/questions/152/f4cd2fd5-8ffc-4cb7-91ae-2c3bd3f73900.png)",
+      "B) ![](https://enem.dev/2017/questions/152/da408f74-0165-4374-94f7-4efc3ba68756.png)",
+      "C) ![](https://enem.dev/2017/questions/152/73c9ec1b-6c30-4e0e-8c6a-baf78b10dbb8.png)",
+      "D) ![](https://enem.dev/2017/questions/152/29e329de-44fe-4da6-8f85-d63e8b31cadd.png)",
+      "E) ![](https://enem.dev/2017/questions/152/f4376ddd-f5cb-46ff-b7d6-f95ac887e91c.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -7586,11 +7607,11 @@
     "topic": "Matemática ENEM",
     "statement": "Qual a probabilidade de que esta pessoa tenha observado exatamente um sinal na cor verde?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2017/questions/175/76855355-588b-40de-adfa-78c67373b3cd.png)",
+      "B) ![](https://enem.dev/2017/questions/175/f0b54cb7-a0b0-4661-a2e2-afda4b8d2135.png)",
+      "C) ![](https://enem.dev/2017/questions/175/b7396163-6b89-41cf-b08b-473d800ef585.png)",
+      "D) ![](https://enem.dev/2017/questions/175/486162c7-f43b-49a2-9476-dddf8af7bdf4.png)",
+      "E) ![](https://enem.dev/2017/questions/175/744d3069-d18a-4930-9697-45171bee53b2.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -8014,11 +8035,11 @@
     "topic": "Matemática ENEM",
     "statement": "Qual o número de possibilidades de escolha dos tenistas para a partida de exibição?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2016/questions/147/b312c7db-dd7d-4633-af66-83c020de8340.png)",
+      "B) ![](https://enem.dev/2016/questions/147/6eea6a39-3b2d-4b06-8f22-3fb8b3354049.png)",
+      "C) ![](https://enem.dev/2016/questions/147/e5274b9d-58c1-47d8-80c4-9ba8ea7db58f.png)",
+      "D) ![](https://enem.dev/2016/questions/147/9ed4324a-682b-4a89-b93b-ce8035218bc6.png)",
+      "E) ![](https://enem.dev/2016/questions/147/3f06a01b-fdec-4bb2-affb-45cf27b74bfd.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -8090,11 +8111,11 @@
     "topic": "Matemática ENEM",
     "statement": "Uma expressão que fornece o custo para revestir uma parede de área A (em metro quadrado), situada a D metros da fonte sonora, é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2016/questions/150/d98b4a6b-0f17-4c11-a265-5d349d907c4e.png)",
+      "B) ![](https://enem.dev/2016/questions/150/5eb36277-7f4b-4c1d-a3fd-68a26c9401e5.png)",
+      "C) ![](https://enem.dev/2016/questions/150/7ee2ec8a-740e-4cf4-a8da-b1e661261059.png)",
+      "D) ![](https://enem.dev/2016/questions/150/ba2ff490-2587-496a-9dce-5f8ea60661bd.png)",
+      "E) ![](https://enem.dev/2016/questions/150/9eebb46b-522f-45a2-96f3-469420638079.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -8216,11 +8237,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2016/questions/155/bb458c60-9970-4521-a651-92e97767141a.png)\n\nQual é o esboço obtido pelos alunos?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2016/questions/155/e5c3117b-e59c-4133-8c1c-e12224e04762.png)",
+      "B) ![](https://enem.dev/2016/questions/155/a49c7a7a-8bb9-4ad2-a162-bcbbaf8c5935.png)",
+      "C) ![](https://enem.dev/2016/questions/155/182db264-e8a6-4e01-a680-2e76be4309e6.png)",
+      "D) ![](https://enem.dev/2016/questions/155/c2eb34bf-a4a9-4bbc-87c5-9a6a9f8339e6.png)",
+      "E) ![](https://enem.dev/2016/questions/155/0a817a97-acb8-40b4-9b80-4b49b55bc9e6.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -8542,11 +8563,11 @@
     "topic": "Matemática ENEM",
     "statement": "Para cadastrar-se em um _site_, uma pessoa precisa escolher uma senha composta por quatro caracteres, sendo dois algarismos e duas letras (maiúsculas ou minúsculas). As letras e os algarismos podem estar em qualquer posição. Essa pessoa sabe que o alfabeto é composto por vinte e seis letras e que uma letra maiúscula difere da minúscula em uma senha.\n\nDisponível em: www.infowester.com. Acesso em: 14 dez. 2012.\n\nO número total de senhas possíveis para o cadastramento nesse site é dado por",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2016/questions/168/9c64c46b-2045-4d24-b6fe-4910a0fa92c6.png)",
+      "B) ![](https://enem.dev/2016/questions/168/71faed84-26d8-4498-af67-d92759a194fc.png)",
+      "C) ![](https://enem.dev/2016/questions/168/4afeb4f7-4f38-4401-b874-8386eef6b19c.png)",
+      "D) ![](https://enem.dev/2016/questions/168/81a766be-84c7-4074-ac24-ee3ef4a57a20.png)",
+      "E) ![](https://enem.dev/2016/questions/168/2e697e5f-81cd-4458-877d-a18c3082d73e.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -8794,11 +8815,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2016/questions/178/9dd54a28-fb1e-492d-85a3-60f05af05d97.png)\n\nA projeção ortogonal, no plano α, do caminho traçado no globo pode ser representada por",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2016/questions/178/61295cd7-dbbd-4c5b-a020-38fe0d4ff8e8.png)",
+      "B) ![](https://enem.dev/2016/questions/178/72e0c12c-006b-4bc6-aaa6-6613a78850e7.png)",
+      "C) ![](https://enem.dev/2016/questions/178/9e017368-a37a-4646-8617-6931fcb8a553.png)",
+      "D) ![](https://enem.dev/2016/questions/178/d3cc0e36-2585-409c-91b9-1e911c184f39.png)",
+      "E) ![](https://enem.dev/2016/questions/178/441c5d19-71f8-48ed-96c3-897298ff37c9.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -9321,11 +9342,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2015/questions/154/65c7dd7a-2e17-4352-a584-ed42ea5b0559.png)\n\nA forma do vidro foi concebida de modo que o eixo _x_ sempre divida ao meio a altura _h_ do vidro e a base do vidro seja paralela ao eixo _x_. Obedecendo a essas condições, o engenheiro determinou uma expressão que fornece a altura h do vidro em função da medida _n_ de sua base, em metros.\n\nA expressão algébrica que determina a altura do vidro é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2015/questions/154/be2d8a09-67d6-47ab-9914-97fc82b976f6.png)",
+      "B) ![](https://enem.dev/2015/questions/154/43c54dd9-c26a-453d-bf90-d9fa906df4aa.png)",
+      "C) ![](https://enem.dev/2015/questions/154/2c78e0f7-b32d-4fd2-ba1c-8e1f94ba5b4f.png)",
+      "D) ![](https://enem.dev/2015/questions/154/4ddc69b0-924b-4616-9310-a765045b9be8.png)",
+      "E) ![](https://enem.dev/2015/questions/154/4905391e-89e5-4c92-b16b-8c709883a102.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -9573,11 +9594,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2015/questions/164/143503ba-442f-4e6e-b47f-56b581a76e04.png)\n\nDisponível em: www.gebh.net. Acesso em: 30 out. 2013 (adaptado).\n\nO número de formas distintas de se acomodar a família nesse voo é calculado por",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2015/questions/164/0869442c-5c3e-44b3-b332-405996495c75.png)",
+      "B) ![](https://enem.dev/2015/questions/164/9300da4b-9267-4ae3-86bb-2ff393573382.png)",
+      "C) ![](https://enem.dev/2015/questions/164/a2f657c8-2181-405d-8964-6929347b8647.png)",
+      "D) ![](https://enem.dev/2015/questions/164/d4c33e90-1fde-4706-814b-0cb3afbe24ca.png)",
+      "E) ![](https://enem.dev/2015/questions/164/e060a6cb-eecc-42c4-813e-99f1d3f9ebe3.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -9649,11 +9670,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2015/questions/167/2268b8ec-e5a5-4ef4-a721-38486fd4acf2.png)\n\nApós os cortes, a folha é aberta e a bandeirinha está pronta.\n\nA figura que representa a forma da bandeirinha pronta é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2015/questions/167/c7707187-1dcc-4b79-a0fd-3cba4e4d8212.png)",
+      "B) ![](https://enem.dev/2015/questions/167/06cc78fe-8ad4-4f23-b6b6-02d727814700.png)",
+      "C) ![](https://enem.dev/2015/questions/167/fd296280-879a-4951-8cd0-b3fee6644669.png)",
+      "D) ![](https://enem.dev/2015/questions/167/45aeea48-7e4c-4504-8020-4593e5c6e39f.png)",
+      "E) ![](https://enem.dev/2015/questions/167/101bffec-b1af-4f17-a229-1a494e3f403e.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -9875,17 +9896,19 @@
     "index": 176,
     "disciplina": "Matemática",
     "topic": "Matemática ENEM",
-    "statement": "Com base nos elementos apresentados, o gráfico que melhor representa a relação entre o valor mensal pago nesse plano e o número de ligações feitas é:",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2015/176-images/context_img_0.png)\n\nCom base nos elementos apresentados, o gráfico que melhor representa a relação entre o valor mensal pago nesse plano e o número de ligações feitas é:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2015/questions/176/da13c004-584e-4012-b169-1476f28c2c75.png)",
+      "B) ![](https://enem.dev/2015/questions/176/4322623b-4209-4b90-8340-47b80a683345.png)",
+      "C) ![](https://enem.dev/2015/questions/176/eeef388a-087d-4d11-8eb7-3ca5656db005.png)",
+      "D) ![](https://enem.dev/2015/questions/176/a37b0cd6-80b8-40ba-b31d-4c81364e63e7.png)",
+      "E) ![](https://enem.dev/2015/questions/176/737b6f37-f58a-43c5-99e0-0dea2e316b4b.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
-    "files": [],
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2015/176-images/context_img_0.png"
+    ],
     "hint": "Questão oficial 176 do ENEM 2015 de Matemática.",
     "explanation": "Gabarito oficial do ENEM: Alternativa B.",
     "moduleId": "mod_mat_01_basica",
@@ -10131,11 +10154,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2014/questions/143/7bcb5fac-8918-4e78-8ef7-d6e64ee5a6a4.png)\n\nNo topo da escultura foi ligada uma torneira que verte água, para dentro dela, com vazão constante.\n\nO gráfico que expressa a altura (h) da água na escultura em função do tempo (t) decorrido é:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2014/questions/143/4d7826cb-921c-4dff-97ce-81149babd82f.png)",
+      "B) ![](https://enem.dev/2014/questions/143/2d316985-fd36-476a-bbe0-7afe7e3b023f.png)",
+      "C) ![](https://enem.dev/2014/questions/143/8e77cb3b-c40c-4d99-99ed-8570710b158b.png)",
+      "D) ![](https://enem.dev/2014/questions/143/34491019-1b0e-408f-8215-32a73523f426.png)",
+      "E) ![](https://enem.dev/2014/questions/143/98ea7324-d1b1-4850-8c7e-e38c23efd1f6.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -10157,11 +10180,11 @@
     "topic": "Matemática ENEM",
     "statement": "Qual deverá ser a forma do adesivo?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2014/questions/144/44526171-b101-4a97-acc1-054ba72d0fa7.png)",
+      "B) ![](https://enem.dev/2014/questions/144/a2d14544-a249-440f-b625-70e5ac48098c.png)",
+      "C) ![](https://enem.dev/2014/questions/144/1cb65586-4441-4648-95ca-f2d2d2219c50.png)",
+      "D) ![](https://enem.dev/2014/questions/144/d9792780-c879-4c1d-921c-dd1b1ac88884.png)",
+      "E) ![](https://enem.dev/2014/questions/144/fda755b2-ba2a-4f7f-84a5-6a29fb07e1e0.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -10181,11 +10204,11 @@
     "topic": "Matemática ENEM",
     "statement": "A expressão da função y = f(x) a ser utilizada pelo professor é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2014/questions/145/fb982b59-0d4c-4072-a3f3-0d07ba073215.png)",
+      "B) ![](https://enem.dev/2014/questions/145/b3e30fe0-d8fb-4cca-abc7-8d2723b68bcc.png)",
+      "C) ![](https://enem.dev/2014/questions/145/e22c424c-ede8-4fc6-9030-a7293c0164df.png)",
+      "D) ![](https://enem.dev/2014/questions/145/f987fd5b-b6b5-44ae-a434-054759e16220.png)",
+      "E) ![](https://enem.dev/2014/questions/145/764cd798-3b7c-4607-9287-1364cfc323dc.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -10255,11 +10278,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2014/questions/148/925f6a93-dd23-47d0-9176-6aa8754c38dd.png)\n\nNa figura, considere o plano cartesiano que contém a trajetória do assento do balanço, no qual a origem está localizada no topo do suporte do balanço, o eixo _X_ é paralelo ao chão do parque, e o eixo _Y_ tem orientação positiva para cima.\n\nA curva determinada pela trajetória do assento do balanço é parte do gráfico da função",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2014/questions/148/b3d12a51-2044-42f4-9140-e1f94db0869a.png)",
+      "B) ![](https://enem.dev/2014/questions/148/a6615a80-066b-48bb-b21f-e7afe60a2bb8.png)",
+      "C) ![](https://enem.dev/2014/questions/148/b27e051a-39e5-4a70-a1fa-416e9ede79de.png)",
+      "D) ![](https://enem.dev/2014/questions/148/94b0c3ef-ada7-4aff-8d8e-7f0f5e4b0328.png)",
+      "E) ![](https://enem.dev/2014/questions/148/03e71b23-821a-4ec1-b825-ea5526695497.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -10557,11 +10580,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2014/questions/160/11f9c9a3-5c62-4447-a760-38bc9e08fad7.png)\n\nA figura que melhor representa a projeção ortogonal, sobre o piso da casa (plano), do caminho percorrido pela mão dessa pessoa é:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2014/questions/160/142a57c8-6522-4336-a5a0-05764ab1ebcb.png)",
+      "B) ![](https://enem.dev/2014/questions/160/919d8e0f-3413-404e-9860-6026cf5673fa.png)",
+      "C) ![](https://enem.dev/2014/questions/160/9f27ec03-1133-457b-96f5-3889bb9c7f0a.png)",
+      "D) ![](https://enem.dev/2014/questions/160/7d666080-f366-4e80-8841-c44ed37580d3.png)",
+      "E) ![](https://enem.dev/2014/questions/160/440c2296-9aec-4eeb-a029-7cdf4cb320c2.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -10635,11 +10658,11 @@
     "topic": "Matemática ENEM",
     "statement": "De quantas formas distintas a estratégia desse cliente poderá ser posta em prática?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2014/questions/163/d5d5048f-7ee3-40c6-b96b-ba9980dc7d05.png)",
+      "B) ![](https://enem.dev/2014/questions/163/41b3be85-5bb9-46db-9a3b-867bd95c514a.png)",
+      "C) ![](https://enem.dev/2014/questions/163/c02a3e9d-3cd7-4b47-91d5-d99aa1ee7b5d.png)",
+      "D) ![](https://enem.dev/2014/questions/163/2940ac08-b920-4111-9d2c-1d107c65df28.png)",
+      "E) ![](https://enem.dev/2014/questions/163/17d5d462-0b07-4324-9f98-61f36a9f808c.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -10683,11 +10706,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2014/questions/165/b6b29eae-3d2d-447e-8ebf-a7e7c23b4e8f.png)\n\nAs medições de velocidade deixariam de ocorrer de maneira instantânea, ao se passar pelo radar, e seriam feitas a partir da velocidade média no trecho, considerando o tempo gasto no percurso entre um radar e outro. Sabe-se que a velocidade média é calculada como sendo a razão entre a distância percorrida e o tempo gasto para percorrê-la. O teste realizado mostrou que o tempo que permite uma condução segura de deslocamento no percurso entre os dois radares deveria ser de, no mínimo, 1 minuto e 24 segundos. Com isso, a CET precisa instalar uma placa antes do primeiro radar informando a velocidade média máxima permitida nesse trecho da via. O valor a ser exibido na placa deve ser o maior possível, entre os que atendem às condições de condução segura observadas.\n\nDisponível em: www1.folha.uol.com.br. Acesso em: 11 jan. 2014 (adaptado).\n\nA placa de sinalização que informa a velocidade que atende a essas condições é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2014/questions/165/f4a4d1b9-83d7-4a83-947e-98fb97f81fbc.bmp)",
+      "B) ![](https://enem.dev/2014/questions/165/37cfc841-1368-4c3e-9518-13619ab55123.bmp)",
+      "C) ![](https://enem.dev/2014/questions/165/c18ced6c-5bd6-4ec4-b375-e136f68d1416.bmp)",
+      "D) ![](https://enem.dev/2014/questions/165/9fb1f2ca-3cfc-4eb1-83a5-0dd17ccc96cd.bmp)",
+      "E) ![](https://enem.dev/2014/questions/165/f3c38b54-c09a-429b-ba43-e4e735a5c9f0.bmp)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -11134,11 +11157,11 @@
     "topic": "Matemática ENEM",
     "statement": "O coeficiente de melhora da alteração recomendada é:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2013/questions/138/5d194d75-3537-44ca-a717-a3a797eab3be.bmp)",
+      "B) ![](https://enem.dev/2013/questions/138/a67a68da-6453-497a-8e78-0c33a1c20fb5.bmp)",
+      "C) ![](https://enem.dev/2013/questions/138/2854e931-9b7c-441c-9652-567df9eee479.bmp)",
+      "D) ![](https://enem.dev/2013/questions/138/aaa5d51e-8cdf-479e-bc3e-a1d2332e4d55.bmp)",
+      "E) ![](https://enem.dev/2013/questions/138/e3ac6ce3-9ba0-4cf0-b0d7-bdc11bca203c.bmp)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -11464,11 +11487,11 @@
     "topic": "Matemática ENEM",
     "statement": "Durante uma aula de Matemática, o professor sugere aos alunos que seja fixado um sistema de coordenadas cartesianas (x, y) e representa na lousa a descrição de cinco conjuntos algébricos, I, II, III, IV e V, como se segue:\n\nI — é a circunferência de equação x2 + y2 = 9;  \nII — é a parábola de equação y = − x2 − 1, com x variando de −1 a 1;  \nIII — é o quadrado formado pelos vértices (−2, 1), (−1, 1), (−1, 2) e (−2, 2);  \nIV — é o quadrado formado pelos vértices (1, 1), (2, 1), (2, 2) e (1, 2);  \nV — é o ponto (0, 0).\n\nA seguir, o professor representa corretamente os cinco conjuntos sobre uma mesma malha quadriculada, composta de quadrados com lados medindo uma unidade de comprimento, cada, obtendo uma figura.\n\nQual destas figuras foi desenhada pelo professor?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2013/questions/151/f9eb65fe-85e3-44ee-8a08-76815609cfaf.png)",
+      "B) ![](https://enem.dev/2013/questions/151/e55374e0-5345-4883-b02b-0501bb462716.png)",
+      "C) ![](https://enem.dev/2013/questions/151/e0329894-ff51-4113-9a03-73a775fec7e7.png)",
+      "D) ![](https://enem.dev/2013/questions/151/7ffe259a-2172-4ab1-b921-c91fd35989fa.png)",
+      "E) ![](https://enem.dev/2013/questions/151/d362f4ac-dda0-4c50-9c5b-8cd7582bfe09.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -11488,11 +11511,11 @@
     "topic": "Matemática ENEM",
     "statement": "Muitos processos fisiológicos e bioquímicos, tais como batimentos cardíacos e taxa de respiração, apresentam escalas construídas a partir da relação entre superfície e massa (ou volume) do animal. Uma dessas escalas, por exemplo, considera que “o cubo da área S da superfície de um mamífero é proporcional ao quadrado de sua massa M”.\n\nHUGHES-HALLETT, D. et al. Cálculo e aplicações. São Paulo: Edgard Blücher, 1999 (adaptado).\n\nIsso é equivalente a dizer que, para uma constante k > 0, a área S pode ser escrita em função de M por meio da expressão:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2013/questions/153/34ca8439-c1eb-4c1b-85fa-47f889e16848.png)",
+      "B) ![](https://enem.dev/2013/questions/153/ad127eb1-01b2-4805-84d0-1e76fd73f986.png)",
+      "C) ![](https://enem.dev/2013/questions/153/6329c3a6-1980-48c6-9ba7-e67ae5bfe240.png)",
+      "D) ![](https://enem.dev/2013/questions/153/5c98fa2b-6a4a-4bef-bf66-7b418f8b0431.png)",
+      "E) ![](https://enem.dev/2013/questions/153/26be7b7d-a85f-4cc8-99c6-2ac12524ba80.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -11512,11 +11535,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2013/questions/154/38290d8c-ee46-47f1-aaed-8518bc60fe1a.png)\n\nonde m1 e m2 correspondem às massas dos corpos, _d_ à distância entre eles, _G_ à constante universal da gravitação e _F_ à força que um corpo exerce sobre o outro.\n\nO esquema representa as trajetórias circulares de cinco satélites, de mesma massa, orbitando a Terra.\n\n![](https://enem.dev/2013/questions/154/e34b89e1-90df-47ef-bc5d-2eea3ebb4e65.png)\n\nQual gráfico expressa as intensidades das forças que a Terra exerce sobre cada satélite em função do tempo?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2013/questions/154/f711d5a2-7042-4918-86ec-97bcff750472.png)",
+      "B) ![](https://enem.dev/2013/questions/154/5e803db9-7db7-41b2-acdc-549a1dd0b2dd.png)",
+      "C) ![](https://enem.dev/2013/questions/154/88dc6559-bbfa-41fd-bc11-973ddfc7d4e3.png)",
+      "D) ![](https://enem.dev/2013/questions/154/d404d377-17c5-4e8f-a946-965528114b43.png)",
+      "E) ![](https://enem.dev/2013/questions/154/4c8643e0-20cf-4d31-ae07-25365020362b.png)"
     ],
     "correctIndex": 1,
     "correctLetter": "B",
@@ -11739,11 +11762,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2013/questions/164/b06811f8-91ea-46e6-8a0f-048141c9045b.png)\n\nA imagem que representa a nova figura é:",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2013/questions/164/b5085673-e1d4-4a75-814a-b152fc1a4d1f.png)",
+      "B) ![](https://enem.dev/2013/questions/164/2a001806-1238-495f-a0eb-249c4a6268be.png)",
+      "C) ![](https://enem.dev/2013/questions/164/2859b7a7-e785-4510-8915-4d9bf93c5794.png)",
+      "D) ![](https://enem.dev/2013/questions/164/264bc2c7-61bc-4194-bf03-fc3aa8a2caec.png)",
+      "E) ![](https://enem.dev/2013/questions/164/c419ee0c-1323-40b2-9161-666cae5345d2.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -12296,11 +12319,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2012/questions/143/29dbd2b9-ef4e-4af8-8de5-2a651c4935c4.png)\n\nA expressão que traduz a resistência S dessa viga de madeira é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2012/questions/143/fef35e1c-c502-4670-9b8c-cb591dce50d8.png)",
+      "B) ![](https://enem.dev/2012/questions/143/887c79e5-b54f-4164-84df-4b6150b6b726.png)",
+      "C) ![](https://enem.dev/2012/questions/143/ea36520c-f0fd-4346-824f-8027c18a169c.png)",
+      "D) ![](https://enem.dev/2012/questions/143/c637c2e1-f94b-4d64-a420-d27b03a11fdc.png)",
+      "E) ![](https://enem.dev/2012/questions/143/dd92ffbd-5cc1-48a6-9d20-5d948d58abd5.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -12526,11 +12549,11 @@
     "topic": "Matemática ENEM",
     "statement": "Em exposições de artes plásticas, é usual que estátuas sejam expostas sobre plataformas giratórias. Uma medida de segurança é que a base da escultura esteja integralmente apoiada sobre a plataforma. Para que se providencie o equipamento adequado, no caso de uma base quadrada que será fixada sobre uma plataforma circular, o auxiliar técnico do evento deve estimar a medida _R_ do raio adequado para a plataforma em termos da medida _L_ do lado da base da estátua.\n\nQual relação entre R e L o auxiliar técnico deverá apresentar de modo que a exigência de segurança seja cumprida?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2012/questions/152/1dc33ce8-535d-4502-917d-b1d1ca52d5ab.png)",
+      "B) ![](https://enem.dev/2012/questions/152/66e7c13b-a7c4-431d-a72c-9f63b3b4f1f9.png)",
+      "C) ![](https://enem.dev/2012/questions/152/32ffdfbb-dd66-41a9-b2c2-cc6ed1cc2668.png)",
+      "D) ![](https://enem.dev/2012/questions/152/0b5a0e31-232e-4214-a9f3-cd4fff19cc9d.png)",
+      "E) ![](https://enem.dev/2012/questions/152/9026b0e8-1acb-4887-ada6-e1889a31ff04.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -12550,11 +12573,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2012/questions/153/fa4fd7b5-9f57-4575-b0d7-efd5da168ad2.png)\n\nNa Figura 2, o ponto A está no plano do chão onde está colocado o globo da morte e o segmento AB passa pelo centro da esfera e é perpendicular ao plano do chão. Suponha que há um foco de luz direcionado para o chão colocado no ponto B e que um motoqueiro faça um trajeto dentro da esfera, percorrendo uma circunferência que passa pelos pontos A e B.\n\nA imagem do trajeto feito pelo motoqueiro no plano do chão é melhor representada por",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2012/questions/153/4407a6d1-8bea-4593-a271-4d67fae4f8ea.png)",
+      "B) ![](https://enem.dev/2012/questions/153/c5a84103-a02d-4576-9326-bb4cc62998e1.png)",
+      "C) ![](https://enem.dev/2012/questions/153/4442f0fa-2803-46d7-bf5c-6e73037f198e.png)",
+      "D) ![](https://enem.dev/2012/questions/153/568e9422-3b06-416a-9021-dbd0345427cc.png)",
+      "E) ![](https://enem.dev/2012/questions/153/6485f40e-a5f1-4426-9075-1bc63b0c4a87.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -12628,11 +12651,11 @@
     "topic": "Matemática ENEM",
     "statement": "Com essas informações, o gráfico que melhor representa a relação entre salário e o número de produtos vendidos é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2012/questions/156/4e2c0e03-b523-4518-aaef-fb4734e8ad69.png)",
+      "B) ![](https://enem.dev/2012/questions/156/f19a221b-7715-49be-a78c-0554583108f7.png)",
+      "C) ![](https://enem.dev/2012/questions/156/35d71a7f-1928-470f-b151-e475785e7579.png)",
+      "D) ![](https://enem.dev/2012/questions/156/7ab9d513-032b-4753-81cc-95bcd632fb4d.png)",
+      "E) ![](https://enem.dev/2012/questions/156/0df218fe-bdcd-42f6-8188-5cc32405b48e.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -12804,11 +12827,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2012/questions/165/3fbde9b0-ee25-43f8-8514-0b3b42bd2adc.png)\n\nO deslocamento descrito por João foi: mova-se pela pirâmide, sempre em linha reta, do ponto A ao ponto E, a seguir do ponto E ao ponto M, e depois de M a C.\n\nO desenho que Bruno deve fazer é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2012/questions/165/8889758c-e418-4553-8e26-b602b0862a7e.png)",
+      "B) ![](https://enem.dev/2012/questions/165/38082c65-4727-4561-8ea3-0de04aa0346b.png)",
+      "C) ![](https://enem.dev/2012/questions/165/8b2481ca-b8ca-4958-8eec-be9f7ce78448.png)",
+      "D) ![](https://enem.dev/2012/questions/165/2adf001e-6960-46c9-91bc-fa1ca2b925f9.png)",
+      "E) ![](https://enem.dev/2012/questions/165/1332407d-5c97-49e1-b94a-2a46220809ac.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -12904,11 +12927,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2012/questions/169/b957b116-b45b-4ac5-8ee8-3a2519ae6e1f.png)\n\nPara obter essas médias, ele multiplicou a matriz obtida a partir da tabela por",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2012/questions/169/ac49b2a2-c8b9-47db-aa0b-e3c194aa1553.png)",
+      "B) ![](https://enem.dev/2012/questions/169/f19cc62d-cb14-407a-bbd9-20d5c116cb11.png)",
+      "C) ![](https://enem.dev/2012/questions/169/07f396c3-1c1c-46aa-bbef-156e0aa6e668.png)",
+      "D) ![](https://enem.dev/2012/questions/169/943f11ff-0f7b-4ad1-8dea-915abf2ed0e7.png)",
+      "E) ![](https://enem.dev/2012/questions/169/c2bcaf1c-20e6-43b6-801f-19302b2260bb.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -12928,17 +12951,19 @@
     "index": 170,
     "disciplina": "Matemática",
     "topic": "Matemática ENEM",
-    "statement": "Existem no mercado chuveiros elétricos de diferentes potências, que representam consumos e custos diversos. A potência (P) de um chuveiro elétrico é dada pelo produto entre sua resistência elétrica (R) e o quadrado da corrente elétrica (i) que por ele circula. O consumo de energia elétrica (E), por sua vez, é diretamente proporcional à potência do aparelho.\n\nConsiderando as características apresentadas, qual dos gráficos a seguir representa a relação entre a energia consumida (E) por um chuveiro elétrico e a corrente elétrica (i) que circula por ele?",
+    "statement": "![](https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2012/170-images/context_img_0.png)\n\nExistem no mercado chuveiros elétricos de diferentes potências, que representam consumos e custos diversos. A potência (P) de um chuveiro elétrico é dada pelo produto entre sua resistência elétrica (R) e o quadrado da corrente elétrica (i) que por ele circula. O consumo de energia elétrica (E), por sua vez, é diretamente proporcional à potência do aparelho.\n\nConsiderando as características apresentadas, qual dos gráficos a seguir representa a relação entre a energia consumida (E) por um chuveiro elétrico e a corrente elétrica (i) que circula por ele?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2012/questions/170/715a4076-666c-46a9-ae05-2a83d355296e.png)",
+      "B) ![](https://enem.dev/2012/questions/170/4ac7fc20-5185-4cae-9a82-77ae7491d0ab.png)",
+      "C) ![](https://enem.dev/2012/questions/170/4c3ff5e4-57b9-480b-be2f-3753e095d212.png)",
+      "D) ![](https://enem.dev/2012/questions/170/d73bdaba-0aea-49f9-89e1-74929848eba9.png)",
+      "E) ![](https://enem.dev/2012/questions/170/4680b091-1ae6-4487-a721-e8fcc1265f13.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
-    "files": [],
+    "files": [
+      "https://raw.githubusercontent.com/gabriel-antonelli/extract-enem-data/main/enem-data/enem-2012/170-images/context_img_0.png"
+    ],
     "hint": "Questão oficial 170 do ENEM 2012 de Matemática.",
     "explanation": "Gabarito oficial do ENEM: Alternativa D.",
     "moduleId": "mod_mat_01_basica",
@@ -14107,11 +14132,11 @@
     "topic": "Matemática ENEM",
     "statement": "Uma empresa de telefone fixa oferece dois planos aos seus clientes: no plano K, o cliente paga R$ 29,90 por  200 minutos mensais e R$ 0,20 por cada minuto excedente; no plano Z, paga R$ 49,90 por 300 minutos mensais e R$ 0,10 por cada minuto excedente.\n\nO gráfico que representa o valor pago, em reais, nos dois planos em função dos minutos utilizados é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2011/questions/179/433b6b47-1dce-4ea0-9776-2b3740985df2.png)",
+      "B) ![](https://enem.dev/2011/questions/179/ec7e7857-fd93-4ba2-ac72-a86af3feb3de.png)",
+      "C) ![](https://enem.dev/2011/questions/179/b244cafb-d3e4-4e73-9377-ed74b129890c.png)",
+      "D) ![](https://enem.dev/2011/questions/179/108be4dc-5c66-4214-8524-c5f5c32e2dab.png)",
+      "E) ![](https://enem.dev/2011/questions/179/949bee07-2abc-4dfc-8b47-1e012203652e.png)"
     ],
     "correctIndex": 3,
     "correctLetter": "D",
@@ -14154,11 +14179,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2010/questions/136/47193c33-4847-4a88-be44-8155d78d2e2f.png)\n\nAlgum tempo depois, o professor apagou a lousa por completo e, adotando um procedimento semelhante ao anterior, voltou a preenchê-la, mas, dessa vez, utilizando 40% do espaço dela.\n\nUma representação possível para essa segunda situação é",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2010/questions/136/62533d8a-dc15-4e88-acc9-280abe85ac95.png)",
+      "B) ![](https://enem.dev/2010/questions/136/f995e6dc-9f76-4292-805f-24d4069434ba.png)",
+      "C) ![](https://enem.dev/2010/questions/136/0c6f6086-63db-4277-a849-4aee33636ada.png)",
+      "D) ![](https://enem.dev/2010/questions/136/4409150d-509d-4c99-8ad7-3f02d3c82a53.png)",
+      "E) ![](https://enem.dev/2010/questions/136/d9647bc4-b883-40d6-aab2-568a995ed96e.png)"
     ],
     "correctIndex": 2,
     "correctLetter": "C",
@@ -14204,11 +14229,11 @@
     "topic": "Matemática ENEM",
     "statement": "![](https://enem.dev/2010/questions/138/45398e2b-e687-438b-9e22-6ffeee57f58f.png)\n\nConsiderando que nenhum dos recipientes tenha tampa, qual das figuras a seguir representa uma planificação para o bebedouro 3?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2010/questions/138/35d4f2e6-34a6-4305-b32b-6e25cc6d92ce.png)",
+      "B) ![](https://enem.dev/2010/questions/138/dd953d59-cb75-4627-9c73-948308498f02.png)",
+      "C) ![](https://enem.dev/2010/questions/138/4e654b9e-b922-44e5-a945-58beaa8b0e70.png)",
+      "D) ![](https://enem.dev/2010/questions/138/8f1dbb6d-c61b-4659-85e2-a447b3ec4d70.png)",
+      "E) ![](https://enem.dev/2010/questions/138/10ab101d-94d3-4f8a-88ff-e056aaa11e99.png)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",
@@ -14306,11 +14331,11 @@
     "topic": "Matemática ENEM",
     "statement": "Acompanhando o crescimento do filho, um casal constatou que, de 0 a 10 anos, a variação da sua altura se dava de forma mais rápida do que dos 10 aos 17 anos e, a partir de 17 anos, essa variação passava a ser cada vez menor, até se tornar imperceptível. Para ilustrar essa situação, esse casal fez um gráfico relacionando as alturas do filho nas idades consideradas.\n\nQual gráfico melhor representa a altura do filho desse casal em função da idade?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2010/questions/142/fb5ec95b-7bca-4809-8d74-42fc28187a78.png)",
+      "B) ![](https://enem.dev/2010/questions/142/da24640c-cede-4773-afc4-43c2e1dbe83d.png)",
+      "C) ![](https://enem.dev/2010/questions/142/06ba9bf4-5a2b-4a7b-b0c2-2044bcf7ee47.png)",
+      "D) ![](https://enem.dev/2010/questions/142/c2c0f326-4762-4bf5-a296-09433a66d6b1.png)",
+      "E) ![](https://enem.dev/2010/questions/142/f9d1e289-c5ae-4438-927c-88b7ca5f62ef.png)"
     ],
     "correctIndex": 0,
     "correctLetter": "A",
@@ -15610,11 +15635,11 @@
     "topic": "Matemática ENEM",
     "statement": "Em Florença, Itália, na Igreja de Santa Croce, é possível encontrar um portão em que aparecem os anéis de Borromeo. Alguns historiadores acreditavam que os círculos representavam as três artes: escultura, pintura e arquitetura, pois elas eram tão próximas quanto inseparáveis.\n\n![](https://enem.dev/2009/questions/149/87fc20be-0d1a-4508-b804-bf58ba86e918.jpg)\n\nQual dos esboços a seguir melhor representa os anéis de Borromeo?",
     "options": [
-      "A) [Figura / Imagem]",
-      "B) [Figura / Imagem]",
-      "C) [Figura / Imagem]",
-      "D) [Figura / Imagem]",
-      "E) [Figura / Imagem]"
+      "A) ![](https://enem.dev/2009/questions/149/34488218-cb6e-4ae1-ae7b-3e7e2986995d.jpg)",
+      "B) ![](https://enem.dev/2009/questions/149/a2900f94-fbf3-410d-ad2f-41938a2ef6b4.jpg)",
+      "C) ![](https://enem.dev/2009/questions/149/704c275a-d2fb-4943-b7ea-9810d4855651.jpg)",
+      "D) ![](https://enem.dev/2009/questions/149/a0f7ce1f-2021-48b4-99b4-776289157eac.jpg)",
+      "E) ![](https://enem.dev/2009/questions/149/b83410e7-99f3-47a1-bed5-01c4cffce0e6.jpg)"
     ],
     "correctIndex": 4,
     "correctLetter": "E",

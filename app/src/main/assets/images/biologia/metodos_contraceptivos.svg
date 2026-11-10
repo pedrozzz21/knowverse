@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="950" height="560" fill="url(#bg)" rx="16"/>
+
+  <!-- Title & Header -->
+  <text x="475" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="bold" fill="#F8FAFC" text-anchor="middle">
+    Métodos Contraceptivos & Prevenção de ISTs
+  </text>
+  <text x="475" y="68" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">
+    Classificação, Mecanismo Fisiológico de Ação e Eficácia Preventiva
+  </text>
+
+  <!-- GRID OF 4 PILLARS -->
+  <!-- 1. MÉTODOS DE BARREIRA -->
+  <g transform="translate(30, 95)">
+    <rect width="205" height="340" rx="10" fill="url(#cardGrad)" stroke="#38BDF8" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="12" y="14" width="181" height="24" rx="12" fill="#0369A1" opacity="0.4"/>
+    <text x="102" y="30" font-family="sans-serif" font-size="11" font-weight="bold" fill="#38BDF8" text-anchor="middle">
+      1. BARREIRA FÍSICA
+    </text>
+
+    <text x="16" y="65" font-family="sans-serif" font-size="11" font-weight="bold" fill="#F8FAFC">Camisinha (Masculina / Feminina)</text>
+    <text x="16" y="85" font-family="sans-serif" font-size="10" fill="#94A3B8">Preservativo de látex / poliuretano.</text>
+
+    <!-- Visual Icon -->
+    <rect x="25" y="105" width="155" height="40" rx="6" fill="#1E293B" stroke="#0284C7" stroke-width="1"/>
+    <text x="102" y="129" font-family="sans-serif" font-size="10" font-weight="bold" fill="#38BDF8" text-anchor="middle">Impede Contato de Fluidos</text>
+
+    <text x="16" y="170" font-family="sans-serif" font-size="10" fill="#CBD5E1">• Mecanismo: Bloqueio mecânico da entrada dos espermatozoides no trato feminino.</text>
+    <text x="16" y="215" font-family="sans-serif" font-size="10" fill="#34D399" font-weight="bold">• DESTAQUE ENEM:</text>
+    <text x="16" y="235" font-family="sans-serif" font-size="10" fill="#F8FAFC">Único método contraceptivo que previne Infecções Sexualmente Transmissíveis (HIV, HPV, Sífilis, Gonorreia, Hepatites B/C).</text>
+  </g>
+
+  <!-- 2. MÉTODOS HORMONAIS -->
+  <g transform="translate(255, 95)">
+    <rect width="205" height="340" rx="10" fill="url(#cardGrad)" stroke="#C084FC" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="12" y="14" width="181" height="24" rx="12" fill="#6D28D9" opacity="0.4"/>
+    <text x="102" y="30" font-family="sans-serif" font-size="11" font-weight="bold" fill="#C084FC" text-anchor="middle">
+      2. HORMONAIS
+    </text>
+
+    <text x="16" y="65" font-family="sans-serif" font-size="11" font-weight="bold" fill="#F8FAFC">Pílulas, Injeções, Implantes</text>
+    <text x="16" y="85" font-family="sans-serif" font-size="10" fill="#94A3B8">Estrogênio e/ou Progesterona sintéticos.</text>
+
+    <!-- Visual Icon -->
+    <rect x="25" y="105" width="155" height="40" rx="6" fill="#1E293B" stroke="#7C3AED" stroke-width="1"/>
+    <text x="102" y="129" font-family="sans-serif" font-size="10" font-weight="bold" fill="#C084FC" text-anchor="middle">Feedback Negativo (FSH/LH)</text>
+
+    <text x="16" y="170" font-family="sans-serif" font-size="10" fill="#CBD5E1">• Inibem secreção de FSH e LH pela hipófise, bloqueando a ovulação.</text>
+    <text x="16" y="215" font-family="sans-serif" font-size="10" fill="#CBD5E1">• Espessam o muco cervical, dificultando a mobilidade espermática.</text>
+    <text x="16" y="260" font-family="sans-serif" font-size="10" fill="#FB7185" font-weight="bold">• ATENÇÃO ENEM:</text>
+    <text x="16" y="280" font-family="sans-serif" font-size="10" fill="#F8FAFC">NÃO conferem qualquer proteção contra transmissão de ISTs!</text>
+  </g>
+
+  <!-- 3. DISPOSITIVO INTRAUTERINO (DIU) -->
+  <g transform="translate(480, 95)">
+    <rect width="205" height="340" rx="10" fill="url(#cardGrad)" stroke="#F59E0B" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="12" y="14" width="181" height="24" rx="12" fill="#78350F" opacity="0.4"/>
+    <text x="102" y="30" font-family="sans-serif" font-size="11" font-weight="bold" fill="#FBBF24" text-anchor="middle">
+      3. DISPOSITIVO (DIU)
+    </text>
+
+    <text x="16" y="65" font-family="sans-serif" font-size="11" font-weight="bold" fill="#F8FAFC">DIU de Cobre / DIU Hormonal</text>
+    <text x="16" y="85" font-family="sans-serif" font-size="10" fill="#94A3B8">Dispositivo em T inserido no útero.</text>
+
+    <!-- Visual Icon -->
+    <rect x="25" y="105" width="155" height="40" rx="6" fill="#1E293B" stroke="#D97706" stroke-width="1"/>
+    <text x="102" y="129" font-family="sans-serif" font-size="10" font-weight="bold" fill="#FBBF24" text-anchor="middle">Efeito Espermicida Local</text>
+
+    <text x="16" y="170" font-family="sans-serif" font-size="10" fill="#CBD5E1">• DIU de Cobre: Íons Cu²⁺ provocam reação inflamatória citotóxica para espermatozoides (sem hormônios).</text>
+    <text x="16" y="230" font-family="sans-serif" font-size="10" fill="#CBD5E1">• DIU Hormonal (Levonorgestrel): Atrofia endometrial e muco espesso.</text>
+    <text x="16" y="280" font-family="sans-serif" font-size="10" fill="#94A3B8">• Método de altíssima eficácia de longa duração (LARC).</text>
+  </g>
+
+  <!-- 4. CIRÚRGICOS DEFINITIVOS -->
+  <g transform="translate(705, 95)">
+    <rect width="215" height="340" rx="10" fill="url(#cardGrad)" stroke="#10B981" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="12" y="14" width="191" height="24" rx="12" fill="#065F46" opacity="0.4"/>
+    <text x="107" y="30" font-family="sans-serif" font-size="11" font-weight="bold" fill="#34D399" text-anchor="middle">
+      4. CIRÚRGICOS (ESTERILIZAÇÃO)
+    </text>
+
+    <text x="16" y="65" font-family="sans-serif" font-size="11" font-weight="bold" fill="#F8FAFC">Vasectomia & Laqueadura</text>
+    <text x="16" y="85" font-family="sans-serif" font-size="10" fill="#94A3B8">Interrupção definitiva dos ductos gaméticos.</text>
+
+    <!-- Visual Icon -->
+    <rect x="25" y="105" width="165" height="40" rx="6" fill="#1E293B" stroke="#059669" stroke-width="1"/>
+    <text x="107" y="129" font-family="sans-serif" font-size="10" font-weight="bold" fill="#34D399" text-anchor="middle">Secção de Deferentes / Tubas</text>
+
+    <text x="16" y="170" font-family="sans-serif" font-size="10" fill="#CBD5E1">• Vasectomia: Corta os ductos deferentes. Espermatozoides não entram no sêmen.</text>
+    <text x="16" y="215" font-family="sans-serif" font-size="10" fill="#38BDF8">• MITO ENEM DESFEITO:</text>
+    <text x="16" y="235" font-family="sans-serif" font-size="10" fill="#F8FAFC">Vasectomia NÃO altera a ereção, libido ou produção de testosterona!</text>
+    <text x="16" y="280" font-family="sans-serif" font-size="10" fill="#CBD5E1">• Laqueadura: Corta as tubas uterinas, impedindo o encontro do óvulo com espermatozoide.</text>
+  </g>
+
+  <!-- Bottom banner summary -->
+  <g transform="translate(30, 455)">
+    <rect width="890" height="75" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="25" y="30" font-family="sans-serif" font-size="12" font-weight="bold" fill="#FBBF24">
+      REGRA DE OURO PARA O ENEM:
+    </text>
+    <text x="25" y="52" font-family="sans-serif" font-size="11" fill="#CBD5E1">
+      Métodos comportamentais (tabelinha, coito interrompido) possuem baixíssima eficácia prática. A camisinha é insubstituível na prevenção combinada contra epidemias de ISTs (HIV, Sífilis congênita e HPV oncogênico).
+    </text>
+  </g>
+</svg>

@@ -42,6 +42,8 @@ O corpo humano funciona como uma metrópole biológica perfeitamente coordenada 
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. Sistema Digestório: Da Ingestão à Absorção
+![Integração dos Grandes Sistemas do Corpo Humano](file:///android_asset/images/biologia/fisiologia_sistemas_integrados.svg)
+
 O trato gastrointestinal quebra macromoléculas insolúveis em monômeros absorvíveis:
 - **Cavidade Oral (pH ~ 7,0):** Mastigação e insalivação. A amilase salivar (ptialina) inicia a hidrólise do amido em maltose.
 - **Estômago (pH ~ 1,5 a 2,0):** O suco gástrico contém HCl secretado pelas células parietais (que desnatura proteínas e ativa o pepsinogênio em pepsina) e muco protetor. A pepsina quebra proteínas em peptídeos menores.
@@ -55,13 +57,10 @@ O trato gastrointestinal quebra macromoléculas insolúveis em monômeros absorv
 ### 2. Sistema Respiratório e Hematose
 - **Hematose Pulmonar:** Ocorre nos alvéolos pulmonares por difusão passiva simples (a favor do gradiente de pressão parcial). O \( O_2 \) sai do alvéolo para o sangue capilar e o \( CO_2 \) sai do sangue para o alvéolo.
 - **Transporte de Gases no Sangue:**
-  - **Oxigênio (\( O_2 \)):** 98,5% ligado à **hemoglobina** dentro das hemácias (\( Hb + O_2 
-ightleftharpoons HbO_2 \) - oxi-hemoglobina) e 1,5% dissolvido no plasma.
-  - **Gás Carbônico (\( CO_2 \)):** Cerca de 70% é transportado na forma de **íon bicarbonato** (\( HCO_3^- \)) no plasma, 23% ligado à hemoglobina (carboemoglobina) e 7% dissolvido no plasma.
-  - **Equilíbrio Ácido-Base e Bulbo:** A enzima anidrase carbônica nas hemácias catalisa:
-    \[ CO_2 + H_2O 
-ightleftharpoons H_2CO_3 
-ightleftharpoons H^+ + HCO_3^- \]
+  - **Oxigênio (\( O_2 \)):** 98,5% ligado à **hemoglobina** dentro das hemácias (\( \text{Hb} + \text{O}_2 \rightleftharpoons \text{HbO}_2 \) - oxi-hemoglobina) e 1,5% dissolvido no plasma.
+  - **Gás Carbônico (\( CO_2 \)):** Cerca de 70% é transportado na forma de **íon bicarbonato** (\( \text{HCO}_3^- \)) no plasma, 23% ligado à hemoglobina (carboemoglobina) e 7% dissolvido no plasma.
+  - **Equilíbrio Ácido-Base e Bulbo:** A enzima anidrase carbônica nas hemácias catalisa o equilíbrio do tampão bicarbonato:
+    \[ \text{CO}_2 + \text{H}_2\text{O} \rightleftharpoons \text{H}_2\text{CO}_3 \rightleftharpoons \text{H}^+ + \text{HCO}_3^- \]
     Durante atividade física intensa, o acúmulo de \( CO_2 \) eleva \( H^+ \) (acidose respiratória, queda no pH). O bulbo raquidiano detecta o pH ácido e acelera imediatamente a frequência respiratória (hiperventilação compensatória).
 
 ### 3. Sistema Cardiovascular Integrado
@@ -71,6 +70,8 @@ ightleftharpoons H^+ + HCO_3^- \]
 - **Diferenciação Anatômica:** Artérias transportam sangue que sai do coração (pressão elevada, paredes espessas e elásticas); Veias trazem sangue de volta ao coração (baixa pressão, válvulas semilunares para evitar refluxo contra a gravidade).
 
 ### 4. Sistema Excretor e a Fisiologia Renal
+![Ultraestrutura do Néfron e Formação da Urina](file:///android_asset/images/biologia/nefron_ultraestrutura.svg)
+
 Os rins filtram o plasma sanguíneo, eliminam resíduos nitrogenados metabólicos (a ureia em mamíferos) e regulam a volemia (volume de sangue) e osmolalidade:
 - **Néfron (Unidade Funcional):**
   1. **Filtração Glomerular:** No glomérulo de Malpighi para a cápsula de Bowman. Passam água, glicose, aminoácidos, sais e ureia. Células sanguíneas e proteínas plasmáticas grandes NÃO passam no filtrado normal.
@@ -127,16 +128,16 @@ Descreva a viagem completa de uma molécula de oxigênio desde a cavidade nasal 
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Equilíbrio Ácido-Base Respiratório",
-                syntax = """CO_2 + H_2O \rightleftharpoons H_2CO_3 \rightleftharpoons H^+ + HCO_3^-""",
-                description = "Equilíbrio catalisado pela anidrase carbônica no interior dos eritrócitos.",
-                parametersInfo = "Se a ventilação cai, acumula-se CO2, formando íons H+ e acidificando o sangue."
+                termOrFunction = "Equilíbrio do Tampão Bicarbonato no Sangue",
+                syntax = """\text{CO}_2 + \text{H}_2\text{O} \rightleftharpoons \text{H}_2\text{CO}_3 \rightleftharpoons \text{H}^+ + \text{HCO}_3^-""",
+                description = "Equilíbrio químico dinâmico catalisado pela anidrase carbônica no interior das hemácias e no plasma.",
+                parametersInfo = "A hipoventilação acumula CO2, deslocando a reação para a direita e provocando acidose respiratória (estímulo do bulbo)."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Ação do Hormônio Antidiurético (ADH)",
-                syntax = """\uparrow [\text{Osmolalidade}] \implies \uparrow \text{ADH} \implies \uparrow \text{Aquaporinas} \implies \downarrow \text{Volume Urinário}""",
-                description = "O ADH aumenta a permeabilidade à água nos ductos renais.",
-                parametersInfo = "Economiza água corporal diminuindo o volume da urina e aumentando sua concentração."
+                termOrFunction = "Controle Neuroendócrino da Osmorregulação Renal (ADH)",
+                syntax = """\text{Desidratação (Alta Osmolaridade Sanguínea)} \xrightarrow{\text{Neuro-hipófise}} \text{ADH} \xrightarrow{\text{Ducto Coletor}} \text{Aquaporinas} \to \text{Reabsorção H}_2\text{O}""",
+                description = "Mecanismo homeostático hipofisário que preserva água corporal reduzindo o volume urinário e aumentando sua concentração.",
+                parametersInfo = "O álcool inibe a secreção de ADH na hipófise, gerando diurese desmedida e desidratação (ressaca)."
             )
         ),
         solvedExamples = listOf(
@@ -146,7 +147,8 @@ Descreva a viagem completa de uma molécula de oxigênio desde a cavidade nasal 
                 explanation = "O sangue venoso pobre em oxigênio entra no átrio direito, passa ao ventrículo direito, vai aos pulmões onde sofre hematose e retorna arterial pelo átrio esquerdo, de onde o ventrículo esquerdo o impulsiona pela aorta para todo o corpo."
             )
         ),
-        goldTip = "Para o ENEM, lembre-se: Toda ARTÉRIA sai do coração (seja com sangue arterial ou venoso, como a artéria pulmonar). Toda VEIA chega ao coração (seja com sangue venoso ou arterial, como as veias pulmonares)!"
+        goldTip = "Para o ENEM, lembre-se: Toda ARTÉRIA sai do coração (seja com sangue arterial ou venoso, como a artéria pulmonar). Toda VEIA chega ao coração (seja com sangue venoso ou arterial, como as veias pulmonares)!",
+        assetImagePath = "images/biologia/fisiologia_sistemas_integrados.svg"
     )
 
     // =========================================================================
@@ -175,6 +177,8 @@ A imunologia e as doenças infecciosas constituem historicamente o tema de saúd
 - **Anticorpo (Ac ou Imunoglobulina - Ig):** Glicoproteínas plasmáticas em forma de 'Y' secretadas por plasmócitos (linfócitos B diferenciados), cujas pontas das hastes possuem sítios de ligação variáveis perfeitamente complementares ao epítopo do antígeno.
 
 ### 2. A Grande Distinção: Vacina vs. Soro
+![Imunização: Vacina (Ativa) vs. Soro (Passivo)](file:///android_asset/images/biologia/vacina_vs_soro.svg)
+
 Esta é a comparação mais clássica e recorrente do ENEM:
 
 | Característica | Vacina | Soro Terapêutico |
@@ -246,16 +250,16 @@ Diferencie o ciclo de contaminação e as medidas profiláticas entre a Teníase
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Equação da Imunização Ativa (Vacina)",
-                syntax = """\text{Vacina (Antígeno)} \to \text{Resposta Própria} + \text{Células B e T de Memória}""",
-                description = "Gera imunidade duradoura e preventiva através da ativação clonal própria.",
-                parametersInfo = "Essencial em políticas de saúde pública preventivas."
+                termOrFunction = "Rota da Imunização Ativa (Vacina)",
+                syntax = """\text{Vacina (Antígeno)} \xrightarrow{\text{Apresentação por APCs}} \text{Ativação B e T} \to \text{Anticorpos Próprios} + \text{Memória Imunológica}""",
+                description = "Gera imunidade duradoura e preventiva através da resposta clonal própria mediada por plasmócitos e linfócitos de memória.",
+                parametersInfo = "Essencial em políticas de saúde pública preventivas e imunidade coletiva (de rebanho)."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Equação da Imunização Passiva (Soro)",
-                syntax = """\text{Soro (Anticorpos)} \to \text{Neutralização Imediata} \quad [\text{Sem Memória}]""",
-                description = "Fornece imunoglobulinas prontas para emergências clínicas.",
-                parametersInfo = "Não protege contra contatos futuros após o desaparecimento dos anticorpos."
+                termOrFunction = "Rota da Imunização Passiva (Soro Terapêutico)",
+                syntax = """\text{Soro (Anticorpos Heterólogos)} \xrightarrow{\text{Inoculação Parenteral}} \text{Neutralização Imediata In Vivo} \quad [\text{Sem Memória}]""",
+                description = "Fornece imunoglobulinas prontas para emergências clínicas agudas (peçonhas ofídicas ou toxinas bacterianas letais).",
+                parametersInfo = "Não estimula clones de memória; a meia-vida das proteínas séricas limita a proteção a poucas semanas."
             )
         ),
         solvedExamples = listOf(
@@ -265,7 +269,8 @@ Diferencie o ciclo de contaminação e as medidas profiláticas entre a Teníase
                 explanation = "A presença prévia de clones de linfócitos de memória permite que a produção de anticorpos da classe IgG dispare de maneira quase instantânea no segundo contato."
             )
         ),
-        goldTip = "Regra prática definitiva do ENEM: 'Vacina começa com V de Vai prevenir. Soro começa com S de Socorro imediato!'."
+        goldTip = "Regra prática definitiva do ENEM: 'Vacina começa com V de Vai prevenir. Soro começa com S de Socorro imediato!'",
+        assetImagePath = "images/biologia/vacina_vs_soro.svg"
     )
 
     // =========================================================================
@@ -290,6 +295,8 @@ A perpetuação biológica da espécie humana depende de uma complexa orquestra�
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. O Eixo Hipotálamo-Hipófise-Ovário
+![Ciclo Menstrual e Flutuações Hormonais de 28 Dias](file:///android_asset/images/biologia/ciclo_menstrual_hormonios.svg)
+
 O ciclo menstrual dura em média 28 dias (dividido em Fase Folicular, Ovulação e Fase Lútea):
 1. **Fase Folicular (Dias 1 a 13):**
    - No início do ciclo (Dia 1, primeiro dia da menstruação), os níveis de estrogênio e progesterona estão baixos.
@@ -375,16 +382,16 @@ Explique detalhadamente por que uma mulher com insuficiência lútea (degeneraç
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Sinalização e Manutenção Gravídica",
-                syntax = """\text{Blastocisto} \xrightarrow{\text{hCG}} \text{Corpo Lúteo Ativo} \implies \uparrow \text{Progesterona} \implies \text{Endométrio Íntegro}""",
-                description = "O hCG embrionário mantém o corpo lúteo e bloqueia a menstruação.",
-                parametersInfo = "Base biológica dos testes de gravidez de urina e sangue."
+                termOrFunction = "Rota Hormonal da Ovulação e Fase Lútea",
+                syntax = """\text{Pico de Estrogênio (Dia 13)} \xrightarrow{\text{Feedback Positivo}} \text{Surto de LH (Dia 14)} \to \text{Ovulação} \to \text{Corpo Lúteo (Progesterona)}""",
+                description = "Sincronização neuroendócrina ovariana e uterina responsável pelo amadurecimento folicular e ovulação.",
+                parametersInfo = "A progesterona secretada pelo corpo lúteo inibe FSH e LH por feedback negativo, mantendo o endométrio secretor íntegro."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Cálculo da Ovulação em Ciclos Regulares",
-                syntax = """\text{Dia da Ovulação} = \text{Duração Total do Ciclo} - 14""",
-                description = "A fase lútea possui duração estável de aproximadamente 14 dias.",
-                parametersInfo = "Em um ciclo de 30 dias, a ovulação ocorre por volta do dia 16."
+                termOrFunction = "Sinalização Bioquímica e Manutenção Gravídica",
+                syntax = """\text{Nidação do Blastocisto} \xrightarrow{\text{hCG}} \text{Manutenção do Corpo Lúteo} \implies \text{Progesterona Alta} \to \text{Bloqueio da Menstruação}""",
+                description = "O trofoblasto embrionário secreta gonadotrofina coriônica (hCG) que impede a regressão do corpo lúteo.",
+                parametersInfo = "Base biológica dos testes de gravidez de urina e sangue nas primeiras semanas gestacionais."
             )
         ),
         solvedExamples = listOf(
@@ -394,7 +401,8 @@ Explique detalhadamente por que uma mulher com insuficiência lútea (degeneraç
                 explanation = "A progesterona é o marcador absoluto da fase lútea (segunda metade do ciclo menstrual)."
             )
         ),
-        goldTip = "Gráfico de hormônio feminino no ENEM: Se a curva só cresce na segunda metade (após o dia 14), é PROGESTERONA. Se tem um pico gigante agudo bem no meio (dia 14), é LH!"
+        goldTip = "Gráfico de hormônio feminino no ENEM: Se a curva só cresce na segunda metade (após o dia 14), é PROGESTERONA. Se tem um pico gigante agudo bem no meio (dia 14), é LH!",
+        assetImagePath = "images/biologia/ciclo_menstrual_hormonios.svg"
     )
 
     // =========================================================================
@@ -419,6 +427,7 @@ A saúde reprodutiva e a prevenção de Infecções Sexualmente Transmissíveis 
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. Métodos Contraceptivos e seus Mecanismos
+![Classificação e Mecanismos dos Métodos Contraceptivos e ISTs](file:///android_asset/images/biologia/metodos_contraceptivos.svg)
 
 #### A. Métodos de Barreira
 - **Preservativo Masculino e Feminino (Camisinha):** Feitos de látex ou poliuretano. Impedem fisicamente o contato entre os fluidos genitais e o depósito de sêmen na vagina. **Vantagem exclusiva:** São os **ÚNICOS métodos que protegem concomitantemente contra ISTs e gravidez**.
@@ -502,16 +511,16 @@ Explique por que um indivíduo recém-infectado pelo vírus HIV pode testar fals
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Mecanismo da Pílula Anticoncepcional",
-                syntax = """[\text{Estrogênio/Progestina}]_{\text{constante}} \implies \downarrow \text{FSH/LH} \implies \text{Inibição da Ovulação}""",
-                description = "Bloqueio hormonal contínuo que impede o amadurecimento folicular e o pico ovulatório.",
-                parametersInfo = "Também altera a viscosidade do muco cervical dificultando a passagem dos espermatozoides."
+                termOrFunction = "Mecanismo Fisiológico da Pílula Combinada",
+                syntax = """\text{Estrogênio + Progestina Exógenos} \xrightarrow{\text{Feedback Negativo na Hipófise}} \downarrow \text{FSH e LH} \implies \text{Bloqueio da Ovulação}""",
+                description = "Bloqueio hormonal contínuo da maturação folicular e supressão do surto ovulatório de LH.",
+                parametersInfo = "Também altera a viscosidade do muco cervical tornando-o impermeável à ascensão dos espermatozoides."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Vasectomia vs. Laqueadura",
-                syntax = """\text{Vasectomia: Corta Ductos Deferentes} \quad | \quad \text{Laqueadura: Corta Tubas Uterinas}""",
-                description = "Interrupção mecânica definitiva do encontro gamético sem alteração hormonal.",
-                parametersInfo = "Preserva plenamente a produção de hormônios sexuais nos testículos e ovários."
+                termOrFunction = "Métodos Cirúrgicos Definitivos e Preservação Endócrina",
+                syntax = """\text{Vasectomia (Corte de Deferentes)} \quad \longleftrightarrow \quad \text{Laqueadura (Corte de Tubas)} \quad [\text{Hormônios e Libido Preservados}]""",
+                description = "Interrupção anatômica definitiva das vias condutoras de gametas sem qualquer impacto na produção de testosterona ou estrogênio.",
+                parametersInfo = "Na vasectomia, a ejaculação persiste com mais de 95% do volume original derivado da próstata e glândulas seminais."
             )
         ),
         solvedExamples = listOf(
@@ -521,6 +530,7 @@ Explique por que um indivíduo recém-infectado pelo vírus HIV pode testar fals
                 explanation = "A vasectomia elimina apenas os espermatozoides; o homem ejacula o mesmo volume de líquido seminal normalmente."
             )
         ),
-        goldTip = "Para o ENEM: O preservativo masculino ou feminino é o ÚNICO método contraceptivo que previne simultaneamente a gravidez e as Infecções Sexualmente Transmissíveis (ISTs)!"
+        goldTip = "Para o ENEM: O preservativo masculino ou feminino é o ÚNICO método contraceptivo que previne simultaneamente a gravidez e as Infecções Sexualmente Transmissíveis (ISTs)!",
+        assetImagePath = "images/biologia/metodos_contraceptivos.svg"
     )
 }

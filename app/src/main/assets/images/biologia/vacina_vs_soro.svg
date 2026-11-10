@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+
+  <text x="400" y="32" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">
+    Imunização Ativa vs. Imunização Passiva: Vacinas vs. Soros
+  </text>
+  <text x="400" y="50" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">
+    A clássica comparação da prova de Ciências da Natureza do ENEM
+  </text>
+
+  <!-- Left: VACINA (Imunização Ativa) -->
+  <g transform="translate(40, 75)">
+    <rect width="340" height="255" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.5"/>
+    <rect x="15" y="12" width="220" height="24" rx="4" fill="#065F46" fill-opacity="0.3"/>
+    <text x="25" y="28" fill="#6EE7B7" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">
+      VACINA (Imunização Ativa)
+    </text>
+
+    <!-- Composition & Mechanism -->
+    <g transform="translate(15, 45)">
+      <rect width="310" height="36" rx="4" fill="#064E3B" stroke="#10B981"/>
+      <text x="15" y="18" fill="#A7F3D0" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">Contém: ANTÍGENOS</text>
+      <text x="15" y="30" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="8.5">(Vírus/bactérias atenuados, inativados ou RNAm)</text>
+    </g>
+
+    <g transform="translate(15, 90)">
+      <text x="0" y="16" fill="#FBBF24" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">• Objetivo: PREVENTIVO (Profilático)</text>
+      <text x="0" y="32" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="9.5">• Estimula o próprio sistema imune do paciente</text>
+      <text x="0" y="48" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="9.5">• Tempo de resposta: Lenta (~1 a 2 semanas)</text>
+      <text x="0" y="68" fill="#34D399" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">• GERA CÉLULAS DE MEMÓRIA (B e T)</text>
+      <text x="0" y="86" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="10">• Duração: Duradoura / Prolongada (Anos)</text>
+    </g>
+
+    <!-- ENEM Examples -->
+    <g transform="translate(15, 185)">
+      <rect width="310" height="58" rx="4" fill="#0F172A" stroke="#334155"/>
+      <text x="10" y="18" fill="#34D399" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">Aplicações no ENEM:</text>
+      <text x="10" y="34" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="9">Campanhas contra pólio, sarampo, febre amarela, COVID-19</text>
+      <text x="10" y="48" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="8.5">Imunidade de rebanho e erradicação de patógenos</text>
+    </g>
+  </g>
+
+  <!-- Right: SORO (Imunização Passiva) -->
+  <g transform="translate(420, 75)">
+    <rect width="340" height="255" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5"/>
+    <rect x="15" y="12" width="220" height="24" rx="4" fill="#B45309" fill-opacity="0.3"/>
+    <text x="25" y="28" fill="#FDE68A" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">
+      SORO (Imunização Passiva)
+    </text>
+
+    <!-- Composition & Mechanism -->
+    <g transform="translate(15, 45)">
+      <rect width="310" height="36" rx="4" fill="#78350F" stroke="#F59E0B"/>
+      <text x="15" y="18" fill="#FDE68A" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">Contém: ANTICORPOS PRONTOS</text>
+      <text x="15" y="30" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="8.5">(Imunoglobulinas purificadas de cavalos/doadores)</text>
+    </g>
+
+    <g transform="translate(15, 90)">
+      <text x="0" y="16" fill="#F87171" font-family="system-ui, sans-serif" font-size="10.5" font-weight="bold">• Objetivo: CURATIVO (Emergencial)</text>
+      <text x="0" y="32" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="9.5">• Não exige resposta ativa do paciente</text>
+      <text x="0" y="48" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="9.5">• Tempo de resposta: Imediata (Minutos a horas)</text>
+      <text x="0" y="68" fill="#FCA5A5" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">• NÃO GERA CÉLULAS DE MEMÓRIA</text>
+      <text x="0" y="86" fill="#FBBF24" font-family="system-ui, sans-serif" font-size="10">• Duração: Passageira (Semanas/dias)</text>
+    </g>
+
+    <!-- ENEM Examples -->
+    <g transform="translate(15, 185)">
+      <rect width="310" height="58" rx="4" fill="#0F172A" stroke="#334155"/>
+      <text x="10" y="18" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="9.5" font-weight="bold">Aplicações no ENEM:</text>
+      <text x="10" y="34" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="9">Picada de cobra (soro antiofídico), escorpião, tétano agudo</text>
+      <text x="10" y="48" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="8.5">Neutraliza toxinas letais antes que causem colapso</text>
+    </g>
+  </g>
+
+  <!-- Bottom Synthesis Banner -->
+  <g transform="translate(40, 345)">
+    <rect width="720" height="85" rx="8" fill="#0F172A" stroke="#334155"/>
+    <text x="20" y="22" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">
+      DICA DE MESTRE DO ENEM (RESUMO RÁPIDO):
+    </text>
+    <text x="20" y="44" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10.5">
+      • Se a questão falar em <tspan fill="#34D399" font-weight="bold">prevenção</tspan>, vacinação em massa e <tspan fill="#34D399" font-weight="bold">memória imunológica</tspan> prolongada: a resposta é <tspan fill="#6EE7B7" font-weight="bold">VACINA</tspan>.
+    </text>
+    <text x="20" y="66" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10.5">
+      • Se a questão falar em <tspan fill="#F87171" font-weight="bold">acidente com veneno</tspan>, socorro rápido sem tempo para o corpo reagir: a resposta é <tspan fill="#FDE68A" font-weight="bold">SORO</tspan>!
+    </text>
+  </g>
+</svg>

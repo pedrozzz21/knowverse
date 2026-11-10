@@ -45,11 +45,12 @@ A Ecologia é a ciência que investiga as intrincadas relações entre os seres 
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. Níveis de Organização Ecológica
+![Níveis de Organização Ecológica e Biodiversidade](file:///android_asset/images/ecologia/biodiversidade.png)
+
 1. **Espécie:** Conjunto de indivíduos morfologicamente semelhantes capazes de cruzar naturalmente entre si e gerar descendentes férteis.
 2. **População:** Conjunto de indivíduos da **mesma espécie** que vivem e interagem em uma determinada área geográfica no mesmo intervalo de tempo.
 3. **Comunidade (Biocenose):** Conjunto de todas as populações de **espécies diferentes** que coexistem e interagem em uma mesma área.
-4. **Ecossistema:** Unidade funcional integrada formada pela interação recíproca entre a comunidade biológica (biocenose / fatores bióticos) e os elementos físicos e químicos do meio ambiente (biótopo / fatores abióticos):
-   \[ \text{Ecossistema} = \text{Fatores Bióticos} + \text{Fatores Abióticos} \]
+4. **Ecossistema:** Unidade funcional integrada formada pela interação recíproca entre a comunidade biológica (biocenose / fatores bióticos) e os elementos físicos e químicos do meio ambiente (biótopo / fatores abióticos).
 5. **Bioma:** Amplo conjunto de ecossistemas continentais com clima regional, vegetação clímax e fauna característicos.
 6. **Biosfera:** A esfera da vida em nosso planeta — engloba todas as regiões habitadas da Terra.
 
@@ -115,26 +116,27 @@ Explique por que a introdução de uma espécie exótica invasora (como o mexilh
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Equação Conceitual do Ecossistema",
-                syntax = """\\text{Ecossistema} = \\text{Fatores Bióticos (Biocenose)} + \\text{Fatores Abióticos (Biótopo)}""",
-                description = "Expressa a interação integrada entre a vida e o meio físico-químico.",
-                parametersInfo = "Base estrutural de toda a análise ecológica contemporânea."
+                termOrFunction = "Hierarquia dos Níveis de Organização Ecológica",
+                syntax = """\text{Organismo} \to \text{População} \to \text{Comunidade (Biocenose)} \to \text{Ecossistema (Biótico + Abiótico)} \to \text{Biosfera}""",
+                description = "Escala biológica de integração entre os seres vivos e as variáveis ambientais do planeta.",
+                parametersInfo = "População envolve uma única espécie; Comunidade agrega populações de espécies diferentes."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Critério de Hotspot Global de Biodiversidade",
-                syntax = """\\text{Plantas Endêmicas} \\ge 1.500 \\quad \\land \\quad \\text{Destruição do Hábitat} \\ge 70\\%""",
-                description = "Parâmetros internacionais para definir áreas de conservação prioritária emergencial.",
-                parametersInfo = "No Brasil: Mata Atlântica e Cerrado atendem simultaneamente a ambos os critérios."
+                termOrFunction = "Critérios de Hotspot Global de Biodiversidade",
+                syntax = """\text{Plantas Vasculares Endêmicas} \ge 1.500 \quad \land \quad \text{Perda de Cobertura Nativa} \ge 70\%""",
+                description = "Parâmetros ecológicos internacionais para definição de áreas planetárias de conservação prioritária emergencial.",
+                parametersInfo = "No Brasil, a Mata Atlântica (perdeu >88%) e o Cerrado (perdeu >50%) são os dois hotspots reconhecidos."
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Diferenciação de Hábitat vs. Nicho Ecológico",
-                codeOrFormula = """\\text{Hábitat: Endereço geográfico} \\quad | \\quad \\text{Nicho: Papel funcional e uso de recursos}""",
-                explanation = "Espécies diferentes podem compartilhar o mesmo hábitat desde que seus nichos ecológicos sejam suficientemente distintos para evitar a exclusão competitiva."
+                codeOrFormula = """\text{Hábitat: Endereço geográfico} \quad | \quad \text{Nicho: Papel funcional e uso de recursos}""",
+                explanation = "Espécies diferentes podem compartilhar o mesmo hábitat desde que seus nichos ecológicos sejam suficientemente distintos para evitar a exclusão competitiva de Gause."
             )
         ),
-        goldTip = "No ENEM: Se a questão falar onde o bicho mora, é HÁBITAT. Se falar o que ele come, que horas sai da toca e como se reproduz, é NICHO ECOLÓGICO!"
+        goldTip = "No ENEM: Se a questão falar onde o bicho mora, é HÁBITAT. Se falar o que ele come, que horas sai da toca e como se reproduz, é NICHO ECOLÓGICO!",
+        assetImagePath = "images/ecologia/biodiversidade.png"
     )
 
     // =========================================================================
@@ -159,6 +161,8 @@ Em qualquer ecossistema da Terra, a vida só se mantém graças a um fluxo cont�
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. Estrutura da Cadeia e Teia Alimentar
+![Estrutura de Cadeias e Teias Alimentares](file:///android_asset/images/ecologia/teia_alimentar.png)
+
 - **Cadeia Alimentar:** Sequência linear de transferência de matéria e energia alimentar entre organismos:
   \[ \text{Produtor (Autótrofo)} \to \text{Consumidor Primário (Herbívoro)} \to \text{Consumidor Secundário} \to \text{Consumidor Terciário} \]
 - **Teia Alimentar:** Conjunto complexo de cadeias alimentares interligadas em uma comunidade real, onde um mesmo animal pode ocupar múltiplos níveis tróficos simultaneamente.
@@ -234,25 +238,26 @@ Justifique ecologicamente por que uma dieta humana baseada predominantemente em 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Equação da Produtividade Primária Líquida",
-                syntax = """\\text{PPL} = \\text{PPB} - R_{\\text{produtores}}""",
-                description = "Saldo de biomassa vegetal disponível para os consumidores primários herbívoros.",
-                parametersInfo = "PPB é a fotossíntese bruta; R é a respiração gasta pelo vegetal."
+                syntax = """\text{PPL} = \text{PPB} - R_{\text{vegetal}}""",
+                description = "Saldo de biomassa vegetal efetivamente disponível para o nível trófico dos herbívoros.",
+                parametersInfo = "PPB corresponde à fotossíntese bruta total; R é a energia gasta na respiração celular da planta."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Regra dos 10% de Eficiência Trófica",
-                syntax = """E_{n+1} \\approx 0{,}10 \\times E_n""",
-                description = "Cerca de 90% da energia útil é perdida sob forma de calor e entropia a cada nível.",
-                parametersInfo = "Explica por que cadeias alimentares raramente ultrapassam 4 ou 5 níveis tróficos."
+                termOrFunction = "Eficiência Ecológica e Dissipação Calórica",
+                syntax = """\text{Energia no Nível } (n+1) \approx 10\% \text{ da Energia no Nível } (n) \quad [\text{Segunda Lei da Termodinâmica}]""",
+                description = "Fluxo energético estritamente unidirecional e decrescente ao longo dos elos sucessivos da teia alimentar.",
+                parametersInfo = "Cerca de 90% da energia útil é perdida sob forma de calor e entropia a cada nível, impedindo que a pirâmide de energia se inverta."
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Pirâmide de Energia vs. Biomassa",
-                codeOrFormula = """\\text{Pirâmide de Energia: Sempre ereta (base larga)} \\\\ \\text{Pirâmide de Biomassa Marinha: Pode ser invertida temporariamente}""",
+                codeOrFormula = """\text{Pirâmide de Energia: Sempre ereta (base larga)} \\ \text{Pirâmide de Biomassa Marinha: Pode ser invertida temporariamente}""",
                 explanation = "A termodinâmica proíbe que a pirâmide de energia se inverta em qualquer ecossistema da biosfera."
             )
         ),
-        goldTip = "Caiu no ENEM perguntando quem tem mais veneno por quilo acumulado na cadeia alimentar? É sempre o animal do TOPO DA CADEIA (o predador carnívoro final)!"
+        goldTip = "Caiu no ENEM perguntando quem tem mais veneno por quilo acumulado na cadeia alimentar? É sempre o animal do TOPO DA CADEIA (o predador carnívoro final)!",
+        assetImagePath = "images/ecologia/teia_alimentar.png"
     )
 
     // =========================================================================
@@ -277,6 +282,8 @@ Na natureza, nenhum ser vivo é uma ilha isolada. A coexistência de populaçõe
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. Relações Intraespecíficas (Mesma Espécie)
+![Relações Ecológicas Harmônicas e Desarmônicas](file:///android_asset/images/ecologia/relacoes_ecologicas.png)
+
 - **Sociedade (+/+):** Indivíduos cooperam com divisão de trabalho, mas são **anatomicamente separados e independentes** (ex.: abelhas, formigas, cupins).
 - **Colônia (+/+):** Indivíduos da mesma espécie unidos **anatomicamente e fisicamente**, formando uma unidade estrutural inseparável:
   - *Isomorfas:* Indivíduos com formas e funções idênticas (ex.: corais pétreos construtores de recifes).
@@ -350,26 +357,27 @@ Diferencie plantas hemiparasitas de holoparasitas citando os tecidos vasculares 
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Classificação Algébrica das Relações",
-                syntax = """\\text{Harmônica} \\implies (+,+) \\text{ ou } (+,0) \\quad ; \\quad \\text{Desarmônica} \\implies (+,-) \\text{ ou } (-,-) \\text{ ou } (0,-)""",
-                description = "Convenção internacional dos sinais ecológicos de custo e benefício adaptativo.",
-                parametersInfo = "+ representa ganho biológico, - representa prejuízo e 0 representa neutralidade."
+                termOrFunction = "Balanço de Custo-Benefício Adaptativo",
+                syntax = """\text{Harmônicas: } (+,+) \text{ ou } (+,0) \quad \longleftrightarrow \quad \text{Desarmônicas: } (+,-) \text{ ou } (-,-) \text{ ou } (0,-)""",
+                description = "Convenção internacional dos sinais ecológicos de impacto adaptativo entre espécies interagentes.",
+                parametersInfo = "+ representa ganho biológico, - representa prejuízo ou custo energético e 0 representa neutralidade."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Tipos de Parasitismo Vegetal",
-                syntax = """\\text{Hemiparasita} \\to \\text{Xilema (Seiva Bruta)} \\quad | \\quad \\text{Holoparasita} \\to \\text{Floema (Seiva Elaborada)}""",
-                description = "Distinção anatômica baseada no vaso condutor vegetal perfurado pelos haustórios.",
-                parametersInfo = "Erva-de-passarinho é hemiparasita; cipó-chumbo é holoparasita."
+                termOrFunction = "Especialização de Parasitismo Vegetal",
+                syntax = """\text{Hemiparasita (Erva-de-passarinho)} \to \text{Xilema (Seiva Bruta)} \quad | \quad \text{Holoparasita (Cipó-chumbo)} \to \text{Floema (Seiva Elaborada)}""",
+                description = "Distinção morfoanatômica vegetal baseada no tecido vascular perfurado pelos haustórios de fixação.",
+                parametersInfo = "A erva-de-passarinho faz fotossíntese própria; o cipó-chumbo perdeu os cloroplastos e depende 100% da árvore hospedeira."
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Distinção entre Mutualismo e Protocooperação",
-                codeOrFormula = """\\text{Mutualismo: (+/+) Obrigatório para sobrevivência} \\\\ \\text{Protocooperação: (+/+) Facultativo (vivem bem separados)}""",
+                codeOrFormula = """\text{Mutualismo: (+/+) Obrigatório para sobrevivência} \\ \text{Protocooperação: (+/+) Facultativo (vivem bem separados)}""",
                 explanation = "A obrigatoriedade biológica da convivência é o fator que separa conceitualmente o mutualismo da protocooperação."
             )
         ),
-        goldTip = "Pegadinha clássica do ENEM: Orquídea e bromélia em árvore NÃO são parasitas! São epífitas (inquilinismo vegetal), não sugam uma gota de seiva da árvore!"
+        goldTip = "Pegadinha clássica do ENEM: Orquídea e bromélia em árvore NÃO são parasitas! São epífitas (inquilinismo vegetal), não sugam uma gota de seiva da árvore!",
+        assetImagePath = "images/ecologia/relacoes_ecologicas.png"
     )
 
     // =========================================================================
@@ -403,6 +411,8 @@ A matéria que compõe o corpo de um ser humano moderno já integrou, em eras ge
 - **Devolução:** Respiração celular de todos os seres vivos, decomposição microbiana e combustão de combustíveis fósseis e queimadas.
 
 ### 3. O Ciclo do Nitrogênio: A Obra das Bactérias
+![Ciclo Biogeoquímico do Nitrogênio e Carbono](file:///android_asset/images/ecologia/ciclo_nitrogenio.png)
+
 O gás nitrogênio (\( N_2 \)) compõe 78% do ar, mas possui tripla ligação covalente que impede a absorção direta por animais e plantas. As etapas bacterianas essenciais são:
 1. **Fixação Biológica:** Bactérias do gênero ***Rhizobium*** em simbiose com as raízes de **plantas leguminosas** (soja, feijão, ervilha) e cianobactérias convertem \( N_2 \) em amônia (\( NH_3 \)).
 2. **Amonização:** Decompositores quebram proteínas e excretas nitrogenadas liberando amônia no solo.
@@ -455,25 +465,26 @@ Explique por que a enzima nitrogenase do *Rhizobium* é sensível ao oxigênio l
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Etapas Químicas da Nitrificação",
-                syntax = """NH_3 \\xrightarrow{\\text{Nitrosomonas}} NO_2^- \\xrightarrow{\\text{Nitrobacter}} NO_3^-""",
-                description = "Conversão quimiossintetizante da amônia no ânion nitrato absorvível.",
-                parametersInfo = "Nitrosação gera nitrito; Nitratação gera nitrato solúvel para as plantas."
+                syntax = """\text{NH}_3 \xrightarrow{\text{Nitrosomonas (Nitrosação)}} \text{NO}_2^- \xrightarrow{\text{Nitrobacter (Nitratação)}} \text{NO}_3^-""",
+                description = "Conversão quimiossintetizante bacteriana da amônia no ânion nitrato prontamente absorvível pelas raízes vegetais.",
+                parametersInfo = "Nitrosação gera nitrito intermediário; Nitratação produz o nitrato solúvel assimilado pelas plantas."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Equilíbrio Global do Ciclo do Carbono",
-                syntax = """6\\,CO_2 + 6\\,H_2O \\underset{\\text{Respiração}}{\\overset{\\text{Fotossíntese}}{\\rightleftharpoons}} C_6H_{12}O_6 + 6\\,O_2""",
-                description = "Acoplamento bioenergético planetário entre produtores e heterótrofos.",
-                parametersInfo = "A queima de combustíveis fósseis desequilibra essa balança injetando carbono fóssil antigo."
+                syntax = """6\,\text{CO}_2 + 6\,\text{H}_2\text{O} \underset{\text{Respiração / Queima}}{\overset{\text{Fotossíntese}}{\rightleftharpoons}} \text{C}_6\text{H}_{12}\text{O}_6 + 6\,\text{O}_2""",
+                description = "Acoplamento bioenergético planetário entre produtores autótrofos e organismos heterótrofos.",
+                parametersInfo = "A combustão massiva de combustíveis fósseis desequilibra essa balança injetando carbono fóssil pretérito na atmosfera."
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "O Papel das Leguminosas na Agricultura",
-                codeOrFormula = """\\text{Leguminosas} + \\textit{Rhizobium} \\implies \\text{Fixação Biológica de } N_2 \\implies \\text{Adubação Verde Natural}""",
+                codeOrFormula = """\text{Leguminosas} + \textit{Rhizobium} \implies \text{Fixação Biológica de } N_2 \implies \text{Adubação Verde Natural}""",
                 explanation = "A simbiose radicular com bactérias fixadoras dispensa o uso excessivo de adubos químicos solúveis."
             )
         ),
-        goldTip = "Sequência mnemônica do Ciclo do Nitrogênio para o ENEM: 'Fixa Amônia (Rhizobium), Nitrosa Nitrito (Nitrosomonas), Nitrata Nitrato (Nitrobacter) e Desnitrifica N2 (Pseudomonas)'!"
+        goldTip = "Sequência mnemônica do Ciclo do Nitrogênio para o ENEM: 'Fixa Amônia (Rhizobium), Nitrosa Nitrito (Nitrosomonas), Nitrata Nitrato (Nitrobacter) e Desnitrifica N2 (Pseudomonas)'!",
+        assetImagePath = "images/ecologia/ciclo_nitrogenio.png"
     )
 
     // =========================================================================
@@ -498,6 +509,8 @@ A aceleração da atividade industrial, a expansão urbana desordenada e o agron
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. Eutrofização Cultural: O Passo a Passo do ENEM
+![Impactos Ambientais: Eutrofização e Poluição Aquática](file:///android_asset/images/ecologia/eutrofizacao.png)
+
 A eutrofização ocorre quando um corpo de água parada recebe excesso de **nitratos e fosfatos** (esgoto ou adubos agrícolas):
 1. **Aporte de Nutrientes:** Despejo massivo de nitrogênio e fósforo.
 2. **Floração de Algas:** Algas microscópicas superficiais multiplicam-se rapidamente formando uma camada verde espessa.
@@ -570,26 +583,27 @@ Explique detalhadamente por que um aterro sanitário moderno precisa conter dren
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Química da Chuva Ácida",
-                syntax = """SO_3 + H_2O \\to H_2SO_4 \\quad ; \\quad 2\\,NO_2 + H_2O \\to HNO_3 + HNO_2""",
-                description = "Reação de óxidos de queima com vapor de água formando ácidos inorgânicos fortes.",
-                parametersInfo = "Reduz o pH da água das chuvas para patamares inferiores a 4,5."
+                termOrFunction = "Reações Químicas da Chuva Ácida",
+                syntax = """\text{SO}_3 + \text{H}_2\text{O} \to \text{H}_2\text{SO}_4 \quad ; \quad 2\,\text{NO}_2 + \text{H}_2\text{O} \to \text{HNO}_3 + \text{HNO}_2""",
+                description = "Reação de óxidos de queima com vapor de água atmosférico formando ácidos inorgânicos fortes.",
+                parametersInfo = "Reduz o pH da água das chuvas para patamares inferiores a 4,5, lixiviando nutrientes e corroendo monumentos de carbonato."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Relação Crítica na Eutrofização",
-                syntax = """\\uparrow [\\text{Esgoto/Adubo}] \\implies \\uparrow \\text{DBO} \\implies \\downarrow [O_2\\text{ dissolvido}] \\implies \\text{Asfixia de Peixes}""",
-                description = "Cadeia causal de eventos biológicos na poluição orgânica aquática.",
-                parametersInfo = "A proliferação de decompositores aeróbios esgota o oxigênio da água."
+                termOrFunction = "Cadeia Causal da Eutrofização Cultural",
+                syntax = """\text{Aporte de Esgoto (N, P)} \to \text{Floração de Algas} \to \uparrow \text{DBO (Decomposição)} \implies \downarrow [\text{O}_2\text{ dissolvido}] \to \text{Asfixia de Peixes}""",
+                description = "Cadeia causal de eventos ecológicos e físico-químicos na poluição orgânica de corpos aquáticos.",
+                parametersInfo = "A proliferação explosiva de decompositores aeróbios esgota o oxigênio da água, causando asfixia da fauna aquática."
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Perfil Gráfico da Eutrofização",
-                codeOrFormula = """\\text{Ponto de Descarte} \\implies \\text{Pico de DBO} + \\text{Queda do Oxigênio Dissolvido (OD)}""",
+                codeOrFormula = """\text{Ponto de Descarte} \implies \text{Pico de DBO} + \text{Queda do Oxigênio Dissolvido (OD)}""",
                 explanation = "O aumento da matéria orgânica demanda mais oxigênio das bactérias, derrubando o oxigênio livre para os peixes."
             )
         ),
-        goldTip = "Na prova do ENEM: Eutrofização NÃO mata peixes por envenenamento químico direto; mata peixes por ASFIXIA (as bactérias sugam todo o oxigênio dissolvido da água)!"
+        goldTip = "Na prova do ENEM: Eutrofização NÃO mata peixes por envenenamento químico direto; mata peixes por ASFIXIA (as bactérias sugam todo o oxigênio dissolvido da água)!",
+        assetImagePath = "images/ecologia/eutrofizacao.png"
     )
 
     // =========================================================================
@@ -614,6 +628,8 @@ O aquecimento global antropogênico e as mudanças climáticas constituem um dos
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. O Efeito Estufa Natural: Essencial para a Vida
+![Efeito Estufa, Aquecimento Global e Acidificação Oceânica](file:///android_asset/images/ecologia/efeito_estufa.png)
+
 - A radiação solar (luz visível e UV) atinge a Terra; a superfície se aquece e reemite essa energia na forma de **radiação infravermelha (ondas longas de calor)**.
 - Gases estufa na atmosfera absorvem o infravermelho e o reemitem de volta para a Terra.
 - **Importância:** Sem o efeito estufa natural, a Terra teria temperatura média de cerca de **-18 ºC** (congelada e estéril). Com o efeito estufa natural, a temperatura média é de cerca de **+15 ºC**!
@@ -679,26 +695,27 @@ Explique como o degelo das banquisas polares reduz o albedo da superfície oceâ
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Química da Acidificação Oceânica",
-                syntax = """CO_2 + H_2O \\rightleftharpoons H_2CO_3 \\rightleftharpoons H^+ + HCO_3^- \\quad ; \\quad H^+ + CO_3^{2-} \\rightleftharpoons HCO_3^-""",
-                description = "O excesso de íons H+ consome os íons carbonato livres do mar.",
-                parametersInfo = "Impede a síntese e biomineralização de esqueletos calcários de CaCO3."
+                termOrFunction = "Equilíbrio Químico da Acidificação Oceânica",
+                syntax = """\text{CO}_2 + \text{H}_2\text{O} \rightleftharpoons \text{H}_2\text{CO}_3 \rightleftharpoons \text{H}^+ + \text{HCO}_3^- \quad ; \quad \text{H}^+ + \text{CO}_3^{2-} \rightleftharpoons \text{HCO}_3^-""",
+                description = "Dissolução de dióxido de carbono na água do mar gerando íons H+ que consomem os íons carbonato livres.",
+                parametersInfo = "A escassez de carbonato impede a precipitação e biomineralização de esqueletos calcários de CaCO3 por corais e moluscos."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Potencial de Aquecimento Comparado (GWP)",
-                syntax = """\\text{GWP}(CO_2) = 1 \\quad | \\quad \\text{GWP}(CH_4) \\approx 28\\text{-}36 \\quad | \\quad \\text{GWP}(N_2O) \\approx 300""",
+                termOrFunction = "Potencial de Aquecimento Global Comparado (GWP)",
+                syntax = """\text{GWP}(\text{CO}_2) = 1 \quad | \quad \text{GWP}(\text{CH}_4) \approx 28\text{-}36 \quad | \quad \text{GWP}(\text{N}_2\text{O}) \approx 300""",
                 description = "Capacidade relativa de retenção térmica infravermelha de cada gás na atmosfera.",
-                parametersInfo = "Gases como metano e óxido nitroso possuem eficiência radiativa muito mais agressiva."
+                parametersInfo = "Gases como metano e óxido nitroso possuem eficiência radiativa muito mais agressiva por molécula que o CO2."
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "O Fenômeno do Branqueamento de Corais",
-                codeOrFormula = """\\text{Água Quente} \\implies \\text{Coral expulsa Zooxantelas} \\implies \\text{Esqueleto Branco Exposto} \\implies \\text{Inanição}""",
+                codeOrFormula = """\text{Água Quente} \implies \text{Coral expulsa Zooxantelas} \implies \text{Esqueleto Branco Exposto} \implies \text{Inanição}""",
                 explanation = "A perda das algas fotossintetizantes mutualistas impede o coral de obter glicose para sua sobrevivência."
             )
         ),
-        goldTip = "Para o ENEM: O efeito estufa natural NÃO é um vilão ecológico; sem ele a Terra seria uma bola de gelo a -18 ºC. O vilão é a INTENSIFICAÇÃO antrópica desmedida!"
+        goldTip = "Para o ENEM: O efeito estufa natural NÃO é um vilão ecológico; sem ele a Terra seria uma bola de gelo a -18 ºC. O vilão é a INTENSIFICAÇÃO antrópica desmedida!",
+        assetImagePath = "images/ecologia/efeito_estufa.png"
     )
 
     // =========================================================================
@@ -723,6 +740,8 @@ A sobrevivência das futuras gerações e a preservação do patrimônio biológ
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. O Conceito de Desenvolvimento Sustentável
+![Desenvolvimento Sustentável, Biorremediação e Matrizes Renováveis](file:///android_asset/images/ecologia/sustentabilidade.png)
+
 Consagrado pela Comissão Mundial sobre Meio Ambiente e Desenvolvimento da ONU em 1987 (Relatório Brundtland):
 > *"Desenvolvimento sustentável é aquele que atende às necessidades das gerações presentes sem comprometer a capacidade das gerações futuras de atenderem às suas próprias necessidades."*
 - **O Tripé da Sustentabilidade:**
@@ -796,25 +815,26 @@ Explique por que um país pode ter alta biocapacidade em seu território devido 
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Balanço de Sustentabilidade Ecológica",
-                syntax = """\\Delta_{\\text{Ecológica}} = \\text{Biocapacidade Territorial} - \\text{Pegada Ecológica}""",
-                description = "Quando o consumo ultrapassa a regeneração, opera-se em déficit ecológico.",
-                parametersInfo = "Mensurado anualmente pelo Global Footprint Network em hectares globais (gha)."
+                syntax = """\Delta_{\text{Ecológica}} = \text{Biocapacidade Territorial} - \text{Pegada Ecológica}""",
+                description = "Saldo ecológico que indica se a população vive dentro dos limites regenerativos da biosfera ou em déficit cumulativo.",
+                parametersInfo = "Mensurado anualmente pelo Global Footprint Network em hectares globais (gha) por habitante."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Ciclo Neutro dos Biocombustíveis",
-                syntax = """CO_2^{\\text{ar}} \\xrightarrow{\\text{Fotossíntese}} \\text{Biomassa de Cana} \\xrightarrow{\\text{Combustão}} CO_2^{\\text{ar}} \\quad (\\Delta C \\approx 0)""",
-                description = "Ciclagem rápida do carbono contemporâneo sem adição líquida de carbono fóssil antigo.",
-                parametersInfo = "Principal vantagem climática do etanol sobre a gasolina fóssil."
+                termOrFunction = "Ciclo de Carbono Neutro dos Biocombustíveis",
+                syntax = """\text{CO}_2^{\text{ar}} \xrightarrow{\text{Fotossíntese na Safra}} \text{Biomassa de Cana} \xrightarrow{\text{Combustão Veicular}} \text{CO}_2^{\text{ar}} \quad (\Delta C \approx 0)""",
+                description = "Ciclagem rápida em circuito fechado do carbono contemporâneo sem adição líquida de carbono fóssil pretérito à atmosfera.",
+                parametersInfo = "Principal vantagem climática e ambiental do etanol e biodiesel sobre a gasolina e o diesel fósseis."
             )
         ),
         solvedExamples = listOf(
             LessonExample(
                 title = "Mecanismo da Bioestimulação Petrolífera",
-                codeOrFormula = """\\text{Petróleo (Excesso de Carbono)} + \\text{Adição de Nitrogênio e Fósforo} \\implies \\text{Multiplicação Bacteriana Rápida}""",
+                codeOrFormula = """\text{Petróleo (Excesso de Carbono)} + \text{Adição de Nitrogênio e Fósforo} \implies \text{Multiplicação Bacteriana Rápida}""",
                 explanation = "A remoção do nutriente limitante (N e P) permite que a microbiota nativa degrade os hidrocarbonetos aceleradamente."
             )
         ),
-        goldTip = "Para o ENEM: Biorremediação usa BACTÉRIAS e microrganismos para digerir petróleo; Fitorremediação usa PLANTAS verdes para absorver metais pesados do solo!"
+        goldTip = "Para o ENEM: Biorremediação usa BACTÉRIAS e microrganismos para digerir petróleo; Fitorremediação usa PLANTAS verdes para absorver metais pesados do solo!",
+        assetImagePath = "images/ecologia/sustentabilidade.png"
     )
 }
 

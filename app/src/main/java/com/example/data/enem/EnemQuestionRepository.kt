@@ -110,6 +110,18 @@ class EnemQuestionRepository private constructor(private val context: Context) {
             Log.e(TAG, "Erro ao carregar questoes_enem_quimica.json: ${e.message}", e)
         }
 
+        // 7. Carrega questoes_apostila.json (Apostilas Edcley ENEM 2026 com gabaritos oficiais e comentários)
+        try {
+            val jsonApostila = context.assets.open("questoes_apostila.json").use { inputStream ->
+                BufferedReader(InputStreamReader(inputStream)).use { it.readText() }
+            }
+            val parsedApostila = parseJsonQuestions(jsonApostila, "apostila", seenIds)
+            allParsed.addAll(parsedApostila)
+            Log.d(TAG, "Carregadas com sucesso ${parsedApostila.size} questões das apostilas ENEM 2026")
+        } catch (e: Exception) {
+            Log.e(TAG, "Erro ao carregar questoes_apostila.json: ${e.message}", e)
+        }
+
         _questions.value = allParsed
         isLoaded = true
     }

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38BDF8"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)" rx="12"/>
+
+  <text x="400" y="32" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">
+    A Rota de Secreção Celular e o Sistema de Endomembranas
+  </text>
+  <text x="400" y="50" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">
+    Do gene à exportação: Ribossomos → RER → Complexo Golgiense → Exocitose
+  </text>
+
+  <!-- Step 1: Núcleo e RER -->
+  <g transform="translate(40, 80)">
+    <rect width="210" height="260" rx="8" fill="#1E293B" stroke="#6366F1" stroke-width="1.5"/>
+    <rect x="15" y="12" width="180" height="22" rx="4" fill="#6366F1" fill-opacity="0.2"/>
+    <text x="25" y="27" fill="#A5B4FC" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">1. NÚCLEO &amp; RER</text>
+
+    <!-- Nucleus part -->
+    <path d="M 15 50 Q 50 120 15 190" fill="#312E81" stroke="#818CF8" stroke-width="2"/>
+    <text x="25" y="120" fill="#E0E7FF" font-family="system-ui, sans-serif" font-size="9" transform="rotate(-90 25 120)" text-anchor="middle">DNA / RNAm</text>
+
+    <!-- RER Cisternae with attached ribosomes -->
+    <g transform="translate(60, 50)">
+      <path d="M 10 20 Q 70 10 120 25" stroke="#818CF8" stroke-width="6" fill="none"/>
+      <path d="M 10 50 Q 70 40 120 55" stroke="#818CF8" stroke-width="6" fill="none"/>
+      <path d="M 10 80 Q 70 70 120 85" stroke="#818CF8" stroke-width="6" fill="none"/>
+      <path d="M 10 110 Q 70 100 120 115" stroke="#818CF8" stroke-width="6" fill="none"/>
+
+      <!-- Ribosomes dots -->
+      <circle cx="30" cy="14" r="3" fill="#F43F5E"/><circle cx="60" cy="12" r="3" fill="#F43F5E"/>
+      <circle cx="90" cy="15" r="3" fill="#F43F5E"/><circle cx="45" cy="43" r="3" fill="#F43F5E"/>
+      <circle cx="75" cy="42" r="3" fill="#F43F5E"/><circle cx="105" cy="46" r="3" fill="#F43F5E"/>
+      <circle cx="35" cy="73" r="3" fill="#F43F5E"/><circle cx="65" cy="71" r="3" fill="#F43F5E"/>
+      <circle cx="95" cy="76" r="3" fill="#F43F5E"/>
+    </g>
+
+    <!-- Description -->
+    <text x="15" y="195" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">• RNAm traduzido no ribossomo</text>
+    <text x="15" y="212" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">• Proteína inserida no lúmen do RER</text>
+    <text x="15" y="230" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">• Enovelamento tridimensional</text>
+    <text x="15" y="247" fill="#FCA5A5" font-family="system-ui, sans-serif" font-size="9.5">Brotamento de Vesícula COP-II</text>
+  </g>
+
+  <!-- Arrow 1 to 2 with Transport Vesicle -->
+  <g transform="translate(255, 175)">
+    <line x1="5" y1="20" x2="35" y2="20" stroke="#38BDF8" stroke-width="2" marker-end="url(#arrow)"/>
+    <circle cx="20" cy="5" r="8" fill="#EC4899" stroke="#F472B6" stroke-width="1.2"/>
+    <text x="20" y="-7" fill="#F472B6" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">Vesícula</text>
+  </g>
+
+  <!-- Step 2: Complexo Golgiense -->
+  <g transform="translate(295, 80)">
+    <rect width="230" height="260" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.5"/>
+    <rect x="15" y="12" width="200" height="22" rx="4" fill="#F59E0B" fill-opacity="0.2"/>
+    <text x="25" y="27" fill="#FBBF24" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">2. COMPLEXO GOLGIENSE</text>
+
+    <!-- Golgi Stacks (cis to trans) -->
+    <g transform="translate(30, 45)">
+      <!-- Face Cis (Receiving) -->
+      <path d="M 20 20 Q 80 40 140 20" stroke="#FBBF24" stroke-width="8" stroke-linecap="round" fill="none"/>
+      <text x="145" y="15" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="9">Face Cis</text>
+
+      <!-- Medial Cisternae -->
+      <path d="M 15 50 Q 80 70 145 50" stroke="#F59E0B" stroke-width="8" stroke-linecap="round" fill="none"/>
+      <path d="M 12 80 Q 80 100 148 80" stroke="#D97706" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+      <!-- Face Trans (Shipping) -->
+      <path d="M 20 110 Q 80 130 140 110" stroke="#B45309" stroke-width="8" stroke-linecap="round" fill="none"/>
+      <text x="145" y="125" fill="#F43F5E" font-family="system-ui, sans-serif" font-size="9">Face Trans</text>
+    </g>
+
+    <!-- Description -->
+    <text x="15" y="195" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">• Glicosilação final (adição de açúcares)</text>
+    <text x="15" y="212" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">• Empacotamento e endereçamento</text>
+    <text x="15" y="230" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">• Formação de Lisossomos primários</text>
+    <text x="15" y="247" fill="#FDE68A" font-family="system-ui, sans-serif" font-size="9.5">Formação do Acrossomo espermático</text>
+  </g>
+
+  <!-- Arrow 2 to 3 with Secretory Vesicle -->
+  <g transform="translate(530, 175)">
+    <line x1="5" y1="20" x2="35" y2="20" stroke="#38BDF8" stroke-width="2" marker-end="url(#arrow)"/>
+    <circle cx="20" cy="5" r="9" fill="#10B981" stroke="#34D399" stroke-width="1.2"/>
+    <text x="20" y="-7" fill="#34D399" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">Vesícula</text>
+  </g>
+
+  <!-- Step 3: Membrana & Exocitose -->
+  <g transform="translate(570, 80)">
+    <rect width="190" height="260" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.5"/>
+    <rect x="15" y="12" width="160" height="22" rx="4" fill="#10B981" fill-opacity="0.2"/>
+    <text x="25" y="27" fill="#34D399" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">3. EXOCITOSE</text>
+
+    <!-- Plasma membrane fusion -->
+    <g transform="translate(25, 45)">
+      <!-- Membrane line -->
+      <path d="M 120 10 L 120 50 Q 80 65 120 80 L 120 140" stroke="#38BDF8" stroke-width="6" fill="none"/>
+      <!-- Secreted protein molecules leaving -->
+      <circle cx="85" cy="65" r="6" fill="#10B981"/>
+      <circle cx="145" cy="50" r="4" fill="#34D399"/>
+      <circle cx="150" cy="75" r="4" fill="#34D399"/>
+      <circle cx="140" cy="95" r="4" fill="#34D399"/>
+    </g>
+
+    <text x="15" y="195" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">• Fusão da vesícula secretora</text>
+    <text x="15" y="212" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="10">• Liberação no meio extracelular</text>
+    <text x="15" y="230" fill="#34D399" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">• Exemplos no ENEM:</text>
+    <text x="15" y="247" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="9">Insulina, anticorpos, enzimas digestivas</text>
+  </g>
+
+  <!-- Footer Banner -->
+  <rect x="40" y="355" width="720" height="65" rx="8" fill="#0F172A" stroke="#334155"/>
+  <text x="55" y="377" fill="#FBBF24" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">💡 RESUMO PARA A PROVA DO ENEM:</text>
+  <text x="55" y="396" fill="#CBD5E1" font-family="system-ui, sans-serif" font-size="10.5">
+    Se a questão citar células com imensa produção de proteínas para fora (ex.: <tspan fill="#6EE7B7">células acinares do pâncreas</tspan> produzindo suco digestivo ou <tspan fill="#6EE7B7">plasmócitos</tspan> secretando anticorpos), espere encontrar abundância extrema de <tspan fill="#FBBF24" font-weight="bold">RER</tspan> e <tspan fill="#FBBF24" font-weight="bold">Complexo Golgiense</tspan>!
+  </text>
+</svg>

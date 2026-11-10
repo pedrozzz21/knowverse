@@ -44,6 +44,8 @@ A Genética é o ramo da Biologia dedicado ao estudo da hereditariedade e da var
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. Estrutura Molecular dos Ácidos Nucleicos
+![Estrutura da Dupla Hélice de DNA e Dogma Central](file:///android_asset/images/biologia/dna_dupla_helice.svg)
+
 Os ácidos nucleicos são polímeros formados pela união linear de **nucleotídeos**, cada um constituído por:
 1. **Fosfato** (grupo fosfato \( \text{PO}_4^{3-} \));
 2. **Pentose** (açúcar de 5 carbonos: desoxirribose no DNA, sem oxigênio no carbono 2'; ribose no RNA, com grupo hidroxila no carbono 2');
@@ -149,16 +151,16 @@ Uma cadeia polipeptídica funcional é constituída por 150 resíduos de aminoá
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Regra de Chargaff (DNA de Fita Dupla)",
-                syntax = """\%A = \%T \quad \text{e} \quad \%C = \%G \implies \frac{A + G}{T + C} = 1""",
-                description = "Proporção estequiométrica das bases nitrogenadas purinas e pirimidinas.",
-                parametersInfo = "Válido apenas para DNA bicatenário. Em RNA ou vírus de fita simples a proporção varia livremente."
+                termOrFunction = "Dogma Central da Biologia Molecular",
+                syntax = """\text{DNA} \xrightarrow[\text{DNA Polimerase}]{\text{Replicação}} \text{DNA} \xrightarrow[\text{RNA Polimerase}]{\text{Transcrição}} \text{mRNA} \xrightarrow[\text{Ribossomo + tRNA}]{\text{Tradução}} \text{Polipeptídeo}""",
+                description = "Fluxo unidirecional da informação genética celular: replicação, transcrição e síntese proteica.",
+                parametersInfo = "Em retrovírus (como o HIV), a enzima Transcriptase Reversa realiza a transcrição reversa (RNA → cDNA)."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Equação Fundamental do Fenótipo",
-                syntax = """\text{Fenótipo (F)} = \text{Genótipo (G)} + \text{Ambiente (A)} + \text{Epigenética (E)}""",
-                description = "Expressão de características biológicas moduladas pelo meio.",
-                parametersInfo = "Marcas epigenéticas (metilação de citosinas) modulam a transcrição sem alterar a sequência nucleotídica."
+                termOrFunction = "Regras de Pareamento de Bases (Chargaff)",
+                syntax = """[A] = [T] \text{ (2 Pontes de Hidrogênio)} \quad \text{e} \quad [G] \equiv [C] \text{ (3 Pontes de Hidrogênio)}""",
+                description = "Estequiometria do pareamento de bases nitrogenadas em ácidos nucleicos bicatenários.",
+                parametersInfo = "Quanto maior o teor de pares G≡C, maior é a estabilidade térmica e a temperatura de desnaturação (Tm) da fita dupla."
             )
         ),
         solvedExamples = listOf(
@@ -168,7 +170,8 @@ Uma cadeia polipeptídica funcional é constituída por 150 resíduos de aminoá
                 explanation = "O códon de parada UAA recruta fatores de terminação, liberando o peptídeo Met-Trp-Phe com 3 resíduos."
             )
         ),
-        goldTip = "Lembre-se da regra mnemônica: Agnaldo Timóteo (A=T, 2 pontes) e Gal Costa (G≡C, 3 pontes)!"
+        goldTip = "Lembre-se da regra mnemônica: Agnaldo Timóteo (A=T, 2 pontes) e Gal Costa (G≡C, 3 pontes)!",
+        assetImagePath = "images/biologia/dna_dupla_helice.svg"
     )
 
     // =========================================================================
@@ -205,6 +208,8 @@ Mendel obteve sucesso onde seus antecessores falharam devido ao rigor científic
 - Uso de **linhagens puras** (geração P), obtidas após várias gerações de autofecundação sucessiva.
 
 ### 2. O Cruzamento Monoíbrido
+![Primeira Lei de Mendel e Segregação Meiótica](file:///android_asset/images/biologia/primeira_lei_mendel.svg)
+
 - **Geração Parental (P):** Amarela Pura (\( AA \)) \( \times \) Verde Pura (\( aa \)).
 - **Geração F1:** 100% Amarela Heterozigota (\( Aa \)). A característica verde parecia ter desaparecido.
 - **Autofecundação de F1 (\( Aa \times Aa \)):**
@@ -312,16 +317,16 @@ Um casal fenotipicamente normal para a pigmentação da pele e sem histórico fa
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Proporção Fenotípica Clássica da 1ª Lei de Mendel (F2)",
-                syntax = """\text{Cruzamento } Aa \times Aa \implies 3 \, [A\_] \text{ (Dominante)} : 1 \, [aa] \text{ (Recessivo)}""",
-                description = "Proporção de 75% dominante para 25% recessivo em herança com dominância completa.",
-                parametersInfo = "Decorre da segregação dos cromossomos homólogos na Anáfase I da Meiose."
+                termOrFunction = "Segregação Alélica e Proporção F2",
+                syntax = """P: \; AA \times aa \implies F_1: \; Aa \; (100\%) \xrightarrow{\text{Autofecundação}} F_2: \; 1\,AA : 2\,Aa : 1\,aa \implies 3\text{ Dominantes} : 1\text{ Recessivo}""",
+                description = "Segregação dos cromossomos homólogos na Anáfase I meiótica determinando as proporções mendelianas clássicas.",
+                parametersInfo = "Decorre da separação física dos alelos nos gametas. A proporção genotípica é 1:2:1 e a fenotípica é 3:1."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Proporção com Alelos Letais Recessivos em Vivos",
-                syntax = """\text{Espaço Amostral Válido: } 2 \, [Aa] : 1 \, [aa] \implies P(Aa) = \frac{2}{3}, \quad P(aa) = \frac{1}{3}""",
-                description = "O genótipo homozigoto letal (AA) é expurgado do denominador das probabilidades de nascidos vivos.",
-                parametersInfo = "Crucial para questões do ENEM que mencionam 'entre os descendentes sobreviventes'."
+                termOrFunction = "Distorção Fenotípica por Alelos Letais",
+                syntax = """Mm \times Mm \implies 1\,MM \text{ (Morte Embrionária)} : 2\,Mm \text{ (Vivo)} : 1\,mm \text{ (Vivo)} \implies \text{Proporção Observada: } 2 : 1""",
+                description = "Eliminação do homozigoto letal do espaço amostral dos indivíduos nascidos vivos.",
+                parametersInfo = "No cálculo de probabilidades no ENEM, o denominador de indivíduos viáveis torna-se 3 (2/3 heterozigotos e 1/3 homozigotos viáveis)."
             )
         ),
         solvedExamples = listOf(
@@ -331,7 +336,8 @@ Um casal fenotipicamente normal para a pigmentação da pele e sem histórico fa
                 explanation = "O surgimento de um único indivíduo recessivo prova incontestavelmente que o genitor dominante portava o alelo recessivo."
             )
         ),
-        goldTip = "Atenção máxima ao enunciado do ENEM: quando a questão perguntar 'qual a probabilidade de o casal ter uma MENINA ALBINA', multiplique a probabilidade genética (ex: 1/4) por 1/2 pelo sexo biológico!"
+        goldTip = "Atenção máxima ao enunciado do ENEM: quando a questão perguntar 'qual a probabilidade de o casal ter uma MENINA ALBINA', multiplique a probabilidade genética (ex: 1/4) por 1/2 pelo sexo biológico!",
+        assetImagePath = "images/biologia/primeira_lei_mendel.svg"
     )
 
     // =========================================================================
@@ -377,6 +383,8 @@ Para um genótipo com \( n \) pares de alelos em heterozigose segregando indepen
 - Exemplo: O genótipo \( AaBbCcDD \) possui 3 pares heterozigotos (\( Aa, Bb, Cc \)) e 1 homozigoto (\( DD \)). Logo, produz \( 2^3 = 8 \) gametas diferentes em proporções iguais (\( 1/8 \) cada).
 
 ### 3. Ligação Gênica (Linkage) e Experimentos de Morgan
+![2ª Lei de Mendel vs. Ligação Gênica (Linkage) e Crossing-Over](file:///android_asset/images/biologia/segunda_lei_linkage.svg)
+
 Quando dois genes estão localizados no mesmo cromossomo sintênico:
 - **Linkage Total (sem permutação):** Se a distância entre os genes for insignificante, os alelos não sofrem crossing-over e migram juntos. Um indivíduo cis (\( AB/ab \)) produz apenas dois tipos de gametas: 50% \( AB \) e 50% \( ab \).
 - **Linkage Parcial com Crossing-Over:** Durante a subfase diplóteno da Prófase I da Meiose, cromátides não-irmãs trocam fragmentos equivalentes nos quiasmas. São gerados gametas parentais (sem permutação, em maior frequência) e gametas recombinantes (com permutação, em menor frequência).
@@ -483,16 +491,16 @@ Se uma planta com genótipo \( \frac{Ab}{aB} \) for submetida a um cruzamento-te
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Número de Gametas em Segregação Independente",
-                syntax = """N_{\text{gametas}} = 2^n \quad (n = \text{número de pares heterozigotos independentes})""",
-                description = "Cálculo da diversidade meiótica de gametas para poli-híbridos mendelianos.",
-                parametersInfo = "Válido apenas quando todos os pares segregam de forma independente (não ligados)."
+                termOrFunction = "Taxa de Recombinação e Distância Gênica",
+                syntax = """\text{FR} = \frac{\sum \text{Recombinantes}}{\text{Total de Descendentes}} \times 100\% \iff 1\% \text{ Recombinação} = 1\text{ cM (Centimorgan)}""",
+                description = "Determinação da distância física relativa entre dois locos gênicos ligados no mesmo cromossomo.",
+                parametersInfo = "Varia entre 0% (ligação gênica completa / ausência de crossing) e 50% (segregação independente de Mendel)."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Taxa de Recombinação Gênica (FR)",
-                syntax = """\text{FR} = \frac{\sum \text{Recombinantes}}{\text{Total de Indivíduos}} \times 100\% = \text{Distância em Centimorgans (cM)}""",
-                description = "Proporção de gametas ou indivíduos originados de crossing-over.",
-                parametersInfo = "1 cM = 1% de recombinação. Varia de 0% (linkage total) a 50% (segregação independente)."
+                termOrFunction = "Gametas em Ligação Gênica (Configuração Cis)",
+                syntax = """\frac{AB}{ab} \implies \text{Parentais: } AB, ab \left(\frac{100 - \text{FR}}{2}\right) \quad | \quad \text{Recombinantes: } Ab, aB \left(\frac{\text{FR}}{2}\right)""",
+                description = "Distribuição percentual dos gametas parentais e recombinantes gerados por permutação na prófase I meiótica.",
+                parametersInfo = "Na configuração Trans (Ab/aB), os parentais tornam-se Ab e aB, enquanto os recombinantes passam a ser AB e ab."
             )
         ),
         solvedExamples = listOf(
@@ -502,7 +510,8 @@ Se uma planta com genótipo \( \frac{Ab}{aB} \) for submetida a um cruzamento-te
                 explanation = "Parentais são sempre a maioria (>50% somados); recombinantes surgem pela troca no quiasma meiótico."
             )
         ),
-        goldTip = "Identifique os parentais procurando sempre os dois maiores grupos de descendentes no cruzamento-teste. Os dois menores grupos são os recombinantes!"
+        goldTip = "Identifique os parentais procurando sempre os dois maiores grupos de descendentes no cruzamento-teste. Os dois menores grupos são os recombinantes!",
+        assetImagePath = "images/biologia/segunda_lei_linkage.svg"
     )
 
     // =========================================================================
@@ -536,6 +545,8 @@ A genética humana aplicada à medicina é um dos eixos mais cobrados na prova d
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. Sistema Sanguíneo ABO: Polialelia e Codominância
+![Sistema Sanguíneo ABO, Fator Rh e Doença Hemolítica](file:///android_asset/images/biologia/sistema_abo_rh.svg)
+
 A determinação do tipo sanguíneo ABO depende de uma série de 3 alelos de um único gene no cromossomo 9:
 - Relação de dominância: \( I^A = I^B > i \).
 - Genótipos e Fenótipos:
@@ -671,16 +682,16 @@ Um casal daltônico tem uma filha que apresenta cariótipo com 45 cromossomos e 
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Genótipos do Sistema ABO",
-                syntax = """\text{A: } I^A I^A, I^A i \quad | \quad \text{B: } I^B I^B, I^B i \quad | \quad \text{AB: } I^A I^B \quad | \quad \text{O: } ii""",
-                description = "Polialelia e codominância no loco do cromossomo 9 humano.",
-                parametersInfo = "Dois alelos por indivíduo na população."
+                termOrFunction = "Regra de Compatibilidade Transfusional de Hemácias",
+                syntax = """\text{Antígenos da Hemácia Doadora} \cap \text{Anticorpos do Plasma Receptor} = \emptyset""",
+                description = "Critério imunológico para transfusão de hemácias concentradas sem risco de hemólise ou aglutinação intravascular.",
+                parametersInfo = "O sangue O Rh- não possui aglutinogênios A, B nem Rh (Doador Universal); AB Rh+ não possui anticorpos anti-A, anti-B nem anti-Rh (Receptor Universal)."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Condição Obrigatória da Eritroblastose Fetal (DHRN)",
-                syntax = """\text{Mãe } Rh^- (rr) \quad \times \quad \text{Pai } Rh^+ (R\_) \implies \text{Feto } Rh^+ (Rr) \quad [\text{Mãe Sensibilizada}]""",
-                description = "Destruição imune das hemácias fetais por anticorpos IgG anti-Rh maternos.",
-                parametersInfo = "A profilaxia é feita com imunoglobulina anti-D administrada na puérpera até 72h pós-parto."
+                termOrFunction = "Mecanismo Fisiopatológico da Eritroblastose Fetal",
+                syntax = """\text{Mãe } Rh^- \text{ sensibilizada} \xrightarrow{\text{Gestação Subsequente}} \text{IgG Materna anti-Rh} \xrightarrow{\text{Placenta}} \text{Hemólise Fetal } Rh^+""",
+                description = "Destruição imunológica das hemácias fetais por anticorpos maternos da classe IgG capazes de transpor a barreira placentária.",
+                parametersInfo = "Profilaxia com imunoglobulina anti-Rh (imunização passiva) até 72 horas pós-parto neutraliza as hemácias fetais antes da sensibilização materna."
             )
         ),
         solvedExamples = listOf(
@@ -690,7 +701,8 @@ Um casal daltônico tem uma filha que apresenta cariótipo com 45 cromossomos e 
                 explanation = "Hemácias O não possuem antígenos A ou B; logo, não reagem com anticorpos do receptor."
             )
         ),
-        goldTip = "Em transfusão de hemácias, olhe sempre para os ANTÍGENOS do doador e para os ANTICORPOS do receptor!"
+        goldTip = "Em transfusão de hemácias, olhe sempre para os ANTÍGENOS do doador e para os ANTICORPOS do receptor!",
+        assetImagePath = "images/biologia/sistema_abo_rh.svg"
     )
 
     // =========================================================================
@@ -717,6 +729,8 @@ A Biotecnologia contemporânea representa a convergência entre a biologia molec
 ## 4. Explicação Teórica Aprofundada
 
 ### 1. Tecnologia do DNA Recombinante e Transgênicos
+![Biotecnologia: DNA Recombinante, Ciclos da PCR e Eletroforese](file:///android_asset/images/biologia/clonagem_dna_recombinante.svg)
+
 A construção de um organismo transgênico baseia-se na universalidade do código genético:
 1. **Identificação e Isolamento:** O gene de interesse (ex: gene da insulina humana ou gene da toxina *Bt* da bactéria *Bacillus thuringiensis*) é identificado no genoma doador.
 2. **Clivagem com Enzimas de Restrição:** Endonucleases bacterianas reconhecem sequências palindrômicas específicas no DNA (ex: \( 5'-\text{GAATTC}-3' \) da enzima *EcoRI*) e clivam ambas as fitas de forma desalinhada, criando "extremidades coesivas" (*sticky ends*).
@@ -827,16 +841,16 @@ Considere uma reação de PCR iniciada com apenas 5 moléculas de DNA fita dupla
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Amplificação Exponencial na PCR",
-                syntax = """N_{\text{cópias}} = N_0 \times 2^n \quad (n = \text{número de ciclos térmicos})""",
-                description = "Duplicação da quantidade de fitas-alvo a cada ciclo de desnaturação, anelamento e extensão.",
-                parametersInfo = "Taq polimerase atua a 72°C sem desnaturar na fase de 95°C."
+                termOrFunction = "Rota Bioquímica do DNA Recombinante",
+                syntax = """\text{mRNA Maduro} \xrightarrow{\text{Transcriptase Reversa}} \text{cDNA} \xrightarrow[\text{DNA Ligase}]{\text{Enzima de Restrição}} \text{Plasmídeo Recombinante} \to \text{Bactéria Hospedeira}""",
+                description = "Engenharia genética para expressão de proteínas eucarióticas em bactérias sem interferência de íntrons.",
+                parametersInfo = "A universalidade do código genético viabiliza a tradução da proteína humana pelos ribossomos bacterianos."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Princípio Físico da Eletroforese de DNA",
-                syntax = """\text{DNA (Carga Negativa: } \text{PO}_4^{3-}) \xrightarrow{\text{Campo Elétrico}} \text{Polo Positivo (Ânodo)}""",
-                description = "Separação de fragmentos por peso molecular e raio hidrodinâmico através da matriz de gel.",
-                parametersInfo = "Velocidade de migração é inversamente proporcional ao logaritmo do tamanho em pares de bases."
+                termOrFunction = "Ciclo Térmico da Reação em Cadeia da Polimerase (PCR)",
+                syntax = """\text{Desnaturação (95}^\circ\text{C)} \xrightarrow{\text{Primers}} \text{Anelamento (55}^\circ\text{C)} \xrightarrow{\text{Taq Polimerase}} \text{Extensão (72}^\circ\text{C)} \implies N = N_0 \times 2^n""",
+                description = "Amplificação exponencial in vitro de fragmentos de DNA por ciclos térmicos sequenciais.",
+                parametersInfo = "A enzima Taq Polimerase (de Thermus aquaticus) resiste a sucessivos ciclos de aquecimento a 95°C sem desnaturar."
             )
         ),
         solvedExamples = listOf(
@@ -846,6 +860,7 @@ Considere uma reação de PCR iniciada com apenas 5 moléculas de DNA fita dupla
                 explanation = "Fundamental para expressar proteínas humanas em bactérias, superando a incapacidade procariótica de realizar splicing."
             )
         ),
-        goldTip = "Em eletroforese no ENEM: a banda que correu mais longe é a MENOR em tamanho de pares de bases! O DNA sempre corre em direção ao polo POSITIVO (+)."
+        goldTip = "Em eletroforese no ENEM: a banda que correu mais longe é a MENOR em tamanho de pares de bases! O DNA sempre corre em direção ao polo POSITIVO (+).",
+        assetImagePath = "images/biologia/clonagem_dna_recombinante.svg"
     )
 }

@@ -570,14 +570,15 @@ object QuestionBankRepository {
         val optionPrefixRegex = Regex("^[A-Ea-e][)\\.]\\s*")
         val markdownImageRegex = Regex("!\\[[^\\]]*]\\([^)]*\\)")
 
-        // Importa integralmente todos os 6 bancos JSON oficiais da API do ENEM (2.382 questões)
+        // Importa integralmente todos os bancos JSON oficiais da API do ENEM e as Apostilas Edcley
         val enemAssetFiles = listOf(
             "questoes_enem_linguagens.json" to "Linguagens",
             "questoes_enem_geografia.json" to "Geografia",
             "questoes_enem_humanas.json" to "História",
             "questoes_enem_quimica.json" to "Química",
             "questoes_enem_natureza.json" to "Biologia",
-            "banco_questoes.json" to "Matemática"
+            "banco_questoes.json" to "Matemática",
+            "questoes_apostila.json" to "Matemática"
         )
 
         val listType = com.squareup.moshi.Types.newParameterizedType(List::class.java, Map::class.java)
@@ -626,6 +627,18 @@ object QuestionBankRepository {
                                 rawDisc.contains("Física", ignoreCase = true) || rawTopic.contains("Física", ignoreCase = true) -> "Física"
                                 rawDisc.contains("Química", ignoreCase = true) || rawTopic.contains("Química", ignoreCase = true) -> "Química"
                                 else -> "Biologia"
+                            }
+                        }
+                        "questoes_apostila.json" -> {
+                            val itemSubj = (item["subject"] as? String).orEmpty()
+                            when {
+                                itemSubj.contains("Fís", ignoreCase = true) -> "Física"
+                                itemSubj.contains("Biol", ignoreCase = true) -> "Biologia"
+                                itemSubj.contains("Quím", ignoreCase = true) -> "Química"
+                                itemSubj.contains("Ling", ignoreCase = true) -> "Linguagens"
+                                itemSubj.contains("Geog", ignoreCase = true) -> "Geografia"
+                                itemSubj.contains("Hist", ignoreCase = true) || itemSubj.contains("Human", ignoreCase = true) -> "História"
+                                else -> "Matemática"
                             }
                         }
                         else -> defaultSubj

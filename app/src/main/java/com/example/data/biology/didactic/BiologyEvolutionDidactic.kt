@@ -51,6 +51,8 @@ Fósseis são restos mineralizados de organismos (ossos, dentes, conchas) ou ves
 - **Datação Radiométrica:** Determina a idade absoluta de rochas e fósseis pela taxa de decaimento de isótopos radioativos com meia-vida conhecida (ex: Carbono-14 com meia-vida de 5.730 anos para materiais orgânicos recentes de até 50 mil anos; Urânio-235 ou Potássio-Argônio para eras geológicas de milhões de anos).
 
 ### 2. Homologia e Irradiação Adaptativa
+![Homologia Evolutiva vs. Analogia e Convergência](file:///android_asset/images/biologia/homologia_analogia_evolutiva.svg)
+
 - **Definição:** Diz-se que duas estruturas são homólogas quando derivam do mesmo primórdio embrionário em um ancestral comum.
 - **Irradiação Adaptativa (Divergência Evolutiva):** Fenômeno em que uma única espécie ancestral coloniza diversos habitats desocupados com diferentes nichos ecológicos, sofrendo pressões de seleção distintas. Ao longo do tempo, a estrutura anatômica básica se diversifica funcionalmente:
   - Braço humano (manipulação de ferramentas e preensão);
@@ -155,15 +157,15 @@ Explique por que as asas de um morcego e as asas de uma ave podem ser classifica
         formulas = listOf(
             FormulaOrSyntaxItem(
                 termOrFunction = "Divergência Adaptativa (Homologia)",
-                syntax = """\text{Ancestral Comum Compartilhado} \xrightarrow{\text{Nichos Distintos}} \text{Estruturas Homólogas (Mesma Origem)}""",
-                description = "Radiação adaptativa diversifica o plano corporal em múltiplas especializações funcionais.",
-                parametersInfo = "Exemplo: Braço humano, asa de morcego e nadadeira de baleia."
+                syntax = """\text{Ancestral Tetrápode Comum} \xrightarrow{\text{Nichos Diversos}} \text{Membros com Mesmo Padrão Ósseo (Úmero, Rádio, Ulna, Carpo)}""",
+                description = "Radiação adaptativa diversifica o plano corporal em múltiplas especializações funcionais preservando a mesma origem embrionária.",
+                parametersInfo = "Exemplo clássico: Braço humano, asa de morcego, nadadeira de baleia e pata dianteira de cavalo."
             ),
             FormulaOrSyntaxItem(
                 termOrFunction = "Convergência Adaptativa (Analogia)",
-                syntax = """\text{Linhagens Filogenéticas Distintas} \xrightarrow{\text{Mesmo Desafio Ambiental}} \text{Estruturas Análogas (Mesma Função)}""",
-                description = "Pressões de seleção idênticas moldam soluções anatômicas funcionalmente semelhantes.",
-                parametersInfo = "Exemplo: Asa de inseto e asa de ave; formato hidrodinâmico de tubarão e golfinho."
+                syntax = """\text{Linhagens Distintas (Peixes / Répteis / Mamíferos)} \xrightarrow{\text{Pressão Hidrodinâmica na Água}} \text{Morfologia Fusiforme Análoga}""",
+                description = "Pressões de seleção naturais idênticas moldam soluções anatômicas funcionalmente semelhantes sem ancestralidade direta.",
+                parametersInfo = "Exemplo clássico: Asas de insetos e aves; corpo hidrodinâmico de tubarões, ictiossauros e golfinhos."
             )
         ),
         solvedExamples = listOf(
@@ -173,7 +175,8 @@ Explique por que as asas de um morcego e as asas de uma ave podem ser classifica
                 explanation = "Quanto menor o número de diferenças na sequência de proteínas conservadas, mais recente é o ancestral comum."
             )
         ),
-        goldTip = "Em questões do ENEM: se a questão fala de mesma origem embrionária / mesmo ancestral = HOMOLOGIA! Se fala de origens diferentes com mesma função por viverem no mesmo ambiente = ANALOGIA / CONVERGÊNCIA!"
+        goldTip = "Em questões do ENEM: se a questão fala de mesma origem embrionária / mesmo ancestral = HOMOLOGIA! Se fala de origens diferentes com mesma função por viverem no mesmo ambiente = ANALOGIA / CONVERGÊNCIA!",
+        assetImagePath = "images/biologia/homologia_analogia_evolutiva.svg"
     )
 
     // =========================================================================
@@ -206,6 +209,8 @@ No início do século XIX, em sua obra seminal *Philosophie Zoologique* (1809), 
 Até o final do século XVIII, predominava na ciência ocidental a visão fixista: todas as espécies teriam sido criadas prontas e imutáveis por um ato divino. Lamarck observou séries cronológicas de moluscos fósseis nas bacias sedimentares de Paris e notou que as conchas mais antigas sofriam modificações graduais e contínuas até chegarem às formas vivas contemporâneas. Lamarck propôs então que a vida possuía uma "tendência inata para a complexidade" (*le pouvoir de la vie*), impulsionada por necessidades impostas pelas mudanças climáticas e geográficas do planeta.
 
 ### 2. Os Dois Postulados Lamarckistas
+![Teorias Evolutivas: Lamarckismo vs. Darwinismo / Neodarwinismo](file:///android_asset/images/biologia/lamarck_vs_darwin.svg)
+
 1. **Primeira Lei — Uso e Desuso:**
    - Quando o meio se altera, surgem novas necessidades ambientais.
    - O organismo responde adaptativamente alterando o comportamento: o uso repetido e intenso de um determinado membro promove seu fluxo de fluidos internos, fortalecendo e aumentando suas dimensões (hipertrofia somática).
@@ -303,16 +308,16 @@ A cauda do pavão-macho é exuberante e pesada, o que o torna mais lento e mais 
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Raciocínio Lamarckista (Teleológico e Incorreto)",
-                syntax = """\text{Mudança Ambiental} \implies \text{Nova Necessidade} \implies \text{Uso / Desuso} \implies \text{Transmissão Adquirida}""",
-                description = "O meio induz a alteração necessária, e o organismo adapta-se pelo próprio esforço somático.",
-                parametersInfo = "Refutado pela Barreira de Weismann (somatoplasma não altera o DNA do germinoplasma)."
+                termOrFunction = "Barreira de Weismann (Genética Clássica)",
+                syntax = """\text{Células Somáticas (Mutações Adquiridas em Vida)} \centernot\longrightarrow \text{Células Germinativas (Gametogênese: DNA Não Modificado)}""",
+                description = "Separação biológica estrita entre as células do corpo somático e as linhagens germinativas meióticas.",
+                parametersInfo = "Demonstrado no experimento clássico de August Weismann com caudas amputadas de camundongos (1889)."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Barreira de Weismann (Genética Clássica)",
-                syntax = """\text{Célula Somática (Modificada pelo Meio)} \centernot\longrightarrow \text{Célula Germinativa (Gameta: DNA Intacto)}""",
-                description = "Isolamento ontogenético entre o corpo somático e a linhagem celular gamética hereditária.",
-                parametersInfo = "Demonstrado no experimento das caudas amputadas de camundongos (1889)."
+                termOrFunction = "Contraste Central: Lamarckismo vs. Darwinismo",
+                syntax = """\text{Lamarck: Meio Induz a Modificação no Indivíduo} \quad \longleftrightarrow \quad \text{Darwin: Meio Seleciona a Variação Prévia}""",
+                description = "Diferença conceitual chave entre o pensamento teleológico/direcionado e a seleção natural baseada em variabilidade estocástica.",
+                parametersInfo = "No ENEM, qualquer assertiva que afirme que o ambiente 'fez surgir' ou 'induziu a mutação para' está biologicamente incorreta."
             )
         ),
         solvedExamples = listOf(
@@ -322,7 +327,8 @@ A cauda do pavão-macho é exuberante e pesada, o que o torna mais lento e mais 
                 explanation = "Memorize essa antítese fundamental: para Lamarck o ambiente 'cria'; para Darwin o ambiente 'filtra'."
             )
         ),
-        goldTip = "Em questões do ENEM, fuja de frases com verbos finalistas como: 'desenvolveu para conseguir', 'mudou a fim de sobreviver', 'adaptou-se para escapar'. Esses verbos indicam raciocínio lamarckista!"
+        goldTip = "Em questões do ENEM, fuja de frases com verbos finalistas como: 'desenvolveu para conseguir', 'mudou a fim de sobreviver', 'adaptou-se para escapar'. Esses verbos indicam raciocínio lamarckista!",
+        assetImagePath = "images/biologia/lamarck_vs_darwin.svg"
     )
 
     // =========================================================================
@@ -373,6 +379,8 @@ Entre 1930 e 1950, cientistas como Theodosius Dobzhansky, Ernst Mayr, George Gay
 - **Atuação da Seleção Natural:** A seleção natural atua como um filtro biológico não-aleatório. Ela não gera variabilidade, mas determina quais variantes aumentam ou diminuem de frequência alélica no *pool* gênico da população.
 
 ### 3. Modos de Ação da Seleção Natural
+![Tipos de Seleção Natural: Estabilizadora, Direcional e Disruptiva](file:///android_asset/images/biologia/tipos_selecao_natural.svg)
+
 1. **Seleção Direcional:**
    - Ocorre quando as condições ecológicas mudam ou quando uma espécie coloniza um novo ambiente.
    - Um fenótipo extremo antes raro passa a ter maior aptidão biológica (*fitness*) e sua frequência aumenta progressivamente.
@@ -469,16 +477,16 @@ A anemia falciforme é uma doença genética recessiva letal em homozigose (\( s
         """.trimIndent(),
         formulas = listOf(
             FormulaOrSyntaxItem(
-                termOrFunction = "Equação do Neodarwinismo (Síntese Moderna)",
-                syntax = """\text{Variabilidade (Mutação + Recombinação)} + \text{Filtro Seletivo (Seleção Natural)} = \text{Adaptação}""",
-                description = "Mutação é a fonte primária de novidade; a seleção natural orienta de forma não-aleatória a adaptação.",
-                parametersInfo = "A deriva genética pode atuar aleatoriamente em populações pequenas."
+                termOrFunction = "Rota da Seleção Natural Direcional (Superbactérias)",
+                syntax = """\text{População com Mutantes Raros} \xrightarrow{\text{Antibiótico / Praguicida}} \text{Eliminação de Sensíveis} \to \text{Proliferação e Domínio de Resistentes}""",
+                description = "Pressão seletiva ambiental favorece os raros indivíduos pré-adaptados, aumentando sua frequência na população.",
+                parametersInfo = "O agente antimicrobiano não induz mutações funcionais; ele atua unicamente como filtro seletivo direcional."
             ),
             FormulaOrSyntaxItem(
-                termOrFunction = "Tipos de Seleção Natural",
-                syntax = """\text{Direcional: Favorece 1 Extremo} \quad | \quad \text{Estabilizadora: Favorece a Média} \quad | \quad \text{Disruptiva: Favorece 2 Extremos}""",
-                description = "Classificação da alteração na curva de distribuição de frequência fenotípica.",
-                parametersInfo = "Superbactérias = Direcional; Bebês humanos = Estabilizadora; Polimorfismo = Disruptiva."
+                termOrFunction = "Tipos de Seleção Natural e Alteração Curvilínea",
+                syntax = """\text{Direcional (1 Extremo)} \quad | \quad \text{Estabilizadora (Média Intermediária)} \quad | \quad \text{Disruptiva (2 Extremos Simultâneos)}""",
+                description = "Classificação da alteração na curva de distribuição de frequência fenotípica populacional.",
+                parametersInfo = "Superbactérias e melanismo industrial = Direcional; Peso de bebês humanos = Estabilizadora; Polimorfismos de bicos = Disruptiva."
             )
         ),
         solvedExamples = listOf(
@@ -488,7 +496,8 @@ A anemia falciforme é uma doença genética recessiva letal em homozigose (\( s
                 explanation = "A variabilidade pré-existe. O antibiótico atua exclusivamente como agente seletivo ambiental."
             )
         ),
-        goldTip = "Em questões do ENEM sobre superbactérias ou resistência a praguicidas: a resposta CORRETA NUNCA diz que o veneno 'provocou a resistência', mas sim que o veneno 'selecionou os indivíduos resistentes pré-existentes'!"
+        goldTip = "Em questões do ENEM sobre superbactérias ou resistência a praguicidas: a resposta CORRETA NUNCA diz que o veneno 'provocou a resistência', mas sim que o veneno 'selecionou os indivíduos resistentes pré-existentes'!",
+        assetImagePath = "images/biologia/tipos_selecao_natural.svg"
     )
 
     // =========================================================================
@@ -642,6 +651,7 @@ Por que a análise de DNA mitocondrial (mtDNA) permite traçar a ancestralidade 
                 explanation = "Nunca diga que 'o homem veio do macaco'. Ambos derivam de um ancestral hominóide extinto."
             )
         ),
-        goldTip = "No ENEM: o homem NÃO veio do chimpanzé atual, mas de um ancestral comum extinto! E o bipedalismo surgiu ANTES do cérebro grande!"
+        goldTip = "No ENEM: o homem NÃO veio do chimpanzé atual, mas de um ancestral comum extinto! E o bipedalismo surgiu ANTES do cérebro grande!",
+        assetImagePath = "images/biologia/homologia_analogia_evolutiva.svg"
     )
 }

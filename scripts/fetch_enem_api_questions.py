@@ -129,11 +129,15 @@ def main():
     natureza_count = sum(1 for q in all_mapped if q['disciplina'] == 'Ciências da Natureza')
     print(f"Física: {fisica_count} | Biologia: {biologia_count} | Natureza/Química: {natureza_count}")
     
-    # Save to both Web and Android public assets
+    # Save to both Android and Web assets dynamically without leaking user profile paths
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    parent_dir = os.path.dirname(base_dir)
     out_paths = [
-        r"c:\Users\phcco\OneDrive\Área de Trabalho\knowverse-web\public\questoes_enem_natureza.json",
-        r"c:\Users\phcco\OneDrive\Área de Trabalho\knowverse\app\src\main\assets\questoes_enem_natureza.json"
+        os.path.join(base_dir, "app", "src", "main", "assets", "questoes_enem_natureza.json")
     ]
+    web_target = os.path.join(parent_dir, "knowverse-web", "public", "questoes_enem_natureza.json")
+    if os.path.exists(os.path.dirname(web_target)):
+        out_paths.append(web_target)
     
     for p in out_paths:
         os.makedirs(os.path.dirname(p), exist_ok=True)

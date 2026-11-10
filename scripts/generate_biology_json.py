@@ -347,11 +347,15 @@ data = [
   }
 ]
 
-# Write JSON to Web public and Android assets
+# Write JSON to Android and Web assets dynamically without leaking user profile paths
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+parent_dir = os.path.dirname(base_dir)
 paths = [
-    r"c:\Users\phcco\OneDrive\Área de Trabalho\knowverse-web\public\biologia_ecologia.json",
-    r"c:\Users\phcco\OneDrive\Área de Trabalho\knowverse\app\src\main\assets\biologia_ecologia.json"
+    os.path.join(base_dir, "app", "src", "main", "assets", "biologia_ecologia.json")
 ]
+web_target = os.path.join(parent_dir, "knowverse-web", "public", "biologia_ecologia.json")
+if os.path.exists(os.path.dirname(web_target)):
+    paths.append(web_target)
 
 for p in paths:
     os.makedirs(os.path.dirname(p), exist_ok=True)

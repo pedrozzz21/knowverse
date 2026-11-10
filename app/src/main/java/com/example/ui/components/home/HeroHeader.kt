@@ -65,24 +65,28 @@ fun HeroHeader(
     hasStudiedToday: Boolean,
     unreadNotificationsCount: Int = 0,
     modifier: Modifier = Modifier,
+    userPhotoKey: String? = null,
     onNotificationsClick: (() -> Unit)? = null,
-    onStreakClick: (() -> Unit)? = null
+    onStreakClick: (() -> Unit)? = null,
+    onMentorClick: (() -> Unit)? = null
 ) {
+    val activeMentor = remember(userPhotoKey) {
+        com.example.data.lore.KnowverseLoreRepository.findById(userPhotoKey)
+    }
+
     var greetingIndex by remember { mutableIntStateOf(0) }
-    val greetings = remember {
-        listOf(
+    val tips = remember(activeMentor) {
+        if (activeMentor.tips.isNotEmpty()) activeMentor.tips else listOf(
             "Foco e consistência geram maestria.",
             "Pratique no terminal e acompanhe sua evolução.",
-            "Cada desafio concluído eleva seu raciocínio.",
-            "Mantenha sua sequência ativa hoje!",
-            "Pronto para dominar os exercícios de hoje?"
+            "Cada desafio concluído eleva seu raciocínio."
         )
     }
 
     Surface(
         color = ObsidianSurface,
         shape = RoundedCornerShape(12.dp),
-        border = BorderStroke(1.dp, BorderSubtle),
+        border = BorderStroke(1.dp, activeMentor.accentColor.copy(alpha = 0.35f)),
         modifier = modifier
             .fillMaxWidth()
             .testTag("hero_header_compact")
@@ -94,7 +98,7 @@ fun HeroHeader(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            // Seção Esquerda: Avatar do Otto + Boas-vindas
+            // Seção Esquerda: Avatar do Mentor Oficial + Boas-vindas
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
@@ -103,21 +107,22 @@ fun HeroHeader(
                         interactionSource = remember { MutableInteractionSource() },
                         indication = ripple(bounded = false, radius = 24.dp)
                     ) {
-                        greetingIndex = (greetingIndex + 1) % greetings.size
+                        greetingIndex = (greetingIndex + 1) % tips.size
+                        onMentorClick?.invoke()
                     }
             ) {
-                // Avatar circular com microborda de precisão
+                // Avatar circular com microborda de precisão e aura da área
                 Box(
                     modifier = Modifier
-                        .size(42.dp)
+                        .size(44.dp)
                         .clip(CircleShape)
-                        .background(SurfaceElevated)
-                        .border(1.dp, PrimaryViolet.copy(alpha = 0.5f), CircleShape),
+                        .background(activeMentor.accentColor.copy(alpha = 0.15f))
+                        .border(1.5.dp, activeMentor.accentColor.copy(alpha = 0.7f), CircleShape),
                     contentAlignment = Alignment.Center
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.img_mascot_otter_boy),
-                        contentDescription = "Otto, seu Mentor",
+                        painter = painterResource(id = activeMentor.drawableRes),
+                        contentDescription = "${activeMentor.name}, seu Mentor",
                         contentScale = ContentScale.Crop,
                         modifier = Modifier
                             .size(40.dp)
@@ -140,27 +145,25 @@ fun HeroHeader(
                                 letterSpacing = (-0.2).sp
                             ),
                             maxLines = 1,
-                            softWrap = false,
-                            overflow = TextOverflow.Ellipsis,
-                            modifier = Modifier.weight(1f, fill = false)
+                            overflow = TextOverflow.Ellipsis
                         )
 
-                        // Pill identificadora discreta
+                        // Badge distintivo com o Mentor ativo
                         Surface(
-                            color = PrimaryViolet.copy(alpha = 0.12f),
-                            shape = RoundedCornerShape(4.dp)
+                            color = activeMentor.accentColor.copy(alpha = 0.14f),
+                            shape = RoundedCornerShape(4.dp),
+                            border = BorderStroke(0.5.dp, activeMentor.accentColor.copy(alpha = 0.45f))
                         ) {
                             Text(
-                                text = "Otto IA",
+                                text = "Guia: ${activeMentor.name}",
                                 style = MaterialTheme.typography.labelSmall.copy(
-                                    color = PrimaryViolet,
+                                    fontSize = 9.5.sp,
                                     fontWeight = FontWeight.Bold,
-                                    fontSize = 9.sp
+                                    color = activeMentor.accentColor
                                 ),
                                 maxLines = 1,
-                                softWrap = false,
                                 overflow = TextOverflow.Clip,
-                                modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp)
+                                modifier = Modifier.padding(horizontal = 5.dp, vertical = 1.5.dp)
                             )
                         }
                     }
@@ -168,7 +171,7 @@ fun HeroHeader(
                     Spacer(modifier = Modifier.height(2.dp))
 
                     Text(
-                        text = greetings[greetingIndex % greetings.size],
+                        text = "\"${tips[greetingIndex % tips.size]}\"",
                         style = MaterialTheme.typography.bodySmall.copy(
                             color = TextSecondary,
                             fontSize = 11.5.sp,
